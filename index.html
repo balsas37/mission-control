@@ -1,0 +1,4579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mission Control</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ========================================
+       DESIGN TOKENS
+       ======================================== */
+    :root {
+      --bg:            #181818;
+      --bg-raised:     #1e1e1e;
+      --bg-card:       #232323;
+      --bg-hover:      #2a2a2a;
+      --border:        rgba(255,255,255,0.06);
+      --border-hover:  rgba(255,255,255,0.12);
+      --accent:        #ffffff;
+      --accent-muted:  #aaaaaa;
+      --text-1:        #c8cdd3;
+      --text-2:        #888888;
+      --text-3:        #555555;
+
+      /* Status pills - soft pastel palette */
+      --pill-done-bg:      rgba(100,190,100,0.14);    --pill-done-text:      #6BBF6B;
+      --pill-active-bg:    rgba(100,165,215,0.14);    --pill-active-text:    #6BA8DA;
+      --pill-progress-bg:  rgba(165,105,195,0.14);    --pill-progress-text:  #A86DBF;
+      --pill-waiting-bg:   rgba(218,178,85,0.14);     --pill-waiting-text:   #DAB255;
+      --pill-urgent-bg:    rgba(217,83,79,0.10);      --pill-urgent-text:    #D9534F;
+      --pill-high-bg:      rgba(218,178,85,0.14);     --pill-high-text:      #DAB255;
+      --pill-medium-bg:    rgba(100,165,215,0.14);    --pill-medium-text:    #6BA8DA;
+      --pill-low-bg:       rgba(255,255,255,0.04);    --pill-low-text:       #666666;
+      --pill-backlog-bg:   rgba(255,255,255,0.03);    --pill-backlog-text:   #555555;
+
+      /* Sidebar tokens */
+      --sidebar-width: 220px;
+      --sidebar-collapsed: 48px;
+      --sidebar-bg: #1a1a1a;
+      --sidebar-transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* ========================================
+       RESET & BASE
+       ======================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 16px;
+      line-height: 1.3;
+      font-weight: 400;
+      letter-spacing: -0.015em;
+      color: var(--text-1);
+      background-color: var(--bg);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ========================================
+       SCROLLBARS
+       ======================================== */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(255,255,255,0.12);
+      border-radius: 999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(255,255,255,0.25);
+    }
+
+    /* ========================================
+       LAYOUT SKELETON
+       ======================================== */
+    .top-bar {
+      position: fixed;
+      top: 0;
+      left: var(--sidebar-width);
+      right: 0;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px 0 14px;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+      transition: left var(--sidebar-transition);
+    }
+
+    body.sidebar-collapsed .top-bar {
+      left: var(--sidebar-collapsed);
+    }
+
+    .content {
+      margin-top: 48px;
+      margin-left: var(--sidebar-width);
+      padding: 24px;
+      min-height: calc(100vh - 48px);
+      overflow-y: auto;
+      transition: margin-left var(--sidebar-transition);
+    }
+
+    body.sidebar-collapsed .content {
+      margin-left: var(--sidebar-collapsed);
+    }
+
+    /* ========================================
+       HEADER
+       ======================================== */
+    .logo {
+      font-size: 18px;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      text-transform: none;
+      color: var(--text-1);
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .clock {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-2);
+      font-variant-numeric: tabular-nums;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .clock-time {
+      color: var(--text-1);
+      font-weight: 400;
+    }
+
+    .clock-date {
+      color: var(--text-3);
+    }
+
+    .live-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 999px;
+      padding: 3px 10px 3px 8px;
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--text-2);
+      letter-spacing: 0.04em;
+    }
+
+    .live-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--pill-done-text);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    /* ========================================
+       LEFT SIDEBAR
+       ======================================== */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: var(--sidebar-width);
+      background: var(--sidebar-bg);
+      border-right: 1px solid var(--border);
+      z-index: 101;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transition: width var(--sidebar-transition);
+    }
+
+    body.sidebar-collapsed .sidebar {
+      width: var(--sidebar-collapsed);
+    }
+
+    .sidebar-header {
+      height: 48px;
+      display: flex;
+      align-items: center;
+      padding: 0 10px 0 20px;
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+      gap: 10px;
+      overflow: hidden;
+    }
+
+    .sidebar-logo-icon {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .sidebar-logo-icon svg {
+      width: 20px;
+      height: 20px;
+      fill: none;
+      stroke: var(--text-1);
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .sidebar-logo-text {
+      font-size: 16px;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      color: var(--text-1);
+      white-space: nowrap;
+      opacity: 1;
+      transition: opacity 0.15s ease;
+    }
+
+    body.sidebar-collapsed .sidebar-logo-text {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .sidebar-nav {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 8px 0;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+
+    .sidebar-nav-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 0 12px;
+      height: 40px;
+      margin: 1px 8px;
+      cursor: pointer;
+      color: var(--text-3);
+      font-size: 15px;
+      font-weight: 500;
+      border: none;
+      background: none;
+      font-family: inherit;
+      width: calc(100% - 16px);
+      text-align: left;
+      position: relative;
+      border-radius: 8px;
+      transition: color 0.15s ease, background 0.15s ease;
+      white-space: nowrap;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .sidebar-nav-item:hover {
+      color: var(--text-2);
+      background: rgba(255,255,255,0.05);
+      margin: 1px 0;
+      width: 100%;
+      border-radius: 0;
+      padding-left: 20px;
+    }
+
+    .sidebar-nav-item.active {
+      color: #fff;
+      background: rgba(255,255,255,0.08);
+      margin: 1px 0;
+      width: 100%;
+      border-radius: 0;
+      padding-left: 20px;
+    }
+
+    .sidebar-nav-item.active::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: #4A90D9;
+      border-radius: 0;
+    }
+
+    .sidebar-nav-icon {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 2px;
+    }
+
+    .sidebar-nav-icon svg {
+      width: 20px;
+      height: 20px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .sidebar-nav-label {
+      opacity: 1;
+      transition: opacity 0.15s ease;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    body.sidebar-collapsed .sidebar-nav-label {
+      opacity: 0;
+      pointer-events: none;
+      width: 0;
+      flex: 0;
+    }
+
+    /* Collapsed nav item: centre the icon, remove padding clipping */
+    body.sidebar-collapsed .sidebar-nav-item {
+      padding: 0;
+      margin: 1px 4px;
+      width: calc(100% - 8px);
+      justify-content: center;
+      gap: 0;
+    }
+
+    /* Collapsed active + hover: keep edge-to-edge */
+    body.sidebar-collapsed .sidebar-nav-item.active,
+    body.sidebar-collapsed .sidebar-nav-item:hover {
+      margin: 1px 0;
+      width: 100%;
+      padding-left: 0;
+      border-radius: 0;
+    }
+
+    body.sidebar-collapsed .sidebar-nav-icon {
+      margin-left: 0;
+    }
+
+    body.sidebar-collapsed .sidebar-header {
+      padding: 0;
+      justify-content: center;
+    }
+
+    .sidebar-badge {
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+      border-radius: 999px;
+      padding: 0 6px;
+      font-size: 12px;
+      font-weight: 400;
+      min-width: 18px;
+      text-align: center;
+      line-height: 16px;
+      flex-shrink: 0;
+      transition: opacity 0.15s ease;
+    }
+
+    .sidebar-nav-item.active .sidebar-badge {
+      background: rgba(255,255,255,0.3);
+    }
+
+    body.sidebar-collapsed .sidebar-badge {
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      min-width: 14px;
+      font-size: 10px;
+      padding: 0 4px;
+      line-height: 14px;
+    }
+
+    .sidebar-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      color: var(--text-2);
+      border-radius: 6px;
+      transition: color 0.15s ease, background 0.15s ease;
+      padding: 0;
+      flex-shrink: 0;
+    }
+
+    .sidebar-toggle:hover {
+      color: var(--text-1);
+      background: rgba(255,255,255,0.06);
+    }
+
+    .sidebar-toggle svg {
+      width: 18px;
+      height: 18px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .sidebar-backdrop {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 100;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        width: var(--sidebar-collapsed);
+        z-index: 200;
+      }
+      body:not(.sidebar-collapsed) .sidebar {
+        width: var(--sidebar-width);
+        box-shadow: 8px 0 24px rgba(0,0,0,0.5);
+      }
+      body:not(.sidebar-collapsed) .sidebar-logo-text,
+      body:not(.sidebar-collapsed) .sidebar-nav-label,
+      body:not(.sidebar-collapsed) .sidebar-badge {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .content {
+        margin-left: var(--sidebar-collapsed) !important;
+      }
+      .top-bar {
+        left: var(--sidebar-collapsed) !important;
+      }
+      body:not(.sidebar-collapsed) .sidebar-backdrop {
+        display: block;
+      }
+    }
+
+    /* ========================================
+       CONTENT PANELS
+       ======================================== */
+    .tab-panel {
+      display: none;
+    }
+
+    .tab-panel.active {
+      display: block;
+    }
+
+    .panel-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: calc(100vh - 48px - 48px);
+      gap: 12px;
+    }
+
+    .panel-placeholder-icon {
+      font-size: 40px;
+      opacity: 0.3;
+    }
+
+    .panel-placeholder-title {
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--text-2);
+    }
+
+    .panel-placeholder-sub {
+      font-size: 14px;
+      color: var(--text-3);
+    }
+
+    /* ========================================
+       REUSABLE COMPONENTS
+       ======================================== */
+
+    /* Status pills */
+    .pill {
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: 11px;
+      font-weight: 400;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      white-space: nowrap;
+      letter-spacing: 0.02em;
+    }
+
+    .pill-done     { background: var(--pill-done-bg);     color: var(--pill-done-text); }
+    .pill-active   { background: var(--pill-active-bg);   color: var(--pill-active-text); }
+    .pill-progress { background: var(--pill-progress-bg); color: var(--pill-progress-text); }
+    .pill-waiting  { background: var(--pill-waiting-bg);  color: var(--pill-waiting-text); }
+    .pill-urgent   { background: var(--pill-urgent-bg);   color: var(--pill-urgent-text); }
+    .pill-high     { background: var(--pill-high-bg);     color: var(--pill-high-text); }
+    .pill-medium   { background: var(--pill-medium-bg);   color: var(--pill-medium-text); }
+    .pill-low      { background: var(--pill-low-bg);      color: var(--pill-low-text); }
+    .pill-backlog  { background: var(--pill-backlog-bg);  color: var(--pill-backlog-text); }
+
+    /* Count badges */
+    .badge {
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+      border-radius: 999px;
+      padding: 1px 7px;
+      font-size: 12px;
+      font-weight: 400;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 18px;
+    }
+
+    /* CTA buttons */
+    .btn-cta {
+      background: transparent;
+      border-radius: 999px;
+      padding: 10px 28px;
+      font-weight: 400;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.25);
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 15px;
+      transition: all 0.25s ease;
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
+    }
+
+    .btn-cta:hover {
+      background: #fff;
+      color: #181818;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    /* Cards */
+    .card {
+      background: var(--bg-raised);
+      border-radius: 14px;
+      padding: 20px;
+      border: 1px solid var(--border);
+      transition: border-color 0.2s ease;
+    }
+
+    /* Section titles */
+    .section-title {
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--text-1);
+      margin-bottom: 24px;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    .section-rule {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin-bottom: 24px;
+    }
+
+    /* Legacy section header kept for compatibility */
+    .section-header {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-2);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    /* Data rows */
+    .row {
+      height: 40px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.1s;
+      padding: 0 12px;
+    }
+
+    .row:hover {
+      background: var(--bg-hover);
+    }
+
+    /* Active/selected state (sidebar style) */
+    .selected {
+      background: rgba(255,255,255,0.04);
+      border-left: 3px solid #fff;
+      color: var(--text-1);
+    }
+
+    /* ========================================
+       COMPONENT SHOWCASE (for verification)
+       ======================================== */
+    .showcase {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    /* ========================================
+       OFFICE TAB
+       ======================================== */
+
+    /* Stats Bar */
+    .office-stats {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .projects-toolbar {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .projects-toolbar .office-stats { margin-bottom: 0; }
+    .projects-toolbar .view-toggle { margin-left: auto; }
+
+    .stat-chip {
+      background: var(--bg-raised);
+      border-radius: 0 14px 14px 0;
+      padding: 12px 16px 12px 18px;
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      min-width: 100px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .stat-chip::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 8px; bottom: 8px;
+      width: 3px;
+      border-radius: 0 2px 2px 0;
+      background: var(--chip-accent, var(--text-3));
+      opacity: 0.7;
+    }
+    #panel-office .stat-chip,
+    #panel-projects .stat-chip {
+      border-radius: 14px;
+      padding: 12px 16px;
+    }
+    #panel-office .stat-chip::before,
+    #panel-projects .stat-chip::before { display: none; }
+    #panel-inbox .kb-metric {
+      border-radius: 14px;
+      padding: 12px 16px;
+    }
+    #panel-inbox .kb-metric::before { display: none; }
+
+    .stat-chip-value {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    .stat-chip-label {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-3);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-top: 2px;
+    }
+
+    /* Workstation Grid */
+    .office-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    @media (max-width: 960px) {
+      .office-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 600px) {
+      .office-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Workstation Card */
+    .workstation {
+      background: var(--bg-raised);
+      border-radius: 14px;
+      padding: 20px;
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    /* Terminal Monitor */
+    .terminal {
+      background: #111111;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 10px;
+      padding: 10px;
+      min-height: 80px;
+      font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+      font-size: 12px;
+      line-height: 1.6;
+      overflow: hidden;
+    }
+
+    .terminal.active {
+      color: var(--pill-done-text);
+    }
+
+    .terminal.idle {
+      color: var(--text-3);
+    }
+
+    /* Monitor Stand */
+    .monitor-stand {
+      width: 30px;
+      height: 5px;
+      background: var(--bg-raised);
+      border-radius: 2px;
+      margin: 0 auto;
+    }
+
+    /* Agent Info Row */
+    .agent-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    /* ---- Agent Avatar System ---- */
+    .agent-avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 400;
+      color: #fff;
+      flex-shrink: 0;
+      letter-spacing: 0.01em;
+      line-height: 1;
+      text-transform: uppercase;
+      position: relative;
+    }
+    .agent-avatar-sm {
+      width: 20px;
+      height: 20px;
+      font-size: 10px;
+    }
+    .agent-avatar-md {
+      width: 24px;
+      height: 24px;
+      font-size: 11px;
+    }
+    .agent-avatar-lg {
+      width: 40px;
+      height: 40px;
+      font-size: 15px;
+      font-weight: 400;
+    }
+    .agent-avatar .avatar-status {
+      position: absolute;
+      bottom: -1px;
+      right: -1px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      border: 2px solid var(--bg-raised);
+    }
+    .agent-avatar .avatar-status.online  { background: var(--pill-done-text); }
+    .agent-avatar .avatar-status.offline { background: var(--text-3); }
+
+    .agent-details {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .agent-name {
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--text-1);
+      margin-bottom: 3px;
+    }
+
+    .agent-role {
+      font-size: 11px;
+      color: var(--text-2);
+      letter-spacing: 0.01em;
+    }
+
+    /* Task Bar */
+    .task-bar {
+      width: 100%;
+      font-size: 13px;
+      font-weight: 500;
+      border-radius: 999px;
+      padding: 4px 12px;
+      text-align: center;
+    }
+
+    .task-bar.active {
+      background: rgba(255,255,255,0.06);
+      color: var(--text-1);
+    }
+
+    .task-bar.idle {
+      background: var(--bg-raised);
+      color: var(--text-3);
+    }
+
+    /* Status Footer */
+    .agent-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--text-3);
+    }
+
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 5px;
+    }
+
+    .status-dot.online {
+      background: var(--pill-done-text);
+    }
+
+    .status-dot.offline {
+      background: var(--text-3);
+    }
+
+    /* Animations */
+    @keyframes bob {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-3px); }
+    }
+
+    .workstation.active .agent-avatar {
+      animation: bob 2s ease-in-out infinite;
+    }
+
+    @keyframes typewriter-cursor {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    .terminal-cursor {
+      display: inline-block;
+      width: 7px;
+      height: 13px;
+      background: var(--pill-done-text);
+      vertical-align: middle;
+      animation: typewriter-cursor 1s step-end infinite;
+    }
+
+    /* ========================================
+       TEAM TAB
+       ======================================== */
+
+    /* Idle pill variant */
+    .pill-idle { background: var(--bg-raised); color: var(--text-3); }
+
+    /* Department / section label */
+    .dept-label {
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--text-1);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding-bottom: 10px;
+      padding-left: 0;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 16px;
+    }
+
+    /* Team grid */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    @media (max-width: 960px) {
+      .team-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 600px) {
+      .team-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Team card */
+    .team-card {
+      background: var(--bg-raised);
+      border-radius: 14px;
+      padding: 20px;
+      border: 1px solid var(--border);
+      transition: border-color 0.2s ease;
+    }
+
+    .team-card:hover {
+      border-color: var(--border-hover);
+    }
+
+    /* Department accent - removed colored borders, uniform style */
+    .team-card.dept-command,
+    .team-card.dept-ops,
+    .team-card.dept-build,
+    .team-card.dept-intel { border-color: var(--border); }
+
+    .team-card.dept-command:hover,
+    .team-card.dept-ops:hover,
+    .team-card.dept-build:hover,
+    .team-card.dept-intel:hover { border-color: var(--border-hover); }
+
+    /* Card header */
+    .team-card-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .team-card-emoji {
+      flex-shrink: 0;
+    }
+
+    .team-card-meta {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .team-card-name {
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--text-1);
+      margin-bottom: 4px;
+    }
+
+    .team-card-title {
+      font-size: 11px;
+      color: var(--text-2);
+      letter-spacing: 0.01em;
+    }
+
+    .team-card-header .pill {
+      margin-left: auto;
+      flex-shrink: 0;
+      align-self: flex-start;
+    }
+
+    /* Responsibilities list */
+    .team-card-resp {
+      list-style: none;
+      padding: 0;
+    }
+
+    .team-card-resp li {
+      font-size: 14px;
+      color: var(--text-2);
+      line-height: 1.6;
+    }
+
+    .team-card-resp li::before {
+      content: '\203A';
+      margin-right: 7px;
+      font-weight: 400;
+      color: #4A90D9;
+      font-size: 15px;
+      line-height: 1;
+    }
+
+    /* ========================================
+       PROJECTS TAB
+       ======================================== */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    @media (max-width: 600px) {
+      .projects-grid { grid-template-columns: 1fr; }
+    }
+
+    .project-card {
+      background: var(--bg-raised);
+      border-radius: 14px;
+      padding: 20px;
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .project-top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .project-priority {
+      background: transparent;
+      color: #fff;
+      border-radius: 999px;
+      padding: 2px 8px;
+      font-size: 12px;
+      font-weight: 400;
+      flex-shrink: 0;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .project-name {
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--text-1);
+      min-width: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .project-top .pill {
+      margin-left: auto;
+      flex-shrink: 0;
+    }
+
+    .project-desc {
+      font-size: 14px;
+      color: var(--text-2);
+      line-height: 1.6;
+    }
+
+    .project-agents {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .agent-chip {
+      background: var(--bg-raised);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 2px 10px 2px 2px;
+      font-size: 13px;
+      color: var(--text-2);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+
+    .project-threads {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .project-threads li {
+      font-size: 14px;
+      color: var(--text-2);
+      line-height: 1.8;
+    }
+
+    .project-threads li::before {
+      content: '\2014';
+      color: var(--text-3);
+      margin-right: 8px;
+      font-weight: 400;
+    }
+
+    /* ========================================
+       INBOX TAB
+       ======================================== */
+
+    /* Filter pill row */
+    .inbox-filters {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .inbox-filter {
+      padding: 7px 16px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-2);
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: inherit;
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
+    }
+
+    .inbox-filter:hover {
+      color: var(--text-1);
+      background: rgba(255,255,255,0.06);
+      border-color: var(--border-hover);
+    }
+
+    .inbox-filter.active {
+      background: #fff;
+      color: #181818;
+      border-color: #fff;
+      font-weight: 400;
+    }
+
+    /* Two-column layout */
+    .inbox-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    @media (max-width: 700px) {
+      .inbox-columns { grid-template-columns: 1fr; }
+    }
+
+    .inbox-col-header {
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--text-1);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 12px;
+    }
+
+    /* Task row */
+    .inbox-task {
+      background: var(--bg-raised);
+      border-radius: 0 14px 14px 0;
+      padding: 12px 16px;
+      border: 1px solid var(--border);
+      border-left: 4px solid rgba(255,255,255,0.08);
+      margin-bottom: 8px;
+      cursor: pointer;
+      transition: opacity 0.2s, border-color 0.2s;
+    }
+
+    .inbox-task:hover {
+      border-color: var(--border-hover);
+    }
+
+    /* List card left border = STATUS colour */
+    .inbox-task.status-todo       { border-left: 4px solid #6b7280; }
+    .inbox-task.status-inprogress { border-left: 4px solid #6BA8DA; }
+    .inbox-task.status-review     { border-left: 4px solid #A86DBF; }
+    .inbox-task.status-backlog    { border-left: 4px solid #C49A35; }
+    .inbox-task.status-recurring  { border-left: 4px solid #5AB8B0; }
+    .inbox-task.status-completed  { border-left: 4px solid #6BBF6B; }
+
+    .inbox-task-title {
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--text-1);
+      margin-bottom: 6px;
+      transition: color 0.2s;
+    }
+
+    .inbox-task-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .inbox-task-project {
+      font-size: 12px;
+      background: var(--bg-raised);
+      border-radius: 999px;
+      padding: 1px 8px;
+      color: var(--text-2);
+      white-space: nowrap;
+      line-height: 1;
+    }
+
+    .inbox-task-desc {
+      font-size: 13px;
+      color: var(--text-2);
+      line-height: 1.5;
+      margin-bottom: 6px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .inbox-task-assignee {
+      font-size: 12px;
+      color: var(--text-3);
+      white-space: nowrap;
+      line-height: 1;
+    }
+
+    .inbox-task-meta .pill {
+      flex-shrink: 0;
+    }
+    .task-status-select {
+      margin-left: auto;
+      background: var(--bg-raised);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text-2);
+      font-family: inherit;
+      font-size: 11px;
+      padding: 2px 6px;
+      cursor: pointer;
+      flex-shrink: 0;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .task-status-select:hover { border-color: var(--border-hover); }
+    .task-status-select:focus { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(109,74,255,0.2); }
+
+    /* Done state */
+    .inbox-task.done {
+      opacity: 0.3;
+    }
+
+    .inbox-task.done .inbox-task-title {
+      text-decoration: line-through;
+      color: var(--text-3);
+    }
+
+    .inbox-task.done:hover { border-color: var(--border-hover); opacity: 0.5; }
+
+    /* ========================================
+       KANBAN BOARD (inside Inbox tab)
+       ======================================== */
+    .kb-toolbar {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .kb-view-toggle {
+      display: inline-flex;
+      gap: 0;
+      margin-left: auto;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .kb-view-btn {
+      padding: 6px 14px;
+      font-size: 13px;
+      font-weight: 500;
+      font-family: inherit;
+      color: var(--text-3);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .kb-view-btn:hover { color: var(--text-2); }
+    .kb-view-btn.active {
+      background: rgba(255,255,255,0.08);
+      color: var(--text-1);
+    }
+    .kb-metrics {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .kb-metric {
+      background: var(--bg-raised);
+      border-radius: 0 14px 14px 0;
+      padding: 12px 16px 12px 18px;
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      min-width: 100px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .kb-metric::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 8px; bottom: 8px;
+      width: 3px;
+      border-radius: 0 2px 2px 0;
+      background: var(--chip-accent, var(--text-3));
+      opacity: 0.7;
+    }
+    .kb-metric-value {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.2;
+      color: var(--text-1);
+    }
+    .kb-metric-label {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-3);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-top: 2px;
+    }
+    .kb-board {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      padding-bottom: 24px;
+      min-height: calc(100vh - 48px - 180px);
+      align-items: flex-start;
+    }
+    .kb-column {
+      flex: 0 0 260px;
+      min-width: 260px;
+      max-width: 260px;
+      display: flex;
+      flex-direction: column;
+      background: var(--bg);
+      border-radius: 14px;
+    }
+    .kb-col-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 8px;
+    }
+    .kb-col-title {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--text-2);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .kb-col-count {
+      background: rgba(255,255,255,0.08);
+      color: var(--text-3);
+      border-radius: 999px;
+      padding: 1px 7px;
+      font-size: 12px;
+      font-weight: 400;
+      min-width: 18px;
+      text-align: center;
+    }
+    .kb-col-add {
+      background: none;
+      border: none;
+      color: var(--text-3);
+      font-size: 18px;
+      cursor: pointer;
+      padding: 0 4px;
+      line-height: 1;
+      font-family: inherit;
+      transition: color 0.2s;
+      margin-left: auto;
+    }
+    .kb-col-add:hover { color: var(--text-1); }
+    .kb-card-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-height: 60px;
+      padding: 4px 4px 12px;
+      border-radius: 8px;
+      transition: background 0.2s;
+    }
+    .kb-card-list.drag-over {
+      background: rgba(255,255,255,0.03);
+      outline: 1px dashed rgba(255,255,255,0.12);
+      outline-offset: -1px;
+      border-radius: 8px;
+    }
+    .kb-card {
+      background: var(--bg-raised);
+      border-radius: 0 14px 14px 0;
+      padding: 16px 18px;
+      border: 1px solid var(--border);
+      border-left: none;
+      cursor: grab;
+      transition: border-color 0.2s, opacity 0.2s, transform 0.15s;
+      user-select: none;
+    }
+    .kb-card:hover { border-color: var(--border-hover); }
+    .kb-card:active { cursor: grabbing; }
+    .kb-card.dragging { opacity: 0.4; transform: scale(0.97); }
+    @keyframes kbCardDrop {
+      from { opacity: 0; transform: translateY(-8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .kb-card.just-dropped { animation: kbCardDrop 200ms ease-out; }
+    .kb-card-title {
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--text-1);
+      line-height: 1.35;
+      margin-bottom: 6px;
+    }
+    .kb-card-desc {
+      font-size: 12px;
+      color: var(--text-3);
+      line-height: 1.4;
+      margin-bottom: 8px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .kb-card-footer {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .kb-card-project {
+      font-size: 11px;
+      background: var(--bg-card);
+      border-radius: 999px;
+      padding: 2px 8px;
+      color: var(--text-2);
+      white-space: nowrap;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: border-color 0.2s;
+      position: relative;
+    }
+    .kb-card-project:hover { border-color: var(--border-hover); }
+    .kb-card-project-dropdown {
+      position: absolute;
+      top: calc(100% + 4px);
+      left: 0;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 4px 0;
+      z-index: 50;
+      min-width: 160px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+    }
+    .kb-card-project-dropdown-item {
+      padding: 6px 12px;
+      font-size: 13px;
+      color: var(--text-2);
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+    }
+    .kb-card-project-dropdown-item:hover {
+      background: rgba(255,255,255,0.06);
+      color: var(--text-1);
+    }
+    .kb-card-project-dropdown-item.selected {
+      color: var(--text-1);
+      font-weight: 400;
+    }
+    .kb-card-agent {
+      font-size: 12px;
+      color: var(--text-3);
+      white-space: nowrap;
+    }
+    /* Card left border = STATUS colour */
+    .kb-card[data-status="todo"]       { border-left: 4px solid #6b7280; border-top-left-radius: 0; border-bottom-left-radius: 0; }
+    .kb-card[data-status="inprogress"] { border-left: 4px solid #6BA8DA; border-top-left-radius: 0; border-bottom-left-radius: 0; }
+    .kb-card[data-status="review"]     { border-left: 4px solid #A86DBF; border-top-left-radius: 0; border-bottom-left-radius: 0; }
+    .kb-card[data-status="backlog"]    { border-left: 4px solid #C49A35; border-top-left-radius: 0; border-bottom-left-radius: 0; }
+    .kb-card[data-status="recurring"]  { border-left: 4px solid #5AB8B0; border-top-left-radius: 0; border-bottom-left-radius: 0; }
+    .kb-card[data-status="completed"]  { border-left: 4px solid #6BBF6B; border-top-left-radius: 0; border-bottom-left-radius: 0; }
+    .kb-form {
+      background: var(--bg-card);
+      border: 1px solid var(--border-hover);
+      border-radius: 14px;
+      padding: 12px;
+      margin-bottom: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .kb-form-input,
+    .kb-form-textarea,
+    .kb-form-select {
+      appearance: none;
+      -webkit-appearance: none;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px 10px;
+      font-size: 13px;
+      font-family: 'Inter', sans-serif;
+      color: var(--text-1);
+      width: 100%;
+      transition: border-color 0.2s;
+    }
+    .kb-form-input:focus,
+    .kb-form-textarea:focus,
+    .kb-form-select:focus {
+      outline: none;
+      border-color: rgba(255,255,255,0.3);
+    }
+    .kb-form-input::placeholder,
+    .kb-form-textarea::placeholder { color: var(--text-3); }
+    .kb-form-textarea {
+      resize: vertical;
+      min-height: 48px;
+      max-height: 100px;
+    }
+    .kb-form-select {
+      cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888888' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      padding-right: 28px;
+    }
+    .kb-form-select option { background: var(--bg-card); color: var(--text-1); }
+    .kb-form-actions {
+      display: flex;
+      gap: 6px;
+      justify-content: flex-end;
+    }
+    .kb-form-save, .kb-form-cancel {
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 400;
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      transition: background 0.2s, color 0.2s;
+    }
+    .kb-form-save { background: #fff; color: #181818; }
+    .kb-form-save:hover { background: #e0e0e0; }
+    .kb-form-cancel { background: transparent; color: var(--text-3); border: 1px solid var(--border); }
+    .kb-form-cancel:hover { color: var(--text-2); border-color: var(--border-hover); }
+    .kb-list-hidden { display: none !important; }
+    @media (max-width: 960px) {
+      .kb-column { flex: 0 0 220px; min-width: 220px; max-width: 220px; }
+    }
+    @media (max-width: 600px) {
+      .kb-board { gap: 12px; }
+      .kb-column { flex: 0 0 85vw; min-width: 85vw; max-width: 85vw; }
+    }
+
+    /* ========================================
+       ANALYTICS TAB
+       ======================================== */
+
+    /* Date range filter */
+    .analytics-filters {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .analytics-filter {
+      padding: 7px 16px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-2);
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: inherit;
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
+    }
+
+    .analytics-filter:hover {
+      color: var(--text-1);
+      background: rgba(255,255,255,0.06);
+      border-color: var(--border-hover);
+    }
+
+    .analytics-filter.active {
+      background: #fff;
+      color: #181818;
+      border-color: #fff;
+      font-weight: 400;
+    }
+
+    /* Airtable-style Analytics Tables */
+    .analytics-section { margin-bottom: 32px; }
+    .analytics-section-header {
+      display: flex; align-items: center; gap: 10px;
+      cursor: pointer; user-select: none;
+      padding-bottom: 12px; margin-bottom: 0;
+    }
+    .analytics-chevron {
+      width: 16px; height: 16px;
+      transition: transform 0.2s ease; color: var(--text-3);
+    }
+    .analytics-section-header.collapsed .analytics-chevron { transform: rotate(-90deg); }
+    .analytics-section-title {
+      font-size: 11px; font-weight: 400; color: var(--text-1);
+      text-transform: uppercase; letter-spacing: 0.08em;
+      padding-left: 0; position: relative;
+    }
+    .analytics-table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--bg-raised);
+    }
+    .analytics-table { width: 100%; border-collapse: collapse; font-size: 15px; }
+    .analytics-th {
+      position: sticky; top: 0;
+      background: var(--bg-card);
+      font-size: 12px; font-weight: 400; color: var(--text-3);
+      text-transform: uppercase; letter-spacing: 0.04em;
+      text-align: left; padding: 10px 16px;
+      border-bottom: 1px solid var(--border);
+      cursor: pointer; user-select: none; white-space: nowrap;
+    }
+    .analytics-th:hover { color: var(--text-2); }
+    .analytics-th .sort-arrow {
+      display: inline-block; margin-left: 4px; font-size: 11px; opacity: 0.3;
+    }
+    .analytics-th.sorted .sort-arrow { opacity: 1; }
+    .analytics-row { transition: background 0.15s ease; }
+    .analytics-row:nth-child(even) { background: rgba(255,255,255,0.015); }
+    .analytics-row:hover { background: rgba(255,255,255,0.04); }
+    .analytics-td {
+      padding: 12px 16px; border-bottom: 1px solid var(--border);
+      color: var(--text-1); vertical-align: middle;
+    }
+    .analytics-td:first-child { font-weight: 500; color: var(--text-2); }
+    .analytics-td-value { font-size: 16px; font-weight: 400; font-variant-numeric: tabular-nums; }
+    .analytics-td-change { font-size: 14px; font-weight: 500; display: inline-flex; align-items: center; gap: 4px; }
+    .analytics-td-change.positive { color: var(--pill-done-text); }
+    .analytics-td-change.negative { color: var(--pill-urgent-text); }
+    .analytics-td-change.neutral  { color: var(--text-3); }
+    .analytics-status-dot {
+      width: 8px; height: 8px; border-radius: 50%; display: inline-block;
+    }
+    .analytics-status-dot.green  { background: var(--pill-done-text); }
+    .analytics-status-dot.amber  { background: var(--pill-waiting-text); }
+    .analytics-status-dot.red    { background: var(--pill-urgent-text); }
+    .analytics-sparkline-cell { width: 80px; height: 24px; }
+    .analytics-sparkline-cell svg {
+      width: 80px; height: 24px;
+    }
+    .analytics-sparkline-cell svg polyline {
+      fill: none; stroke: rgba(255,255,255,0.3); stroke-width: 1.5;
+      stroke-linecap: round; stroke-linejoin: round;
+    }
+    .analytics-inline-progress {
+      width: 60px; height: 4px; background: rgba(255,255,255,0.06);
+      border-radius: 4px; overflow: hidden; display: inline-block;
+      vertical-align: middle; margin-left: 8px;
+    }
+    .analytics-inline-progress-fill { height: 100%; border-radius: 4px; background: rgba(255,255,255,0.4); }
+    .analytics-summary-row { background: rgba(255,255,255,0.03); border-top: 2px solid var(--border); }
+    .analytics-summary-row .analytics-td { font-weight: 400; color: var(--text-1); font-size: 14px; border-bottom: none; }
+
+    /* ========================================
+       REUSABLE DATA TABLE + VIEW TOGGLE
+       ======================================== */
+    .view-toggle-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      margin-bottom: 16px;
+    }
+    .view-toggle {
+      display: inline-flex;
+      gap: 0;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .view-toggle-btn {
+      padding: 6px 14px;
+      font-size: 13px;
+      font-weight: 500;
+      font-family: inherit;
+      color: var(--text-3);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .view-toggle-btn:hover { color: var(--text-2); }
+    .view-toggle-btn.active {
+      background: rgba(255,255,255,0.08);
+      color: var(--text-1);
+    }
+
+    .data-table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--bg-raised);
+    }
+    .data-table { width: 100%; border-collapse: collapse; font-size: 15px; }
+    .data-th {
+      background: var(--bg-card);
+      font-size: 12px; font-weight: 400; color: var(--text-3);
+      text-transform: uppercase; letter-spacing: 0.04em;
+      text-align: left; padding: 10px 16px;
+      border-bottom: 1px solid var(--border);
+      white-space: nowrap;
+    }
+    .data-row { transition: background 0.15s ease; }
+    .data-row:nth-child(even) { background: rgba(255,255,255,0.015); }
+    .data-row:hover { background: rgba(255,255,255,0.04); }
+    .data-td {
+      padding: 12px 16px; border-bottom: 1px solid var(--border);
+      color: var(--text-1); vertical-align: middle;
+    }
+    .data-td:first-child { font-weight: 500; }
+    .data-row:last-child .data-td { border-bottom: none; }
+
+    /* Workstation actions */
+    .workstation-actions {
+      display: flex; gap: 8px; margin-top: 4px;
+    }
+    .workstation-action {
+      flex: 1;
+      padding: 6px 0;
+      font-size: 12px;
+      font-weight: 500;
+      font-family: inherit;
+      color: var(--text-3);
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+    }
+    .workstation-action:hover {
+      background: rgba(255,255,255,0.04);
+      color: var(--text-2);
+      border-color: var(--border-hover);
+    }
+
+    /* Active workstation glow */
+    .workstation.active {
+      border-color: rgba(92,184,92,0.25);
+      box-shadow: 0 0 0 1px rgba(92,184,92,0.08);
+    }
+
+    /* ========================================
+       CALENDAR TAB
+       ======================================== */
+
+    /* Milestone Timeline Strip */
+    .milestone-strip {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      padding: 16px 0;
+      position: relative;
+      align-items: center;
+      margin-bottom: 32px;
+      scrollbar-width: thin;
+    }
+
+    .milestone-strip::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 50%;
+      border-top: 1px dashed rgba(255,255,255,0.08);
+      z-index: 0;
+    }
+
+    /* Milestone Card */
+    .milestone-card {
+      background: var(--bg-raised);
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--text-3);
+      border-radius: 0 14px 14px 0;
+      padding: 18px 20px;
+      min-width: 200px;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+      transition: border-color 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .milestone-card:hover {
+      border-top-color: var(--border-hover);
+      border-right-color: var(--border-hover);
+      border-bottom-color: var(--border-hover);
+    }
+
+    .milestone-card.cat-life     { border-left-color: #5BC0DE; }
+    .milestone-card.cat-personal { border-left-color: #9B59B6; }
+    .milestone-card.cat-business { border-left-color: #5B9BD5; }
+    .milestone-card.cat-property { border-left-color: #D4A843; }
+    .milestone-card.cat-farm     { border-left-color: #5CB85C; }
+
+    .milestone-cat-label {
+      font-size: 11px;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-3);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .milestone-cat-icon {
+      font-size: 13px;
+      line-height: 1;
+    }
+
+    .milestone-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+
+    .milestone-dot.cat-personal { background: var(--text-2); }
+    .milestone-dot.cat-business { background: var(--text-1); }
+    .milestone-dot.cat-property { background: var(--text-2); }
+    .milestone-dot.cat-farm     { background: var(--text-3); }
+
+    .milestone-name {
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--text-1);
+      margin-top: 0;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+
+    .milestone-date {
+      font-size: 13px;
+      color: var(--text-2);
+      margin-top: 0;
+      font-weight: 500;
+    }
+
+    /* Calendar Toolbar */
+    .cal-toolbar {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 20px; flex-wrap: wrap; gap: 12px;
+    }
+    .cal-toolbar-left { display: flex; align-items: center; gap: 16px; }
+    .cal-title {
+      font-size: 22px; font-weight: 400; color: var(--text-1);
+      letter-spacing: -0.02em; margin: 0; min-width: 180px;
+    }
+    .cal-nav-arrows { display: flex; align-items: center; gap: 4px; }
+    .cal-nav-btn {
+      background: transparent; border: 1px solid var(--border); border-radius: 8px;
+      color: var(--text-2); font-size: 18px; font-family: inherit;
+      padding: 4px 10px; cursor: pointer; transition: background 0.2s, color 0.2s; line-height: 1;
+    }
+    .cal-nav-btn:hover { background: var(--bg-hover); color: var(--text-1); }
+    .cal-today-btn { font-size: 13px; font-weight: 400; padding: 6px 14px; }
+    .cal-view-toggle {
+      display: inline-flex;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .cal-view-btn {
+      padding: 6px 14px; font-size: 13px; font-weight: 500;
+      font-family: inherit; color: var(--text-3);
+      background: transparent; border: none;
+      cursor: pointer; transition: background 0.2s, color 0.2s;
+    }
+    .cal-view-btn:hover { color: var(--text-2); }
+    .cal-view-btn.active { background: rgba(255,255,255,0.08); color: var(--text-1); }
+
+    /* Month View Grid */
+    .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; }
+    .cal-header {
+      font-size: 13px; font-weight: 400; color: var(--text-3);
+      text-transform: uppercase; letter-spacing: 0.05em; text-align: center; padding: 10px 0;
+    }
+    .cal-day {
+      min-height: 96px; border: 1px solid var(--border); border-radius: 12px;
+      padding: 8px; font-size: 14px; color: var(--text-2);
+      position: relative; cursor: pointer; transition: border-color 0.2s, background 0.2s;
+      display: flex; flex-direction: column; gap: 4px;
+    }
+    .cal-day:hover { border-color: var(--border-hover); background: var(--bg-hover); }
+    .cal-day.today { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.15); }
+    .cal-day.today .cal-day-num {
+      background: #fff; color: #181818; width: 26px; height: 26px;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 400;
+    }
+    .cal-day.other-month { opacity: 0.3; }
+    .cal-day.empty { border-color: transparent; min-height: 0; cursor: default; pointer-events: none; }
+    .cal-day-num { font-size: 15px; font-weight: 400; line-height: 1; }
+    .cal-event-chip {
+      font-size: 12px; font-weight: 500; padding: 2px 6px; border-radius: 4px;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+      cursor: pointer; transition: opacity 0.2s; line-height: 1.4;
+    }
+    .cal-event-chip:hover { opacity: 0.7; }
+    .cal-day-overflow { font-size: 11px; color: var(--text-3); font-weight: 500; padding-top: 2px; }
+    .cal-milestone-marker {
+      width: 8px; height: 8px; position: absolute; top: 8px; right: 8px;
+      transform: rotate(45deg); border-radius: 2px;
+    }
+
+    /* Week View */
+    .cal-week-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; min-height: 420px; }
+    .cal-week-col {
+      border: 1px solid var(--border); border-radius: 12px; padding: 10px;
+      display: flex; flex-direction: column; gap: 6px; min-height: 400px;
+      cursor: pointer; transition: border-color 0.2s, background 0.2s;
+    }
+    .cal-week-col:hover { border-color: var(--border-hover); background: var(--bg-hover); }
+    .cal-week-col.today { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.15); }
+    .cal-week-col-header {
+      text-align: center; padding-bottom: 8px; border-bottom: 1px solid var(--border); margin-bottom: 4px;
+    }
+    .cal-week-day-name {
+      font-size: 12px; font-weight: 400; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.05em;
+    }
+    .cal-week-day-num { font-size: 20px; font-weight: 400; color: var(--text-2); margin-top: 2px; }
+    .cal-week-col.today .cal-week-day-num {
+      background: #fff; color: #181818; width: 32px; height: 32px;
+      border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
+    }
+    .cal-week-event {
+      background: rgba(255,255,255,0.06); border-left: 3px solid var(--text-3);
+      border-radius: 0 6px 6px 0; padding: 8px 10px; font-size: 13px; font-weight: 500;
+      color: var(--text-1); cursor: pointer; transition: opacity 0.2s;
+    }
+    .cal-week-event:hover { opacity: 0.7; }
+    .cal-week-event-time { font-size: 11px; color: var(--text-3); margin-top: 2px; }
+
+    /* Add-Event Modal */
+    .cal-modal-backdrop {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1000;
+      display: flex; align-items: center; justify-content: center;
+      animation: calModalFadeIn 150ms ease;
+    }
+    @keyframes calModalFadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .cal-modal {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px;
+      width: 340px; max-width: 90vw; box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+      animation: calModalSlideUp 200ms ease;
+    }
+    @keyframes calModalSlideUp { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+    .cal-modal-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 20px 12px; border-bottom: 1px solid var(--border);
+    }
+    .cal-modal-title { font-size: 16px; font-weight: 400; color: var(--text-1); }
+    .cal-modal-close {
+      background: none; border: none; color: var(--text-3); font-size: 20px;
+      cursor: pointer; padding: 0; line-height: 1; transition: color 0.2s;
+    }
+    .cal-modal-close:hover { color: var(--text-1); }
+    .cal-modal-body { padding: 16px 20px; display: flex; flex-direction: column; gap: 10px; }
+    .cal-form-input {
+      appearance: none; -webkit-appearance: none;
+      background: var(--bg); border: 1px solid var(--border); border-radius: 8px;
+      padding: 10px 12px; font-size: 14px; font-family: 'Inter', sans-serif;
+      color: var(--text-1); width: 100%; transition: border-color 0.2s;
+    }
+    .cal-form-input:focus { outline: none; border-color: rgba(255,255,255,0.3); }
+    .cal-form-input::placeholder { color: var(--text-3); }
+    .cal-color-picker { display: flex; gap: 8px; padding: 4px 0; }
+    .cal-color-swatch {
+      width: 24px; height: 24px; border-radius: 50%; cursor: pointer;
+      border: 2px solid transparent; transition: border-color 0.2s, transform 0.15s;
+    }
+    .cal-color-swatch:hover { transform: scale(1.15); }
+    .cal-color-swatch.selected { border-color: #fff; transform: scale(1.1); }
+    .cal-modal-footer {
+      display: flex; gap: 8px; justify-content: flex-end;
+      padding: 12px 20px 16px; border-top: 1px solid var(--border);
+    }
+    .cal-form-save, .cal-form-cancel {
+      padding: 8px 18px; border-radius: 8px; font-size: 14px; font-weight: 400;
+      font-family: inherit; cursor: pointer; border: none; transition: background 0.2s, color 0.2s;
+    }
+    .cal-form-save { background: #fff; color: #181818; }
+    .cal-form-save:hover { background: #e0e0e0; }
+    .cal-form-cancel { background: transparent; color: var(--text-3); border: 1px solid var(--border); }
+    .cal-form-cancel:hover { color: var(--text-2); border-color: var(--border-hover); }
+
+    @media (max-width: 768px) {
+      .cal-toolbar { flex-direction: column; align-items: flex-start; }
+      .cal-grid { gap: 4px; }
+      .cal-day { min-height: 64px; padding: 5px; }
+      .cal-day-num { font-size: 13px; }
+      .cal-week-grid { grid-template-columns: 1fr; gap: 8px; }
+      .cal-week-col { min-height: 120px; }
+    }
+
+    /* ========================================
+       FOCUS TAB
+       ======================================== */
+
+    .focus-wrap {
+      max-width: 640px;
+    }
+
+    /* Project selector dropdown */
+    .focus-select {
+      appearance: none;
+      -webkit-appearance: none;
+      background: var(--bg-card) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888888' stroke-width='1.5' fill='none'/%3E%3C/svg%3E") no-repeat right 14px center;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 40px 10px 14px;
+      font-size: 15px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      color: var(--text-1);
+      cursor: pointer;
+      margin-bottom: 28px;
+      min-width: 240px;
+    }
+
+    .focus-select:focus {
+      outline: none;
+      border-color: #fff;
+    }
+
+    .focus-select option {
+      background: var(--bg-card);
+      color: var(--text-1);
+    }
+
+    /* Project header */
+    .focus-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .focus-title {
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--text-1);
+    }
+
+    /* Agent chips row */
+    .focus-agents {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    /* Priority callout */
+    .focus-priority {
+      background: rgba(255,255,255,0.03);
+      border-left: 4px solid rgba(255,255,255,0.3);
+      border-radius: 0 14px 14px 0;
+      padding: 14px 16px;
+      margin-bottom: 24px;
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--text-1);
+      line-height: 1.5;
+    }
+
+    /* Task checklist */
+    .focus-tasks {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 24px;
+    }
+
+    .focus-task {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 8px 0;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .focus-check {
+      display: none;
+    }
+
+    .focus-checkmark {
+      width: 20px;
+      height: 20px;
+      border: 2px solid var(--border);
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .focus-checkmark::after {
+      content: '';
+      display: none;
+      width: 8px;
+      height: 5px;
+      border-left: 2px solid #181818;
+      border-bottom: 2px solid #181818;
+      transform: rotate(-45deg);
+      margin-top: -2px;
+    }
+
+    .focus-check:checked + .focus-checkmark {
+      background: #fff;
+      border-color: #fff;
+    }
+
+    .focus-check:checked + .focus-checkmark::after {
+      display: block;
+    }
+
+    .focus-task-text {
+      font-size: 15px;
+      color: var(--text-1);
+      transition: color 0.2s;
+    }
+
+    .focus-check:checked ~ .focus-task-text {
+      text-decoration: line-through;
+      color: var(--text-3);
+    }
+
+    /* Context block */
+    .focus-context {
+      font-size: 14px;
+      color: var(--text-2);
+      line-height: 1.6;
+      padding-left: 14px;
+      border-left: 1px solid var(--border);
+      margin-bottom: 28px;
+    }
+
+    /* Focus milestones strip */
+    .focus-milestones {
+      display: flex;
+      gap: 0;
+      flex-wrap: wrap;
+    }
+
+    .focus-milestone {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px 8px 0;
+      border-right: 1px solid var(--border);
+      margin-right: 16px;
+    }
+
+    .focus-milestone:last-child {
+      border-right: none;
+      margin-right: 0;
+      padding-right: 0;
+    }
+
+    .focus-ms-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .focus-ms-label {
+      font-size: 14px;
+      color: var(--text-2);
+    }
+
+    /* ── Memory tab ── */
+    .mem-wrap {
+      max-width: 720px;
+    }
+    .mem-search-wrap {
+      position: relative;
+      margin-bottom: 28px;
+    }
+    .mem-search-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+      pointer-events: none;
+      opacity: 0.4;
+    }
+    .mem-search {
+      width: 100%;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px 14px 14px 40px;
+      font-size: 15px;
+      font-family: 'Inter', sans-serif;
+      color: var(--text-1);
+      box-sizing: border-box;
+    }
+    .mem-search::placeholder {
+      color: var(--text-3);
+    }
+    .mem-search:focus {
+      outline: none;
+      border-color: #fff;
+    }
+    .mem-section {
+      margin-bottom: 16px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .mem-section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 16px;
+      background: var(--bg-raised);
+      cursor: pointer;
+      user-select: none;
+    }
+    .mem-section-header:hover {
+      background: var(--bg-card);
+    }
+    .mem-section-title {
+      font-size: 15px;
+      font-weight: 400;
+      text-transform: none;
+      letter-spacing: -0.01em;
+      color: var(--text-1);
+    }
+    .mem-chevron {
+      width: 16px;
+      height: 16px;
+      transition: transform 0.25s ease;
+      opacity: 0.5;
+    }
+    .mem-section.open .mem-chevron {
+      transform: rotate(180deg);
+    }
+    .mem-section-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+    .mem-section.open .mem-section-body {
+      max-height: 2000px;
+    }
+    .mem-section-inner {
+      padding: 16px;
+    }
+    .mem-people-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    @media (max-width: 600px) {
+      .mem-people-grid { grid-template-columns: 1fr; }
+    }
+    .mem-person {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px;
+      transition: opacity 0.2s, border-color 0.2s;
+    }
+    .mem-person-name {
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--text-1);
+      margin-bottom: 4px;
+    }
+    .mem-person-role {
+      font-size: 13px;
+      color: var(--text-2);
+      margin-bottom: 8px;
+    }
+    .mem-person-detail {
+      font-size: 14px;
+      color: var(--text-2);
+      line-height: 1.5;
+    }
+    .mem-facts {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .mem-fact {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      padding: 10px 12px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      transition: opacity 0.2s, border-color 0.2s;
+    }
+    .mem-fact-label {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--text-1);
+      white-space: nowrap;
+      min-width: 140px;
+    }
+    .mem-fact-value {
+      font-size: 14px;
+      color: var(--text-2);
+      line-height: 1.5;
+    }
+    .mem-decisions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .mem-decision {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px;
+      transition: opacity 0.2s, border-color 0.2s;
+    }
+    .mem-decision-title {
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--text-1);
+      margin-bottom: 6px;
+    }
+    .mem-decision-text {
+      font-size: 14px;
+      color: var(--text-2);
+      line-height: 1.6;
+    }
+    .mem-contacts-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    @media (max-width: 600px) {
+      .mem-contacts-grid { grid-template-columns: 1fr; }
+    }
+    .mem-contact-empty {
+      border: 1px dashed var(--border);
+      border-radius: 14px;
+      padding: 24px 14px;
+      text-align: center;
+      transition: opacity 0.2s, border-color 0.2s;
+    }
+    .mem-contact-plus {
+      font-size: 22px;
+      color: var(--text-3);
+      margin-bottom: 6px;
+    }
+    .mem-contact-label {
+      font-size: 13px;
+      color: var(--text-3);
+    }
+    .mem-card-dim {
+      opacity: 0.15 !important;
+    }
+
+    /* ── Polish: Tab transitions ── */
+    @keyframes tabExit {
+      from { opacity: 1; transform: translateY(0); }
+      to { opacity: 0; transform: translateY(4px); }
+    }
+    @keyframes tabEnter {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .tab-panel.tab-exit {
+      animation: tabExit 180ms ease-out forwards;
+    }
+    .tab-panel.tab-enter {
+      animation: tabEnter 180ms ease-out;
+    }
+
+    /* ── Polish: Keyboard shortcut tooltip ── */
+    .shortcut-hint {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 8px 16px;
+      font-size: 13px;
+      color: var(--text-3);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: 200;
+      pointer-events: none;
+    }
+    .shortcut-hint.visible {
+      opacity: 1;
+    }
+
+    /* ── Polish: Badge pop animation ── */
+    @keyframes badgePop {
+      0% { transform: scale(1.3); }
+      100% { transform: scale(1); }
+    }
+    .sidebar-badge.pop {
+      animation: badgePop 150ms ease-out;
+    }
+
+    /* ── Polish: Global interactive transitions ── */
+    .project-card,
+    .milestone-card,
+    .mem-person,
+    .mem-fact,
+    .mem-decision,
+    .mem-contact-empty,
+    .workstation,
+    .team-card,
+    .inbox-task,
+    .kb-card {
+      transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+    }
+
+    /* ── Polish: Card hover states - subtle lift + brightness ── */
+    .project-card:hover,
+    .mem-person:hover,
+    .mem-fact:hover,
+    .mem-decision:hover,
+    .workstation:hover,
+    .team-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-1px);
+      background: color-mix(in srgb, var(--bg-raised), #fff 2%);
+    }
+    .inbox-task:hover {
+      transform: translateY(-1px);
+    }
+    .mem-contact-empty:hover {
+      border-color: var(--border-hover);
+    }
+
+    /* ── Scroll reveal animations ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── Polish: Focus states (accessibility) ── */
+    .sidebar-nav-item:focus-visible,
+    .sidebar-toggle:focus-visible,
+    .btn-cta:focus-visible,
+    .inbox-filter:focus-visible,
+    .analytics-filter:focus-visible,
+    .inbox-task:focus-visible,
+    .project-card:focus-visible,
+    .team-card:focus-visible,
+    .milestone-card:focus-visible,
+    .workstation:focus-visible,
+    .mem-section-header:focus-visible,
+    .focus-task:focus-visible,
+    .focus-select:focus-visible,
+    .mem-search:focus-visible,
+    .cal-day:focus-visible {
+      outline: 1px solid rgba(255,255,255,0.4);
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="shortcut-hint" id="shortcut-hint">Press 1&ndash;8 to switch tabs &middot; [ to toggle sidebar</div>
+
+  <!-- ======== LEFT SIDEBAR ======== -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo-icon">
+        <svg viewBox="0 0 24 24"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg>
+      </div>
+      <span class="sidebar-logo-text">Mission Control</span>
+    </div>
+    <nav class="sidebar-nav">
+      <button class="sidebar-nav-item active" data-tab="office">
+        <span class="sidebar-nav-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg></span>
+        <span class="sidebar-nav-label">Office</span>
+      </button>
+      <button class="sidebar-nav-item" data-tab="inbox">
+        <span class="sidebar-nav-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg></span>
+        <span class="sidebar-nav-label">Inbox</span>
+        <span class="sidebar-badge" id="inbox-badge">8</span>
+      </button>
+      <button class="sidebar-nav-item" data-tab="projects">
+        <span class="sidebar-nav-icon"><svg viewBox="0 0 24 24"><path d="M3 7v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-6l-2-2H5a2 2 0 0 0-2 2z"/></svg></span>
+        <span class="sidebar-nav-label">Projects</span>
+      </button>
+      <button class="sidebar-nav-item" data-tab="team">
+        <span class="sidebar-nav-icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="7" r="4"/><path d="M2 21v-2a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v2"/><circle cx="19" cy="9" r="3"/><path d="M22 21v-1a3 3 0 0 0-3-3h-.5"/></svg></span>
+        <span class="sidebar-nav-label">Team</span>
+      </button>
+      <button class="sidebar-nav-item" data-tab="calendar">
+        <span class="sidebar-nav-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>
+        <span class="sidebar-nav-label">Calendar</span>
+      </button>
+      <button class="sidebar-nav-item" data-tab="analytics">
+        <span class="sidebar-nav-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>
+        <span class="sidebar-nav-label">Analytics</span>
+      </button>
+      <button class="sidebar-nav-item" data-tab="focus">
+        <span class="sidebar-nav-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span>
+        <span class="sidebar-nav-label">Focus</span>
+      </button>
+      <button class="sidebar-nav-item" data-tab="memory">
+        <span class="sidebar-nav-icon"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-4.6 12.3c.5.4.6.5.6 1.2V18h8v-2.5c0-.7.1-.8.6-1.2A7 7 0 0 0 12 2z"/><line x1="9" y1="18" x2="9" y2="22"/><line x1="15" y1="18" x2="15" y2="22"/><line x1="9" y1="22" x2="15" y2="22"/></svg></span>
+        <span class="sidebar-nav-label">Memory</span>
+      </button>
+    </nav>
+  </aside>
+
+  <!-- ======== SIDEBAR BACKDROP (mobile) ======== -->
+  <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
+  <!-- ======== TOP BAR ======== -->
+  <header class="top-bar">
+    <div style="display:flex;align-items:center;">
+      <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Toggle sidebar">
+        <svg viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/></svg>
+      </button>
+    </div>
+    <div class="header-right">
+      <div class="clock">
+        <span class="clock-date" id="clock-date"></span>
+        <span class="clock-time" id="clock-time"></span>
+      </div>
+      <div class="live-badge">
+        <span class="live-dot"></span>
+        LIVE
+      </div>
+    </div>
+  </header>
+
+  <!-- ======== CONTENT ======== -->
+  <main class="content">
+
+    <!-- Office -->
+    <section class="tab-panel active" id="panel-office">
+
+      <!-- Stats Bar -->
+      <div class="office-stats reveal">
+        <div class="stat-chip"><div class="stat-chip-value" style="color:var(--text-1)">1</div><div class="stat-chip-label">Active</div></div>
+        <div class="stat-chip"><div class="stat-chip-value" style="color:var(--text-2)">5</div><div class="stat-chip-label">Idle</div></div>
+        <div class="stat-chip"><div class="stat-chip-value" style="color:var(--text-2)">0</div><div class="stat-chip-label">Busy</div></div>
+        <div class="stat-chip"><div class="stat-chip-value" style="color:var(--text-1)">6</div><div class="stat-chip-label">Total</div></div>
+      </div>
+
+      <!-- Workstation Grid -->
+      <div class="office-grid">
+
+        <!-- Piia (Active) -->
+        <div class="workstation active reveal" style="transition-delay:0ms">
+          <div class="terminal active" id="piia-terminal"><span class="terminal-cursor"></span></div>
+          <div class="monitor-stand"></div>
+          <div class="agent-info">
+            <div class="agent-avatar" style="background:#7C9EF5">Pi<span class="avatar-status online"></span></div>
+            <div class="agent-details">
+              <div class="agent-name">Piia</div>
+              <div class="agent-role">Chief Strategist</div>
+            </div>
+          </div>
+          <div class="task-bar active">Processing requests</div>
+          <div class="agent-footer">
+            <span><span class="status-dot online"></span>Active</span>
+            <span>uptime 4h 23m</span>
+          </div>
+          <div class="workstation-actions">
+            <button class="workstation-action">Message</button>
+            <button class="workstation-action">Assign Task</button>
+          </div>
+        </div>
+
+        <!-- Kat (Idle) -->
+        <div class="workstation reveal" style="transition-delay:80ms">
+          <div class="terminal idle">&gt; standby</div>
+          <div class="monitor-stand"></div>
+          <div class="agent-info">
+            <div class="agent-avatar" style="background:#B07CE8">Ka<span class="avatar-status offline"></span></div>
+            <div class="agent-details">
+              <div class="agent-name">Kat</div>
+              <div class="agent-role">OFM Operations</div>
+            </div>
+          </div>
+          <div class="task-bar idle">No active task</div>
+          <div class="agent-footer">
+            <span><span class="status-dot offline"></span>Idle</span>
+            <span>last active 2h ago</span>
+          </div>
+          <div class="workstation-actions">
+            <button class="workstation-action">Message</button>
+            <button class="workstation-action">Assign Task</button>
+          </div>
+        </div>
+
+        <!-- Rex (Idle) -->
+        <div class="workstation reveal" style="transition-delay:160ms">
+          <div class="terminal idle">&gt; standby</div>
+          <div class="monitor-stand"></div>
+          <div class="agent-info">
+            <div class="agent-avatar" style="background:#5CB85C">Re<span class="avatar-status online"></span></div>
+            <div class="agent-details">
+              <div class="agent-name">Rex</div>
+              <div class="agent-role">Marketing &amp; Growth</div>
+            </div>
+          </div>
+          <div class="task-bar idle">No active task</div>
+          <div class="agent-footer">
+            <span><span class="status-dot offline"></span>Idle</span>
+            <span>last active 5h ago</span>
+          </div>
+          <div class="workstation-actions">
+            <button class="workstation-action">Message</button>
+            <button class="workstation-action">Assign Task</button>
+          </div>
+        </div>
+
+        <!-- Zara (Idle) -->
+        <div class="workstation reveal" style="transition-delay:240ms">
+          <div class="terminal idle">&gt; standby</div>
+          <div class="monitor-stand"></div>
+          <div class="agent-info">
+            <div class="agent-avatar" style="background:#E8A87C">Za<span class="avatar-status online"></span></div>
+            <div class="agent-details">
+              <div class="agent-name">Zara</div>
+              <div class="agent-role">Dev &amp; Automation</div>
+            </div>
+          </div>
+          <div class="task-bar idle">No active task</div>
+          <div class="agent-footer">
+            <span><span class="status-dot offline"></span>Idle</span>
+            <span>last active 1h ago</span>
+          </div>
+          <div class="workstation-actions">
+            <button class="workstation-action">Message</button>
+            <button class="workstation-action">Assign Task</button>
+          </div>
+        </div>
+
+        <!-- Mara (Idle) -->
+        <div class="workstation reveal" style="transition-delay:320ms">
+          <div class="terminal idle">&gt; standby</div>
+          <div class="monitor-stand"></div>
+          <div class="agent-info">
+            <div class="agent-avatar" style="background:#E87CA8">Ma<span class="avatar-status offline"></span></div>
+            <div class="agent-details">
+              <div class="agent-name">Mara</div>
+              <div class="agent-role">Content &amp; Copy</div>
+            </div>
+          </div>
+          <div class="task-bar idle">No active task</div>
+          <div class="agent-footer">
+            <span><span class="status-dot offline"></span>Idle</span>
+            <span>last active 3h ago</span>
+          </div>
+          <div class="workstation-actions">
+            <button class="workstation-action">Message</button>
+            <button class="workstation-action">Assign Task</button>
+          </div>
+        </div>
+
+        <!-- Nile (Idle) -->
+        <div class="workstation reveal" style="transition-delay:400ms">
+          <div class="terminal idle">&gt; standby</div>
+          <div class="monitor-stand"></div>
+          <div class="agent-info">
+            <div class="agent-avatar" style="background:#7CD4E8">Ni<span class="avatar-status online"></span></div>
+            <div class="agent-details">
+              <div class="agent-name">Nile</div>
+              <div class="agent-role">Research &amp; Intel</div>
+            </div>
+          </div>
+          <div class="task-bar idle">No active task</div>
+          <div class="agent-footer">
+            <span><span class="status-dot offline"></span>Idle</span>
+            <span>last active 6h ago</span>
+          </div>
+          <div class="workstation-actions">
+            <button class="workstation-action">Message</button>
+            <button class="workstation-action">Assign Task</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Team -->
+    <section class="tab-panel" id="panel-team">
+
+      <div class="view-toggle-toolbar">
+        <div class="view-toggle" id="team-view-toggle">
+          <button class="view-toggle-btn active" data-view="cards">Cards</button>
+          <button class="view-toggle-btn" data-view="table">Table</button>
+        </div>
+      </div>
+
+      <!-- Card View -->
+      <div id="team-card-view">
+
+      <!-- COMMAND -->
+      <div class="dept-command">
+        <h2 class="dept-label reveal" style="--dept-accent:var(--pill-active-text)">Command</h2>
+        <div class="team-grid">
+          <div class="team-card dept-command reveal" style="transition-delay:0ms">
+            <div class="team-card-header">
+              <div class="team-card-emoji"><div class="agent-avatar agent-avatar-lg" style="background:#7C9EF5">Pi</div></div>
+              <div class="team-card-meta">
+                <div class="team-card-name">Piia</div>
+                <div class="team-card-title">Chief Strategist</div>
+              </div>
+              <span class="pill pill-done">Active</span>
+            </div>
+            <ul class="team-card-resp">
+              <li>Session orchestration &amp; routing</li>
+              <li>Cross-agent task coordination</li>
+              <li>User intent parsing &amp; prioritisation</li>
+              <li>Strategic planning &amp; goal tracking</li>
+              <li>Escalation &amp; conflict resolution</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- OPERATIONS -->
+      <div class="dept-ops">
+        <h2 class="dept-label reveal" style="--dept-accent:var(--pill-done-text)">Operations</h2>
+        <div class="team-grid">
+          <div class="team-card dept-ops reveal" style="transition-delay:0ms">
+            <div class="team-card-header">
+              <div class="team-card-emoji"><div class="agent-avatar agent-avatar-lg" style="background:#B07CE8">Ka</div></div>
+              <div class="team-card-meta">
+                <div class="team-card-name">Kat</div>
+                <div class="team-card-title">OFM Operations</div>
+              </div>
+              <span class="pill pill-idle">Idle</span>
+            </div>
+            <ul class="team-card-resp">
+              <li>Content scheduling &amp; publishing</li>
+              <li>Fan engagement &amp; messaging</li>
+              <li>Revenue tracking &amp; reporting</li>
+              <li>PPV campaign management</li>
+              <li>Platform compliance monitoring</li>
+            </ul>
+          </div>
+          <div class="team-card dept-ops reveal" style="transition-delay:80ms">
+            <div class="team-card-header">
+              <div class="team-card-emoji"><div class="agent-avatar agent-avatar-lg" style="background:#5CB85C">Re</div></div>
+              <div class="team-card-meta">
+                <div class="team-card-name">Rex</div>
+                <div class="team-card-title">Marketing &amp; Growth</div>
+              </div>
+              <span class="pill pill-idle">Idle</span>
+            </div>
+            <ul class="team-card-resp">
+              <li>Social media strategy &amp; posting</li>
+              <li>Audience growth &amp; retention</li>
+              <li>Campaign planning &amp; execution</li>
+              <li>Trend capitalisation &amp; virality</li>
+              <li>Cross-platform optimisation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- BUILD -->
+      <div class="dept-build">
+        <h2 class="dept-label reveal" style="--dept-accent:var(--pill-progress-text)">Build</h2>
+        <div class="team-grid">
+          <div class="team-card dept-build reveal" style="transition-delay:0ms">
+            <div class="team-card-header">
+              <div class="team-card-emoji"><div class="agent-avatar agent-avatar-lg" style="background:#E8A87C">Za</div></div>
+              <div class="team-card-meta">
+                <div class="team-card-name">Zara</div>
+                <div class="team-card-title">Dev &amp; Automation</div>
+              </div>
+              <span class="pill pill-idle">Idle</span>
+            </div>
+            <ul class="team-card-resp">
+              <li>Tool &amp; skill development</li>
+              <li>Workflow automation scripts</li>
+              <li>Infrastructure &amp; deployment ops</li>
+              <li>API integrations &amp; webhooks</li>
+              <li>System monitoring &amp; alerts</li>
+            </ul>
+          </div>
+          <div class="team-card dept-build reveal" style="transition-delay:80ms">
+            <div class="team-card-header">
+              <div class="team-card-emoji"><div class="agent-avatar agent-avatar-lg" style="background:#E87CA8">Ma</div></div>
+              <div class="team-card-meta">
+                <div class="team-card-name">Mara</div>
+                <div class="team-card-title">Content &amp; Copy</div>
+              </div>
+              <span class="pill pill-idle">Idle</span>
+            </div>
+            <ul class="team-card-resp">
+              <li>Caption &amp; bio writing</li>
+              <li>Script drafting &amp; storyboarding</li>
+              <li>Brand voice &amp; tone consistency</li>
+              <li>Content calendar planning</li>
+              <li>Copy editing &amp; proofreading</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- INTELLIGENCE -->
+      <div class="dept-intel">
+        <h2 class="dept-label reveal" style="--dept-accent:var(--pill-waiting-text)">Intelligence</h2>
+        <div class="team-grid">
+          <div class="team-card dept-intel reveal" style="transition-delay:0ms">
+            <div class="team-card-header">
+              <div class="team-card-emoji"><div class="agent-avatar agent-avatar-lg" style="background:#7CD4E8">Ni</div></div>
+              <div class="team-card-meta">
+                <div class="team-card-name">Nile</div>
+                <div class="team-card-title">Research &amp; Intel</div>
+              </div>
+              <span class="pill pill-idle">Idle</span>
+            </div>
+            <ul class="team-card-resp">
+              <li>Market research &amp; benchmarking</li>
+              <li>Competitor analysis &amp; tracking</li>
+              <li>Trend forecasting &amp; signals</li>
+              <li>Audience insight reports</li>
+              <li>Platform policy &amp; algorithm intel</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      </div><!-- /team-card-view -->
+
+      <!-- Table View -->
+      <div id="team-table-view" style="display:none">
+        <div class="data-table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th class="data-th">Agent</th>
+                <th class="data-th">Role</th>
+                <th class="data-th">Department</th>
+                <th class="data-th">Status</th>
+                <th class="data-th">Key Responsibilities</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="data-row">
+                <td class="data-td"><span style="display:inline-flex;align-items:center;gap:8px"><span class="agent-avatar agent-avatar-sm" style="background:#7C9EF5">Pi</span> Piia</span></td>
+                <td class="data-td">Chief Strategist</td>
+                <td class="data-td">Command</td>
+                <td class="data-td"><span class="pill pill-done">Active</span></td>
+                <td class="data-td" style="color:var(--text-2);font-size:14px">Session orchestration, cross-agent coordination, strategic planning</td>
+              </tr>
+              <tr class="data-row">
+                <td class="data-td"><span style="display:inline-flex;align-items:center;gap:8px"><span class="agent-avatar agent-avatar-sm" style="background:#B07CE8">Ka</span> Kat</span></td>
+                <td class="data-td">OFM Operations</td>
+                <td class="data-td">Operations</td>
+                <td class="data-td"><span class="pill pill-idle">Idle</span></td>
+                <td class="data-td" style="color:var(--text-2);font-size:14px">Content scheduling, fan engagement, revenue tracking</td>
+              </tr>
+              <tr class="data-row">
+                <td class="data-td"><span style="display:inline-flex;align-items:center;gap:8px"><span class="agent-avatar agent-avatar-sm" style="background:#5CB85C">Re</span> Rex</span></td>
+                <td class="data-td">Marketing &amp; Growth</td>
+                <td class="data-td">Operations</td>
+                <td class="data-td"><span class="pill pill-idle">Idle</span></td>
+                <td class="data-td" style="color:var(--text-2);font-size:14px">Social media strategy, audience growth, campaign execution</td>
+              </tr>
+              <tr class="data-row">
+                <td class="data-td"><span style="display:inline-flex;align-items:center;gap:8px"><span class="agent-avatar agent-avatar-sm" style="background:#E8A87C">Za</span> Zara</span></td>
+                <td class="data-td">Dev &amp; Automation</td>
+                <td class="data-td">Build</td>
+                <td class="data-td"><span class="pill pill-idle">Idle</span></td>
+                <td class="data-td" style="color:var(--text-2);font-size:14px">Tool development, workflow automation, infrastructure ops</td>
+              </tr>
+              <tr class="data-row">
+                <td class="data-td"><span style="display:inline-flex;align-items:center;gap:8px"><span class="agent-avatar agent-avatar-sm" style="background:#E87CA8">Ma</span> Mara</span></td>
+                <td class="data-td">Content &amp; Copy</td>
+                <td class="data-td">Build</td>
+                <td class="data-td"><span class="pill pill-idle">Idle</span></td>
+                <td class="data-td" style="color:var(--text-2);font-size:14px">Caption writing, script drafting, brand voice consistency</td>
+              </tr>
+              <tr class="data-row">
+                <td class="data-td"><span style="display:inline-flex;align-items:center;gap:8px"><span class="agent-avatar agent-avatar-sm" style="background:#7CD4E8">Ni</span> Nile</span></td>
+                <td class="data-td">Research &amp; Intel</td>
+                <td class="data-td">Intelligence</td>
+                <td class="data-td"><span class="pill pill-idle">Idle</span></td>
+                <td class="data-td" style="color:var(--text-2);font-size:14px">Market research, competitor analysis, trend forecasting</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Projects -->
+    <section class="tab-panel" id="panel-projects">
+
+      <!-- Stats + Toggle Row -->
+      <div class="projects-toolbar reveal">
+        <div class="office-stats">
+          <div class="stat-chip"><div class="stat-chip-value">5</div><div class="stat-chip-label">Total</div></div>
+          <div class="stat-chip"><div class="stat-chip-value">2</div><div class="stat-chip-label">Active</div></div>
+          <div class="stat-chip"><div class="stat-chip-value">2</div><div class="stat-chip-label">Planning</div></div>
+          <div class="stat-chip"><div class="stat-chip-value">1</div><div class="stat-chip-label">Idea</div></div>
+        </div>
+        <div class="view-toggle" id="projects-view-toggle">
+          <button class="view-toggle-btn active" data-view="cards">Cards</button>
+          <button class="view-toggle-btn" data-view="table">Table</button>
+        </div>
+      </div>
+
+      <!-- Card View -->
+      <div id="projects-card-view">
+      <div class="projects-grid">
+
+        <!-- P1: OFM Agency -->
+        <div class="project-card reveal" style="transition-delay:0ms">
+          <div class="project-top">
+            <span class="project-priority">P1</span>
+            <span class="project-name">OFM Agency</span>
+            <span class="pill pill-done">Active</span>
+          </div>
+          <div class="project-desc">Building creator management agency with content workflows, fan messaging systems, scaling playbooks.</div>
+          <div class="project-agents">
+            <span class="agent-chip"><span class="agent-avatar agent-avatar-sm" style="background:#B07CE8">Ka</span> Kat</span>
+            <span class="agent-chip"><span class="agent-avatar agent-avatar-sm" style="background:#E87CA8">Ma</span> Mara</span>
+            <span class="agent-chip"><span class="agent-avatar agent-avatar-sm" style="background:#5CB85C">Re</span> Rex</span>
+          </div>
+          <ul class="project-threads">
+            <li>Recruit first 2 creators</li>
+            <li>Build fan messaging SOP</li>
+            <li>Set up content calendar</li>
+          </ul>
+        </div>
+
+        <!-- P2: Lagoon Company -->
+        <div class="project-card reveal" style="transition-delay:80ms">
+          <div class="project-top">
+            <span class="project-priority">P2</span>
+            <span class="project-name">Lagoon Company</span>
+            <span class="pill pill-active">Active</span>
+          </div>
+          <div class="project-desc">ATV/UTV/buggy rental company Tulum, main income since 2021.</div>
+          <div class="project-agents">
+            <span class="agent-chip"><span class="agent-avatar agent-avatar-sm" style="background:#5CB85C">Re</span> Rex</span>
+          </div>
+          <ul class="project-threads">
+            <li>Google Ads optimisation</li>
+            <li>Instagram growth</li>
+            <li>Fleet maintenance schedule</li>
+          </ul>
+        </div>
+
+        <!-- P3: Hilltop Villa - Oaxaca -->
+        <div class="project-card reveal" style="transition-delay:160ms">
+          <div class="project-top">
+            <span class="project-priority">P3</span>
+            <span class="project-name">Hilltop Villa &mdash; Oaxaca</span>
+            <span class="pill pill-waiting">Planning</span>
+          </div>
+          <div class="project-desc">Ocean-view Oaxaca land, rammed-earth construction (Sirewall).</div>
+          <div class="project-agents">
+            <span class="agent-chip"><span class="agent-avatar agent-avatar-sm" style="background:#7CD4E8">Ni</span> Nile</span>
+            <span class="agent-chip"><span class="agent-avatar agent-avatar-sm" style="background:#E8A87C">Za</span> Zara</span>
+          </div>
+          <ul class="project-threads">
+            <li>Site survey</li>
+            <li>Construction cost estimate</li>
+            <li>Permit research</li>
+          </ul>
+        </div>
+
+        <!-- P4: Farm / Off-Grid -->
+        <div class="project-card reveal" style="transition-delay:240ms">
+          <div class="project-top">
+            <span class="project-priority">P4</span>
+            <span class="project-name">Farm / Off-Grid</span>
+            <span class="pill pill-waiting">Planning</span>
+          </div>
+          <div class="project-desc">Off-grid Oaxaca farm: livestock, poultry, solar, LiFePO4 batteries.</div>
+          <div class="project-agents">
+            <span class="agent-chip"><span class="agent-avatar agent-avatar-sm" style="background:#7CD4E8">Ni</span> Nile</span>
+          </div>
+          <ul class="project-threads">
+            <li>Poultry setup cost</li>
+            <li>Solar sizing</li>
+            <li>Water system options</li>
+          </ul>
+        </div>
+
+        <!-- P5: App Development -->
+        <div class="project-card reveal" style="transition-delay:320ms">
+          <div class="project-top">
+            <span class="project-priority">P5</span>
+            <span class="project-name">App Development</span>
+            <span class="pill pill-backlog">Idea</span>
+          </div>
+          <div class="project-desc">Farmers direct-to-customer app Puerto Escondido.</div>
+          <div class="project-agents">
+            <span class="agent-chip"><span class="agent-avatar agent-avatar-sm" style="background:#E8A87C">Za</span> Zara</span>
+          </div>
+          <ul class="project-threads">
+            <li>Market validation</li>
+            <li>Tech stack decision</li>
+            <li>MVP scope</li>
+          </ul>
+        </div>
+
+      </div>
+      </div><!-- /projects-card-view -->
+
+      <!-- Table View -->
+      <div id="projects-table-view" style="display:none">
+        <div class="data-table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th class="data-th">Project</th>
+                <th class="data-th">Status</th>
+                <th class="data-th">Priority</th>
+                <th class="data-th">Agent(s)</th>
+                <th class="data-th">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="data-row">
+                <td class="data-td">OFM Agency</td>
+                <td class="data-td"><span class="pill pill-done">Active</span></td>
+                <td class="data-td">P1</td>
+                <td class="data-td"><span style="display:inline-flex;gap:4px"><span class="agent-avatar agent-avatar-sm" style="background:#B07CE8">Ka</span><span class="agent-avatar agent-avatar-sm" style="background:#E87CA8">Ma</span><span class="agent-avatar agent-avatar-sm" style="background:#5CB85C">Re</span></span></td>
+                <td class="data-td" style="color:var(--text-2);font-size:14px">Creator management agency with content workflows &amp; scaling playbooks</td>
+              </tr>
+              <tr class="data-row">
+                <td class="data-td">Lagoon Company</td>
+                <td class="data-td"><span class="pill pill-active">Active</span></td>
+                <td class="data-td">P2</td>
+                <td class="data-td"><span style="display:inline-flex;gap:4px"><span class="agent-avatar agent-avatar-sm" style="background:#5CB85C">Re</span></span></td>
+                <td class="data-td" style="color:var(--text-2);font-size:14px">ATV/UTV/buggy rental company Tulum, main income since 2021</td>
+              </tr>
+              <tr class="data-row">
+                <td class="data-td">Hilltop Villa &mdash; Oaxaca</td>
+                <td class="data-td"><span class="pill pill-waiting">Planning</span></td>
+                <td class="data-td">P3</td>
+                <td class="data-td"><span style="display:inline-flex;gap:4px"><span class="agent-avatar agent-avatar-sm" style="background:#7CD4E8">Ni</span><span class="agent-avatar agent-avatar-sm" style="background:#E8A87C">Za</span></span></td>
+                <td class="data-td" style="color:var(--text-2);font-size:14px">Ocean-view Oaxaca land, rammed-earth construction (Sirewall)</td>
+              </tr>
+              <tr class="data-row">
+                <td class="data-td">Farm / Off-Grid</td>
+                <td class="data-td"><span class="pill pill-waiting">Planning</span></td>
+                <td class="data-td">P4</td>
+                <td class="data-td"><span style="display:inline-flex;gap:4px"><span class="agent-avatar agent-avatar-sm" style="background:#7CD4E8">Ni</span></span></td>
+                <td class="data-td" style="color:var(--text-2);font-size:14px">Off-grid Oaxaca farm: livestock, poultry, solar, LiFePO4 batteries</td>
+              </tr>
+              <tr class="data-row">
+                <td class="data-td">App Development</td>
+                <td class="data-td"><span class="pill pill-backlog">Idea</span></td>
+                <td class="data-td">P5</td>
+                <td class="data-td"><span style="display:inline-flex;gap:4px"><span class="agent-avatar agent-avatar-sm" style="background:#E8A87C">Za</span></span></td>
+                <td class="data-td" style="color:var(--text-2);font-size:14px">Farmers direct-to-customer app Puerto Escondido</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Inbox / Kanban -->
+    <section class="tab-panel" id="panel-inbox">
+
+      <!-- Toolbar: metrics/filters + view toggle on same row -->
+      <div class="kb-toolbar">
+        <div class="inbox-filters" id="kb-filters" style="display:none">
+          <button class="inbox-filter active" data-filter="all">All</button>
+          <button class="inbox-filter" data-filter="active">Active</button>
+          <button class="inbox-filter" data-filter="mine">Mine</button>
+          <button class="inbox-filter" data-filter="agent">Agent</button>
+          <button class="inbox-filter" data-filter="done">Done</button>
+        </div>
+        <div class="kb-metrics" id="kb-metrics">
+          <div class="kb-metric">
+            <div class="kb-metric-value" id="kb-metric-week">0</div>
+            <div class="kb-metric-label">This Week</div>
+          </div>
+          <div class="kb-metric">
+            <div class="kb-metric-value" id="kb-metric-progress">0</div>
+            <div class="kb-metric-label">In Progress</div>
+          </div>
+          <div class="kb-metric">
+            <div class="kb-metric-value" id="kb-metric-total">0</div>
+            <div class="kb-metric-label">Total</div>
+          </div>
+          <div class="kb-metric">
+            <div class="kb-metric-value" id="kb-metric-pct">0%</div>
+            <div class="kb-metric-label">Completion</div>
+          </div>
+        </div>
+        <div class="kb-view-toggle">
+          <button class="kb-view-btn active" data-view="kanban">Kanban</button>
+          <button class="kb-view-btn" data-view="list">List</button>
+        </div>
+      </div>
+
+      <!-- Kanban Board (rendered by JS) -->
+      <div class="kb-board" id="kb-board"></div>
+
+      <!-- Legacy List View (hidden by default, populated by JS) -->
+      <div class="inbox-columns kb-list-hidden" id="kb-list-view">
+        <div class="inbox-col" data-col="mine">
+          <div class="inbox-col-header">My Actions</div>
+        </div>
+        <div class="inbox-col" data-col="agent">
+          <div class="inbox-col-header">Agent Queue</div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Analytics -->
+    <section class="tab-panel" id="panel-analytics">
+
+      <!-- Date Range -->
+      <div class="analytics-filters">
+        <button class="analytics-filter active" data-range="month">This Month</button>
+        <button class="analytics-filter" data-range="last">Last Month</button>
+        <button class="analytics-filter" data-range="quarter">Last 3 Months</button>
+      </div>
+
+      <!-- OFM AGENCY -->
+      <div class="analytics-section reveal">
+        <div class="analytics-section-header" data-collapse="ofm-analytics">
+          <svg class="analytics-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4,6 8,10 12,6"/></svg>
+          <span class="analytics-section-title" style="--dept-accent:var(--pill-progress-text)">OFM Agency</span><span style="font-size:11px;color:var(--text-3);margin-left:10px;font-weight:400;vertical-align:middle"> figures are estimates, update with real data</span>
+        </div>
+        <div class="analytics-table-wrap" id="ofm-analytics">
+          <table class="analytics-table">
+            <thead><tr>
+              <th class="analytics-th" data-sort="metric">Metric <span class="sort-arrow">&#x25B2;</span></th>
+              <th class="analytics-th" data-sort="value">Current <span class="sort-arrow">&#x25B2;</span></th>
+              <th class="analytics-th" data-sort="change">Change <span class="sort-arrow">&#x25B2;</span></th>
+              <th class="analytics-th">Trend</th>
+              <th class="analytics-th" data-sort="status">Status <span class="sort-arrow">&#x25B2;</span></th>
+            </tr></thead>
+            <tbody id="ofm-analytics-body"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- THE LAGOON COMPANY -->
+      <div class="analytics-section reveal">
+        <div class="analytics-section-header" data-collapse="lagoon-analytics">
+          <svg class="analytics-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4,6 8,10 12,6"/></svg>
+          <span class="analytics-section-title" style="--dept-accent:var(--pill-done-text)">Lagoon Company</span><span style="font-size:11px;color:var(--text-3);margin-left:10px;font-weight:400;vertical-align:middle"> figures are estimates, update with real data</span>
+        </div>
+        <div class="analytics-table-wrap" id="lagoon-analytics">
+          <table class="analytics-table">
+            <thead><tr>
+              <th class="analytics-th" data-sort="metric">Metric <span class="sort-arrow">&#x25B2;</span></th>
+              <th class="analytics-th" data-sort="value">Current <span class="sort-arrow">&#x25B2;</span></th>
+              <th class="analytics-th" data-sort="change">Change <span class="sort-arrow">&#x25B2;</span></th>
+              <th class="analytics-th">Trend</th>
+              <th class="analytics-th" data-sort="status">Status <span class="sort-arrow">&#x25B2;</span></th>
+            </tr></thead>
+            <tbody id="lagoon-analytics-body"></tbody>
+          </table>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Calendar -->
+    <section class="tab-panel" id="panel-calendar">
+
+      <!-- Calendar Toolbar -->
+      <div class="cal-toolbar reveal">
+        <div class="cal-toolbar-left">
+          <h2 class="cal-title" id="cal-title">February 2026</h2>
+          <div class="cal-nav-arrows">
+            <button class="cal-nav-btn" id="cal-prev" aria-label="Previous">&#8249;</button>
+            <button class="cal-nav-btn cal-today-btn" id="cal-today">Today</button>
+            <button class="cal-nav-btn" id="cal-next" aria-label="Next">&#8250;</button>
+          </div>
+        </div>
+        <div class="cal-toolbar-right">
+          <div class="cal-view-toggle">
+            <button class="cal-view-btn active" data-view="month">Month</button>
+            <button class="cal-view-btn" data-view="week">Week</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Calendar Grid (rendered by JS) -->
+      <div id="cal-container" class="reveal"></div>
+
+      <!-- Add Event Modal -->
+      <div class="cal-modal-backdrop" id="cal-modal-backdrop" style="display:none">
+        <div class="cal-modal">
+          <div class="cal-modal-header">
+            <span class="cal-modal-title">Add Event</span>
+            <button class="cal-modal-close" id="cal-modal-close">&times;</button>
+          </div>
+          <div class="cal-modal-body">
+            <input class="cal-form-input" id="cal-event-title" type="text" placeholder="Event title..." autocomplete="off">
+            <input class="cal-form-input" id="cal-event-time" type="time">
+            <div class="cal-color-picker" id="cal-color-picker"></div>
+            <input type="hidden" id="cal-event-date">
+            <input type="hidden" id="cal-event-color" value="#6BA8DA">
+          </div>
+          <div class="cal-modal-footer">
+            <button class="cal-form-cancel" id="cal-modal-cancel">Cancel</button>
+            <button class="cal-form-save" id="cal-modal-save">Add Event</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Milestones -->
+      <h2 class="dept-label reveal" style="margin-top:32px">Upcoming Milestones</h2>
+      <div class="milestone-strip">
+        <div class="milestone-card cat-life reveal" style="transition-delay:0ms">
+          <div class="milestone-cat-label"><span class="milestone-cat-icon">&#x2708;</span> Life</div>
+          <div class="milestone-name">Move to Puerto Escondido</div>
+          <div class="milestone-date">May 2026</div>
+        </div>
+        <div class="milestone-card cat-personal reveal" style="transition-delay:80ms">
+          <div class="milestone-cat-label"><span class="milestone-cat-icon">&#x1F476;</span> Personal</div>
+          <div class="milestone-name">Baby due &mdash; Bianca</div>
+          <div class="milestone-date">Aug 15, 2026</div>
+        </div>
+        <div class="milestone-card cat-business reveal" style="transition-delay:160ms">
+          <div class="milestone-cat-label"><span class="milestone-cat-icon">&#x1F4BC;</span> Business</div>
+          <div class="milestone-name">OFM first creator</div>
+          <div class="milestone-date">Mar 2026</div>
+        </div>
+        <div class="milestone-card cat-business reveal" style="transition-delay:240ms">
+          <div class="milestone-cat-label"><span class="milestone-cat-icon">&#x1F4BC;</span> Business</div>
+          <div class="milestone-name">Lagoon high season</div>
+          <div class="milestone-date">Dec 2026</div>
+        </div>
+        <div class="milestone-card cat-property reveal" style="transition-delay:320ms">
+          <div class="milestone-cat-label"><span class="milestone-cat-icon">&#x1F3E0;</span> Property</div>
+          <div class="milestone-name">Hilltop Villa survey</div>
+          <div class="milestone-date">TBD</div>
+        </div>
+        <div class="milestone-card cat-farm reveal" style="transition-delay:400ms">
+          <div class="milestone-cat-label"><span class="milestone-cat-icon">&#x1F331;</span> Farm</div>
+          <div class="milestone-name">Farm setup start</div>
+          <div class="milestone-date">TBD</div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Focus -->
+    <section class="tab-panel" id="panel-focus">
+      <div class="focus-wrap">
+
+        <select class="focus-select" id="focus-project-select">
+          <option value="ofm">OFM Agency</option>
+          <option value="lagoon">Lagoon Company</option>
+          <option value="crete">Hilltop Villa &mdash; Oaxaca</option>
+          <option value="farm">Farm / Off-Grid</option>
+          <option value="app">App Development</option>
+        </select>
+
+        <div id="focus-content"></div>
+
+      </div>
+    </section>
+
+    <!-- Memory -->
+    <section class="tab-panel" id="panel-memory">
+      <div class="mem-wrap">
+
+        <!-- Search bar -->
+        <div class="mem-search-wrap">
+          <svg class="mem-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" class="mem-search" id="mem-search-input" placeholder="Search memory...">
+        </div>
+
+        <!-- Section 1: Key People (open by default) -->
+        <div class="mem-section open reveal" data-mem-section style="transition-delay:0ms">
+          <div class="mem-section-header" onclick="this.parentElement.classList.toggle('open')">
+            <span class="mem-section-title">Key People</span>
+            <svg class="mem-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="mem-section-body">
+            <div class="mem-section-inner">
+              <div class="mem-people-grid">
+
+                <div class="mem-person mem-card" data-mem-text="bianca fiancee ofm agency argentinian partner">
+                  <div class="mem-person-name">Bianca</div>
+                  <div class="mem-person-role">Fianc&eacute;e &amp; OFM Partner</div>
+                  <div class="mem-person-detail">Fianc&eacute;e. Argentinian, US citizen. Pregnant - due ~August 15, 2026. Transitioning to permanent Mexican residency. Partner in OFM Agency.</div>
+                </div>
+
+                <div class="mem-person mem-card" data-mem-text="shiloh son child costa rica silvia">
+                  <div class="mem-person-name">Shiloh</div>
+                  <div class="mem-person-role">Son</div>
+                  <div class="mem-person-detail">Son. Born 2020, Hammersmith Hospital, London. Mother is Silvia.</div>
+                </div>
+
+                <div class="mem-person mem-card" data-mem-text="zona twin brother family">
+                  <div class="mem-person-name">Zona</div>
+                  <div class="mem-person-role">Twin Brother</div>
+                  <div class="mem-person-detail">Twin brother.</div>
+                </div>
+
+                <div class="mem-person mem-card" data-mem-text="dubi eldest brother lagoon company co-founder co-owner nigerian tulum maya nori">
+                  <div class="mem-person-name">Dubi</div>
+                  <div class="mem-person-role">Eldest Brother &amp; Lagoon Co-Owner</div>
+                  <div class="mem-person-detail">Eldest brother. Co-owner of Lagoon Company with Beno and his wife Linea. Based in Tulum. Kids: Maya and Nori.</div>
+                </div>
+
+                <div class="mem-person mem-card" data-mem-text="linea lagoon company co-owner dubi wife tulum">
+                  <div class="mem-person-name">Linea</div>
+                  <div class="mem-person-role">Lagoon Co-Owner</div>
+                  <div class="mem-person-detail">Dubi's wife. Co-owner of Lagoon Company with Dubi and Beno.</div>
+                </div>
+
+                <div class="mem-person mem-card" data-mem-text="silvia baby mama shiloh mother costa rica">
+                  <div class="mem-person-name">Silvia</div>
+                  <div class="mem-person-role">Shiloh's Mother</div>
+                  <div class="mem-person-detail">Mother of Shiloh. Based in Costa Rica.</div>
+                </div>
+
+                <div class="mem-person mem-card" data-mem-text="kevin scout ofm agency models">
+                  <div class="mem-person-name">Kevin</div>
+                  <div class="mem-person-role">OFM Scout</div>
+                  <div class="mem-person-detail">OFM scout sourcing models/creators. Wants 40% cut. Beno countering at 10%. Called today - no answer. Trying again tomorrow.</div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 2: Business Quick Facts (collapsed) -->
+        <div class="mem-section reveal" data-mem-section style="transition-delay:80ms">
+          <div class="mem-section-header" onclick="this.parentElement.classList.toggle('open')">
+            <span class="mem-section-title">Business Quick Facts</span>
+            <svg class="mem-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="mem-section-body">
+            <div class="mem-section-inner">
+              <div class="mem-facts">
+
+                <div class="mem-fact mem-card" data-mem-text="lagoon company atv rentals can-am tours tulum dubi">
+                  <span class="mem-fact-label">Lagoon Company</span>
+                  <span class="mem-fact-value">ATV/UTV/buggy rental business in Tulum. Operating since 2021. Co-owned by Beno, Dubi (eldest brother), and Linea (Dubi's wife). Primary revenue source. Also runs eco-yacht tours on Nopalitos lagoon - only operator in Tulum.</span>
+                </div>
+
+                <div class="mem-fact mem-card" data-mem-text="ofm agency onlyfans management bianca fanvue">
+                  <span class="mem-fact-label">OFM Agency</span>
+                  <span class="mem-fact-value">#1 priority. OnlyFans management agency. Co-run with Bianca. Building workflows for real and AI models on Fanvue. TikTok → IG → OF funnel. 5 chatters on standby. Kevin scouting models (cut negotiation ongoing).</span>
+                </div>
+
+                <div class="mem-fact mem-card" data-mem-text="bloomingflora horticulture equipment cancelled failed">
+                  <span class="mem-fact-label">Bloomingflora</span>
+                  <span class="mem-fact-value">Indoor horticulture equipment company. Cancelled. Generated close to $500k revenue in one year before shutting down.</span>
+                </div>
+
+                <div class="mem-fact mem-card" data-mem-text="sirewall rammed earth construction building sustainable">
+                  <span class="mem-fact-label">Sirewall</span>
+                  <span class="mem-fact-value">Rammed-earth construction system. Being evaluated for the Hilltop Villa build in Oaxaca. Known for thermal mass and sustainability.</span>
+                </div>
+
+                <div class="mem-fact mem-card" data-mem-text="location tulum oaxaca puerto escondido mexico move">
+                  <span class="mem-fact-label">Location</span>
+                  <span class="mem-fact-value">Currently in Tulum. Moving to Puerto Escondido / Oaxaca area May 2026. Ocean-view land acquired for Hilltop Villa + separate farm plot.</span>
+                </div>
+
+                <div class="mem-fact mem-card" data-mem-text="nationality nigerian beno entrepreneur">
+                  <span class="mem-fact-label">B&#x0113;no</span>
+                  <span class="mem-fact-value">Nigerian. Entrepreneur &amp; CMO. DISC type: DI (Dominant/Influencing). Driven by ROI, power, and fear of mediocrity. Christian faith as grounding element.</span>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 3: Key Decisions (collapsed) -->
+        <div class="mem-section reveal" data-mem-section style="transition-delay:160ms">
+          <div class="mem-section-header" onclick="this.parentElement.classList.toggle('open')">
+            <span class="mem-section-title">Key Decisions</span>
+            <svg class="mem-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="mem-section-body">
+            <div class="mem-section-inner">
+              <div class="mem-decisions">
+
+                <div class="mem-decision mem-card" data-mem-text="puerto escondido move relocation oaxaca mexico tulum">
+                  <div class="mem-decision-title">Moving to Puerto Escondido</div>
+                  <div class="mem-decision-text">Relocating from Tulum to Puerto Escondido, Oaxaca in May 2026. Proximity to land for Hilltop Villa and farm projects. Personal vehicle fleet moving too.</div>
+                </div>
+
+                <div class="mem-decision mem-card" data-mem-text="oaxaca land property hilltop villa farm build">
+                  <div class="mem-decision-title">Acquired land in Oaxaca</div>
+                  <div class="mem-decision-text">Purchased ocean-view land for the Hilltop Villa project and a separate plot for the off-grid farm. Both in the greater Oaxaca coast area.</div>
+                </div>
+
+                <div class="mem-decision mem-card" data-mem-text="fear mediocrity ambition drive excellence">
+                  <div class="mem-decision-title">Fear of mediocrity as a driver</div>
+                  <div class="mem-decision-text">Core personal value: the fear of living a mediocre life is a primary motivator. Prefers bold moves and calculated risks over comfortable stagnation.</div>
+                </div>
+
+                <div class="mem-decision mem-card" data-mem-text="christian faith religion values belief">
+                  <div class="mem-decision-title">Christian faith</div>
+                  <div class="mem-decision-text">Faith is a grounding element. Influences long-term decisions, ethical framework, and perspective on purpose and stewardship.</div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 4: Contacts (collapsed) -->
+        <div class="mem-section reveal" data-mem-section style="transition-delay:240ms">
+          <div class="mem-section-header" onclick="this.parentElement.classList.toggle('open')">
+            <span class="mem-section-title">Contacts</span>
+            <svg class="mem-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="mem-section-body">
+            <div class="mem-section-inner">
+              <div class="mem-contacts-grid">
+
+                <div class="mem-contact-empty mem-card" data-mem-text="">
+                  <div class="mem-contact-plus">+</div>
+                  <div class="mem-contact-label">Add contact</div>
+                </div>
+
+                <div class="mem-contact-empty mem-card" data-mem-text="">
+                  <div class="mem-contact-plus">+</div>
+                  <div class="mem-contact-label">Add contact</div>
+                </div>
+
+                <div class="mem-contact-empty mem-card" data-mem-text="">
+                  <div class="mem-contact-plus">+</div>
+                  <div class="mem-contact-label">Add contact</div>
+                </div>
+
+                <div class="mem-contact-empty mem-card" data-mem-text="">
+                  <div class="mem-contact-plus">+</div>
+                  <div class="mem-contact-label">Add contact</div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======== JAVASCRIPT ======== -->
+  <script>
+    /* ---- Kanban: Data Model ---- */
+    var KANBAN_COLUMNS = ['todo', 'inprogress', 'review', 'backlog', 'recurring', 'completed'];
+    var KANBAN_COLUMN_LABELS = {
+      todo: 'To Do', inprogress: 'In Progress', review: 'Review',
+      backlog: 'Backlog', recurring: 'Recurring', completed: 'Completed'
+    };
+    var KANBAN_PROJECTS = ['OFM Agency', 'Lagoon Company', 'Hilltop Villa', 'Farm / Off-Grid', 'App Development', 'OpenClaw'];
+    var KANBAN_AGENTS = [
+      { name: 'Piia', color: '#7C9EF5' },
+      { name: 'Kat',  color: '#B07CE8' },
+      { name: 'Rex',  color: '#5CB85C' },
+      { name: 'Zara', color: '#E8A87C' },
+      { name: 'Mara', color: '#E87CA8' },
+      { name: 'Nile', color: '#7CD4E8' }
+    ];
+
+    /* ---- Agent Avatar Helpers ---- */
+    function agentColor(name) {
+      for (var i = 0; i < KANBAN_AGENTS.length; i++) {
+        if (KANBAN_AGENTS[i].name === name) return KANBAN_AGENTS[i].color;
+      }
+      return '#555555';
+    }
+    function agentAvatar(name, sizeClass) {
+      var initials = name.substring(0, 2);
+      var color = agentColor(name);
+      var cls = 'agent-avatar' + (sizeClass ? ' ' + sizeClass : '');
+      return '<div class="' + cls + '" style="background:' + color + '">' + initials + '</div>';
+    }
+    var KANBAN_PRIORITIES = ['Urgent', 'High', 'Medium', 'Low'];
+    var kanbanNextId = 100;
+    function kanbanId() { return 'kb-' + (kanbanNextId++); }
+
+    var kanbanTasks = [
+      { id: kanbanId(), title: 'Counter Kevin on agency cut', description: 'Kevin wants 40%. Counter at 10%. Draft the message and send - this has been sitting too long.', project: 'OFM Agency', priority: 'Urgent', agent: 'Beno', status: 'todo', createdAt: Date.now(), movedAt: Date.now() },
+      { id: kanbanId(), title: 'Create Fanvue AI model account', description: 'Set up the AI model account on Fanvue - full creation and setup flow. Can walk through it together.', project: 'OFM Agency', priority: 'Urgent', agent: 'Beno', status: 'todo', createdAt: Date.now(), movedAt: Date.now() },
+      { id: kanbanId(), title: 'Review OFM course', description: 'Go through the course on AI model creation and OnlyFans workflows. Foundation for everything else in OFM.', project: 'OFM Agency', priority: 'High', agent: 'Beno', status: 'todo', createdAt: Date.now(), movedAt: Date.now() },
+      { id: kanbanId(), title: 'Set up ComfyUI for AI model generation', description: 'Desktop app downloaded. Need to configure base model (Flux.1 Dev recommended), train first character LoRA. Running on vast.ai GPU.', project: 'OFM Agency', priority: 'High', agent: 'Beno', status: 'inprogress', createdAt: Date.now(), movedAt: Date.now() },
+      { id: kanbanId(), title: 'Finalise eco-yacht Facebook ad', description: 'Option 1 copy approved. Headline: "We\'re the only ones running this. Literally the only ones." - ready to launch.', project: 'Lagoon Company', priority: 'High', agent: 'Beno', status: 'review', createdAt: Date.now(), movedAt: Date.now() },
+      { id: kanbanId(), title: 'Puerto Escondido fleet strategy', description: 'Called contact - recommendation: target La Punta (affluent tourist zone). Either partner with someone there or operate directly. Premium vehicles (Can-Am, Polaris) are well-suited.', project: 'Lagoon Company', priority: 'Medium', agent: 'Beno', status: 'completed', createdAt: Date.now(), movedAt: Date.now() },
+      { id: kanbanId(), title: 'Set up Discord bot', description: 'Log into discord.com/developers/applications with balsas.clawsbx account. Create app named Piia, generate bot token, enable Message Content Intent, invite to server. Send token to Piia.', project: 'OpenClaw', priority: 'Medium', agent: 'Beno', status: 'todo', createdAt: Date.now(), movedAt: Date.now() },
+      { id: kanbanId(), title: 'Set up WAHA WhatsApp integration', description: 'Install Docker on Mac Mini, run WAHA container, scan QR with Lagoon company phone. Connects Piia to WhatsApp Business as a linked device - no disruption to current setup.', project: 'OpenClaw', priority: 'High', agent: 'Beno', status: 'todo', createdAt: Date.now(), movedAt: Date.now() },
+      { id: kanbanId(), title: 'Condominio fine dispute', description: 'Send contract + all communications to Piia. Tell building admin: "consulting my lawyer before any payment." Dispute letter ready once docs received.', project: 'OpenClaw', priority: 'High', agent: 'Beno', status: 'todo', createdAt: Date.now(), movedAt: Date.now() },
+      { id: kanbanId(), title: 'OpenClaw skills stack setup', description: 'Run openclaw doctor - 31 skills with missing requirements. Priority: GOG (Google Workspace), Discord bot token. GitHub PAT needed for coding-agent and himalaya.', project: 'OpenClaw', priority: 'Medium', agent: 'Beno', status: 'todo', createdAt: Date.now(), movedAt: Date.now() },
+      { id: kanbanId(), title: 'Fix morning-brief & skill-scout delivery', description: 'Root cause found and fixed - both crons now have correct Telegram channel + chat ID in delivery config.', project: 'OpenClaw', priority: 'High', agent: 'Piia', status: 'completed', createdAt: Date.now(), movedAt: Date.now() },
+      { id: kanbanId(), title: 'Pick skill to build: content-pipeline or competitor-watch', description: 'content-pipeline = OFM batch content generator (ComfyUI + vast.ai + IG/TikTok). competitor-watch = structured entity monitoring. Pick one to build next.', project: 'OpenClaw', priority: 'Low', agent: 'Beno', status: 'todo', createdAt: Date.now(), movedAt: Date.now() }
+    ];
+    var kanbanViewMode = 'kanban';
+
+    /* ---- Tab Switching ---- */
+    const tabs = document.querySelectorAll('.sidebar-nav-item');
+    const panels = document.querySelectorAll('.tab-panel');
+
+    var isAnimating = false;
+    var revealObserver;
+
+    function switchTab(tabId) {
+      if (isAnimating) return;
+      var currentPanel = document.querySelector('.tab-panel.active');
+      var newTab = document.querySelector('.sidebar-nav-item[data-tab="' + tabId + '"]');
+      var newPanel = document.getElementById('panel-' + tabId);
+      if (!newTab || !newPanel || currentPanel === newPanel) return;
+
+      isAnimating = true;
+      tabs.forEach(function(t) { t.classList.remove('active'); });
+      newTab.classList.add('active');
+      try { localStorage.setItem('mc-active-tab', tabId); } catch(e) {}
+
+      // On mobile, close sidebar after nav
+      if (window.innerWidth <= 768 && !document.body.classList.contains('sidebar-collapsed')) {
+        document.body.classList.add('sidebar-collapsed');
+      }
+
+      if (currentPanel) {
+        currentPanel.classList.add('tab-exit');
+        setTimeout(function() {
+          currentPanel.classList.remove('active', 'tab-exit');
+          newPanel.classList.add('active', 'tab-enter');
+          // Re-observe reveal elements in new panel
+          if (revealObserver) {
+            newPanel.querySelectorAll('.reveal:not(.revealed)').forEach(function(el) {
+              revealObserver.observe(el);
+            });
+          }
+          setTimeout(function() {
+            newPanel.classList.remove('tab-enter');
+            isAnimating = false;
+          }, 180);
+        }, 180);
+      } else {
+        newPanel.classList.add('active');
+        isAnimating = false;
+      }
+    }
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        switchTab(tab.dataset.tab);
+      });
+    });
+
+    /* ---- Restore last active tab from localStorage ---- */
+    (function() {
+      try {
+        var saved = localStorage.getItem('mc-active-tab');
+        if (saved && saved !== 'office' && document.getElementById('panel-' + saved)) {
+          // Bypass animation for initial load
+          var initPanel = document.querySelector('.tab-panel.active');
+          var initTab = document.querySelector('.sidebar-nav-item[data-tab="' + saved + '"]');
+          var initNewPanel = document.getElementById('panel-' + saved);
+          if (initTab && initNewPanel && initPanel !== initNewPanel) {
+            tabs.forEach(function(t) { t.classList.remove('active'); });
+            if (initPanel) initPanel.classList.remove('active');
+            initTab.classList.add('active');
+            initNewPanel.classList.add('active');
+          }
+        }
+      } catch(e) {}
+    })();
+
+    /* ---- Keyboard Shortcuts (1-8) ---- */
+    const tabIds = ['office', 'inbox', 'projects', 'team', 'calendar', 'analytics', 'focus', 'memory'];
+
+    document.addEventListener('keydown', (e) => {
+      const tag = document.activeElement.tagName;
+      if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || document.activeElement.isContentEditable) return;
+
+      const num = parseInt(e.key);
+      if (num >= 1 && num <= 8) {
+        e.preventDefault();
+        switchTab(tabIds[num - 1]);
+      }
+      if (e.key === '[') {
+        e.preventDefault();
+        toggleSidebar();
+      }
+    });
+
+    /* ---- Sidebar Toggle ---- */
+    var sidebarToggleBtn = document.getElementById('sidebar-toggle');
+    var sidebarBackdrop = document.getElementById('sidebar-backdrop');
+    var SIDEBAR_STORAGE_KEY = 'mc-sidebar-collapsed';
+
+    function toggleSidebar() {
+      document.body.classList.toggle('sidebar-collapsed');
+      try { localStorage.setItem(SIDEBAR_STORAGE_KEY, document.body.classList.contains('sidebar-collapsed') ? '1' : '0'); } catch(e) {}
+    }
+
+    (function initSidebar() {
+      var isMobile = window.innerWidth <= 768;
+      var stored = null;
+      try { stored = localStorage.getItem(SIDEBAR_STORAGE_KEY); } catch(e) {}
+      if (isMobile) {
+        document.body.classList.add('sidebar-collapsed');
+      } else if (stored === '1') {
+        document.body.classList.add('sidebar-collapsed');
+      }
+    })();
+
+    sidebarToggleBtn.addEventListener('click', toggleSidebar);
+
+    sidebarBackdrop.addEventListener('click', function() {
+      document.body.classList.add('sidebar-collapsed');
+      try { localStorage.setItem(SIDEBAR_STORAGE_KEY, '1'); } catch(e) {}
+    });
+
+    var lastWasMobile = window.innerWidth <= 768;
+    window.addEventListener('resize', function() {
+      var isMobile = window.innerWidth <= 768;
+      if (isMobile && !lastWasMobile) {
+        document.body.classList.add('sidebar-collapsed');
+      } else if (!isMobile && lastWasMobile) {
+        var stored = null;
+        try { stored = localStorage.getItem(SIDEBAR_STORAGE_KEY); } catch(e) {}
+        if (stored === '1') {
+          document.body.classList.add('sidebar-collapsed');
+        } else {
+          document.body.classList.remove('sidebar-collapsed');
+        }
+      }
+      lastWasMobile = isMobile;
+    });
+
+    /* ---- Live Clock ---- */
+    const clockTime = document.getElementById('clock-time');
+    const clockDate = document.getElementById('clock-date');
+
+    function updateClock() {
+      const now = new Date();
+      const h = String(now.getHours()).padStart(2, '0');
+      const m = String(now.getMinutes()).padStart(2, '0');
+      const s = String(now.getSeconds()).padStart(2, '0');
+      clockTime.textContent = `${h}:${m}:${s}`;
+
+      const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+      const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+      clockDate.textContent = `${days[now.getDay()]} ${months[now.getMonth()]} ${now.getDate()}`;
+    }
+
+    updateClock();
+    setInterval(updateClock, 1000);
+
+    /* ---- Piia Terminal Typewriter ---- */
+    const piiaLines = [
+      'session: main',
+      'model: claude-sonnet-4-6',
+      'memory: loaded \u2713',
+      'user: Beno',
+      'projects: 5 active',
+      'status: ready \u203A'
+    ];
+
+    function typewriterEffect(elementId, lines, charDelay) {
+      charDelay = charDelay || 40;
+      const el = document.getElementById(elementId);
+      if (!el) return;
+      el.textContent = '';
+      let lineIdx = 0, charIdx = 0;
+
+      function typeNext() {
+        if (lineIdx >= lines.length) {
+          const cursor = document.createElement('span');
+          cursor.className = 'terminal-cursor';
+          el.appendChild(cursor);
+          return;
+        }
+
+        const line = lines[lineIdx];
+        if (charIdx === 0 && lineIdx > 0) {
+          el.appendChild(document.createElement('br'));
+        }
+
+        if (charIdx < line.length) {
+          el.appendChild(document.createTextNode(line[charIdx]));
+          charIdx++;
+          setTimeout(typeNext, charDelay);
+        } else {
+          lineIdx++;
+          charIdx = 0;
+          setTimeout(typeNext, charDelay * 3);
+        }
+      }
+
+      setTimeout(typeNext, 500);
+    }
+
+    typewriterEffect('piia-terminal', piiaLines, 40);
+
+    /* ---- Kanban: Helpers ---- */
+    function escapeHtml(str) {
+      var div = document.createElement('div');
+      div.appendChild(document.createTextNode(str));
+      return div.innerHTML;
+    }
+    function priorityToPill(p) {
+      return { Urgent: 'pill-urgent', High: 'pill-high', Medium: 'pill-medium', Low: 'pill-low' }[p] || 'pill-backlog';
+    }
+    function agentEmoji(name) {
+      return agentAvatar(name, 'agent-avatar-sm');
+    }
+    function isThisWeek(ts) {
+      var now = new Date();
+      var start = new Date(now);
+      start.setDate(now.getDate() - now.getDay());
+      start.setHours(0, 0, 0, 0);
+      return ts >= start.getTime();
+    }
+
+    /* ---- Kanban: Metrics ---- */
+    function updateKanbanMetrics() {
+      var total = kanbanTasks.length, inProg = 0, completed = 0, moved = 0;
+      for (var i = 0; i < kanbanTasks.length; i++) {
+        if (kanbanTasks[i].status === 'inprogress') inProg++;
+        if (kanbanTasks[i].status === 'completed') completed++;
+        if (isThisWeek(kanbanTasks[i].movedAt)) moved++;
+      }
+      var pct = total > 0 ? Math.round((completed / total) * 100) : 0;
+      var el;
+      el = document.getElementById('kb-metric-week'); if (el) el.textContent = moved;
+      el = document.getElementById('kb-metric-progress'); if (el) el.textContent = inProg;
+      el = document.getElementById('kb-metric-total'); if (el) el.textContent = total;
+      el = document.getElementById('kb-metric-pct'); if (el) el.textContent = pct + '%';
+      var badge = document.getElementById('inbox-badge');
+      if (badge) {
+        var remaining = total - completed;
+        badge.textContent = remaining;
+        badge.style.display = remaining > 0 ? '' : 'none';
+        badge.classList.remove('pop');
+        void badge.offsetWidth;
+        badge.classList.add('pop');
+      }
+    }
+
+    /* ---- Inbox pill abbreviations (list + board only) ---- */
+    function abbrevProject(name) {
+      return name === 'Lagoon Company' ? 'Lagoon Co.' : name;
+    }
+
+    /* ---- Kanban: Render Card ---- */
+    function renderKanbanCard(task) {
+      var pill = priorityToPill(task.priority);
+      var em = agentEmoji(task.agent);
+      return '<div class="kb-card" draggable="true" data-task-id="' + task.id + '" data-status="' + task.status + '" data-priority="' + task.priority + '">'
+        + '<div class="kb-card-title">' + escapeHtml(task.title) + '</div>'
+        + '<div class="kb-card-desc">' + escapeHtml(task.description) + '</div>'
+        + '<div class="kb-card-footer">'
+        + '<span class="kb-card-project" data-task-id="' + task.id + '">' + escapeHtml(abbrevProject(task.project)) + '</span>'
+        + '<span class="pill ' + pill + '">' + task.priority + '</span>'
+        + '<span class="kb-card-agent">' + em + ' ' + escapeHtml(task.agent) + '</span>'
+        + '</div></div>';
+    }
+
+    /* ---- Kanban: Render Form ---- */
+    function renderKanbanForm(col) {
+      var po = '', pr = '', ao = '';
+      KANBAN_PROJECTS.forEach(function(p) { po += '<option value="' + p + '">' + p + '</option>'; });
+      KANBAN_PRIORITIES.forEach(function(p) { pr += '<option value="' + p + '"' + (p === 'Medium' ? ' selected' : '') + '>' + p + '</option>'; });
+      KANBAN_AGENTS.forEach(function(a) { ao += '<option value="' + a.name + '">' + a.name.substring(0,2) + ' ' + a.name + '</option>'; });
+      return '<div class="kb-form" data-form-column="' + col + '">'
+        + '<input class="kb-form-input" type="text" placeholder="Task title..." data-field="title" autocomplete="off">'
+        + '<textarea class="kb-form-textarea" placeholder="Short description..." data-field="description"></textarea>'
+        + '<select class="kb-form-select" data-field="project">' + po + '</select>'
+        + '<select class="kb-form-select" data-field="priority">' + pr + '</select>'
+        + '<select class="kb-form-select" data-field="agent">' + ao + '</select>'
+        + '<div class="kb-form-actions">'
+        + '<button class="kb-form-cancel" data-action="cancel">Cancel</button>'
+        + '<button class="kb-form-save" data-action="save">Save</button>'
+        + '</div></div>';
+    }
+
+    /* ---- Kanban: Drag & Drop ---- */
+    var kanbanDraggedId = null;
+    function attachKanbanDragHandlers() {
+      var board = document.getElementById('kb-board');
+      if (!board) return;
+      board.querySelectorAll('.kb-card').forEach(function(card) {
+        card.addEventListener('dragstart', function(e) {
+          kanbanDraggedId = card.dataset.taskId;
+          card.classList.add('dragging');
+          e.dataTransfer.effectAllowed = 'move';
+          e.dataTransfer.setData('text/plain', card.dataset.taskId);
+        });
+        card.addEventListener('dragend', function() {
+          card.classList.remove('dragging');
+          kanbanDraggedId = null;
+          board.querySelectorAll('.kb-card-list.drag-over').forEach(function(z) { z.classList.remove('drag-over'); });
+        });
+      });
+      board.querySelectorAll('.kb-card-list').forEach(function(zone) {
+        zone.addEventListener('dragover', function(e) {
+          e.preventDefault();
+          e.dataTransfer.dropEffect = 'move';
+          zone.classList.add('drag-over');
+        });
+        zone.addEventListener('dragleave', function(e) {
+          if (!zone.contains(e.relatedTarget)) zone.classList.remove('drag-over');
+        });
+        zone.addEventListener('drop', function(e) {
+          e.preventDefault();
+          zone.classList.remove('drag-over');
+          var taskId = e.dataTransfer.getData('text/plain');
+          var targetCol = zone.dataset.column;
+          if (!taskId || !targetCol) return;
+          for (var i = 0; i < kanbanTasks.length; i++) {
+            if (kanbanTasks[i].id === taskId && kanbanTasks[i].status !== targetCol) {
+              kanbanTasks[i].status = targetCol;
+              kanbanTasks[i].movedAt = Date.now();
+              break;
+            }
+          }
+          renderKanbanBoard();
+          var dropped = document.querySelector('.kb-card[data-task-id="' + taskId + '"]');
+          if (dropped) {
+            dropped.classList.add('just-dropped');
+            setTimeout(function() { dropped.classList.remove('just-dropped'); }, 250);
+          }
+        });
+      });
+    }
+
+    /* ---- Kanban: New Task Form ---- */
+    var kanbanOpenForm = null;
+    function openKanbanForm(col) {
+      closeKanbanForm();
+      kanbanOpenForm = col;
+      var cardList = document.querySelector('.kb-card-list[data-column="' + col + '"]');
+      if (!cardList) return;
+      cardList.insertAdjacentHTML('afterbegin', renderKanbanForm(col));
+      var input = cardList.querySelector('.kb-form-input[data-field="title"]');
+      if (input) input.focus();
+      var form = cardList.querySelector('.kb-form');
+      form.querySelector('[data-action="save"]').addEventListener('click', function() { saveKanbanForm(form); });
+      form.querySelector('[data-action="cancel"]').addEventListener('click', function() { closeKanbanForm(); });
+      input.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') { e.preventDefault(); saveKanbanForm(form); }
+        if (e.key === 'Escape') closeKanbanForm();
+      });
+    }
+    function saveKanbanForm(formEl) {
+      var title = formEl.querySelector('[data-field="title"]').value.trim();
+      if (!title) { formEl.querySelector('[data-field="title"]').style.borderColor = 'var(--pill-urgent-text)'; return; }
+      kanbanTasks.push({
+        id: kanbanId(),
+        title: title,
+        description: formEl.querySelector('[data-field="description"]').value.trim(),
+        project: formEl.querySelector('[data-field="project"]').value,
+        priority: formEl.querySelector('[data-field="priority"]').value,
+        agent: formEl.querySelector('[data-field="agent"]').value,
+        status: formEl.dataset.formColumn,
+        createdAt: Date.now(),
+        movedAt: Date.now()
+      });
+      kanbanOpenForm = null;
+      renderKanbanBoard();
+    }
+    function closeKanbanForm() {
+      kanbanOpenForm = null;
+      var existing = document.querySelector('.kb-form');
+      if (existing) existing.remove();
+    }
+
+    /* ---- Kanban: Project Dropdown ---- */
+    function openProjectDropdown(el) {
+      closeProjectDropdown();
+      var taskId = el.dataset.taskId;
+      var current = el.textContent.trim();
+      var html = '<div class="kb-card-project-dropdown" id="kb-project-dropdown">';
+      KANBAN_PROJECTS.forEach(function(p) {
+        html += '<div class="kb-card-project-dropdown-item' + (p === current ? ' selected' : '') + '" data-project="' + p + '">' + p + '</div>';
+      });
+      html += '</div>';
+      el.style.position = 'relative';
+      el.insertAdjacentHTML('beforeend', html);
+      var dd = document.getElementById('kb-project-dropdown');
+      dd.querySelectorAll('.kb-card-project-dropdown-item').forEach(function(item) {
+        item.addEventListener('click', function(e) {
+          e.stopPropagation();
+          for (var i = 0; i < kanbanTasks.length; i++) {
+            if (kanbanTasks[i].id === taskId) { kanbanTasks[i].project = item.dataset.project; break; }
+          }
+          closeProjectDropdown();
+          renderKanbanBoard();
+        });
+      });
+      setTimeout(function() { document.addEventListener('click', closeProjectDropdownOutside); }, 0);
+    }
+    function closeProjectDropdown() {
+      var dd = document.getElementById('kb-project-dropdown');
+      if (dd) dd.remove();
+      document.removeEventListener('click', closeProjectDropdownOutside);
+    }
+    function closeProjectDropdownOutside(e) {
+      var dd = document.getElementById('kb-project-dropdown');
+      if (dd && !dd.contains(e.target)) closeProjectDropdown();
+    }
+
+    var STATUS_COLOURS = {
+      todo:       '#6b7280',
+      inprogress: '#60a5fa',
+      review:     '#a78bfa',
+      backlog:    '#f59e0b',
+      recurring:  '#2dd4bf',
+      completed:  '#4ade80'
+    };
+
+    /* ---- Kanban: Render Board ---- */
+    function renderKanbanBoard() {
+      var board = document.getElementById('kb-board');
+      if (!board) return;
+      var html = '';
+      KANBAN_COLUMNS.forEach(function(colKey) {
+        var colTasks = kanbanTasks.filter(function(t) { return t.status === colKey; });
+        var dotColour = STATUS_COLOURS[colKey] || '#6b7280';
+        html += '<div class="kb-column" data-column="' + colKey + '">';
+        html += '<div class="kb-col-header">';
+        html += '<span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:' + dotColour + ';flex-shrink:0;margin-right:6px;"></span>';
+        html += '<span class="kb-col-title" style="color:' + dotColour + '">' + KANBAN_COLUMN_LABELS[colKey] + '</span>';
+        html += '<span class="kb-col-count">' + colTasks.length + '</span>';
+        html += '<button class="kb-col-add" data-add-column="' + colKey + '" title="Add task">+</button>';
+        html += '</div>';
+        html += '<div class="kb-card-list" data-column="' + colKey + '">';
+        colTasks.forEach(function(task) { html += renderKanbanCard(task); });
+        html += '</div></div>';
+      });
+      board.innerHTML = html;
+      attachKanbanDragHandlers();
+      board.querySelectorAll('.kb-col-add').forEach(function(btn) {
+        btn.addEventListener('click', function() { openKanbanForm(btn.dataset.addColumn); });
+      });
+      board.querySelectorAll('.kb-card-project').forEach(function(el) {
+        el.addEventListener('click', function(e) { e.stopPropagation(); openProjectDropdown(el); });
+      });
+      updateKanbanMetrics();
+    }
+
+    /* ---- Kanban: View Toggle ---- */
+    document.querySelectorAll('.kb-view-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.kb-view-btn').forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        kanbanViewMode = btn.dataset.view;
+        var boardEl = document.getElementById('kb-board');
+        var listEl = document.getElementById('kb-list-view');
+        var metricsEl = document.getElementById('kb-metrics');
+        var filtersEl = document.getElementById('kb-filters');
+        if (kanbanViewMode === 'kanban') {
+          boardEl.style.display = '';
+          metricsEl.style.display = '';
+          listEl.classList.add('kb-list-hidden');
+          if (filtersEl) filtersEl.style.display = 'none';
+          renderKanbanBoard();
+        } else {
+          boardEl.style.display = 'none';
+          metricsEl.style.display = 'none';
+          listEl.classList.remove('kb-list-hidden');
+          if (filtersEl) filtersEl.style.display = '';
+          renderListView();
+        }
+      });
+    });
+
+    /* ---- Kanban: List View ---- */
+    var STATUS_OPTIONS = [
+      { value: 'todo',       label: 'To Do' },
+      { value: 'inprogress', label: 'In Progress' },
+      { value: 'review',     label: 'Review' },
+      { value: 'backlog',    label: 'Backlog' },
+      { value: 'recurring',  label: 'Recurring' },
+      { value: 'completed',  label: 'Done' }
+    ];
+
+    function renderListView() {
+      var mineCol = document.querySelector('#kb-list-view .inbox-col[data-col="mine"]');
+      var agentCol = document.querySelector('#kb-list-view .inbox-col[data-col="agent"]');
+      if (!mineCol || !agentCol) return;
+      mineCol.querySelectorAll('.inbox-task').forEach(function(el) { el.remove(); });
+      agentCol.querySelectorAll('.inbox-task').forEach(function(el) { el.remove(); });
+
+      var activeFilter = (document.querySelector('.inbox-filter.active') || {}).dataset || {};
+      var filter = activeFilter.filter || 'all';
+
+      kanbanTasks.forEach(function(task) {
+        var pill = priorityToPill(task.priority);
+        var sClass = 'status-' + task.status;
+        var done = task.status === 'completed' ? ' done' : '';
+        var em = agentEmoji(task.agent);
+        var isMine = task.agent === 'Beno';
+        var colType = isMine ? 'mine' : 'agent';
+
+        // Build status select options
+        var selectOpts = STATUS_OPTIONS.map(function(opt) {
+          return '<option value="' + opt.value + '"' + (task.status === opt.value ? ' selected' : '') + '>' + opt.label + '</option>';
+        }).join('');
+
+        var html = '<div class="inbox-task ' + sClass + done + '" data-task-id="' + task.id + '" data-col-type="' + colType + '">'
+          + '<div class="inbox-task-title">' + escapeHtml(task.title) + '</div>'
+          + '<div class="inbox-task-desc">' + escapeHtml(task.description) + '</div>'
+          + '<div class="inbox-task-meta">'
+          + '<span class="inbox-task-project">' + escapeHtml(abbrevProject(task.project)) + '</span>'
+          + '<span class="inbox-task-assignee">' + em + ' ' + escapeHtml(task.agent) + '</span>'
+          + '<span class="pill ' + pill + '">' + task.priority + '</span>'
+          + '<select class="task-status-select" data-task-id="' + task.id + '" title="Change status">' + selectOpts + '</select>'
+          + '</div></div>';
+
+        if (isMine) mineCol.insertAdjacentHTML('beforeend', html);
+        else agentCol.insertAdjacentHTML('beforeend', html);
+      });
+
+      // Attach status change listeners
+      document.querySelectorAll('#kb-list-view .task-status-select').forEach(function(sel) {
+        sel.addEventListener('change', function(e) {
+          e.stopPropagation();
+          var taskId = sel.dataset.taskId;
+          var newStatus = sel.value;
+          for (var i = 0; i < kanbanTasks.length; i++) {
+            if (kanbanTasks[i].id === taskId) {
+              kanbanTasks[i].status = newStatus;
+              kanbanTasks[i].movedAt = Date.now();
+              break;
+            }
+          }
+          renderListView();
+          updateKanbanMetrics();
+        });
+        sel.addEventListener('click', function(e) { e.stopPropagation(); });
+      });
+
+      // Apply current filter
+      applyListFilter(filter);
+
+      // Re-attach filter buttons
+      document.querySelectorAll('.inbox-filter').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          document.querySelectorAll('.inbox-filter').forEach(function(b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+          applyListFilter(btn.dataset.filter);
+        });
+      });
+    }
+
+    function applyListFilter(filter) {
+      document.querySelectorAll('#kb-list-view .inbox-task').forEach(function(task) {
+        var isDone = task.classList.contains('done') || task.querySelector('.task-status-select')?.value === 'completed';
+        var colType = task.dataset.colType;
+        var show = filter === 'all'
+          || (filter === 'active' && !isDone)
+          || (filter === 'mine' && colType === 'mine')
+          || (filter === 'agent' && colType === 'agent')
+          || (filter === 'done' && isDone);
+        task.style.display = show ? '' : 'none';
+      });
+    }
+
+    /* ---- Kanban: Init ---- */
+    renderKanbanBoard();
+
+    /* ---- Analytics: Date Range Toggle ---- */
+    document.querySelectorAll('.analytics-filter').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.analytics-filter').forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+      });
+    });
+
+    /* ---- Analytics: Airtable-style Tables ---- */
+    var analyticsData = {
+      ofm: [
+        { metric: 'Monthly Revenue', value: '$3,200', rawValue: 3200, change: '+12%', dir: 'positive', sparkline: [8,12,10,14,16,18,15,20], status: 'green', progress: 64 },
+        { metric: 'Active Creators', value: '2', rawValue: 2, change: '+100%', dir: 'positive', sparkline: [4,4,6,6,8,8,10,16], status: 'green', progress: null },
+        { metric: 'Total Fans', value: '847', rawValue: 847, change: '+23%', dir: 'positive', sparkline: [6,8,10,12,14,16,18,24], status: 'green', progress: null },
+        { metric: 'Avg Revenue/Creator', value: '$1,600', rawValue: 1600, change: '+8%', dir: 'positive', sparkline: [12,14,10,16,14,18,16,20], status: 'green', progress: null },
+        { metric: 'Messages Sent', value: '1,240', rawValue: 1240, change: '+34%', dir: 'positive', sparkline: [8,10,14,12,18,16,22,24], status: 'green', progress: null },
+        { metric: 'Conversion Rate', value: '4.2%', rawValue: 4.2, change: '-0.3%', dir: 'negative', sparkline: [18,16,20,14,16,12,14,12], status: 'amber', progress: null }
+      ],
+      lagoon: [
+        { metric: 'Monthly Revenue', value: '$8,400', rawValue: 8400, change: '+5%', dir: 'positive', sparkline: [16,18,14,20,18,22,20,24], status: 'green', progress: null },
+        { metric: 'Rentals This Month', value: '67', rawValue: 67, change: '+12%', dir: 'positive', sparkline: [10,12,14,16,18,20,18,24], status: 'green', progress: null },
+        { metric: 'Fleet Utilization', value: '78%', rawValue: 78, change: '+3%', dir: 'positive', sparkline: [14,16,18,16,20,18,22,24], status: 'green', progress: null },
+        { metric: 'Most Rented', value: 'Can-Am Maverick X3', rawValue: 0, change: '--', dir: 'neutral', sparkline: null, status: 'green', progress: null },
+        { metric: 'Google Ads ROAS', value: '3.4x', rawValue: 3.4, change: '+0.6x', dir: 'positive', sparkline: [8,10,12,14,16,18,20,24], status: 'green', progress: null },
+        { metric: 'Instagram Followers', value: '4,200', rawValue: 4200, change: '+340', dir: 'positive', sparkline: [10,12,14,16,18,20,22,24], status: 'green', progress: null }
+      ]
+    };
+
+    function renderSparklineSVG(points) {
+      if (!points || !points.length) return '';
+      var mx = Math.max.apply(null, points), w = 80, h = 24, p = 2;
+      var coords = points.map(function(v, i) {
+        return (p + (i/(points.length-1))*(w-p*2)).toFixed(1) + ',' + (h-p-((v/mx)*(h-p*2))).toFixed(1);
+      });
+      return '<div class="analytics-sparkline-cell"><svg viewBox="0 0 '+w+' '+h+'"><polyline points="'+coords.join(' ')+'"/></svg></div>';
+    }
+
+    function renderAnalyticsTable(key) {
+      var data = analyticsData[key], tbody = document.getElementById(key + '-analytics-body');
+      if (!data || !tbody) return;
+      var html = '';
+      data.forEach(function(row) {
+        var arrow = row.dir === 'positive' ? '&#x25B2;' : (row.dir === 'negative' ? '&#x25BC;' : '');
+        var prog = row.progress !== null ? '<div class="analytics-inline-progress"><div class="analytics-inline-progress-fill" style="width:'+row.progress+'%"></div></div>' : '';
+        html += '<tr class="analytics-row">';
+        html += '<td class="analytics-td">' + row.metric + '</td>';
+        html += '<td class="analytics-td analytics-td-value">' + row.value + prog + '</td>';
+        html += '<td class="analytics-td"><span class="analytics-td-change ' + row.dir + '">' + arrow + ' ' + row.change + '</span></td>';
+        html += '<td class="analytics-td">' + renderSparklineSVG(row.sparkline) + '</td>';
+        html += '<td class="analytics-td"><span class="analytics-status-dot ' + row.status + '"></span></td>';
+        html += '</tr>';
+      });
+      tbody.innerHTML = html;
+    }
+
+    document.querySelectorAll('.analytics-section-header').forEach(function(h) {
+      h.addEventListener('click', function() {
+        h.classList.toggle('collapsed');
+        var wrap = document.getElementById(h.dataset.collapse);
+        if (wrap) wrap.style.display = h.classList.contains('collapsed') ? 'none' : '';
+      });
+    });
+
+    document.querySelectorAll('.analytics-table .analytics-th[data-sort]').forEach(function(th) {
+      th.addEventListener('click', function() {
+        var table = th.closest('.analytics-table'), tbody = table.querySelector('tbody');
+        var rows = Array.from(tbody.querySelectorAll('.analytics-row'));
+        var ci = Array.from(th.parentNode.children).indexOf(th), asc = !th.classList.contains('sorted-asc');
+        table.querySelectorAll('.analytics-th').forEach(function(x) { x.classList.remove('sorted','sorted-asc','sorted-desc'); });
+        th.classList.add('sorted', asc ? 'sorted-asc' : 'sorted-desc');
+        rows.sort(function(a, b) {
+          var at = a.children[ci].textContent.trim(), bt = b.children[ci].textContent.trim();
+          var an = parseFloat(at.replace(/[^0-9.\-]/g,'')), bn = parseFloat(bt.replace(/[^0-9.\-]/g,''));
+          if (!isNaN(an) && !isNaN(bn)) return asc ? an-bn : bn-an;
+          return asc ? at.localeCompare(bt) : bt.localeCompare(at);
+        });
+        rows.forEach(function(r) { tbody.appendChild(r); });
+      });
+    });
+
+    renderAnalyticsTable('ofm');
+    renderAnalyticsTable('lagoon');
+
+    /* ---- View Toggle: Team & Projects ---- */
+    function initViewToggle(toggleId, cardViewId, tableViewId) {
+      var toggle = document.getElementById(toggleId);
+      if (!toggle) return;
+      toggle.querySelectorAll('.view-toggle-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          toggle.querySelectorAll('.view-toggle-btn').forEach(function(b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+          var cv = document.getElementById(cardViewId), tv = document.getElementById(tableViewId);
+          if (btn.dataset.view === 'table') {
+            if (cv) cv.style.display = 'none';
+            if (tv) tv.style.display = '';
+          } else {
+            if (cv) cv.style.display = '';
+            if (tv) tv.style.display = 'none';
+          }
+        });
+      });
+    }
+    initViewToggle('team-view-toggle', 'team-card-view', 'team-table-view');
+    initViewToggle('projects-view-toggle', 'projects-card-view', 'projects-table-view');
+
+    /* ---- Calendar: State & Data ---- */
+    var CAL_COLORS = [
+      { name: 'Blue', value: '#6BA8DA' }, { name: 'Purple', value: '#A86DBF' },
+      { name: 'Green', value: '#6BBF6B' }, { name: 'Amber', value: '#DAB255' },
+      { name: 'Red', value: '#D9534F' }, { name: 'Cyan', value: '#5BC0DE' }
+    ];
+    var calNextId = 1;
+    function calEventId() { return 'cal-' + (calNextId++); }
+    var calEvents = [];
+    var calViewMode = 'month';
+    var calViewYear = new Date().getFullYear();
+    var calViewMonth = new Date().getMonth();
+    var calViewWeekStart = (function() {
+      var d = new Date(); var day = d.getDay();
+      var diff = d.getDate() - day + (day === 0 ? -6 : 1);
+      return new Date(d.getFullYear(), d.getMonth(), diff);
+    })();
+    var calMilestones = [
+      { name: 'Move to Puerto Escondido', date: '2026-05-01', color: '#5BC0DE' },
+      { name: 'Baby due \u2014 Bianca', date: '2026-08-15', color: '#A86DBF' },
+      { name: 'OFM first creator', date: '2026-03-01', color: '#6BA8DA' },
+      { name: 'Lagoon high season', date: '2026-12-01', color: '#DAB255' }
+    ];
+
+    function calDateKey(y, m, d) { return y + '-' + String(m+1).padStart(2,'0') + '-' + String(d).padStart(2,'0'); }
+    function calEventsForDate(dk) { return calEvents.filter(function(e) { return e.date === dk; }); }
+    function calMilestonesForDate(dk) { return calMilestones.filter(function(m) { return m.date === dk; }); }
+
+    function calUpdateTitle() {
+      var el = document.getElementById('cal-title'); if (!el) return;
+      var mn = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+      if (calViewMode === 'month') { el.textContent = mn[calViewMonth] + ' ' + calViewYear; }
+      else {
+        var end = new Date(calViewWeekStart); end.setDate(end.getDate() + 6);
+        if (calViewWeekStart.getMonth() === end.getMonth())
+          el.textContent = mn[calViewWeekStart.getMonth()] + ' ' + calViewWeekStart.getDate() + '\u2013' + end.getDate() + ', ' + calViewWeekStart.getFullYear();
+        else
+          el.textContent = mn[calViewWeekStart.getMonth()].substr(0,3) + ' ' + calViewWeekStart.getDate() + ' \u2013 ' + mn[end.getMonth()].substr(0,3) + ' ' + end.getDate() + ', ' + end.getFullYear();
+      }
+    }
+
+    function renderMonthView() {
+      var container = document.getElementById('cal-container'); if (!container) return;
+      var now = new Date(), todayY = now.getFullYear(), todayM = now.getMonth(), todayD = now.getDate();
+      var firstDay = new Date(calViewYear, calViewMonth, 1).getDay();
+      var startOffset = (firstDay === 0) ? 6 : firstDay - 1;
+      var daysInMonth = new Date(calViewYear, calViewMonth + 1, 0).getDate();
+      var html = '<div class="cal-grid">';
+      ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].forEach(function(d) { html += '<div class="cal-header">' + d + '</div>'; });
+      for (var i = 0; i < startOffset; i++) html += '<div class="cal-day empty"></div>';
+      for (var d = 1; d <= daysInMonth; d++) {
+        var dk = calDateKey(calViewYear, calViewMonth, d);
+        var isToday = (calViewYear === todayY && calViewMonth === todayM && d === todayD);
+        var events = calEventsForDate(dk), milestones = calMilestonesForDate(dk);
+        html += '<div class="cal-day' + (isToday ? ' today' : '') + '" data-date="' + dk + '">';
+        html += '<div class="cal-day-num">' + d + '</div>';
+        if (milestones.length) html += '<div class="cal-milestone-marker" style="background:' + milestones[0].color + '" title="' + escapeHtml(milestones[0].name) + '"></div>';
+        for (var e = 0; e < Math.min(events.length, 2); e++) {
+          var ev = events[e];
+          html += '<div class="cal-event-chip" style="background:' + ev.color + '22;color:' + ev.color + ';border-left:2px solid ' + ev.color + ';" data-event-id="' + ev.id + '">' + escapeHtml(ev.title) + '</div>';
+        }
+        if (events.length > 2) html += '<div class="cal-day-overflow">+' + (events.length - 2) + ' more</div>';
+        html += '</div>';
+      }
+      var total = startOffset + daysInMonth, rem = total % 7;
+      if (rem > 0) for (var j = 0; j < 7 - rem; j++) html += '<div class="cal-day empty"></div>';
+      html += '</div>';
+      container.innerHTML = html;
+      calAttachHandlers();
+    }
+
+    function renderWeekView() {
+      var container = document.getElementById('cal-container'); if (!container) return;
+      var now = new Date(), todayKey = calDateKey(now.getFullYear(), now.getMonth(), now.getDate());
+      var dayNames = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+      var html = '<div class="cal-week-grid">';
+      for (var i = 0; i < 7; i++) {
+        var date = new Date(calViewWeekStart); date.setDate(date.getDate() + i);
+        var dk = calDateKey(date.getFullYear(), date.getMonth(), date.getDate());
+        var isToday = (dk === todayKey), events = calEventsForDate(dk), milestones = calMilestonesForDate(dk);
+        html += '<div class="cal-week-col' + (isToday ? ' today' : '') + '" data-date="' + dk + '">';
+        html += '<div class="cal-week-col-header"><div class="cal-week-day-name">' + dayNames[i] + '</div><div class="cal-week-day-num">' + date.getDate() + '</div></div>';
+        milestones.forEach(function(m) { html += '<div class="cal-week-event" style="border-left-color:' + m.color + ';background:' + m.color + '11;">&#x25C6; ' + escapeHtml(m.name) + '</div>'; });
+        events.forEach(function(ev) {
+          html += '<div class="cal-week-event" style="border-left-color:' + ev.color + ';" data-event-id="' + ev.id + '">' + escapeHtml(ev.title);
+          if (ev.time) html += '<div class="cal-week-event-time">' + ev.time + '</div>';
+          html += '</div>';
+        });
+        html += '</div>';
+      }
+      html += '</div>';
+      container.innerHTML = html;
+      calAttachHandlers();
+    }
+
+    function calRender() { calUpdateTitle(); if (calViewMode === 'month') renderMonthView(); else renderWeekView(); }
+
+    function calNavigate(dir) {
+      if (calViewMode === 'month') {
+        calViewMonth += dir;
+        if (calViewMonth > 11) { calViewMonth = 0; calViewYear++; }
+        if (calViewMonth < 0) { calViewMonth = 11; calViewYear--; }
+      } else { calViewWeekStart.setDate(calViewWeekStart.getDate() + (dir * 7)); }
+      calRender();
+    }
+
+    function calGoToToday() {
+      var now = new Date(); calViewYear = now.getFullYear(); calViewMonth = now.getMonth();
+      var day = now.getDay(), diff = now.getDate() - day + (day === 0 ? -6 : 1);
+      calViewWeekStart = new Date(now.getFullYear(), now.getMonth(), diff); calRender();
+    }
+
+    function calSwitchView(mode) {
+      if (calViewMode === mode) return; calViewMode = mode;
+      document.querySelectorAll('.cal-view-btn').forEach(function(b) { b.classList.toggle('active', b.dataset.view === mode); });
+      if (mode === 'week') {
+        var d = new Date(calViewYear, calViewMonth, 1), day = d.getDay();
+        calViewWeekStart = new Date(d.getFullYear(), d.getMonth(), d.getDate() - day + (day === 0 ? -6 : 1));
+      } else { calViewYear = calViewWeekStart.getFullYear(); calViewMonth = calViewWeekStart.getMonth(); }
+      calRender();
+    }
+
+    function calOpenModal(dk) {
+      document.getElementById('cal-event-date').value = dk;
+      document.getElementById('cal-event-title').value = '';
+      document.getElementById('cal-event-time').value = '';
+      document.getElementById('cal-event-color').value = CAL_COLORS[0].value;
+      var picker = document.getElementById('cal-color-picker'); picker.innerHTML = '';
+      CAL_COLORS.forEach(function(c, i) {
+        var s = document.createElement('div'); s.className = 'cal-color-swatch' + (i === 0 ? ' selected' : '');
+        s.style.background = c.value; s.dataset.color = c.value;
+        s.addEventListener('click', function() {
+          picker.querySelectorAll('.cal-color-swatch').forEach(function(x) { x.classList.remove('selected'); });
+          s.classList.add('selected'); document.getElementById('cal-event-color').value = c.value;
+        });
+        picker.appendChild(s);
+      });
+      document.getElementById('cal-modal-backdrop').style.display = 'flex';
+      setTimeout(function() { document.getElementById('cal-event-title').focus(); }, 100);
+    }
+
+    function calCloseModal() { document.getElementById('cal-modal-backdrop').style.display = 'none'; }
+
+    function calSaveEvent() {
+      var title = document.getElementById('cal-event-title').value.trim();
+      if (!title) { document.getElementById('cal-event-title').style.borderColor = 'var(--pill-urgent-text)'; return; }
+      calEvents.push({ id: calEventId(), title: title, date: document.getElementById('cal-event-date').value,
+        time: document.getElementById('cal-event-time').value || '', color: document.getElementById('cal-event-color').value });
+      calCloseModal(); calRender();
+    }
+
+    function calDeleteEvent(id) { calEvents = calEvents.filter(function(e) { return e.id !== id; }); calRender(); }
+
+    function calAttachHandlers() {
+      document.querySelectorAll('.cal-day:not(.empty), .cal-week-col').forEach(function(cell) {
+        cell.addEventListener('click', function(e) {
+          if (e.target.closest('.cal-event-chip') || e.target.closest('.cal-week-event')) return;
+          if (cell.dataset.date) calOpenModal(cell.dataset.date);
+        });
+      });
+      document.querySelectorAll('.cal-event-chip, .cal-week-event[data-event-id]').forEach(function(chip) {
+        chip.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (chip.dataset.eventId && confirm('Delete this event?')) calDeleteEvent(chip.dataset.eventId);
+        });
+      });
+    }
+
+    /* Calendar Init */
+    (function() {
+      document.getElementById('cal-prev').addEventListener('click', function() { calNavigate(-1); });
+      document.getElementById('cal-next').addEventListener('click', function() { calNavigate(1); });
+      document.getElementById('cal-today').addEventListener('click', calGoToToday);
+      document.querySelectorAll('.cal-view-btn').forEach(function(b) { b.addEventListener('click', function() { calSwitchView(b.dataset.view); }); });
+      document.getElementById('cal-modal-close').addEventListener('click', calCloseModal);
+      document.getElementById('cal-modal-cancel').addEventListener('click', calCloseModal);
+      document.getElementById('cal-modal-save').addEventListener('click', calSaveEvent);
+      document.getElementById('cal-modal-backdrop').addEventListener('click', function(e) { if (e.target === this) calCloseModal(); });
+      document.getElementById('cal-event-title').addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') { e.preventDefault(); calSaveEvent(); }
+        if (e.key === 'Escape') calCloseModal();
+      });
+      calRender();
+    })();
+
+    /* ---- Focus: Project Deep-Work View ---- */
+    var focusProjects = {
+      ofm: {
+        name: 'OFM Agency', priority: 'P1', pill: 'pill-done', pillLabel: 'Active',
+        agents: ['Kat', 'Mara', 'Rex'],
+        callout: 'Recruit and onboard first creator by Q1 2026',
+        tasks: ['Create agency brand guide','Set up creator onboarding flow','Draft fan messaging templates','Build content calendar template','Write pricing tier doc','Create SOP for daily engagement','Set up analytics dashboard'],
+        context: 'OFM Agency is in launch phase. Focus on getting the first creator onboarded with a complete workflow before scaling. Revenue target is $5,000/month within 90 days.',
+        milestones: [
+          { label: 'Brand setup', dot: 'var(--pill-done-text)', pill: 'pill-done', pillLabel: 'Done' },
+          { label: 'First creator signed', dot: 'var(--accent)', pill: 'pill-active', pillLabel: 'Active' },
+          { label: 'First $1k month', dot: 'var(--text-3)', pill: 'pill-backlog', pillLabel: 'Upcoming' },
+          { label: 'Scale to 3 creators', dot: 'var(--text-3)', pill: 'pill-backlog', pillLabel: 'Upcoming' }
+        ]
+      },
+      lagoon: {
+        name: 'Lagoon Company', priority: 'P2', pill: 'pill-active', pillLabel: 'Active',
+        agents: ['Rex'],
+        callout: 'Optimize Google Ads campaign to achieve 4.0x ROAS before high season',
+        tasks: ['Audit current Google Ads account','A/B test ad copy variations','Update Instagram content calendar','Schedule fleet maintenance','Photograph new Can-Am fleet','Create Google Business posts','Review competitor pricing'],
+        context: 'Lagoon Company is the primary revenue source. High season starts December. Focus on maximizing ad efficiency and fleet readiness.',
+        milestones: [
+          { label: 'Google Ads audit', dot: 'var(--pill-done-text)', pill: 'pill-done', pillLabel: 'Done' },
+          { label: 'ROAS 4.0x target', dot: 'var(--accent)', pill: 'pill-active', pillLabel: 'Active' },
+          { label: 'High season prep', dot: 'var(--text-3)', pill: 'pill-backlog', pillLabel: 'Upcoming' }
+        ]
+      },
+      crete: {
+        name: 'Hilltop Villa \u2014 Oaxaca', priority: 'P3', pill: 'pill-waiting', pillLabel: 'Planning',
+        agents: ['Nile', 'Zara'],
+        callout: 'Complete site survey and get construction cost estimate from Sirewall',
+        tasks: ['Schedule site survey with engineer','Research Sirewall rammed-earth specs','Get permit requirements list','Draft floor plan concept','Estimate water and solar needs','Contact local architect'],
+        context: 'Ocean-view land in Oaxaca. Rammed-earth (Sirewall) construction for sustainability. Planning phase \u2014 need feasibility data before committing budget.',
+        milestones: [
+          { label: 'Land secured', dot: 'var(--pill-done-text)', pill: 'pill-done', pillLabel: 'Done' },
+          { label: 'Site survey', dot: 'var(--accent)', pill: 'pill-active', pillLabel: 'Active' },
+          { label: 'Cost estimate', dot: 'var(--text-3)', pill: 'pill-backlog', pillLabel: 'Upcoming' },
+          { label: 'Permit filing', dot: 'var(--text-3)', pill: 'pill-backlog', pillLabel: 'Upcoming' }
+        ]
+      },
+      farm: {
+        name: 'Farm / Off-Grid', priority: 'P4', pill: 'pill-waiting', pillLabel: 'Planning',
+        agents: ['Nile'],
+        callout: 'Size the solar + battery system and get quotes from 3 suppliers',
+        tasks: ['Calculate daily power consumption','Research LiFePO4 battery options','Get solar panel quotes','Design rainwater collection system','Plan poultry housing layout','Source local feed suppliers','Map irrigation zones'],
+        context: 'Off-grid farm in Oaxaca with livestock, poultry, solar, and LiFePO4 batteries. Need to finalize energy and water systems before breaking ground.',
+        milestones: [
+          { label: 'Power audit', dot: 'var(--pill-done-text)', pill: 'pill-done', pillLabel: 'Done' },
+          { label: 'Solar sizing', dot: 'var(--accent)', pill: 'pill-active', pillLabel: 'Active' },
+          { label: 'Water system', dot: 'var(--text-3)', pill: 'pill-backlog', pillLabel: 'Upcoming' }
+        ]
+      },
+      app: {
+        name: 'App Development', priority: 'P5', pill: 'pill-backlog', pillLabel: 'Idea',
+        agents: ['Zara'],
+        callout: 'Validate market demand with 20 farmer interviews in Puerto Escondido',
+        tasks: ['Draft interview questionnaire','Identify 20 target farmers','Conduct field interviews','Analyse interview data','Define MVP feature list','Choose tech stack','Sketch wireframes'],
+        context: 'Direct-to-customer app connecting farmers in Puerto Escondido with local buyers. Still in validation phase \u2014 need proof of demand before building.',
+        milestones: [
+          { label: 'Problem validation', dot: 'var(--accent)', pill: 'pill-active', pillLabel: 'Active' },
+          { label: 'MVP scope defined', dot: 'var(--text-3)', pill: 'pill-backlog', pillLabel: 'Upcoming' },
+          { label: 'Tech stack chosen', dot: 'var(--text-3)', pill: 'pill-backlog', pillLabel: 'Upcoming' }
+        ]
+      }
+    };
+
+    function renderFocusProject(key) {
+      var p = focusProjects[key];
+      var container = document.getElementById('focus-content');
+      if (!p || !container) return;
+      var html = '';
+
+      html += '<div class="focus-header">';
+      html += '<span class="project-priority">' + p.priority + '</span>';
+      html += '<span class="focus-title">' + p.name + '</span>';
+      html += '<span class="pill ' + p.pill + '">' + p.pillLabel + '</span>';
+      html += '</div>';
+
+      html += '<div class="focus-agents">';
+      p.agents.forEach(function(a) { html += '<span class="agent-chip">' + agentAvatar(a, 'agent-avatar-sm') + ' ' + a + '</span>'; });
+      html += '</div>';
+
+      html += '<div class="focus-priority">' + p.callout + '</div>';
+
+      html += '<ul class="focus-tasks">';
+      p.tasks.forEach(function(t, i) {
+        var id = 'focus-' + key + '-' + i;
+        html += '<label class="focus-task"><input type="checkbox" class="focus-check" id="' + id + '"><span class="focus-checkmark"></span><span class="focus-task-text">' + t + '</span></label>';
+      });
+      html += '</ul>';
+
+      html += '<div class="focus-context">' + p.context + '</div>';
+
+      html += '<div class="focus-milestones">';
+      p.milestones.forEach(function(m) {
+        html += '<div class="focus-milestone"><span class="focus-ms-dot" style="background:' + m.dot + '"></span><span class="focus-ms-label">' + m.label + '</span><span class="pill ' + m.pill + '">' + m.pillLabel + '</span></div>';
+      });
+      html += '</div>';
+
+      container.innerHTML = html;
+    }
+
+    var focusSelect = document.getElementById('focus-project-select');
+    if (focusSelect) {
+      focusSelect.addEventListener('change', function() { renderFocusProject(focusSelect.value); });
+      renderFocusProject('ofm');
+    }
+
+    // ── Memory tab: search filter ──
+    var memSearchInput = document.getElementById('mem-search-input');
+    if (memSearchInput) {
+      memSearchInput.addEventListener('input', function() {
+        var query = memSearchInput.value.toLowerCase().trim();
+        var cards = document.querySelectorAll('.mem-card');
+        cards.forEach(function(card) {
+          if (!query) {
+            card.classList.remove('mem-card-dim');
+            return;
+          }
+          var text = (card.getAttribute('data-mem-text') || '') + ' ' + card.textContent;
+          if (text.toLowerCase().indexOf(query) !== -1) {
+            card.classList.remove('mem-card-dim');
+          } else {
+            card.classList.add('mem-card-dim');
+          }
+        });
+      });
+    }
+
+    /* ---- IntersectionObserver: Scroll Reveal ---- */
+    revealObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    // Observe all reveal elements in the initially active panel
+    document.querySelectorAll('.tab-panel.active .reveal').forEach(function(el) {
+      revealObserver.observe(el);
+    });
+
+    // Also observe any reveal elements not inside a tab-panel (top-level)
+    document.querySelectorAll('.reveal:not(.tab-panel .reveal)').forEach(function(el) {
+      revealObserver.observe(el);
+    });
+
+    /* ---- Keyboard Shortcut Tooltip ---- */
+    var hint = document.getElementById('shortcut-hint');
+    if (hint) {
+      setTimeout(function() { hint.classList.add('visible'); }, 500);
+      setTimeout(function() { hint.classList.remove('visible'); }, 3500);
+    }
+  </script>
+</body>
+</html>
