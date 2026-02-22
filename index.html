@@ -1279,6 +1279,10 @@
     }
 
     .inbox-task.done:hover { border-color: var(--border-hover); opacity: 0.5; }
+    /* In Done filter - show at full opacity, already know they are done */
+    #kb-list-view.filter-done .inbox-task.done { opacity: 1; }
+    #kb-list-view.filter-done .inbox-task.done .inbox-task-title { text-decoration: none; color: var(--text-1); }
+    #kb-list-view.filter-done .inbox-task.done:hover { opacity: 1; }
 
     /* ========================================
        KANBAN BOARD (inside Inbox tab)
@@ -4202,6 +4206,7 @@
               break;
             }
           }
+          saveKanbanState();
           renderListView();
           updateKanbanMetrics();
         });
@@ -4222,6 +4227,10 @@
     }
 
     function applyListFilter(filter) {
+      var listEl = document.getElementById('kb-list-view');
+      if (listEl) {
+        listEl.classList.toggle('filter-done', filter === 'done');
+      }
       document.querySelectorAll('#kb-list-view .inbox-task').forEach(function(task) {
         var isDone = task.classList.contains('done') || task.querySelector('.task-status-select')?.value === 'completed';
         var colType = task.dataset.colType;
@@ -4233,6 +4242,25 @@
         task.style.display = show ? '' : 'none';
       });
     }
+
+    /* ---- Kanban: Persistence ---- */
+    function saveKanbanState() {
+      try {
+        var overrides = kanbanTasks.map(function(t) { return { id: t.id, status: t.status, movedAt: t.movedAt }; });
+        localStorage.setItem('mc-kanban-state', JSON.stringify(overrides));
+      } catch(e) {}
+    }
+    function loadKanbanState() {
+      try {
+        var saved = JSON.parse(localStorage.getItem('mc-kanban-state') || '[]');
+        var map = {};
+        saved.forEach(function(s) { map[s.id] = s; });
+        kanbanTasks.forEach(function(t) {
+          if (map[t.id]) { t.status = map[t.id].status; t.movedAt = map[t.id].movedAt; }
+        });
+      } catch(e) {}
+    }
+    loadKanbanState();
 
     /* ---- Kanban: Init ---- */
     renderKanbanBoard();
