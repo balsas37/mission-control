@@ -4126,6 +4126,7 @@
         document.querySelectorAll('.kb-view-btn').forEach(function(b) { b.classList.remove('active'); });
         btn.classList.add('active');
         kanbanViewMode = btn.dataset.view;
+        try { localStorage.setItem('mc-inbox-view', kanbanViewMode); } catch(e) {}
         var boardEl = document.getElementById('kb-board');
         var listEl = document.getElementById('kb-list-view');
         var metricsEl = document.getElementById('kb-metrics');
@@ -4213,7 +4214,11 @@
         sel.addEventListener('click', function(e) { e.stopPropagation(); });
       });
 
-      // Apply current filter
+      // Apply current filter (use saved if available)
+      try {
+        var savedFilter = localStorage.getItem('mc-inbox-filter');
+        if (savedFilter) filter = savedFilter;
+      } catch(e) {}
       applyListFilter(filter);
 
       // Re-attach filter buttons
@@ -4221,6 +4226,7 @@
         btn.addEventListener('click', function() {
           document.querySelectorAll('.inbox-filter').forEach(function(b) { b.classList.remove('active'); });
           btn.classList.add('active');
+          try { localStorage.setItem('mc-inbox-filter', btn.dataset.filter); } catch(e) {}
           applyListFilter(btn.dataset.filter);
         });
       });
@@ -4264,6 +4270,16 @@
 
     /* ---- Kanban: Init ---- */
     renderKanbanBoard();
+    // Restore inbox view mode
+    (function() {
+      try {
+        var savedInboxView = localStorage.getItem('mc-inbox-view');
+        if (savedInboxView) {
+          var targetBtn = document.querySelector('[data-view="' + savedInboxView + '"]');
+          if (targetBtn && targetBtn.closest('#panel-inbox')) { targetBtn.click(); }
+        }
+      } catch(e) {}
+    })();
 
     /* ---- Analytics: Date Range Toggle ---- */
     document.querySelectorAll('.analytics-filter').forEach(function(btn) {
@@ -4349,9 +4365,17 @@
     renderAnalyticsTable('lagoon');
 
     /* ---- View Toggle: Team & Projects ---- */
-    function initViewToggle(toggleId, cardViewId, tableViewId) {
+    function initViewToggle(toggleId, cardViewId, tableViewId, storageKey) {
       var toggle = document.getElementById(toggleId);
       if (!toggle) return;
+      // Restore saved view
+      var savedView = storageKey ? (function(){ try { return localStorage.getItem(storageKey); } catch(e) { return null; } })() : null;
+      if (savedView) {
+        var cv = document.getElementById(cardViewId), tv = document.getElementById(tableViewId);
+        toggle.querySelectorAll('.view-toggle-btn').forEach(function(b) { b.classList.toggle('active', b.dataset.view === savedView); });
+        if (savedView === 'table') { if (cv) cv.style.display = 'none'; if (tv) tv.style.display = ''; }
+        else { if (cv) cv.style.display = ''; if (tv) tv.style.display = 'none'; }
+      }
       toggle.querySelectorAll('.view-toggle-btn').forEach(function(btn) {
         btn.addEventListener('click', function() {
           toggle.querySelectorAll('.view-toggle-btn').forEach(function(b) { b.classList.remove('active'); });
@@ -4364,11 +4388,12 @@
             if (cv) cv.style.display = '';
             if (tv) tv.style.display = 'none';
           }
+          if (storageKey) { try { localStorage.setItem(storageKey, btn.dataset.view); } catch(e) {} }
         });
       });
     }
-    initViewToggle('team-view-toggle', 'team-card-view', 'team-table-view');
-    initViewToggle('projects-view-toggle', 'projects-card-view', 'projects-table-view');
+    initViewToggle('team-view-toggle', 'team-card-view', 'team-table-view', 'mc-team-view');
+    initViewToggle('projects-view-toggle', 'projects-card-view', 'projects-table-view', 'mc-projects-view');
 
     /* ---- Calendar: State & Data ---- */
     var CAL_COLORS = [
@@ -4484,6 +4509,7 @@
 
     function calSwitchView(mode) {
       if (calViewMode === mode) return; calViewMode = mode;
+      try { localStorage.setItem('mc-cal-view', mode); } catch(e) {}
       document.querySelectorAll('.cal-view-btn').forEach(function(b) { b.classList.toggle('active', b.dataset.view === mode); });
       if (mode === 'week') {
         var d = new Date(calViewYear, calViewMonth, 1), day = d.getDay();
@@ -4544,6 +4570,11 @@
       document.getElementById('cal-next').addEventListener('click', function() { calNavigate(1); });
       document.getElementById('cal-today').addEventListener('click', calGoToToday);
       document.querySelectorAll('.cal-view-btn').forEach(function(b) { b.addEventListener('click', function() { calSwitchView(b.dataset.view); }); });
+      // Restore saved calendar view
+      try {
+        var savedCalView = localStorage.getItem('mc-cal-view');
+        if (savedCalView && savedCalView !== 'month') { calSwitchView(savedCalView); }
+      } catch(e) {}
       document.getElementById('cal-modal-close').addEventListener('click', calCloseModal);
       document.getElementById('cal-modal-cancel').addEventListener('click', calCloseModal);
       document.getElementById('cal-modal-save').addEventListener('click', calSaveEvent);
