@@ -2532,6 +2532,232 @@
       outline: 1px solid rgba(255,255,255,0.4);
       outline-offset: 2px;
     }
+
+    /* ========================================
+       TIMELINE VIEW
+       ======================================== */
+    #cal-timeline {
+      padding: 0 0 40px 0;
+    }
+    .tl-wrap {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .tl-inner {
+      min-width: 700px;
+      padding-bottom: 16px;
+    }
+    .tl-row {
+      display: flex;
+      align-items: center;
+      min-height: 36px;
+      border-bottom: 1px solid var(--border);
+    }
+    .tl-row:hover { background: var(--bg-hover); }
+    .tl-row-label {
+      flex: 0 0 220px;
+      max-width: 220px;
+      padding: 6px 12px 6px 0;
+      font-size: 12px;
+      color: var(--text-2);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .tl-ms-row .tl-row-label {
+      font-size: 11px;
+      color: var(--text-3);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .tl-axis {
+      flex: 1;
+      position: relative;
+      height: 36px;
+    }
+    .tl-header-row {
+      display: flex;
+      align-items: flex-end;
+      min-height: 28px;
+      border-bottom: 1px solid var(--border-hover);
+      margin-bottom: 4px;
+    }
+    .tl-header-row .tl-row-label {
+      font-size: 11px;
+      color: var(--text-3);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .tl-month-label {
+      position: absolute;
+      font-size: 11px;
+      color: var(--text-3);
+      transform: translateX(-50%);
+      bottom: 4px;
+      white-space: nowrap;
+    }
+    .tl-gridline {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: var(--border);
+      pointer-events: none;
+    }
+    .tl-today-line {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 1.5px;
+      background: rgba(100,165,215,0.5);
+      pointer-events: none;
+      z-index: 2;
+    }
+    .tl-diamond {
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      width: 10px;
+      height: 10px;
+      border-radius: 2px;
+      cursor: default;
+      z-index: 3;
+    }
+    .tl-diamond-label {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 10px;
+      color: var(--text-3);
+      white-space: nowrap;
+      left: 14px;
+      pointer-events: none;
+    }
+    .tl-task-dot {
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 3;
+      transition: transform 0.15s;
+    }
+    .tl-task-dot:hover {
+      transform: translate(-50%, -50%) scale(1.5);
+    }
+    .tl-date-label {
+      position: absolute;
+      top: -18px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 10px;
+      white-space: nowrap;
+      color: var(--text-3);
+      pointer-events: none;
+    }
+    .tl-proj-dot {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .tl-section-label {
+      font-size: 11px;
+      color: var(--text-3);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 16px 0 6px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+    }
+    .tl-section-label::before {
+      content: '';
+      display: inline-block;
+      width: 220px;
+      flex-shrink: 0;
+    }
+    .tl-add-date-btn {
+      background: transparent;
+      border: 1px dashed var(--border-hover);
+      color: var(--text-3);
+      border-radius: 6px;
+      padding: 3px 10px;
+      font-size: 11px;
+      cursor: pointer;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .tl-add-date-btn:hover { color: var(--text-2); border-color: var(--text-3); }
+    .tl-unsched-axis {
+      display: flex;
+      align-items: center;
+    }
+    #tl-date-popup {
+      position: fixed;
+      z-index: 9999;
+      background: var(--bg-card);
+      border: 1px solid var(--border-hover);
+      border-radius: 10px;
+      padding: 16px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+      min-width: 190px;
+    }
+    #tl-date-popup .tl-popup-title {
+      font-size: 11px;
+      color: var(--text-3);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 10px;
+    }
+    #tl-date-input {
+      background: var(--bg-hover);
+      border: 1px solid var(--border);
+      color: var(--text-1);
+      border-radius: 6px;
+      padding: 6px 10px;
+      font-size: 13px;
+      width: 100%;
+      font-family: inherit;
+    }
+    .tl-popup-btns {
+      display: flex;
+      gap: 6px;
+      margin-top: 10px;
+    }
+    .tl-popup-save {
+      flex: 1;
+      background: rgba(255,255,255,0.08);
+      border: none;
+      color: var(--text-1);
+      border-radius: 6px;
+      padding: 6px;
+      font-size: 13px;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .tl-popup-save:hover { background: rgba(255,255,255,0.14); }
+    .tl-popup-clear, .tl-popup-cancel {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-2);
+      border-radius: 6px;
+      padding: 6px 10px;
+      font-size: 13px;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .tl-popup-clear:hover, .tl-popup-cancel:hover { border-color: var(--text-3); color: var(--text-1); }
+    @media (max-width: 600px) {
+      .tl-row-label { flex: 0 0 140px; max-width: 140px; font-size: 11px; }
+      .tl-section-label::before { width: 140px; }
+    }
   </style>
 </head>
 <body>
@@ -3342,12 +3568,17 @@
           <div class="cal-view-toggle">
             <button class="cal-view-btn active" data-view="month">Month</button>
             <button class="cal-view-btn" data-view="week">Week</button>
+            <button class="cal-view-btn" data-view="timeline">Timeline</button>
           </div>
         </div>
       </div>
 
       <!-- Calendar Grid (rendered by JS) -->
       <div id="cal-container" class="reveal"></div>
+
+      <!-- Timeline View (rendered by JS) -->
+      <div id="cal-timeline" style="display:none"></div>
+      <!-- Timeline date-picker popup (rendered into cal-timeline by JS) -->
 
       <!-- Add Event Modal -->
       <div class="cal-modal-backdrop" id="cal-modal-backdrop" style="display:none">
@@ -4268,7 +4499,7 @@
     /* ---- Kanban: Persistence ---- */
     function saveKanbanState() {
       try {
-        var overrides = kanbanTasks.map(function(t) { return { id: t.id, status: t.status, movedAt: t.movedAt }; });
+        var overrides = kanbanTasks.map(function(t) { return { id: t.id, status: t.status, movedAt: t.movedAt, dueDate: t.dueDate || null }; });
         localStorage.setItem('mc-kanban-state', JSON.stringify(overrides));
       } catch(e) {}
     }
@@ -4278,7 +4509,11 @@
         var map = {};
         saved.forEach(function(s) { map[s.id] = s; });
         kanbanTasks.forEach(function(t) {
-          if (map[t.id]) { t.status = map[t.id].status; t.movedAt = map[t.id].movedAt; }
+          if (map[t.id]) {
+            t.status = map[t.id].status;
+            t.movedAt = map[t.id].movedAt;
+            if (map[t.id].dueDate) t.dueDate = map[t.id].dueDate;
+          }
         });
       } catch(e) {}
     }
@@ -4509,7 +4744,7 @@
       calAttachHandlers();
     }
 
-    function calRender() { calUpdateTitle(); if (calViewMode === 'month') renderMonthView(); else renderWeekView(); }
+    function calRender() { calUpdateTitle(); if (calViewMode === 'timeline') { renderTimelineView(); return; } if (calViewMode === 'month') renderMonthView(); else renderWeekView(); }
 
     function calNavigate(dir) {
       if (calViewMode === 'month') {
@@ -4530,11 +4765,201 @@
       if (calViewMode === mode) return; calViewMode = mode;
       try { localStorage.setItem('mc-cal-view', mode); } catch(e) {}
       document.querySelectorAll('.cal-view-btn').forEach(function(b) { b.classList.toggle('active', b.dataset.view === mode); });
+      if (mode === 'timeline') {
+        document.getElementById('cal-container').style.display = 'none';
+        document.getElementById('cal-timeline').style.display = 'block';
+        document.querySelector('.cal-nav-arrows').style.visibility = 'hidden';
+        renderTimelineView();
+        return;
+      }
+      document.getElementById('cal-container').style.display = '';
+      document.getElementById('cal-timeline').style.display = 'none';
+      document.querySelector('.cal-nav-arrows').style.visibility = '';
       if (mode === 'week') {
         var d = new Date(calViewYear, calViewMonth, 1), day = d.getDay();
         calViewWeekStart = new Date(d.getFullYear(), d.getMonth(), d.getDate() - day + (day === 0 ? -6 : 1));
       } else { calViewYear = calViewWeekStart.getFullYear(); calViewMonth = calViewWeekStart.getMonth(); }
       calRender();
+    }
+
+    function renderTimelineView() {
+      var container = document.getElementById('cal-timeline');
+      var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+      var now = new Date();
+      var startDate = new Date(2026, 1, 22); // Feb 22 2026
+      var endDate   = new Date(2026, 9, 31); // Oct 31 2026
+      var totalMs = endDate - startDate;
+
+      function pct(date) {
+        return Math.max(0, Math.min(100, (date - startDate) / totalMs * 100));
+      }
+      function fmtDate(d) {
+        return months[d.getMonth()] + ' ' + d.getDate();
+      }
+
+      var projColors = {
+        'OFM Agency':          '#B07CE8',
+        'Lagoon Company':      '#5BC0DE',
+        'Digital Products':    '#F5A623',
+        'OpenClaw':            '#6BA8DA',
+        'Hilltop Villa - Oaxaca': '#D4A843',
+        'Farm / Off-Grid':     '#5CB85C',
+        'App Dev':             '#888888'
+      };
+
+      var milestones = [
+        { name: 'Funnel live',     date: new Date(2026, 2,  1), color: '#F5A623' },
+        { name: 'First sale',      date: new Date(2026, 2, 15), color: '#F5A623' },
+        { name: 'OFM creator',     date: new Date(2026, 2,  1), color: '#B07CE8' },
+        { name: 'Move to PE',      date: new Date(2026, 4,  1), color: '#5BC0DE' },
+        { name: 'Baby due',        date: new Date(2026, 7, 15), color: '#9B59B6' }
+      ];
+
+      // Build month grid lines
+      function makeGridlines() {
+        var h = '';
+        var m = new Date(2026, 1, 1);
+        while (m <= endDate) {
+          var p = pct(m);
+          if (p >= 0 && p <= 100) {
+            h += '<div class="tl-gridline" style="left:' + p.toFixed(2) + '%"></div>';
+          }
+          m = new Date(m.getFullYear(), m.getMonth() + 1, 1);
+        }
+        // Today line
+        if (now >= startDate && now <= endDate) {
+          h += '<div class="tl-today-line" style="left:' + pct(now).toFixed(2) + '%"></div>';
+        }
+        return h;
+      }
+
+      var html = '<div class="tl-wrap"><div class="tl-inner">';
+
+      // Header row: month labels
+      html += '<div class="tl-header-row">';
+      html += '<div class="tl-row-label" style="font-size:10px;color:var(--text-3);text-transform:uppercase;letter-spacing:.06em">Task</div>';
+      html += '<div class="tl-axis" style="position:relative;height:28px">';
+      html += makeGridlines();
+      var m2 = new Date(2026, 1, 1);
+      while (m2 <= endDate) {
+        var p2 = pct(m2);
+        if (p2 >= 0 && p2 <= 100) {
+          html += '<span class="tl-month-label" style="left:' + p2.toFixed(2) + '%">' + months[m2.getMonth()] + '</span>';
+        }
+        m2 = new Date(m2.getFullYear(), m2.getMonth() + 1, 1);
+      }
+      html += '</div></div>';
+
+      // Milestones row
+      html += '<div class="tl-row tl-ms-row">';
+      html += '<div class="tl-row-label">Milestones</div>';
+      html += '<div class="tl-axis" style="position:relative;height:36px">';
+      html += makeGridlines();
+      milestones.forEach(function(ms) {
+        var p = pct(ms.date);
+        html += '<div class="tl-diamond" style="left:' + p.toFixed(2) + '%;background:' + ms.color + '" title="' + ms.name + ' - ' + fmtDate(ms.date) + ' 2026"></div>';
+        html += '<span class="tl-diamond-label" style="left:calc(' + p.toFixed(2) + '% + 8px);color:' + ms.color + ';top:50%;transform:translateY(-50%);font-size:10px;position:absolute;white-space:nowrap">' + ms.name + '</span>';
+      });
+      html += '</div></div>';
+
+      // Scheduled tasks
+      var scheduled = kanbanTasks.filter(function(t) { return t.dueDate && t.status !== 'completed'; });
+      var unscheduled = kanbanTasks.filter(function(t) { return !t.dueDate && t.status !== 'completed' && t.status !== 'backlog'; });
+
+      if (scheduled.length > 0) {
+        html += '<div class="tl-section-label"><span>Scheduled</span></div>';
+        scheduled.sort(function(a, b) { return new Date(a.dueDate) - new Date(b.dueDate); });
+        scheduled.forEach(function(task) {
+          var d = new Date(task.dueDate + 'T12:00:00');
+          var color = projColors[task.project] || '#888';
+          var p = pct(d);
+          var isPast = d < now;
+          html += '<div class="tl-row">';
+          html += '<div class="tl-row-label" title="' + task.title + '"><span class="tl-proj-dot" style="background:' + color + '"></span>' + task.title + '</div>';
+          html += '<div class="tl-axis" style="position:relative;height:36px">';
+          html += makeGridlines();
+          html += '<div class="tl-task-dot" data-task-id="' + task.id + '" style="left:' + p.toFixed(2) + '%;background:' + color + (isPast ? ';opacity:0.4' : '') + '" title="' + fmtDate(d) + '">';
+          html += '<span class="tl-date-label">' + fmtDate(d) + '</span>';
+          html += '</div>';
+          html += '</div></div>';
+        });
+      }
+
+      if (unscheduled.length > 0) {
+        html += '<div class="tl-section-label"><span>Unscheduled</span></div>';
+        unscheduled.forEach(function(task) {
+          var color = projColors[task.project] || '#888';
+          html += '<div class="tl-row tl-unscheduled">';
+          html += '<div class="tl-row-label" title="' + task.title + '"><span class="tl-proj-dot" style="background:' + color + '"></span>' + task.title + '</div>';
+          html += '<div class="tl-unsched-axis tl-axis" style="height:36px;display:flex;align-items:center;padding-left:8px">';
+          html += '<button class="tl-add-date-btn" data-task-id="' + task.id + '">+ Set date</button>';
+          html += '</div></div>';
+        });
+      }
+
+      html += '</div></div>'; // tl-inner + tl-wrap
+
+      // Date picker popup
+      html += '<div id="tl-date-popup" style="display:none">';
+      html += '<div class="tl-popup-title">Set due date</div>';
+      html += '<input type="date" id="tl-date-input">';
+      html += '<div class="tl-popup-btns">';
+      html += '<button class="tl-popup-save" id="tl-date-save">Save</button>';
+      html += '<button class="tl-popup-clear" id="tl-date-clear">Clear</button>';
+      html += '<button class="tl-popup-cancel" id="tl-date-cancel">&#x2715;</button>';
+      html += '</div></div>';
+
+      container.innerHTML = html;
+
+      // Bind: dots + add-date buttons open picker
+      var activeTlTaskId = null;
+      function openTlPicker(taskId, x, y) {
+        activeTlTaskId = taskId;
+        var task = null;
+        for (var i = 0; i < kanbanTasks.length; i++) { if (kanbanTasks[i].id === taskId) { task = kanbanTasks[i]; break; } }
+        var popup = document.getElementById('tl-date-popup');
+        var input = document.getElementById('tl-date-input');
+        input.value = (task && task.dueDate) ? task.dueDate : '';
+        var pw = 200, ph = 120;
+        var left = Math.min(x + 10, window.innerWidth - pw - 16);
+        var top  = Math.min(y + 10, window.innerHeight - ph - 16);
+        popup.style.left = left + 'px';
+        popup.style.top  = top  + 'px';
+        popup.style.display = 'block';
+        setTimeout(function() { input.focus(); }, 50);
+      }
+      container.querySelectorAll('.tl-task-dot, .tl-add-date-btn').forEach(function(el) {
+        el.addEventListener('click', function(e) {
+          e.stopPropagation();
+          openTlPicker(el.dataset.taskId, e.clientX, e.clientY);
+        });
+      });
+      document.getElementById('tl-date-save').addEventListener('click', function() {
+        var val = document.getElementById('tl-date-input').value;
+        if (activeTlTaskId && val) {
+          for (var i = 0; i < kanbanTasks.length; i++) { if (kanbanTasks[i].id === activeTlTaskId) { kanbanTasks[i].dueDate = val; break; } }
+          saveKanbanState();
+          document.getElementById('tl-date-popup').style.display = 'none';
+          renderTimelineView();
+        }
+      });
+      document.getElementById('tl-date-clear').addEventListener('click', function() {
+        if (activeTlTaskId) {
+          for (var i = 0; i < kanbanTasks.length; i++) { if (kanbanTasks[i].id === activeTlTaskId) { kanbanTasks[i].dueDate = null; break; } }
+          saveKanbanState();
+          document.getElementById('tl-date-popup').style.display = 'none';
+          renderTimelineView();
+        }
+      });
+      document.getElementById('tl-date-cancel').addEventListener('click', function() {
+        document.getElementById('tl-date-popup').style.display = 'none';
+      });
+      document.addEventListener('click', function tlOutsideClick(e) {
+        var popup = document.getElementById('tl-date-popup');
+        if (popup && popup.style.display !== 'none' && !popup.contains(e.target)) {
+          popup.style.display = 'none';
+        }
+      }, { once: false, capture: true });
     }
 
     function calOpenModal(dk) {
