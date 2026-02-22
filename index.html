@@ -3064,6 +3064,26 @@
           </ul>
         </div>
 
+        <!-- Digital Products -->
+        <div class="project-card reveal" style="transition-delay:400ms">
+          <div class="project-top">
+            <span class="project-priority" style="background:#5AB8B0;color:#fff">DP</span>
+            <span class="project-name">Digital Products</span>
+            <span class="pill pill-progress">Sprint</span>
+          </div>
+          <div class="project-desc">Low-ticket digital products built with AI using Paid Creators 6-Pillar framework. Product 1: Off-Grid Power Independence. Selling via paid ads. Faceless brand.</div>
+          <div class="project-agents">
+            <span class="agent-chip"><span class="agent-avatar agent-avatar-sm" style="background:#7C9EF5">Pi</span> Piia</span>
+          </div>
+          <ul class="project-threads">
+            <li>Off-Grid Power product brief (Opus pass pending)</li>
+            <li>Course platform selection (GoHighLevel / Skool)</li>
+            <li>Sales page + Facebook ad campaign</li>
+            <li>Product 2: Children Learning Reading</li>
+            <li>Product 3: Brat Busters parenting</li>
+          </ul>
+        </div>
+
       </div>
       </div><!-- /projects-card-view -->
 
@@ -3115,6 +3135,13 @@
                 <td class="data-td">P5</td>
                 <td class="data-td"><span style="display:inline-flex;gap:4px"><span class="agent-avatar agent-avatar-sm" style="background:#E8A87C">Za</span></span></td>
                 <td class="data-td" style="color:var(--text-2);font-size:14px">Farmers direct-to-customer app Puerto Escondido</td>
+              </tr>
+              <tr class="data-row">
+                <td class="data-td">Digital Products</td>
+                <td class="data-td"><span class="pill pill-progress">Sprint</span></td>
+                <td class="data-td">DP</td>
+                <td class="data-td"><span style="display:inline-flex;gap:4px"><span class="agent-avatar agent-avatar-sm" style="background:#7C9EF5">Pi</span></span></td>
+                <td class="data-td" style="color:var(--text-2);font-size:14px">AI-built low-ticket products. Product 1: Off-Grid Power Independence. Paid ads, faceless brand.</td>
               </tr>
             </tbody>
           </table>
@@ -3314,8 +3341,9 @@
 
         <select class="focus-select" id="focus-project-select">
           <option value="ofm">OFM Agency</option>
+          <option value="digital">Digital Products</option>
           <option value="lagoon">Lagoon Company</option>
-          <option value="crete">Hilltop Villa &mdash; Oaxaca</option>
+          <option value="crete">Hilltop Villa - Oaxaca</option>
           <option value="farm">Farm / Off-Grid</option>
           <option value="app">App Development</option>
         </select>
@@ -3384,7 +3412,7 @@
                 <div class="mem-person mem-card" data-mem-text="kevin scout ofm agency models">
                   <div class="mem-person-name">Kevin</div>
                   <div class="mem-person-role">OFM Scout</div>
-                  <div class="mem-person-detail">OFM scout sourcing models/creators. Wants 40% cut. Beno countering at 10%. Called today - no answer. Trying again tomorrow.</div>
+                  <div class="mem-person-detail">OFM scout sourcing models/creators. Wants 40% cut. Beno countering at 10%. Cut negotiation unresolved - callback pending.</div>
                 </div>
 
               </div>
@@ -3520,7 +3548,7 @@
       todo: 'To Do', inprogress: 'In Progress', review: 'Review',
       backlog: 'Backlog', recurring: 'Recurring', completed: 'Completed'
     };
-    var KANBAN_PROJECTS = ['OFM Agency', 'Lagoon Company', 'Hilltop Villa', 'Farm / Off-Grid', 'App Development', 'OpenClaw'];
+    var KANBAN_PROJECTS = ['OFM Agency', 'Digital Products', 'Lagoon Company', 'Hilltop Villa', 'Farm / Off-Grid', 'App Development', 'OpenClaw'];
     var KANBAN_AGENTS = [
       { name: 'Piia', color: '#7C9EF5' },
       { name: 'Kat',  color: '#B07CE8' },
@@ -3555,11 +3583,18 @@
       { id: kanbanId(), title: 'Finalise eco-yacht Facebook ad', description: 'Option 1 copy approved. Headline: "We\'re the only ones running this. Literally the only ones." - ready to launch.', project: 'Lagoon Company', priority: 'High', agent: 'Beno', status: 'review', createdAt: Date.now(), movedAt: Date.now() },
       { id: kanbanId(), title: 'Puerto Escondido fleet strategy', description: 'Called contact - recommendation: target La Punta (affluent tourist zone). Either partner with someone there or operate directly. Premium vehicles (Can-Am, Polaris) are well-suited.', project: 'Lagoon Company', priority: 'Medium', agent: 'Beno', status: 'completed', createdAt: Date.now(), movedAt: Date.now() },
       { id: kanbanId(), title: 'Set up Discord bot', description: 'Log into discord.com/developers/applications with balsas.clawsbx account. Create app named Piia, generate bot token, enable Message Content Intent, invite to server. Send token to Piia.', project: 'OpenClaw', priority: 'Medium', agent: 'Beno', status: 'todo', createdAt: Date.now(), movedAt: Date.now() },
-      { id: kanbanId(), title: 'Set up WAHA WhatsApp integration', description: 'Install Docker on Mac Mini, run WAHA container, scan QR with Lagoon company phone. Connects Piia to WhatsApp Business as a linked device - no disruption to current setup.', project: 'OpenClaw', priority: 'High', agent: 'Beno', status: 'todo', createdAt: Date.now(), movedAt: Date.now() },
-      { id: kanbanId(), title: 'Condominio fine dispute', description: 'Send contract + all communications to Piia. Tell building admin: "consulting my lawyer before any payment." Dispute letter ready once docs received.', project: 'OpenClaw', priority: 'High', agent: 'Beno', status: 'todo', createdAt: Date.now(), movedAt: Date.now() },
-      { id: kanbanId(), title: 'OpenClaw skills stack setup', description: 'Run openclaw doctor - 31 skills with missing requirements. Priority: GOG (Google Workspace), Discord bot token. GitHub PAT needed for coding-agent and himalaya.', project: 'OpenClaw', priority: 'Medium', agent: 'Beno', status: 'todo', createdAt: Date.now(), movedAt: Date.now() },
+      { id: kanbanId(), title: 'Set up WhatsApp bridge (Baileys)', description: 'Docker failed due to nested VM limitation. Baileys Node.js bridge built at workspace/whatsapp-bridge/. When home: restart bridge, scan QR with Lagoon phone. One step - Beno scans, Piia connects.', project: 'OpenClaw', priority: 'High', agent: 'Beno', status: 'inprogress', createdAt: Date.now(), movedAt: Date.now() },
+      { id: kanbanId(), title: 'Condominio fine dispute - send letter', description: 'Letter drafted and ready. Two penalty charges ($1,800 + $1,824) disputed. Key argument: no formal written warning before either fine. Bianca sends to Mariana Rubio when ready.', project: 'OpenClaw', priority: 'High', agent: 'Beno', status: 'review', createdAt: Date.now(), movedAt: Date.now() },
+      { id: kanbanId(), title: 'OpenClaw skills stack setup', description: 'Run openclaw doctor - 31 skills with missing requirements. Priority: GOG (Google Workspace). GitHub PAT done. Himalaya email still needs setup.', project: 'OpenClaw', priority: 'Medium', agent: 'Beno', status: 'inprogress', createdAt: Date.now(), movedAt: Date.now() },
       { id: kanbanId(), title: 'Fix morning-brief & skill-scout delivery', description: 'Root cause found and fixed - both crons now have correct Telegram channel + chat ID in delivery config.', project: 'OpenClaw', priority: 'High', agent: 'Piia', status: 'completed', createdAt: Date.now(), movedAt: Date.now() },
-      { id: kanbanId(), title: 'Pick skill to build: content-pipeline or competitor-watch', description: 'content-pipeline = OFM batch content generator (ComfyUI + vast.ai + IG/TikTok). competitor-watch = structured entity monitoring. Pick one to build next.', project: 'OpenClaw', priority: 'Low', agent: 'Beno', status: 'todo', createdAt: Date.now(), movedAt: Date.now() }
+      { id: kanbanId(), title: 'Deploy Mission Control to GitHub Pages', description: 'Repo: github.com/balsas37/mission-control. Live at balsas37.github.io/mission-control. Auto-deploys via bin/deploy-mission-control.sh on every update.', project: 'OpenClaw', priority: 'High', agent: 'Piia', status: 'completed', createdAt: Date.now(), movedAt: Date.now() },
+      { id: kanbanId(), title: 'Build voice-journal skill', description: 'Send a Telegram voice note - Piia transcribes and structures it into a journal entry in today\'s daily note. Feeds nightly dream cycle. Green-lit by Beno.', project: 'OpenClaw', priority: 'Medium', agent: 'Piia', status: 'todo', createdAt: Date.now(), movedAt: Date.now() },
+      { id: kanbanId(), title: 'Off-Grid Power Independence - product brief', description: 'Source: 37 PDFs (161MB) + The Ready Life Academy (144-lesson Off Grid Boot Camp). Product brief complete (1,270 lines). Ready Life content extraction in progress. Opus pass pending.', project: 'Digital Products', priority: 'Urgent', agent: 'Piia', status: 'inprogress', createdAt: Date.now(), movedAt: Date.now() },
+      { id: kanbanId(), title: 'Select course hosting platform', description: 'Options: GoHighLevel (GHL), Skool, Teachable, Thinkific. Beno leaning toward GoHighLevel. Decide once product brief is finalized.', project: 'Digital Products', priority: 'High', agent: 'Beno', status: 'todo', createdAt: Date.now(), movedAt: Date.now() },
+      { id: kanbanId(), title: 'Build Off-Grid product PDF + deliverable', description: 'Once product brief finalized (post-Opus pass), build the actual course PDF, checklists, and bonus materials. Design + structure from the 6-Pillar framework.', project: 'Digital Products', priority: 'High', agent: 'Piia', status: 'todo', createdAt: Date.now(), movedAt: Date.now() },
+      { id: kanbanId(), title: 'Build sales page + Facebook ad campaign', description: 'Sales hooks drafted (5 angles). Need: sales page copy, creative assets, ad targeting. Target: preppers, homesteaders, off-grid beginners.', project: 'Digital Products', priority: 'High', agent: 'Piia', status: 'todo', createdAt: Date.now(), movedAt: Date.now() },
+      { id: kanbanId(), title: 'Children Learning Reading - product 2', description: 'Course login saved. Phonics/reading methods for kids. Beno qualifies (parent of Shiloh + baby coming). Queue after off-grid product is live.', project: 'Digital Products', priority: 'Low', agent: 'Piia', status: 'backlog', createdAt: Date.now(), movedAt: Date.now() },
+      { id: kanbanId(), title: 'Brat Busters parenting - product 3', description: 'Course login saved. 3 courses: Behaviour Board (16 lessons), Bootcamp 3-12 (83 lessons), Toddler Potty Party (6 lessons). Queue after product 1 is live.', project: 'Digital Products', priority: 'Low', agent: 'Piia', status: 'backlog', createdAt: Date.now(), movedAt: Date.now() }
     ];
     var kanbanViewMode = 'kanban';
 
