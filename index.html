@@ -2644,12 +2644,33 @@
       width: 10px;
       height: 10px;
       border-radius: 50%;
-      cursor: pointer;
+      cursor: grab;
       z-index: 3;
       transition: transform 0.15s;
     }
     .tl-task-dot:hover {
       transform: translate(-50%, -50%) scale(1.5);
+    }
+    .tl-task-dot.tl-dragging {
+      cursor: ew-resize !important;
+      transform: translate(-50%, -50%) scale(1.8) !important;
+      box-shadow: 0 0 0 4px rgba(255,255,255,0.15);
+      transition: none;
+      z-index: 10;
+    }
+    .tl-drag-preview {
+      position: fixed;
+      z-index: 10000;
+      background: var(--bg-card);
+      border: 1px solid var(--border-hover);
+      border-radius: 6px;
+      padding: 4px 12px;
+      font-size: 12px;
+      color: var(--text-1);
+      pointer-events: none;
+      display: none;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+      white-space: nowrap;
     }
     .tl-date-label {
       position: absolute;
@@ -4811,6 +4832,46 @@
       calRender();
     }
 
+    /* ---- Timeline: Drag to Reschedule ---- */
+    var tlDragState = { active: false, taskId: null, dot: null, axis: null, preview: null, pendingDate: null };
+    var tlListenersAdded = false;
+    var tlOutsideClickAdded = false;
+
+    function tlOnDragMove(clientX, clientY) {
+      if (!tlDragState.active || !tlDragState.dot || !tlDragState.axis) return;
+      var mn = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+      var sd = new Date(2026, 1, 22), ed = new Date(2026, 9, 31);
+      var rect = tlDragState.axis.getBoundingClientRect();
+      var pct = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width));
+      var d = new Date(sd.getTime() + pct * (ed - sd));
+      d.setHours(12, 0, 0, 0);
+      tlDragState.pendingDate = d.toISOString().slice(0, 10);
+      tlDragState.dot.style.left = ((d - sd) / (ed - sd) * 100).toFixed(2) + '%';
+      var label = tlDragState.dot.querySelector('.tl-date-label');
+      if (label) label.textContent = mn[d.getMonth()] + ' ' + d.getDate();
+      if (tlDragState.preview) {
+        tlDragState.preview.style.left = (clientX + 14) + 'px';
+        tlDragState.preview.style.top  = (clientY - 34) + 'px';
+        tlDragState.preview.textContent = mn[d.getMonth()] + ' ' + d.getDate() + ', 2026';
+        tlDragState.preview.style.display = 'block';
+      }
+    }
+
+    function tlOnDragEnd() {
+      if (!tlDragState.active) return;
+      if (tlDragState.pendingDate && tlDragState.taskId) {
+        for (var i = 0; i < kanbanTasks.length; i++) {
+          if (kanbanTasks[i].id === tlDragState.taskId) { kanbanTasks[i].dueDate = tlDragState.pendingDate; break; }
+        }
+        saveKanbanState();
+      }
+      if (tlDragState.dot) tlDragState.dot.classList.remove('tl-dragging');
+      if (tlDragState.preview) tlDragState.preview.style.display = 'none';
+      tlDragState.active = false; tlDragState.taskId = null; tlDragState.dot = null;
+      tlDragState.axis = null; tlDragState.pendingDate = null;
+      renderTimelineView();
+    }
+
     function renderTimelineView() {
       var container = document.getElementById('cal-timeline');
       var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
@@ -4983,12 +5044,55 @@
       document.getElementById('tl-date-cancel').addEventListener('click', function() {
         document.getElementById('tl-date-popup').style.display = 'none';
       });
-      document.addEventListener('click', function tlOutsideClick(e) {
-        var popup = document.getElementById('tl-date-popup');
-        if (popup && popup.style.display !== 'none' && !popup.contains(e.target)) {
-          popup.style.display = 'none';
-        }
-      }, { once: false, capture: true });
+
+      // Outside click closes popup (add listener once)
+      if (!tlOutsideClickAdded) {
+        tlOutsideClickAdded = true;
+        document.addEventListener('click', function(e) {
+          var popup = document.getElementById('tl-date-popup');
+          if (popup && popup.style.display !== 'none' && !popup.contains(e.target)) {
+            popup.style.display = 'none';
+          }
+        }, true);
+      }
+
+      // Drag to reschedule: create preview element once
+      if (!tlDragState.preview) {
+        var tlPreview = document.createElement('div');
+        tlPreview.className = 'tl-drag-preview';
+        document.body.appendChild(tlPreview);
+        tlDragState.preview = tlPreview;
+      }
+
+      // Bind mousedown/touchstart on task dots
+      container.querySelectorAll('.tl-task-dot').forEach(function(dot) {
+        dot.addEventListener('mousedown', function(e) {
+          if (e.button !== 0) return;
+          e.preventDefault(); e.stopPropagation();
+          tlDragState.active = true;
+          tlDragState.taskId = dot.dataset.taskId;
+          tlDragState.dot = dot;
+          tlDragState.axis = dot.closest('.tl-axis');
+          dot.classList.add('tl-dragging');
+        });
+        dot.addEventListener('touchstart', function(e) {
+          e.preventDefault();
+          tlDragState.active = true;
+          tlDragState.taskId = dot.dataset.taskId;
+          tlDragState.dot = dot;
+          tlDragState.axis = dot.closest('.tl-axis');
+          dot.classList.add('tl-dragging');
+        }, { passive: false });
+      });
+
+      // Document-level drag listeners (add once)
+      if (!tlListenersAdded) {
+        tlListenersAdded = true;
+        document.addEventListener('mousemove', function(e) { if (tlDragState.active) tlOnDragMove(e.clientX, e.clientY); });
+        document.addEventListener('mouseup',   function()  { if (tlDragState.active) tlOnDragEnd(); });
+        document.addEventListener('touchmove', function(e) { if (tlDragState.active) { e.preventDefault(); tlOnDragMove(e.touches[0].clientX, e.touches[0].clientY); } }, { passive: false });
+        document.addEventListener('touchend',  function()  { if (tlDragState.active) tlOnDragEnd(); });
+      }
     }
 
     function calOpenModal(dk) {
