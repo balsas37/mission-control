@@ -4227,8 +4227,8 @@
         var colType = task.dataset.colType;
         var show = filter === 'all'
           || (filter === 'active' && !isDone)
-          || (filter === 'mine' && colType === 'mine')
-          || (filter === 'agent' && colType === 'agent')
+          || (filter === 'mine' && colType === 'mine' && !isDone)
+          || (filter === 'agent' && colType === 'agent' && !isDone)
           || (filter === 'done' && isDone);
         task.style.display = show ? '' : 'none';
       });
