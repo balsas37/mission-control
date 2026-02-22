@@ -4727,8 +4727,15 @@
 
     var focusSelect = document.getElementById('focus-project-select');
     if (focusSelect) {
-      focusSelect.addEventListener('change', function() { renderFocusProject(focusSelect.value); });
-      renderFocusProject('ofm');
+      focusSelect.addEventListener('change', function() {
+        renderFocusProject(focusSelect.value);
+        try { localStorage.setItem('mc-focus-project', focusSelect.value); } catch(e) {}
+      });
+      var savedFocus = null;
+      try { savedFocus = localStorage.getItem('mc-focus-project'); } catch(e) {}
+      var initFocus = (savedFocus && focusSelect.querySelector('option[value="' + savedFocus + '"]')) ? savedFocus : 'ofm';
+      focusSelect.value = initFocus;
+      renderFocusProject(initFocus);
     }
 
     // ── Memory tab: search filter ──
