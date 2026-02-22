@@ -639,7 +639,7 @@
       display: flex;
       gap: 12px;
       margin-bottom: 24px;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
     }
     .projects-toolbar {
       display: flex;
@@ -658,7 +658,8 @@
       border: 1px solid var(--border);
       display: flex;
       flex-direction: column;
-      min-width: 100px;
+      min-width: 0;
+      flex: 1;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -1312,7 +1313,7 @@
     .kb-metrics {
       display: flex;
       gap: 12px;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
     }
     .kb-metric {
       background: var(--bg-raised);
@@ -1321,7 +1322,8 @@
       border: 1px solid var(--border);
       display: flex;
       flex-direction: column;
-      min-width: 100px;
+      min-width: 0;
+      flex: 1;
       text-align: center;
       position: relative;
       overflow: hidden;
