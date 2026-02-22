@@ -2610,9 +2610,9 @@
       <!-- Stats Bar -->
       <div class="office-stats reveal">
         <div class="stat-chip"><div class="stat-chip-value" style="color:var(--text-1)">1</div><div class="stat-chip-label">Active</div></div>
-        <div class="stat-chip"><div class="stat-chip-value" style="color:var(--text-2)">5</div><div class="stat-chip-label">Idle</div></div>
+        <div class="stat-chip"><div class="stat-chip-value" style="color:var(--text-2)">6</div><div class="stat-chip-label">Idle</div></div>
         <div class="stat-chip"><div class="stat-chip-value" style="color:var(--text-2)">0</div><div class="stat-chip-label">Busy</div></div>
-        <div class="stat-chip"><div class="stat-chip-value" style="color:var(--text-1)">6</div><div class="stat-chip-label">Total</div></div>
+        <div class="stat-chip"><div class="stat-chip-value" style="color:var(--text-1)">7</div><div class="stat-chip-label">Total</div></div>
       </div>
 
       <!-- Workstation Grid -->
@@ -2708,7 +2708,7 @@
 
         <!-- Mara (Idle) -->
         <div class="workstation reveal" style="transition-delay:320ms">
-          <div class="terminal idle">&gt; standby</div>
+          <div class="terminal idle">&gt; task complete: product-stack-build</div>
           <div class="monitor-stand"></div>
           <div class="agent-info">
             <div class="agent-avatar" style="background:#E87CA8">Ma<span class="avatar-status offline"></span></div>
@@ -2717,10 +2717,10 @@
               <div class="agent-role">Content &amp; Copy</div>
             </div>
           </div>
-          <div class="task-bar idle">No active task</div>
+          <div class="task-bar idle">Last: Power Independence product stack - 24 worksheets, 5,832 lines</div>
           <div class="agent-footer">
             <span><span class="status-dot offline"></span>Idle</span>
-            <span>last active 3h ago</span>
+            <span>last active just now</span>
           </div>
           <div class="workstation-actions">
             <button class="workstation-action">Message</button>
@@ -2730,19 +2730,41 @@
 
         <!-- Nile (Idle) -->
         <div class="workstation reveal" style="transition-delay:400ms">
-          <div class="terminal idle">&gt; standby</div>
+          <div class="terminal idle">&gt; task complete: ready-life-extraction</div>
           <div class="monitor-stand"></div>
           <div class="agent-info">
-            <div class="agent-avatar" style="background:#7CD4E8">Ni<span class="avatar-status online"></span></div>
+            <div class="agent-avatar" style="background:#7CD4E8">Ni<span class="avatar-status offline"></span></div>
             <div class="agent-details">
               <div class="agent-name">Nile</div>
               <div class="agent-role">Research &amp; Intel</div>
             </div>
           </div>
-          <div class="task-bar idle">No active task</div>
+          <div class="task-bar idle">Last: Ready Life Academy extraction - Nick Meissner source material</div>
           <div class="agent-footer">
             <span><span class="status-dot offline"></span>Idle</span>
-            <span>last active 6h ago</span>
+            <span>last active 1h ago</span>
+          </div>
+          <div class="workstation-actions">
+            <button class="workstation-action">Message</button>
+            <button class="workstation-action">Assign Task</button>
+          </div>
+        </div>
+
+        <!-- Nova (Idle) -->
+        <div class="workstation reveal" style="transition-delay:480ms">
+          <div class="terminal idle">&gt; standby</div>
+          <div class="monitor-stand"></div>
+          <div class="agent-info">
+            <div class="agent-avatar" style="background:#F5A623">No<span class="avatar-status offline"></span></div>
+            <div class="agent-details">
+              <div class="agent-name">Nova</div>
+              <div class="agent-role">Product Development</div>
+            </div>
+          </div>
+          <div class="task-bar idle">Digital products pipeline - brief to launch</div>
+          <div class="agent-footer">
+            <span><span class="status-dot offline"></span>Idle</span>
+            <span>added today</span>
           </div>
           <div class="workstation-actions">
             <button class="workstation-action">Message</button>
@@ -2867,6 +2889,23 @@
               <li>Brand voice &amp; tone consistency</li>
               <li>Content calendar planning</li>
               <li>Copy editing &amp; proofreading</li>
+            </ul>
+          </div>
+          <div class="team-card dept-build reveal" style="transition-delay:160ms">
+            <div class="team-card-header">
+              <div class="team-card-emoji"><div class="agent-avatar agent-avatar-lg" style="background:#F5A623">No</div></div>
+              <div class="team-card-meta">
+                <div class="team-card-name">Nova</div>
+                <div class="team-card-title">Product Development</div>
+              </div>
+              <span class="pill pill-idle">Idle</span>
+            </div>
+            <ul class="team-card-resp">
+              <li>Digital product pipeline (brief to launch)</li>
+              <li>6-Pillar framework builds</li>
+              <li>Worksheets, checklists &amp; printables</li>
+              <li>Product stack assembly</li>
+              <li>Bonus &amp; upsell creation</li>
             </ul>
           </div>
         </div>
@@ -3565,7 +3604,8 @@
       { name: 'Rex',  color: '#5CB85C' },
       { name: 'Zara', color: '#E8A87C' },
       { name: 'Mara', color: '#E87CA8' },
-      { name: 'Nile', color: '#7CD4E8' }
+      { name: 'Nile', color: '#7CD4E8' },
+      { name: 'Nova', color: '#F5A623' }
     ];
 
     /* ---- Agent Avatar Helpers ---- */
