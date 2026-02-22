@@ -4606,61 +4606,89 @@
     /* ---- Focus: Project Deep-Work View ---- */
     var focusProjects = {
       ofm: {
-        name: 'OFM Agency', priority: 'P1', pill: 'pill-done', pillLabel: 'Active',
-        agents: ['Kat', 'Mara', 'Rex'],
-        callout: 'Recruit and onboard first creator by Q1 2026',
-        tasks: ['Create agency brand guide','Set up creator onboarding flow','Draft fan messaging templates','Build content calendar template','Write pricing tier doc','Create SOP for daily engagement','Set up analytics dashboard'],
-        context: 'OFM Agency is in launch phase. Focus on getting the first creator onboarded with a complete workflow before scaling. Revenue target is $5,000/month within 90 days.',
+        name: 'OFM Agency', priority: 'P1', pill: 'pill-active', pillLabel: 'Active',
+        agents: ['Kat', 'Rex'],
+        callout: 'Get first creator live on Fanvue with ComfyUI AI model content flowing',
+        tasks: [
+          'Create Fanvue AI model account (Beno)',
+          'Set up ComfyUI on vast.ai GPU - today (Beno)',
+          'Review OFM course - extract key workflows (Kat)',
+          'Build fan messaging SOP',
+          'Draft creator onboarding flow',
+          'Set up 5 Filipino chatters with scripts',
+          'Build content calendar template',
+          'Create pricing tier + revenue split doc'
+        ],
+        context: 'OFM Agency co-run with Bianca. Platform: Fanvue. Kevin deal closed: he scouts and manages his own models, takes 30% of agency 70% on his models only - Beno/Bianca keep full cut on all others. 5 Filipino chatters on standby. AI models via ComfyUI + vast.ai GPU.',
         milestones: [
-          { label: 'Brand setup', dot: 'var(--pill-done-text)', pill: 'pill-done', pillLabel: 'Done' },
-          { label: 'First creator signed', dot: 'var(--accent)', pill: 'pill-active', pillLabel: 'Active' },
-          { label: 'First $1k month', dot: 'var(--text-3)', pill: 'pill-backlog', pillLabel: 'Upcoming' },
-          { label: 'Scale to 3 creators', dot: 'var(--text-3)', pill: 'pill-backlog', pillLabel: 'Upcoming' }
+          { label: 'Kevin deal closed', dot: 'var(--pill-done-text)', pill: 'pill-done', pillLabel: 'Done' },
+          { label: 'ComfyUI live', dot: 'var(--accent)', pill: 'pill-active', pillLabel: 'Today' },
+          { label: 'First creator signed', dot: 'var(--text-3)', pill: 'pill-backlog', pillLabel: 'Mar 2026' },
+          { label: 'First $1k month', dot: 'var(--text-3)', pill: 'pill-backlog', pillLabel: 'Upcoming' }
         ]
       },
       digital: {
         name: 'Digital Products', priority: 'P2', pill: 'pill-progress', pillLabel: 'Sprint',
-        agents: ['Piia'],
-        callout: 'Launch Power Independence Academy - first paid product live with ads running',
+        agents: ['Nova', 'Mara', 'Rex'],
+        callout: 'Launch Power Independence Academy on Systeme.io - first sale by Mar 15',
         tasks: [
-          'Select course hosting platform (GoHighLevel vs Skool)',
+          'Create Systeme.io account (Beno - free plan)',
           'Apply to affiliate programs: Amazon Associates, Renogy, EcoFlow, Berkey',
-          'Step 4: Building product stack - worksheets, checklists, frameworks (agent running)',
-          'Create "Complete Gear List" affiliate resource page',
-          'Write sales page copy using the 5 hooks',
-          'Set up Facebook ad campaign (prepper/homesteader targeting)',
-          'Build 5-email welcome sequence',
-          'Set up Instagram faceless page (off-grid/homesteading niche)'
+          'Build full funnel on Systeme.io (Nova)',
+          'Write sales page copy using 5 hooks (Mara)',
+          'Build DFY System Design intake form + delivery workflow (Zara)',
+          'Set up Facebook ad campaign - Appendix D targeting (Rex)',
+          'Set up Instagram faceless page - homesteading niche (Rex)',
+          'Build 5-email welcome sequence'
         ],
-        context: 'Product 1: Power Independence Academy - 6-Pillar System for Off-Grid Energy Freedom. Price: $27 core + upsells. Source: 37 PDFs + Ready Life Academy (Nick Meissner, 50yr homesteader). Affiliate layer: every product recommendation earns 5-15% commission. Products 2 and 3 queued: Children Learning Reading, Brat Busters.',
+        context: 'Product 1: Power Independence Academy - 6-Pillar System for Off-Grid Energy Freedom. Funnel: $27 core / $47 calculator + equipment guide + emergency protocols / $97 done-for-you system design / $17 month membership. Platform: Systeme.io free plan. Affiliate layer on all product recommendations.',
         milestones: [
-          { label: 'Product brief complete', dot: 'var(--pill-done-text)', pill: 'pill-done', pillLabel: 'Done' },
-          { label: 'Platform + affiliate setup', dot: 'var(--accent)', pill: 'pill-active', pillLabel: 'Active' },
-          { label: 'Sales page live', dot: 'var(--text-3)', pill: 'pill-backlog', pillLabel: 'Upcoming' },
-          { label: 'First sale', dot: 'var(--text-3)', pill: 'pill-backlog', pillLabel: 'Upcoming' },
+          { label: 'Product brief done', dot: 'var(--pill-done-text)', pill: 'pill-done', pillLabel: 'Done' },
+          { label: 'Product stack done (24 worksheets)', dot: 'var(--pill-done-text)', pill: 'pill-done', pillLabel: 'Done' },
+          { label: 'Bonus stack done', dot: 'var(--pill-done-text)', pill: 'pill-done', pillLabel: 'Done' },
+          { label: 'Funnel live on Systeme.io', dot: 'var(--accent)', pill: 'pill-active', pillLabel: 'Active' },
+          { label: 'First sale', dot: 'var(--text-3)', pill: 'pill-backlog', pillLabel: 'Mar 2026' },
           { label: 'Ads profitable', dot: 'var(--text-3)', pill: 'pill-backlog', pillLabel: 'Upcoming' }
         ]
       },
       lagoon: {
         name: 'Lagoon Company', priority: 'P3', pill: 'pill-active', pillLabel: 'Active',
         agents: ['Rex'],
-        callout: 'Optimize Google Ads campaign to achieve 4.0x ROAS before high season',
-        tasks: ['Audit current Google Ads account','A/B test ad copy variations','Update Instagram content calendar','Schedule fleet maintenance','Photograph new Can-Am fleet','Create Google Business posts','Review competitor pricing'],
-        context: 'Lagoon Company is the primary revenue source. High season starts December. Focus on maximizing ad efficiency and fleet readiness.',
+        callout: 'Activate Piia on company WhatsApp + set up Aitable booking tracking',
+        tasks: [
+          'Add Piia to Lagoon Company WhatsApp (Beno)',
+          'Share Aitable.ai API token (Beno)',
+          'Build Aitable booking schema + MC analytics integration (Piia)',
+          'Find Facebook Ads account login (Beno)',
+          'Monitor eco-yacht ad performance',
+          'Google Ads optimisation',
+          'Instagram growth - content calendar',
+          'Fleet maintenance schedule'
+        ],
+        context: 'ATV/UTV/buggy/scooter/motorcycle/eco-yacht rental company in Tulum. Co-owned: Beno + Dubi + Linea. Primary revenue source since 2021. Booking flow: pre-booking WhatsApp → 10% deposit (Zelle/Wise) → balance day-of → label completed. Eco-yacht on Nopalitos lagoon - only operator in Tulum.',
         milestones: [
-          { label: 'Google Ads audit', dot: 'var(--pill-done-text)', pill: 'pill-done', pillLabel: 'Done' },
-          { label: 'ROAS 4.0x target', dot: 'var(--accent)', pill: 'pill-active', pillLabel: 'Active' },
-          { label: 'High season prep', dot: 'var(--text-3)', pill: 'pill-backlog', pillLabel: 'Upcoming' }
+          { label: 'Eco-yacht ad live', dot: 'var(--pill-done-text)', pill: 'pill-done', pillLabel: 'Done' },
+          { label: 'Piia on company WhatsApp', dot: 'var(--accent)', pill: 'pill-active', pillLabel: 'Active' },
+          { label: 'Aitable booking tracking live', dot: 'var(--text-3)', pill: 'pill-backlog', pillLabel: 'Upcoming' },
+          { label: 'High season prep', dot: 'var(--text-3)', pill: 'pill-backlog', pillLabel: 'Dec 2026' }
         ]
       },
       crete: {
         name: 'Hilltop Villa - Oaxaca', priority: 'P4', pill: 'pill-waiting', pillLabel: 'Planning',
-        agents: ['Nile', 'Zara'],
-        callout: 'Complete site survey and get construction cost estimate from Sirewall',
-        tasks: ['Schedule site survey with engineer','Research Sirewall rammed-earth specs','Get permit requirements list','Draft floor plan concept','Estimate water and solar needs','Contact local architect'],
-        context: 'Ocean-view land in Oaxaca. Rammed-earth (Sirewall) construction for sustainability. Planning phase - need feasibility data before committing budget.',
+        agents: ['Nile'],
+        callout: 'Complete site survey and get construction cost estimate',
+        tasks: [
+          'Schedule site survey with local engineer',
+          'Get permit requirements list for Oaxaca coast',
+          'Draft floor plan concept',
+          'Estimate water + solar needs for the build',
+          'Contact local architect',
+          'Research Sirewall rammed-earth build costs'
+        ],
+        context: 'Ocean-view land purchased on Oaxaca coast (Palmarito area, near Casa Wabi). Rammed-earth construction via Sirewall method - Beno completed Sirewall training. Planning phase - need site survey and cost data before committing build budget.',
         milestones: [
           { label: 'Land secured', dot: 'var(--pill-done-text)', pill: 'pill-done', pillLabel: 'Done' },
+          { label: 'Sirewall training done', dot: 'var(--pill-done-text)', pill: 'pill-done', pillLabel: 'Done' },
           { label: 'Site survey', dot: 'var(--accent)', pill: 'pill-active', pillLabel: 'Active' },
           { label: 'Cost estimate', dot: 'var(--text-3)', pill: 'pill-backlog', pillLabel: 'Upcoming' },
           { label: 'Permit filing', dot: 'var(--text-3)', pill: 'pill-backlog', pillLabel: 'Upcoming' }
@@ -4669,25 +4697,43 @@
       farm: {
         name: 'Farm / Off-Grid', priority: 'P5', pill: 'pill-waiting', pillLabel: 'Planning',
         agents: ['Nile'],
-        callout: 'Size the solar + battery system and get quotes from 3 suppliers',
-        tasks: ['Calculate daily power consumption','Research LiFePO4 battery options','Get solar panel quotes','Design rainwater collection system','Plan poultry housing layout','Source local feed suppliers','Map irrigation zones'],
-        context: 'Off-grid farm in Oaxaca with livestock, poultry, solar, and LiFePO4 batteries. Need to finalize energy and water systems before breaking ground.',
+        callout: 'Finalize solar + battery system design and poultry housing plan',
+        tasks: [
+          'Calculate daily power consumption for farm',
+          'Design LiFePO4 battery bank + solar array',
+          'Get solar panel + battery quotes',
+          'Plan Cornish Cross poultry housing layout',
+          'Design rainwater collection system',
+          'Source local feed suppliers in Oaxaca',
+          'Map irrigation zones'
+        ],
+        context: 'Ranch land acquired in Oaxaca. Off-grid farm with Cornish Cross poultry, solar + LiFePO4 battery system, rainwater collection. Moving to Puerto Escondido area May 2026 - farm development follows.',
         milestones: [
-          { label: 'Power audit', dot: 'var(--pill-done-text)', pill: 'pill-done', pillLabel: 'Done' },
-          { label: 'Solar sizing', dot: 'var(--accent)', pill: 'pill-active', pillLabel: 'Active' },
+          { label: 'Land acquired', dot: 'var(--pill-done-text)', pill: 'pill-done', pillLabel: 'Done' },
+          { label: 'Solar + battery design', dot: 'var(--accent)', pill: 'pill-active', pillLabel: 'Active' },
+          { label: 'Poultry setup', dot: 'var(--text-3)', pill: 'pill-backlog', pillLabel: 'Upcoming' },
           { label: 'Water system', dot: 'var(--text-3)', pill: 'pill-backlog', pillLabel: 'Upcoming' }
         ]
       },
       app: {
         name: 'App Development', priority: 'P6', pill: 'pill-backlog', pillLabel: 'Idea',
         agents: ['Zara'],
-        callout: 'Validate market demand with 20 farmer interviews in Puerto Escondido',
-        tasks: ['Draft interview questionnaire','Identify 20 target farmers','Conduct field interviews','Analyse interview data','Define MVP feature list','Choose tech stack','Sketch wireframes'],
-        context: 'Direct-to-customer app connecting farmers in Puerto Escondido with local buyers. Still in validation phase \u2014 need proof of demand before building.',
+        callout: 'Validate market demand before writing a single line of code',
+        tasks: [
+          'Draft farmer interview questionnaire',
+          'Identify 20 target farmers in Puerto Escondido area',
+          'Conduct field interviews post-move (May 2026+)',
+          'Analyse interview data',
+          'Define MVP feature list',
+          'Choose tech stack',
+          'Sketch wireframes'
+        ],
+        context: 'Direct-to-customer app connecting farmers in Puerto Escondido with local buyers. Early idea stage - validation first. Moving to the area May 2026 makes field research possible. No building until demand is proven.',
         milestones: [
-          { label: 'Problem validation', dot: 'var(--accent)', pill: 'pill-active', pillLabel: 'Active' },
+          { label: 'Concept defined', dot: 'var(--pill-done-text)', pill: 'pill-done', pillLabel: 'Done' },
+          { label: 'Market validation', dot: 'var(--text-3)', pill: 'pill-backlog', pillLabel: 'May 2026+' },
           { label: 'MVP scope defined', dot: 'var(--text-3)', pill: 'pill-backlog', pillLabel: 'Upcoming' },
-          { label: 'Tech stack chosen', dot: 'var(--text-3)', pill: 'pill-backlog', pillLabel: 'Upcoming' }
+          { label: 'Build starts', dot: 'var(--text-3)', pill: 'pill-backlog', pillLabel: 'Upcoming' }
         ]
       }
     };
