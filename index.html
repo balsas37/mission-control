@@ -640,6 +640,7 @@
       gap: 12px;
       margin-bottom: 24px;
       flex-wrap: nowrap;
+      width: 100%;
     }
     .projects-toolbar {
       display: flex;
@@ -648,7 +649,7 @@
       margin-bottom: 24px;
       flex-wrap: wrap;
     }
-    .projects-toolbar .office-stats { margin-bottom: 0; }
+    .projects-toolbar .office-stats { margin-bottom: 0; flex: 1; }
     .projects-toolbar .view-toggle { margin-left: auto; }
 
     .stat-chip {
@@ -693,12 +694,15 @@
     }
 
     .stat-chip-label {
-      font-size: 12px;
+      font-size: 10px;
       font-weight: 500;
       color: var(--text-3);
       text-transform: uppercase;
       letter-spacing: 0.04em;
       margin-top: 2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     /* Workstation Grid */
@@ -1344,6 +1348,9 @@
       color: var(--text-1);
     }
     .kb-metric-label {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
       font-size: 12px;
       font-weight: 500;
       color: var(--text-3);
@@ -3180,7 +3187,7 @@
           </div>
           <div class="kb-metric">
             <div class="kb-metric-value" id="kb-metric-pct">0%</div>
-            <div class="kb-metric-label">Completion</div>
+            <div class="kb-metric-label">Done</div>
           </div>
         </div>
         <div class="kb-view-toggle">
