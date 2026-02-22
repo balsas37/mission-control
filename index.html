@@ -4341,15 +4341,30 @@
     function renderKanbanBoard() {
       var board = document.getElementById('kb-board');
       if (!board) return;
+      var filter = 'all';
+      try {
+        var activeFilterEl = document.querySelector('.inbox-filter.active');
+        if (activeFilterEl) filter = activeFilterEl.dataset.filter;
+      } catch(e) {}
       var html = '';
       KANBAN_COLUMNS.forEach(function(colKey) {
-        var colTasks = kanbanTasks.filter(function(t) { return t.status === colKey; });
+        var allColTasks = kanbanTasks.filter(function(t) { return t.status === colKey; });
+        var colTasks = allColTasks.filter(function(t) {
+          var isMine = t.agent === 'Beno';
+          if (filter === 'mine')  return isMine;
+          if (filter === 'agent') return !isMine;
+          if (filter === 'done')  return colKey === 'completed';
+          if (filter === 'active') return colKey !== 'completed';
+          return true;
+        });
+        if (filter === 'done' && colKey !== 'completed') return;
         var dotColour = STATUS_COLOURS[colKey] || '#6b7280';
+        var countStr = (colTasks.length !== allColTasks.length) ? (colTasks.length + '/' + allColTasks.length) : String(colTasks.length);
         html += '<div class="kb-column" data-column="' + colKey + '">';
         html += '<div class="kb-col-header">';
         html += '<span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:' + dotColour + ';flex-shrink:0;margin-right:6px;"></span>';
         html += '<span class="kb-col-title" style="color:' + dotColour + '">' + KANBAN_COLUMN_LABELS[colKey] + '</span>';
-        html += '<span class="kb-col-count">' + colTasks.length + '</span>';
+        html += '<span class="kb-col-count">' + countStr + '</span>';
         html += '<button class="kb-col-add" data-add-column="' + colKey + '" title="Add task">+</button>';
         html += '</div>';
         html += '<div class="kb-card-list" data-column="' + colKey + '">';
@@ -4382,7 +4397,7 @@
           boardEl.style.display = '';
           metricsEl.style.display = '';
           listEl.classList.add('kb-list-hidden');
-          if (filtersEl) filtersEl.style.display = 'none';
+          if (filtersEl) filtersEl.style.display = '';
           renderKanbanBoard();
         } else {
           boardEl.style.display = 'none';
@@ -4475,6 +4490,7 @@
           btn.classList.add('active');
           try { localStorage.setItem('mc-inbox-filter', btn.dataset.filter); } catch(e) {}
           applyListFilter(btn.dataset.filter);
+          if (kanbanViewMode === 'kanban') renderKanbanBoard();
         });
       });
     }
@@ -4521,6 +4537,19 @@
 
     /* ---- Kanban: Init ---- */
     renderKanbanBoard();
+    // Show filters on kanban (default view)
+    (function() {
+      var filtersEl = document.getElementById('kb-filters');
+      if (filtersEl) filtersEl.style.display = '';
+      // Restore saved filter
+      try {
+        var savedFilter = localStorage.getItem('mc-inbox-filter');
+        if (savedFilter) {
+          var btn = document.querySelector('.inbox-filter[data-filter="' + savedFilter + '"]');
+          if (btn) { document.querySelectorAll('.inbox-filter').forEach(function(b) { b.classList.remove('active'); }); btn.classList.add('active'); renderKanbanBoard(); }
+        }
+      } catch(e) {}
+    })();
     // Restore inbox view mode
     (function() {
       try {
