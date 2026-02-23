@@ -2525,6 +2525,128 @@
     .inbox-task:focus-visible,
     .project-card:focus-visible,
     .team-card:focus-visible,
+    /* ========================================
+       TASK DETAIL MODAL
+       ======================================== */
+    .task-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 8000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      backdrop-filter: blur(2px);
+      animation: tmFadeIn 0.15s ease;
+    }
+    @keyframes tmFadeIn { from { opacity:0; } to { opacity:1; } }
+    .task-modal {
+      background: var(--bg-card);
+      border: 1px solid var(--border-hover);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 560px;
+      max-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.6);
+      animation: tmSlideUp 0.18s cubic-bezier(0.4,0,0.2,1);
+      overflow: hidden;
+    }
+    @keyframes tmSlideUp { from { transform:translateY(16px);opacity:0; } to { transform:translateY(0);opacity:1; } }
+    .task-modal-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 20px 20px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .task-modal-status-bar {
+      width: 4px;
+      border-radius: 4px;
+      flex-shrink: 0;
+      align-self: stretch;
+      min-height: 24px;
+    }
+    .task-modal-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-1);
+      line-height: 1.4;
+      flex: 1;
+    }
+    .task-modal-close {
+      background: transparent;
+      border: none;
+      color: var(--text-3);
+      font-size: 20px;
+      cursor: pointer;
+      padding: 0 4px;
+      line-height: 1;
+      flex-shrink: 0;
+      transition: color 0.15s;
+    }
+    .task-modal-close:hover { color: var(--text-1); }
+    .task-modal-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    .task-modal-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      color: var(--text-2);
+      background: var(--bg-hover);
+      border-radius: 6px;
+      padding: 4px 10px;
+    }
+    .task-modal-meta-label {
+      color: var(--text-3);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .task-modal-body {
+      padding: 16px 20px 20px;
+      overflow-y: auto;
+      flex: 1;
+    }
+    .task-modal-desc-label {
+      font-size: 10px;
+      color: var(--text-3);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 8px;
+    }
+    .task-modal-desc {
+      font-size: 14px;
+      color: var(--text-2);
+      line-height: 1.7;
+      white-space: pre-wrap;
+    }
+    .task-modal-dates {
+      display: flex;
+      gap: 8px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+    .task-modal-date-chip {
+      font-size: 12px;
+      color: var(--text-2);
+      background: var(--bg-hover);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 4px 10px;
+    }
+    .task-modal-date-chip span { color: var(--text-3); font-size: 10px; text-transform: uppercase; margin-right: 4px; }
+    @media (max-width: 600px) {
+      .task-modal { max-height: 90vh; border-radius: 12px; }
+    }
     .milestone-card:focus-visible,
     .workstation:focus-visible,
     .mem-section-header:focus-visible,
@@ -4351,6 +4473,54 @@
       if (existing) existing.remove();
     }
 
+    /* ---- Task Detail Modal ---- */
+    function openTaskModal(taskId) {
+      var task = null;
+      for (var i = 0; i < kanbanTasks.length; i++) { if (kanbanTasks[i].id === taskId) { task = kanbanTasks[i]; break; } }
+      if (!task) return;
+      var mn = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+      var statusColors = { todo:'#6b7280', inprogress:'#6BA8DA', review:'#A86DBF', backlog:'#C49A35', recurring:'#5AB8B0', completed:'#6BBF6B' };
+      var statusLabels = { todo:'To Do', inprogress:'In Progress', review:'Review', backlog:'Backlog', recurring:'Recurring', completed:'Completed' };
+      var sc = statusColors[task.status] || '#6b7280';
+      var aColor = agentColor(task.agent);
+      var dateHtml = '';
+      if (task.startDate || task.dueDate) {
+        dateHtml = '<div class="task-modal-dates">';
+        if (task.startDate) { var sd = new Date(task.startDate + 'T12:00:00'); dateHtml += '<div class="task-modal-date-chip"><span>Start</span>' + mn[sd.getMonth()] + ' ' + sd.getDate() + ', 2026</div>'; }
+        if (task.dueDate)   { var dd = new Date(task.dueDate   + 'T12:00:00'); dateHtml += '<div class="task-modal-date-chip"><span>Due</span>'   + mn[dd.getMonth()] + ' ' + dd.getDate()   + ', 2026</div>'; }
+        dateHtml += '</div>';
+      }
+      var html = '<div class="task-modal-backdrop" id="kb-task-modal-backdrop">'
+        + '<div class="task-modal" id="kb-task-modal" role="dialog" aria-modal="true">'
+        + '<div class="task-modal-header">'
+        + '<div class="task-modal-status-bar" style="background:' + sc + '"></div>'
+        + '<div class="task-modal-title">' + escapeHtml(task.title) + '</div>'
+        + '<button class="task-modal-close" id="kb-task-modal-close" aria-label="Close">&times;</button>'
+        + '</div>'
+        + '<div class="task-modal-meta">'
+        + '<div class="task-modal-meta-item"><span class="task-modal-meta-label">Status&nbsp;</span><span style="color:' + sc + '">' + (statusLabels[task.status] || task.status) + '</span></div>'
+        + '<div class="task-modal-meta-item"><span class="task-modal-meta-label">Project&nbsp;</span>' + escapeHtml(task.project) + '</div>'
+        + '<div class="task-modal-meta-item"><span class="task-modal-meta-label">Agent&nbsp;</span><span style="color:' + aColor + '">' + escapeHtml(task.agent) + '</span></div>'
+        + '<div class="task-modal-meta-item"><span class="task-modal-meta-label">Priority&nbsp;</span>' + escapeHtml(task.priority) + '</div>'
+        + '</div>'
+        + '<div class="task-modal-body">'
+        + '<div class="task-modal-desc-label">Description</div>'
+        + '<div class="task-modal-desc">' + escapeHtml(task.description || 'No description.') + '</div>'
+        + dateHtml
+        + '</div>'
+        + '</div></div>';
+      document.body.insertAdjacentHTML('beforeend', html);
+      var backdrop = document.getElementById('kb-task-modal-backdrop');
+      document.getElementById('kb-task-modal-close').addEventListener('click', closeTaskModal);
+      backdrop.addEventListener('click', function(e) { if (e.target === backdrop) closeTaskModal(); });
+      function escClose(e) { if (e.key === 'Escape') { closeTaskModal(); document.removeEventListener('keydown', escClose); } }
+      document.addEventListener('keydown', escClose);
+    }
+    function closeTaskModal() {
+      var el = document.getElementById('kb-task-modal-backdrop');
+      if (el) el.remove();
+    }
+
     /* ---- Kanban: Project Dropdown ---- */
     function openProjectDropdown(el) {
       closeProjectDropdown();
@@ -4436,6 +4606,13 @@
       });
       board.querySelectorAll('.kb-card-project').forEach(function(el) {
         el.addEventListener('click', function(e) { e.stopPropagation(); openProjectDropdown(el); });
+      });
+      // Click card to open detail modal
+      board.querySelectorAll('.kb-card').forEach(function(card) {
+        card.addEventListener('click', function(e) {
+          if (e.target.closest('.kb-card-project')) return;
+          openTaskModal(card.dataset.taskId);
+        });
       });
       updateKanbanMetrics();
     }
