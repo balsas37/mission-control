@@ -5045,9 +5045,17 @@
       document.getElementById('cal-timeline').style.display = 'none';
       document.querySelector('.cal-nav-arrows').style.visibility = '';
       if (mode === 'week') {
-        var d = new Date(calViewYear, calViewMonth, 1), day = d.getDay();
-        calViewWeekStart = new Date(d.getFullYear(), d.getMonth(), d.getDate() - day + (day === 0 ? -6 : 1));
-      } else { calViewYear = calViewWeekStart.getFullYear(); calViewMonth = calViewWeekStart.getMonth(); }
+        // Always jump to current week when entering week view
+        var now = new Date(), wd = now.getDay();
+        var off = wd === 0 ? -6 : 1 - wd; // Monday offset
+        calViewWeekStart = new Date(now.getFullYear(), now.getMonth(), now.getDate() + off);
+      } else {
+        // Sync month to Wednesday of the displayed week (avoids month-boundary stepback bug)
+        var mid = new Date(calViewWeekStart);
+        mid.setDate(mid.getDate() + 3);
+        calViewYear = mid.getFullYear();
+        calViewMonth = mid.getMonth();
+      }
       calRender();
     }
 
