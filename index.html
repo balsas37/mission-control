@@ -1293,7 +1293,8 @@
        ======================================== */
     .kb-toolbar {
       display: flex;
-      align-items: flex-start;
+      align-items: center;
+      justify-content: space-between;
       gap: 12px;
       margin-bottom: 20px;
       flex-wrap: wrap;
@@ -1301,7 +1302,6 @@
     .kb-view-toggle {
       display: inline-flex;
       gap: 0;
-      margin-left: auto;
       border: 1px solid var(--border);
       border-radius: 10px;
       overflow: hidden;
@@ -3637,15 +3637,8 @@
     <!-- Inbox / Kanban -->
     <section class="tab-panel" id="panel-inbox">
 
-      <!-- Toolbar: metrics/filters + view toggle on same row -->
+      <!-- Toolbar: metrics (left) | filters (center) | view toggle (right) -->
       <div class="kb-toolbar">
-        <div class="inbox-filters" id="kb-filters" style="display:none">
-          <button class="inbox-filter active" data-filter="all">All</button>
-          <button class="inbox-filter" data-filter="active">Active</button>
-          <button class="inbox-filter" data-filter="mine">Mine</button>
-          <button class="inbox-filter" data-filter="agent">Agent</button>
-          <button class="inbox-filter" data-filter="done">Done</button>
-        </div>
         <div class="kb-metrics" id="kb-metrics">
           <div class="kb-metric">
             <div class="kb-metric-value" id="kb-metric-week">0</div>
@@ -3663,6 +3656,13 @@
             <div class="kb-metric-value" id="kb-metric-pct">0%</div>
             <div class="kb-metric-label">Done</div>
           </div>
+        </div>
+        <div class="inbox-filters" id="kb-filters" style="display:none">
+          <button class="inbox-filter active" data-filter="all">All</button>
+          <button class="inbox-filter" data-filter="active">Active</button>
+          <button class="inbox-filter" data-filter="mine">Mine</button>
+          <button class="inbox-filter" data-filter="agent">Agent</button>
+          <button class="inbox-filter" data-filter="done">Done</button>
         </div>
         <div class="kb-view-toggle">
           <button class="kb-view-btn active" data-view="kanban">Kanban</button>
