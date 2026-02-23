@@ -4588,6 +4588,15 @@
           return true;
         });
         if (filter === 'done' && colKey !== 'completed') return;
+        // Default sort: soonest due date first, undated tasks at bottom
+        colTasks.sort(function(a, b) {
+          var da = a.dueDate ? new Date(a.dueDate) : null;
+          var db = b.dueDate ? new Date(b.dueDate) : null;
+          if (da && db) return da - db;
+          if (da) return -1;
+          if (db) return 1;
+          return 0;
+        });
         var dotColour = STATUS_COLOURS[colKey] || '#6b7280';
         var countStr = (colTasks.length !== allColTasks.length) ? (colTasks.length + '/' + allColTasks.length) : String(colTasks.length);
         html += '<div class="kb-column" data-column="' + colKey + '">';
