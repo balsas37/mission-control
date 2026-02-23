@@ -5180,7 +5180,7 @@
 
       // Header row: month labels
       html += '<div class="tl-header-row">';
-      html += '<div class="tl-row-label" style="font-size:10px;color:var(--text-3);text-transform:uppercase;letter-spacing:.06em">Task</div>';
+      html += '<div class="tl-row-label" style="font-size:10px;color:var(--text-3);text-transform:uppercase;letter-spacing:.06em;display:flex;align-items:center;justify-content:space-between;padding-right:6px">Task<button id="tl-reset-view" title="Reset timeline view" style="font-size:10px;padding:2px 6px;border-radius:5px;border:1px solid var(--border);background:var(--surface-2);color:var(--text-2);cursor:pointer;line-height:1.4">&#8635;</button></div>';
       html += '<div class="tl-axis" style="position:relative;height:28px">';
       html += makeGridlines();
       var m2 = new Date(2026, 1, 1);
@@ -5380,12 +5380,18 @@
         document.addEventListener('touchend',  function()  { if (tlDragState.active) tlOnDragEnd(); });
         // Timeline scroll-wheel zoom (cursor-anchored, like a video editor)
         // FIX: axis check BEFORE e.preventDefault so label column scrolls page normally
+        // Pan state must be declared before wheel listener so wheel can check it
+        var tlPanState = { active: false, startX: 0, startCenter: 0, axisWidth: 0, zoomDays: 0 };
+
         document.getElementById('cal-timeline').addEventListener('wheel', function(e) {
           if (calViewMode !== 'timeline') return;
+          // CRITICAL: block zoom during active pan drag (trackpad fires both simultaneously)
+          if (tlPanState.active) { e.preventDefault(); return; }
           var axis = e.target.closest('.tl-axis');
           if (!axis) return; // not over axis - let page scroll normally
-          e.preventDefault(); // only block scroll when hovering the axis
+          e.preventDefault();
           var rect = axis.getBoundingClientRect();
+          if (!rect.width) return;
           var mouseXPct = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
           var curTotalMs = tlZoomDays * 86400000;
           var curStart = tlViewCenter - curTotalMs / 2;
@@ -5394,12 +5400,14 @@
           tlZoomDays = Math.max(14, Math.min(500, tlZoomDays * factor));
           var newTotalMs = tlZoomDays * 86400000;
           tlViewCenter = mouseDate - mouseXPct * newTotalMs + newTotalMs / 2;
+          // Sanity clamp
+          if (!isFinite(tlViewCenter) || isNaN(tlViewCenter)) tlViewCenter = new Date(2026,4,1).getTime();
           renderTimelineView();
         }, { passive: false });
 
-        // Timeline click-drag pan — cache axisWidth at mousedown so DOM re-renders mid-drag
-        // don't cause stale-ref Infinity bug (detached node → getBoundingClientRect → 0 width)
-        var tlPanState = { active: false, startX: 0, startCenter: 0, axisWidth: 0 };
+        // Timeline click-drag pan
+        // FIX: also cache tlZoomDays at mousedown so accidental wheel events mid-drag
+        // don't change the zoom level and corrupt pan distance calculation
         document.getElementById('cal-timeline').addEventListener('mousedown', function(e) {
           if (calViewMode !== 'timeline') return;
           var axis = e.target.closest('.tl-axis');
@@ -5411,18 +5419,29 @@
           tlPanState.startX = e.clientX;
           tlPanState.startCenter = tlViewCenter;
           tlPanState.axisWidth = w;
+          tlPanState.zoomDays = tlZoomDays; // snapshot zoom at drag start
           e.preventDefault();
           document.body.style.cursor = 'grabbing';
         });
         document.addEventListener('mousemove', function(e) {
           if (!tlPanState.active || !tlPanState.axisWidth) return;
           var deltaX = e.clientX - tlPanState.startX;
-          tlViewCenter = tlPanState.startCenter - (deltaX / tlPanState.axisWidth) * (tlZoomDays * 86400000);
+          // Use snapshotted zoomDays (not live tlZoomDays) so mid-drag wheel events don't corrupt
+          tlViewCenter = tlPanState.startCenter - (deltaX / tlPanState.axisWidth) * (tlPanState.zoomDays * 86400000);
+          if (!isFinite(tlViewCenter) || isNaN(tlViewCenter)) { tlPanState.active = false; return; }
           renderTimelineView();
         });
         document.addEventListener('mouseup', function() {
           if (tlPanState.active) { tlPanState.active = false; document.body.style.cursor = ''; }
         });
+
+        // Reset timeline view button handler
+        var tlResetBtn = document.getElementById('tl-reset-view');
+        if (tlResetBtn) {
+          tlResetBtn.addEventListener('click', function() {
+            tlZoomDays = 253; tlViewCenter = new Date(2026,4,1).getTime(); renderTimelineView();
+          });
+        }
       }
     }
 
