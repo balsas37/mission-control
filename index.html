@@ -2666,6 +2666,8 @@
     #cal-timeline {
       padding: 0 0 40px 0;
     }
+    .tl-axis { cursor: grab; }
+    .tl-dot, .tl-bar, .tl-bar-handle, .tl-diamond { cursor: pointer; }
     .tl-wrap {
       width: 100%;
       overflow-x: auto;
@@ -5362,25 +5364,50 @@
         document.addEventListener('touchmove', function(e) { if (tlDragState.active) { e.preventDefault(); tlOnDragMove(e.touches[0].clientX, e.touches[0].clientY); } }, { passive: false });
         document.addEventListener('touchend',  function()  { if (tlDragState.active) tlOnDragEnd(); });
         // Timeline scroll-wheel zoom (cursor-anchored, like a video editor)
+        // FIX: axis check BEFORE e.preventDefault so label column scrolls page normally
         document.getElementById('cal-timeline').addEventListener('wheel', function(e) {
           if (calViewMode !== 'timeline') return;
-          e.preventDefault();
           var axis = e.target.closest('.tl-axis');
-          if (!axis) return;
+          if (!axis) return; // not over axis - let page scroll normally
+          e.preventDefault(); // only block scroll when hovering the axis
           var rect = axis.getBoundingClientRect();
           var mouseXPct = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
           var curTotalMs = tlZoomDays * 86400000;
           var curStart = tlViewCenter - curTotalMs / 2;
-          // Date under mouse cursor before zoom
           var mouseDate = curStart + mouseXPct * curTotalMs;
-          // Zoom: scroll up = zoom in, scroll down = zoom out
           var factor = e.deltaY > 0 ? 1.3 : 0.77;
           tlZoomDays = Math.max(14, Math.min(500, tlZoomDays * factor));
-          // Reanchor: keep mouseDate at same X after zoom
           var newTotalMs = tlZoomDays * 86400000;
           tlViewCenter = mouseDate - mouseXPct * newTotalMs + newTotalMs / 2;
           renderTimelineView();
         }, { passive: false });
+
+        // Timeline click-drag to pan (drag axis left/right to move through time)
+        var tlPanState = { active: false, startX: 0, startCenter: 0, axis: null };
+        document.getElementById('cal-timeline').addEventListener('mousedown', function(e) {
+          if (calViewMode !== 'timeline') return;
+          var axis = e.target.closest('.tl-axis');
+          if (!axis) return;
+          // Don't start pan if clicking on a task element (those open date picker / reschedule)
+          if (e.target.classList.contains('tl-dot') || e.target.classList.contains('tl-bar') || e.target.classList.contains('tl-bar-handle') || e.target.classList.contains('tl-diamond')) return;
+          tlPanState.active = true;
+          tlPanState.startX = e.clientX;
+          tlPanState.startCenter = tlViewCenter;
+          tlPanState.axis = axis;
+          e.preventDefault();
+          document.body.style.cursor = 'grabbing';
+        });
+        document.addEventListener('mousemove', function(e) {
+          if (!tlPanState.active) return;
+          var rect = tlPanState.axis.getBoundingClientRect();
+          var deltaX = e.clientX - tlPanState.startX;
+          var totalMs = tlZoomDays * 86400000;
+          tlViewCenter = tlPanState.startCenter - (deltaX / rect.width) * totalMs;
+          renderTimelineView();
+        });
+        document.addEventListener('mouseup', function() {
+          if (tlPanState.active) { tlPanState.active = false; document.body.style.cursor = ''; }
+        });
       }
     }
 
