@@ -5388,8 +5388,32 @@
           renderTimelineView();
         }, { passive: false });
 
-        // NOTE: Click-drag pan feature temporarily disabled - was causing zoom-to-max bug
-        // Will re-implement with proper testing when timeline is stable
+        // Timeline click-drag pan — cache axisWidth at mousedown so DOM re-renders mid-drag
+        // don't cause stale-ref Infinity bug (detached node → getBoundingClientRect → 0 width)
+        var tlPanState = { active: false, startX: 0, startCenter: 0, axisWidth: 0 };
+        document.getElementById('cal-timeline').addEventListener('mousedown', function(e) {
+          if (calViewMode !== 'timeline') return;
+          var axis = e.target.closest('.tl-axis');
+          if (!axis) return;
+          if (e.target.classList.contains('tl-dot') || e.target.classList.contains('tl-bar') || e.target.classList.contains('tl-bar-handle') || e.target.classList.contains('tl-diamond')) return;
+          var w = axis.getBoundingClientRect().width;
+          if (!w || w <= 0) return;
+          tlPanState.active = true;
+          tlPanState.startX = e.clientX;
+          tlPanState.startCenter = tlViewCenter;
+          tlPanState.axisWidth = w;
+          e.preventDefault();
+          document.body.style.cursor = 'grabbing';
+        });
+        document.addEventListener('mousemove', function(e) {
+          if (!tlPanState.active || !tlPanState.axisWidth) return;
+          var deltaX = e.clientX - tlPanState.startX;
+          tlViewCenter = tlPanState.startCenter - (deltaX / tlPanState.axisWidth) * (tlZoomDays * 86400000);
+          renderTimelineView();
+        });
+        document.addEventListener('mouseup', function() {
+          if (tlPanState.active) { tlPanState.active = false; document.body.style.cursor = ''; }
+        });
       }
     }
 
