@@ -3786,43 +3786,43 @@
       <!-- Milestones -->
       <h2 class="dept-label reveal" style="margin-top:32px">Upcoming Milestones</h2>
       <div class="milestone-strip">
-        <div class="milestone-card cat-business reveal" style="transition-delay:0ms">
-          <div class="milestone-cat-label"><span class="milestone-cat-icon">&#x1F4BC;</span> Business</div>
+        <div class="milestone-card reveal" style="transition-delay:0ms;border-left-color:#F5A623">
+          <div class="milestone-cat-label" style="color:#F5A623"><span class="milestone-cat-icon">&#x26A1;</span> Digital Products</div>
           <div class="milestone-name">Power Independence Academy - funnel live</div>
           <div class="milestone-date">Mar 2026</div>
         </div>
-        <div class="milestone-card cat-business reveal" style="transition-delay:80ms">
-          <div class="milestone-cat-label"><span class="milestone-cat-icon">&#x1F4BC;</span> Business</div>
+        <div class="milestone-card reveal" style="transition-delay:80ms;border-left-color:#F5A623">
+          <div class="milestone-cat-label" style="color:#F5A623"><span class="milestone-cat-icon">&#x26A1;</span> Digital Products</div>
           <div class="milestone-name">Power Independence - first sale</div>
           <div class="milestone-date">Mar 2026</div>
         </div>
-        <div class="milestone-card cat-business reveal" style="transition-delay:160ms">
-          <div class="milestone-cat-label"><span class="milestone-cat-icon">&#x1F4BC;</span> Business</div>
+        <div class="milestone-card reveal" style="transition-delay:160ms;border-left-color:#B07CE8">
+          <div class="milestone-cat-label" style="color:#B07CE8"><span class="milestone-cat-icon">&#x1F48E;</span> OFM Agency</div>
           <div class="milestone-name">OFM - first creator live</div>
           <div class="milestone-date">Mar 2026</div>
         </div>
-        <div class="milestone-card cat-life reveal" style="transition-delay:240ms">
-          <div class="milestone-cat-label"><span class="milestone-cat-icon">&#x2708;</span> Life</div>
+        <div class="milestone-card reveal" style="transition-delay:240ms;border-left-color:#5BC0DE">
+          <div class="milestone-cat-label" style="color:#5BC0DE"><span class="milestone-cat-icon">&#x2708;</span> Life</div>
           <div class="milestone-name">Move to Puerto Escondido</div>
           <div class="milestone-date">May 2026</div>
         </div>
-        <div class="milestone-card cat-personal reveal" style="transition-delay:320ms">
-          <div class="milestone-cat-label"><span class="milestone-cat-icon">&#x1F476;</span> Personal</div>
+        <div class="milestone-card reveal" style="transition-delay:320ms;border-left-color:#9B59B6">
+          <div class="milestone-cat-label" style="color:#9B59B6"><span class="milestone-cat-icon">&#x1F476;</span> Personal</div>
           <div class="milestone-name">Baby due - Bianca</div>
           <div class="milestone-date">Aug 15, 2026</div>
         </div>
-        <div class="milestone-card cat-business reveal" style="transition-delay:400ms">
-          <div class="milestone-cat-label"><span class="milestone-cat-icon">&#x1F4BC;</span> Business</div>
+        <div class="milestone-card reveal" style="transition-delay:400ms;border-left-color:#5BC0DE">
+          <div class="milestone-cat-label" style="color:#5BC0DE"><span class="milestone-cat-icon">&#x26F5;</span> Lagoon Company</div>
           <div class="milestone-name">Lagoon high season</div>
           <div class="milestone-date">Dec 2026</div>
         </div>
-        <div class="milestone-card cat-property reveal" style="transition-delay:480ms">
-          <div class="milestone-cat-label"><span class="milestone-cat-icon">&#x1F3E0;</span> Property</div>
+        <div class="milestone-card reveal" style="transition-delay:480ms;border-left-color:#D4A843">
+          <div class="milestone-cat-label" style="color:#D4A843"><span class="milestone-cat-icon">&#x1F3E0;</span> Hilltop Villa</div>
           <div class="milestone-name">Hilltop Villa survey</div>
           <div class="milestone-date">TBD</div>
         </div>
-        <div class="milestone-card cat-farm reveal" style="transition-delay:560ms">
-          <div class="milestone-cat-label"><span class="milestone-cat-icon">&#x1F331;</span> Farm</div>
+        <div class="milestone-card reveal" style="transition-delay:560ms;border-left-color:#5CB85C">
+          <div class="milestone-cat-label" style="color:#5CB85C"><span class="milestone-cat-icon">&#x1F331;</span> Farm / Off-Grid</div>
           <div class="milestone-name">Farm setup start</div>
           <div class="milestone-date">TBD</div>
         </div>
@@ -5051,6 +5051,8 @@
 
     /* ---- Timeline: Drag to Reschedule ---- */
     var tlDragState = { active: false, taskId: null, dot: null, axis: null, preview: null, pendingDate: null };
+    var tlZoomDays = 253; // default: Feb 22 - Oct 31
+    var tlViewCenter = new Date(2026, 4, 1).getTime(); // center: May 1 2026
     var tlListenersAdded = false;
     var tlOutsideClickAdded = false;
 
@@ -5109,9 +5111,10 @@
       var container = document.getElementById('cal-timeline');
       var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
       var now = new Date();
-      var startDate = new Date(2026, 1, 22); // Feb 22 2026
-      var endDate   = new Date(2026, 9, 31); // Oct 31 2026
-      var totalMs = endDate - startDate;
+      var halfMs   = (tlZoomDays / 2) * 86400000;
+      var startDate = new Date(tlViewCenter - halfMs);
+      var endDate   = new Date(tlViewCenter + halfMs);
+      var totalMs  = endDate - startDate;
 
       function pct(date) {
         return Math.max(0, Math.min(100, (date - startDate) / totalMs * 100));
@@ -5358,6 +5361,26 @@
         document.addEventListener('mouseup',   function()  { if (tlDragState.active) tlOnDragEnd(); });
         document.addEventListener('touchmove', function(e) { if (tlDragState.active) { e.preventDefault(); tlOnDragMove(e.touches[0].clientX, e.touches[0].clientY); } }, { passive: false });
         document.addEventListener('touchend',  function()  { if (tlDragState.active) tlOnDragEnd(); });
+        // Timeline scroll-wheel zoom (cursor-anchored, like a video editor)
+        document.getElementById('cal-timeline').addEventListener('wheel', function(e) {
+          if (calViewMode !== 'timeline') return;
+          e.preventDefault();
+          var axis = e.target.closest('.tl-axis');
+          if (!axis) return;
+          var rect = axis.getBoundingClientRect();
+          var mouseXPct = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+          var curTotalMs = tlZoomDays * 86400000;
+          var curStart = tlViewCenter - curTotalMs / 2;
+          // Date under mouse cursor before zoom
+          var mouseDate = curStart + mouseXPct * curTotalMs;
+          // Zoom: scroll up = zoom in, scroll down = zoom out
+          var factor = e.deltaY > 0 ? 1.3 : 0.77;
+          tlZoomDays = Math.max(14, Math.min(500, tlZoomDays * factor));
+          // Reanchor: keep mouseDate at same X after zoom
+          var newTotalMs = tlZoomDays * 86400000;
+          tlViewCenter = mouseDate - mouseXPct * newTotalMs + newTotalMs / 2;
+          renderTimelineView();
+        }, { passive: false });
       }
     }
 
