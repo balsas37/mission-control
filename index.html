@@ -3777,7 +3777,8 @@
       <div class="analytics-section reveal">
         <div class="analytics-section-header" data-collapse="lagoon-analytics">
           <svg class="analytics-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4,6 8,10 12,6"/></svg>
-          <span class="analytics-section-title" style="--dept-accent:var(--pill-done-text)">Lagoon Company</span><span style="font-size:11px;color:var(--text-3);margin-left:10px;font-weight:400;vertical-align:middle"> figures are estimates, update with real data</span>
+          <span class="analytics-section-title" style="--dept-accent:var(--pill-done-text)">Lagoon Company</span>
+          <span id="lagoon-data-badge" style="font-size:11px;color:var(--text-3);margin-left:10px;font-weight:400;vertical-align:middle"> loading live data…</span>
         </div>
         <div class="analytics-table-wrap" id="lagoon-analytics">
           <table class="analytics-table">
@@ -3790,6 +3791,25 @@
             </tr></thead>
             <tbody id="lagoon-analytics-body"></tbody>
           </table>
+        </div>
+        <!-- Recent Bookings -->
+        <div id="lagoon-recent-wrap" style="margin-top:18px;display:none">
+          <div style="font-size:12px;font-weight:600;color:var(--text-2);margin-bottom:8px;letter-spacing:0.04em;text-transform:uppercase">Recent Bookings</div>
+          <div class="analytics-table-wrap">
+            <table class="analytics-table" id="lagoon-recent-table">
+              <thead><tr>
+                <th class="analytics-th">Customer</th>
+                <th class="analytics-th">Vehicle</th>
+                <th class="analytics-th">Location</th>
+                <th class="analytics-th">Dates</th>
+                <th class="analytics-th">Days</th>
+                <th class="analytics-th">Gross</th>
+                <th class="analytics-th">Status</th>
+              </tr></thead>
+              <tbody id="lagoon-recent-body"></tbody>
+            </table>
+          </div>
+          <div id="lagoon-sync-time" style="font-size:11px;color:var(--text-3);margin-top:6px;text-align:right"></div>
         </div>
       </div>
 
@@ -4978,6 +4998,50 @@
 
     renderAnalyticsTable('ofm');
     renderAnalyticsTable('lagoon');
+
+    /* ---- Aitable Live Data: Lagoon Company ---- */
+    (function fetchLagoonLiveData() {
+      var badge = document.getElementById('lagoon-data-badge');
+      fetch('data/lagoon.json?_=' + Date.now())
+        .then(function(r) { return r.ok ? r.json() : Promise.reject(r.status); })
+        .then(function(d) {
+          // Replace analytics rows with live data
+          if (d.analytics_rows && d.analytics_rows.length) {
+            analyticsData.lagoon = d.analytics_rows;
+            renderAnalyticsTable('lagoon');
+            if (badge) badge.textContent = '✓ live · Aitable';
+          }
+          // Render recent bookings table
+          var recentWrap = document.getElementById('lagoon-recent-wrap');
+          var tbody = document.getElementById('lagoon-recent-body');
+          var syncTime = document.getElementById('lagoon-sync-time');
+          if (d.recent_bookings && d.recent_bookings.length && tbody) {
+            var html = '';
+            d.recent_bookings.forEach(function(b) {
+              var statusClass = b.status === 'Active' ? 'active' : (b.status === 'Completed' ? 'done' : '');
+              html += '<tr class="analytics-row">';
+              html += '<td class="analytics-td">' + (b.name || '—') + '</td>';
+              html += '<td class="analytics-td">' + (b.vehicle || '—') + '</td>';
+              html += '<td class="analytics-td">' + (b.location || '—') + '</td>';
+              html += '<td class="analytics-td" style="white-space:nowrap">' + b.start + ' → ' + b.end + '</td>';
+              html += '<td class="analytics-td">' + (b.days || '—') + '</td>';
+              html += '<td class="analytics-td analytics-td-value">$' + (b.gross || 0).toLocaleString() + '</td>';
+              html += '<td class="analytics-td"><span class="analytics-status-dot ' + statusClass + '"></span></td>';
+              html += '</tr>';
+            });
+            tbody.innerHTML = html;
+            if (recentWrap) recentWrap.style.display = '';
+          }
+          if (syncTime && d.generated) {
+            var gen = new Date(d.generated);
+            syncTime.textContent = 'Synced ' + gen.toLocaleDateString('en-US', {month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'});
+          }
+        })
+        .catch(function(err) {
+          if (badge) badge.textContent = '⚠ figures are estimates';
+          console.warn('[MC] Lagoon data fetch failed:', err);
+        });
+    })();
 
     /* ---- View Toggle: Team & Projects ---- */
     function initViewToggle(toggleId, cardViewId, tableViewId, storageKey) {
