@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-27T20:03:09.401975+00:00",
+  "generated": "2026-02-27T20:17:38.407485+00:00",
   "total_records": 87,
   "ranges": {
     "month": [
@@ -262,6 +262,8 @@
       "location": "Kokoon Villas",
       "start": "Feb 23",
       "end": "Mar 02",
+      "start_iso": "2026-02-23",
+      "end_iso": "2026-03-02",
       "days": 7,
       "gross": 9800,
       "status": "Active",
