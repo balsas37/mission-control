@@ -1970,8 +1970,9 @@
     }
     .cal-toolbar-left { display: flex; align-items: center; gap: 16px; }
     .cal-title {
-      font-size: 22px; font-weight: 400; color: var(--text-1);
-      letter-spacing: -0.02em; margin: 0; min-width: 180px;
+      font-size: 11px; font-weight: 400; color: var(--text-3);
+      text-transform: uppercase; letter-spacing: 0.08em;
+      margin: 0; min-width: 160px;
     }
     .cal-nav-arrows { display: flex; align-items: center; gap: 4px; }
     .cal-nav-btn {
@@ -2903,16 +2904,7 @@
       background: rgba(255,255,255,0.6);
       cursor: ew-resize;
     }
-    /* Larger touch target on mobile — invisible padding around the tiny handle */
-    @media (max-width: 900px) {
-      .tl-bar-handle {
-        width: 16px;
-        height: 24px;
-        border-radius: 4px;
-        right: -8px;
-        background: rgba(255,255,255,0.5);
-      }
-    }
+    /* Bar handle: 8x8 dot, no mobile size override */
     .tl-proj-dot {
       display: inline-block;
       width: 7px;
@@ -5396,6 +5388,7 @@
     var tlViewCenter = new Date(2026, 4, 1).getTime(); // center: May 1 2026
     var tlListenersAdded = false;
     var tlOutsideClickAdded = false;
+    var tlJustDragged = false; // prevents synthetic click opening picker after touch drag
 
     function tlOnDragMove(clientX, clientY) {
       if (!tlDragState.active || !tlDragState.dot || !tlDragState.axis) return;
@@ -5440,16 +5433,28 @@
 
     function tlOnDragEnd() {
       if (!tlDragState.active) return;
-      if (tlDragState.pendingDate && tlDragState.taskId) {
+      var saved = false;
+      // Resolve taskId from state or directly from the element's data attribute
+      var resolvedTaskId = tlDragState.taskId ||
+        (tlDragState.dot && (tlDragState.dot.dataset.taskId ||
+          (tlDragState.dot.closest && tlDragState.dot.closest('[data-task-id]') && tlDragState.dot.closest('[data-task-id]').dataset.taskId)));
+      if (tlDragState.pendingDate && resolvedTaskId) {
         for (var i = 0; i < kanbanTasks.length; i++) {
-          if (kanbanTasks[i].id === tlDragState.taskId) { kanbanTasks[i].dueDate = tlDragState.pendingDate; break; }
+          if (kanbanTasks[i].id === resolvedTaskId) {
+            kanbanTasks[i].dueDate = tlDragState.pendingDate;
+            saved = true;
+            break;
+          }
         }
-        saveKanbanState();
+        if (saved) saveKanbanState();
       }
       if (tlDragState.dot) tlDragState.dot.classList.remove('tl-dragging');
       if (tlDragState.preview) tlDragState.preview.style.display = 'none';
       tlDragState.active = false; tlDragState.taskId = null; tlDragState.dot = null;
       tlDragState.axis = null; tlDragState.pendingDate = null;
+      // Block the synthetic click that mobile fires after touchend
+      tlJustDragged = true;
+      setTimeout(function() { tlJustDragged = false; }, 400);
       renderTimelineView();
     }
 
@@ -5557,7 +5562,7 @@
             var widthPct = Math.max(2, rightPct - leftPct);
             html += '<div class="tl-task-bar" data-task-id="' + task.id + '" style="left:' + leftPct.toFixed(2) + '%;width:' + widthPct.toFixed(2) + '%;background:' + color + (isPast ? ';opacity:0.4' : '') + '" title="' + fmtDate(s) + ' - ' + fmtDate(d) + '">';
             html += '<span class="tl-bar-label">' + fmtDate(s) + ' - ' + fmtDate(d) + '</span>';
-            html += '<div class="tl-bar-handle" data-handle="end" title="Drag to change due date"></div>';
+            html += '<div class="tl-bar-handle" data-handle="end" data-task-id="' + task.id + '" title="Drag to change due date"></div>';
             html += '</div>';
           } else {
             var p = pct(d);
@@ -5621,6 +5626,7 @@
       }
       container.querySelectorAll('.tl-task-dot, .tl-task-bar, .tl-add-date-btn').forEach(function(el) {
         el.addEventListener('click', function(e) {
+          if (tlJustDragged) return; // swallow synthetic click fired after touch drag
           e.stopPropagation();
           openTlPicker(el.dataset.taskId, e.clientX, e.clientY);
         });
