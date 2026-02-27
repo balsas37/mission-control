@@ -3758,7 +3758,7 @@
         <div class="analytics-section-header" data-collapse="model-analytics">
           <svg class="analytics-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4,6 8,10 12,6"/></svg>
           <span class="analytics-section-title" style="--dept-accent:var(--pill-medium-text)">OpenClaw · Model Usage</span>
-          <span style="font-size:11px;color:var(--text-3);margin-left:10px;font-weight:400;vertical-align:middle"> Sonnet/Haiku = OAuth · Kimi = API billed</span>
+          <span style="font-size:11px;color:var(--text-3);margin-left:10px;font-weight:400;vertical-align:middle"> Haiku → trivial · Kimi → medium · Sonnet → complex</span>
         </div>
         <div class="analytics-table-wrap" id="model-analytics">
           <table class="analytics-table">
@@ -3786,16 +3786,15 @@
               </tr>
               <tr class="analytics-row">
                 <td class="analytics-td" style="font-weight:600">Kimi K2.5</td>
-                <td class="analytics-td">Fallback</td>
-                <td class="analytics-td"><span class="analytics-status-dot amber"></span> API per-token ($)</td>
-                <td class="analytics-td">Activates on Anthropic rate-limits — minimize usage</td>
-                <td class="analytics-td"><span class="analytics-status-dot amber"></span></td>
+                <td class="analytics-td">Mid-tier + fallback</td>
+                <td class="analytics-td"><span class="analytics-status-dot green"></span> API per-token (very cheap)</td>
+                <td class="analytics-td">Research, drafts, crons, summaries — better than Haiku, cheaper than Sonnet</td>
+                <td class="analytics-td"><span class="analytics-status-dot green"></span></td>
               </tr>
             </tbody>
           </table>
           <div style="font-size:12px;color:var(--text-3);padding:10px 0 4px;line-height:1.6">
-            <strong style="color:var(--text-2)">Cost note:</strong> Kimi is billed per token via Moonshot API — every fallback activation costs real money.
-            Reduce Kimi usage by keeping sessions within Anthropic rate limits. Use <code style="background:var(--bg-hover);padding:1px 5px;border-radius:3px;font-size:11px">router override haiku</code> for lightweight tasks to preserve Sonnet capacity and avoid triggering fallback.
+            <strong style="color:var(--text-2)">Routing logic:</strong> Haiku for trivial tasks only. Kimi for medium-complexity work (research, drafts, crons) — capable + cheap. Sonnet reserved for complex builds, code, and anything where quality is the whole point.
           </div>
         </div>
       </div>
