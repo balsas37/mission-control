@@ -5363,10 +5363,15 @@
     function tlOnDragMove(clientX, clientY) {
       if (!tlDragState.active || !tlDragState.dot || !tlDragState.axis) return;
       var mn = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-      var sd = new Date(2026, 1, 22), ed = new Date(2026, 9, 31);
+      // Use the ACTUAL visible range (not hardcoded dates) so drag maps correctly
+      var halfMs = (tlZoomDays / 2) * 86400000;
+      var sd = new Date(tlViewCenter - halfMs);
+      var ed = new Date(tlViewCenter + halfMs);
+      var totalMs = ed - sd;
       var rect = tlDragState.axis.getBoundingClientRect();
+      if (!rect.width) return; // axis not visible — bail
       var pct = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width));
-      var d = new Date(sd.getTime() + pct * (ed - sd));
+      var d = new Date(sd.getTime() + pct * totalMs);
       d.setHours(12, 0, 0, 0);
       tlDragState.pendingDate = d.toISOString().slice(0, 10);
       var isBarHandle = tlDragState.dot.classList.contains('tl-bar-handle');
@@ -5374,7 +5379,7 @@
         var bar = tlDragState.dot.closest('.tl-task-bar');
         if (bar) {
           var barLeftPct = parseFloat(bar.style.left) || 0;
-          var newRightPct = Math.max(0, Math.min(100, (d - sd) / (ed - sd) * 100));
+          var newRightPct = Math.max(0, Math.min(100, (d - sd) / totalMs * 100));
           bar.style.width = Math.max(2, newRightPct - barLeftPct).toFixed(2) + '%';
           var barLabel = bar.querySelector('.tl-bar-label');
           if (barLabel) {
@@ -5384,7 +5389,7 @@
           }
         }
       } else {
-        tlDragState.dot.style.left = ((d - sd) / (ed - sd) * 100).toFixed(2) + '%';
+        tlDragState.dot.style.left = ((d - sd) / totalMs * 100).toFixed(2) + '%';
         var label = tlDragState.dot.querySelector('.tl-date-label');
         if (label) label.textContent = mn[d.getMonth()] + ' ' + d.getDate();
       }
