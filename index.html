@@ -1996,6 +1996,34 @@
     }
     .cal-view-btn:hover { color: var(--text-2); }
     .cal-view-btn.active { background: rgba(255,255,255,0.08); color: var(--text-1); }
+    .cal-view-btn:not(:last-child) { border-right: 1px solid var(--border); }
+
+    /* Month view: week-row structure for spanning booking bars */
+    .cal-month-wrap { display: flex; flex-direction: column; }
+    .cal-month-headers { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; }
+    .cal-week-row { display: flex; flex-direction: column; margin-bottom: 8px; }
+    .cal-week-cells { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; }
+    .cal-week-bars { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; min-height: 0; }
+    .cal-week-bar-item {
+      height: 20px; border-radius: 4px; font-size: 10px; font-weight: 500;
+      padding: 0 6px; display: flex; align-items: center; overflow: hidden;
+      white-space: nowrap; cursor: pointer; transition: opacity 0.15s;
+    }
+    .cal-week-bar-item:hover { opacity: 0.75; }
+    /* Week view: all-day bar band */
+    .cal-week-allday-row { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; min-height: 0; margin-bottom: 8px; }
+    /* Booking detail popup */
+    .cal-booking-popup {
+      position: fixed; z-index: 1000; background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 12px; padding: 14px 16px; min-width: 200px; max-width: 260px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25); font-size: 13px;
+    }
+    .cal-booking-popup-title { font-weight: 600; color: var(--text-1); margin-bottom: 8px; font-size: 14px; }
+    .cal-booking-popup-row { display: flex; gap: 6px; color: var(--text-2); padding: 3px 0; font-size: 12px; }
+    .cal-booking-popup-close {
+      position: absolute; top: 10px; right: 12px; background: none; border: none;
+      color: var(--text-3); cursor: pointer; font-size: 16px; padding: 2px; line-height: 1;
+    }
 
     /* Month View Grid */
     .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; }
@@ -2726,6 +2754,7 @@
        ======================================== */
     #cal-timeline {
       padding: 0 0 40px 0;
+      touch-action: pan-y; /* allow JS to handle pinch/horizontal gestures */
     }
     .tl-wrap {
       width: 100%;
@@ -5259,41 +5288,171 @@
       var firstDay = new Date(calViewYear, calViewMonth, 1).getDay();
       var startOffset = (firstDay === 0) ? 6 : firstDay - 1;
       var daysInMonth = new Date(calViewYear, calViewMonth + 1, 0).getDate();
-      var html = '<div class="cal-grid">';
-      ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].forEach(function(d) { html += '<div class="cal-header">' + d + '</div>'; });
-      for (var i = 0; i < startOffset; i++) html += '<div class="cal-day empty"></div>';
+
+      // Build week rows: arrays of 7 slots — {day, dk} or null for empty
+      var rows = [], row = [];
+      for (var i = 0; i < startOffset; i++) row.push(null);
       for (var d = 1; d <= daysInMonth; d++) {
-        var dk = calDateKey(calViewYear, calViewMonth, d);
-        var isToday = (calViewYear === todayY && calViewMonth === todayM && d === todayD);
-        var events = calEventsForDate(dk), milestones = calMilestonesForDate(dk);
-        html += '<div class="cal-day' + (isToday ? ' today' : '') + '" data-date="' + dk + '">';
-        html += '<div class="cal-day-num">' + d + '</div>';
-        if (milestones.length) html += '<div class="cal-milestone-marker" style="background:' + milestones[0].color + '" title="' + escapeHtml(milestones[0].name) + '"></div>';
-        for (var e = 0; e < Math.min(events.length, 2); e++) {
-          var ev = events[e];
-          html += '<div class="cal-event-chip" style="background:' + ev.color + '22;color:' + ev.color + ';border-left:2px solid ' + ev.color + ';" data-event-id="' + ev.id + '">' + escapeHtml(ev.title) + '</div>';
-        }
-        if (events.length > 2) html += '<div class="cal-day-overflow">+' + (events.length - 2) + ' more</div>';
-        html += '</div>';
+        row.push({ day: d, dk: calDateKey(calViewYear, calViewMonth, d) });
+        if (row.length === 7) { rows.push(row); row = []; }
       }
-      var total = startOffset + daysInMonth, rem = total % 7;
-      if (rem > 0) for (var j = 0; j < 7 - rem; j++) html += '<div class="cal-day empty"></div>';
+      if (row.length > 0) { while (row.length < 7) row.push(null); rows.push(row); }
+
+      // Lagoon bookings with ISO dates
+      var lagoonBookings = lagoonData ?
+        (lagoonData.active_bookings || []).concat(lagoonData.upcoming_bookings || [])
+          .filter(function(b) { return b.start_iso && b.end_iso; }) : [];
+
+      var html = '<div class="cal-month-wrap">';
+      // Day headers
+      html += '<div class="cal-month-headers">';
+      ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].forEach(function(h) { html += '<div class="cal-header">' + h + '</div>'; });
       html += '</div>';
+
+      rows.forEach(function(weekRow) {
+        html += '<div class="cal-week-row">';
+        // Day cells
+        html += '<div class="cal-week-cells">';
+        weekRow.forEach(function(cell) {
+          if (!cell) { html += '<div class="cal-day empty"></div>'; return; }
+          var isToday = (calViewYear === todayY && calViewMonth === todayM && cell.day === todayD);
+          var events = calEventsForDate(cell.dk).filter(function(e) { return e.type !== 'lagoon'; });
+          var milestones = calMilestonesForDate(cell.dk);
+          html += '<div class="cal-day' + (isToday ? ' today' : '') + '" data-date="' + cell.dk + '">';
+          html += '<div class="cal-day-num">' + cell.day + '</div>';
+          if (milestones.length) html += '<div class="cal-milestone-marker" style="background:' + milestones[0].color + '" title="' + escapeHtml(milestones[0].name) + '"></div>';
+          for (var e = 0; e < Math.min(events.length, 2); e++) {
+            var ev = events[e];
+            html += '<div class="cal-event-chip" style="background:' + ev.color + '22;color:' + ev.color + ';border-left:2px solid ' + ev.color + ';" data-event-id="' + ev.id + '">' + escapeHtml(ev.title) + '</div>';
+          }
+          if (events.length > 2) html += '<div class="cal-day-overflow">+' + (events.length - 2) + ' more</div>';
+          html += '</div>';
+        });
+        html += '</div>'; // cal-week-cells
+
+        // Booking bars row (uses same 7-col grid — grid-column spans align with cells)
+        var firstCell = null, lastCell = null;
+        for (var ci = 0; ci < weekRow.length; ci++) {
+          if (weekRow[ci]) { if (!firstCell) firstCell = weekRow[ci]; lastCell = weekRow[ci]; }
+        }
+        if (firstCell && lastCell) {
+          var wStart = new Date(firstCell.dk + 'T12:00:00Z');
+          var wEnd   = new Date(lastCell.dk  + 'T12:00:00Z');
+          var barsHtml = '';
+          var barRow = 1;
+          lagoonBookings.forEach(function(b) {
+            var bStart = new Date(b.start_iso + 'T12:00:00Z');
+            var bEnd   = new Date(b.end_iso   + 'T12:00:00Z');
+            if (bEnd < wStart || bStart > wEnd) return;
+            var clampedStart = bStart < wStart ? wStart : bStart;
+            var clampedEnd   = bEnd   > wEnd   ? wEnd   : bEnd;
+            // Find column indices (1-based for CSS grid-column)
+            var startCol = 1, endCol = 7;
+            for (var ci = 0; ci < weekRow.length; ci++) {
+              if (weekRow[ci]) {
+                var cellDate = new Date(weekRow[ci].dk + 'T12:00:00Z');
+                if (cellDate.getTime() === clampedStart.getTime()) startCol = ci + 1;
+                if (cellDate.getTime() === clampedEnd.getTime())   endCol   = ci + 1;
+              }
+            }
+            // If clamped start is before the first cell, pin to first cell
+            if (clampedStart.getTime() === wStart.getTime()) {
+              for (var ci = 0; ci < weekRow.length; ci++) { if (weekRow[ci]) { startCol = ci + 1; break; } }
+            }
+            var label = (b.name || 'Booking') + (b.vehicle ? ' \u00B7 ' + b.vehicle : '');
+            var bStyle = 'grid-column:' + startCol + '/' + (endCol + 1) + ';grid-row:' + barRow + ';' +
+              'background:rgba(255,179,71,0.18);color:#D46B08;border:1px solid rgba(255,170,50,0.5)';
+            barsHtml += '<div class="cal-week-bar-item" style="' + bStyle + '"' +
+              ' data-booking-name="' + escapeHtml(b.name||'') + '"' +
+              ' data-booking-vehicle="' + escapeHtml(b.vehicle||'') + '"' +
+              ' data-booking-location="' + escapeHtml(b.location||'') + '"' +
+              ' data-booking-start="' + escapeHtml(b.start||'') + '"' +
+              ' data-booking-end="' + escapeHtml(b.end||'') + '"' +
+              ' data-booking-days="' + (b.days||0) + '"' +
+              ' data-booking-gross="' + (b.gross||0) + '">' +
+              escapeHtml(label) + '</div>';
+            barRow++;
+          });
+          if (barsHtml) html += '<div class="cal-week-bars">' + barsHtml + '</div>';
+        }
+        html += '</div>'; // cal-week-row
+      });
+
+      html += '</div>'; // cal-month-wrap
       container.innerHTML = html;
       calAttachHandlers();
+      // Booking bar click → detail popup
+      container.querySelectorAll('.cal-week-bar-item').forEach(function(bar) {
+        bar.addEventListener('click', function(e) {
+          e.stopPropagation();
+          openBookingPopup(bar.dataset, e.clientX, e.clientY);
+        });
+      });
     }
 
     function renderWeekView() {
       var container = document.getElementById('cal-container'); if (!container) return;
       var now = new Date(), todayKey = calDateKey(now.getFullYear(), now.getMonth(), now.getDate());
       var dayNames = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
-      var html = '<div class="cal-week-grid">';
+
+      // Build 7-day array
+      var weekDays = [];
       for (var i = 0; i < 7; i++) {
         var date = new Date(calViewWeekStart); date.setDate(date.getDate() + i);
-        var dk = calDateKey(date.getFullYear(), date.getMonth(), date.getDate());
-        var isToday = (dk === todayKey), events = calEventsForDate(dk), milestones = calMilestonesForDate(dk);
-        html += '<div class="cal-week-col' + (isToday ? ' today' : '') + '" data-date="' + dk + '">';
-        html += '<div class="cal-week-col-header"><div class="cal-week-day-name">' + dayNames[i] + '</div><div class="cal-week-day-num">' + date.getDate() + '</div></div>';
+        weekDays.push({ date: date, dk: calDateKey(date.getFullYear(), date.getMonth(), date.getDate()) });
+      }
+
+      // Lagoon bookings that overlap this week
+      var lagoonBookings = lagoonData ?
+        (lagoonData.active_bookings || []).concat(lagoonData.upcoming_bookings || [])
+          .filter(function(b) { return b.start_iso && b.end_iso; }) : [];
+      var wStart = new Date(weekDays[0].dk + 'T12:00:00Z');
+      var wEnd   = new Date(weekDays[6].dk + 'T12:00:00Z');
+
+      var allDayBars = '';
+      var barRow = 1;
+      lagoonBookings.forEach(function(b) {
+        var bStart = new Date(b.start_iso + 'T12:00:00Z');
+        var bEnd   = new Date(b.end_iso   + 'T12:00:00Z');
+        if (bEnd < wStart || bStart > wEnd) return;
+        var clampedStart = bStart < wStart ? wStart : bStart;
+        var clampedEnd   = bEnd   > wEnd   ? wEnd   : bEnd;
+        var startCol = 1, endCol = 7;
+        weekDays.forEach(function(wd, ci) {
+          var cellDate = new Date(wd.dk + 'T12:00:00Z');
+          if (cellDate.getTime() === clampedStart.getTime()) startCol = ci + 1;
+          if (cellDate.getTime() === clampedEnd.getTime())   endCol   = ci + 1;
+        });
+        var label = (b.name || 'Booking') + (b.vehicle ? ' \u00B7 ' + b.vehicle : '');
+        var bStyle = 'grid-column:' + startCol + '/' + (endCol + 1) + ';grid-row:' + barRow + ';' +
+          'height:20px;border-radius:4px;font-size:10px;font-weight:500;padding:0 6px;' +
+          'display:flex;align-items:center;overflow:hidden;white-space:nowrap;cursor:pointer;' +
+          'background:rgba(255,179,71,0.18);color:#D46B08;border:1px solid rgba(255,170,50,0.5)';
+        allDayBars += '<div style="' + bStyle + '"' +
+          ' data-booking-name="' + escapeHtml(b.name||'') + '"' +
+          ' data-booking-vehicle="' + escapeHtml(b.vehicle||'') + '"' +
+          ' data-booking-location="' + escapeHtml(b.location||'') + '"' +
+          ' data-booking-start="' + escapeHtml(b.start||'') + '"' +
+          ' data-booking-end="' + escapeHtml(b.end||'') + '"' +
+          ' data-booking-days="' + (b.days||0) + '"' +
+          ' data-booking-gross="' + (b.gross||0) + '"' +
+          ' class="cal-week-booking-bar">' + escapeHtml(label) + '</div>';
+        barRow++;
+      });
+
+      var html = '<div class="cal-week-wrap">';
+      // All-day booking bar band (only if there are bookings this week)
+      if (allDayBars) {
+        html += '<div class="cal-week-allday-row" style="grid-auto-rows:24px;margin-bottom:8px">' + allDayBars + '</div>';
+      }
+      // Day columns
+      html += '<div class="cal-week-grid">';
+      weekDays.forEach(function(wd, i) {
+        var isToday = (wd.dk === todayKey);
+        var events = calEventsForDate(wd.dk).filter(function(e) { return e.type !== 'lagoon'; });
+        var milestones = calMilestonesForDate(wd.dk);
+        html += '<div class="cal-week-col' + (isToday ? ' today' : '') + '" data-date="' + wd.dk + '">';
+        html += '<div class="cal-week-col-header"><div class="cal-week-day-name">' + dayNames[i] + '</div><div class="cal-week-day-num">' + wd.date.getDate() + '</div></div>';
         milestones.forEach(function(m) { html += '<div class="cal-week-event" style="border-left-color:' + m.color + ';background:' + m.color + '11;">&#x25C6; ' + escapeHtml(m.name) + '</div>'; });
         events.forEach(function(ev) {
           html += '<div class="cal-week-event" style="border-left-color:' + ev.color + ';" data-event-id="' + ev.id + '">' + escapeHtml(ev.title);
@@ -5301,39 +5460,54 @@
           html += '</div>';
         });
         html += '</div>';
-      }
-      html += '</div>';
+      });
+      html += '</div></div>'; // cal-week-grid + cal-week-wrap
       container.innerHTML = html;
       calAttachHandlers();
+      // Booking bar popup
+      container.querySelectorAll('.cal-week-booking-bar').forEach(function(bar) {
+        bar.addEventListener('click', function(e) {
+          e.stopPropagation();
+          openBookingPopup(bar.dataset, e.clientX, e.clientY);
+        });
+      });
     }
 
     /* ---- Lagoon → Calendar injection ---- */
     function injectLagoonCalendarEvents(data) {
-      // Clear previous lagoon events (non-destructive to user-created events)
+      // Remove any old per-day lagoon chip events (legacy approach)
       calEvents = calEvents.filter(function(e) { return e.type !== 'lagoon'; });
-      var LAGOON_COLOR = '#FFA940';
-      var allBookings = (data.active_bookings || []).concat(data.upcoming_bookings || []);
-      allBookings.forEach(function(b) {
-        if (!b.start_iso || !b.end_iso) return;
-        var cur = new Date(b.start_iso + 'T00:00:00Z');
-        var end = new Date(b.end_iso + 'T00:00:00Z');
-        var title = '\uD83C\uDFCD ' + (b.name || 'Booking') + (b.vehicle ? ' \u00B7 ' + b.vehicle : '');
-        while (cur <= end) {
-          var dk = cur.toISOString().slice(0, 10);
-          calEvents.push({
-            id: calEventId(),
-            type: 'lagoon',
-            title: title,
-            date: dk,
-            color: LAGOON_COLOR,
-            notes: (b.location || '') + ' \u00B7 ' + (b.days || '') + 'd \u00B7 $' + ((b.gross || 0).toLocaleString()) + ' MXN'
-          });
-          cur.setUTCDate(cur.getUTCDate() + 1);
-        }
-      });
-      // Re-render calendar if visible
+      // Booking spans are now rendered directly by renderMonthView / renderWeekView
+      // using lagoonData — no per-day event injection needed
       var panel = document.getElementById('panel-calendar');
       if (panel && panel.style.display !== 'none' && !panel.classList.contains('hidden')) calRender();
+    }
+
+    /* ---- Booking detail popup ---- */
+    var calBookingPopup = null;
+    function openBookingPopup(ds, x, y) {
+      closeBookingPopup();
+      var popup = document.createElement('div');
+      popup.className = 'cal-booking-popup';
+      var rows = '';
+      if (ds.bookingVehicle) rows += '<div class="cal-booking-popup-row"><span>&#x1F3CD;</span><span>' + escapeHtml(ds.bookingVehicle) + '</span></div>';
+      if (ds.bookingLocation) rows += '<div class="cal-booking-popup-row"><span>&#x1F4CD;</span><span>' + escapeHtml(ds.bookingLocation) + '</span></div>';
+      if (ds.bookingStart && ds.bookingEnd) rows += '<div class="cal-booking-popup-row"><span>&#x1F4C5;</span><span>' + escapeHtml(ds.bookingStart) + ' &rarr; ' + escapeHtml(ds.bookingEnd) + '</span></div>';
+      if (ds.bookingDays) rows += '<div class="cal-booking-popup-row"><span>&#x23F1;</span><span>' + ds.bookingDays + ' days</span></div>';
+      if (ds.bookingGross) rows += '<div class="cal-booking-popup-row"><span>&#x1F4B0;</span><span>$' + Number(ds.bookingGross).toLocaleString() + ' MXN</span></div>';
+      popup.innerHTML = '<div class="cal-booking-popup-title">' + escapeHtml(ds.bookingName || 'Booking') + '</div>' + rows + '<button class="cal-booking-popup-close">&#x2715;</button>';
+      popup.style.left = Math.min(x + 10, window.innerWidth - 280) + 'px';
+      popup.style.top  = Math.min(y + 10, window.innerHeight - 200) + 'px';
+      document.body.appendChild(popup);
+      calBookingPopup = popup;
+      popup.querySelector('.cal-booking-popup-close').addEventListener('click', closeBookingPopup);
+      setTimeout(function() { document.addEventListener('click', closeBookingPopupOutside, { once: true }); }, 50);
+    }
+    function closeBookingPopup() {
+      if (calBookingPopup) { calBookingPopup.remove(); calBookingPopup = null; }
+    }
+    function closeBookingPopupOutside(e) {
+      if (calBookingPopup && !calBookingPopup.contains(e.target)) closeBookingPopup();
     }
 
     function calRender() { calUpdateTitle(); if (calViewMode === 'timeline') { renderTimelineView(); return; } if (calViewMode === 'month') renderMonthView(); else renderWeekView(); }
@@ -5721,8 +5895,55 @@
         tlListenersAdded = true;
         document.addEventListener('mousemove', function(e) { if (tlDragState.active) tlOnDragMove(e.clientX, e.clientY); });
         document.addEventListener('mouseup',   function()  { if (tlDragState.active) tlOnDragEnd(); });
-        document.addEventListener('touchmove', function(e) { if (tlDragState.active) { e.preventDefault(); tlOnDragMove(e.touches[0].clientX, e.touches[0].clientY); } }, { passive: false });
+        document.addEventListener('touchmove', function(e) {
+          if (tlDragState.active) {
+            if (e.touches.length > 1) { tlDragState.active = false; return; } // pinch started — abort drag
+            e.preventDefault();
+            tlOnDragMove(e.touches[0].clientX, e.touches[0].clientY);
+          }
+        }, { passive: false });
         document.addEventListener('touchend',  function()  { if (tlDragState.active) tlOnDragEnd(); });
+
+        // Pinch-to-zoom on timeline (mirrors mouse scroll wheel zoom)
+        var tlPinchState = { active: false, startDist: 0, startZoom: 0, startCenter: 0, startX: 0, axisWidth: 0 };
+        document.getElementById('cal-timeline').addEventListener('touchstart', function(e) {
+          if (calViewMode !== 'timeline' || e.touches.length !== 2) return;
+          e.preventDefault();
+          var t0 = e.touches[0], t1 = e.touches[1];
+          var dx = t0.clientX - t1.clientX, dy = t0.clientY - t1.clientY;
+          tlPinchState.active = true;
+          tlPinchState.startDist = Math.sqrt(dx*dx + dy*dy);
+          tlPinchState.startZoom = tlZoomDays;
+          // Anchor pinch center to timeline axis position
+          var midX = (t0.clientX + t1.clientX) / 2;
+          var axis = e.target.closest('.tl-axis') || document.querySelector('#cal-timeline .tl-axis');
+          if (axis) {
+            var rect = axis.getBoundingClientRect();
+            tlPinchState.axisWidth = rect.width;
+            tlPinchState.startX = midX - rect.left;
+            var halfMs = tlZoomDays / 2 * 86400000;
+            var sd = tlViewCenter - halfMs;
+            tlPinchState.startCenter = sd + (tlPinchState.startX / rect.width) * (tlZoomDays * 86400000);
+          }
+        }, { passive: false });
+        document.getElementById('cal-timeline').addEventListener('touchmove', function(e) {
+          if (!tlPinchState.active || e.touches.length !== 2) return;
+          e.preventDefault();
+          var t0 = e.touches[0], t1 = e.touches[1];
+          var dx = t0.clientX - t1.clientX, dy = t0.clientY - t1.clientY;
+          var dist = Math.sqrt(dx*dx + dy*dy);
+          var ratio = tlPinchState.startDist / dist; // spread fingers = ratio < 1 = zoom in
+          tlZoomDays = Math.max(14, Math.min(500, tlPinchState.startZoom * ratio));
+          // Re-anchor center so pinch midpoint stays fixed
+          if (tlPinchState.axisWidth) {
+            var midPct = tlPinchState.startX / tlPinchState.axisWidth;
+            tlViewCenter = tlPinchState.startCenter - midPct * tlZoomDays * 86400000 + tlZoomDays / 2 * 86400000;
+          }
+          renderTimelineView();
+        }, { passive: false });
+        document.getElementById('cal-timeline').addEventListener('touchend', function(e) {
+          if (e.touches.length < 2) tlPinchState.active = false;
+        });
         // Timeline scroll-wheel zoom (cursor-anchored, like a video editor)
         // FIX: axis check BEFORE e.preventDefault so label column scrolls page normally
         // Pan state must be declared before wheel listener so wheel can check it
