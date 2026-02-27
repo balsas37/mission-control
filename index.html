@@ -3758,44 +3758,44 @@
         <div class="analytics-section-header" data-collapse="model-analytics">
           <svg class="analytics-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4,6 8,10 12,6"/></svg>
           <span class="analytics-section-title" style="--dept-accent:var(--pill-medium-text)">OpenClaw · Model Usage</span>
-          <span style="font-size:11px;color:var(--text-3);margin-left:10px;font-weight:400;vertical-align:middle"> OAuth subscription — route for speed, not cost</span>
+          <span style="font-size:11px;color:var(--text-3);margin-left:10px;font-weight:400;vertical-align:middle"> Sonnet/Haiku = OAuth · Kimi = API billed</span>
         </div>
         <div class="analytics-table-wrap" id="model-analytics">
           <table class="analytics-table">
             <thead><tr>
               <th class="analytics-th">Model</th>
               <th class="analytics-th">Role</th>
+              <th class="analytics-th">Billing</th>
               <th class="analytics-th">Used For</th>
-              <th class="analytics-th">Speed</th>
-              <th class="analytics-th" data-sort="status">Status</th>
+              <th class="analytics-th">Status</th>
             </tr></thead>
             <tbody>
               <tr class="analytics-row">
                 <td class="analytics-td" style="font-weight:600">Claude Sonnet</td>
                 <td class="analytics-td">Primary brain</td>
-                <td class="analytics-td">All main sessions, builds, research, reasoning</td>
-                <td class="analytics-td">~2-4s</td>
+                <td class="analytics-td"><span class="analytics-status-dot green"></span> OAuth flat-rate</td>
+                <td class="analytics-td">Main sessions, builds, research, reasoning</td>
                 <td class="analytics-td"><span class="analytics-status-dot green"></span></td>
               </tr>
               <tr class="analytics-row">
                 <td class="analytics-td" style="font-weight:600">Claude Haiku</td>
-                <td class="analytics-td">Heartbeat / lightweight</td>
-                <td class="analytics-td">Hourly heartbeats, quick checks, low-stakes crons</td>
-                <td class="analytics-td">~0.5s</td>
+                <td class="analytics-td">Heartbeat / crons</td>
+                <td class="analytics-td"><span class="analytics-status-dot green"></span> OAuth flat-rate</td>
+                <td class="analytics-td">Hourly heartbeats, lightweight checks</td>
                 <td class="analytics-td"><span class="analytics-status-dot green"></span></td>
               </tr>
               <tr class="analytics-row">
                 <td class="analytics-td" style="font-weight:600">Kimi K2.5</td>
                 <td class="analytics-td">Fallback</td>
-                <td class="analytics-td">Kicks in when Anthropic rate-limits</td>
-                <td class="analytics-td">~2-5s</td>
+                <td class="analytics-td"><span class="analytics-status-dot amber"></span> API per-token ($)</td>
+                <td class="analytics-td">Activates on Anthropic rate-limits — minimize usage</td>
                 <td class="analytics-td"><span class="analytics-status-dot amber"></span></td>
               </tr>
             </tbody>
           </table>
           <div style="font-size:12px;color:var(--text-3);padding:10px 0 4px;line-height:1.6">
-            <strong style="color:var(--text-2)">Routing tip:</strong> Use <code style="background:var(--bg-hover);padding:1px 5px;border-radius:3px;font-size:11px">router override haiku</code> for lightweight tasks to preserve Sonnet for complex work.
-            Since you're on OAuth (subscription billing), routing saves speed + rate-limit capacity — not direct API costs.
+            <strong style="color:var(--text-2)">Cost note:</strong> Kimi is billed per token via Moonshot API — every fallback activation costs real money.
+            Reduce Kimi usage by keeping sessions within Anthropic rate limits. Use <code style="background:var(--bg-hover);padding:1px 5px;border-radius:3px;font-size:11px">router override haiku</code> for lightweight tasks to preserve Sonnet capacity and avoid triggering fallback.
           </div>
         </div>
       </div>
