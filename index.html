@@ -3763,6 +3763,7 @@
         <button class="analytics-filter active" data-range="month">This Month</button>
         <button class="analytics-filter" data-range="last">Last Month</button>
         <button class="analytics-filter" data-range="quarter">Last 3 Months</button>
+        <button class="analytics-filter" data-range="ytd">Year to Date</button>
       </div>
 
       <!-- MODEL USAGE (OpenClaw Infrastructure) -->
@@ -3850,25 +3851,53 @@
             <tbody id="lagoon-analytics-body"></tbody>
           </table>
         </div>
-        <!-- Recent Bookings -->
-        <div id="lagoon-recent-wrap" style="margin-top:18px;display:none">
-          <div style="font-size:12px;font-weight:600;color:var(--text-2);margin-bottom:8px;letter-spacing:0.04em;text-transform:uppercase">Recent Bookings</div>
+        <!-- Active Bookings (in progress right now) -->
+        <div id="lagoon-active-wrap" style="margin-top:20px;display:none">
+          <div style="font-size:12px;font-weight:600;color:var(--text-2);margin-bottom:8px;letter-spacing:0.04em;text-transform:uppercase;display:flex;align-items:center;gap:8px">
+            <span style="width:8px;height:8px;border-radius:50%;background:#52C41A;display:inline-block"></span>
+            Active Now
+          </div>
           <div class="analytics-table-wrap">
-            <table class="analytics-table" id="lagoon-recent-table">
+            <table class="analytics-table">
               <thead><tr>
                 <th class="analytics-th">Customer</th>
                 <th class="analytics-th">Vehicle</th>
                 <th class="analytics-th">Location</th>
-                <th class="analytics-th">Dates</th>
+                <th class="analytics-th">Period</th>
                 <th class="analytics-th">Days</th>
                 <th class="analytics-th">Gross</th>
-                <th class="analytics-th">Status</th>
+                <th class="analytics-th">Source</th>
               </tr></thead>
-              <tbody id="lagoon-recent-body"></tbody>
+              <tbody id="lagoon-active-body"></tbody>
             </table>
           </div>
-          <div id="lagoon-sync-time" style="font-size:11px;color:var(--text-3);margin-top:6px;text-align:right"></div>
         </div>
+
+        <!-- Upcoming Bookings (next 30 days) -->
+        <div id="lagoon-upcoming-wrap" style="margin-top:16px;display:none">
+          <div style="font-size:12px;font-weight:600;color:var(--text-2);margin-bottom:8px;letter-spacing:0.04em;text-transform:uppercase;display:flex;align-items:center;gap:8px">
+            <span style="width:8px;height:8px;border-radius:50%;background:#3B7BF6;display:inline-block"></span>
+            Upcoming — Next 30 Days
+          </div>
+          <div class="analytics-table-wrap">
+            <table class="analytics-table">
+              <thead><tr>
+                <th class="analytics-th">Customer</th>
+                <th class="analytics-th">Vehicle</th>
+                <th class="analytics-th">Location</th>
+                <th class="analytics-th">Starts</th>
+                <th class="analytics-th">Ends</th>
+                <th class="analytics-th">Days</th>
+                <th class="analytics-th">Gross</th>
+              </tr></thead>
+              <tbody id="lagoon-upcoming-body"></tbody>
+            </table>
+          </div>
+          <div id="lagoon-sync-time" style="font-size:11px;color:var(--text-3);margin-top:8px;text-align:right"></div>
+        </div>
+
+        <!-- Empty state -->
+        <div id="lagoon-bookings-empty" style="display:none;padding:16px 0;color:var(--text-3);font-size:13px">No active or upcoming bookings in the next 30 days.</div>
       </div>
 
     </section>
@@ -5058,45 +5087,93 @@
     renderAnalyticsTable('lagoon');
 
     /* ---- Aitable Live Data: Lagoon Company ---- */
+    var lagoonData = null; // cached JSON
+    var lagoonRange = 'month'; // active date range
+
+    function renderLagoonRange(range) {
+      if (!lagoonData || !lagoonData.ranges) return;
+      var rows = lagoonData.ranges[range];
+      if (rows && rows.length) {
+        analyticsData.lagoon = rows;
+        renderAnalyticsTable('lagoon');
+      }
+    }
+
+    function renderBookingTable(tbodyId, bookings, cols) {
+      var tbody = document.getElementById(tbodyId);
+      if (!tbody) return;
+      if (!bookings || !bookings.length) { tbody.innerHTML = '<tr><td colspan="' + cols + '" class="analytics-td" style="color:var(--text-3);text-align:center">None</td></tr>'; return; }
+      var html = '';
+      bookings.forEach(function(b) {
+        html += '<tr class="analytics-row">';
+        if (cols === 7 && tbodyId === 'lagoon-active-body') {
+          html += '<td class="analytics-td">' + (b.name||'—') + '</td>';
+          html += '<td class="analytics-td">' + (b.vehicle||'—') + '</td>';
+          html += '<td class="analytics-td">' + (b.location||'—') + '</td>';
+          html += '<td class="analytics-td" style="white-space:nowrap">' + b.start + ' → ' + b.end + '</td>';
+          html += '<td class="analytics-td">' + (b.days||'—') + '</td>';
+          html += '<td class="analytics-td analytics-td-value">$' + (b.gross||0).toLocaleString() + '</td>';
+          html += '<td class="analytics-td">' + (b.source||'—') + '</td>';
+        } else {
+          html += '<td class="analytics-td">' + (b.name||'—') + '</td>';
+          html += '<td class="analytics-td">' + (b.vehicle||'—') + '</td>';
+          html += '<td class="analytics-td">' + (b.location||'—') + '</td>';
+          html += '<td class="analytics-td">' + (b.start||'—') + '</td>';
+          html += '<td class="analytics-td">' + (b.end||'—') + '</td>';
+          html += '<td class="analytics-td">' + (b.days||'—') + '</td>';
+          html += '<td class="analytics-td analytics-td-value">$' + (b.gross||0).toLocaleString() + '</td>';
+        }
+        html += '</tr>';
+      });
+      tbody.innerHTML = html;
+    }
+
     (function fetchLagoonLiveData() {
       var badge = document.getElementById('lagoon-data-badge');
       fetch('data/lagoon.json?_=' + Date.now())
         .then(function(r) { return r.ok ? r.json() : Promise.reject(r.status); })
         .then(function(d) {
-          // Replace analytics rows with live data
-          if (d.analytics_rows && d.analytics_rows.length) {
-            analyticsData.lagoon = d.analytics_rows;
-            renderAnalyticsTable('lagoon');
-            if (badge) badge.textContent = '✓ live · Aitable';
-          }
-          // Render recent bookings table
-          var recentWrap = document.getElementById('lagoon-recent-wrap');
-          var tbody = document.getElementById('lagoon-recent-body');
-          var syncTime = document.getElementById('lagoon-sync-time');
-          if (d.recent_bookings && d.recent_bookings.length && tbody) {
-            var html = '';
-            d.recent_bookings.forEach(function(b) {
-              var statusClass = b.status === 'Active' ? 'active' : (b.status === 'Completed' ? 'done' : '');
-              html += '<tr class="analytics-row">';
-              html += '<td class="analytics-td">' + (b.name || '—') + '</td>';
-              html += '<td class="analytics-td">' + (b.vehicle || '—') + '</td>';
-              html += '<td class="analytics-td">' + (b.location || '—') + '</td>';
-              html += '<td class="analytics-td" style="white-space:nowrap">' + b.start + ' → ' + b.end + '</td>';
-              html += '<td class="analytics-td">' + (b.days || '—') + '</td>';
-              html += '<td class="analytics-td analytics-td-value">$' + (b.gross || 0).toLocaleString() + '</td>';
-              html += '<td class="analytics-td"><span class="analytics-status-dot ' + statusClass + '"></span></td>';
-              html += '</tr>';
+          lagoonData = d;
+          // Render initial range
+          renderLagoonRange(lagoonRange);
+          if (badge) badge.textContent = '✓ live · Aitable';
+
+          // Wire up date range filter buttons for Lagoon
+          document.querySelectorAll('.analytics-filter').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+              document.querySelectorAll('.analytics-filter').forEach(function(b) { b.classList.remove('active'); });
+              btn.classList.add('active');
+              lagoonRange = btn.dataset.range || 'month';
+              renderLagoonRange(lagoonRange);
             });
-            tbody.innerHTML = html;
-            if (recentWrap) recentWrap.style.display = '';
+          });
+
+          // Active bookings
+          var activeWrap = document.getElementById('lagoon-active-wrap');
+          var upcomingWrap = document.getElementById('lagoon-upcoming-wrap');
+          var emptyState = document.getElementById('lagoon-bookings-empty');
+          var syncTime = document.getElementById('lagoon-sync-time');
+
+          var hasActive = d.active_bookings && d.active_bookings.length > 0;
+          var hasUpcoming = d.upcoming_bookings && d.upcoming_bookings.length > 0;
+
+          if (hasActive) {
+            renderBookingTable('lagoon-active-body', d.active_bookings, 7);
+            if (activeWrap) activeWrap.style.display = '';
           }
+          if (hasUpcoming) {
+            renderBookingTable('lagoon-upcoming-body', d.upcoming_bookings, 7);
+            if (upcomingWrap) upcomingWrap.style.display = '';
+          }
+          if (!hasActive && !hasUpcoming && emptyState) emptyState.style.display = '';
+
           if (syncTime && d.generated) {
             var gen = new Date(d.generated);
-            syncTime.textContent = 'Synced ' + gen.toLocaleDateString('en-US', {month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'});
+            syncTime.textContent = 'Synced ' + gen.toLocaleDateString('en-US', {month:'short', day:'numeric'}) + ' · ' + gen.toLocaleTimeString('en-US', {hour:'2-digit', minute:'2-digit'});
           }
         })
         .catch(function(err) {
-          if (badge) badge.textContent = '⚠ figures are estimates';
+          if (badge) badge.textContent = '⚠ estimates only';
           console.warn('[MC] Lagoon data fetch failed:', err);
         });
     })();
