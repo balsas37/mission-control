@@ -1,0 +1,182 @@
+{
+  "generated": "2026-02-27T19:15:05.480785+00:00",
+  "total_records": 87,
+  "current_month": {
+    "gross": 9800,
+    "net": 9800,
+    "bookings": 1,
+    "top_vehicle": "400cc Buggy"
+  },
+  "last_month": {
+    "gross": 0,
+    "bookings": 0
+  },
+  "all_time": {
+    "gross": 402345,
+    "net": 363090.5,
+    "bookings": 87
+  },
+  "sparkline_revenue": [
+    99100,
+    96100,
+    95510,
+    94155,
+    7680,
+    9800
+  ],
+  "recent_bookings": [
+    {
+      "name": "ABS",
+      "vehicle": "400cc Buggy",
+      "location": "Kokoon Villas",
+      "start": "Feb 23",
+      "end": "Mar 02",
+      "days": 7,
+      "gross": 9800,
+      "net": 9800,
+      "status": "Active",
+      "source": "Direct"
+    },
+    {
+      "name": "Alex",
+      "vehicle": "Can-am XDS",
+      "location": "HQ",
+      "start": "May 26",
+      "end": "May 27",
+      "days": 1,
+      "gross": 4800,
+      "net": 4320,
+      "status": "Completed",
+      "source": ""
+    },
+    {
+      "name": "Haleem",
+      "vehicle": "Polaris 570",
+      "location": "HQ",
+      "start": "May 10",
+      "end": "May 11",
+      "days": 1,
+      "gross": 1360,
+      "net": 1224,
+      "status": "Completed",
+      "source": ""
+    },
+    {
+      "name": "Haleem",
+      "vehicle": "Lagoon 400",
+      "location": "HQ",
+      "start": "May 10",
+      "end": "May 11",
+      "days": 1,
+      "gross": 1520,
+      "net": 1368,
+      "status": "Completed",
+      "source": ""
+    },
+    {
+      "name": "Aleida",
+      "vehicle": "Lagoon 400",
+      "location": "HQ",
+      "start": "Apr 30",
+      "end": "May 05",
+      "days": 5,
+      "gross": 8325,
+      "net": 7492.5,
+      "status": "Completed",
+      "source": ""
+    },
+    {
+      "name": "Daniel",
+      "vehicle": "Can-am XDS",
+      "location": "HQ",
+      "start": "Apr 30",
+      "end": "May 01",
+      "days": 1,
+      "gross": 4800,
+      "net": 4320,
+      "status": "Completed",
+      "source": ""
+    },
+    {
+      "name": "Blessed",
+      "vehicle": "Can-am XDS",
+      "location": "HQ",
+      "start": "Apr 27",
+      "end": "Apr 28",
+      "days": 1,
+      "gross": 4000,
+      "net": 3600,
+      "status": "Completed",
+      "source": ""
+    },
+    {
+      "name": "Arlette",
+      "vehicle": "Lagoon 400",
+      "location": "HQ",
+      "start": "Apr 26",
+      "end": "Apr 27",
+      "days": 1,
+      "gross": 1900,
+      "net": 1710,
+      "status": "Completed",
+      "source": ""
+    }
+  ],
+  "analytics_rows": [
+    {
+      "metric": "Monthly Revenue",
+      "value": "$9,800 MXN",
+      "change": "+\u221e",
+      "dir": "positive",
+      "sparkline": [
+        99100,
+        96100,
+        95510,
+        94155,
+        7680,
+        9800
+      ],
+      "status": "green",
+      "progress": null
+    },
+    {
+      "metric": "Net Income",
+      "value": "$9,800 MXN",
+      "change": "+\u221e",
+      "dir": "positive",
+      "sparkline": null,
+      "status": "green",
+      "progress": null
+    },
+    {
+      "metric": "Bookings This Month",
+      "value": "1",
+      "change": "+\u221e",
+      "dir": "positive",
+      "sparkline": [
+        0,
+        1
+      ],
+      "status": "green",
+      "progress": null
+    },
+    {
+      "metric": "Most Rented (this month)",
+      "value": "400cc Buggy",
+      "change": "--",
+      "dir": "neutral",
+      "sparkline": null,
+      "status": "green",
+      "progress": null
+    },
+    {
+      "metric": "All-Time Revenue",
+      "value": "$402,345 MXN",
+      "change": "87 total bookings",
+      "dir": "positive",
+      "sparkline": null,
+      "status": "green",
+      "progress": null
+    }
+  ]
+}
