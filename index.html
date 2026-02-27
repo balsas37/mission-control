@@ -4310,6 +4310,11 @@
           setTimeout(function() {
             newPanel.classList.remove('tab-enter');
             isAnimating = false;
+            // If switching to calendar, re-render with any loaded lagoon data
+            if (tabId === 'calendar') {
+              if (lagoonData) injectLagoonCalendarEvents(lagoonData);
+              calRender();
+            }
           }, 180);
         }, 180);
       } else {
@@ -5167,6 +5172,9 @@
           }
           if (!hasActive && !hasUpcoming && emptyState) emptyState.style.display = '';
 
+          // Inject Lagoon bookings into the calendar
+          injectLagoonCalendarEvents(d);
+
           if (syncTime && d.generated) {
             var gen = new Date(d.generated);
             syncTime.textContent = 'Synced ' + gen.toLocaleDateString('en-US', {month:'short', day:'numeric'}) + ' · ' + gen.toLocaleTimeString('en-US', {hour:'2-digit', minute:'2-digit'});
@@ -5305,6 +5313,35 @@
       html += '</div>';
       container.innerHTML = html;
       calAttachHandlers();
+    }
+
+    /* ---- Lagoon → Calendar injection ---- */
+    function injectLagoonCalendarEvents(data) {
+      // Clear previous lagoon events (non-destructive to user-created events)
+      calEvents = calEvents.filter(function(e) { return e.type !== 'lagoon'; });
+      var LAGOON_COLOR = '#FFA940';
+      var allBookings = (data.active_bookings || []).concat(data.upcoming_bookings || []);
+      allBookings.forEach(function(b) {
+        if (!b.start_iso || !b.end_iso) return;
+        var cur = new Date(b.start_iso + 'T00:00:00Z');
+        var end = new Date(b.end_iso + 'T00:00:00Z');
+        var title = '\uD83C\uDFCD ' + (b.name || 'Booking') + (b.vehicle ? ' \u00B7 ' + b.vehicle : '');
+        while (cur <= end) {
+          var dk = cur.toISOString().slice(0, 10);
+          calEvents.push({
+            id: calEventId(),
+            type: 'lagoon',
+            title: title,
+            date: dk,
+            color: LAGOON_COLOR,
+            notes: (b.location || '') + ' \u00B7 ' + (b.days || '') + 'd \u00B7 $' + ((b.gross || 0).toLocaleString()) + ' MXN'
+          });
+          cur.setUTCDate(cur.getUTCDate() + 1);
+        }
+      });
+      // Re-render calendar if visible
+      var panel = document.getElementById('panel-calendar');
+      if (panel && panel.style.display !== 'none' && !panel.classList.contains('hidden')) calRender();
     }
 
     function calRender() { calUpdateTitle(); if (calViewMode === 'timeline') { renderTimelineView(); return; } if (calViewMode === 'month') renderMonthView(); else renderWeekView(); }
