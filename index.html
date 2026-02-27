@@ -2932,6 +2932,19 @@
       cursor: ew-resize;
     }
     /* Bar handle: 8x8 dot, no mobile size override */
+    /* Lagoon bookings toggle in calendar toolbar */
+    .cal-lagoon-toggle {
+      display: inline-flex; align-items: center; gap: 5px;
+      padding: 5px 12px; border: 1px solid var(--border); border-radius: 8px;
+      font-size: 12px; font-weight: 500; font-family: inherit;
+      color: var(--text-3); background: transparent; cursor: pointer;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+    }
+    .cal-lagoon-toggle.on {
+      background: rgba(255,179,71,0.15);
+      border-color: rgba(255,170,50,0.55);
+      color: #D46B08;
+    }
     .tl-proj-dot {
       display: inline-block;
       width: 7px;
@@ -3934,7 +3947,8 @@
             <button class="cal-nav-btn" id="cal-next" aria-label="Next">&#8250;</button>
           </div>
         </div>
-        <div class="cal-toolbar-right">
+        <div class="cal-toolbar-right" style="display:flex;align-items:center;gap:10px">
+          <button class="cal-lagoon-toggle on" id="cal-lagoon-toggle" title="Toggle Lagoon bookings">&#x1F3CD; Lagoon</button>
           <div class="cal-view-toggle">
             <button class="cal-view-btn active" data-view="month">Month</button>
             <button class="cal-view-btn" data-view="week">Week</button>
@@ -5328,12 +5342,12 @@
         });
         html += '</div>'; // cal-week-cells
 
-        // Booking bars row (uses same 7-col grid — grid-column spans align with cells)
+        // Booking bars row (only when Lagoon toggle is ON)
         var firstCell = null, lastCell = null;
         for (var ci = 0; ci < weekRow.length; ci++) {
           if (weekRow[ci]) { if (!firstCell) firstCell = weekRow[ci]; lastCell = weekRow[ci]; }
         }
-        if (firstCell && lastCell) {
+        if (showLagoonBookings && firstCell && lastCell) {
           var wStart = new Date(firstCell.dk + 'T12:00:00Z');
           var wEnd   = new Date(lastCell.dk  + 'T12:00:00Z');
           var barsHtml = '';
@@ -5439,8 +5453,8 @@
       });
 
       var html = '<div class="cal-week-wrap">';
-      // All-day booking bar band (only if there are bookings this week)
-      if (allDayBars) {
+      // All-day booking bar band (only when Lagoon toggle is ON and bookings exist)
+      if (showLagoonBookings && allDayBars) {
         html += '<div class="cal-week-allday-row" style="grid-auto-rows:24px;margin-bottom:8px">' + allDayBars + '</div>';
       }
       // Day columns
@@ -5561,6 +5575,9 @@
     var tlListenersAdded = false;
     var tlOutsideClickAdded = false;
     var tlJustDragged = false; // prevents synthetic click opening picker after touch drag
+    var showLagoonBookings = (function() {
+      try { var v = localStorage.getItem('mc-cal-lagoon'); return v === null ? true : v !== 'false'; } catch(e) { return true; }
+    })();
 
     function tlOnDragMove(clientX, clientY) {
       if (!tlDragState.active || !tlDragState.dot || !tlDragState.axis) return;
@@ -6057,6 +6074,18 @@
 
     /* Calendar Init */
     (function() {
+      // Lagoon bookings toggle
+      var lagoonToggleBtn = document.getElementById('cal-lagoon-toggle');
+      if (lagoonToggleBtn) {
+        lagoonToggleBtn.classList.toggle('on', showLagoonBookings);
+        lagoonToggleBtn.addEventListener('click', function() {
+          showLagoonBookings = !showLagoonBookings;
+          lagoonToggleBtn.classList.toggle('on', showLagoonBookings);
+          try { localStorage.setItem('mc-cal-lagoon', showLagoonBookings); } catch(e) {}
+          calRender();
+        });
+      }
+
       document.getElementById('cal-prev').addEventListener('click', function() { calNavigate(-1); });
       document.getElementById('cal-next').addEventListener('click', function() { calNavigate(1); });
       document.getElementById('cal-today').addEventListener('click', calGoToToday);
