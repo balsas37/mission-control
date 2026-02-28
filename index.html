@@ -3898,6 +3898,7 @@
           <svg class="analytics-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4,6 8,10 12,6"/></svg>
           <span class="analytics-section-title" style="--dept-accent:var(--pill-medium-text)">OpenClaw · Model Usage</span>
           <span id="usage-sync-time" style="font-size:11px;color:var(--text-3);margin-left:10px;font-weight:400;vertical-align:middle"></span>
+          <button id="usage-sync-btn" onclick="triggerUsageSync()" style="margin-left:auto;padding:4px 12px;font-size:11px;border-radius:6px;border:1px solid var(--border);background:var(--surface-2);color:var(--text-2);cursor:pointer;font-weight:500;transition:all .15s;" title="Sync now via local API">⟳ Sync</button>
         </div>
         <div class="analytics-table-wrap" id="model-analytics">
           <!-- Usage bars rendered by JS from data/usage.json -->
@@ -3905,7 +3906,7 @@
             <div style="color:var(--text-3);font-size:13px;">Loading usage data…</div>
           </div>
           <div style="font-size:12px;color:var(--text-3);padding:4px 16px 14px;line-height:1.6;">
-            <span style="color:var(--text-2);font-weight:400">Routing:</span> Haiku → trivial · Kimi → medium · Sonnet → complex · syncs every 6h
+            <span style="color:var(--text-2);font-weight:400">Routing:</span> Haiku → trivial · Kimi → medium · Sonnet → complex · syncs 4×/day
           </div>
         </div>
       </div>
@@ -5405,6 +5406,38 @@
           if (el) el.innerHTML = '<div style="color:var(--text-3);font-size:13px;">Usage data unavailable</div>';
         });
     })();
+
+    /* ---- Usage Sync Button ---- */
+    var SYNC_API = 'http://firstborn.local:8765';
+    function triggerUsageSync() {
+      var btn = document.getElementById('usage-sync-btn');
+      var syncEl = document.getElementById('usage-sync-time');
+      if (btn) { btn.disabled = true; btn.textContent = '⟳ Syncing…'; }
+      if (syncEl) syncEl.textContent = 'Syncing…';
+      fetch(SYNC_API + '/sync', { signal: AbortSignal.timeout(5000) })
+        .then(function() {
+          // Poll usage.json every 3s until scraped_at changes
+          var prev = _usageData && _usageData.anthropic_live ? _usageData.anthropic_live.scraped_at : null;
+          var attempts = 0;
+          var poll = setInterval(function() {
+            attempts++;
+            fetch('data/usage.json?_=' + Date.now())
+              .then(function(r) { return r.ok ? r.json() : Promise.reject(); })
+              .then(function(d) {
+                var newAt = d.anthropic_live ? d.anthropic_live.scraped_at : null;
+                if (newAt !== prev || attempts > 20) {
+                  clearInterval(poll);
+                  _usageData = d; renderUsage();
+                  if (btn) { btn.disabled = false; btn.textContent = '⟳ Sync'; }
+                }
+              }).catch(function() { if (attempts > 20) clearInterval(poll); });
+          }, 3000);
+        })
+        .catch(function() {
+          if (syncEl) syncEl.textContent = 'API offline — ensure sync-api-server is running on VM';
+          if (btn) { btn.disabled = false; btn.textContent = '⟳ Sync'; }
+        });
+    }
 
     /* ---- View Toggle: Team & Projects ---- */
     function initViewToggle(toggleId, cardViewId, tableViewId, storageKey) {
