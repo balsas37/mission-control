@@ -1350,11 +1350,11 @@
     .kb-toolbar {
       display: flex;
       align-items: center;
-      justify-content: space-between;
       gap: 12px;
       margin-bottom: 20px;
-      flex-wrap: wrap;
     }
+    .kb-toolbar .kb-metrics { flex: 1; }
+    .kb-toolbar .kb-view-toggle { flex: 1; display: flex; justify-content: flex-end; }
     .kb-view-toggle {
       display: inline-flex;
       gap: 0;
@@ -1671,7 +1671,6 @@
       border: 1px solid var(--border);
       border-radius: 10px;
       overflow: hidden;
-      margin-bottom: 20px;
     }
 
     .analytics-filter {
@@ -1700,7 +1699,7 @@
     }
 
     /* Airtable-style Analytics Tables */
-    .analytics-section { margin-bottom: 32px; }
+    .analytics-section { margin-bottom: 40px; }
     .analytics-section-header {
       display: flex; align-items: center; gap: 10px;
       cursor: pointer; user-select: none;
@@ -1997,6 +1996,7 @@
     .cal-view-btn:hover { color: var(--text-2); }
     .cal-view-btn.active { background: rgba(255,255,255,0.08); color: var(--text-1); box-shadow: inset 0 0 0 1px var(--border-hover); }
     .cal-view-btn:not(:last-child) { border-right: 1px solid var(--border); }
+    .cal-nav-in-toggle { font-size: 16px; padding: 2px 10px; line-height: 1.6; }
 
     /* Month view: week-row structure for spanning booking bars */
     .cal-month-wrap { display: flex; flex-direction: column; }
@@ -3807,12 +3807,14 @@
     <!-- Analytics -->
     <section class="tab-panel" id="panel-analytics">
 
-      <!-- Date Range -->
-      <div class="analytics-filters">
-        <button class="analytics-filter active" data-range="month">This Month</button>
-        <button class="analytics-filter" data-range="last">Last Month</button>
-        <button class="analytics-filter" data-range="quarter">Last 3 Months</button>
-        <button class="analytics-filter" data-range="ytd">Year to Date</button>
+      <!-- Date Range — right-aligned -->
+      <div style="display:flex;justify-content:flex-end;margin-bottom:20px">
+        <div class="analytics-filters">
+          <button class="analytics-filter active" data-range="month">This Month</button>
+          <button class="analytics-filter" data-range="last">Last Month</button>
+          <button class="analytics-filter" data-range="quarter">Last 3 Months</button>
+          <button class="analytics-filter" data-range="ytd">Year to Date</button>
+        </div>
       </div>
 
       <!-- MODEL USAGE (OpenClaw Infrastructure) -->
@@ -3851,9 +3853,9 @@
               </tr>
             </tbody>
           </table>
-          <div style="font-size:12px;color:var(--text-3);padding:10px 12px 6px 16px;line-height:1.6;background:var(--bg-hover);border-radius:6px;margin-top:8px">
-            <span style="color:var(--text-1);font-weight:400">Routing logic:</span> Haiku for trivial tasks only. Kimi for medium-complexity work (research, drafts, crons) — capable + cheap. Sonnet reserved for complex builds, code, and anything where quality is the whole point.
-          </div>
+        </div>
+        <div style="font-size:12px;color:var(--text-3);padding:8px 4px;line-height:1.6;">
+          <span style="color:var(--text-2);font-weight:400">Routing logic:</span> Haiku for trivial tasks. Kimi for medium work (research, drafts, crons). Sonnet for complex builds, code, and anything quality-critical.
         </div>
       </div>
 
@@ -3956,15 +3958,13 @@
       <div class="cal-toolbar reveal">
         <div class="cal-toolbar-left">
           <h2 class="cal-title" id="cal-title">February 2026</h2>
-          <div class="cal-nav-arrows">
-            <button class="cal-nav-btn" id="cal-prev" aria-label="Previous">&#8249;</button>
-            <button class="cal-nav-btn cal-today-btn" id="cal-today">Today</button>
-            <button class="cal-nav-btn" id="cal-next" aria-label="Next">&#8250;</button>
-          </div>
         </div>
         <div class="cal-toolbar-right" style="display:flex;align-items:center;gap:10px">
           <button class="cal-lagoon-toggle on" id="cal-lagoon-toggle" title="Toggle Lagoon bookings">Lagoon</button>
           <div class="cal-view-toggle">
+            <button class="cal-view-btn cal-nav-in-toggle" id="cal-prev" aria-label="Previous">&#8249;</button>
+            <button class="cal-view-btn cal-nav-in-toggle" id="cal-today">Today</button>
+            <button class="cal-view-btn cal-nav-in-toggle" id="cal-next" aria-label="Next">&#8250;</button>
             <button class="cal-view-btn active" data-view="month">Month</button>
             <button class="cal-view-btn" data-view="week">Week</button>
             <button class="cal-view-btn" data-view="timeline">Timeline</button>
