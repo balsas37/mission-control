@@ -130,6 +130,7 @@
        ======================================== */
     ::-webkit-scrollbar {
       width: 6px;
+      height: 6px;
     }
     ::-webkit-scrollbar-track {
       background: transparent;
@@ -1871,11 +1872,13 @@
       display: flex;
       gap: 16px;
       overflow-x: auto;
+      overflow-y: hidden;
       padding: 16px 0;
       position: relative;
       align-items: center;
       margin-bottom: 32px;
       scrollbar-width: thin;
+      scrollbar-color: rgba(255,255,255,0.12) transparent;
     }
 
     .milestone-strip::before {
@@ -2783,6 +2786,8 @@
       width: 100%;
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255,255,255,0.12) transparent;
     }
     .tl-inner {
       min-width: 700px;
