@@ -1376,7 +1376,10 @@
       border: none;
       cursor: pointer;
       transition: background 0.2s, color 0.2s;
+      border-radius: 0;
     }
+    .kb-view-btn:first-child { border-radius: 9px 0 0 9px; }
+    .kb-view-btn:last-child  { border-radius: 0 9px 9px 0; }
     .kb-view-btn:hover { color: var(--text-2); }
     .kb-view-btn.active {
       background: rgba(255,255,255,0.1);
