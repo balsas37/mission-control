@@ -3831,34 +3831,30 @@
               <th class="analytics-th">Role</th>
               <th class="analytics-th">Billing</th>
               <th class="analytics-th">Used For</th>
-              <th class="analytics-th">Status</th>
             </tr></thead>
             <tbody>
               <tr class="analytics-row">
-                <td class="analytics-td" style="font-weight:600">Claude Sonnet</td>
-                <td class="analytics-td">Primary brain</td>
-                <td class="analytics-td"><span class="analytics-status-dot green"></span> OAuth flat-rate</td>
-                <td class="analytics-td">Main sessions, builds, research, reasoning</td>
-                <td class="analytics-td"><span class="analytics-status-dot green"></span></td>
+                <td class="analytics-td" style="color:var(--text-1);font-weight:400">Claude Sonnet</td>
+                <td class="analytics-td" style="color:var(--text-2)">Primary brain</td>
+                <td class="analytics-td" style="color:var(--text-2)"><span class="analytics-status-dot green"></span> OAuth flat-rate</td>
+                <td class="analytics-td" style="color:var(--text-2)">Main sessions, builds, research, reasoning</td>
               </tr>
               <tr class="analytics-row">
-                <td class="analytics-td" style="font-weight:600">Claude Haiku</td>
-                <td class="analytics-td">Heartbeat / crons</td>
-                <td class="analytics-td"><span class="analytics-status-dot green"></span> OAuth flat-rate</td>
-                <td class="analytics-td">Hourly heartbeats, lightweight checks</td>
-                <td class="analytics-td"><span class="analytics-status-dot green"></span></td>
+                <td class="analytics-td" style="color:var(--text-1);font-weight:400">Claude Haiku</td>
+                <td class="analytics-td" style="color:var(--text-2)">Heartbeat / crons</td>
+                <td class="analytics-td" style="color:var(--text-2)"><span class="analytics-status-dot green"></span> OAuth flat-rate</td>
+                <td class="analytics-td" style="color:var(--text-2)">Hourly heartbeats, lightweight checks</td>
               </tr>
               <tr class="analytics-row">
-                <td class="analytics-td" style="font-weight:600">Kimi K2.5</td>
-                <td class="analytics-td">Mid-tier + fallback</td>
-                <td class="analytics-td"><span class="analytics-status-dot green"></span> API per-token (very cheap)</td>
-                <td class="analytics-td">Research, drafts, crons, summaries — better than Haiku, cheaper than Sonnet</td>
-                <td class="analytics-td"><span class="analytics-status-dot green"></span></td>
+                <td class="analytics-td" style="color:var(--text-1);font-weight:400">Kimi K2.5</td>
+                <td class="analytics-td" style="color:var(--text-2)">Mid-tier + fallback</td>
+                <td class="analytics-td" style="color:var(--text-2)"><span class="analytics-status-dot green"></span> API per-token (very cheap)</td>
+                <td class="analytics-td" style="color:var(--text-2)">Research, drafts, crons, summaries — better than Haiku, cheaper than Sonnet</td>
               </tr>
             </tbody>
           </table>
           <div style="font-size:12px;color:var(--text-3);padding:10px 12px 6px 16px;line-height:1.6;background:var(--bg-hover);border-radius:6px;margin-top:8px">
-            <strong style="color:var(--text-2)">Routing logic:</strong> Haiku for trivial tasks only. Kimi for medium-complexity work (research, drafts, crons) — capable + cheap. Sonnet reserved for complex builds, code, and anything where quality is the whole point.
+            <span style="color:var(--text-1);font-weight:400">Routing logic:</span> Haiku for trivial tasks only. Kimi for medium-complexity work (research, drafts, crons) — capable + cheap. Sonnet reserved for complex builds, code, and anything where quality is the whole point.
           </div>
         </div>
       </div>
@@ -3885,11 +3881,12 @@
 
       <!-- THE LAGOON COMPANY -->
       <div class="analytics-section reveal">
-        <div class="analytics-section-header" data-collapse="lagoon-analytics">
+        <div class="analytics-section-header" data-collapse="lagoon-analytics-content">
           <svg class="analytics-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4,6 8,10 12,6"/></svg>
           <span class="analytics-section-title" style="--dept-accent:var(--pill-done-text)">Lagoon Company</span>
           <span id="lagoon-data-badge" style="font-size:11px;color:var(--text-3);margin-left:10px;font-weight:400;vertical-align:middle"> loading live data…</span>
         </div>
+        <div id="lagoon-analytics-content">
         <div class="analytics-table-wrap" id="lagoon-analytics">
           <table class="analytics-table">
             <thead><tr>
@@ -3949,6 +3946,7 @@
 
         <!-- Empty state -->
         <div id="lagoon-bookings-empty" style="display:none;padding:16px 0;color:var(--text-3);font-size:13px">No active or upcoming bookings in the next 30 days.</div>
+        </div><!-- /lagoon-analytics-content -->
       </div>
 
     </section>
@@ -5676,7 +5674,7 @@
 
       // Header row: month labels
       html += '<div class="tl-header-row">';
-      html += '<div class="tl-row-label" style="font-size:10px;color:var(--text-3);text-transform:uppercase;letter-spacing:.06em;display:flex;align-items:center;justify-content:space-between;padding-right:6px">Task<button id="tl-reset-view" title="Reset timeline view" style="font-size:10px;padding:2px 6px;border-radius:5px;border:1px solid var(--border);background:var(--surface-2);color:var(--text-2);cursor:pointer;line-height:1.4">&#8635;</button></div>';
+      html += '<div class="tl-row-label" style="font-size:10px;color:var(--text-3);text-transform:uppercase;letter-spacing:.06em;display:flex;align-items:center;padding-right:6px">Task</div>';
       html += '<div class="tl-axis" style="position:relative;height:28px">';
       html += makeGridlines();
       var m2 = new Date(2026, 1, 1);
@@ -5989,13 +5987,6 @@
           if (tlPanState.active) { tlPanState.active = false; document.body.style.cursor = ''; }
         });
 
-        // Reset timeline view button handler
-        var tlResetBtn = document.getElementById('tl-reset-view');
-        if (tlResetBtn) {
-          tlResetBtn.addEventListener('click', function() {
-            tlZoomDays = 253; tlViewCenter = new Date(2026,4,1).getTime(); renderTimelineView();
-          });
-        }
       }
     }
 
