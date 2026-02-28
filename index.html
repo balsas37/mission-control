@@ -1191,37 +1191,32 @@
 
     /* Filter pill row */
     .inbox-filters {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
+      display: inline-flex;
+      gap: 0;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
     }
 
     .inbox-filter {
-      padding: 7px 16px;
-      border-radius: 999px;
+      padding: 6px 14px;
       font-size: 13px;
       font-weight: 500;
-      color: var(--text-2);
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--border);
-      cursor: pointer;
-      transition: all 0.2s ease;
       font-family: inherit;
-      -webkit-backdrop-filter: blur(8px);
-      backdrop-filter: blur(8px);
+      color: var(--text-3);
+      background: transparent;
+      border: none;
+      border-right: 1px solid var(--border);
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
     }
 
-    .inbox-filter:hover {
-      color: var(--text-1);
-      background: rgba(255,255,255,0.06);
-      border-color: var(--border-hover);
-    }
-
+    .inbox-filter:last-child { border-right: none; }
+    .inbox-filter:hover { color: var(--text-2); }
     .inbox-filter.active {
-      background: #fff;
-      color: #181818;
-      border-color: #fff;
-      font-weight: 400;
+      background: rgba(255,255,255,0.08);
+      color: var(--text-1);
+      box-shadow: inset 0 0 0 1px var(--border-hover);
     }
 
     /* Two-column layout */
@@ -1701,6 +1696,7 @@
     .analytics-filter.active {
       background: rgba(255,255,255,0.08);
       color: var(--text-1);
+      box-shadow: inset 0 0 0 1px var(--border-hover);
     }
 
     /* Airtable-style Analytics Tables */
@@ -1801,13 +1797,16 @@
       color: var(--text-3);
       background: transparent;
       border: none;
+      border-right: 1px solid var(--border);
       cursor: pointer;
       transition: background 0.2s, color 0.2s;
     }
+    .view-toggle-btn:last-child { border-right: none; }
     .view-toggle-btn:hover { color: var(--text-2); }
     .view-toggle-btn.active {
       background: rgba(255,255,255,0.08);
       color: var(--text-1);
+      box-shadow: inset 0 0 0 1px var(--border-hover);
     }
 
     .data-table-wrap {
@@ -1996,7 +1995,7 @@
       cursor: pointer; transition: background 0.2s, color 0.2s;
     }
     .cal-view-btn:hover { color: var(--text-2); }
-    .cal-view-btn.active { background: rgba(255,255,255,0.08); color: var(--text-1); }
+    .cal-view-btn.active { background: rgba(255,255,255,0.08); color: var(--text-1); box-shadow: inset 0 0 0 1px var(--border-hover); }
     .cal-view-btn:not(:last-child) { border-right: 1px solid var(--border); }
 
     /* Month view: week-row structure for spanning booking bars */
