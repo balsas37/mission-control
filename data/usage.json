@@ -1,12 +1,14 @@
 {
-  "generated": "2026-02-28T07:47:40Z",
+  "generated": "2026-02-28T08:35:44.645152+00:00",
   "week": 9,
   "reset": {
-    "day_h": 22, "day_m": 12,
-    "week_d": 1, "week_h": 22
+    "day_h": 22,
+    "day_m": 12,
+    "week_d": 1,
+    "week_h": 22
   },
   "anthropic": {
-    "plan": "Claude Max · flat $200/mo",
+    "plan": "Claude Max \u00b7 flat $200/mo",
     "today_total": 10936270,
     "today_out": 64403,
     "week_total": 35214234,
@@ -14,13 +16,27 @@
     "today_pct": 31
   },
   "kimi": {
-    "plan": "Moonshot K2.5 · $0.60/$2.50 per M",
-    "today_total": 0,
-    "today_out": 0,
-    "week_total": 2647928,
-    "week_out": 8186,
-    "today_pct": 0,
-    "cost_day": 0.0000,
-    "cost_week": 0.0205
+    "today_tokens": 0,
+    "week_tokens": 0,
+    "today_cost_usd": 0.0,
+    "week_cost_usd": 0.0
+  },
+  "anthropic_live": {
+    "session": {
+      "pct": 22,
+      "reset_label": "Resets in 4 hr 26 min"
+    },
+    "weekly_all": {
+      "pct": 25,
+      "reset_label": "Resets Thu 11:00 PM"
+    },
+    "weekly_sonnet": {
+      "pct": 37,
+      "reset_label": "Resets Thu 11:00 PM"
+    },
+    "extra_usage": {
+      "spent_usd": 0.0,
+      "balance_usd": 5.0
+    }
   }
 }
