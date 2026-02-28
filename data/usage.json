@@ -1,17 +1,17 @@
 {
-  "generated": "2026-02-28T07:40:27Z",
-  "week": 09,
+  "generated": "2026-02-28T07:47:40Z",
+  "week": 9,
   "reset": {
-    "day_h": 22, "day_m": 19,
+    "day_h": 22, "day_m": 12,
     "week_d": 1, "week_h": 22
   },
   "anthropic": {
     "plan": "Claude Max · flat $200/mo",
-    "today_total": 5530057,
-    "today_out": 54284,
-    "week_total": 29808021,
-    "week_out": 204762,
-    "today_pct": 18
+    "today_total": 10936270,
+    "today_out": 64403,
+    "week_total": 35214234,
+    "week_out": 214881,
+    "today_pct": 31
   },
   "kimi": {
     "plan": "Moonshot K2.5 · $0.60/$2.50 per M",
