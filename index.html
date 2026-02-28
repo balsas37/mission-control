@@ -1731,6 +1731,44 @@
       border-radius: 14px;
       background: var(--bg-raised);
     }
+
+    /* Model usage bars */
+    .usage-provider { margin-bottom: 22px; }
+    .usage-provider:last-child { margin-bottom: 0; }
+    .usage-provider-header {
+      display: flex; align-items: baseline; gap: 10px; margin-bottom: 12px;
+    }
+    .usage-provider-name { font-size: 14px; font-weight: 500; color: var(--text-1); }
+    .usage-provider-plan { font-size: 12px; color: var(--text-3); }
+    .usage-row { margin-bottom: 10px; }
+    .usage-row-label {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 12px; color: var(--text-3); margin-bottom: 4px;
+    }
+    .usage-row-label-left { font-weight: 500; color: var(--text-2); }
+    .usage-row-label-right { font-variant-numeric: tabular-nums; }
+    .usage-bar-track {
+      height: 6px; border-radius: 999px; background: rgba(255,255,255,0.07);
+      overflow: hidden;
+    }
+    .usage-bar-fill {
+      height: 100%; border-radius: 999px;
+      transition: width 0.6s ease;
+    }
+    .usage-bar-fill.anthropic { background: linear-gradient(90deg, #6BA8DA, #A78BFA); }
+    .usage-bar-fill.kimi      { background: linear-gradient(90deg, #F59E0B, #F97316); }
+    .usage-reset-row {
+      display: flex; gap: 20px; margin-top: 6px;
+      font-size: 11px; color: var(--text-3);
+    }
+    .usage-divider {
+      height: 1px; background: var(--border); margin: 16px 0;
+    }
+    .usage-cost-badge {
+      display: inline-block; padding: 2px 8px; border-radius: 999px;
+      background: rgba(249,115,22,0.12); color: #F97316;
+      font-size: 11px; font-weight: 500; margin-left: 6px;
+    }
     .analytics-table { width: 100%; border-collapse: collapse; font-size: 14px; }
     .analytics-th {
       position: sticky; top: 0;
@@ -3858,39 +3896,15 @@
         <div class="analytics-section-header" data-collapse="model-analytics">
           <svg class="analytics-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4,6 8,10 12,6"/></svg>
           <span class="analytics-section-title" style="--dept-accent:var(--pill-medium-text)">OpenClaw · Model Usage</span>
-          <span style="font-size:11px;color:var(--text-3);margin-left:10px;font-weight:400;vertical-align:middle"> Haiku → trivial · Kimi → medium · Sonnet → complex</span>
+          <span id="usage-sync-time" style="font-size:11px;color:var(--text-3);margin-left:10px;font-weight:400;vertical-align:middle"></span>
         </div>
         <div class="analytics-table-wrap" id="model-analytics">
-          <table class="analytics-table">
-            <thead><tr>
-              <th class="analytics-th">Model</th>
-              <th class="analytics-th">Role</th>
-              <th class="analytics-th">Billing</th>
-              <th class="analytics-th">Used For</th>
-            </tr></thead>
-            <tbody>
-              <tr class="analytics-row">
-                <td class="analytics-td">Claude Sonnet</td>
-                <td class="analytics-td">Primary brain</td>
-                <td class="analytics-td"><span class="analytics-status-dot green"></span> OAuth flat-rate</td>
-                <td class="analytics-td">Main sessions, builds, research, reasoning</td>
-              </tr>
-              <tr class="analytics-row">
-                <td class="analytics-td">Claude Haiku</td>
-                <td class="analytics-td">Heartbeat / crons</td>
-                <td class="analytics-td"><span class="analytics-status-dot green"></span> OAuth flat-rate</td>
-                <td class="analytics-td">Hourly heartbeats, lightweight checks</td>
-              </tr>
-              <tr class="analytics-row">
-                <td class="analytics-td">Kimi K2.5</td>
-                <td class="analytics-td">Mid-tier + fallback</td>
-                <td class="analytics-td"><span class="analytics-status-dot green"></span> API per-token (very cheap)</td>
-                <td class="analytics-td">Research, drafts, crons, summaries — better than Haiku, cheaper than Sonnet</td>
-              </tr>
-            </tbody>
-          </table>
-          <div style="font-size:12px;color:var(--text-3);padding:10px 16px;line-height:1.6;">
-            <span style="color:var(--text-2);font-weight:400">Routing logic:</span> Haiku for trivial tasks. Kimi for medium work (research, drafts, crons). Sonnet for complex builds, code, and anything quality-critical.
+          <!-- Usage bars rendered by JS from data/usage.json -->
+          <div id="usage-bars" style="padding:20px 16px 8px;">
+            <div style="color:var(--text-3);font-size:13px;">Loading usage data…</div>
+          </div>
+          <div style="font-size:12px;color:var(--text-3);padding:4px 16px 14px;line-height:1.6;">
+            <span style="color:var(--text-2);font-weight:400">Routing:</span> Haiku → trivial · Kimi → medium · Sonnet → complex · syncs every 6h
           </div>
         </div>
       </div>
@@ -5269,6 +5283,84 @@
         .catch(function(err) {
           if (badge) badge.textContent = '⚠ estimates only';
           console.warn('[MC] Lagoon data fetch failed:', err);
+        });
+    })();
+
+    /* ---- Model Usage Bars ---- */
+    (function fetchUsageData() {
+      function fmtM(n) {
+        if (n >= 1e6) return (n/1e6).toFixed(1) + 'M';
+        if (n >= 1e3) return (n/1e3).toFixed(0) + 'k';
+        return String(n);
+      }
+      function barHTML(pct, cls) {
+        var w = Math.min(100, Math.max(0, pct));
+        return '<div class="usage-bar-track"><div class="usage-bar-fill ' + cls + '" style="width:' + w + '%"></div></div>';
+      }
+      fetch('data/usage.json?_=' + Date.now())
+        .then(function(r) { return r.ok ? r.json() : Promise.reject(r.status); })
+        .then(function(d) {
+          var el = document.getElementById('usage-bars');
+          var syncEl = document.getElementById('usage-sync-time');
+          if (!el) return;
+
+          var gen = new Date(d.generated);
+          if (syncEl) syncEl.textContent = 'Synced ' + gen.toLocaleDateString('en-US', {month:'short',day:'numeric'}) + ' · ' + gen.toLocaleTimeString('en-US', {hour:'2-digit',minute:'2-digit'});
+
+          var a = d.anthropic || {}; var k = d.kimi || {}; var r = d.reset || {};
+          var aTodayPct = a.today_pct || 0;
+          var kTodayPct = k.today_pct || 0;
+
+          el.innerHTML =
+            // Anthropic
+            '<div class="usage-provider">' +
+              '<div class="usage-provider-header">' +
+                '<span class="usage-provider-name">🤖 Anthropic (Claude)</span>' +
+                '<span class="usage-provider-plan">' + (a.plan || '') + '</span>' +
+              '</div>' +
+              '<div class="usage-row">' +
+                '<div class="usage-row-label"><span class="usage-row-label-left">Today</span>' +
+                '<span class="usage-row-label-right">' + fmtM(a.today_total||0) + ' · ' + aTodayPct + '% of week</span></div>' +
+                barHTML(aTodayPct, 'anthropic') +
+              '</div>' +
+              '<div class="usage-row">' +
+                '<div class="usage-row-label"><span class="usage-row-label-left">This Week</span>' +
+                '<span class="usage-row-label-right">' + fmtM(a.week_total||0) + '</span></div>' +
+                barHTML(100, 'anthropic') +
+              '</div>' +
+            '</div>' +
+
+            '<div class="usage-divider"></div>' +
+
+            // Kimi
+            '<div class="usage-provider">' +
+              '<div class="usage-provider-header">' +
+                '<span class="usage-provider-name">⚡ Kimi K2.5</span>' +
+                '<span class="usage-provider-plan">' + (k.plan || '') + '</span>' +
+                (k.cost_week > 0 ? '<span class="usage-cost-badge">$' + parseFloat(k.cost_week).toFixed(3) + ' this week</span>' : '') +
+              '</div>' +
+              '<div class="usage-row">' +
+                '<div class="usage-row-label"><span class="usage-row-label-left">Today</span>' +
+                '<span class="usage-row-label-right">' + fmtM(k.today_total||0) + ' · ' + kTodayPct + '% of week</span></div>' +
+                barHTML(kTodayPct, 'kimi') +
+              '</div>' +
+              '<div class="usage-row">' +
+                '<div class="usage-row-label"><span class="usage-row-label-left">This Week</span>' +
+                '<span class="usage-row-label-right">' + fmtM(k.week_total||0) + ' · cost $' + parseFloat(k.cost_week||0).toFixed(3) + '</span></div>' +
+                barHTML(100, 'kimi') +
+              '</div>' +
+            '</div>' +
+
+            // Reset timers
+            '<div class="usage-reset-row">' +
+              '<span>⏰ Day resets in ' + (r.day_h||0) + 'h ' + (r.day_m||0) + 'm</span>' +
+              '<span>·</span>' +
+              '<span>Week resets in ' + (r.week_d||0) + 'd ' + (r.week_h||0) + 'h</span>' +
+            '</div>';
+        })
+        .catch(function() {
+          var el = document.getElementById('usage-bars');
+          if (el) el.innerHTML = '<div style="color:var(--text-3);font-size:13px;">Usage data unavailable — run bin/sync-usage-data.sh</div>';
         });
     })();
 
