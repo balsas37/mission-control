@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-28T08:35:44.645152+00:00",
+  "generated": "2026-02-28T08:54:43Z",
   "week": 9,
   "reset": {
     "day_h": 22,
@@ -23,9 +23,9 @@
   },
   "anthropic_live": {
     "session": {
-      "pct": 22,
-      "reset_label": "Resets in 4 hr 26 min",
-      "reset_utc": "2026-02-28T13:00:00Z"
+      "pct": 23,
+      "reset_label": "Resets in 4 hr 5 min",
+      "reset_utc": "2026-02-28T12:59:43Z"
     },
     "weekly_all": {
       "pct": 25,
