@@ -24,15 +24,18 @@
   "anthropic_live": {
     "session": {
       "pct": 22,
-      "reset_label": "Resets in 4 hr 26 min"
+      "reset_label": "Resets in 4 hr 26 min",
+      "reset_utc": "2026-02-28T13:00:00Z"
     },
     "weekly_all": {
       "pct": 25,
-      "reset_label": "Resets Thu 11:00 PM"
+      "reset_label": "Resets Thu 11:00 PM",
+      "reset_utc": "2026-03-06T05:00:00Z"
     },
     "weekly_sonnet": {
       "pct": 37,
-      "reset_label": "Resets Thu 11:00 PM"
+      "reset_label": "Resets Thu 11:00 PM",
+      "reset_utc": "2026-03-06T05:00:00Z"
     },
     "extra_usage": {
       "spent_usd": 0.0,

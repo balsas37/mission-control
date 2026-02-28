@@ -5300,86 +5300,109 @@
       function fmtM(n) {
         if (n >= 1e6) return (n/1e6).toFixed(1) + 'M';
         if (n >= 1e3) return (n/1e3).toFixed(0) + 'k';
-        return String(n);
+        return n ? String(n) : '0';
       }
       function barHTML(pct, cls) {
         var w = Math.min(100, Math.max(0, pct));
-        return '<div class="usage-bar-track"><div class="usage-bar-fill ' + cls + '" style="width:' + w + '%"></div></div>';
+        var color = pct >= 80 ? '#EF4444' : pct >= 60 ? '#F59E0B' : '';
+        var style = color ? ' style="background:' + color + '"' : '';
+        return '<div class="usage-bar-track"><div class="usage-bar-fill ' + cls + '"' + style + ' style="width:' + w + '%;' + (color ? 'background:' + color : '') + '"></div></div>';
       }
+      // Live countdown from UTC reset timestamp
+      function liveCountdown(resetUtc) {
+        if (!resetUtc) return '';
+        var reset = new Date(resetUtc).getTime();
+        var diff = Math.max(0, reset - Date.now());
+        if (diff === 0) return 'Resetting now';
+        var h = Math.floor(diff / 3600000);
+        var m = Math.floor((diff % 3600000) / 60000);
+        var s = Math.floor((diff % 60000) / 1000);
+        if (h > 48) {
+          var d = Math.floor(h / 24); h = h % 24;
+          return 'Resets in ' + d + 'd ' + h + 'h';
+        }
+        return h > 0 ? 'Resets in ' + h + 'h ' + m + 'm' : 'Resets in ' + m + 'm ' + s + 's';
+      }
+      // Store usage data globally for live ticker
+      var _usageData = null;
+
+      function renderUsage() {
+        var d = _usageData; if (!d) return;
+        var el = document.getElementById('usage-bars');
+        var syncEl = document.getElementById('usage-sync-time');
+        if (!el) return;
+
+        var gen = new Date(d.generated);
+        if (syncEl) syncEl.textContent = 'Synced ' + gen.toLocaleTimeString('en-US', {hour:'2-digit',minute:'2-digit'});
+
+        var al = d.anthropic_live || {}; var k = d.kimi || {};
+        var sess = al.session || {}; var wall = al.weekly_all || {}; var wson = al.weekly_sonnet || {};
+        var extra = al.extra_usage || {};
+
+        var kTodayPct = k.today_tokens > 0 ? Math.min(100, Math.round((k.today_tokens / 500000) * 100)) : 0;
+        var kWeekPct  = k.week_tokens  > 0 ? Math.min(100, Math.round((k.week_tokens  / 2000000) * 100)) : 0;
+        var kimiCostWeek = parseFloat(k.week_cost_usd||0).toFixed(3);
+        var kimiCostDay  = parseFloat(k.today_cost_usd||0).toFixed(3);
+
+        el.innerHTML =
+          '<div class="usage-provider">' +
+            '<div class="usage-provider-header">' +
+              '<span class="usage-provider-name">🤖 Claude Max</span>' +
+              '<span class="usage-provider-plan">$200/mo flat</span>' +
+            '</div>' +
+            '<div class="usage-row">' +
+              '<div class="usage-row-label"><span class="usage-row-label-left">Session</span>' +
+              '<span class="usage-row-label-right usage-countdown" data-reset="' + (sess.reset_utc||'') + '">' + (sess.pct||0) + '% · ' + liveCountdown(sess.reset_utc) + '</span></div>' +
+              barHTML(sess.pct||0, 'anthropic') +
+            '</div>' +
+            '<div class="usage-row">' +
+              '<div class="usage-row-label"><span class="usage-row-label-left">Weekly · All</span>' +
+              '<span class="usage-row-label-right usage-countdown" data-reset="' + (wall.reset_utc||'') + '">' + (wall.pct||0) + '% · ' + liveCountdown(wall.reset_utc) + '</span></div>' +
+              barHTML(wall.pct||0, 'anthropic') +
+            '</div>' +
+            '<div class="usage-row">' +
+              '<div class="usage-row-label"><span class="usage-row-label-left">Weekly · Sonnet</span>' +
+              '<span class="usage-row-label-right usage-countdown" data-reset="' + (wson.reset_utc||'') + '">' + (wson.pct||0) + '% · ' + liveCountdown(wson.reset_utc) + '</span></div>' +
+              barHTML(wson.pct||0, 'anthropic') +
+            '</div>' +
+            (extra.balance_usd !== undefined ? '<div style="font-size:11px;color:var(--text-3);margin-top:6px;">Extra: $' + (extra.spent_usd||0).toFixed(2) + ' spent · $' + extra.balance_usd.toFixed(2) + ' balance</div>' : '') +
+          '</div>' +
+          '<div class="usage-divider"></div>' +
+          '<div class="usage-provider">' +
+            '<div class="usage-provider-header">' +
+              '<span class="usage-provider-name">⚡ Kimi K2.5</span>' +
+              '<span class="usage-provider-plan">pay-per-token</span>' +
+              (parseFloat(kimiCostWeek) > 0 ? '<span class="usage-cost-badge">$' + kimiCostWeek + ' this week</span>' : '') +
+            '</div>' +
+            '<div class="usage-row">' +
+              '<div class="usage-row-label"><span class="usage-row-label-left">Today</span>' +
+              '<span class="usage-row-label-right">' + fmtM(k.today_tokens||0) + ' · $' + kimiCostDay + '</span></div>' +
+              barHTML(kTodayPct, 'kimi') +
+            '</div>' +
+            '<div class="usage-row">' +
+              '<div class="usage-row-label"><span class="usage-row-label-left">This Week</span>' +
+              '<span class="usage-row-label-right">' + fmtM(k.week_tokens||0) + ' · $' + kimiCostWeek + '</span></div>' +
+              barHTML(kWeekPct, 'kimi') +
+            '</div>' +
+          '</div>';
+      }
+
+      // Tick every second — update all countdowns live
+      setInterval(function() {
+        document.querySelectorAll('.usage-countdown').forEach(function(el) {
+          var reset = el.dataset.reset;
+          if (!reset) return;
+          var pct = el.textContent.split('%')[0];
+          el.textContent = pct + '% · ' + liveCountdown(reset);
+        });
+      }, 1000);
+
       fetch('data/usage.json?_=' + Date.now())
         .then(function(r) { return r.ok ? r.json() : Promise.reject(r.status); })
-        .then(function(d) {
-          var el = document.getElementById('usage-bars');
-          var syncEl = document.getElementById('usage-sync-time');
-          if (!el) return;
-
-          var gen = new Date(d.generated);
-          if (syncEl) syncEl.textContent = 'Synced ' + gen.toLocaleDateString('en-US', {month:'short',day:'numeric'}) + ' · ' + gen.toLocaleTimeString('en-US', {hour:'2-digit',minute:'2-digit'});
-
-          var al = d.anthropic_live || {}; var k = d.kimi || {};
-          var sess = al.session || {}; var wall = al.weekly_all || {}; var wson = al.weekly_sonnet || {};
-          var extra = al.extra_usage || {};
-
-          var kTodayPct = k.today_tokens > 0 ? Math.min(100, Math.round((k.today_tokens / 500000) * 100)) : 0;
-          var kWeekPct  = k.week_tokens  > 0 ? Math.min(100, Math.round((k.week_tokens  / 2000000) * 100)) : 0;
-          var kimiCostWeek = parseFloat(k.week_cost_usd||0).toFixed(3);
-          var kimiCostDay  = parseFloat(k.today_cost_usd||0).toFixed(3);
-
-          function usageBar(pct, cls) {
-            var color = pct >= 80 ? '#EF4444' : pct >= 60 ? '#F59E0B' : null;
-            var styleOverride = color ? ';background:' + color : '';
-            return barHTML(pct, cls + styleOverride.replace(';background:', '" style="background:'));
-          }
-
-          el.innerHTML =
-            // Anthropic — live bars from openclaw browser scrape
-            '<div class="usage-provider">' +
-              '<div class="usage-provider-header">' +
-                '<span class="usage-provider-name">🤖 Anthropic · Claude Max</span>' +
-                '<span class="usage-provider-plan">flat $200/mo</span>' +
-              '</div>' +
-              '<div class="usage-row">' +
-                '<div class="usage-row-label"><span class="usage-row-label-left">Session</span>' +
-                '<span class="usage-row-label-right">' + (sess.pct||0) + '% · ' + (sess.reset_label||'') + '</span></div>' +
-                barHTML(sess.pct||0, 'anthropic') +
-              '</div>' +
-              '<div class="usage-row">' +
-                '<div class="usage-row-label"><span class="usage-row-label-left">Weekly · All models</span>' +
-                '<span class="usage-row-label-right">' + (wall.pct||0) + '% · ' + (wall.reset_label||'') + '</span></div>' +
-                barHTML(wall.pct||0, 'anthropic') +
-              '</div>' +
-              '<div class="usage-row">' +
-                '<div class="usage-row-label"><span class="usage-row-label-left">Weekly · Sonnet only</span>' +
-                '<span class="usage-row-label-right">' + (wson.pct||0) + '% · ' + (wson.reset_label||'') + '</span></div>' +
-                barHTML(wson.pct||0, 'anthropic') +
-              '</div>' +
-              (extra.balance_usd !== undefined ? '<div style="font-size:11px;color:var(--text-3);margin-top:6px;">Extra usage: $' + (extra.spent_usd||0).toFixed(2) + ' spent · $' + extra.balance_usd.toFixed(2) + ' balance</div>' : '') +
-            '</div>' +
-
-            '<div class="usage-divider"></div>' +
-
-            // Kimi — real data from session logs
-            '<div class="usage-provider">' +
-              '<div class="usage-provider-header">' +
-                '<span class="usage-provider-name">⚡ Kimi K2.5</span>' +
-                '<span class="usage-provider-plan">$0.60/$2.50 per M · actual spend</span>' +
-                (parseFloat(kimiCostWeek) > 0 ? '<span class="usage-cost-badge">$' + kimiCostWeek + ' this week</span>' : '') +
-              '</div>' +
-              '<div class="usage-row">' +
-                '<div class="usage-row-label"><span class="usage-row-label-left">Today</span>' +
-                '<span class="usage-row-label-right">' + fmtM(k.today_tokens||0) + ' tokens · $' + kimiCostDay + '</span></div>' +
-                barHTML(kTodayPct, 'kimi') +
-              '</div>' +
-              '<div class="usage-row">' +
-                '<div class="usage-row-label"><span class="usage-row-label-left">This Week</span>' +
-                '<span class="usage-row-label-right">' + fmtM(k.week_tokens||0) + ' tokens · $' + kimiCostWeek + '</span></div>' +
-                barHTML(kWeekPct, 'kimi') +
-              '</div>' +
-            '</div>';
-        })
+        .then(function(d) { _usageData = d; renderUsage(); })
         .catch(function() {
           var el = document.getElementById('usage-bars');
-          if (el) el.innerHTML = '<div style="color:var(--text-3);font-size:13px;">Usage data unavailable — run bin/sync-usage-data.sh</div>';
+          if (el) el.innerHTML = '<div style="color:var(--text-3);font-size:13px;">Usage data unavailable</div>';
         });
     })();
 
