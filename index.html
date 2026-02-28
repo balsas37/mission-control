@@ -1746,11 +1746,11 @@
     .analytics-row:hover { background: rgba(255,255,255,0.04); }
     .analytics-td {
       padding: 12px 16px; border-bottom: 1px solid var(--border);
-      color: var(--text-1); vertical-align: middle;
+      color: var(--text-2); vertical-align: middle; font-size: 14px;
     }
-    .analytics-td:first-child { font-weight: 500; color: var(--text-2); }
-    .analytics-td-value { font-size: 14px; font-weight: 400; font-variant-numeric: tabular-nums; }
-    .analytics-td-change { font-size: 14px; font-weight: 500; display: inline-flex; align-items: center; gap: 4px; }
+    .analytics-td:first-child { font-weight: 400; color: var(--text-1); }
+    .analytics-td-value { font-size: 14px; font-weight: 400; font-variant-numeric: tabular-nums; color: var(--text-2); }
+    .analytics-td-change { font-size: 14px; font-weight: 400; display: inline-flex; align-items: center; gap: 4px; }
     .analytics-td-change.positive { color: var(--pill-done-text); }
     .analytics-td-change.negative { color: var(--pill-urgent-text); }
     .analytics-td-change.neutral  { color: var(--text-3); }
@@ -3833,22 +3833,22 @@
             </tr></thead>
             <tbody>
               <tr class="analytics-row">
-                <td class="analytics-td" style="color:var(--text-1);font-weight:400">Claude Sonnet</td>
-                <td class="analytics-td" style="color:var(--text-2)">Primary brain</td>
-                <td class="analytics-td" style="color:var(--text-2)"><span class="analytics-status-dot green"></span> OAuth flat-rate</td>
-                <td class="analytics-td" style="color:var(--text-2)">Main sessions, builds, research, reasoning</td>
+                <td class="analytics-td">Claude Sonnet</td>
+                <td class="analytics-td">Primary brain</td>
+                <td class="analytics-td"><span class="analytics-status-dot green"></span> OAuth flat-rate</td>
+                <td class="analytics-td">Main sessions, builds, research, reasoning</td>
               </tr>
               <tr class="analytics-row">
-                <td class="analytics-td" style="color:var(--text-1);font-weight:400">Claude Haiku</td>
-                <td class="analytics-td" style="color:var(--text-2)">Heartbeat / crons</td>
-                <td class="analytics-td" style="color:var(--text-2)"><span class="analytics-status-dot green"></span> OAuth flat-rate</td>
-                <td class="analytics-td" style="color:var(--text-2)">Hourly heartbeats, lightweight checks</td>
+                <td class="analytics-td">Claude Haiku</td>
+                <td class="analytics-td">Heartbeat / crons</td>
+                <td class="analytics-td"><span class="analytics-status-dot green"></span> OAuth flat-rate</td>
+                <td class="analytics-td">Hourly heartbeats, lightweight checks</td>
               </tr>
               <tr class="analytics-row">
-                <td class="analytics-td" style="color:var(--text-1);font-weight:400">Kimi K2.5</td>
-                <td class="analytics-td" style="color:var(--text-2)">Mid-tier + fallback</td>
-                <td class="analytics-td" style="color:var(--text-2)"><span class="analytics-status-dot green"></span> API per-token (very cheap)</td>
-                <td class="analytics-td" style="color:var(--text-2)">Research, drafts, crons, summaries — better than Haiku, cheaper than Sonnet</td>
+                <td class="analytics-td">Kimi K2.5</td>
+                <td class="analytics-td">Mid-tier + fallback</td>
+                <td class="analytics-td"><span class="analytics-status-dot green"></span> API per-token (very cheap)</td>
+                <td class="analytics-td">Research, drafts, crons, summaries — better than Haiku, cheaper than Sonnet</td>
               </tr>
             </tbody>
           </table>
