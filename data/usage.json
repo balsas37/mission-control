@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-28T08:54:43Z",
+  "generated": "2026-02-28T08:56:21Z",
   "week": 9,
   "reset": {
     "day_h": 22,
@@ -25,7 +25,7 @@
     "session": {
       "pct": 23,
       "reset_label": "Resets in 4 hr 5 min",
-      "reset_utc": "2026-02-28T12:59:43Z"
+      "reset_utc": "2026-02-28T13:01:21Z"
     },
     "weekly_all": {
       "pct": 25,
