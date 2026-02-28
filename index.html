@@ -1219,7 +1219,8 @@
     .inbox-filter.active {
       background: rgba(255,255,255,0.1);
       color: var(--text-1);
-      border-color: var(--border-hover);
+      border: 1px solid rgba(255,255,255,0.22);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.22);
     }
 
     /* Two-column layout */
@@ -1696,9 +1697,12 @@
     .analytics-filter:hover { color: var(--text-2); }
 
     .analytics-filter.active {
-      background: rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.09);
       color: var(--text-1);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.22);
     }
+    .analytics-filter:first-child.active { border-radius: 9px 0 0 9px; }
+    .analytics-filter:last-child.active { border-radius: 0 9px 9px 0; }
 
     /* Airtable-style Analytics Tables */
     .analytics-section { margin-bottom: 40px; }
@@ -1805,9 +1809,12 @@
     .view-toggle-btn:last-child { border-right: none; }
     .view-toggle-btn:hover { color: var(--text-2); }
     .view-toggle-btn.active {
-      background: rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.09);
       color: var(--text-1);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.22);
     }
+    .view-toggle-btn:first-child.active { border-radius: 9px 0 0 9px; }
+    .view-toggle-btn:last-child.active { border-radius: 0 9px 9px 0; }
 
     .data-table-wrap {
       overflow-x: auto;
@@ -2005,7 +2012,9 @@
       cursor: pointer; transition: background 0.2s, color 0.2s;
     }
     .cal-view-btn:hover { color: var(--text-2); }
-    .cal-view-btn.active { background: rgba(255,255,255,0.08); color: var(--text-1); }
+    .cal-view-btn.active { background: rgba(255,255,255,0.09); color: var(--text-1); box-shadow: inset 0 0 0 1px rgba(255,255,255,0.22); }
+    .cal-view-btn:first-child.active { border-radius: 9px 0 0 9px; }
+    .cal-view-btn:last-child.active { border-radius: 0 9px 9px 0; }
     .cal-view-btn:not(:last-child) { border-right: 1px solid var(--border); }
 
     /* Month view: week-row structure for spanning booking bars */
