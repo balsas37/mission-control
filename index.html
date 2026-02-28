@@ -1971,7 +1971,7 @@
     }
     .cal-toolbar-left { display: flex; align-items: center; gap: 16px; }
     .cal-title {
-      font-size: 11px; font-weight: 400; color: var(--text-3);
+      font-size: 11px; font-weight: 400; color: var(--text-1);
       text-transform: uppercase; letter-spacing: 0.08em;
       margin: 0; min-width: 160px;
     }
@@ -2054,6 +2054,22 @@
     }
     .cal-event-chip:hover { opacity: 0.7; }
     .cal-day-overflow { font-size: 11px; color: var(--text-3); font-weight: 500; padding-top: 2px; }
+    /* Lagoon booking chip — contained inside each day cell, bottom-anchored */
+    .cal-lagoon-day-chip {
+      margin-top: auto; margin-left: -7px; margin-right: -7px; margin-bottom: -7px;
+      padding: 3px 7px; border-radius: 0 0 10px 10px;
+      background: rgba(255,179,71,0.18); border-top: 1px solid rgba(255,170,50,0.5);
+      color: #D46B08; font-size: 11px; font-weight: 500;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+      cursor: pointer; transition: background 0.15s;
+    }
+    .cal-lagoon-day-chip:hover { background: rgba(255,179,71,0.28); }
+    /* Lagoon chip inside week view day column */
+    .cal-lagoon-week-chip {
+      background: rgba(255,179,71,0.18) !important;
+      color: #D46B08 !important;
+      border-left-color: #D46B08 !important;
+    }
     .cal-milestone-marker {
       width: 8px; height: 8px; position: absolute; top: 8px; right: 8px;
       transform: rotate(45deg); border-radius: 2px;
@@ -5326,7 +5342,6 @@
 
       rows.forEach(function(weekRow) {
         html += '<div class="cal-week-row">';
-        // Day cells
         html += '<div class="cal-week-cells">';
         weekRow.forEach(function(cell) {
           if (!cell) { html += '<div class="cal-day empty"></div>'; return; }
@@ -5341,66 +5356,40 @@
             html += '<div class="cal-event-chip" style="background:' + ev.color + '22;color:' + ev.color + ';border-left:2px solid ' + ev.color + ';" data-event-id="' + ev.id + '">' + escapeHtml(ev.title) + '</div>';
           }
           if (events.length > 2) html += '<div class="cal-day-overflow">+' + (events.length - 2) + ' more</div>';
-          html += '</div>';
+          // Lagoon booking chip — inside each day cell, bottom-anchored
+          if (showLagoonBookings) {
+            var cellDate = new Date(cell.dk + 'T12:00:00Z');
+            lagoonBookings.forEach(function(b) {
+              var bStart = new Date(b.start_iso + 'T12:00:00Z');
+              var bEnd   = new Date(b.end_iso   + 'T12:00:00Z');
+              if (cellDate >= bStart && cellDate <= bEnd) {
+                var label = (b.name || 'Booking') + (b.vehicle ? ' \u00B7 ' + b.vehicle : '');
+                html += '<div class="cal-lagoon-day-chip"' +
+                  ' data-booking-name="' + escapeHtml(b.name||'') + '"' +
+                  ' data-booking-vehicle="' + escapeHtml(b.vehicle||'') + '"' +
+                  ' data-booking-location="' + escapeHtml(b.location||'') + '"' +
+                  ' data-booking-start="' + escapeHtml(b.start||'') + '"' +
+                  ' data-booking-end="' + escapeHtml(b.end||'') + '"' +
+                  ' data-booking-days="' + (b.days||0) + '"' +
+                  ' data-booking-gross="' + (b.gross||0) + '">' +
+                  escapeHtml(label) + '</div>';
+              }
+            });
+          }
+          html += '</div>'; // cal-day
         });
         html += '</div>'; // cal-week-cells
-
-        // Booking bars row (only when Lagoon toggle is ON)
-        var firstCell = null, lastCell = null;
-        for (var ci = 0; ci < weekRow.length; ci++) {
-          if (weekRow[ci]) { if (!firstCell) firstCell = weekRow[ci]; lastCell = weekRow[ci]; }
-        }
-        if (showLagoonBookings && firstCell && lastCell) {
-          var wStart = new Date(firstCell.dk + 'T12:00:00Z');
-          var wEnd   = new Date(lastCell.dk  + 'T12:00:00Z');
-          var barsHtml = '';
-          var barRow = 1;
-          lagoonBookings.forEach(function(b) {
-            var bStart = new Date(b.start_iso + 'T12:00:00Z');
-            var bEnd   = new Date(b.end_iso   + 'T12:00:00Z');
-            if (bEnd < wStart || bStart > wEnd) return;
-            var clampedStart = bStart < wStart ? wStart : bStart;
-            var clampedEnd   = bEnd   > wEnd   ? wEnd   : bEnd;
-            // Find column indices (1-based for CSS grid-column)
-            var startCol = 1, endCol = 7;
-            for (var ci = 0; ci < weekRow.length; ci++) {
-              if (weekRow[ci]) {
-                var cellDate = new Date(weekRow[ci].dk + 'T12:00:00Z');
-                if (cellDate.getTime() === clampedStart.getTime()) startCol = ci + 1;
-                if (cellDate.getTime() === clampedEnd.getTime())   endCol   = ci + 1;
-              }
-            }
-            // If clamped start is before the first cell, pin to first cell
-            if (clampedStart.getTime() === wStart.getTime()) {
-              for (var ci = 0; ci < weekRow.length; ci++) { if (weekRow[ci]) { startCol = ci + 1; break; } }
-            }
-            var label = (b.name || 'Booking') + (b.vehicle ? ' \u00B7 ' + b.vehicle : '');
-            var bStyle = 'grid-column:' + startCol + '/' + (endCol + 1) + ';grid-row:' + barRow + ';' +
-              'background:rgba(255,179,71,0.18);color:#D46B08;border:1px solid rgba(255,170,50,0.5)';
-            barsHtml += '<div class="cal-week-bar-item" style="' + bStyle + '"' +
-              ' data-booking-name="' + escapeHtml(b.name||'') + '"' +
-              ' data-booking-vehicle="' + escapeHtml(b.vehicle||'') + '"' +
-              ' data-booking-location="' + escapeHtml(b.location||'') + '"' +
-              ' data-booking-start="' + escapeHtml(b.start||'') + '"' +
-              ' data-booking-end="' + escapeHtml(b.end||'') + '"' +
-              ' data-booking-days="' + (b.days||0) + '"' +
-              ' data-booking-gross="' + (b.gross||0) + '">' +
-              escapeHtml(label) + '</div>';
-            barRow++;
-          });
-          if (barsHtml) html += '<div class="cal-week-bars">' + barsHtml + '</div>';
-        }
         html += '</div>'; // cal-week-row
       });
 
       html += '</div>'; // cal-month-wrap
       container.innerHTML = html;
       calAttachHandlers();
-      // Booking bar click → detail popup
-      container.querySelectorAll('.cal-week-bar-item').forEach(function(bar) {
-        bar.addEventListener('click', function(e) {
+      // Lagoon chip click → detail popup
+      container.querySelectorAll('.cal-lagoon-day-chip').forEach(function(chip) {
+        chip.addEventListener('click', function(e) {
           e.stopPropagation();
-          openBookingPopup(bar.dataset, e.clientX, e.clientY);
+          openBookingPopup(chip.dataset, e.clientX, e.clientY);
         });
       });
     }
@@ -5417,51 +5406,12 @@
         weekDays.push({ date: date, dk: calDateKey(date.getFullYear(), date.getMonth(), date.getDate()) });
       }
 
-      // Lagoon bookings that overlap this week
+      // Lagoon bookings
       var lagoonBookings = lagoonData ?
         (lagoonData.active_bookings || []).concat(lagoonData.upcoming_bookings || [])
           .filter(function(b) { return b.start_iso && b.end_iso; }) : [];
-      var wStart = new Date(weekDays[0].dk + 'T12:00:00Z');
-      var wEnd   = new Date(weekDays[6].dk + 'T12:00:00Z');
 
-      var allDayBars = '';
-      var barRow = 1;
-      lagoonBookings.forEach(function(b) {
-        var bStart = new Date(b.start_iso + 'T12:00:00Z');
-        var bEnd   = new Date(b.end_iso   + 'T12:00:00Z');
-        if (bEnd < wStart || bStart > wEnd) return;
-        var clampedStart = bStart < wStart ? wStart : bStart;
-        var clampedEnd   = bEnd   > wEnd   ? wEnd   : bEnd;
-        var startCol = 1, endCol = 7;
-        weekDays.forEach(function(wd, ci) {
-          var cellDate = new Date(wd.dk + 'T12:00:00Z');
-          if (cellDate.getTime() === clampedStart.getTime()) startCol = ci + 1;
-          if (cellDate.getTime() === clampedEnd.getTime())   endCol   = ci + 1;
-        });
-        var label = (b.name || 'Booking') + (b.vehicle ? ' \u00B7 ' + b.vehicle : '');
-        var bStyle = 'grid-column:' + startCol + '/' + (endCol + 1) + ';grid-row:' + barRow + ';' +
-          'height:20px;border-radius:4px;font-size:10px;font-weight:500;padding:0 6px;' +
-          'display:flex;align-items:center;overflow:hidden;white-space:nowrap;cursor:pointer;' +
-          'background:rgba(255,179,71,0.18);color:#D46B08;border:1px solid rgba(255,170,50,0.5)';
-        allDayBars += '<div style="' + bStyle + '"' +
-          ' data-booking-name="' + escapeHtml(b.name||'') + '"' +
-          ' data-booking-vehicle="' + escapeHtml(b.vehicle||'') + '"' +
-          ' data-booking-location="' + escapeHtml(b.location||'') + '"' +
-          ' data-booking-start="' + escapeHtml(b.start||'') + '"' +
-          ' data-booking-end="' + escapeHtml(b.end||'') + '"' +
-          ' data-booking-days="' + (b.days||0) + '"' +
-          ' data-booking-gross="' + (b.gross||0) + '"' +
-          ' class="cal-week-booking-bar">' + escapeHtml(label) + '</div>';
-        barRow++;
-      });
-
-      var html = '<div class="cal-week-wrap">';
-      // All-day booking bar band (only when Lagoon toggle is ON and bookings exist)
-      if (showLagoonBookings && allDayBars) {
-        html += '<div class="cal-week-allday-row" style="grid-auto-rows:24px;margin-bottom:8px">' + allDayBars + '</div>';
-      }
-      // Day columns
-      html += '<div class="cal-week-grid">';
+      var html = '<div class="cal-week-wrap"><div class="cal-week-grid">';
       weekDays.forEach(function(wd, i) {
         var isToday = (wd.dk === todayKey);
         var events = calEventsForDate(wd.dk).filter(function(e) { return e.type !== 'lagoon'; });
@@ -5474,16 +5424,36 @@
           if (ev.time) html += '<div class="cal-week-event-time">' + ev.time + '</div>';
           html += '</div>';
         });
-        html += '</div>';
+        // Lagoon booking chip — inside each day column
+        if (showLagoonBookings) {
+          var cellDate = new Date(wd.dk + 'T12:00:00Z');
+          lagoonBookings.forEach(function(b) {
+            var bStart = new Date(b.start_iso + 'T12:00:00Z');
+            var bEnd   = new Date(b.end_iso   + 'T12:00:00Z');
+            if (cellDate >= bStart && cellDate <= bEnd) {
+              var label = (b.name || 'Booking') + (b.vehicle ? ' \u00B7 ' + b.vehicle : '');
+              html += '<div class="cal-week-event cal-lagoon-week-chip"' +
+                ' data-booking-name="' + escapeHtml(b.name||'') + '"' +
+                ' data-booking-vehicle="' + escapeHtml(b.vehicle||'') + '"' +
+                ' data-booking-location="' + escapeHtml(b.location||'') + '"' +
+                ' data-booking-start="' + escapeHtml(b.start||'') + '"' +
+                ' data-booking-end="' + escapeHtml(b.end||'') + '"' +
+                ' data-booking-days="' + (b.days||0) + '"' +
+                ' data-booking-gross="' + (b.gross||0) + '">' +
+                escapeHtml(label) + '</div>';
+            }
+          });
+        }
+        html += '</div>'; // cal-week-col
       });
       html += '</div></div>'; // cal-week-grid + cal-week-wrap
       container.innerHTML = html;
       calAttachHandlers();
-      // Booking bar popup
-      container.querySelectorAll('.cal-week-booking-bar').forEach(function(bar) {
-        bar.addEventListener('click', function(e) {
+      // Lagoon chip popup
+      container.querySelectorAll('.cal-lagoon-week-chip').forEach(function(chip) {
+        chip.addEventListener('click', function(e) {
           e.stopPropagation();
-          openBookingPopup(bar.dataset, e.clientX, e.clientY);
+          openBookingPopup(chip.dataset, e.clientX, e.clientY);
         });
       });
     }
