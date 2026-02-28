@@ -3946,7 +3946,7 @@
               <th class="analytics-th" data-sort="value">Current <span class="sort-arrow">&#x25B2;</span></th>
               <th class="analytics-th" data-sort="change">Change <span class="sort-arrow">&#x25B2;</span></th>
               <th class="analytics-th">Trend</th>
-              <th class="analytics-th" data-sort="status">Status <span class="sort-arrow">&#x25B2;</span></th>
+              <th class="analytics-th" data-sort="prev">Prev Period <span class="sort-arrow">&#x25B2;</span></th>
             </tr></thead>
             <tbody id="lagoon-analytics-body"></tbody>
           </table>
@@ -5167,7 +5167,7 @@
         html += '<td class="analytics-td analytics-td-value">' + row.value + prog + '</td>';
         html += '<td class="analytics-td"><span class="analytics-td-change ' + row.dir + '">' + arrow + ' ' + row.change + '</span></td>';
         html += '<td class="analytics-td">' + renderSparklineSVG(row.sparkline) + '</td>';
-        html += '<td class="analytics-td"><span class="analytics-status-dot ' + row.status + '"></span></td>';
+        html += '<td class="analytics-td" style="color:var(--text-3);font-size:12px;">' + (row.prev || (row.status ? '<span class="analytics-status-dot ' + row.status + '"></span>' : '')) + '</td>';
         html += '</tr>';
       });
       tbody.innerHTML = html;
