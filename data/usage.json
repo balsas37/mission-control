@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-28T17:31:47.536420+00:00",
+  "generated": "2026-02-28T17:38:24.411Z",
   "week": 9,
   "reset": {
     "day_h": 22,
@@ -8,7 +8,7 @@
     "week_h": 22
   },
   "anthropic": {
-    "plan": "Claude Max \u00b7 flat $200/mo",
+    "plan": "Claude Max · flat $200/mo",
     "today_total": 10936270,
     "today_out": 64403,
     "week_total": 35214234,
@@ -18,8 +18,8 @@
   "kimi": {
     "today_tokens": 0,
     "week_tokens": 0,
-    "today_cost_usd": 0.0,
-    "week_cost_usd": 0.0
+    "today_cost_usd": 0,
+    "week_cost_usd": 0
   },
   "anthropic_live": {
     "session": {
@@ -38,8 +38,8 @@
       "reset_utc": "2026-03-06T05:00:00Z"
     },
     "extra_usage": {
-      "spent_usd": 0.0,
-      "balance_usd": 5.0
+      "spent_usd": 0,
+      "balance_usd": 5
     }
   }
 }
