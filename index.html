@@ -1967,8 +1967,8 @@
       display: flex; align-items: center; justify-content: space-between;
       margin-bottom: 20px; flex-wrap: wrap; gap: 12px;
     }
-    .cal-toolbar-left { display: flex; align-items: center; gap: 16px; flex: 1; }
-    .cal-toolbar-right { flex: 1; display: flex; align-items: center; justify-content: flex-end; gap: 10px; }
+    .cal-toolbar-left { display: flex; align-items: center; gap: 14px; }
+    .cal-toolbar-right { display: flex; align-items: center; gap: 10px; }
     .cal-title {
       font-size: 11px; font-weight: 400; color: var(--text-1);
       text-transform: uppercase; letter-spacing: 0.08em;
@@ -2091,6 +2091,7 @@
     .cal-week-col.today { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.15); }
     .cal-week-col-header {
       text-align: center; padding-bottom: 8px; border-bottom: 1px solid var(--border); margin-bottom: 6px;
+      min-height: 64px; display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
     }
     .cal-week-day-name {
       font-size: 12px; font-weight: 400; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.05em;
@@ -2099,7 +2100,7 @@
     .cal-week-col.today .cal-week-day-num {
       background: #fff; color: #181818; width: 34px; height: 34px;
       border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
-      font-size: 18px; font-weight: 500; margin: 4px auto 0;
+      font-size: 18px; font-weight: 500; margin: 0 auto;
     }
     .cal-week-event {
       background: rgba(255,255,255,0.05); border-left: 3px solid var(--text-3);
@@ -3965,11 +3966,11 @@
       <div class="cal-toolbar reveal">
         <div class="cal-toolbar-left">
           <h2 class="cal-title" id="cal-title">February 2026</h2>
-        </div>
-        <div class="cal-nav-arrows">
-          <button class="cal-nav-btn" id="cal-prev" aria-label="Previous">&#8249;</button>
-          <button class="cal-nav-btn cal-today-btn" id="cal-today">Today</button>
-          <button class="cal-nav-btn" id="cal-next" aria-label="Next">&#8250;</button>
+          <div class="cal-nav-arrows">
+            <button class="cal-nav-btn" id="cal-prev" aria-label="Previous">&#8249;</button>
+            <button class="cal-nav-btn cal-today-btn" id="cal-today">Today</button>
+            <button class="cal-nav-btn" id="cal-next" aria-label="Next">&#8250;</button>
+          </div>
         </div>
         <div class="cal-toolbar-right" style="display:flex;align-items:center;gap:10px">
           <button class="cal-lagoon-toggle on" id="cal-lagoon-toggle" title="Toggle Lagoon bookings">Lagoon</button>
