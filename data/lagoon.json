@@ -1,8 +1,83 @@
 {
-  "generated": "2026-02-28T21:08:27.721933+00:00",
+  "generated": "2026-03-01T11:00:26.896502+00:00",
   "total_records": 87,
   "ranges": {
     "month": [
+      {
+        "metric": "Gross Revenue",
+        "value": "$0",
+        "change": "-100%",
+        "dir": "negative",
+        "sparkline": [
+          99100,
+          96100,
+          95510,
+          94155,
+          7680,
+          9800
+        ],
+        "prev": "$9,800",
+        "progress": null
+      },
+      {
+        "metric": "Net Income",
+        "value": "$0",
+        "change": "-100%",
+        "dir": "negative",
+        "sparkline": [
+          99100,
+          96100,
+          95510,
+          94155,
+          7680,
+          9800
+        ],
+        "prev": "$9,800",
+        "progress": null
+      },
+      {
+        "metric": "Bookings",
+        "value": "0",
+        "change": "-100%",
+        "dir": "negative",
+        "sparkline": [
+          12,
+          22,
+          24,
+          22,
+          3,
+          1
+        ],
+        "prev": "1",
+        "progress": null
+      },
+      {
+        "metric": "Avg Booking Value",
+        "value": "$0",
+        "change": "-100%",
+        "dir": "negative",
+        "sparkline": [
+          99100,
+          96100,
+          95510,
+          94155,
+          7680,
+          9800
+        ],
+        "prev": "$9,800",
+        "progress": null
+      },
+      {
+        "metric": "Top Vehicle",
+        "value": "N/A",
+        "change": "--",
+        "dir": "neutral",
+        "sparkline": null,
+        "prev": "\u2014",
+        "progress": null
+      }
+    ],
+    "last": [
       {
         "metric": "Gross Revenue",
         "value": "$9,800",
@@ -16,7 +91,7 @@
           7680,
           9800
         ],
-        "prev": "\u2014",
+        "prev": "$0",
         "progress": null
       },
       {
@@ -32,7 +107,7 @@
           7680,
           9800
         ],
-        "prev": "\u2014",
+        "prev": "$0",
         "progress": null
       },
       {
@@ -64,83 +139,12 @@
           7680,
           9800
         ],
-        "prev": "\u2014",
+        "prev": "$0",
         "progress": null
       },
       {
         "metric": "Top Vehicle",
         "value": "400cc Buggy",
-        "change": "--",
-        "dir": "neutral",
-        "sparkline": null,
-        "prev": "\u2014",
-        "progress": null
-      }
-    ],
-    "last": [
-      {
-        "metric": "Gross Revenue",
-        "value": "$0",
-        "change": "0%",
-        "dir": "neutral",
-        "sparkline": [
-          99100,
-          96100,
-          95510,
-          94155,
-          7680
-        ],
-        "prev": "\u2014",
-        "progress": null
-      },
-      {
-        "metric": "Net Income",
-        "value": "$0",
-        "change": "0%",
-        "dir": "neutral",
-        "sparkline": [
-          99100,
-          96100,
-          95510,
-          94155,
-          7680
-        ],
-        "prev": "\u2014",
-        "progress": null
-      },
-      {
-        "metric": "Bookings",
-        "value": "0",
-        "change": "0%",
-        "dir": "neutral",
-        "sparkline": [
-          12,
-          22,
-          24,
-          22,
-          3
-        ],
-        "prev": "\u2014",
-        "progress": null
-      },
-      {
-        "metric": "Avg Booking Value",
-        "value": "$0",
-        "change": "0%",
-        "dir": "neutral",
-        "sparkline": [
-          99100,
-          96100,
-          95510,
-          94155,
-          7680
-        ],
-        "prev": "\u2014",
-        "progress": null
-      },
-      {
-        "metric": "Top Vehicle",
-        "value": "N/A",
         "change": "--",
         "dir": "neutral",
         "sparkline": null,
@@ -162,7 +166,7 @@
           7680,
           9800
         ],
-        "prev": "\u2014",
+        "prev": "$0",
         "progress": null
       },
       {
@@ -178,7 +182,7 @@
           7680,
           9800
         ],
-        "prev": "\u2014",
+        "prev": "$0",
         "progress": null
       },
       {
@@ -210,7 +214,7 @@
           7680,
           9800
         ],
-        "prev": "\u2014",
+        "prev": "$0",
         "progress": null
       },
       {
@@ -325,8 +329,8 @@
   "upcoming_bookings": [],
   "reminders": [],
   "summary": {
-    "this_month_gross": 9800,
-    "this_month_bookings": 1,
+    "this_month_gross": 0,
+    "this_month_bookings": 0,
     "active_count": 1,
     "upcoming_count": 0
   }
