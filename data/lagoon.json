@@ -1,5 +1,5 @@
 {
-  "generated": "2026-03-01T11:00:26.896502+00:00",
+  "generated": "2026-03-03T11:00:04.474067+00:00",
   "total_records": 87,
   "ranges": {
     "month": [
@@ -311,27 +311,13 @@
     "2025-05",
     "2026-02"
   ],
-  "active_bookings": [
-    {
-      "name": "ABS",
-      "vehicle": "400cc Buggy",
-      "location": "Kokoon Villas",
-      "start": "Feb 23",
-      "end": "Mar 02",
-      "start_iso": "2026-02-23",
-      "end_iso": "2026-03-02",
-      "days": 7,
-      "gross": 9800,
-      "status": "Active",
-      "source": "Direct"
-    }
-  ],
+  "active_bookings": [],
   "upcoming_bookings": [],
   "reminders": [],
   "summary": {
     "this_month_gross": 0,
     "this_month_bookings": 0,
-    "active_count": 1,
+    "active_count": 0,
     "upcoming_count": 0
   }
 }
