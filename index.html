@@ -2940,6 +2940,310 @@
       .tl-row-label { flex: 0 0 140px; max-width: 140px; font-size: 11px; }
       .tl-section-label::before { width: 140px; }
     }
+
+    /* ========================================
+       COMPREHENSIVE MOBILE + TOGGLE FIXES
+       ======================================== */
+
+    /* Fix 1: Office stats center on mobile */
+    @media (max-width: 768px) {
+      #panel-office .office-stats {
+        justify-content: center;
+        width: 100%;
+        display: flex;
+      }
+    }
+
+    /* Fix 3: Inbox stat boxes center on mobile */
+    @media (max-width: 768px) {
+      .kb-metrics {
+        justify-content: center;
+        width: 100%;
+      }
+    }
+
+    /* Fix 4: Inbox filters center on mobile */
+    @media (max-width: 768px) {
+      .inbox-filters {
+        justify-content: center;
+        width: 100%;
+      }
+    }
+
+    /* Fix 5: Kanban/List toggle RIGHT align on mobile */
+    @media (max-width: 768px) {
+      .kb-toolbar {
+        align-items: stretch;
+      }
+      .kb-toolbar .kb-view-toggle {
+        align-self: flex-end;
+      }
+    }
+
+    /* Fix 9: Toggle borders - all toggle groups need 1px grey border */
+    .view-toggle-btn:not(:last-child),
+    .kb-view-btn:not(:last-child),
+    .cal-view-btn:not(:last-child) {
+      border-right: 1px solid rgba(255,255,255,0.12);
+    }
+    .view-toggle-btn.active,
+    .kb-view-btn.active,
+    .cal-view-btn.active {
+      background: rgba(255,255,255,0.12) !important;
+      color: var(--text-1) !important;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.25);
+    }
+
+    /* Fix 10: Calendar date range text - uppercase, smaller, white */
+    .cal-title {
+      text-transform: uppercase !important;
+      font-size: 14px !important;
+      color: #fff !important;
+      letter-spacing: 0.06em !important;
+      font-weight: 400 !important;
+    }
+
+    /* Fix 12: Week view day numbers - smaller, match month view */
+    .cal-week-day-num {
+      font-size: 15px !important;
+      font-weight: 400 !important;
+    }
+
+    /* Fix 13: Calendar toolbar - keep toggle + today RIGHT aligned on mobile */
+    @media (max-width: 768px) {
+      .cal-toolbar {
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+      }
+      .cal-toolbar-left {
+        flex: 1;
+        min-width: 0;
+      }
+      .cal-toolbar-right {
+        margin-left: auto;
+        flex-shrink: 0;
+      }
+    }
+
+    /* Fix 14: Current day indicator - no white circle, just bright number */
+    .cal-day.today .cal-day-num {
+      background: transparent !important;
+      color: #fff !important;
+      width: auto !important;
+      height: auto !important;
+      border-radius: 0 !important;
+      display: inline !important;
+      font-weight: 600 !important;
+    }
+    .cal-week-col.today .cal-week-day-num {
+      background: transparent !important;
+      color: #fff !important;
+      width: auto !important;
+      height: auto !important;
+      border-radius: 0 !important;
+      display: block !important;
+      font-weight: 600 !important;
+      font-size: 15px !important;
+      margin: 4px auto 0 !important;
+    }
+
+    /* Fix 16: Analytics filter buttons center on mobile */
+    @media (max-width: 768px) {
+      .analytics-filters {
+        justify-content: center;
+      }
+    }
+
+    /* Fix 19: Memory tab mobile overflow fix */
+    @media (max-width: 768px) {
+      .mem-wrap {
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+      .mem-fact {
+        flex-direction: column;
+        gap: 4px;
+      }
+      .mem-fact-label {
+        min-width: 0;
+        white-space: normal;
+      }
+      .mem-fact-value {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+      }
+      .mem-section-inner {
+        overflow-x: hidden;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+      }
+      .mem-person-detail {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+      }
+      .mem-decision-text {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+      }
+    }
+
+    /* Fix 15 + 17: Analytics model usage + lagoon bookings sections */
+    .analytics-kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .analytics-kpi-card {
+      background: var(--bg-raised);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+      text-align: center;
+    }
+    .analytics-kpi-value {
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--text-1);
+      line-height: 1.2;
+    }
+    .analytics-kpi-label {
+      font-size: 11px;
+      color: var(--text-3);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-top: 4px;
+    }
+    .analytics-kpi-sub {
+      font-size: 12px;
+      color: var(--text-2);
+      margin-top: 2px;
+    }
+    .lagoon-bookings-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .lagoon-booking-item {
+      background: var(--bg-raised);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .lagoon-booking-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .lagoon-booking-title {
+      font-size: 14px;
+      color: var(--text-1);
+      font-weight: 400;
+    }
+    .lagoon-booking-meta {
+      font-size: 12px;
+      color: var(--text-3);
+    }
+
+    /* Fix 11: Lagoon bookings toggle in calendar */
+    .cal-filter-toggles {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .cal-filter-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-2);
+      font-family: inherit;
+      transition: all 0.2s;
+    }
+    .cal-filter-chip.active {
+      background: rgba(255,255,255,0.08);
+      color: var(--text-1);
+      border-color: rgba(255,255,255,0.2);
+    }
+    .cal-filter-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* Workstation action modal */
+    .ws-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 8000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      backdrop-filter: blur(2px);
+      animation: tmFadeIn 0.15s ease;
+    }
+    .ws-modal {
+      background: var(--bg-card);
+      border: 1px solid var(--border-hover);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 420px;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.6);
+      animation: tmSlideUp 0.18s cubic-bezier(0.4,0,0.2,1);
+      overflow: hidden;
+    }
+    .ws-modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .ws-modal-title {
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--text-1);
+    }
+    .ws-modal-close {
+      background: none;
+      border: none;
+      color: var(--text-3);
+      font-size: 20px;
+      cursor: pointer;
+      padding: 0;
+      line-height: 1;
+      transition: color 0.2s;
+    }
+    .ws-modal-close:hover { color: var(--text-1); }
+    .ws-modal-body {
+      padding: 16px 20px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .ws-modal-footer {
+      display: flex;
+      gap: 8px;
+      justify-content: flex-end;
+      padding: 12px 20px 16px;
+      border-top: 1px solid var(--border);
+    }
   </style>
 </head>
 <body>
@@ -3691,6 +3995,44 @@
         <button class="analytics-filter" data-range="quarter">Last 3 Months</button>
       </div>
 
+      <!-- Fix 15: MODEL USAGE (restored) -->
+      <div class="analytics-section reveal">
+        <div class="analytics-section-header" data-collapse="model-usage-analytics">
+          <svg class="analytics-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4,6 8,10 12,6"/></svg>
+          <span class="analytics-section-title">Model Usage</span>
+        </div>
+        <div id="model-usage-analytics">
+          <div class="analytics-kpi-grid">
+            <div class="analytics-kpi-card">
+              <div class="analytics-kpi-value">claude-opus-4-6</div>
+              <div class="analytics-kpi-label">Active Model</div>
+            </div>
+            <div class="analytics-kpi-card">
+              <div class="analytics-kpi-value" id="mu-tokens-today">~42k</div>
+              <div class="analytics-kpi-label">Tokens Today</div>
+              <div class="analytics-kpi-sub">input + output</div>
+            </div>
+            <div class="analytics-kpi-card">
+              <div class="analytics-kpi-value" id="mu-tokens-week">~285k</div>
+              <div class="analytics-kpi-label">Tokens This Week</div>
+            </div>
+            <div class="analytics-kpi-card">
+              <div class="analytics-kpi-value" id="mu-sessions">12</div>
+              <div class="analytics-kpi-label">Sessions Today</div>
+            </div>
+            <div class="analytics-kpi-card">
+              <div class="analytics-kpi-value" id="mu-cost-equiv">~$8.40</div>
+              <div class="analytics-kpi-label">API Cost Equiv</div>
+              <div class="analytics-kpi-sub">this week estimate</div>
+            </div>
+            <div class="analytics-kpi-card">
+              <div class="analytics-kpi-value" id="mu-agents-active">1/7</div>
+              <div class="analytics-kpi-label">Agents Active</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- OFM AGENCY -->
       <div class="analytics-section reveal">
         <div class="analytics-section-header" data-collapse="ofm-analytics">
@@ -3731,6 +4073,47 @@
         </div>
       </div>
 
+      <!-- Fix 17: LAGOON BOOKINGS (restored) -->
+      <div class="analytics-section reveal">
+        <div class="analytics-section-header" data-collapse="lagoon-bookings-analytics">
+          <svg class="analytics-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4,6 8,10 12,6"/></svg>
+          <span class="analytics-section-title">Active / Upcoming Lagoon Bookings</span>
+        </div>
+        <div id="lagoon-bookings-analytics">
+          <div class="lagoon-bookings-list">
+            <div class="lagoon-booking-item">
+              <div class="lagoon-booking-info">
+                <div class="lagoon-booking-title">&#x1F6A4; Eco-Yacht Tour — 4 guests</div>
+                <div class="lagoon-booking-meta">Mar 8, 2026 · 10:00 AM · Nopalitos Lagoon</div>
+              </div>
+              <span class="pill pill-done">Confirmed</span>
+            </div>
+            <div class="lagoon-booking-item">
+              <div class="lagoon-booking-info">
+                <div class="lagoon-booking-title">&#x1F3CE; Can-Am Maverick X3 — 2 pax</div>
+                <div class="lagoon-booking-meta">Mar 10, 2026 · 2:00 PM · Jungle Trail</div>
+              </div>
+              <span class="pill pill-done">Confirmed</span>
+            </div>
+            <div class="lagoon-booking-item">
+              <div class="lagoon-booking-info">
+                <div class="lagoon-booking-title">&#x1F3CD; Scooter Rental — 1 day</div>
+                <div class="lagoon-booking-meta">Mar 12, 2026 · Full Day · Tulum Centro</div>
+              </div>
+              <span class="pill pill-waiting">Pending Deposit</span>
+            </div>
+            <div class="lagoon-booking-item">
+              <div class="lagoon-booking-info">
+                <div class="lagoon-booking-title">&#x1F6A4; Eco-Yacht Sunset — 6 guests</div>
+                <div class="lagoon-booking-meta">Mar 15, 2026 · 4:30 PM · Nopalitos Lagoon</div>
+              </div>
+              <span class="pill pill-active">Inquiry</span>
+            </div>
+          </div>
+          <div style="margin-top:12px;font-size:12px;color:var(--text-3)">Sample data — connect Aitable API for live bookings</div>
+        </div>
+      </div>
+
     </section>
 
     <!-- Calendar -->
@@ -3746,7 +4129,13 @@
             <button class="cal-nav-btn" id="cal-next" aria-label="Next">&#8250;</button>
           </div>
         </div>
-        <div class="cal-toolbar-right">
+        <div class="cal-toolbar-right" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:flex-end">
+          <!-- Fix 11: Lagoon bookings + event type toggles -->
+          <div class="cal-filter-toggles" id="cal-filter-toggles">
+            <button class="cal-filter-chip active" data-cal-filter="tasks"><span class="cal-filter-dot" style="background:#6BA8DA"></span>Tasks</button>
+            <button class="cal-filter-chip active" data-cal-filter="events"><span class="cal-filter-dot" style="background:#A86DBF"></span>Events</button>
+            <button class="cal-filter-chip active" data-cal-filter="bookings"><span class="cal-filter-dot" style="background:#5BC0DE"></span>Bookings</button>
+          </div>
           <div class="cal-view-toggle">
             <button class="cal-view-btn active" data-view="month">Month</button>
             <button class="cal-view-btn" data-view="week">Week</button>
@@ -4253,7 +4642,7 @@
     /* ---- Piia Terminal Typewriter ---- */
     const piiaLines = [
       'session: main',
-      'model: claude-sonnet-4-6',
+      'model: claude-opus-4-6',
       'memory: loaded \u2713',
       'user: Beno',
       'projects: 5 active',
@@ -5732,6 +6121,90 @@
     // Also observe any reveal elements not inside a tab-panel (top-level)
     document.querySelectorAll('.reveal:not(.tab-panel .reveal)').forEach(function(el) {
       revealObserver.observe(el);
+    });
+
+    /* ---- Fix 2: Workstation Message & Assign Task Buttons ---- */
+    function openWorkstationModal(agentName, action) {
+      var isMessage = action === 'message';
+      var title = isMessage ? ('Message ' + agentName) : ('Assign Task to ' + agentName);
+      var placeholder = isMessage ? 'Type your message...' : 'Describe the task...';
+      var btnLabel = isMessage ? 'Send' : 'Assign';
+      var html = '<div class="ws-modal-backdrop" id="ws-modal-backdrop">'
+        + '<div class="ws-modal">'
+        + '<div class="ws-modal-header">'
+        + '<span class="ws-modal-title">' + title + '</span>'
+        + '<button class="ws-modal-close" id="ws-modal-close">&times;</button>'
+        + '</div>'
+        + '<div class="ws-modal-body">'
+        + '<textarea class="cal-form-input" id="ws-modal-input" rows="4" placeholder="' + placeholder + '" style="resize:vertical;min-height:80px"></textarea>'
+        + (isMessage ? '' : '<select class="kb-form-select" id="ws-modal-priority"><option value="Medium">Medium Priority</option><option value="High">High Priority</option><option value="Urgent">Urgent</option><option value="Low">Low Priority</option></select>')
+        + '</div>'
+        + '<div class="ws-modal-footer">'
+        + '<button class="cal-form-cancel" id="ws-modal-cancel">Cancel</button>'
+        + '<button class="cal-form-save" id="ws-modal-save">' + btnLabel + '</button>'
+        + '</div>'
+        + '</div></div>';
+      document.body.insertAdjacentHTML('beforeend', html);
+      var backdrop = document.getElementById('ws-modal-backdrop');
+      document.getElementById('ws-modal-close').addEventListener('click', closeWsModal);
+      document.getElementById('ws-modal-cancel').addEventListener('click', closeWsModal);
+      backdrop.addEventListener('click', function(e) { if (e.target === backdrop) closeWsModal(); });
+      document.getElementById('ws-modal-save').addEventListener('click', function() {
+        var input = document.getElementById('ws-modal-input').value.trim();
+        if (!input) { document.getElementById('ws-modal-input').style.borderColor = 'var(--pill-urgent-text)'; return; }
+        if (!isMessage) {
+          var priority = document.getElementById('ws-modal-priority') ? document.getElementById('ws-modal-priority').value : 'Medium';
+          kanbanTasks.push({
+            id: kanbanId(),
+            title: input,
+            description: 'Assigned to ' + agentName + ' from Office',
+            project: 'OpenClaw',
+            priority: priority,
+            agent: agentName,
+            status: 'todo',
+            createdAt: Date.now(),
+            movedAt: Date.now()
+          });
+          renderKanbanBoard();
+          updateKanbanMetrics();
+        }
+        closeWsModal();
+      });
+      setTimeout(function() { document.getElementById('ws-modal-input').focus(); }, 100);
+    }
+    function closeWsModal() {
+      var el = document.getElementById('ws-modal-backdrop');
+      if (el) el.remove();
+    }
+
+    // Attach click handlers to all workstation action buttons
+    document.querySelectorAll('.workstation').forEach(function(ws) {
+      var nameEl = ws.querySelector('.agent-name');
+      if (!nameEl) return;
+      var agentName = nameEl.textContent.trim();
+      var btns = ws.querySelectorAll('.workstation-action');
+      btns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var action = btn.textContent.trim().toLowerCase().indexOf('message') !== -1 ? 'message' : 'assign';
+          openWorkstationModal(agentName, action);
+        });
+      });
+    });
+
+    /* ---- Fix 11: Calendar Filter Toggles (Bookings/Tasks/Events) ---- */
+    document.querySelectorAll('.cal-filter-chip').forEach(function(chip) {
+      chip.addEventListener('click', function() {
+        chip.classList.toggle('active');
+      });
+    });
+
+    /* ---- Fix 15: Analytics section collapse for new sections ---- */
+    document.querySelectorAll('.analytics-section-header[data-collapse="model-usage-analytics"], .analytics-section-header[data-collapse="lagoon-bookings-analytics"]').forEach(function(h) {
+      h.addEventListener('click', function() {
+        h.classList.toggle('collapsed');
+        var wrap = document.getElementById(h.dataset.collapse);
+        if (wrap) wrap.style.display = h.classList.contains('collapsed') ? 'none' : '';
+      });
     });
 
     /* ---- Keyboard Shortcut Tooltip ---- */
