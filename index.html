@@ -3001,24 +3001,13 @@
     .cal-view-btn:not(:last-child) {
       border-right: 1px solid rgba(255,255,255,0.12);
     }
-    /* Active toggle - visible outline to differentiate selected */
+    /* Active toggle - stronger background + brighter text to differentiate */
     .view-toggle-btn.active,
     .kb-view-btn.active,
     .cal-view-btn.active {
-      background: rgba(255,255,255,0.12) !important;
-      color: var(--text-1) !important;
-      border-top: 1px solid rgba(255,255,255,0.25);
-      border-bottom: 1px solid rgba(255,255,255,0.25);
-    }
-    .view-toggle-btn.active:first-child,
-    .kb-view-btn.active:first-child,
-    .cal-view-btn.active:first-child {
-      border-left: 1px solid rgba(255,255,255,0.25);
-    }
-    .view-toggle-btn.active:last-child,
-    .kb-view-btn.active:last-child,
-    .cal-view-btn.active:last-child {
-      border-right: 1px solid rgba(255,255,255,0.25);
+      background: rgba(255,255,255,0.14) !important;
+      color: #fff !important;
+      font-weight: 600;
     }
 
     /* Fix 10: Calendar date range text - uppercase, smaller, white */
