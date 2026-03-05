@@ -2974,24 +2974,51 @@
     /* Fix 5: Kanban/List toggle RIGHT align on mobile */
     @media (max-width: 768px) {
       .kb-toolbar {
+        flex-direction: column;
         align-items: stretch;
       }
       .kb-toolbar .kb-view-toggle {
         align-self: flex-end;
       }
+      /* Projects stats center on mobile */
+      .projects-toolbar {
+        flex-direction: column;
+        align-items: center;
+      }
+      .projects-toolbar .office-stats {
+        justify-content: center;
+        width: 100%;
+      }
+      .projects-toolbar .view-toggle {
+        align-self: flex-end;
+        margin-left: 0;
+      }
     }
 
-    /* Fix 9: Toggle borders - all toggle groups need 1px grey border between options */
+    /* Toggle borders - all toggle groups need 1px grey border between options */
     .view-toggle-btn:not(:last-child),
     .kb-view-btn:not(:last-child),
     .cal-view-btn:not(:last-child) {
       border-right: 1px solid rgba(255,255,255,0.12);
     }
+    /* Active toggle - visible outline to differentiate selected */
     .view-toggle-btn.active,
     .kb-view-btn.active,
     .cal-view-btn.active {
       background: rgba(255,255,255,0.12) !important;
       color: var(--text-1) !important;
+      border-top: 1px solid rgba(255,255,255,0.25);
+      border-bottom: 1px solid rgba(255,255,255,0.25);
+    }
+    .view-toggle-btn.active:first-child,
+    .kb-view-btn.active:first-child,
+    .cal-view-btn.active:first-child {
+      border-left: 1px solid rgba(255,255,255,0.25);
+    }
+    .view-toggle-btn.active:last-child,
+    .kb-view-btn.active:last-child,
+    .cal-view-btn.active:last-child {
+      border-right: 1px solid rgba(255,255,255,0.25);
     }
 
     /* Fix 10: Calendar date range text - uppercase, smaller, white */
