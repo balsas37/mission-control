@@ -3012,18 +3012,20 @@
     /* Fix 13: Calendar toolbar - keep toggle + today RIGHT aligned on mobile */
     @media (max-width: 768px) {
       .cal-toolbar {
-        flex-direction: row !important;
-        flex-wrap: wrap !important;
-        justify-content: space-between !important;
-        align-items: center !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 12px;
       }
       .cal-toolbar-left {
-        flex: 1;
-        min-width: 0;
+        display: flex;
+        align-items: center;
+        gap: 12px;
       }
       .cal-toolbar-right {
-        margin-left: auto;
-        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 8px;
       }
     }
 
@@ -4090,17 +4092,16 @@
             <button class="cal-nav-btn" id="cal-next" aria-label="Next">&#8250;</button>
           </div>
         </div>
-        <div class="cal-toolbar-right" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:flex-end">
-          <!-- Fix 11: Lagoon bookings + event type toggles -->
-          <div class="cal-filter-toggles" id="cal-filter-toggles">
-            <button class="cal-filter-chip active" data-cal-filter="tasks"><span class="cal-filter-dot" style="background:#6BA8DA"></span>Tasks</button>
-            <button class="cal-filter-chip active" data-cal-filter="events"><span class="cal-filter-dot" style="background:#A86DBF"></span>Events</button>
-            <button class="cal-filter-chip active" data-cal-filter="bookings"><span class="cal-filter-dot" style="background:#5BC0DE"></span>Bookings</button>
-          </div>
+        <div class="cal-toolbar-right">
           <div class="cal-view-toggle">
             <button class="cal-view-btn active" data-view="month">Month</button>
             <button class="cal-view-btn" data-view="week">Week</button>
             <button class="cal-view-btn" data-view="timeline">Timeline</button>
+          </div>
+          <div class="cal-filter-toggles" id="cal-filter-toggles">
+            <button class="cal-filter-chip active" data-cal-filter="tasks"><span class="cal-filter-dot" style="background:#6BA8DA"></span>Tasks</button>
+            <button class="cal-filter-chip active" data-cal-filter="events"><span class="cal-filter-dot" style="background:#A86DBF"></span>Events</button>
+            <button class="cal-filter-chip active" data-cal-filter="bookings"><span class="cal-filter-dot" style="background:#5BC0DE"></span>Bookings</button>
           </div>
         </div>
       </div>
