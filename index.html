@@ -2359,9 +2359,9 @@
     }
     .mem-fact {
       display: flex;
-      align-items: baseline;
-      gap: 10px;
-      padding: 10px 12px;
+      flex-direction: column;
+      gap: 4px;
+      padding: 12px 14px;
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: 14px;
@@ -2369,15 +2369,15 @@
     }
     .mem-fact-label {
       font-size: 14px;
-      font-weight: 400;
+      font-weight: 500;
       color: var(--text-1);
-      white-space: nowrap;
-      min-width: 140px;
     }
     .mem-fact-value {
       font-size: 14px;
       color: var(--text-2);
       line-height: 1.5;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
     }
     .mem-decisions {
       display: flex;
@@ -3085,17 +3085,8 @@
         max-width: 100%;
         overflow-x: hidden;
       }
-      .mem-fact {
-        flex-direction: column;
-        gap: 4px;
-      }
       .mem-fact-label {
         min-width: 0;
-        white-space: normal;
-      }
-      .mem-fact-value {
-        word-wrap: break-word;
-        overflow-wrap: break-word;
       }
       .mem-section-inner {
         overflow-x: hidden;
