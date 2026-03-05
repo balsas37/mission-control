@@ -3061,9 +3061,7 @@
       }
       .cal-toolbar-right {
         display: flex;
-        flex-direction: column;
         align-items: flex-end;
-        gap: 8px;
       }
     }
 
@@ -3189,10 +3187,16 @@
     }
 
     /* Fix 11: Lagoon bookings toggle in calendar */
+    .cal-filter-row {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
     .cal-filter-toggles {
       display: flex;
       gap: 8px;
       flex-wrap: wrap;
+      justify-content: center;
     }
     .cal-filter-chip {
       display: inline-flex;
@@ -4127,11 +4131,14 @@
             <button class="cal-view-btn" data-view="week">Week</button>
             <button class="cal-view-btn" data-view="timeline">Timeline</button>
           </div>
-          <div class="cal-filter-toggles" id="cal-filter-toggles">
-            <button class="cal-filter-chip active" data-cal-filter="tasks"><span class="cal-filter-dot" style="background:#6BA8DA"></span>Tasks</button>
-            <button class="cal-filter-chip active" data-cal-filter="events"><span class="cal-filter-dot" style="background:#A86DBF"></span>Events</button>
-            <button class="cal-filter-chip active" data-cal-filter="bookings"><span class="cal-filter-dot" style="background:#5BC0DE"></span>Bookings</button>
-          </div>
+        </div>
+      </div>
+      <!-- Calendar filter chips - centered independently -->
+      <div class="cal-filter-row">
+        <div class="cal-filter-toggles" id="cal-filter-toggles">
+          <button class="cal-filter-chip active" data-cal-filter="tasks"><span class="cal-filter-dot" style="background:#6BA8DA"></span>Tasks</button>
+          <button class="cal-filter-chip active" data-cal-filter="events"><span class="cal-filter-dot" style="background:#A86DBF"></span>Events</button>
+          <button class="cal-filter-chip active" data-cal-filter="bookings"><span class="cal-filter-dot" style="background:#5BC0DE"></span>Bookings</button>
         </div>
       </div>
 
