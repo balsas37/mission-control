@@ -1,0 +1,22 @@
+[
+  {"id":"act-1","timestamp":"2026-03-05T14:32:00","agent":"Piia","type":"message","desc":"Responded to Beno in Telegram group","icon":"💬"},
+  {"id":"act-2","timestamp":"2026-03-05T14:28:00","agent":"Piia","type":"tool","desc":"Read memory/2026-03-05.md","icon":"🔧"},
+  {"id":"act-3","timestamp":"2026-03-05T14:25:00","agent":"Piia","type":"edit","desc":"Updated mission-control/index.html — added Activity Feed","icon":"✏️"},
+  {"id":"act-4","timestamp":"2026-03-05T13:45:00","agent":"Zara","type":"command","desc":"Ran sync-mc-data cron — synced tasks.json from Aitable","icon":"⚡"},
+  {"id":"act-5","timestamp":"2026-03-05T13:30:00","agent":"Piia","type":"tool","desc":"Web search: ComfyUI vast.ai setup guide","icon":"🔧"},
+  {"id":"act-6","timestamp":"2026-03-05T12:15:00","agent":"Nile","type":"edit","desc":"Created memory/oaxaca-permits.md — permit research notes","icon":"✏️"},
+  {"id":"act-7","timestamp":"2026-03-05T12:03:00","agent":"Zara","type":"command","desc":"Ran usage-data-sync — updated data/usage.json","icon":"⚡"},
+  {"id":"act-8","timestamp":"2026-03-05T11:45:00","agent":"Mara","type":"edit","desc":"Drafted sales page copy for Power Independence Academy","icon":"✏️"},
+  {"id":"act-9","timestamp":"2026-03-05T11:20:00","agent":"Rex","type":"tool","desc":"Analysed Instagram engagement metrics for Lagoon Company","icon":"🔧"},
+  {"id":"act-10","timestamp":"2026-03-05T10:00:00","agent":"Piia","type":"message","desc":"Sent morning brief to Beno via Telegram","icon":"💬"},
+  {"id":"act-11","timestamp":"2026-03-05T09:30:00","agent":"Piia","type":"command","desc":"Ran morning-brief cron — compiled daily summary","icon":"⚡"},
+  {"id":"act-12","timestamp":"2026-03-05T06:00:00","agent":"Piia","type":"command","desc":"Ran dream-cycle — processed overnight memory consolidation","icon":"⚡"},
+  {"id":"act-13","timestamp":"2026-03-04T23:55:00","agent":"Piia","type":"command","desc":"Ran context-rescue — saved session checkpoint","icon":"⚡"},
+  {"id":"act-14","timestamp":"2026-03-04T22:30:00","agent":"Kat","type":"edit","desc":"Updated OFM creator onboarding doc with Kevin's model list","icon":"✏️"},
+  {"id":"act-15","timestamp":"2026-03-04T21:00:00","agent":"Nova","type":"edit","desc":"Built Power Independence bonus worksheet — Emergency Protocols v2","icon":"✏️"},
+  {"id":"act-16","timestamp":"2026-03-04T19:45:00","agent":"Piia","type":"message","desc":"Replied to Bianca's OFM pricing question","icon":"💬"},
+  {"id":"act-17","timestamp":"2026-03-04T18:00:00","agent":"Rex","type":"tool","desc":"Google Ads report pull — Lagoon Company ROAS analysis","icon":"🔧"},
+  {"id":"act-18","timestamp":"2026-03-04T16:30:00","agent":"Nile","type":"tool","desc":"Web fetch: Sirewall rammed-earth cost calculator","icon":"🔧"},
+  {"id":"act-19","timestamp":"2026-03-04T15:00:00","agent":"Zara","type":"command","desc":"Deployed Mission Control update — calendar timeline view","icon":"⚡"},
+  {"id":"act-20","timestamp":"2026-03-04T14:00:00","agent":"Piia","type":"edit","desc":"Updated MEMORY.md — added Digital Products sprint status","icon":"✏️"}
+]

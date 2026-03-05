@@ -1,0 +1,8 @@
+[
+  {"id":"cron-1","name":"Dream Cycle","schedule":"0 6 * * *","description":"Overnight memory consolidation and daily note generation","nextRun":"2026-03-06T06:00:00","color":"#A86DBF","agent":"Piia"},
+  {"id":"cron-2","name":"Sync MC Data","schedule":"0 */6 * * *","description":"Sync tasks.json and lagoon.json from Aitable API","nextRun":"2026-03-05T18:00:00","color":"#6BA8DA","agent":"Zara"},
+  {"id":"cron-3","name":"Usage Data Sync","schedule":"3 */6 * * *","description":"Pull Anthropic usage stats and update usage.json","nextRun":"2026-03-05T18:03:00","color":"#6BA8DA","agent":"Zara"},
+  {"id":"cron-4","name":"Context Rescue","schedule":"*/30 * * * *","description":"Save session checkpoint to daily note before context compression","nextRun":"2026-03-05T15:00:00","color":"#DAB255","agent":"Piia"},
+  {"id":"cron-5","name":"Morning Brief","schedule":"30 9 * * *","description":"Compile daily summary and send to Beno via Telegram","nextRun":"2026-03-06T09:30:00","color":"#5CB85C","agent":"Piia"},
+  {"id":"cron-6","name":"Skill Scout","schedule":"0 3 * * 1","description":"Weekly scan of ClawHub for new/updated skills","nextRun":"2026-03-09T03:00:00","color":"#F5A623","agent":"Nile"}
+]

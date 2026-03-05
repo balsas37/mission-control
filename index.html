@@ -3236,6 +3236,394 @@
       flex-shrink: 0;
     }
 
+    /* ========================================
+       ACTIVITY FEED TAB
+       ======================================== */
+    .activity-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .activity-filters {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .activity-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .activity-entry {
+      background: var(--bg-raised);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px 18px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+    .activity-entry:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-1px);
+    }
+    @keyframes activitySlideIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .activity-entry.animate-in {
+      animation: activitySlideIn 0.3s ease-out;
+    }
+    .activity-icon {
+      font-size: 16px;
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      background: rgba(255,255,255,0.04);
+      border-radius: 8px;
+    }
+    .activity-body {
+      flex: 1;
+      min-width: 0;
+    }
+    .activity-desc {
+      font-size: 14px;
+      color: var(--text-1);
+      line-height: 1.4;
+      margin-bottom: 4px;
+    }
+    .activity-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--text-3);
+    }
+    .activity-agent-name {
+      font-weight: 500;
+    }
+    .activity-type-pill {
+      background: rgba(255,255,255,0.04);
+      border-radius: 999px;
+      padding: 1px 8px;
+      font-size: 11px;
+      color: var(--text-2);
+    }
+    .activity-refresh-indicator {
+      font-size: 12px;
+      color: var(--text-3);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .activity-refresh-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--pill-done-text);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    /* ========================================
+       DOCUMENTS TAB
+       ======================================== */
+    .docs-wrap {
+      max-width: 960px;
+    }
+    .docs-search-wrap {
+      position: relative;
+      margin-bottom: 20px;
+    }
+    .docs-search-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+      pointer-events: none;
+      opacity: 0.4;
+    }
+    .docs-search {
+      width: 100%;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px 14px 14px 40px;
+      font-size: 15px;
+      font-family: 'Inter', sans-serif;
+      color: var(--text-1);
+      box-sizing: border-box;
+    }
+    .docs-search::placeholder { color: var(--text-3); }
+    .docs-search:focus { outline: none; border-color: #fff; }
+    .docs-cat-filters {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+      justify-content: center;
+    }
+    .docs-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    @media (max-width: 700px) {
+      .docs-grid { grid-template-columns: 1fr; }
+    }
+    .doc-card {
+      background: var(--bg-raised);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+    .doc-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-1px);
+    }
+    .doc-card-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .doc-card-title {
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--text-1);
+      flex: 1;
+      min-width: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .doc-cat-pill {
+      border-radius: 999px;
+      padding: 3px 10px;
+      font-size: 11px;
+      font-weight: 500;
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+    .doc-cat-contracts { background: rgba(100,165,215,0.14); color: #6BA8DA; }
+    .doc-cat-plans     { background: rgba(165,105,195,0.14); color: #A86DBF; }
+    .doc-cat-scripts   { background: rgba(218,178,85,0.14);  color: #DAB255; }
+    .doc-cat-guides    { background: rgba(100,190,100,0.14); color: #6BBF6B; }
+    .doc-cat-research  { background: rgba(91,192,222,0.14);  color: #5BC0DE; }
+    .doc-cat-other     { background: rgba(255,255,255,0.04); color: var(--text-2); }
+    .doc-card-snippet {
+      font-size: 13px;
+      color: var(--text-2);
+      line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .doc-card-date {
+      font-size: 12px;
+      color: var(--text-3);
+    }
+    .doc-card-dim { opacity: 0.15 !important; }
+
+    /* ========================================
+       GLOBAL SEARCH MODAL
+       ======================================== */
+    .gsearch-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 9000;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding-top: 15vh;
+      backdrop-filter: blur(2px);
+      animation: calModalFadeIn 150ms ease;
+    }
+    .gsearch-modal {
+      background: var(--bg-card);
+      border: 1px solid var(--border-hover);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 560px;
+      max-height: 70vh;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.6);
+      animation: tmSlideUp 0.18s cubic-bezier(0.4,0,0.2,1);
+      overflow: hidden;
+    }
+    .gsearch-input-wrap {
+      display: flex;
+      align-items: center;
+      padding: 16px 20px;
+      gap: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    .gsearch-input-wrap svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      opacity: 0.4;
+    }
+    .gsearch-input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      font-size: 16px;
+      font-family: 'Inter', sans-serif;
+      color: var(--text-1);
+      outline: none;
+    }
+    .gsearch-input::placeholder { color: var(--text-3); }
+    .gsearch-shortcut {
+      font-size: 11px;
+      color: var(--text-3);
+      background: rgba(255,255,255,0.06);
+      border-radius: 4px;
+      padding: 2px 6px;
+      flex-shrink: 0;
+    }
+    .gsearch-results {
+      flex: 1;
+      overflow-y: auto;
+      padding: 8px 0;
+    }
+    .gsearch-section-label {
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-3);
+      padding: 10px 20px 6px;
+    }
+    .gsearch-result-item {
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: background 0.15s;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .gsearch-result-item:hover {
+      background: rgba(255,255,255,0.04);
+    }
+    .gsearch-result-icon {
+      font-size: 14px;
+      width: 24px;
+      text-align: center;
+      flex-shrink: 0;
+      opacity: 0.6;
+    }
+    .gsearch-result-text {
+      font-size: 14px;
+      color: var(--text-1);
+      flex: 1;
+      min-width: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .gsearch-result-meta {
+      font-size: 12px;
+      color: var(--text-3);
+      flex-shrink: 0;
+    }
+    .gsearch-empty {
+      padding: 32px 20px;
+      text-align: center;
+      font-size: 14px;
+      color: var(--text-3);
+    }
+
+    /* ========================================
+       MISSION SECTION (Office page)
+       ======================================== */
+    .mission-card {
+      background: var(--bg-raised);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px 20px;
+      margin-bottom: 20px;
+      border-left: 4px solid rgba(100,165,215,0.4);
+    }
+    .mission-statement {
+      font-size: 14px;
+      color: var(--text-2);
+      line-height: 1.5;
+      font-style: italic;
+      margin-bottom: 12px;
+      cursor: text;
+      padding: 4px 0;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .mission-statement:hover {
+      border-bottom-color: var(--border);
+    }
+    .mission-statement:focus {
+      outline: none;
+      border-bottom-color: rgba(255,255,255,0.2);
+      font-style: normal;
+      color: var(--text-1);
+    }
+    .mission-goals {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .mission-goal {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--text-1);
+      cursor: text;
+    }
+    .mission-goal-num {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: rgba(100,165,215,0.15);
+      color: #6BA8DA;
+      font-size: 11px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .mission-goal-text {
+      flex: 1;
+      padding: 2px 0;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .mission-goal-text:hover {
+      border-bottom-color: var(--border);
+    }
+    .mission-goal-text:focus {
+      outline: none;
+      border-bottom-color: rgba(255,255,255,0.2);
+    }
+
+    /* Cron calendar event color */
+    .cal-event-chip.cron-event {
+      border-left: 2px solid #5AB8B0 !important;
+    }
+
     /* Workstation action modal */
     .ws-modal-backdrop {
       position: fixed;
@@ -3299,7 +3687,7 @@
 </head>
 <body>
 
-  <div class="shortcut-hint" id="shortcut-hint">Press 1&ndash;8 to switch tabs &middot; [ to toggle sidebar</div>
+  <div class="shortcut-hint" id="shortcut-hint">Press 1&ndash;0 to switch tabs &middot; &#8984;K to search &middot; [ to toggle sidebar</div>
 
   <!-- ======== LEFT SIDEBAR ======== -->
   <aside class="sidebar" id="sidebar">
@@ -3313,6 +3701,10 @@
       <button class="sidebar-nav-item active" data-tab="office">
         <span class="sidebar-nav-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg></span>
         <span class="sidebar-nav-label">Office</span>
+      </button>
+      <button class="sidebar-nav-item" data-tab="activity">
+        <span class="sidebar-nav-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span>
+        <span class="sidebar-nav-label">Activity</span>
       </button>
       <button class="sidebar-nav-item" data-tab="inbox">
         <span class="sidebar-nav-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg></span>
@@ -3343,6 +3735,10 @@
         <span class="sidebar-nav-icon"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-4.6 12.3c.5.4.6.5.6 1.2V18h8v-2.5c0-.7.1-.8.6-1.2A7 7 0 0 0 12 2z"/><line x1="9" y1="18" x2="9" y2="22"/><line x1="15" y1="18" x2="15" y2="22"/><line x1="9" y1="22" x2="15" y2="22"/></svg></span>
         <span class="sidebar-nav-label">Memory</span>
       </button>
+      <button class="sidebar-nav-item" data-tab="documents">
+        <span class="sidebar-nav-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></span>
+        <span class="sidebar-nav-label">Documents</span>
+      </button>
     </nav>
   </aside>
 
@@ -3357,6 +3753,9 @@
       </button>
     </div>
     <div class="header-right">
+      <button class="sidebar-toggle" id="gsearch-toggle" aria-label="Global search" style="margin-right:8px" title="Search (Cmd+K)">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
       <div class="clock">
         <span class="clock-date" id="clock-date"></span>
         <span class="clock-time" id="clock-time"></span>
@@ -3373,6 +3772,17 @@
 
     <!-- Office -->
     <section class="tab-panel active" id="panel-office">
+
+      <!-- Mission Section -->
+      <div class="mission-card reveal">
+        <div style="font-size:11px;font-weight:500;color:var(--text-3);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px">Mission</div>
+        <div class="mission-statement" id="mission-statement" contenteditable="true">Build multiple income streams that run without me, so I can raise my family with total freedom and zero dependence on anyone else's system.</div>
+        <div class="mission-goals" id="mission-goals">
+          <div class="mission-goal"><span class="mission-goal-num">1</span><span class="mission-goal-text" contenteditable="true">Get OFM Agency to $10k/mo revenue with 5+ active creators</span></div>
+          <div class="mission-goal"><span class="mission-goal-num">2</span><span class="mission-goal-text" contenteditable="true">Launch Power Independence Academy and hit first sale by Mar 15</span></div>
+          <div class="mission-goal"><span class="mission-goal-num">3</span><span class="mission-goal-text" contenteditable="true">Complete Oaxaca move by May 2026 — house, farm, family settled</span></div>
+        </div>
+      </div>
 
       <!-- Stats Bar -->
       <div class="office-stats reveal">
@@ -3539,6 +3949,26 @@
           </div>
         </div>
 
+      </div>
+    </section>
+
+    <!-- Activity -->
+    <section class="tab-panel" id="panel-activity">
+      <div class="activity-toolbar reveal">
+        <div class="activity-filters">
+          <button class="inbox-filter active" data-act-filter="all">All</button>
+          <button class="inbox-filter" data-act-filter="message">Messages</button>
+          <button class="inbox-filter" data-act-filter="tool">Tools</button>
+          <button class="inbox-filter" data-act-filter="edit">Edits</button>
+          <button class="inbox-filter" data-act-filter="command">Commands</button>
+        </div>
+        <div class="activity-refresh-indicator">
+          <span class="activity-refresh-dot"></span>
+          <span id="activity-refresh-text">Auto-refreshing</span>
+        </div>
+      </div>
+      <div class="activity-list reveal" id="activity-list">
+        <!-- Populated by JS -->
       </div>
     </section>
 
@@ -4150,6 +4580,7 @@
           <button class="cal-filter-chip active" data-cal-filter="tasks"><span class="cal-filter-dot" style="background:#6BA8DA"></span>Tasks</button>
           <button class="cal-filter-chip active" data-cal-filter="events"><span class="cal-filter-dot" style="background:#A86DBF"></span>Events</button>
           <button class="cal-filter-chip active" data-cal-filter="bookings"><span class="cal-filter-dot" style="background:#5BC0DE"></span>Bookings</button>
+          <button class="cal-filter-chip active" data-cal-filter="crons"><span class="cal-filter-dot" style="background:#5AB8B0"></span>Crons</button>
         </div>
       </div>
 
@@ -4431,7 +4862,48 @@
       </div>
     </section>
 
+    <!-- Documents -->
+    <section class="tab-panel" id="panel-documents">
+      <div class="docs-wrap">
+        <!-- Search bar -->
+        <div class="docs-search-wrap reveal">
+          <svg class="docs-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" class="docs-search" id="docs-search-input" placeholder="Search documents...">
+        </div>
+
+        <!-- Category filters -->
+        <div class="docs-cat-filters reveal">
+          <button class="cal-filter-chip active" data-doc-cat="all"><span class="cal-filter-dot" style="background:var(--text-2)"></span>All</button>
+          <button class="cal-filter-chip" data-doc-cat="Contracts"><span class="cal-filter-dot" style="background:#6BA8DA"></span>Contracts</button>
+          <button class="cal-filter-chip" data-doc-cat="Plans"><span class="cal-filter-dot" style="background:#A86DBF"></span>Plans</button>
+          <button class="cal-filter-chip" data-doc-cat="Scripts"><span class="cal-filter-dot" style="background:#DAB255"></span>Scripts</button>
+          <button class="cal-filter-chip" data-doc-cat="Guides"><span class="cal-filter-dot" style="background:#6BBF6B"></span>Guides</button>
+          <button class="cal-filter-chip" data-doc-cat="Research"><span class="cal-filter-dot" style="background:#5BC0DE"></span>Research</button>
+          <button class="cal-filter-chip" data-doc-cat="Other"><span class="cal-filter-dot" style="background:var(--text-3)"></span>Other</button>
+        </div>
+
+        <!-- Docs grid -->
+        <div class="docs-grid reveal" id="docs-grid">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+
   </main>
+
+  <!-- Global Search Modal -->
+  <div class="gsearch-backdrop" id="gsearch-backdrop" style="display:none">
+    <div class="gsearch-modal">
+      <div class="gsearch-input-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" class="gsearch-input" id="gsearch-input" placeholder="Search tasks, projects, memory, documents, activity...">
+        <span class="gsearch-shortcut">ESC</span>
+      </div>
+      <div class="gsearch-results" id="gsearch-results">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </div>
 
   <!-- ======== JAVASCRIPT ======== -->
   <script>
@@ -4566,8 +5038,8 @@
       } catch(e) {}
     })();
 
-    /* ---- Keyboard Shortcuts (1-8) ---- */
-    const tabIds = ['office', 'inbox', 'projects', 'team', 'calendar', 'analytics', 'focus', 'memory'];
+    /* ---- Keyboard Shortcuts (1-0) ---- */
+    const tabIds = ['office', 'activity', 'inbox', 'projects', 'team', 'calendar', 'analytics', 'focus', 'memory', 'documents'];
 
     document.addEventListener('keydown', (e) => {
       const tag = document.activeElement.tagName;
@@ -5436,6 +5908,340 @@
     initViewToggle('team-view-toggle', 'team-card-view', 'team-table-view', 'mc-team-view');
     initViewToggle('projects-view-toggle', 'projects-card-view', 'projects-table-view', 'mc-projects-view');
 
+    /* ---- Activity Feed ---- */
+    var activityData = [];
+    var activityFilter = 'all';
+    var activityRefreshInterval = null;
+
+    function loadActivity() {
+      return fetch('data/activity.json?t=' + Date.now())
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+          activityData = data;
+          renderActivity();
+        })
+        .catch(function(err) {
+          console.warn('[MC] Failed to load activity.json:', err);
+          document.getElementById('activity-list').innerHTML = '<div style="padding:20px;color:var(--text-3)">Could not load activity feed</div>';
+        });
+    }
+
+    function agentColor(name) {
+      for (var i = 0; i < KANBAN_AGENTS.length; i++) {
+        if (KANBAN_AGENTS[i].name === name) return KANBAN_AGENTS[i].color;
+      }
+      return '#555555';
+    }
+
+    function formatTimeAgo(ts) {
+      var date = new Date(ts);
+      var now = new Date();
+      var diff = Math.floor((now - date) / 1000);
+      if (diff < 60) return 'just now';
+      if (diff < 3600) return Math.floor(diff / 60) + 'm ago';
+      if (diff < 86400) return Math.floor(diff / 3600) + 'h ago';
+      return date.toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
+    }
+
+    function renderActivity() {
+      var container = document.getElementById('activity-list');
+      if (!container) return;
+      var filtered = activityData.filter(function(a) {
+        if (activityFilter === 'all') return true;
+        return a.type === activityFilter;
+      });
+      if (!filtered.length) {
+        container.innerHTML = '<div style="padding:20px;color:var(--text-3);text-align:center">No activity found</div>';
+        return;
+      }
+      var html = '';
+      filtered.forEach(function(a, i) {
+        var agentCol = agentColor(a.agent);
+        html += '<div class="activity-entry' + (i < 5 ? ' animate-in' : '') + '" style="transition-delay:' + (i * 30) + 'ms">';
+        html += '<div class="activity-icon" style="color:' + agentCol + '">' + (a.icon || '•') + '</div>';
+        html += '<div class="activity-body">';
+        html += '<div class="activity-desc">' + escapeHtml(a.desc) + '</div>';
+        html += '<div class="activity-meta">';
+        html += '<span class="agent-avatar agent-avatar-sm" style="background:' + agentCol + '">' + a.agent.substring(0,2) + '</span>';
+        html += '<span class="activity-agent-name" style="color:' + agentCol + '">' + escapeHtml(a.agent) + '</span>';
+        html += '<span class="activity-type-pill">' + a.type + '</span>';
+        html += '<span>' + formatTimeAgo(a.timestamp) + '</span>';
+        html += '</div></div></div>';
+      });
+      container.innerHTML = html;
+    }
+
+    function startActivityRefresh() {
+      if (activityRefreshInterval) clearInterval(activityRefreshInterval);
+      activityRefreshInterval = setInterval(function() {
+        if (document.getElementById('panel-activity').classList.contains('active')) {
+          loadActivity();
+        }
+      }, 30000);
+    }
+
+    document.querySelectorAll('[data-act-filter]').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('[data-act-filter]').forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        activityFilter = btn.dataset.actFilter;
+        renderActivity();
+      });
+    });
+
+    /* ---- Cron Events for Calendar ---- */
+    var cronEvents = [];
+
+    function loadCronEvents() {
+      return fetch('data/crons.json?t=' + Date.now())
+        .then(function(r) { return r.json(); })
+        .then(function(crons) {
+          cronEvents = crons.map(function(c) {
+            var nextDate = new Date(c.nextRun);
+            return {
+              id: c.id,
+              title: c.name,
+              date: c.nextRun.split('T')[0],
+              time: c.nextRun.split('T')[1].substring(0,5),
+              color: c.color || '#5AB8B0',
+              isCron: true,
+              description: c.description,
+              agent: c.agent
+            };
+          });
+          calRender();
+        })
+        .catch(function(err) {
+          console.warn('[MC] Failed to load crons.json:', err);
+        });
+    }
+
+    /* ---- Documents ---- */
+    var docsData = [];
+    var docsCatFilter = 'all';
+
+    function loadDocuments() {
+      return fetch('data/documents.json?t=' + Date.now())
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+          docsData = data;
+          renderDocuments();
+        })
+        .catch(function(err) {
+          console.warn('[MC] Failed to load documents.json:', err);
+          document.getElementById('docs-grid').innerHTML = '<div style="padding:20px;color:var(--text-3)">Could not load documents</div>';
+        });
+    }
+
+    function docCatClass(cat) {
+      return 'doc-cat-' + cat.toLowerCase().replace(/[^a-z]/g, '');
+    }
+
+    function formatDate(dateStr) {
+      var d = new Date(dateStr);
+      return d.toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' });
+    }
+
+    function renderDocuments() {
+      var container = document.getElementById('docs-grid');
+      if (!container) return;
+      var query = (document.getElementById('docs-search-input')?.value || '').toLowerCase().trim();
+      var filtered = docsData.filter(function(d) {
+        if (docsCatFilter !== 'all' && d.category !== docsCatFilter) return false;
+        if (!query) return true;
+        return d.title.toLowerCase().includes(query) || 
+               d.snippet.toLowerCase().includes(query) ||
+               d.category.toLowerCase().includes(query);
+      });
+      if (!filtered.length) {
+        container.innerHTML = '<div style="padding:20px;color:var(--text-3);text-align:center;grid-column:1/-1">No documents found</div>';
+        return;
+      }
+      var html = '';
+      filtered.forEach(function(d, i) {
+        html += '<div class="doc-card reveal' + (query ? ' doc-card-dim' : '') + '" style="transition-delay:' + (i % 10 * 40) + 'ms">';
+        html += '<div class="doc-card-header">';
+        html += '<span class="doc-cat-pill ' + docCatClass(d.category) + '">' + escapeHtml(d.category) + '</span>';
+        html += '<span class="doc-card-title" title="' + escapeHtml(d.title) + '">' + escapeHtml(d.title) + '</span>';
+        html += '</div>';
+        html += '<div class="doc-card-snippet">' + escapeHtml(d.snippet) + '</div>';
+        html += '<div class="doc-card-date">Created ' + formatDate(d.created) + '</div>';
+        html += '</div>';
+      });
+      container.innerHTML = html;
+      // Apply dimming based on search
+      if (query) {
+        container.querySelectorAll('.doc-card').forEach(function(card) {
+          var text = card.textContent.toLowerCase();
+          if (text.includes(query)) card.classList.remove('doc-card-dim');
+        });
+      }
+    }
+
+    document.querySelectorAll('[data-doc-cat]').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('[data-doc-cat]').forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        docsCatFilter = btn.dataset.docCat;
+        renderDocuments();
+      });
+    });
+
+    var docsSearchInput = document.getElementById('docs-search-input');
+    if (docsSearchInput) {
+      docsSearchInput.addEventListener('input', renderDocuments);
+    }
+
+    /* ---- Global Search ---- */
+    var gsearchOpen = false;
+
+    function openGlobalSearch() {
+      gsearchOpen = true;
+      document.getElementById('gsearch-backdrop').style.display = 'flex';
+      document.getElementById('gsearch-input').value = '';
+      document.getElementById('gsearch-input').focus();
+      renderGlobalSearch('');
+    }
+
+    function closeGlobalSearch() {
+      gsearchOpen = false;
+      document.getElementById('gsearch-backdrop').style.display = 'none';
+    }
+
+    function renderGlobalSearch(query) {
+      var container = document.getElementById('gsearch-results');
+      if (!container) return;
+      if (!query.trim()) {
+        container.innerHTML = '<div class="gsearch-empty">Type to search across Mission Control</div>';
+        return;
+      }
+      var q = query.toLowerCase();
+      var results = [];
+
+      // Search tasks
+      kanbanTasks.forEach(function(t) {
+        if (t.title.toLowerCase().includes(q) || t.description.toLowerCase().includes(q)) {
+          results.push({ type: 'Task', text: t.title, meta: t.project, icon: '☐' });
+        }
+      });
+
+      // Search projects
+      if ('ofm digital lagoon crete farm app'.includes(q) || query.length > 2) {
+        var projects = [
+          { key: 'ofm', name: 'OFM Agency' },
+          { key: 'digital', name: 'Digital Products' },
+          { key: 'lagoon', name: 'Lagoon Company' },
+          { key: 'crete', name: 'Hilltop Villa - Oaxaca' },
+          { key: 'farm', name: 'Farm / Off-Grid' },
+          { key: 'app', name: 'App Development' }
+        ];
+        projects.forEach(function(p) {
+          if (p.name.toLowerCase().includes(q) || p.key.includes(q)) {
+            results.push({ type: 'Project', text: p.name, meta: 'Focus', icon: '◎' });
+          }
+        });
+      }
+
+      // Search memory (simple approach - check visible memory cards)
+      document.querySelectorAll('.mem-card').forEach(function(card) {
+        var text = card.textContent;
+        if (text.toLowerCase().includes(q)) {
+          var title = card.querySelector('.mem-person-name, .mem-fact-label, .mem-decision-title')?.textContent || 'Memory';
+          results.push({ type: 'Memory', text: title, meta: 'Memory', icon: '🧠' });
+        }
+      });
+
+      // Search documents
+      docsData.forEach(function(d) {
+        if (d.title.toLowerCase().includes(q) || d.snippet.toLowerCase().includes(q)) {
+          results.push({ type: 'Document', text: d.title, meta: d.category, icon: '📄' });
+        }
+      });
+
+      // Search activity
+      activityData.slice(0, 10).forEach(function(a) {
+        if (a.desc.toLowerCase().includes(q)) {
+          results.push({ type: 'Activity', text: a.desc.substring(0, 60), meta: a.agent, icon: a.icon });
+        }
+      });
+
+      if (!results.length) {
+        container.innerHTML = '<div class="gsearch-empty">No results found for "' + escapeHtml(query) + '"</div>';
+        return;
+      }
+
+      // Group by type
+      var grouped = {};
+      results.slice(0, 20).forEach(function(r) {
+        if (!grouped[r.type]) grouped[r.type] = [];
+        grouped[r.type].push(r);
+      });
+
+      var html = '';
+      Object.keys(grouped).forEach(function(type) {
+        html += '<div class="gsearch-section-label">' + type + '</div>';
+        grouped[type].forEach(function(r) {
+          html += '<div class="gsearch-result-item">';
+          html += '<span class="gsearch-result-icon">' + r.icon + '</span>';
+          html += '<span class="gsearch-result-text">' + escapeHtml(r.text) + '</span>';
+          html += '<span class="gsearch-result-meta">' + escapeHtml(r.meta) + '</span>';
+          html += '</div>';
+        });
+      });
+      container.innerHTML = html;
+    }
+
+    document.getElementById('gsearch-toggle').addEventListener('click', openGlobalSearch);
+    document.getElementById('gsearch-backdrop').addEventListener('click', function(e) {
+      if (e.target === this) closeGlobalSearch();
+    });
+    document.getElementById('gsearch-input').addEventListener('input', function(e) {
+      renderGlobalSearch(e.target.value);
+    });
+    document.getElementById('gsearch-input').addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeGlobalSearch();
+      if (e.key === 'Enter') {
+        var first = document.querySelector('.gsearch-result-item');
+        if (first) first.click();
+      }
+    });
+
+    // Cmd+K or / to open search
+    document.addEventListener('keydown', function(e) {
+      if (gsearchOpen) return;
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        openGlobalSearch();
+      }
+      if (e.key === '/' && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
+        e.preventDefault();
+        openGlobalSearch();
+      }
+    });
+
+    /* ---- Mission Section ---- */
+    function saveMission() {
+      var statement = document.getElementById('mission-statement').textContent.trim();
+      var goals = [];
+      document.querySelectorAll('.mission-goal-text').forEach(function(el, i) {
+        goals.push({ id: 'g' + (i+1), text: el.textContent.trim(), active: true });
+      });
+      var data = { statement: statement, goals: goals };
+      // In a real app we'd POST this to the server
+      console.log('[MC] Mission saved:', data);
+    }
+
+    document.getElementById('mission-statement').addEventListener('blur', saveMission);
+    document.querySelectorAll('.mission-goal-text').forEach(function(el) {
+      el.addEventListener('blur', saveMission);
+    });
+
+    // Init data on page load
+    loadActivity();
+    startActivityRefresh();
+    loadCronEvents();
+    loadDocuments();
+
     /* ---- Calendar: State & Data ---- */
     var CAL_COLORS = [
       { name: 'Blue', value: '#6BA8DA' }, { name: 'Purple', value: '#A86DBF' },
@@ -5464,8 +6270,13 @@
     ];
 
     function calDateKey(y, m, d) { return y + '-' + String(m+1).padStart(2,'0') + '-' + String(d).padStart(2,'0'); }
-    function calEventsForDate(dk) { return calEvents.filter(function(e) { return e.date === dk; }); }
+    function calEventsForDate(dk) { 
+      var regular = calEvents.filter(function(e) { return e.date === dk; });
+      var crons = showCronsOnCalendar ? cronEvents.filter(function(e) { return e.date === dk; }) : [];
+      return regular.concat(crons);
+    }
     function calMilestonesForDate(dk) { return calMilestones.filter(function(m) { return m.date === dk; }); }
+    var showCronsOnCalendar = true;
 
     function calUpdateTitle() {
       var el = document.getElementById('cal-title'); if (!el) return;
@@ -6320,10 +7131,14 @@
       });
     });
 
-    /* ---- Fix 11: Calendar Filter Toggles (Bookings/Tasks/Events) ---- */
+    /* ---- Fix 11: Calendar Filter Toggles (Bookings/Tasks/Events/Crons) ---- */
     document.querySelectorAll('.cal-filter-chip').forEach(function(chip) {
       chip.addEventListener('click', function() {
         chip.classList.toggle('active');
+        if (chip.dataset.calFilter === 'crons') {
+          showCronsOnCalendar = chip.classList.contains('active');
+          calRender();
+        }
       });
     });
 
