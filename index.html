@@ -3008,6 +3008,23 @@
       background: rgba(255,255,255,0.12) !important;
       color: var(--text-1) !important;
       border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 0;
+    }
+    /* Only curve outer corners on first/last active toggle */
+    .view-toggle-btn.active:first-child,
+    .kb-view-btn.active:first-child,
+    .cal-view-btn.active:first-child {
+      border-radius: 7px 0 0 7px;
+    }
+    .view-toggle-btn.active:last-child,
+    .kb-view-btn.active:last-child,
+    .cal-view-btn.active:last-child {
+      border-radius: 0 7px 7px 0;
+    }
+    /* Solo button (only child) gets full radius */
+    .view-toggle-btn.active:only-child,
+    .kb-view-btn.active:only-child,
+    .cal-view-btn.active:only-child {
       border-radius: 7px;
     }
 
