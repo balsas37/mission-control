@@ -1302,8 +1302,8 @@
     .kb-view-toggle {
       display: inline-flex;
       gap: 0;
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 8px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
       overflow: hidden;
     }
     .kb-view-btn {
@@ -1730,8 +1730,8 @@
     .view-toggle {
       display: inline-flex;
       gap: 0;
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 8px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
       overflow: hidden;
     }
     .view-toggle-btn {
@@ -1925,8 +1925,8 @@
     .cal-today-btn { font-size: 13px; font-weight: 400; padding: 6px 14px; }
     .cal-view-toggle {
       display: inline-flex;
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 8px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
       overflow: hidden;
     }
     .cal-view-btn {
@@ -1934,10 +1934,9 @@
       font-family: inherit; color: var(--text-3);
       background: transparent; border: none;
       cursor: pointer; transition: background 0.2s, color 0.2s;
-      position: relative;
     }
     .cal-view-btn:hover { color: var(--text-2); }
-    .cal-view-btn.active { background: rgba(255,255,255,0.10); color: var(--text-1); }
+    .cal-view-btn.active { background: rgba(255,255,255,0.08); color: var(--text-1); }
 
     /* Month View Grid */
     .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; }
@@ -2941,337 +2940,6 @@
       .tl-row-label { flex: 0 0 140px; max-width: 140px; font-size: 11px; }
       .tl-section-label::before { width: 140px; }
     }
-
-    /* ========================================
-       COMPREHENSIVE MOBILE + TOGGLE FIXES
-       ======================================== */
-
-    /* Fix 1: Office stats center on mobile */
-    @media (max-width: 768px) {
-      #panel-office .office-stats {
-        justify-content: center;
-        width: 100%;
-        display: flex;
-      }
-    }
-
-    /* Fix 3: Inbox stat boxes center on mobile */
-    @media (max-width: 768px) {
-      .kb-metrics {
-        justify-content: center;
-        width: 100%;
-      }
-    }
-
-    /* Fix 4: Inbox filters center on mobile */
-    @media (max-width: 768px) {
-      .inbox-filters {
-        justify-content: center;
-        width: 100%;
-      }
-    }
-
-    /* Fix 5: Kanban/List toggle RIGHT align on mobile */
-    @media (max-width: 768px) {
-      .kb-toolbar {
-        flex-direction: column;
-        align-items: stretch;
-      }
-      .kb-toolbar .kb-view-toggle {
-        align-self: flex-end;
-      }
-      /* Projects stats center on mobile */
-      .projects-toolbar {
-        flex-direction: column;
-        align-items: center;
-      }
-      .projects-toolbar .office-stats {
-        justify-content: center;
-        width: 100%;
-      }
-      .projects-toolbar .view-toggle {
-        align-self: flex-end;
-        margin-left: 0;
-      }
-    }
-
-    /* Toggle borders - all toggle groups need 1px grey border between options */
-    .view-toggle-btn:not(:last-child),
-    .kb-view-btn:not(:last-child),
-    .cal-view-btn:not(:last-child) {
-      border-right: 1px solid rgba(255,255,255,0.12);
-    }
-    /* Active toggle - border outline to differentiate selected */
-    .view-toggle-btn.active,
-    .kb-view-btn.active,
-    .cal-view-btn.active {
-      background: rgba(255,255,255,0.12) !important;
-      color: var(--text-1) !important;
-      border: 1px solid rgba(255,255,255,0.25);
-      border-radius: 7px;
-    }
-
-    /* Fix 10: Calendar date range text - uppercase, smaller, white */
-    .cal-title {
-      text-transform: uppercase !important;
-      font-size: 14px !important;
-      color: #fff !important;
-      letter-spacing: 0.06em !important;
-      font-weight: 400 !important;
-    }
-
-    /* Fix 12: Week view day numbers - smaller, match month view */
-    .cal-week-day-num {
-      font-size: 15px !important;
-      font-weight: 400 !important;
-    }
-
-    /* Fix 13: Calendar toolbar - keep toggle + today RIGHT aligned on mobile */
-    @media (max-width: 768px) {
-      .cal-toolbar {
-        flex-direction: column !important;
-        align-items: stretch !important;
-        gap: 12px;
-      }
-      .cal-toolbar-left {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-      }
-      .cal-toolbar-left .cal-nav-arrows {
-        margin-left: auto;
-      }
-      .cal-toolbar-right {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        gap: 8px;
-      }
-    }
-
-    /* Fix 14: Current day indicator - no white circle, just bright number */
-    .cal-day.today .cal-day-num {
-      background: transparent !important;
-      color: #fff !important;
-      width: auto !important;
-      height: auto !important;
-      border-radius: 0 !important;
-      display: inline !important;
-      font-weight: 600 !important;
-    }
-    .cal-week-col.today .cal-week-day-num {
-      background: transparent !important;
-      color: #fff !important;
-      width: auto !important;
-      height: auto !important;
-      border-radius: 0 !important;
-      display: block !important;
-      font-weight: 600 !important;
-      font-size: 15px !important;
-      margin: 4px auto 0 !important;
-    }
-
-    /* Fix 16: Analytics filter buttons center on mobile */
-    @media (max-width: 768px) {
-      .analytics-filters {
-        justify-content: center;
-      }
-    }
-
-    /* Fix 19: Memory tab mobile overflow fix */
-    @media (max-width: 768px) {
-      .mem-wrap {
-        max-width: 100%;
-        overflow-x: hidden;
-      }
-      .mem-fact {
-        flex-direction: column;
-        gap: 4px;
-      }
-      .mem-fact-label {
-        min-width: 0;
-        white-space: normal;
-      }
-      .mem-fact-value {
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-      }
-      .mem-section-inner {
-        overflow-x: hidden;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-      }
-      .mem-person-detail {
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-      }
-      .mem-decision-text {
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-      }
-    }
-
-    /* Fix 15 + 17: Analytics model usage + lagoon bookings sections */
-    .mu-timeout-bars { margin-top: 16px; }
-    .mu-timeout-row {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 6px 0;
-    }
-    .mu-timeout-label {
-      font-size: 12px;
-      font-weight: 400;
-      color: var(--text-2);
-      min-width: 110px;
-      white-space: nowrap;
-    }
-    .mu-timeout-bar {
-      flex: 1;
-      height: 6px;
-      background: rgba(255,255,255,0.06);
-      border-radius: 4px;
-      overflow: hidden;
-    }
-    .mu-timeout-fill {
-      height: 100%;
-      border-radius: 4px;
-      transition: width 0.4s ease;
-    }
-    .mu-timeout-fill.low    { background: var(--pill-done-text); }
-    .mu-timeout-fill.medium { background: var(--pill-waiting-text); }
-    .mu-timeout-fill.high   { background: var(--pill-urgent-text); }
-    .mu-timeout-time {
-      font-size: 11px;
-      color: var(--text-3);
-      min-width: 80px;
-      text-align: right;
-      font-variant-numeric: tabular-nums;
-    }
-    .lagoon-bookings-list {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      margin-top: 12px;
-    }
-    .lagoon-booking-item {
-      background: var(--bg-raised);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 14px 16px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-    }
-    .lagoon-booking-info {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-    .lagoon-booking-title {
-      font-size: 14px;
-      color: var(--text-1);
-      font-weight: 400;
-    }
-    .lagoon-booking-meta {
-      font-size: 12px;
-      color: var(--text-3);
-    }
-
-    /* Fix 11: Lagoon bookings toggle in calendar */
-    .cal-filter-toggles {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-    .cal-filter-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 5px 12px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 500;
-      cursor: pointer;
-      border: 1px solid var(--border);
-      background: transparent;
-      color: var(--text-2);
-      font-family: inherit;
-      transition: all 0.2s;
-    }
-    .cal-filter-chip.active {
-      background: rgba(255,255,255,0.08);
-      color: var(--text-1);
-      border-color: rgba(255,255,255,0.2);
-    }
-    .cal-filter-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-
-    /* Workstation action modal */
-    .ws-modal-backdrop {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.6);
-      z-index: 8000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      backdrop-filter: blur(2px);
-      animation: tmFadeIn 0.15s ease;
-    }
-    .ws-modal {
-      background: var(--bg-card);
-      border: 1px solid var(--border-hover);
-      border-radius: 16px;
-      width: 100%;
-      max-width: 420px;
-      box-shadow: 0 24px 64px rgba(0,0,0,0.6);
-      animation: tmSlideUp 0.18s cubic-bezier(0.4,0,0.2,1);
-      overflow: hidden;
-    }
-    .ws-modal-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 16px 20px 12px;
-      border-bottom: 1px solid var(--border);
-    }
-    .ws-modal-title {
-      font-size: 16px;
-      font-weight: 400;
-      color: var(--text-1);
-    }
-    .ws-modal-close {
-      background: none;
-      border: none;
-      color: var(--text-3);
-      font-size: 20px;
-      cursor: pointer;
-      padding: 0;
-      line-height: 1;
-      transition: color 0.2s;
-    }
-    .ws-modal-close:hover { color: var(--text-1); }
-    .ws-modal-body {
-      padding: 16px 20px 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .ws-modal-footer {
-      display: flex;
-      gap: 8px;
-      justify-content: flex-end;
-      padding: 12px 20px 16px;
-      border-top: 1px solid var(--border);
-    }
   </style>
 </head>
 <body>
@@ -4023,28 +3691,6 @@
         <button class="analytics-filter" data-range="quarter">Last 3 Months</button>
       </div>
 
-      <!-- Fix 15: MODEL USAGE (restored) -->
-      <div class="analytics-section reveal">
-        <div class="analytics-section-header" data-collapse="model-usage-analytics">
-          <svg class="analytics-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4,6 8,10 12,6"/></svg>
-          <span class="analytics-section-title">Model Usage</span>
-        </div>
-        <div id="model-usage-analytics">
-          <div class="analytics-table-wrap">
-            <table class="analytics-table">
-              <thead><tr>
-                <th class="analytics-th">Metric</th>
-                <th class="analytics-th">Current</th>
-                <th class="analytics-th">Change</th>
-                <th class="analytics-th">Status</th>
-              </tr></thead>
-              <tbody id="model-usage-tbody"></tbody>
-            </table>
-          </div>
-          <div class="mu-timeout-bars" id="mu-timeout-bars"></div>
-        </div>
-      </div>
-
       <!-- OFM AGENCY -->
       <div class="analytics-section reveal">
         <div class="analytics-section-header" data-collapse="ofm-analytics">
@@ -4085,19 +3731,6 @@
         </div>
       </div>
 
-      <!-- Fix 17: LAGOON BOOKINGS (from data/lagoon.json) -->
-      <div class="analytics-section reveal">
-        <div class="analytics-section-header" data-collapse="lagoon-bookings-analytics">
-          <svg class="analytics-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4,6 8,10 12,6"/></svg>
-          <span class="analytics-section-title">Active / Upcoming Lagoon Bookings</span>
-        </div>
-        <div id="lagoon-bookings-analytics">
-          <div class="lagoon-bookings-list" id="lagoon-bookings-list">
-            <div style="padding:16px;font-size:13px;color:var(--text-3)">Loading bookings…</div>
-          </div>
-        </div>
-      </div>
-
     </section>
 
     <!-- Calendar -->
@@ -4118,11 +3751,6 @@
             <button class="cal-view-btn active" data-view="month">Month</button>
             <button class="cal-view-btn" data-view="week">Week</button>
             <button class="cal-view-btn" data-view="timeline">Timeline</button>
-          </div>
-          <div class="cal-filter-toggles" id="cal-filter-toggles">
-            <button class="cal-filter-chip active" data-cal-filter="tasks"><span class="cal-filter-dot" style="background:#6BA8DA"></span>Tasks</button>
-            <button class="cal-filter-chip active" data-cal-filter="events"><span class="cal-filter-dot" style="background:#A86DBF"></span>Events</button>
-            <button class="cal-filter-chip active" data-cal-filter="bookings"><span class="cal-filter-dot" style="background:#5BC0DE"></span>Bookings</button>
           </div>
         </div>
       </div>
@@ -4625,7 +4253,7 @@
     /* ---- Piia Terminal Typewriter ---- */
     const piiaLines = [
       'session: main',
-      'model: claude-opus-4-6',
+      'model: claude-sonnet-4-6',
       'memory: loaded \u2713',
       'user: Beno',
       'projects: 5 active',
@@ -5257,127 +4885,7 @@
     });
 
     renderAnalyticsTable('ofm');
-
-    /* ---- Load Lagoon data from lagoon.json (real Aitable data) ---- */
-    (function() {
-      fetch('data/lagoon.json?t=' + Date.now())
-        .then(function(r) { return r.json(); })
-        .then(function(data) {
-          var activeRange = 'month';
-          var rangeData = data.ranges && data.ranges[activeRange];
-          if (rangeData && rangeData.length) {
-            analyticsData.lagoon = rangeData.map(function(m) {
-              return {
-                metric: m.metric, value: m.value, rawValue: 0,
-                change: m.change || '--', dir: m.dir || 'neutral',
-                sparkline: m.sparkline || null,
-                status: m.dir === 'positive' ? 'green' : (m.dir === 'negative' ? 'red' : 'amber'),
-                progress: m.progress || null
-              };
-            });
-          }
-          renderAnalyticsTable('lagoon');
-
-          var listEl = document.getElementById('lagoon-bookings-list');
-          if (!listEl) return;
-          var active = data.active_bookings || [];
-          var upcoming = data.upcoming_bookings || [];
-          var all = active.concat(upcoming);
-          if (!all.length) {
-            listEl.innerHTML = '<div style="padding:16px;font-size:13px;color:var(--text-3)">No active or upcoming bookings</div>';
-            return;
-          }
-          var html = '';
-          all.forEach(function(b) {
-            var title = b.vehicle || b.service || b.type || 'Booking';
-            var date = b.date || b.start_date || '';
-            var status = b.status || 'Confirmed';
-            var pillClass = status.toLowerCase().indexOf('confirm') >= 0 ? 'pill-done' :
-                            status.toLowerCase().indexOf('pending') >= 0 ? 'pill-waiting' : 'pill-active';
-            html += '<div class="lagoon-booking-item"><div class="lagoon-booking-info">';
-            html += '<div class="lagoon-booking-title">' + title + (b.guests ? ' — ' + b.guests + ' guests' : '') + '</div>';
-            html += '<div class="lagoon-booking-meta">' + date + (b.location ? ' · ' + b.location : '') + '</div>';
-            html += '</div><span class="pill ' + pillClass + '">' + status + '</span></div>';
-          });
-          listEl.innerHTML = html;
-        })
-        .catch(function() {
-          renderAnalyticsTable('lagoon');
-          var listEl = document.getElementById('lagoon-bookings-list');
-          if (listEl) listEl.innerHTML = '<div style="padding:16px;font-size:13px;color:var(--text-3)">Could not load booking data</div>';
-        });
-    })();
-
-    /* ---- Load Model Usage from usage.json ---- */
-    (function() {
-      function fmtTokens(n) {
-        if (n >= 1000000) return (n/1000000).toFixed(1) + 'M';
-        if (n >= 1000) return (n/1000).toFixed(0) + 'k';
-        return String(n);
-      }
-      function costEquiv(tokens) {
-        return ((tokens * 0.9 * 15 + tokens * 0.1 * 75) / 1000000).toFixed(2);
-      }
-      function timeoutFillClass(pct) {
-        if (pct >= 80) return 'high';
-        if (pct >= 50) return 'medium';
-        return 'low';
-      }
-      fetch('data/usage.json?t=' + Date.now())
-        .then(function(r) { return r.json(); })
-        .then(function(u) {
-          var a = u.anthropic || {};
-          var live = u.anthropic_live || {};
-          var plan = a.plan || live.plan || 'Unknown';
-          var todayTotal = a.today_total || 0;
-          var weekTotal = a.week_total || 0;
-          var todayPct = a.today_pct || 0;
-          var weekCost = '$' + costEquiv(weekTotal);
-
-          var tbody = document.getElementById('model-usage-tbody');
-          if (!tbody) return;
-          var rows = [
-            { metric: 'Plan', value: plan, change: '--', status: 'green' },
-            { metric: 'Tokens Today', value: fmtTokens(todayTotal), change: todayPct + '% of limit', status: todayPct > 80 ? 'red' : (todayPct > 50 ? 'amber' : 'green') },
-            { metric: 'Tokens This Week', value: fmtTokens(weekTotal), change: (live.weekly_all ? live.weekly_all.pct + '% used' : '--'), status: (live.weekly_all && live.weekly_all.pct > 80) ? 'red' : 'green' },
-            { metric: 'API Cost Equivalent', value: weekCost, change: 'this week', status: 'green' }
-          ];
-          var html = '';
-          rows.forEach(function(row) {
-            html += '<tr class="analytics-row">';
-            html += '<td class="analytics-td">' + row.metric + '</td>';
-            html += '<td class="analytics-td analytics-td-value">' + row.value + '</td>';
-            html += '<td class="analytics-td"><span class="analytics-td-change neutral">' + row.change + '</span></td>';
-            html += '<td class="analytics-td"><span class="analytics-status-dot ' + row.status + '"></span></td>';
-            html += '</tr>';
-          });
-          tbody.innerHTML = html;
-
-          var barsEl = document.getElementById('mu-timeout-bars');
-          if (!barsEl) return;
-          var bars = [];
-          if (live.session) bars.push({ label: 'Session', pct: live.session.pct || 0, reset: live.session.reset_label || '' });
-          if (live.weekly_all) bars.push({ label: 'Weekly (All)', pct: live.weekly_all.pct || 0, reset: live.weekly_all.reset_label || '' });
-          if (live.weekly_sonnet) bars.push({ label: 'Weekly (Sonnet)', pct: live.weekly_sonnet.pct || 0, reset: live.weekly_sonnet.reset_label || '' });
-          if (live.extra_usage) bars.push({ label: 'Extra Usage', pct: live.extra_usage.pct_used || 0, reset: '$' + (live.extra_usage.balance_usd || 0) + ' left · resets ' + (live.extra_usage.resets || '') });
-          if (!bars.length) { barsEl.innerHTML = ''; return; }
-          var bhtml = '';
-          bars.forEach(function(b) {
-            bhtml += '<div class="mu-timeout-row">';
-            bhtml += '<span class="mu-timeout-label">' + b.label + '</span>';
-            bhtml += '<div class="mu-timeout-bar"><div class="mu-timeout-fill ' + timeoutFillClass(b.pct) + '" style="width:' + b.pct + '%"></div></div>';
-            bhtml += '<span class="mu-timeout-time">' + b.pct + '% · ' + b.reset + '</span>';
-            bhtml += '</div>';
-          });
-          barsEl.innerHTML = bhtml;
-        })
-        .catch(function() {
-          var tbody = document.getElementById('model-usage-tbody');
-          if (tbody) tbody.innerHTML = '<tr class="analytics-row"><td class="analytics-td" colspan="4" style="color:var(--text-3)">No usage data available</td></tr>';
-          var barsEl = document.getElementById('mu-timeout-bars');
-          if (barsEl) barsEl.innerHTML = '';
-        });
-    })();
+    renderAnalyticsTable('lagoon');
 
     /* ---- View Toggle: Team & Projects ---- */
     function initViewToggle(toggleId, cardViewId, tableViewId, storageKey) {
@@ -6224,90 +5732,6 @@
     // Also observe any reveal elements not inside a tab-panel (top-level)
     document.querySelectorAll('.reveal:not(.tab-panel .reveal)').forEach(function(el) {
       revealObserver.observe(el);
-    });
-
-    /* ---- Fix 2: Workstation Message & Assign Task Buttons ---- */
-    function openWorkstationModal(agentName, action) {
-      var isMessage = action === 'message';
-      var title = isMessage ? ('Message ' + agentName) : ('Assign Task to ' + agentName);
-      var placeholder = isMessage ? 'Type your message...' : 'Describe the task...';
-      var btnLabel = isMessage ? 'Send' : 'Assign';
-      var html = '<div class="ws-modal-backdrop" id="ws-modal-backdrop">'
-        + '<div class="ws-modal">'
-        + '<div class="ws-modal-header">'
-        + '<span class="ws-modal-title">' + title + '</span>'
-        + '<button class="ws-modal-close" id="ws-modal-close">&times;</button>'
-        + '</div>'
-        + '<div class="ws-modal-body">'
-        + '<textarea class="cal-form-input" id="ws-modal-input" rows="4" placeholder="' + placeholder + '" style="resize:vertical;min-height:80px"></textarea>'
-        + (isMessage ? '' : '<select class="kb-form-select" id="ws-modal-priority"><option value="Medium">Medium Priority</option><option value="High">High Priority</option><option value="Urgent">Urgent</option><option value="Low">Low Priority</option></select>')
-        + '</div>'
-        + '<div class="ws-modal-footer">'
-        + '<button class="cal-form-cancel" id="ws-modal-cancel">Cancel</button>'
-        + '<button class="cal-form-save" id="ws-modal-save">' + btnLabel + '</button>'
-        + '</div>'
-        + '</div></div>';
-      document.body.insertAdjacentHTML('beforeend', html);
-      var backdrop = document.getElementById('ws-modal-backdrop');
-      document.getElementById('ws-modal-close').addEventListener('click', closeWsModal);
-      document.getElementById('ws-modal-cancel').addEventListener('click', closeWsModal);
-      backdrop.addEventListener('click', function(e) { if (e.target === backdrop) closeWsModal(); });
-      document.getElementById('ws-modal-save').addEventListener('click', function() {
-        var input = document.getElementById('ws-modal-input').value.trim();
-        if (!input) { document.getElementById('ws-modal-input').style.borderColor = 'var(--pill-urgent-text)'; return; }
-        if (!isMessage) {
-          var priority = document.getElementById('ws-modal-priority') ? document.getElementById('ws-modal-priority').value : 'Medium';
-          kanbanTasks.push({
-            id: kanbanId(),
-            title: input,
-            description: 'Assigned to ' + agentName + ' from Office',
-            project: 'OpenClaw',
-            priority: priority,
-            agent: agentName,
-            status: 'todo',
-            createdAt: Date.now(),
-            movedAt: Date.now()
-          });
-          renderKanbanBoard();
-          updateKanbanMetrics();
-        }
-        closeWsModal();
-      });
-      setTimeout(function() { document.getElementById('ws-modal-input').focus(); }, 100);
-    }
-    function closeWsModal() {
-      var el = document.getElementById('ws-modal-backdrop');
-      if (el) el.remove();
-    }
-
-    // Attach click handlers to all workstation action buttons
-    document.querySelectorAll('.workstation').forEach(function(ws) {
-      var nameEl = ws.querySelector('.agent-name');
-      if (!nameEl) return;
-      var agentName = nameEl.textContent.trim();
-      var btns = ws.querySelectorAll('.workstation-action');
-      btns.forEach(function(btn) {
-        btn.addEventListener('click', function() {
-          var action = btn.textContent.trim().toLowerCase().indexOf('message') !== -1 ? 'message' : 'assign';
-          openWorkstationModal(agentName, action);
-        });
-      });
-    });
-
-    /* ---- Fix 11: Calendar Filter Toggles (Bookings/Tasks/Events) ---- */
-    document.querySelectorAll('.cal-filter-chip').forEach(function(chip) {
-      chip.addEventListener('click', function() {
-        chip.classList.toggle('active');
-      });
-    });
-
-    /* ---- Fix 15: Analytics section collapse for new sections ---- */
-    document.querySelectorAll('.analytics-section-header[data-collapse="model-usage-analytics"], .analytics-section-header[data-collapse="lagoon-bookings-analytics"]').forEach(function(h) {
-      h.addEventListener('click', function() {
-        h.classList.toggle('collapsed');
-        var wrap = document.getElementById(h.dataset.collapse);
-        if (wrap) wrap.style.display = h.classList.contains('collapsed') ? 'none' : '';
-      });
     });
 
     /* ---- Keyboard Shortcut Tooltip ---- */
