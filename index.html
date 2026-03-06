@@ -7119,12 +7119,20 @@
         var input = document.getElementById('ws-modal-input').value.trim();
         if (!input) { document.getElementById('ws-modal-input').style.borderColor = 'var(--pill-urgent-text)'; return; }
         if (isMessage) {
-          // Store message in localStorage for pickup + show toast
+          // POST to relay server for Telegram delivery
+          fetch('http://127.0.0.1:8099/message', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ to: agentName, text: input })
+          })
+          .then(function(r) { return r.json(); })
+          .then(function() { showToast('Message sent to ' + agentName + ' (relaying to Telegram)'); })
+          .catch(function() { showToast('Message saved (relay offline, will deliver later)'); });
+          // Also store in localStorage as backup
           var msgs = [];
           try { msgs = JSON.parse(localStorage.getItem('mc-agent-messages') || '[]'); } catch(e) {}
-          msgs.push({ to: agentName, text: input, timestamp: new Date().toISOString(), read: false });
+          msgs.push({ to: agentName, text: input, timestamp: new Date().toISOString() });
           localStorage.setItem('mc-agent-messages', JSON.stringify(msgs));
-          showToast('Message sent to ' + agentName);
         } else {
           var priority = document.getElementById('ws-modal-priority') ? document.getElementById('ws-modal-priority').value : 'Medium';
           var today = new Date().toISOString().slice(0, 10);
