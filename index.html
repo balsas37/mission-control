@@ -5621,6 +5621,21 @@
       if (listEl) {
         listEl.classList.toggle('filter-done', filter === 'done');
       }
+      // Show/hide columns based on filter
+      var mineCol = document.querySelector('#kb-list-view .inbox-col[data-col="mine"]');
+      var agentCol = document.querySelector('#kb-list-view .inbox-col[data-col="agent"]');
+      if (mineCol && agentCol) {
+        if (filter === 'mine') {
+          mineCol.style.display = '';
+          agentCol.style.display = 'none';
+        } else if (filter === 'agent') {
+          mineCol.style.display = 'none';
+          agentCol.style.display = '';
+        } else {
+          mineCol.style.display = '';
+          agentCol.style.display = '';
+        }
+      }
       document.querySelectorAll('#kb-list-view .inbox-task').forEach(function(task) {
         var isDone = task.classList.contains('done') || task.querySelector('.task-status-select')?.value === 'completed';
         var colType = task.dataset.colType;
