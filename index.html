@@ -4494,6 +4494,7 @@
           <span class="analytics-section-title">Model Usage</span>
         </div>
         <div id="model-usage-analytics">
+          <div class="mu-timeout-bars" id="mu-timeout-bars"></div>
           <div class="analytics-table-wrap">
             <table class="analytics-table">
               <thead><tr>
@@ -4505,7 +4506,6 @@
               <tbody id="model-usage-tbody"></tbody>
             </table>
           </div>
-          <div class="mu-timeout-bars" id="mu-timeout-bars"></div>
         </div>
       </div>
 
@@ -4535,29 +4535,24 @@
           <svg class="analytics-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4,6 8,10 12,6"/></svg>
           <span class="analytics-section-title" style="--dept-accent:var(--pill-done-text)">Lagoon Company</span><span style="font-size:11px;color:var(--text-3);margin-left:10px;font-weight:400;vertical-align:middle"> figures are estimates, update with real data</span>
         </div>
-        <div class="analytics-table-wrap" id="lagoon-analytics">
-          <table class="analytics-table">
-            <thead><tr>
-              <th class="analytics-th" data-sort="metric">Metric <span class="sort-arrow">&#x25B2;</span></th>
-              <th class="analytics-th" data-sort="value">Current <span class="sort-arrow">&#x25B2;</span></th>
-              <th class="analytics-th" data-sort="change">Change <span class="sort-arrow">&#x25B2;</span></th>
-              <th class="analytics-th">Trend</th>
-              <th class="analytics-th" data-sort="status">Status <span class="sort-arrow">&#x25B2;</span></th>
-            </tr></thead>
-            <tbody id="lagoon-analytics-body"></tbody>
-          </table>
-        </div>
-      </div>
-
-      <!-- Fix 17: LAGOON BOOKINGS (from data/lagoon.json) -->
-      <div class="analytics-section reveal">
-        <div class="analytics-section-header" data-collapse="lagoon-bookings-analytics">
-          <svg class="analytics-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4,6 8,10 12,6"/></svg>
-          <span class="analytics-section-title">Active / Upcoming Lagoon Bookings</span>
-        </div>
-        <div id="lagoon-bookings-analytics">
-          <div class="lagoon-bookings-list" id="lagoon-bookings-list">
-            <div style="padding:16px;font-size:13px;color:var(--text-3)">Loading bookings…</div>
+        <div id="lagoon-analytics">
+          <div class="analytics-table-wrap">
+            <table class="analytics-table">
+              <thead><tr>
+                <th class="analytics-th" data-sort="metric">Metric <span class="sort-arrow">&#x25B2;</span></th>
+                <th class="analytics-th" data-sort="value">Current <span class="sort-arrow">&#x25B2;</span></th>
+                <th class="analytics-th" data-sort="change">Change <span class="sort-arrow">&#x25B2;</span></th>
+                <th class="analytics-th">Trend</th>
+                <th class="analytics-th" data-sort="status">Status <span class="sort-arrow">&#x25B2;</span></th>
+              </tr></thead>
+              <tbody id="lagoon-analytics-body"></tbody>
+            </table>
+          </div>
+          <h3 style="font-size:14px;font-weight:500;color:var(--text-2);margin:20px 0 12px 0;">Active / Upcoming Bookings</h3>
+          <div id="lagoon-bookings-analytics">
+            <div class="lagoon-bookings-list" id="lagoon-bookings-list">
+              <div style="padding:16px;font-size:13px;color:var(--text-3)">Loading bookings…</div>
+            </div>
           </div>
         </div>
       </div>
@@ -6102,6 +6097,12 @@
           if (text.includes(query)) card.classList.remove('doc-card-dim');
         });
       }
+      // Re-observe new cards for reveal animation
+      if (typeof revealObserver !== 'undefined') {
+        container.querySelectorAll('.reveal').forEach(function(el) {
+          el.classList.add('revealed');
+        });
+      }
     }
 
     document.querySelectorAll('[data-doc-cat]').forEach(function(btn) {
@@ -7169,7 +7170,7 @@
     });
 
     /* ---- Fix 15: Analytics section collapse for new sections ---- */
-    document.querySelectorAll('.analytics-section-header[data-collapse="model-usage-analytics"], .analytics-section-header[data-collapse="lagoon-bookings-analytics"]').forEach(function(h) {
+    document.querySelectorAll('.analytics-section-header[data-collapse="model-usage-analytics"]').forEach(function(h) {
       h.addEventListener('click', function() {
         h.classList.toggle('collapsed');
         var wrap = document.getElementById(h.dataset.collapse);
