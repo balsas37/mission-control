@@ -111,6 +111,8 @@
       min-height: calc(100vh - 48px);
       overflow-y: auto;
       transition: margin-left var(--sidebar-transition);
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255,255,255,0.12) transparent;
     }
 
     body.sidebar-collapsed .content {
@@ -2058,7 +2060,11 @@
       .cal-grid { gap: 4px; }
       .cal-day { min-height: 64px; padding: 5px; }
       .cal-day-num { font-size: 13px; }
-      .cal-week-grid { grid-template-columns: repeat(7, minmax(90px, 1fr)); overflow-x: auto; gap: 6px; }
+      .cal-week-grid { grid-template-columns: repeat(7, minmax(90px, 1fr)); overflow-x: auto; gap: 6px; scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.12) transparent; -webkit-overflow-scrolling: touch; }
+      .cal-week-grid::-webkit-scrollbar { height: 6px; }
+      .cal-week-grid::-webkit-scrollbar-track { background: transparent; }
+      .cal-week-grid::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 999px; }
+      .cal-week-grid::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.25); }
       .cal-week-col { min-height: 140px; padding: 8px; }
     }
 
