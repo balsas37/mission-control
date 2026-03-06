@@ -7118,8 +7118,16 @@
       document.getElementById('ws-modal-save').addEventListener('click', function() {
         var input = document.getElementById('ws-modal-input').value.trim();
         if (!input) { document.getElementById('ws-modal-input').style.borderColor = 'var(--pill-urgent-text)'; return; }
-        if (!isMessage) {
+        if (isMessage) {
+          // Store message in localStorage for pickup + show toast
+          var msgs = [];
+          try { msgs = JSON.parse(localStorage.getItem('mc-agent-messages') || '[]'); } catch(e) {}
+          msgs.push({ to: agentName, text: input, timestamp: new Date().toISOString(), read: false });
+          localStorage.setItem('mc-agent-messages', JSON.stringify(msgs));
+          showToast('Message sent to ' + agentName);
+        } else {
           var priority = document.getElementById('ws-modal-priority') ? document.getElementById('ws-modal-priority').value : 'Medium';
+          var today = new Date().toISOString().slice(0, 10);
           kanbanTasks.push({
             id: kanbanId(),
             title: input,
@@ -7129,10 +7137,14 @@
             agent: agentName,
             status: 'todo',
             createdAt: Date.now(),
-            movedAt: Date.now()
+            movedAt: Date.now(),
+            startDate: today,
+            dueDate: today
           });
+          saveKanbanState();
           renderKanbanBoard();
           updateKanbanMetrics();
+          showToast('Task assigned to ' + agentName);
         }
         closeWsModal();
       });
@@ -7141,6 +7153,14 @@
     function closeWsModal() {
       var el = document.getElementById('ws-modal-backdrop');
       if (el) el.remove();
+    }
+    function showToast(msg) {
+      var toast = document.createElement('div');
+      toast.textContent = msg;
+      toast.style.cssText = 'position:fixed;bottom:24px;right:24px;background:var(--bg-raised);border:1px solid var(--border);color:var(--text-1);padding:10px 18px;border-radius:10px;font-size:13px;z-index:9999;opacity:0;transition:opacity 0.3s;box-shadow:0 4px 12px rgba(0,0,0,0.4);';
+      document.body.appendChild(toast);
+      requestAnimationFrame(function() { toast.style.opacity = '1'; });
+      setTimeout(function() { toast.style.opacity = '0'; setTimeout(function() { toast.remove(); }, 300); }, 2500);
     }
 
     // Attach click handlers to all workstation action buttons
