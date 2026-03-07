@@ -1957,6 +1957,7 @@
       padding: 8px; font-size: 14px; color: var(--text-2);
       position: relative; cursor: pointer; transition: border-color 0.2s, background 0.2s;
       display: flex; flex-direction: column; gap: 4px;
+      overflow: hidden;
     }
     .cal-day:hover { border-color: var(--border-hover); background: var(--bg-hover); }
     .cal-day.today { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.15); }
@@ -2974,11 +2975,89 @@
       }
     }
 
-    /* Fix 4: Inbox filters center on mobile */
+    /* Mobile Calendar: Compact day cells with dot indicators */
+    @media (max-width: 768px) {
+      .cal-grid { gap: 3px; }
+      .cal-day {
+        min-height: 52px;
+        max-height: 52px;
+        padding: 6px;
+        border-radius: 8px;
+        align-items: center;
+        justify-content: flex-start;
+        overflow: hidden;
+      }
+      .cal-day-num { font-size: 14px; }
+      .cal-day .cal-event-chip { display: none; }
+      .cal-day .cal-day-overflow { display: none; }
+      .cal-day .cal-milestone-marker { width: 6px; height: 6px; top: 5px; right: 5px; }
+      .cal-day-dots {
+        display: flex;
+        gap: 3px;
+        margin-top: 4px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .cal-day-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        flex-shrink: 0;
+      }
+      .cal-header { font-size: 11px; padding: 6px 0; }
+    }
+    @media (min-width: 769px) {
+      .cal-day-dots { display: none; }
+    }
+
+    /* Day Detail Modal (mobile tap) */
+    .cal-day-modal-backdrop {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1000;
+      display: flex; align-items: flex-end; justify-content: center;
+      animation: calModalFadeIn 150ms ease;
+    }
+    .cal-day-modal {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 16px 16px 0 0; width: 100%; max-width: 500px;
+      max-height: 70vh; overflow-y: auto;
+      box-shadow: 0 -8px 32px rgba(0,0,0,0.4);
+      animation: calDayModalSlideUp 200ms ease;
+    }
+    @keyframes calDayModalSlideUp { from { opacity:0; transform:translateY(100%); } to { opacity:1; transform:translateY(0); } }
+    .cal-day-modal-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 20px 12px; border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; background: var(--bg-card); z-index: 1;
+    }
+    .cal-day-modal-title { font-size: 16px; font-weight: 500; color: var(--text-1); }
+    .cal-day-modal-close {
+      background: none; border: none; color: var(--text-3); font-size: 22px;
+      cursor: pointer; padding: 4px; line-height: 1;
+    }
+    .cal-day-modal-body { padding: 12px 20px 24px; display: flex; flex-direction: column; gap: 8px; }
+    .cal-day-modal-event {
+      display: flex; align-items: center; gap: 10px;
+      padding: 10px 12px; border-radius: 10px;
+      background: rgba(255,255,255,0.03); border: 1px solid var(--border);
+    }
+    .cal-day-modal-event-dot {
+      width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;
+    }
+    .cal-day-modal-event-info { flex: 1; }
+    .cal-day-modal-event-title { font-size: 14px; font-weight: 500; color: var(--text-1); }
+    .cal-day-modal-event-time { font-size: 12px; color: var(--text-3); margin-top: 2px; }
+    .cal-day-modal-empty { color: var(--text-3); font-size: 14px; text-align: center; padding: 20px 0; }
+
+    /* Fix 4: Inbox filters center on mobile + ensure tappable */
     @media (max-width: 768px) {
       .inbox-filters {
         justify-content: center;
         width: 100%;
+        gap: 6px;
+      }
+      .inbox-filter {
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: rgba(255,255,255,0.1);
       }
     }
 
@@ -3141,7 +3220,7 @@
     }
 
     /* Fix 15 + 17: Analytics model usage + lagoon bookings sections */
-    .mu-timeout-bars { margin-top: 16px; }
+    .mu-timeout-bars { margin-top: 8px; margin-bottom: 16px; }
     .mu-timeout-row {
       display: flex;
       align-items: center;
@@ -4481,9 +4560,10 @@
 
       <!-- Date Range -->
       <div class="analytics-filters">
-        <button class="analytics-filter active" data-range="month">This Month</button>
-        <button class="analytics-filter" data-range="last">Last Month</button>
+        <button class="analytics-filter active" data-range="month">Latest Month</button>
+        <button class="analytics-filter" data-range="last">Previous Month</button>
         <button class="analytics-filter" data-range="quarter">Last 3 Months</button>
+        <button class="analytics-filter" data-range="alltime">All Time</button>
       </div>
 
       <!-- Fix 15: MODEL USAGE (restored) -->
@@ -5668,10 +5748,20 @@
     loadTasksFromJSON().then(function() {
       loadKanbanState();
       renderKanbanBoard();
-    // Show filters on kanban (default view)
+    // Show filters on kanban (default view) + attach handlers globally
     (function() {
       var filtersEl = document.getElementById('kb-filters');
       if (filtersEl) filtersEl.style.display = '';
+      // Attach filter click handlers at init (not only inside renderListView)
+      document.querySelectorAll('.inbox-filter').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          document.querySelectorAll('.inbox-filter').forEach(function(b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+          try { localStorage.setItem('mc-inbox-filter', btn.dataset.filter); } catch(e) {}
+          applyListFilter(btn.dataset.filter);
+          if (kanbanViewMode === 'kanban') renderKanbanBoard();
+        });
+      });
       // Restore saved filter
       try {
         var savedFilter = localStorage.getItem('mc-inbox-filter');
@@ -5781,20 +5871,42 @@
       fetch('data/lagoon.json?t=' + Date.now())
         .then(function(r) { return r.json(); })
         .then(function(data) {
+          // Store full lagoon data for range switching
+          window._lagoonData = data;
+
+          // Update filter button labels with actual date ranges
+          var labels = data.range_labels || {};
+          document.querySelectorAll('.analytics-filter').forEach(function(btn) {
+            var range = btn.dataset.range;
+            if (labels[range]) {
+              btn.textContent = labels[range];
+            }
+          });
+
           var activeRange = 'month';
-          var rangeData = data.ranges && data.ranges[activeRange];
-          if (rangeData && rangeData.length) {
-            analyticsData.lagoon = rangeData.map(function(m) {
-              return {
-                metric: m.metric, value: m.value, rawValue: 0,
-                change: m.change || '--', dir: m.dir || 'neutral',
-                sparkline: m.sparkline || null,
-                status: m.dir === 'positive' ? 'green' : (m.dir === 'negative' ? 'red' : 'amber'),
-                progress: m.progress || null
-              };
-            });
+          function loadLagoonRange(range) {
+            var rangeData = data.ranges && data.ranges[range];
+            if (rangeData && rangeData.length) {
+              analyticsData.lagoon = rangeData.map(function(m) {
+                return {
+                  metric: m.metric, value: m.value, rawValue: 0,
+                  change: m.change || '--', dir: m.dir || 'neutral',
+                  sparkline: m.sparkline || null,
+                  status: m.dir === 'positive' ? 'green' : (m.dir === 'negative' ? 'red' : 'amber'),
+                  progress: m.progress || null
+                };
+              });
+            }
+            renderAnalyticsTable('lagoon');
           }
-          renderAnalyticsTable('lagoon');
+          loadLagoonRange(activeRange);
+
+          // Wire up filter buttons to switch lagoon data
+          document.querySelectorAll('.analytics-filter').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+              loadLagoonRange(btn.dataset.range);
+            });
+          });
 
           var listEl = document.getElementById('lagoon-bookings-list');
           if (!listEl) return;
@@ -6333,11 +6445,22 @@
         html += '<div class="cal-day' + (isToday ? ' today' : '') + '" data-date="' + dk + '">';
         html += '<div class="cal-day-num">' + d + '</div>';
         if (milestones.length) html += '<div class="cal-milestone-marker" style="background:' + milestones[0].color + '" title="' + escapeHtml(milestones[0].name) + '"></div>';
+        /* Desktop: full event chips */
         for (var e = 0; e < Math.min(events.length, 2); e++) {
           var ev = events[e];
           html += '<div class="cal-event-chip" style="background:' + ev.color + '22;color:' + ev.color + ';border-left:2px solid ' + ev.color + ';" data-event-id="' + ev.id + '">' + escapeHtml(ev.title) + '</div>';
         }
         if (events.length > 2) html += '<div class="cal-day-overflow">+' + (events.length - 2) + ' more</div>';
+        /* Mobile: colored dots */
+        if (events.length || milestones.length) {
+          html += '<div class="cal-day-dots">';
+          var allItems = milestones.map(function(m) { return m.color; }).concat(events.map(function(ev) { return ev.color; }));
+          for (var di = 0; di < Math.min(allItems.length, 5); di++) {
+            html += '<div class="cal-day-dot" style="background:' + allItems[di] + '"></div>';
+          }
+          if (allItems.length > 5) html += '<div class="cal-day-dot" style="background:var(--text-3)"></div>';
+          html += '</div>';
+        }
         html += '</div>';
       }
       var total = startOffset + daysInMonth, rem = total % 7;
@@ -6828,10 +6951,17 @@
     function calDeleteEvent(id) { calEvents = calEvents.filter(function(e) { return e.id !== id; }); calRender(); }
 
     function calAttachHandlers() {
+      var isMobile = window.innerWidth <= 768;
       document.querySelectorAll('.cal-day:not(.empty), .cal-week-col').forEach(function(cell) {
         cell.addEventListener('click', function(e) {
           if (e.target.closest('.cal-event-chip') || e.target.closest('.cal-week-event')) return;
-          if (cell.dataset.date) calOpenModal(cell.dataset.date);
+          if (cell.dataset.date) {
+            if (isMobile && calViewMode === 'month') {
+              calOpenDayDetail(cell.dataset.date);
+            } else {
+              calOpenModal(cell.dataset.date);
+            }
+          }
         });
       });
       document.querySelectorAll('.cal-event-chip, .cal-week-event[data-event-id]').forEach(function(chip) {
@@ -6839,6 +6969,57 @@
           e.stopPropagation();
           if (chip.dataset.eventId && confirm('Delete this event?')) calDeleteEvent(chip.dataset.eventId);
         });
+      });
+    }
+
+    function calOpenDayDetail(dateKey) {
+      var events = calEventsForDate(dateKey);
+      var milestones = calMilestonesForDate(dateKey);
+      var parts = dateKey.split('-');
+      var dateObj = new Date(parseInt(parts[0]), parseInt(parts[1]) - 1, parseInt(parts[2]));
+      var dayNames = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+      var monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+      var title = dayNames[dateObj.getDay()] + ', ' + monthNames[dateObj.getMonth()] + ' ' + dateObj.getDate();
+
+      var html = '<div class="cal-day-modal-backdrop" id="cal-day-detail-backdrop">';
+      html += '<div class="cal-day-modal">';
+      html += '<div class="cal-day-modal-header">';
+      html += '<div class="cal-day-modal-title">' + title + '</div>';
+      html += '<button class="cal-day-modal-close" id="cal-day-detail-close">&times;</button>';
+      html += '</div>';
+      html += '<div class="cal-day-modal-body">';
+
+      if (!events.length && !milestones.length) {
+        html += '<div class="cal-day-modal-empty">No events this day</div>';
+        html += '<button onclick="document.getElementById(\'cal-day-detail-backdrop\').remove(); calOpenModal(\'' + dateKey + '\');" style="align-self:center;padding:10px 20px;border-radius:8px;border:1px solid var(--border);background:rgba(255,255,255,0.05);color:var(--text-1);font-size:14px;cursor:pointer;">+ Add Event</button>';
+      } else {
+        milestones.forEach(function(m) {
+          html += '<div class="cal-day-modal-event">';
+          html += '<div class="cal-day-modal-event-dot" style="background:' + m.color + ';transform:rotate(45deg);border-radius:2px;"></div>';
+          html += '<div class="cal-day-modal-event-info">';
+          html += '<div class="cal-day-modal-event-title">&#x25C6; ' + escapeHtml(m.name) + '</div>';
+          html += '<div class="cal-day-modal-event-time">Milestone</div>';
+          html += '</div></div>';
+        });
+        events.forEach(function(ev) {
+          html += '<div class="cal-day-modal-event">';
+          html += '<div class="cal-day-modal-event-dot" style="background:' + ev.color + '"></div>';
+          html += '<div class="cal-day-modal-event-info">';
+          html += '<div class="cal-day-modal-event-title">' + escapeHtml(ev.title) + '</div>';
+          if (ev.time) html += '<div class="cal-day-modal-event-time">' + ev.time + '</div>';
+          html += '</div></div>';
+        });
+        html += '<button onclick="document.getElementById(\'cal-day-detail-backdrop\').remove(); calOpenModal(\'' + dateKey + '\');" style="align-self:center;padding:10px 20px;border-radius:8px;border:1px solid var(--border);background:rgba(255,255,255,0.05);color:var(--text-1);font-size:14px;cursor:pointer;margin-top:8px;">+ Add Event</button>';
+      }
+
+      html += '</div></div></div>';
+      document.body.insertAdjacentHTML('beforeend', html);
+
+      document.getElementById('cal-day-detail-close').addEventListener('click', function() {
+        document.getElementById('cal-day-detail-backdrop').remove();
+      });
+      document.getElementById('cal-day-detail-backdrop').addEventListener('click', function(e) {
+        if (e.target === this) this.remove();
       });
     }
 
@@ -7196,14 +7377,7 @@
       });
     });
 
-    /* ---- Fix 15: Analytics section collapse for new sections ---- */
-    document.querySelectorAll('.analytics-section-header[data-collapse="model-usage-analytics"]').forEach(function(h) {
-      h.addEventListener('click', function() {
-        h.classList.toggle('collapsed');
-        var wrap = document.getElementById(h.dataset.collapse);
-        if (wrap) wrap.style.display = h.classList.contains('collapsed') ? 'none' : '';
-      });
-    });
+    /* Fix 15: Removed duplicate - model-usage collapse handled by generic analytics-section-header handler above */
 
     /* ---- Keyboard Shortcut Tooltip ---- */
     var hint = document.getElementById('shortcut-hint');
