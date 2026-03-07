@@ -1,13 +1,14 @@
 {
-  "generated": "2026-03-06T11:00:04.200565+00:00",
+  "generated": "2026-03-07T09:18:47.460956+00:00",
   "total_records": 87,
+  "tracked_months": 6,
   "ranges": {
     "month": [
       {
         "metric": "Gross Revenue",
-        "value": "$0",
-        "change": "-100%",
-        "dir": "negative",
+        "value": "$9,800",
+        "change": "+28%",
+        "dir": "positive",
         "sparkline": [
           99100,
           96100,
@@ -16,14 +17,14 @@
           7680,
           9800
         ],
-        "prev": "$9,800",
+        "prev": "$7,680",
         "progress": null
       },
       {
         "metric": "Net Income",
-        "value": "$0",
-        "change": "-100%",
-        "dir": "negative",
+        "value": "$9,800",
+        "change": "+42%",
+        "dir": "positive",
         "sparkline": [
           99100,
           96100,
@@ -32,13 +33,13 @@
           7680,
           9800
         ],
-        "prev": "$9,800",
+        "prev": "$6,912",
         "progress": null
       },
       {
         "metric": "Bookings",
-        "value": "0",
-        "change": "-100%",
+        "value": "1",
+        "change": "-67%",
         "dir": "negative",
         "sparkline": [
           12,
@@ -48,14 +49,14 @@
           3,
           1
         ],
-        "prev": "1",
+        "prev": "3",
         "progress": null
       },
       {
         "metric": "Avg Booking Value",
-        "value": "$0",
-        "change": "-100%",
-        "dir": "negative",
+        "value": "$9,800",
+        "change": "+283%",
+        "dir": "positive",
         "sparkline": [
           99100,
           96100,
@@ -64,12 +65,12 @@
           7680,
           9800
         ],
-        "prev": "$9,800",
+        "prev": "$2,560",
         "progress": null
       },
       {
         "metric": "Top Vehicle",
-        "value": "N/A",
+        "value": "400cc Buggy",
         "change": "--",
         "dir": "neutral",
         "sparkline": null,
@@ -80,9 +81,9 @@
     "last": [
       {
         "metric": "Gross Revenue",
-        "value": "$9,800",
-        "change": "+\u221e%",
-        "dir": "positive",
+        "value": "$7,680",
+        "change": "-92%",
+        "dir": "negative",
         "sparkline": [
           99100,
           96100,
@@ -91,14 +92,14 @@
           7680,
           9800
         ],
-        "prev": "$0",
+        "prev": "$94,155",
         "progress": null
       },
       {
         "metric": "Net Income",
-        "value": "$9,800",
-        "change": "+\u221e%",
-        "dir": "positive",
+        "value": "$6,912",
+        "change": "-92%",
+        "dir": "negative",
         "sparkline": [
           99100,
           96100,
@@ -107,14 +108,14 @@
           7680,
           9800
         ],
-        "prev": "$0",
+        "prev": "$84,740",
         "progress": null
       },
       {
         "metric": "Bookings",
-        "value": "1",
-        "change": "+\u221e%",
-        "dir": "positive",
+        "value": "3",
+        "change": "-86%",
+        "dir": "negative",
         "sparkline": [
           12,
           22,
@@ -123,14 +124,14 @@
           3,
           1
         ],
-        "prev": "\u2014",
+        "prev": "22",
         "progress": null
       },
       {
         "metric": "Avg Booking Value",
-        "value": "$9,800",
-        "change": "+\u221e%",
-        "dir": "positive",
+        "value": "$2,560",
+        "change": "-40%",
+        "dir": "negative",
         "sparkline": [
           99100,
           96100,
@@ -139,12 +140,12 @@
           7680,
           9800
         ],
-        "prev": "$0",
+        "prev": "$4,280",
         "progress": null
       },
       {
         "metric": "Top Vehicle",
-        "value": "400cc Buggy",
+        "value": "Can-am XDS",
         "change": "--",
         "dir": "neutral",
         "sparkline": null,
@@ -155,9 +156,9 @@
     "quarter": [
       {
         "metric": "Gross Revenue",
-        "value": "$9,800",
-        "change": "+\u221e%",
-        "dir": "positive",
+        "value": "$111,635",
+        "change": "-62%",
+        "dir": "negative",
         "sparkline": [
           99100,
           96100,
@@ -166,14 +167,14 @@
           7680,
           9800
         ],
-        "prev": "$0",
+        "prev": "$290,710",
         "progress": null
       },
       {
         "metric": "Net Income",
-        "value": "$9,800",
-        "change": "+\u221e%",
-        "dir": "positive",
+        "value": "$101,452",
+        "change": "-61%",
+        "dir": "negative",
         "sparkline": [
           99100,
           96100,
@@ -182,14 +183,14 @@
           7680,
           9800
         ],
-        "prev": "$0",
+        "prev": "$261,639",
         "progress": null
       },
       {
         "metric": "Bookings",
-        "value": "1",
-        "change": "+\u221e%",
-        "dir": "positive",
+        "value": "26",
+        "change": "-55%",
+        "dir": "negative",
         "sparkline": [
           12,
           22,
@@ -198,14 +199,14 @@
           3,
           1
         ],
-        "prev": "\u2014",
+        "prev": "58",
         "progress": null
       },
       {
         "metric": "Avg Booking Value",
-        "value": "$9,800",
-        "change": "+\u221e%",
-        "dir": "positive",
+        "value": "$4,294",
+        "change": "-14%",
+        "dir": "negative",
         "sparkline": [
           99100,
           96100,
@@ -214,12 +215,12 @@
           7680,
           9800
         ],
-        "prev": "$0",
+        "prev": "$5,012",
         "progress": null
       },
       {
         "metric": "Top Vehicle",
-        "value": "400cc Buggy",
+        "value": "Can-am XDS",
         "change": "--",
         "dir": "neutral",
         "sparkline": null,
@@ -227,59 +228,11 @@
         "progress": null
       }
     ],
-    "ytd": [
+    "alltime": [
       {
         "metric": "Gross Revenue",
-        "value": "$9,800",
-        "change": "-98%",
-        "dir": "negative",
-        "sparkline": [
-          99100,
-          96100,
-          95510,
-          94155,
-          7680,
-          9800
-        ],
-        "prev": "$392,545",
-        "progress": null
-      },
-      {
-        "metric": "Net Income",
-        "value": "$9,800",
-        "change": "-97%",
-        "dir": "negative",
-        "sparkline": [
-          99100,
-          96100,
-          95510,
-          94155,
-          7680,
-          9800
-        ],
-        "prev": "$353,290",
-        "progress": null
-      },
-      {
-        "metric": "Bookings",
-        "value": "1",
-        "change": "-99%",
-        "dir": "negative",
-        "sparkline": [
-          12,
-          22,
-          24,
-          22,
-          3,
-          1
-        ],
-        "prev": "83",
-        "progress": null
-      },
-      {
-        "metric": "Avg Booking Value",
-        "value": "$9,800",
-        "change": "+107%",
+        "value": "$402,345",
+        "change": "+\u221e%",
         "dir": "positive",
         "sparkline": [
           99100,
@@ -289,12 +242,60 @@
           7680,
           9800
         ],
-        "prev": "$4,729",
+        "prev": "$0",
+        "progress": null
+      },
+      {
+        "metric": "Net Income",
+        "value": "$363,090",
+        "change": "+\u221e%",
+        "dir": "positive",
+        "sparkline": [
+          99100,
+          96100,
+          95510,
+          94155,
+          7680,
+          9800
+        ],
+        "prev": "$0",
+        "progress": null
+      },
+      {
+        "metric": "Bookings",
+        "value": "84",
+        "change": "+\u221e%",
+        "dir": "positive",
+        "sparkline": [
+          12,
+          22,
+          24,
+          22,
+          3,
+          1
+        ],
+        "prev": "\u2014",
+        "progress": null
+      },
+      {
+        "metric": "Avg Booking Value",
+        "value": "$4,790",
+        "change": "+\u221e%",
+        "dir": "positive",
+        "sparkline": [
+          99100,
+          96100,
+          95510,
+          94155,
+          7680,
+          9800
+        ],
+        "prev": "$0",
         "progress": null
       },
       {
         "metric": "Top Vehicle",
-        "value": "400cc Buggy",
+        "value": "Can-am XDS",
         "change": "--",
         "dir": "neutral",
         "sparkline": null,
@@ -302,6 +303,12 @@
         "progress": null
       }
     ]
+  },
+  "range_labels": {
+    "month": "Feb 2026",
+    "last": "May 2025",
+    "quarter": "Apr 2025 - Feb 2026",
+    "alltime": "Jan 2025 - Feb 2026"
   },
   "sparkline_months": [
     "2025-01",
@@ -315,8 +322,9 @@
   "upcoming_bookings": [],
   "reminders": [],
   "summary": {
-    "this_month_gross": 0,
-    "this_month_bookings": 0,
+    "latest_month": "2026-02",
+    "latest_month_gross": 9800,
+    "latest_month_bookings": 1,
     "active_count": 0,
     "upcoming_count": 0
   }
