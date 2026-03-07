@@ -1,12 +1,12 @@
 {
-  "generated": "2026-03-07T09:18:47.460956+00:00",
+  "generated": "2026-03-07T09:23:01.739485+00:00",
   "total_records": 87,
   "tracked_months": 6,
   "ranges": {
     "month": [
       {
         "metric": "Gross Revenue",
-        "value": "$9,800",
+        "value": "$9,800 MXN",
         "change": "+28%",
         "dir": "positive",
         "sparkline": [
@@ -17,12 +17,12 @@
           7680,
           9800
         ],
-        "prev": "$7,680",
+        "prev": "$7,680 MXN",
         "progress": null
       },
       {
         "metric": "Net Income",
-        "value": "$9,800",
+        "value": "$9,800 MXN",
         "change": "+42%",
         "dir": "positive",
         "sparkline": [
@@ -33,7 +33,7 @@
           7680,
           9800
         ],
-        "prev": "$6,912",
+        "prev": "$6,912 MXN",
         "progress": null
       },
       {
@@ -54,7 +54,7 @@
       },
       {
         "metric": "Avg Booking Value",
-        "value": "$9,800",
+        "value": "$9,800 MXN",
         "change": "+283%",
         "dir": "positive",
         "sparkline": [
@@ -65,7 +65,7 @@
           7680,
           9800
         ],
-        "prev": "$2,560",
+        "prev": "$2,560 MXN",
         "progress": null
       },
       {
@@ -81,7 +81,7 @@
     "last": [
       {
         "metric": "Gross Revenue",
-        "value": "$7,680",
+        "value": "$7,680 MXN",
         "change": "-92%",
         "dir": "negative",
         "sparkline": [
@@ -92,12 +92,12 @@
           7680,
           9800
         ],
-        "prev": "$94,155",
+        "prev": "$94,155 MXN",
         "progress": null
       },
       {
         "metric": "Net Income",
-        "value": "$6,912",
+        "value": "$6,912 MXN",
         "change": "-92%",
         "dir": "negative",
         "sparkline": [
@@ -108,7 +108,7 @@
           7680,
           9800
         ],
-        "prev": "$84,740",
+        "prev": "$84,740 MXN",
         "progress": null
       },
       {
@@ -129,7 +129,7 @@
       },
       {
         "metric": "Avg Booking Value",
-        "value": "$2,560",
+        "value": "$2,560 MXN",
         "change": "-40%",
         "dir": "negative",
         "sparkline": [
@@ -140,7 +140,7 @@
           7680,
           9800
         ],
-        "prev": "$4,280",
+        "prev": "$4,280 MXN",
         "progress": null
       },
       {
@@ -156,7 +156,7 @@
     "quarter": [
       {
         "metric": "Gross Revenue",
-        "value": "$111,635",
+        "value": "$111,635 MXN",
         "change": "-62%",
         "dir": "negative",
         "sparkline": [
@@ -167,12 +167,12 @@
           7680,
           9800
         ],
-        "prev": "$290,710",
+        "prev": "$290,710 MXN",
         "progress": null
       },
       {
         "metric": "Net Income",
-        "value": "$101,452",
+        "value": "$101,452 MXN",
         "change": "-61%",
         "dir": "negative",
         "sparkline": [
@@ -183,7 +183,7 @@
           7680,
           9800
         ],
-        "prev": "$261,639",
+        "prev": "$261,639 MXN",
         "progress": null
       },
       {
@@ -204,7 +204,7 @@
       },
       {
         "metric": "Avg Booking Value",
-        "value": "$4,294",
+        "value": "$4,294 MXN",
         "change": "-14%",
         "dir": "negative",
         "sparkline": [
@@ -215,7 +215,7 @@
           7680,
           9800
         ],
-        "prev": "$5,012",
+        "prev": "$5,012 MXN",
         "progress": null
       },
       {
@@ -231,7 +231,7 @@
     "alltime": [
       {
         "metric": "Gross Revenue",
-        "value": "$402,345",
+        "value": "$402,345 MXN",
         "change": "+\u221e%",
         "dir": "positive",
         "sparkline": [
@@ -242,12 +242,12 @@
           7680,
           9800
         ],
-        "prev": "$0",
+        "prev": "$0 MXN",
         "progress": null
       },
       {
         "metric": "Net Income",
-        "value": "$363,090",
+        "value": "$363,090 MXN",
         "change": "+\u221e%",
         "dir": "positive",
         "sparkline": [
@@ -258,7 +258,7 @@
           7680,
           9800
         ],
-        "prev": "$0",
+        "prev": "$0 MXN",
         "progress": null
       },
       {
@@ -279,7 +279,7 @@
       },
       {
         "metric": "Avg Booking Value",
-        "value": "$4,790",
+        "value": "$4,790 MXN",
         "change": "+\u221e%",
         "dir": "positive",
         "sparkline": [
@@ -290,7 +290,7 @@
           7680,
           9800
         ],
-        "prev": "$0",
+        "prev": "$0 MXN",
         "progress": null
       },
       {
