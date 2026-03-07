@@ -1,76 +1,68 @@
 {
-  "generated": "2026-03-07T09:23:01.739485+00:00",
+  "generated": "2026-03-07T09:25:01.505669+00:00",
   "total_records": 87,
   "tracked_months": 6,
   "ranges": {
     "month": [
       {
         "metric": "Gross Revenue",
-        "value": "$9,800 MXN",
-        "change": "+28%",
-        "dir": "positive",
+        "value": "$94,155 MXN",
+        "change": "-1%",
+        "dir": "negative",
         "sparkline": [
           99100,
           96100,
           95510,
-          94155,
-          7680,
-          9800
+          94155
         ],
-        "prev": "$7,680 MXN",
+        "prev": "$95,510 MXN",
         "progress": null
       },
       {
         "metric": "Net Income",
-        "value": "$9,800 MXN",
-        "change": "+42%",
-        "dir": "positive",
+        "value": "$84,740 MXN",
+        "change": "-1%",
+        "dir": "negative",
         "sparkline": [
           99100,
           96100,
           95510,
-          94155,
-          7680,
-          9800
+          94155
         ],
-        "prev": "$6,912 MXN",
+        "prev": "$85,959 MXN",
         "progress": null
       },
       {
         "metric": "Bookings",
-        "value": "1",
-        "change": "-67%",
+        "value": "22",
+        "change": "-8%",
         "dir": "negative",
         "sparkline": [
           12,
           22,
           24,
-          22,
-          3,
-          1
+          22
         ],
-        "prev": "3",
+        "prev": "24",
         "progress": null
       },
       {
         "metric": "Avg Booking Value",
-        "value": "$9,800 MXN",
-        "change": "+283%",
+        "value": "$4,280 MXN",
+        "change": "+8%",
         "dir": "positive",
         "sparkline": [
           99100,
           96100,
           95510,
-          94155,
-          7680,
-          9800
+          94155
         ],
-        "prev": "$2,560 MXN",
+        "prev": "$3,980 MXN",
         "progress": null
       },
       {
         "metric": "Top Vehicle",
-        "value": "400cc Buggy",
+        "value": "Can-am XDS",
         "change": "--",
         "dir": "neutral",
         "sparkline": null,
@@ -81,66 +73,58 @@
     "last": [
       {
         "metric": "Gross Revenue",
-        "value": "$7,680 MXN",
-        "change": "-92%",
+        "value": "$95,510 MXN",
+        "change": "-1%",
         "dir": "negative",
         "sparkline": [
           99100,
           96100,
           95510,
-          94155,
-          7680,
-          9800
+          94155
         ],
-        "prev": "$94,155 MXN",
+        "prev": "$96,100 MXN",
         "progress": null
       },
       {
         "metric": "Net Income",
-        "value": "$6,912 MXN",
-        "change": "-92%",
+        "value": "$85,959 MXN",
+        "change": "-1%",
         "dir": "negative",
         "sparkline": [
           99100,
           96100,
           95510,
-          94155,
-          7680,
-          9800
+          94155
         ],
-        "prev": "$84,740 MXN",
+        "prev": "$86,490 MXN",
         "progress": null
       },
       {
         "metric": "Bookings",
-        "value": "3",
-        "change": "-86%",
-        "dir": "negative",
+        "value": "24",
+        "change": "+9%",
+        "dir": "positive",
         "sparkline": [
           12,
           22,
           24,
-          22,
-          3,
-          1
+          22
         ],
         "prev": "22",
         "progress": null
       },
       {
         "metric": "Avg Booking Value",
-        "value": "$2,560 MXN",
-        "change": "-40%",
+        "value": "$3,980 MXN",
+        "change": "-9%",
         "dir": "negative",
         "sparkline": [
           99100,
           96100,
           95510,
-          94155,
-          7680,
-          9800
+          94155
         ],
-        "prev": "$4,280 MXN",
+        "prev": "$4,368 MXN",
         "progress": null
       },
       {
@@ -156,66 +140,58 @@
     "quarter": [
       {
         "metric": "Gross Revenue",
-        "value": "$111,635 MXN",
-        "change": "-62%",
-        "dir": "negative",
+        "value": "$285,765 MXN",
+        "change": "+188%",
+        "dir": "positive",
         "sparkline": [
           99100,
           96100,
           95510,
-          94155,
-          7680,
-          9800
+          94155
         ],
-        "prev": "$290,710 MXN",
+        "prev": "$99,100 MXN",
         "progress": null
       },
       {
         "metric": "Net Income",
-        "value": "$101,452 MXN",
-        "change": "-61%",
-        "dir": "negative",
+        "value": "$257,188 MXN",
+        "change": "+188%",
+        "dir": "positive",
         "sparkline": [
           99100,
           96100,
           95510,
-          94155,
-          7680,
-          9800
+          94155
         ],
-        "prev": "$261,639 MXN",
+        "prev": "$89,190 MXN",
         "progress": null
       },
       {
         "metric": "Bookings",
-        "value": "26",
-        "change": "-55%",
-        "dir": "negative",
+        "value": "68",
+        "change": "+467%",
+        "dir": "positive",
         "sparkline": [
           12,
           22,
           24,
-          22,
-          3,
-          1
+          22
         ],
-        "prev": "58",
+        "prev": "12",
         "progress": null
       },
       {
         "metric": "Avg Booking Value",
-        "value": "$4,294 MXN",
-        "change": "-14%",
+        "value": "$4,202 MXN",
+        "change": "-49%",
         "dir": "negative",
         "sparkline": [
           99100,
           96100,
           95510,
-          94155,
-          7680,
-          9800
+          94155
         ],
-        "prev": "$5,012 MXN",
+        "prev": "$8,258 MXN",
         "progress": null
       },
       {
@@ -231,64 +207,56 @@
     "alltime": [
       {
         "metric": "Gross Revenue",
-        "value": "$402,345 MXN",
+        "value": "$384,865 MXN",
         "change": "+\u221e%",
         "dir": "positive",
         "sparkline": [
           99100,
           96100,
           95510,
-          94155,
-          7680,
-          9800
+          94155
         ],
         "prev": "$0 MXN",
         "progress": null
       },
       {
         "metric": "Net Income",
-        "value": "$363,090 MXN",
+        "value": "$346,378 MXN",
         "change": "+\u221e%",
         "dir": "positive",
         "sparkline": [
           99100,
           96100,
           95510,
-          94155,
-          7680,
-          9800
+          94155
         ],
         "prev": "$0 MXN",
         "progress": null
       },
       {
         "metric": "Bookings",
-        "value": "84",
+        "value": "80",
         "change": "+\u221e%",
         "dir": "positive",
         "sparkline": [
           12,
           22,
           24,
-          22,
-          3,
-          1
+          22
         ],
         "prev": "\u2014",
         "progress": null
       },
       {
         "metric": "Avg Booking Value",
-        "value": "$4,790 MXN",
+        "value": "$4,811 MXN",
         "change": "+\u221e%",
         "dir": "positive",
         "sparkline": [
           99100,
           96100,
           95510,
-          94155,
-          7680,
-          9800
+          94155
         ],
         "prev": "$0 MXN",
         "progress": null
@@ -305,26 +273,24 @@
     ]
   },
   "range_labels": {
-    "month": "Feb 2026",
-    "last": "May 2025",
-    "quarter": "Apr 2025 - Feb 2026",
-    "alltime": "Jan 2025 - Feb 2026"
+    "month": "Apr 2025",
+    "last": "Mar 2025",
+    "quarter": "Feb 2025 - Apr 2025",
+    "alltime": "Jan 2025 - Apr 2025"
   },
   "sparkline_months": [
     "2025-01",
     "2025-02",
     "2025-03",
-    "2025-04",
-    "2025-05",
-    "2026-02"
+    "2025-04"
   ],
   "active_bookings": [],
   "upcoming_bookings": [],
   "reminders": [],
   "summary": {
-    "latest_month": "2026-02",
-    "latest_month_gross": 9800,
-    "latest_month_bookings": 1,
+    "latest_month": "2025-04",
+    "latest_month_gross": 94155,
+    "latest_month_bookings": 22,
     "active_count": 0,
     "upcoming_count": 0
   }
