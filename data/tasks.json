@@ -21,9 +21,9 @@
     "agent": "Beno",
     "status": "todo",
     "createdAt": 1772664609000,
-    "movedAt": 1772664609000,
-    "dueDate": "2026-02-27",
-    "startDate": "2026-02-24"
+    "movedAt": 1772869745000,
+    "dueDate": 1772168400000,
+    "startDate": 1771909200000
   },
   {
     "id": "kb-102",
@@ -35,9 +35,9 @@
     "agent": "Piia",
     "status": "todo",
     "createdAt": 1772664609000,
-    "movedAt": 1772664609000,
-    "dueDate": "2026-03-03",
-    "startDate": "2026-02-26"
+    "movedAt": 1772869745000,
+    "dueDate": 1772514000000,
+    "startDate": 1772082000000
   },
   {
     "id": "kb-103",
@@ -49,9 +49,9 @@
     "agent": "Beno",
     "status": "done",
     "createdAt": 1772664609000,
-    "movedAt": 1772664609000,
-    "dueDate": "2026-02-22",
-    "startDate": "2026-02-21"
+    "movedAt": 1772869745000,
+    "dueDate": 1771736400000,
+    "startDate": 1771650000000
   },
   {
     "id": "kb-104",
@@ -63,9 +63,9 @@
     "agent": "Beno",
     "status": "inprogress",
     "createdAt": 1772664609000,
-    "movedAt": 1772664609000,
-    "dueDate": "2026-02-25",
-    "startDate": "2026-02-23"
+    "movedAt": 1772869745000,
+    "dueDate": 1771995600000,
+    "startDate": 1771822800000
   },
   {
     "id": "kb-105",
@@ -89,9 +89,9 @@
     "agent": "Beno",
     "status": "todo",
     "createdAt": 1772664609000,
-    "movedAt": 1772664609000,
-    "dueDate": "2026-03-10",
-    "startDate": "2026-03-07"
+    "movedAt": 1772869745000,
+    "dueDate": 1773118800000,
+    "startDate": 1772859600000
   },
   {
     "id": "kb-107",
@@ -103,9 +103,9 @@
     "agent": "Beno",
     "status": "done",
     "createdAt": 1772664609000,
-    "movedAt": 1772664609000,
-    "dueDate": "2026-02-25",
-    "startDate": "2026-02-22"
+    "movedAt": 1772869745000,
+    "dueDate": 1771995600000,
+    "startDate": 1771736400000
   },
   {
     "id": "kb-108",
@@ -117,9 +117,9 @@
     "agent": "Beno",
     "status": "review",
     "createdAt": 1772664609000,
-    "movedAt": 1772664609000,
-    "dueDate": "2026-02-24",
-    "startDate": "2026-02-22"
+    "movedAt": 1772869745000,
+    "dueDate": 1771909200000,
+    "startDate": 1771736400000
   },
   {
     "id": "kb-109",
@@ -167,9 +167,9 @@
     "agent": "Zara",
     "status": "todo",
     "createdAt": 1772664610000,
-    "movedAt": 1772664610000,
-    "dueDate": "2026-03-20",
-    "startDate": "2026-03-13"
+    "movedAt": 1772869745000,
+    "dueDate": 1773982800000,
+    "startDate": 1773378000000
   },
   {
     "id": "kb-113",
@@ -193,9 +193,9 @@
     "agent": "Beno",
     "status": "completed",
     "createdAt": 1772664610000,
-    "movedAt": 1772664610000,
-    "dueDate": "2026-02-23",
-    "startDate": "2026-02-22"
+    "movedAt": 1772869745000,
+    "dueDate": 1771822800000,
+    "startDate": 1771736400000
   },
   {
     "id": "kb-115",
@@ -207,9 +207,9 @@
     "agent": "Nova",
     "status": "done",
     "createdAt": 1772664610000,
-    "movedAt": 1772664610000,
-    "dueDate": "2026-03-01",
-    "startDate": "2026-02-22"
+    "movedAt": 1772869745000,
+    "dueDate": 1772341200000,
+    "startDate": 1771736400000
   },
   {
     "id": "kb-116",
@@ -221,9 +221,9 @@
     "agent": "Rex",
     "status": "inprogress",
     "createdAt": 1772664610000,
-    "movedAt": 1772664610000,
-    "dueDate": "2026-03-10",
-    "startDate": "2026-03-03"
+    "movedAt": 1772869745000,
+    "dueDate": 1773118800000,
+    "startDate": 1772514000000
   },
   {
     "id": "kb-117",
@@ -259,9 +259,9 @@
     "agent": "Beno",
     "status": "completed",
     "createdAt": 1772664610000,
-    "movedAt": 1772664610000,
-    "dueDate": "2026-02-23",
-    "startDate": "2026-02-22"
+    "movedAt": 1772869745000,
+    "dueDate": 1771822800000,
+    "startDate": 1771736400000
   },
   {
     "id": "kb-120",
@@ -273,9 +273,9 @@
     "agent": "Nova",
     "status": "todo",
     "createdAt": 1772664611000,
-    "movedAt": 1772664611000,
-    "dueDate": "2026-03-07",
-    "startDate": "2026-02-28"
+    "movedAt": 1772869745000,
+    "dueDate": 1772859600000,
+    "startDate": 1772254800000
   },
   {
     "id": "kb-121",
@@ -287,9 +287,9 @@
     "agent": "Zara",
     "status": "done",
     "createdAt": 1772664611000,
-    "movedAt": 1772664611000,
-    "dueDate": "2026-03-12",
-    "startDate": "2026-03-07"
+    "movedAt": 1772869745000,
+    "dueDate": 1773291600000,
+    "startDate": 1772859600000
   },
   {
     "id": "kb-122",
@@ -325,9 +325,9 @@
     "agent": "Beno",
     "status": "done",
     "createdAt": 1772664611000,
-    "movedAt": 1772664611000,
-    "dueDate": "2026-02-27",
-    "startDate": "2026-02-25"
+    "movedAt": 1772869745000,
+    "dueDate": 1772168400000,
+    "startDate": 1771995600000
   },
   {
     "id": "kb-125",
@@ -339,9 +339,9 @@
     "agent": "Beno",
     "status": "done",
     "createdAt": 1772664611000,
-    "movedAt": 1772664611000,
-    "dueDate": "2026-02-24",
-    "startDate": "2026-02-23"
+    "movedAt": 1772869745000,
+    "dueDate": 1771909200000,
+    "startDate": 1771822800000
   },
   {
     "id": "kb-126",
@@ -353,9 +353,9 @@
     "agent": "Piia",
     "status": "done",
     "createdAt": 1772664611000,
-    "movedAt": 1772664611000,
-    "dueDate": "2026-03-15",
-    "startDate": "2026-03-08"
+    "movedAt": 1772869745000,
+    "dueDate": 1773550800000,
+    "startDate": 1772946000000
   },
   {
     "id": "kb-127",
@@ -367,9 +367,9 @@
     "agent": "Beno",
     "status": "todo",
     "createdAt": 1772664611000,
-    "movedAt": 1772664611000,
-    "dueDate": "2026-02-25",
-    "startDate": "2026-02-24"
+    "movedAt": 1772869745000,
+    "dueDate": 1771995600000,
+    "startDate": 1771909200000
   },
   {
     "id": "kb-128",
@@ -381,9 +381,9 @@
     "agent": "Beno",
     "status": "todo",
     "createdAt": 1772664611000,
-    "movedAt": 1772664611000,
-    "dueDate": "2026-03-01",
-    "startDate": "2026-02-28"
+    "movedAt": 1772869745000,
+    "dueDate": 1772341200000,
+    "startDate": 1772254800000
   },
   {
     "id": "kb-129",
@@ -395,9 +395,9 @@
     "agent": "Beno",
     "status": "inprogress",
     "createdAt": 1772664611000,
-    "movedAt": 1772664611000,
-    "dueDate": "2026-03-07",
-    "startDate": "2026-02-27"
+    "movedAt": 1772869745000,
+    "dueDate": 1772859600000,
+    "startDate": 1772168400000
   },
   {
     "id": "kb-130",
@@ -421,9 +421,9 @@
     "agent": "Nova",
     "status": "todo",
     "createdAt": 1772664611000,
-    "movedAt": 1772664611000,
-    "dueDate": "2026-03-14",
-    "startDate": "2026-03-07"
+    "movedAt": 1772869745000,
+    "dueDate": 1773464400000,
+    "startDate": 1772859600000
   },
   {
     "id": "kb-132",
