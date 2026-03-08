@@ -7398,7 +7398,7 @@
         scheduled.sort(function(a, b) { return new Date(a.startDate||a.dueDate) - new Date(b.startDate||b.dueDate); });
         scheduled.forEach(function(task) {
           var d = new Date(task.dueDate + 'T12:00:00');
-          var color = projColors[task.project] || '#6BA8DA';
+          var color = '#6BA8DA'; /* Uniform blue to match calendar toggle chip */
           var isPast = d < now;
           var hasBar = !!task.startDate;
           html += '<div class="tl-row">';
@@ -7427,7 +7427,7 @@
       if (showTasksOnCalendar && unscheduled.length > 0) {
         html += '<div class="tl-section-label"><span>Unscheduled (' + unscheduled.length + ')</span></div>';
         unscheduled.forEach(function(task) {
-          var color = projColors[task.project] || '#6BA8DA';
+          var color = '#6BA8DA'; /* Uniform blue */
           html += '<div class="tl-row tl-unscheduled">';
           html += '<div class="tl-row-label" title="' + escapeHtml(task.title) + '"><span class="tl-proj-dot" style="background:' + color + '"></span>' + escapeHtml(task.title) + '</div>';
           html += '<div class="tl-unsched-axis tl-axis" style="height:36px;display:flex;align-items:center;padding-left:8px">';
