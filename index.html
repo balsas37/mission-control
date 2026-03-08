@@ -2006,7 +2006,7 @@
       background: rgba(255,255,255,0.05); border-left: 3px solid var(--text-3);
       border-radius: 0 8px 8px 0; padding: 7px 10px; font-size: 12px; font-weight: 500;
       color: var(--text-1); cursor: pointer; transition: opacity 0.2s; line-height: 1.3;
-      overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;
+      overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
     }
     .cal-week-event:hover { opacity: 0.7; }
     .cal-week-event-time { font-size: 11px; color: var(--text-3); margin-top: 2px; }
@@ -2774,18 +2774,19 @@
       left: 14px;
       pointer-events: none;
     }
-    .tl-task-dot {
+    .tl-task-dot, .tl-event-dot {
       position: absolute;
       top: 50%;
       transform: translate(-50%, -50%);
       width: 10px;
       height: 10px;
       border-radius: 50%;
-      cursor: grab;
       z-index: 3;
       transition: transform 0.15s;
     }
-    .tl-task-dot:hover {
+    .tl-task-dot { cursor: grab; }
+    .tl-event-dot { cursor: default; }
+    .tl-task-dot:hover, .tl-event-dot:hover {
       transform: translate(-50%, -50%) scale(1.5);
     }
     .tl-task-dot.tl-dragging {
@@ -7083,7 +7084,7 @@
       var crons = showCronsOnCalendar ? cronEvents.filter(function(e) { return e.date === dk; }) : [];
       var tis = showTIsOnCalendar ? tiEvents.filter(function(e) { return e.date === dk; }) : [];
       var commitments = showCommitmentsOnCalendar ? commitmentEvents.filter(function(e) { return e.date === dk; }) : [];
-      return events.concat(tasks).concat(bookings).concat(crons).concat(tis).concat(commitments);
+      return commitments.concat(tasks).concat(tis).concat(bookings).concat(crons).concat(events);
     }
     function calMilestonesForDate(dk) { return calMilestones.filter(function(m) { return m.date === dk; }); }
 
@@ -7325,7 +7326,7 @@
 
       // Header row: month labels
       html += '<div class="tl-header-row">';
-      html += '<div class="tl-row-label" style="font-size:10px;color:var(--text-3);text-transform:uppercase;letter-spacing:.06em;display:flex;align-items:center;justify-content:space-between;padding-right:6px">Task<button id="tl-reset-view" title="Reset timeline view" style="font-size:10px;padding:2px 6px;border-radius:5px;border:1px solid var(--border);background:var(--surface-2);color:var(--text-2);cursor:pointer;line-height:1.4">&#8635;</button></div>';
+      html += '<div class="tl-row-label" style="font-size:10px;color:var(--text-3);text-transform:uppercase;letter-spacing:.06em;display:flex;align-items:center;justify-content:space-between;padding-right:6px">Timeline<button id="tl-reset-view" title="Reset timeline view" style="font-size:10px;padding:2px 6px;border-radius:5px;border:1px solid var(--border);background:var(--surface-2);color:var(--text-2);cursor:pointer;line-height:1.4">&#8635;</button></div>';
       html += '<div class="tl-axis" style="position:relative;height:28px">';
       html += makeGridlines();
       var m2 = new Date(2026, 1, 1);
@@ -7337,6 +7338,24 @@
         m2 = new Date(m2.getFullYear(), m2.getMonth() + 1, 1);
       }
       html += '</div></div>';
+
+      // Helper: render a simple dot row for any event type
+      function tlDotRow(item, color, typeLabel) {
+        var d = new Date(item.date + 'T12:00:00');
+        var isPast = d < now;
+        var label = item.title || item.name || typeLabel;
+        var h = '<div class="tl-row">';
+        h += '<div class="tl-row-label" title="' + escapeHtml(label) + '"><span class="tl-proj-dot" style="background:' + color + '"></span>' + escapeHtml(label) + '</div>';
+        h += '<div class="tl-axis" style="position:relative;height:36px">';
+        h += makeGridlines();
+        var p = pct(d);
+        h += '<div class="tl-event-dot" style="left:' + p.toFixed(2) + '%;background:' + color + (isPast ? ';opacity:0.4' : '') + '" title="' + escapeHtml(label) + ' - ' + fmtDate(d) + '">';
+        if (item.time) h += '<span class="tl-date-label">' + item.time + '</span>';
+        else h += '<span class="tl-date-label">' + fmtDate(d) + '</span>';
+        h += '</div>';
+        h += '</div></div>';
+        return h;
+      }
 
       // Milestones: one row per milestone (Asana-style, no label overlap)
       html += '<div class="tl-section-label"><span>Milestones</span></div>';
@@ -7350,20 +7369,32 @@
         html += '</div></div>';
       });
 
-      // Scheduled tasks (bars if startDate, dots if only dueDate)
+      // --- Commitments (orange #F5A623) ---
+      if (showCommitmentsOnCalendar && commitmentEvents.length > 0) {
+        var tlCommitments = commitmentEvents.filter(function(c) {
+          var d = new Date(c.date + 'T12:00:00');
+          return d >= startDate && d <= endDate;
+        }).sort(function(a, b) { return new Date(a.date) - new Date(b.date); });
+        if (tlCommitments.length > 0) {
+          html += '<div class="tl-section-label"><span style="color:#F5A623">&#9679;</span> <span>Commitments (' + tlCommitments.length + ')</span></div>';
+          tlCommitments.forEach(function(c) { html += tlDotRow(c, '#F5A623', 'Commitment'); });
+        }
+      }
+
+      // --- Tasks (blue, per-project colors for bars) ---
       var scheduled = kanbanTasks.filter(function(t) { return t.dueDate && t.status !== 'completed'; });
       var unscheduled = kanbanTasks.filter(function(t) { return !t.dueDate && t.status !== 'completed' && t.status !== 'backlog'; });
 
-      if (scheduled.length > 0) {
-        html += '<div class="tl-section-label"><span>Scheduled</span></div>';
+      if (showTasksOnCalendar && scheduled.length > 0) {
+        html += '<div class="tl-section-label"><span style="color:#6BA8DA">&#9679;</span> <span>Tasks (' + scheduled.length + ')</span></div>';
         scheduled.sort(function(a, b) { return new Date(a.startDate||a.dueDate) - new Date(b.startDate||b.dueDate); });
         scheduled.forEach(function(task) {
           var d = new Date(task.dueDate + 'T12:00:00');
-          var color = projColors[task.project] || '#888';
+          var color = projColors[task.project] || '#6BA8DA';
           var isPast = d < now;
           var hasBar = !!task.startDate;
           html += '<div class="tl-row">';
-          html += '<div class="tl-row-label" title="' + task.title + '"><span class="tl-proj-dot" style="background:' + color + '"></span>' + task.title + '</div>';
+          html += '<div class="tl-row-label" title="' + escapeHtml(task.title) + '"><span class="tl-proj-dot" style="background:' + color + '"></span>' + escapeHtml(task.title) + '</div>';
           html += '<div class="tl-axis" style="position:relative;height:36px">';
           html += makeGridlines();
           if (hasBar) {
@@ -7385,16 +7416,78 @@
         });
       }
 
-      if (unscheduled.length > 0) {
-        html += '<div class="tl-section-label"><span>Unscheduled</span></div>';
+      if (showTasksOnCalendar && unscheduled.length > 0) {
+        html += '<div class="tl-section-label"><span>Unscheduled (' + unscheduled.length + ')</span></div>';
         unscheduled.forEach(function(task) {
-          var color = projColors[task.project] || '#888';
+          var color = projColors[task.project] || '#6BA8DA';
           html += '<div class="tl-row tl-unscheduled">';
-          html += '<div class="tl-row-label" title="' + task.title + '"><span class="tl-proj-dot" style="background:' + color + '"></span>' + task.title + '</div>';
+          html += '<div class="tl-row-label" title="' + escapeHtml(task.title) + '"><span class="tl-proj-dot" style="background:' + color + '"></span>' + escapeHtml(task.title) + '</div>';
           html += '<div class="tl-unsched-axis tl-axis" style="height:36px;display:flex;align-items:center;padding-left:8px">';
           html += '<button class="tl-add-date-btn" data-task-id="' + task.id + '">+ Set date</button>';
           html += '</div></div>';
         });
+      }
+
+      // --- Targeted Interactions (gold #DAB255) ---
+      if (showTIsOnCalendar && tiEvents.length > 0) {
+        var tlTIs = tiEvents.filter(function(t) {
+          var d = new Date(t.date + 'T12:00:00');
+          return d >= startDate && d <= endDate;
+        }).sort(function(a, b) { return new Date(a.date) - new Date(b.date); });
+        if (tlTIs.length > 0) {
+          html += '<div class="tl-section-label"><span style="color:#DAB255">&#9679;</span> <span>Targeted Interactions (' + tlTIs.length + ')</span></div>';
+          tlTIs.forEach(function(t) { html += tlDotRow(t, '#DAB255', 'TI'); });
+        }
+      }
+
+      // --- Bookings (cyan #5BC0DE) ---
+      if (showBookingsOnCalendar && window._lagoonData) {
+        var allBookings = (window._lagoonData.active_bookings || []).concat(window._lagoonData.upcoming_bookings || []);
+        var tlBookings = allBookings.filter(function(b) {
+          if (!b.start_iso) return false;
+          var d = new Date(b.start_iso + 'T12:00:00');
+          return d >= startDate && d <= endDate;
+        }).sort(function(a, b) { return new Date(a.start_iso) - new Date(b.start_iso); });
+        if (tlBookings.length > 0) {
+          html += '<div class="tl-section-label"><span style="color:#5BC0DE">&#9679;</span> <span>Bookings (' + tlBookings.length + ')</span></div>';
+          tlBookings.forEach(function(b) {
+            var label = (b.vehicle || 'Booking') + (b.name ? ': ' + b.name : '');
+            var d = new Date(b.start_iso + 'T12:00:00');
+            var isPast = d < now;
+            var hasEnd = !!b.end_iso;
+            var h = '<div class="tl-row">';
+            h += '<div class="tl-row-label" title="' + escapeHtml(label) + '"><span class="tl-proj-dot" style="background:#5BC0DE"></span>' + escapeHtml(label) + '</div>';
+            h += '<div class="tl-axis" style="position:relative;height:36px">';
+            h += makeGridlines();
+            if (hasEnd) {
+              var s = d, e = new Date(b.end_iso + 'T12:00:00');
+              var leftPct = pct(s), rightPct = pct(e);
+              var widthPct = Math.max(2, rightPct - leftPct);
+              h += '<div class="tl-task-bar" style="left:' + leftPct.toFixed(2) + '%;width:' + widthPct.toFixed(2) + '%;background:#5BC0DE' + (isPast ? ';opacity:0.4' : '') + '" title="' + fmtDate(s) + ' - ' + fmtDate(e) + '">';
+              h += '<span class="tl-bar-label">' + fmtDate(s) + ' - ' + fmtDate(e) + '</span>';
+              h += '</div>';
+            } else {
+              var p = pct(d);
+              h += '<div class="tl-event-dot" style="left:' + p.toFixed(2) + '%;background:#5BC0DE' + (isPast ? ';opacity:0.4' : '') + '" title="' + fmtDate(d) + '">';
+              h += '<span class="tl-date-label">' + fmtDate(d) + '</span>';
+              h += '</div>';
+            }
+            h += '</div></div>';
+            html += h;
+          });
+        }
+      }
+
+      // --- Crons (teal #5AB8B0) ---
+      if (showCronsOnCalendar && cronEvents.length > 0) {
+        var tlCrons = cronEvents.filter(function(c) {
+          var d = new Date(c.date + 'T12:00:00');
+          return d >= startDate && d <= endDate;
+        }).sort(function(a, b) { return new Date(a.date) - new Date(b.date); });
+        if (tlCrons.length > 0) {
+          html += '<div class="tl-section-label"><span style="color:#5AB8B0">&#9679;</span> <span>Crons (' + tlCrons.length + ')</span></div>';
+          tlCrons.forEach(function(c) { html += tlDotRow(c, '#5AB8B0', 'Cron'); });
+        }
       }
 
       html += '</div></div>'; // tl-inner + tl-wrap
@@ -7704,11 +7797,7 @@
         cell.addEventListener('click', function(e) {
           if (e.target.closest('.cal-event-chip') || e.target.closest('.cal-week-event') || e.target.closest('.cal-day-overflow')) return;
           if (cell.dataset.date) {
-            if (isMobile && calViewMode === 'month') {
-              calOpenDayDetail(cell.dataset.date);
-            } else {
-              calOpenModal(cell.dataset.date);
-            }
+            calOpenDayDetail(cell.dataset.date);
           }
         });
       });
