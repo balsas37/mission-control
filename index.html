@@ -4242,9 +4242,9 @@
         <span class="sidebar-nav-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span>
         <span class="sidebar-nav-label">Activity</span>
       </button>
-      <button class="sidebar-nav-item" data-tab="inbox">
+      <button class="sidebar-nav-item" data-tab="actions">
         <span class="sidebar-nav-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg></span>
-        <span class="sidebar-nav-label">Inbox</span>
+        <span class="sidebar-nav-label">Actions</span>
         <span class="sidebar-badge" id="inbox-badge">8</span>
       </button>
       <button class="sidebar-nav-item" data-tab="projects">
@@ -4970,7 +4970,7 @@
     </section>
 
     <!-- Inbox / Kanban -->
-    <section class="tab-panel" id="panel-inbox">
+    <section class="tab-panel" id="panel-actions">
 
       <!-- Toolbar: metrics (left) | filters (center) | view toggle (right) -->
       <div class="kb-toolbar">
@@ -5591,7 +5591,7 @@
     })();
 
     /* ---- Keyboard Shortcuts (1-0) ---- */
-    const tabIds = ['office', 'activity', 'inbox', 'projects', 'team', 'calendar', 'analytics', 'focus', 'memory', 'documents'];
+    const tabIds = ['office', 'activity', 'actions', 'projects', 'team', 'calendar', 'analytics', 'focus', 'memory', 'documents'];
 
     document.addEventListener('keydown', (e) => {
       const tag = document.activeElement.tagName;
@@ -6050,7 +6050,7 @@
         document.querySelectorAll('.kb-view-btn').forEach(function(b) { b.classList.remove('active'); });
         btn.classList.add('active');
         kanbanViewMode = btn.dataset.view;
-        try { localStorage.setItem('mc-inbox-view', kanbanViewMode); } catch(e) {}
+        try { localStorage.setItem('mc-actions-view', kanbanViewMode); } catch(e) {}
         var boardEl = document.getElementById('kb-board');
         var listEl = document.getElementById('kb-list-view');
         var metricsEl = document.getElementById('kb-metrics');
@@ -6241,7 +6241,7 @@
     // Restore inbox view mode
     (function() {
       try {
-        var savedInboxView = localStorage.getItem('mc-inbox-view');
+        var savedInboxView = localStorage.getItem('mc-actions-view');
         if (savedInboxView) {
           var targetBtn = document.querySelector('[data-view="' + savedInboxView + '"]');
           if (targetBtn && targetBtn.closest('#panel-inbox')) { targetBtn.click(); }
