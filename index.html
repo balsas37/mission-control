@@ -5131,6 +5131,7 @@
           <button class="cal-filter-chip active" data-cal-filter="events"><span class="cal-filter-dot" style="background:#A86DBF"></span>Events</button>
           <button class="cal-filter-chip active" data-cal-filter="bookings"><span class="cal-filter-dot" style="background:#5BC0DE"></span>Bookings</button>
           <button class="cal-filter-chip active" data-cal-filter="crons"><span class="cal-filter-dot" style="background:#5AB8B0"></span>Crons</button>
+          <button class="cal-filter-chip active" data-cal-filter="tis"><span class="cal-filter-dot" style="background:#DAB255"></span>TIs</button>
         </div>
       </div>
 
@@ -6395,6 +6396,8 @@
             html += '</div><span class="pill ' + pillClass + '">' + status + '</span></div>';
           });
           listEl.innerHTML = html;
+          // Re-render calendar so booking events appear
+          if (typeof calRender === 'function') calRender();
         })
         .catch(function() {
           renderAnalyticsTable('lagoon');
@@ -6648,6 +6651,40 @@
         });
     }
 
+    /* ---- Targeted Interaction Events for Calendar ---- */
+    var tiEvents = [];
+
+    function loadTIEvents() {
+      return fetch('data/targeted-interactions.json?t=' + Date.now())
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+          tiEvents = [];
+          (data.records || []).forEach(function(ti) {
+            if (!ti.nextScheduled) return;
+            var dt = new Date(ti.nextScheduled);
+            if (isNaN(dt.getTime())) return;
+            var dk = dt.getFullYear() + '-' +
+                     String(dt.getMonth() + 1).padStart(2, '0') + '-' +
+                     String(dt.getDate()).padStart(2, '0');
+            tiEvents.push({
+              id: ti.id,
+              title: ti.name,
+              date: dk,
+              time: String(dt.getHours()).padStart(2,'0') + ':' + String(dt.getMinutes()).padStart(2,'0'),
+              color: '#DAB255',
+              isTI: true,
+              tiType: ti.type,
+              business: ti.business,
+              status: ti.status
+            });
+          });
+          calRender();
+        })
+        .catch(function(err) {
+          console.warn('[MC] Failed to load targeted-interactions.json:', err);
+        });
+    }
+
     /* ---- Documents ---- */
     var docsData = [];
     var docsCatFilter = 'all';
@@ -6878,6 +6915,7 @@
     loadActivity();
     startActivityRefresh();
     loadCronEvents();
+    loadTIEvents();
     loadDocuments();
 
     /* ---- Calendar: State & Data ---- */
@@ -6908,13 +6946,80 @@
     ];
 
     function calDateKey(y, m, d) { return y + '-' + String(m+1).padStart(2,'0') + '-' + String(d).padStart(2,'0'); }
-    function calEventsForDate(dk) { 
-      var regular = calEvents.filter(function(e) { return e.date === dk; });
+    var showEventsOnCalendar = true;
+    var showTasksOnCalendar = true;
+    var showBookingsOnCalendar = true;
+    var showCronsOnCalendar = true;
+    var showTIsOnCalendar = true;
+
+    function calGetTaskEvents(dk) {
+      if (!showTasksOnCalendar) return [];
+      var out = [];
+      (kanbanTasks || []).forEach(function(t) {
+        if (!t.dueDate) return;
+        var dt = new Date(t.dueDate);
+        if (isNaN(dt.getTime())) return;
+        var tdk = dt.getFullYear() + '-' +
+                  String(dt.getMonth() + 1).padStart(2, '0') + '-' +
+                  String(dt.getDate()).padStart(2, '0');
+        if (tdk !== dk) return;
+        var statusColors = {
+          'todo': '#6b7280', 'inprogress': '#6BA8DA', 'review': '#A86DBF',
+          'backlog': '#C49A35', 'recurring': '#5AB8B0', 'completed': '#6BBF6B'
+        };
+        var color = statusColors[(t.status || '').toLowerCase().replace(/\s/g, '')] || '#6BA8DA';
+        out.push({
+          id: 'task-' + t.id,
+          title: t.title || 'Task',
+          date: dk,
+          color: color,
+          isTask: true
+        });
+      });
+      return out;
+    }
+
+    function calGetBookingEvents(dk) {
+      if (!showBookingsOnCalendar) return [];
+      if (!window._lagoonData) return [];
+      var out = [];
+      var all = (window._lagoonData.active_bookings || []).concat(window._lagoonData.upcoming_bookings || []);
+      all.forEach(function(b) {
+        var startIso = b.start_iso, endIso = b.end_iso;
+        if (!startIso) return;
+        // Show on every day from start to end (inclusive)
+        var cur = new Date(startIso + 'T00:00:00Z');
+        var end = endIso ? new Date(endIso + 'T00:00:00Z') : cur;
+        var maxIter = 60;
+        while (cur <= end && maxIter-- > 0) {
+          var tdk = cur.getUTCFullYear() + '-' +
+                    String(cur.getUTCMonth() + 1).padStart(2, '0') + '-' +
+                    String(cur.getUTCDate()).padStart(2, '0');
+          if (tdk === dk) {
+            out.push({
+              id: 'booking-' + (b.name || '') + '-' + startIso,
+              title: (b.vehicle || 'Booking') + (b.name ? ': ' + b.name : ''),
+              date: dk,
+              color: '#D46B08',
+              isBooking: true
+            });
+            break;
+          }
+          cur.setUTCDate(cur.getUTCDate() + 1);
+        }
+      });
+      return out;
+    }
+
+    function calEventsForDate(dk) {
+      var events = showEventsOnCalendar ? calEvents.filter(function(e) { return e.date === dk; }) : [];
+      var tasks = calGetTaskEvents(dk);
+      var bookings = calGetBookingEvents(dk);
       var crons = showCronsOnCalendar ? cronEvents.filter(function(e) { return e.date === dk; }) : [];
-      return regular.concat(crons);
+      var tis = showTIsOnCalendar ? tiEvents.filter(function(e) { return e.date === dk; }) : [];
+      return events.concat(tasks).concat(bookings).concat(crons).concat(tis);
     }
     function calMilestonesForDate(dk) { return calMilestones.filter(function(m) { return m.date === dk; }); }
-    var showCronsOnCalendar = true;
 
     function calUpdateTitle() {
       var el = document.getElementById('cal-title'); if (!el) return;
@@ -8337,14 +8442,20 @@
       });
     }
 
-    /* ---- Fix 11: Calendar Filter Toggles (Bookings/Tasks/Events/Crons) ---- */
+    /* ---- Fix 11: Calendar Filter Toggles (Tasks/Events/Bookings/Crons/TIs) ---- */
     document.querySelectorAll('.cal-filter-chip').forEach(function(chip) {
+      if (!chip.dataset.calFilter) return;
       chip.addEventListener('click', function() {
         chip.classList.toggle('active');
-        if (chip.dataset.calFilter === 'crons') {
-          showCronsOnCalendar = chip.classList.contains('active');
-          calRender();
+        var isActive = chip.classList.contains('active');
+        switch (chip.dataset.calFilter) {
+          case 'tasks':    showTasksOnCalendar    = isActive; break;
+          case 'events':   showEventsOnCalendar   = isActive; break;
+          case 'bookings': showBookingsOnCalendar  = isActive; break;
+          case 'crons':    showCronsOnCalendar     = isActive; break;
+          case 'tis':      showTIsOnCalendar       = isActive; break;
         }
+        calRender();
       });
     });
 
