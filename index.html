@@ -3767,6 +3767,458 @@
       padding: 12px 20px 16px;
       border-top: 1px solid var(--border);
     }
+
+    /* ========================================
+       ORG CHART
+       ======================================== */
+    #team-org-view {
+      padding: 8px 0 40px;
+      overflow-x: auto;
+    }
+
+    .org-tree {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      min-width: fit-content;
+      margin: 0 auto;
+    }
+
+    /* Classic CSS list-based org chart */
+    .org-tree ul {
+      padding-top: 24px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      margin: 0;
+      padding-left: 0;
+    }
+
+    /* Vertical line from parent down to horizontal connector */
+    .org-tree ul::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%;
+      border-left: 2px solid rgba(255,255,255,0.15);
+      width: 0;
+      height: 24px;
+    }
+
+    .org-tree li {
+      float: none;
+      display: inline-block;
+      vertical-align: top;
+      text-align: center;
+      position: relative;
+      padding: 24px 8px 0;
+    }
+
+    /* Horizontal connector lines (top of each node) */
+    .org-tree li::before,
+    .org-tree li::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 50%;
+      border-top: 2px solid rgba(255,255,255,0.15);
+      width: 50%;
+      height: 24px;
+    }
+    .org-tree li::after {
+      right: auto;
+      left: 50%;
+      border-left: 2px solid rgba(255,255,255,0.15);
+    }
+    /* Only child: no horizontal lines */
+    .org-tree li:only-child::after,
+    .org-tree li:only-child::before { display: none; }
+    /* First child: no left branch */
+    .org-tree li:first-child::before { border: 0 none; }
+    .org-tree li:first-child::after { border-radius: 5px 0 0 0; }
+    /* Last child: no right branch */
+    .org-tree li:last-child::after { border: 0 none; }
+    .org-tree li:last-child::before {
+      border-right: 2px solid rgba(255,255,255,0.15);
+      border-radius: 0 5px 0 0;
+    }
+
+    /* Org node card */
+    .org-node {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      background: var(--bg-raised);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px 16px 12px;
+      min-width: 110px;
+      max-width: 140px;
+      cursor: pointer;
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+      position: relative;
+    }
+
+    .org-node:hover {
+      border-color: rgba(74,144,217,0.5);
+      box-shadow: 0 0 0 3px rgba(74,144,217,0.1), 0 4px 16px rgba(0,0,0,0.3);
+      transform: translateY(-2px);
+    }
+
+    .org-node-emoji {
+      font-size: 22px;
+      line-height: 1;
+    }
+
+    .org-node-name {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-1);
+      letter-spacing: -0.01em;
+    }
+
+    .org-node-title {
+      font-size: 10px;
+      color: var(--text-3);
+      text-align: center;
+      line-height: 1.3;
+      letter-spacing: 0.01em;
+    }
+
+    .org-node-badges {
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 2px;
+    }
+
+    .org-node-status {
+      font-size: 10px;
+      padding: 2px 7px;
+      border-radius: 999px;
+    }
+
+    .org-node-status.active {
+      background: var(--pill-done-bg);
+      color: var(--pill-done-text);
+    }
+
+    .org-node-status.on-demand {
+      background: var(--pill-waiting-bg);
+      color: var(--pill-waiting-text);
+    }
+
+    .org-node-target-count {
+      font-size: 10px;
+      padding: 2px 7px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      color: var(--text-3);
+    }
+
+    .org-node.beno-node {
+      background: rgba(74,144,217,0.07);
+      border-color: rgba(74,144,217,0.25);
+      min-width: 130px;
+    }
+
+    /* Special: on-demand row */
+    .org-ondemand-row {
+      margin-top: 0;
+    }
+
+    /* ========================================
+       ORG CHART MODAL
+       ======================================== */
+    .org-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.65);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      animation: fadeIn 0.15s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    .org-modal {
+      background: var(--bg-raised);
+      border: 1px solid var(--border-hover);
+      border-radius: 18px;
+      width: 100%;
+      max-width: 640px;
+      max-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.6);
+      animation: slideUp 0.2s ease;
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(16px); opacity: 0; }
+      to   { transform: translateY(0);    opacity: 1; }
+    }
+
+    .org-modal-header {
+      padding: 20px 24px 16px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      flex-shrink: 0;
+    }
+
+    .org-modal-emoji {
+      font-size: 32px;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .org-modal-meta {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .org-modal-name {
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--text-1);
+      margin-bottom: 4px;
+      letter-spacing: -0.02em;
+    }
+
+    .org-modal-title {
+      font-size: 13px;
+      color: var(--text-2);
+    }
+
+    .org-modal-close {
+      width: 28px;
+      height: 28px;
+      border: none;
+      background: rgba(255,255,255,0.06);
+      color: var(--text-2);
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .org-modal-close:hover {
+      background: rgba(255,255,255,0.12);
+      color: var(--text-1);
+    }
+
+    .org-modal-body {
+      padding: 20px 24px;
+      overflow-y: auto;
+      flex: 1;
+    }
+
+    .org-modal-section {
+      margin-bottom: 20px;
+    }
+
+    .org-modal-section-title {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--text-3);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 8px;
+    }
+
+    .org-modal-text {
+      font-size: 14px;
+      color: var(--text-2);
+      line-height: 1.65;
+    }
+
+    .org-modal-targets {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .org-modal-target-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-size: 13px;
+      color: var(--text-2);
+      line-height: 1.5;
+    }
+
+    .org-modal-target-item .target-biz {
+      font-size: 11px;
+      color: var(--text-3);
+      margin-top: 4px;
+    }
+
+    .org-modal-target-item .target-status {
+      display: inline-flex;
+      gap: 4px;
+      align-items: center;
+      margin-top: 4px;
+    }
+
+    .org-modal-empty {
+      font-size: 13px;
+      color: var(--text-3);
+      font-style: italic;
+    }
+
+    /* ========================================
+       BUSINESS-AGENT MATRIX
+       ======================================== */
+    #team-matrix-view {
+      padding: 0 0 40px;
+      overflow-x: auto;
+    }
+
+    .matrix-wrap {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      min-width: 600px;
+    }
+
+    .matrix-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    .matrix-th-corner {
+      background: var(--bg-card);
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      font-size: 11px;
+      color: var(--text-3);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+
+    .matrix-th-biz {
+      background: var(--bg-card);
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--text-2);
+      font-weight: 500;
+      text-align: center;
+      white-space: nowrap;
+      min-width: 120px;
+    }
+
+    .matrix-th-biz:last-child { border-right: none; }
+
+    .matrix-row:nth-child(even) { background: rgba(255,255,255,0.015); }
+    .matrix-row:hover { background: rgba(255,255,255,0.03); }
+
+    .matrix-td-agent {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      white-space: nowrap;
+      font-size: 14px;
+      color: var(--text-1);
+      background: var(--bg-raised);
+      font-weight: 500;
+    }
+
+    .matrix-row:last-child .matrix-td-agent,
+    .matrix-row:last-child .matrix-td-cell { border-bottom: none; }
+
+    .matrix-td-cell {
+      padding: 6px 8px;
+      border-bottom: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      text-align: center;
+      cursor: pointer;
+      transition: filter 0.15s;
+      position: relative;
+    }
+
+    .matrix-td-cell:last-child { border-right: none; }
+
+    .matrix-td-cell:hover {
+      filter: brightness(1.2);
+    }
+
+    .matrix-td-cell.empty {
+      background: transparent;
+      cursor: default;
+    }
+
+    .matrix-td-cell.empty:hover { filter: none; }
+
+    .matrix-cell-inner {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      padding: 6px 10px;
+      border-radius: 8px;
+      min-width: 80px;
+    }
+
+    .matrix-cell-role {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+    }
+
+    .matrix-cell-count {
+      font-size: 10px;
+      opacity: 0.75;
+    }
+
+    /* Primary: strong accent */
+    .matrix-td-cell.role-primary .matrix-cell-inner {
+      background: rgba(74,144,217,0.18);
+      border: 1px solid rgba(74,144,217,0.35);
+    }
+    .matrix-td-cell.role-primary .matrix-cell-role { color: #6BA8DA; }
+
+    /* Advisor: medium accent */
+    .matrix-td-cell.role-advisor .matrix-cell-inner {
+      background: rgba(165,105,195,0.14);
+      border: 1px solid rgba(165,105,195,0.25);
+    }
+    .matrix-td-cell.role-advisor .matrix-cell-role { color: #A86DBF; }
+
+    /* Supporting roles: softer */
+    .matrix-td-cell.role-supporting .matrix-cell-inner {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .matrix-td-cell.role-supporting .matrix-cell-role { color: var(--text-3); }
+
+    /* Finance role */
+    .matrix-td-cell.role-finance .matrix-cell-inner {
+      background: rgba(218,178,85,0.10);
+      border: 1px solid rgba(218,178,85,0.2);
+    }
+    .matrix-td-cell.role-finance .matrix-cell-role { color: #DAB255; }
+
   </style>
 </head>
 <body>
@@ -4063,6 +4515,8 @@
         <div class="view-toggle" id="team-view-toggle">
           <button class="view-toggle-btn active" data-view="cards">Cards</button>
           <button class="view-toggle-btn" data-view="table">Table</button>
+          <button class="view-toggle-btn" data-view="org">Org Chart</button>
+          <button class="view-toggle-btn" data-view="matrix">Matrix</button>
         </div>
       </div>
 
@@ -4283,6 +4737,22 @@
               </tr>
             </tbody>
           </table>
+        </div>
+      </div>
+
+      <!-- Org Chart View -->
+      <div id="team-org-view" style="display:none">
+        <div class="org-tree" id="org-tree-root">
+          <!-- Populated by JS -->
+          <div style="color:var(--text-3);padding:40px 0;font-size:14px">Loading org chart…</div>
+        </div>
+      </div>
+
+      <!-- Business-Agent Matrix View -->
+      <div id="team-matrix-view" style="display:none">
+        <div id="matrix-container">
+          <!-- Populated by JS -->
+          <div style="color:var(--text-3);padding:40px 0;font-size:14px">Loading matrix…</div>
         </div>
       </div>
 
@@ -6032,7 +6502,42 @@
         });
       });
     }
-    initViewToggle('team-view-toggle', 'team-card-view', 'team-table-view', 'mc-team-view');
+    // Team now has 4 views: cards, table, org, matrix
+    (function initTeamViewToggle() {
+      var toggle = document.getElementById('team-view-toggle');
+      if (!toggle) return;
+      var views = {
+        'cards':  'team-card-view',
+        'table':  'team-table-view',
+        'org':    'team-org-view',
+        'matrix': 'team-matrix-view'
+      };
+      var storageKey = 'mc-team-view';
+      var savedView = null;
+      try { savedView = localStorage.getItem(storageKey); } catch(e) {}
+      // Only restore cards/table (not org/matrix on initial load unless saved)
+      if (!savedView || !views[savedView]) savedView = 'cards';
+
+      function showView(v) {
+        toggle.querySelectorAll('.view-toggle-btn').forEach(function(b) {
+          b.classList.toggle('active', b.dataset.view === v);
+        });
+        Object.keys(views).forEach(function(key) {
+          var el = document.getElementById(views[key]);
+          if (el) el.style.display = key === v ? '' : 'none';
+        });
+        try { localStorage.setItem(storageKey, v); } catch(e) {}
+        // Lazy-init on first display
+        if (v === 'org' && !window._orgChartLoaded) { window._orgChartLoaded = true; initOrgChart(); }
+        if (v === 'matrix' && !window._matrixLoaded) { window._matrixLoaded = true; initMatrix(); }
+      }
+
+      showView(savedView);
+
+      toggle.querySelectorAll('.view-toggle-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() { showView(btn.dataset.view); });
+      });
+    })();
     initViewToggle('projects-view-toggle', 'projects-card-view', 'projects-table-view', 'mc-projects-view');
 
     /* ---- Activity Feed ---- */
@@ -7360,6 +7865,477 @@
         });
       });
     });
+
+    /* ============================================================
+       ORG CHART + MATRIX  —  Aitable-backed
+       ============================================================ */
+    var AITABLE_TOKEN = 'usk07SW47fK1EBAlUZAdVKB';
+    var AITABLE_BASE  = 'https://aitable.ai/fusion/v1/datasheets';
+    var DS_TEAM       = 'dstFMCd84W2kl3knbe';
+    var DS_TARGETS    = 'dstpVi4fELPjQTFgnl';
+    var DS_GOALS      = 'dstietHah5ngV1pj1x';
+
+    var aitableTeam    = null;  // Array of agent records
+    var aitableTargets = null;  // Array of target records
+    var aitableGoals   = null;  // Array of goal records
+    var aitableLoadP   = null;  // shared Promise
+
+    function aitableFetch(dstId) {
+      var url = AITABLE_BASE + '/' + dstId + '/records?pageSize=1000';
+      return fetch(url, { headers: { 'Authorization': 'Bearer ' + AITABLE_TOKEN } })
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+          if (data.success) return data.data.records;
+          throw new Error('Aitable error: ' + JSON.stringify(data));
+        });
+    }
+
+    function loadAitableData() {
+      if (aitableLoadP) return aitableLoadP;
+      aitableLoadP = Promise.all([
+        aitableFetch(DS_TEAM),
+        aitableFetch(DS_TARGETS),
+        aitableFetch(DS_GOALS)
+      ]).then(function(results) {
+        aitableTeam    = results[0];
+        aitableTargets = results[1];
+        aitableGoals   = results[2];
+      });
+      return aitableLoadP;
+    }
+
+    /* ---- Agent colour map (matches team card colours in existing UI) ---- */
+    var AGENT_COLORS = {
+      'Piia': '#7C9EF5', 'Kat': '#B07CE8', 'Vex': '#E8C77C',
+      'Rex':  '#5CB85C', 'Zara': '#E8A87C', 'Mara': '#E87CA8',
+      'Cleo': '#DAB255', 'Nile': '#7CD4E8', 'Nova': '#F5A623'
+    };
+
+    /* ---- Business-Agent mapping (from task spec + Aitable) ---- */
+    var BUSINESSES = ['OFM Agency', 'Lagoon Company', 'Crete Villa', 'Digital Products', 'App Development'];
+
+    // role: 'primary' | 'advisor' | 'supporting' | 'finance' | ''
+    var MATRIX_MAP = {
+      'Kat':  { 'OFM Agency': 'primary' },
+      'Vex':  { 'OFM Agency': 'primary' },
+      'Rex':  { 'OFM Agency': 'advisor', 'Lagoon Company': 'primary', 'Digital Products': 'primary' },
+      'Zara': { 'OFM Agency': 'supporting', 'Lagoon Company': 'supporting', 'Digital Products': 'supporting', 'App Development': 'primary' },
+      'Mara': { 'OFM Agency': 'supporting', 'Lagoon Company': 'supporting', 'Digital Products': 'supporting' },
+      'Cleo': { 'OFM Agency': 'finance', 'Lagoon Company': 'finance', 'Crete Villa': 'finance', 'Digital Products': 'finance', 'App Development': 'finance' },
+      'Piia': { 'OFM Agency': 'supporting', 'Lagoon Company': 'supporting', 'Crete Villa': 'primary', 'Digital Products': 'supporting' }
+    };
+
+    var ROLE_LABELS = {
+      'primary':    'Primary',
+      'advisor':    'Advisor',
+      'supporting': 'Support',
+      'finance':    'Finance'
+    };
+
+    /* ============================
+       ORG CHART
+       ============================ */
+    function initOrgChart() {
+      loadAitableData().then(function() {
+        renderOrgChart();
+      }).catch(function(err) {
+        console.warn('[MC Org] Aitable fetch failed, using static data:', err);
+        renderOrgChart(); // still render with static fallback
+      });
+    }
+
+    function getAgentByName(name) {
+      if (!aitableTeam) return null;
+      return aitableTeam.find(function(r) {
+        return (r.fields['标题'] || '').toLowerCase() === name.toLowerCase();
+      }) || null;
+    }
+
+    function countTargets(agentRecordId) {
+      if (!aitableTargets) return 0;
+      return aitableTargets.filter(function(r) {
+        var ts = r.fields['Team Structure'] || [];
+        return ts.indexOf(agentRecordId) !== -1;
+      }).length;
+    }
+
+    function buildOrgNode(agentName, isOnDemand) {
+      var rec = getAgentByName(agentName);
+      var emoji = rec ? (rec.fields['Emoji'] || '🤖') : '🤖';
+      var title = rec ? (rec.fields['Title'] || '') : '';
+      var status = rec ? (rec.fields['Status'] || 'Active') : 'Active';
+      var recordId = rec ? rec.recordId : null;
+      var targetCount = recordId ? countTargets(recordId) : 0;
+
+      var statusClass = (status === 'On-Demand' || isOnDemand) ? 'on-demand' : 'active';
+      var statusLabel = (status === 'On-Demand' || isOnDemand) ? 'On-Demand' : 'Active';
+
+      var nodeEl = document.createElement('div');
+      nodeEl.className = 'org-node';
+      if (recordId) nodeEl.dataset.recordId = recordId;
+      nodeEl.dataset.agentName = agentName;
+
+      nodeEl.innerHTML =
+        '<div class="org-node-emoji">' + emoji + '</div>' +
+        '<div class="org-node-name">' + agentName + '</div>' +
+        '<div class="org-node-title">' + title + '</div>' +
+        '<div class="org-node-badges">' +
+          '<span class="org-node-status ' + statusClass + '">' + statusLabel + '</span>' +
+          (targetCount > 0 ? '<span class="org-node-target-count">' + targetCount + ' targets</span>' : '') +
+        '</div>';
+
+      nodeEl.addEventListener('click', function() {
+        openAgentModal(agentName, rec);
+      });
+
+      return nodeEl;
+    }
+
+    function renderOrgChart() {
+      var root = document.getElementById('org-tree-root');
+      if (!root) return;
+      root.innerHTML = '';
+
+      // ----- Level 0: Beno -----
+      var benoLi = document.createElement('div');
+      benoLi.style.cssText = 'display:flex;flex-direction:column;align-items:center;margin-bottom:0';
+
+      var benoNode = document.createElement('div');
+      benoNode.className = 'org-node beno-node';
+      benoNode.style.cursor = 'default';
+      benoNode.innerHTML =
+        '<div class="org-node-emoji">👤</div>' +
+        '<div class="org-node-name">Beno</div>' +
+        '<div class="org-node-title">CEO / Founder</div>' +
+        '<div class="org-node-badges"><span class="org-node-status active">Human</span></div>';
+      benoLi.appendChild(benoNode);
+      root.appendChild(benoLi);
+
+      // ----- Level 1: Piia -----
+      var piiaRec = getAgentByName('Piia');
+      var l1Ul = document.createElement('ul');
+      var l1Li = document.createElement('li');
+      var piiaNode = buildOrgNode('Piia', false);
+      l1Li.appendChild(piiaNode);
+
+      // ----- Level 2: direct reports (under Piia) -----
+      var directReports = ['Kat', 'Vex', 'Rex', 'Zara', 'Mara', 'Cleo'];
+      var l2Ul = document.createElement('ul');
+      directReports.forEach(function(name) {
+        var li = document.createElement('li');
+        li.appendChild(buildOrgNode(name, false));
+        l2Ul.appendChild(li);
+      });
+      l1Li.appendChild(l2Ul);
+
+      l1Ul.appendChild(l1Li);
+      root.appendChild(l1Ul);
+
+      // ----- On-demand tier (Nile, shown separately) -----
+      var onDemandSection = document.createElement('div');
+      onDemandSection.style.cssText = 'margin-top:0;display:flex;flex-direction:column;align-items:center';
+
+      var odLabel = document.createElement('div');
+      odLabel.style.cssText = 'font-size:10px;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin:8px 0 0;';
+      odLabel.textContent = 'On-Demand';
+
+      var odUl = document.createElement('ul');
+      odUl.style.cssText = 'padding-top:16px';
+      var odLi = document.createElement('li');
+      odLi.appendChild(buildOrgNode('Nile', true));
+      odUl.appendChild(odLi);
+
+      onDemandSection.appendChild(odLabel);
+      onDemandSection.appendChild(odUl);
+      root.appendChild(onDemandSection);
+    }
+
+    /* ============================
+       AGENT MODAL
+       ============================ */
+    function openAgentModal(agentName, rec) {
+      if (!rec) {
+        showToast('No detail record found for ' + agentName);
+        return;
+      }
+      var f = rec.fields;
+      var emoji   = f['Emoji'] || '🤖';
+      var title   = f['Title'] || '';
+      var status  = f['Status'] || 'Active';
+      var essential  = f['Essential Responsibilities'] || '';
+      var results    = f['Results'] || '';
+      var requirements = f['Requirements'] || '';
+
+      // Get targets for this agent
+      var agentTargets = [];
+      if (aitableTargets) {
+        agentTargets = aitableTargets.filter(function(r) {
+          return (r.fields['Team Structure'] || []).indexOf(rec.recordId) !== -1;
+        });
+      }
+
+      // Get goals for this agent
+      var agentGoalIds = f['30-Day Goals'] || [];
+      var agentGoals = [];
+      if (aitableGoals && agentGoalIds.length) {
+        agentGoals = aitableGoals.filter(function(r) {
+          return agentGoalIds.indexOf(r.recordId) !== -1;
+        }).slice(0, 8); // cap at 8 for readability
+      }
+
+      var statusPill = status === 'On-Demand'
+        ? '<span class="pill pill-waiting">On-Demand</span>'
+        : '<span class="pill pill-done">Active</span>';
+
+      function targetHTML(t) {
+        var tf = t.fields;
+        var pct = tf['Completion %'] || 0;
+        var biz = tf['Business'] || '';
+        var st  = tf['Status']   || '';
+        return '<div class="org-modal-target-item">' +
+          '<div>' + (tf['Target'] || '—') + '</div>' +
+          '<div style="display:flex;gap:8px;margin-top:5px">' +
+            (biz ? '<span style="font-size:11px;color:var(--text-3)">' + biz + '</span>' : '') +
+            (st  ? '<span style="font-size:11px;color:var(--text-3)">· ' + st + '</span>' : '') +
+            (pct > 0 ? '<span style="font-size:11px;color:var(--pill-active-text)">· ' + pct + '%</span>' : '') +
+          '</div>' +
+        '</div>';
+      }
+
+      function goalHTML(g) {
+        var gf = g.fields;
+        var title = gf['Goal'] || gf['标题'] || gf['Title'] || Object.values(gf)[0] || '—';
+        if (typeof title === 'object') title = JSON.stringify(title);
+        return '<div class="org-modal-target-item" style="font-size:13px">' + String(title).slice(0, 160) + '</div>';
+      }
+
+      var html = '<div class="org-modal-backdrop" id="org-modal-bd">' +
+        '<div class="org-modal">' +
+          '<div class="org-modal-header">' +
+            '<div class="org-modal-emoji">' + emoji + '</div>' +
+            '<div class="org-modal-meta">' +
+              '<div class="org-modal-name">' + agentName + ' ' + statusPill + '</div>' +
+              '<div class="org-modal-title">' + title + '</div>' +
+            '</div>' +
+            '<button class="org-modal-close" id="org-modal-close">&times;</button>' +
+          '</div>' +
+          '<div class="org-modal-body">' +
+            (essential ? '<div class="org-modal-section"><div class="org-modal-section-title">Essential Responsibilities</div><div class="org-modal-text">' + essential + '</div></div>' : '') +
+            (results   ? '<div class="org-modal-section"><div class="org-modal-section-title">Results / Success Criteria</div><div class="org-modal-text">' + results + '</div></div>' : '') +
+            (requirements ? '<div class="org-modal-section"><div class="org-modal-section-title">Requirements</div><div class="org-modal-text">' + requirements + '</div></div>' : '') +
+            '<div class="org-modal-section">' +
+              '<div class="org-modal-section-title">90-Day Targets (' + agentTargets.length + ')</div>' +
+              '<div class="org-modal-targets">' +
+                (agentTargets.length ? agentTargets.map(targetHTML).join('') : '<div class="org-modal-empty">No targets assigned</div>') +
+              '</div>' +
+            '</div>' +
+            '<div class="org-modal-section">' +
+              '<div class="org-modal-section-title">30-Day Goals (showing ' + agentGoals.length + ' of ' + agentGoalIds.length + ')</div>' +
+              '<div class="org-modal-targets">' +
+                (agentGoals.length ? agentGoals.map(goalHTML).join('') : '<div class="org-modal-empty">No goals assigned</div>') +
+              '</div>' +
+            '</div>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+
+      document.body.insertAdjacentHTML('beforeend', html);
+      var bd = document.getElementById('org-modal-bd');
+      document.getElementById('org-modal-close').addEventListener('click', function() { bd.remove(); });
+      bd.addEventListener('click', function(e) { if (e.target === bd) bd.remove(); });
+      document.addEventListener('keydown', function escHandler(e) {
+        if (e.key === 'Escape') { bd.remove(); document.removeEventListener('keydown', escHandler); }
+      });
+    }
+
+    /* ============================
+       MATRIX
+       ============================ */
+    function initMatrix() {
+      loadAitableData().then(function() {
+        renderMatrix();
+      }).catch(function(err) {
+        console.warn('[MC Matrix] Aitable fetch failed:', err);
+        renderMatrix();
+      });
+    }
+
+    function countForBusiness(agentRecordId, business) {
+      var t = 0, g = 0;
+      if (aitableTargets) {
+        aitableTargets.forEach(function(r) {
+          if ((r.fields['Team Structure'] || []).indexOf(agentRecordId) !== -1 &&
+              r.fields['Business'] === business) t++;
+        });
+      }
+      if (aitableGoals) {
+        aitableGoals.forEach(function(r) {
+          var bizField = r.fields['Business'] || r.fields['Businesses'] || '';
+          var bizArr = Array.isArray(bizField) ? bizField : [bizField];
+          if (bizArr.indexOf(business) !== -1) {
+            // check agent link
+            var ts = r.fields['Team Structure'] || [];
+            if (ts.indexOf(agentRecordId) !== -1) g++;
+          }
+        });
+      }
+      return { targets: t, goals: g };
+    }
+
+    function renderMatrix() {
+      var container = document.getElementById('matrix-container');
+      if (!container) return;
+
+      var agents = Object.keys(MATRIX_MAP);
+
+      var html = '<div class="matrix-wrap"><table class="matrix-table">';
+
+      // Header row
+      html += '<thead><tr><th class="matrix-th-corner">Agent</th>';
+      BUSINESSES.forEach(function(biz) {
+        html += '<th class="matrix-th-biz">' + biz + '</th>';
+      });
+      html += '</tr></thead><tbody>';
+
+      // Agent rows
+      agents.forEach(function(agentName) {
+        var rec = getAgentByName(agentName);
+        var emoji = rec ? (rec.fields['Emoji'] || '') : '';
+        var roleMap = MATRIX_MAP[agentName] || {};
+        var color = AGENT_COLORS[agentName] || '#555';
+
+        html += '<tr class="matrix-row">';
+        html += '<td class="matrix-td-agent">' +
+          '<span style="display:inline-flex;align-items:center;gap:8px">' +
+            '<span class="agent-avatar agent-avatar-sm" style="background:' + color + '">' +
+              agentName.substring(0, 2) +
+            '</span>' +
+            emoji + ' ' + agentName +
+          '</span>' +
+        '</td>';
+
+        BUSINESSES.forEach(function(biz) {
+          var role = roleMap[biz] || '';
+          if (!role) {
+            html += '<td class="matrix-td-cell empty"></td>';
+            return;
+          }
+          var roleClass = 'role-' + (role === 'supporting' ? 'supporting' :
+                           role === 'finance'    ? 'finance'    :
+                           role === 'advisor'    ? 'advisor'    : 'primary');
+          var label = ROLE_LABELS[role] || role;
+          var counts = rec ? countForBusiness(rec.recordId, biz) : { targets: 0, goals: 0 };
+          var countTxt = (counts.targets > 0 || counts.goals > 0)
+            ? counts.targets + 'T · ' + counts.goals + 'G'
+            : '';
+
+          html += '<td class="matrix-td-cell ' + roleClass + '" ' +
+            'data-agent="' + agentName + '" data-biz="' + biz + '" ' +
+            'title="' + agentName + ' · ' + biz + ' (' + label + ')">' +
+            '<div class="matrix-cell-inner">' +
+              '<span class="matrix-cell-role">' + label + '</span>' +
+              (countTxt ? '<span class="matrix-cell-count">' + countTxt + '</span>' : '') +
+            '</div>' +
+          '</td>';
+        });
+
+        html += '</tr>';
+      });
+
+      html += '</tbody></table></div>';
+      container.innerHTML = html;
+
+      // Attach click handlers for matrix cells
+      container.querySelectorAll('.matrix-td-cell:not(.empty)').forEach(function(cell) {
+        cell.addEventListener('click', function() {
+          var aName = cell.dataset.agent;
+          var biz   = cell.dataset.biz;
+          openMatrixModal(aName, biz);
+        });
+      });
+    }
+
+    function openMatrixModal(agentName, business) {
+      var rec = getAgentByName(agentName);
+      var emoji = rec ? (rec.fields['Emoji'] || '🤖') : '🤖';
+      var role = (MATRIX_MAP[agentName] || {})[business] || '';
+      var roleLabel = ROLE_LABELS[role] || role;
+
+      // Get targets for this agent + business
+      var agentTargets = [];
+      if (aitableTargets && rec) {
+        agentTargets = aitableTargets.filter(function(r) {
+          return (r.fields['Team Structure'] || []).indexOf(rec.recordId) !== -1 &&
+                 r.fields['Business'] === business;
+        });
+      }
+
+      // Get goals for this agent + business
+      var agentGoalIds = rec ? (rec.fields['30-Day Goals'] || []) : [];
+      var agentGoals = [];
+      if (aitableGoals && agentGoalIds.length) {
+        agentGoals = aitableGoals.filter(function(r) {
+          var bizField = r.fields['Business'] || r.fields['Businesses'] || '';
+          var bizArr = Array.isArray(bizField) ? bizField : [bizField];
+          return agentGoalIds.indexOf(r.recordId) !== -1 && bizArr.indexOf(business) !== -1;
+        });
+      }
+
+      function targetHTML(t) {
+        var tf = t.fields;
+        var pct = tf['Completion %'] || 0;
+        var st  = tf['Status']   || '';
+        return '<div class="org-modal-target-item">' +
+          '<div>' + (tf['Target'] || '—') + '</div>' +
+          '<div style="display:flex;gap:8px;margin-top:5px">' +
+            (st  ? '<span style="font-size:11px;color:var(--text-3)">' + st + '</span>' : '') +
+            (pct > 0 ? '<span style="font-size:11px;color:var(--pill-active-text)">· ' + pct + '% done</span>' : '') +
+          '</div>' +
+        '</div>';
+      }
+
+      function goalHTML(g) {
+        var gf = g.fields;
+        var title = gf['Goal'] || gf['标题'] || gf['Title'] || Object.values(gf)[0] || '—';
+        if (typeof title === 'object') title = JSON.stringify(title);
+        return '<div class="org-modal-target-item" style="font-size:13px">' + String(title).slice(0, 160) + '</div>';
+      }
+
+      var html = '<div class="org-modal-backdrop" id="matrix-modal-bd">' +
+        '<div class="org-modal">' +
+          '<div class="org-modal-header">' +
+            '<div class="org-modal-emoji">' + emoji + '</div>' +
+            '<div class="org-modal-meta">' +
+              '<div class="org-modal-name">' + agentName + ' × ' + business + '</div>' +
+              '<div class="org-modal-title">Role: <strong>' + roleLabel + '</strong></div>' +
+            '</div>' +
+            '<button class="org-modal-close" id="matrix-modal-close">&times;</button>' +
+          '</div>' +
+          '<div class="org-modal-body">' +
+            '<div class="org-modal-section">' +
+              '<div class="org-modal-section-title">90-Day Targets (' + agentTargets.length + ')</div>' +
+              '<div class="org-modal-targets">' +
+                (agentTargets.length ? agentTargets.map(targetHTML).join('') : '<div class="org-modal-empty">No targets for this business</div>') +
+              '</div>' +
+            '</div>' +
+            '<div class="org-modal-section">' +
+              '<div class="org-modal-section-title">30-Day Goals (' + agentGoals.length + ')</div>' +
+              '<div class="org-modal-targets">' +
+                (agentGoals.length ? agentGoals.map(goalHTML).join('') : '<div class="org-modal-empty">No goals for this business</div>') +
+              '</div>' +
+            '</div>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+
+      document.body.insertAdjacentHTML('beforeend', html);
+      var bd = document.getElementById('matrix-modal-bd');
+      document.getElementById('matrix-modal-close').addEventListener('click', function() { bd.remove(); });
+      bd.addEventListener('click', function(e) { if (e.target === bd) bd.remove(); });
+      document.addEventListener('keydown', function escHandler(e) {
+        if (e.key === 'Escape') { bd.remove(); document.removeEventListener('keydown', escHandler); }
+      });
+    }
 
     /* ---- Fix 11: Calendar Filter Toggles (Bookings/Tasks/Events/Crons) ---- */
     document.querySelectorAll('.cal-filter-chip').forEach(function(chip) {
