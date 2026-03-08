@@ -1,5 +1,5 @@
 {
-  "generated": "2026-03-08T08:17:49.232966+00:00",
+  "generated": "2026-03-08T19:21:06.194062+00:00",
   "records": [
     {
       "id": "recvuOn7ICkkK",
@@ -182,26 +182,6 @@
       "notes": "This is the live test. Check WA bridge logs Mon-Fri. Log: inquiries responded (count), bookings confirmed (count), any Beno escalation required. Target: 0 Beno contacts. If bridge goes down: Dubi handles manually. Compile report by Mar 14."
     },
     {
-      "id": "recKkSm2cY7qG",
-      "commitment": "Post on r/OnlyFansChatter to hire chatter VA ($4/hr, detail hours needed, PPV-focused)",
-      "status": "Not Started",
-      "weekOf": "2026-03-07T00:00:00+00:00",
-      "business": "OFM Agency",
-      "owner": null,
-      "focus": "Operations",
-      "notes": "Do this BEFORE the Sirewall trip (March 8). Post the job: role description, $4/hr rate, hours per day, required: experience with PPV-based OF management, available immediately. Screen 3-5 applicants. Hire best candidate this week. Separate from Filipino chatters already on standby \u2014 this is the chatter MANAGER."
-    },
-    {
-      "id": "recjELJtdH71x",
-      "commitment": "Write vehicle checkout SOP and WA inquiry handling SOP \u2014 film video walkthrough for both",
-      "status": "Not Started",
-      "weekOf": "2026-03-07T00:00:00+00:00",
-      "business": "Lagoon Company",
-      "owner": null,
-      "focus": "Operations",
-      "notes": "Priority: these two SOPs are the most critical before leaving for Puerto Escondido March 8. Checkout SOP: vehicle condition checklist, fuel level, key handover, safety brief script. WA Inquiry SOP: how to respond, pricing script, booking confirmation steps. Film 5-10 min video for each. Send to Dubi."
-    },
-    {
       "id": "recAB7w3CDFKa",
       "commitment": "Fly to Puerto Escondido March 8 \u2014 complete Sirewall site visit with Michael Palethorpe",
       "status": "Not Started",
@@ -210,16 +190,6 @@
       "owner": null,
       "focus": "Operations",
       "notes": "Trip: March 8-13. Must come back with: mix design document + Phase 1 cost estimate. Take photos and video of site. Document soil sample process. Ask Michael specifically: what are the exact materials needed, what is his timeline estimate, what permits are required. Share all documents with Piia within 24 hours of return."
-    },
-    {
-      "id": "recs6v2OIAiHK",
-      "commitment": "Research and source 20-30 reference images for first AI model character design",
-      "status": "Not Started",
-      "weekOf": "2026-03-07T00:00:00+00:00",
-      "business": "OFM Agency",
-      "owner": null,
-      "focus": "Content",
-      "notes": "Character design decision first: pick viral balance of oddness + beauty (pink hair? unusual eyes? distinctive feature?). Then source or generate 20-30 reference images. Dataset composition: 70% face/upper body (varied expressions/angles), 20% full body (varied outfits), 10% back views. Keep hair consistent if you want it baked in. Variety in: backgrounds, lighting, angles. 512x512 minimum resolution."
     },
     {
       "id": "recGYPFQ8KbCi",
@@ -242,36 +212,6 @@
       "notes": "Flight to Puerto Escondido confirmed for March 8. Verify: accommodation booked for Mar 8-13. WhatsApp Michael to confirm meeting time/location on site. Prepare questions for Michael: exact materials list, Phase 1 scope, labor estimate, permit requirements for rammed-earth in Oaxaca, his availability post-trip for follow-up questions."
     },
     {
-      "id": "recjKX8FWs4jY",
-      "commitment": "List all Lagoon recurring tasks requiring Beno \u2014 delegation audit doc",
-      "status": "Not Started",
-      "weekOf": "2026-03-07T00:00:00+00:00",
-      "business": "Lagoon Company",
-      "owner": null,
-      "focus": "Operations",
-      "notes": "DO THIS TODAY (Mar 7). Write list of every task Beno does for Lagoon. This is the SOP priority list. Quick brain dump \u2014 can refine later. Share with Piia for tracking."
-    },
-    {
-      "id": "rec90IFHTqARG",
-      "commitment": "Write SOP: Return inspection + damage assessment, film video walkthrough",
-      "status": "Not Started",
-      "weekOf": "2026-03-07T00:00:00+00:00",
-      "business": "Lagoon Company",
-      "owner": null,
-      "focus": "Operations",
-      "notes": "Must be done BEFORE March 8 departure. Walk-around checklist, fuel, damage pricing guide, customer comms template. Film 5-10 min video. Send to Dubi for review."
-    },
-    {
-      "id": "rec3rRNBZwFwP",
-      "commitment": "Write SOP: Emergency contacts, incident protocol, escalation rules",
-      "status": "Not Started",
-      "weekOf": "2026-03-07T00:00:00+00:00",
-      "business": "Lagoon Company",
-      "owner": null,
-      "focus": "Operations",
-      "notes": "Must be done BEFORE March 8 departure. Escalation logic: what warrants calling Beno vs. not. Emergency contact list. Film walkthrough. Send to Dubi."
-    },
-    {
       "id": "recUvqofBHHA2",
       "commitment": "Activate Filipino chatters \u2014 WhatsApp intro, shift schedule, access to Fanvue account",
       "status": "Not Started",
@@ -292,16 +232,6 @@
       "notes": "Fanvue setup checklist: 18+ content enabled, subscription price set, disable free trials without payment method, auto PPV bundles configured, intro video added (shows in Discover feed), watermark set, payment connected. Do BEFORE first content post."
     },
     {
-      "id": "receQ76wme7CH",
-      "commitment": "Decide AI character concept: visual design, niche, name, viral angle",
-      "status": "Not Started",
-      "weekOf": "2026-03-07T00:00:00+00:00",
-      "business": "OFM Agency",
-      "owner": null,
-      "focus": "Content",
-      "notes": "This is a creative decision, not a technical one. 30 minutes max. Commit to a concept. Viral balance: oddness + beauty. Pick: niche (fitness/lifestyle/cosplay?), distinctive feature (pink hair? unusual eyes?), character name, personality/voice for chatters. Write 1 paragraph character brief."
-    },
-    {
       "id": "reclGpJCCQQ3P",
       "commitment": "Source prepaid SIM for IG accounts \u2014 Telcel/AT&T Mexico mobile data",
       "status": "Not Started",
@@ -310,6 +240,76 @@
       "owner": null,
       "focus": "Operations",
       "notes": "Buy prepaid SIM before creating IG accounts. Mobile data ONLY \u2014 no WiFi for account creation (trust score penalty). Also: aged Gmail from AccsMarket. Can be done same day as account creation."
+    },
+    {
+      "id": "recKkSm2cY7qG",
+      "commitment": "Post on r/OnlyFansChatter to hire chatter VA ($4/hr, detail hours needed, PPV-focused)",
+      "status": "In Progress",
+      "weekOf": "2026-03-07T00:00:00+00:00",
+      "business": "OFM Agency",
+      "owner": null,
+      "focus": "Operations",
+      "notes": "Do this BEFORE the Sirewall trip (March 8). Post the job: role description, $4/hr rate, hours per day, required: experience with PPV-based OF management, available immediately. Screen 3-5 applicants. Hire best candidate this week. Separate from Filipino chatters already on standby \u2014 this is the chatter MANAGER."
+    },
+    {
+      "id": "recjELJtdH71x",
+      "commitment": "Write vehicle checkout SOP and WA inquiry handling SOP \u2014 film video walkthrough for both",
+      "status": "In Progress",
+      "weekOf": "2026-03-07T00:00:00+00:00",
+      "business": "Lagoon Company",
+      "owner": null,
+      "focus": "Operations",
+      "notes": "Priority: these two SOPs are the most critical before leaving for Puerto Escondido March 8. Checkout SOP: vehicle condition checklist, fuel level, key handover, safety brief script. WA Inquiry SOP: how to respond, pricing script, booking confirmation steps. Film 5-10 min video for each. Send to Dubi."
+    },
+    {
+      "id": "recs6v2OIAiHK",
+      "commitment": "Research and source 20-30 reference images for first AI model character design",
+      "status": "In Progress",
+      "weekOf": "2026-03-07T00:00:00+00:00",
+      "business": "OFM Agency",
+      "owner": null,
+      "focus": "Content",
+      "notes": "Character design decision first: pick viral balance of oddness + beauty (pink hair? unusual eyes? distinctive feature?). Then source or generate 20-30 reference images. Dataset composition: 70% face/upper body (varied expressions/angles), 20% full body (varied outfits), 10% back views. Keep hair consistent if you want it baked in. Variety in: backgrounds, lighting, angles. 512x512 minimum resolution."
+    },
+    {
+      "id": "rec90IFHTqARG",
+      "commitment": "Write SOP: Return inspection + damage assessment, film video walkthrough",
+      "status": "In Progress",
+      "weekOf": "2026-03-07T00:00:00+00:00",
+      "business": "Lagoon Company",
+      "owner": null,
+      "focus": "Operations",
+      "notes": "Must be done BEFORE March 8 departure. Walk-around checklist, fuel, damage pricing guide, customer comms template. Film 5-10 min video. Send to Dubi for review."
+    },
+    {
+      "id": "rec3rRNBZwFwP",
+      "commitment": "Write SOP: Emergency contacts, incident protocol, escalation rules",
+      "status": "In Progress",
+      "weekOf": "2026-03-07T00:00:00+00:00",
+      "business": "Lagoon Company",
+      "owner": null,
+      "focus": "Operations",
+      "notes": "Must be done BEFORE March 8 departure. Escalation logic: what warrants calling Beno vs. not. Emergency contact list. Film walkthrough. Send to Dubi."
+    },
+    {
+      "id": "receQ76wme7CH",
+      "commitment": "Decide AI character concept: visual design, niche, name, viral angle",
+      "status": "In Progress",
+      "weekOf": "2026-03-07T00:00:00+00:00",
+      "business": "OFM Agency",
+      "owner": null,
+      "focus": "Content",
+      "notes": "This is a creative decision, not a technical one. 30 minutes max. Commit to a concept. Viral balance: oddness + beauty. Pick: niche (fitness/lifestyle/cosplay?), distinctive feature (pink hair? unusual eyes?), character name, personality/voice for chatters. Write 1 paragraph character brief."
+    },
+    {
+      "id": "recjKX8FWs4jY",
+      "commitment": "List all Lagoon recurring tasks requiring Beno \u2014 delegation audit doc",
+      "status": "Complete",
+      "weekOf": "2026-03-07T00:00:00+00:00",
+      "business": "Lagoon Company",
+      "owner": null,
+      "focus": "Operations",
+      "notes": "DO THIS TODAY (Mar 7). Write list of every task Beno does for Lagoon. This is the SOP priority list. Quick brain dump \u2014 can refine later. Share with Piia for tracking."
     }
   ]
 }
