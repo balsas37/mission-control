@@ -1974,7 +1974,8 @@
       cursor: pointer; transition: opacity 0.2s; line-height: 1.4;
     }
     .cal-event-chip:hover { opacity: 0.7; }
-    .cal-day-overflow { font-size: 11px; color: var(--text-3); font-weight: 500; padding-top: 2px; }
+    .cal-day-overflow { font-size: 11px; color: var(--text-3); font-weight: 500; padding-top: 2px; cursor: pointer; }
+    .cal-day-overflow:hover { color: var(--text-2); }
     .cal-milestone-marker {
       width: 8px; height: 8px; position: absolute; top: 8px; right: 8px;
       transform: rotate(45deg); border-radius: 2px;
@@ -2005,6 +2006,7 @@
       background: rgba(255,255,255,0.05); border-left: 3px solid var(--text-3);
       border-radius: 0 8px 8px 0; padding: 7px 10px; font-size: 12px; font-weight: 500;
       color: var(--text-1); cursor: pointer; transition: opacity 0.2s; line-height: 1.3;
+      overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;
     }
     .cal-week-event:hover { opacity: 0.7; }
     .cal-week-event-time { font-size: 11px; color: var(--text-3); margin-top: 2px; }
@@ -6955,23 +6957,53 @@
         .then(function(r) { return r.json(); })
         .then(function(data) {
           commitmentEvents = [];
+          // Group commitments by their Monday (normalize weekOf to the Monday of that week)
+          var weekMap = {};
           (data.records || []).forEach(function(c) {
             if (!c.weekOf) return;
             var dt = new Date(c.weekOf);
             if (isNaN(dt.getTime())) return;
-            var dk = dt.getFullYear() + '-' +
-                     String(dt.getMonth() + 1).padStart(2, '0') + '-' +
-                     String(dt.getDate()).padStart(2, '0');
-            commitmentEvents.push({
-              id: c.id,
-              title: c.commitment,
-              date: dk,
-              color: '#F5A623',
-              isCommitment: true,
-              business: c.business,
-              status: c.status,
-              focus: c.focus,
-              owner: c.owner
+            // Normalize to Monday of that week
+            var wd = dt.getDay();
+            var diff = wd === 0 ? -6 : 1 - wd;
+            var monday = new Date(dt);
+            monday.setDate(dt.getDate() + diff);
+            var wk = monday.getFullYear() + '-' + String(monday.getMonth() + 1).padStart(2, '0') + '-' + String(monday.getDate()).padStart(2, '0');
+            if (!weekMap[wk]) weekMap[wk] = { monday: monday, items: [] };
+            weekMap[wk].items.push(c);
+          });
+          // For each week, sort by priority then spread across Mon-Fri (max 3 per day)
+          Object.keys(weekMap).forEach(function(wk) {
+            var monday = weekMap[wk].monday;
+            var items = weekMap[wk].items;
+            // Sort by priority (lower number = higher priority; missing priority goes last)
+            items.sort(function(a, b) {
+              var pa = (a.priority != null && a.priority !== '') ? Number(a.priority) : 999;
+              var pb = (b.priority != null && b.priority !== '') ? Number(b.priority) : 999;
+              if (isNaN(pa)) pa = 999;
+              if (isNaN(pb)) pb = 999;
+              return pa - pb;
+            });
+            // Distribute: max 3 per weekday (0=Mon ... 4=Fri); overflow stays on Friday
+            items.forEach(function(c, idx) {
+              var dayOffset = Math.min(Math.floor(idx / 3), 4);
+              var dayDate = new Date(monday);
+              dayDate.setDate(monday.getDate() + dayOffset);
+              var dk = dayDate.getFullYear() + '-' +
+                       String(dayDate.getMonth() + 1).padStart(2, '0') + '-' +
+                       String(dayDate.getDate()).padStart(2, '0');
+              commitmentEvents.push({
+                id: c.id,
+                title: c.commitment,
+                date: dk,
+                color: '#F5A623',
+                isCommitment: true,
+                business: c.business,
+                status: c.status,
+                focus: c.focus,
+                owner: c.owner,
+                priority: c.priority
+              });
             });
           });
           calRender();
@@ -7589,11 +7621,88 @@
 
     function calDeleteEvent(id) { calEvents = calEvents.filter(function(e) { return e.id !== id; }); calRender(); }
 
+    function calShowEventDetail(eventId) {
+      // Find the event from all data sources
+      var ev = null, type = '', canDelete = false;
+      // Custom calendar events (user-created, deletable)
+      ev = calEvents.filter(function(e) { return e.id === eventId; })[0];
+      if (ev) { type = 'Event'; canDelete = true; }
+      // Tasks
+      if (!ev) {
+        var task = (kanbanTasks || []).filter(function(t) { return 'task-' + t.id === eventId; })[0];
+        if (task) { ev = { id: eventId, title: task.title || 'Task', color: '#6BA8DA', time: task.dueDate || '' }; type = 'Task'; }
+      }
+      // Crons
+      if (!ev) { ev = (cronEvents || []).filter(function(e) { return e.id === eventId; })[0]; if (ev) type = 'Cron'; }
+      // TIs
+      if (!ev) { ev = (tiEvents || []).filter(function(e) { return e.id === eventId; })[0]; if (ev) type = 'TI'; }
+      // Commitments
+      if (!ev) { ev = (commitmentEvents || []).filter(function(e) { return e.id === eventId; })[0]; if (ev) type = 'Commitment'; }
+      // Bookings
+      if (!ev && window._lagoonData) {
+        var allB = (window._lagoonData.active_bookings || []).concat(window._lagoonData.upcoming_bookings || []);
+        allB.forEach(function(b) {
+          if (!ev) {
+            var bid = 'booking-' + (b.name || '') + '-' + (b.start_iso || '');
+            if (bid === eventId) { ev = { id: bid, title: (b.vehicle || 'Booking') + (b.name ? ': ' + b.name : ''), color: '#5BC0DE' }; type = 'Booking'; }
+          }
+        });
+      }
+      if (!ev) return;
+
+      var html = '<div class="cal-day-modal-backdrop" id="cal-event-detail-backdrop">';
+      html += '<div class="cal-day-modal">';
+      html += '<div class="cal-day-modal-header">';
+      html += '<div style="display:flex;align-items:center;gap:10px;min-width:0;">';
+      html += '<div style="width:10px;height:10px;border-radius:2px;background:' + (ev.color || '#888') + ';flex-shrink:0;"></div>';
+      html += '<div class="cal-day-modal-title" style="font-size:15px;white-space:normal;word-break:break-word;">' + escapeHtml(ev.title) + '</div>';
+      html += '</div>';
+      html += '<button class="cal-day-modal-close" id="cal-event-detail-close">&times;</button>';
+      html += '</div>';
+      html += '<div class="cal-day-modal-body" style="padding-top:4px;">';
+      html += '<div style="font-size:11px;color:var(--text-3);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:8px;">' + type + '</div>';
+      if (ev.time) html += '<div style="font-size:13px;color:var(--text-2);margin-bottom:4px;">Time: ' + escapeHtml(ev.time) + '</div>';
+      if (ev.business) html += '<div style="font-size:13px;color:var(--text-2);margin-bottom:4px;">Business: ' + escapeHtml(ev.business) + '</div>';
+      if (ev.status) html += '<div style="font-size:13px;color:var(--text-2);">Status: ' + escapeHtml(ev.status) + '</div>';
+      html += '</div>';
+      html += '<div style="padding:12px 20px;border-top:1px solid var(--border);display:flex;justify-content:flex-end;gap:8px;">';
+      html += '<button id="cal-event-detail-cancel" style="padding:8px 16px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--text-2);font-size:13px;cursor:pointer;">Close</button>';
+      if (canDelete) {
+        html += '<button id="cal-event-detail-delete" data-event-id="' + escapeHtml(eventId) + '" style="padding:8px 16px;border-radius:8px;border:1px solid rgba(217,83,79,0.4);background:rgba(217,83,79,0.08);color:#D9534F;font-size:13px;cursor:pointer;">Delete</button>';
+      }
+      html += '</div>';
+      html += '</div></div>';
+      document.body.insertAdjacentHTML('beforeend', html);
+
+      document.getElementById('cal-event-detail-close').addEventListener('click', function() {
+        document.getElementById('cal-event-detail-backdrop').remove();
+      });
+      document.getElementById('cal-event-detail-cancel').addEventListener('click', function() {
+        document.getElementById('cal-event-detail-backdrop').remove();
+      });
+      document.getElementById('cal-event-detail-backdrop').addEventListener('click', function(e) {
+        if (e.target === this) this.remove();
+      });
+      if (canDelete) {
+        document.getElementById('cal-event-detail-delete').addEventListener('click', function() {
+          if (!this.dataset.confirming) {
+            this.textContent = 'Are you sure?';
+            this.style.fontWeight = '600';
+            this.dataset.confirming = '1';
+            return;
+          }
+          var eid = this.dataset.eventId;
+          calDeleteEvent(eid);
+          document.getElementById('cal-event-detail-backdrop').remove();
+        });
+      }
+    }
+
     function calAttachHandlers() {
       var isMobile = window.innerWidth <= 768;
       document.querySelectorAll('.cal-day:not(.empty), .cal-week-col').forEach(function(cell) {
         cell.addEventListener('click', function(e) {
-          if (e.target.closest('.cal-event-chip') || e.target.closest('.cal-week-event')) return;
+          if (e.target.closest('.cal-event-chip') || e.target.closest('.cal-week-event') || e.target.closest('.cal-day-overflow')) return;
           if (cell.dataset.date) {
             if (isMobile && calViewMode === 'month') {
               calOpenDayDetail(cell.dataset.date);
@@ -7603,10 +7712,19 @@
           }
         });
       });
+      // Overflow pill: show all events for that day
+      document.querySelectorAll('.cal-day-overflow').forEach(function(overflow) {
+        overflow.addEventListener('click', function(e) {
+          e.stopPropagation();
+          var cell = overflow.closest('.cal-day');
+          if (cell && cell.dataset.date) calOpenDayDetail(cell.dataset.date);
+        });
+      });
+      // Event chip: show detail modal (NOT delete)
       document.querySelectorAll('.cal-event-chip, .cal-week-event[data-event-id]').forEach(function(chip) {
         chip.addEventListener('click', function(e) {
           e.stopPropagation();
-          if (chip.dataset.eventId && confirm('Delete this event?')) calDeleteEvent(chip.dataset.eventId);
+          if (chip.dataset.eventId) calShowEventDetail(chip.dataset.eventId);
         });
       });
     }
