@@ -6934,14 +6934,6 @@
       card.classList.toggle('expanded');
     }
 
-    function escapeHtml(str) {
-      return String(str)
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;');
-    }
-
     // Pre-load targets data in the background so it's ready when user clicks
     loadTargetsData().catch(function(e) { console.warn('[MC] Failed to load targets data:', e); });
 
