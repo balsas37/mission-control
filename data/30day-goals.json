@@ -1,0 +1,1805 @@
+{
+  "generated": "2026-03-08T19:02:50.398436+00:00",
+  "records": [
+    {
+      "id": "recsYoj519zs3",
+      "goal": "Complete Sirewall mix design trip March 8-13 and document all outputs",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-14",
+      "business": "Crete Villa",
+      "notes": "Trip: Puerto Escondido March 8-13. Meet Michael Palethorpe on-site. Must come back with: written mix design, cost estimate for Phase 1, construction timeline. Document everything \u2014 photos, soil sample results, material specs. Share with Piia immediately post-trip.",
+      "relatedTargetIds": [
+        "recuLB3lJpYX9"
+      ]
+    },
+    {
+      "id": "rec52Fuvwv4AX",
+      "goal": "List all Lagoon recurring tasks currently requiring Beno \u2014 full delegation audit",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-14",
+      "business": "Lagoon Company",
+      "notes": "Time audit: every task Beno does for Lagoon weekly. This IS the SOP priority list. Everything must be delegated before May 2026 move to Puerto Escondido.",
+      "relatedTargetIds": [
+        "recoY9hEmiVYo"
+      ]
+    },
+    {
+      "id": "recrVEQelb4Wg",
+      "goal": "Write SOP: Vehicle return inspection and damage assessment protocol",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-14",
+      "business": "Lagoon Company",
+      "notes": "Walk-around checklist (photos required), fuel check, interior condition, damage pricing guide, customer communication template, deposit deduction. Film 5-10 min video. Staff handles without calling Beno.",
+      "relatedTargetIds": [
+        "recoY9hEmiVYo"
+      ]
+    },
+    {
+      "id": "rec0qAH3qHDQb",
+      "goal": "Write SOP: Emergency contacts, incident protocol, and escalation decisions",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-14",
+      "business": "Lagoon Company",
+      "notes": "Escalate to Beno ONLY: major accident, totaled vehicle, serious injury, police, dispute >$5K. Emergency contacts: mechanic, tow, insurance, police non-emergency, Dubi backup. NOT Beno: minor damage, flat tire, late return.",
+      "relatedTargetIds": [
+        "recoY9hEmiVYo"
+      ]
+    },
+    {
+      "id": "recE09qf7RZmU",
+      "goal": "Complete soil inspection and sampling during Sirewall site visit",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-14",
+      "business": "Crete Villa",
+      "notes": "Mar 8-13 on-site with Michael Palethorpe. Soil deliverables: samples from multiple points, visual analysis (color/texture/clay), shrinkage test, moisture content. Beno documents photos + GPS coords. Send to Piia within 24hrs of trip end.",
+      "relatedTargetIds": [
+        "recuLB3lJpYX9"
+      ]
+    },
+    {
+      "id": "recv6TYjMRKh3",
+      "goal": "Prepare pre-trip agenda and questions list for Michael Palethorpe Sirewall site meeting",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-14",
+      "business": "Crete Villa",
+      "notes": "OTA milestone: 'Confirm trip dates \u2014 Done (Mar 8-13).' Pre-trip deliverable: what outputs to demand on-site, materials to bring, questions about mix ratios, structural requirements, Phase 1 scope.",
+      "relatedTargetIds": [
+        "recuLB3lJpYX9"
+      ]
+    },
+    {
+      "id": "rec5EpPsIpVRr",
+      "goal": "Run Sirewall mix ratio testing and formulation session with Michael Palethorpe on-site",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-14",
+      "business": "Crete Villa",
+      "notes": "OTA milestone: 'Mix ratio testing and formulation.' During Mar 8-13 site visit: clay/aggregate/stabilizer ratio tests, soil compatibility analysis, finalized Sirewall mix formula specific to Oaxaca coastal site conditions.",
+      "relatedTargetIds": [
+        "recuLB3lJpYX9"
+      ]
+    },
+    {
+      "id": "recWgTlKBYgXS",
+      "goal": "Review Phase 1 CRETE scope with Michael on-site: foundation depth, first wall sections, structural requirements",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-14",
+      "business": "Crete Villa",
+      "notes": "OTA milestone: 'Review Phase 1 scope: foundation + first wall sections.' On-site with Michael Palethorpe: scope foundation depth, wall thickness specs, structural load calculations, Phase 1 sequencing.",
+      "relatedTargetIds": [
+        "recuLB3lJpYX9"
+      ]
+    },
+    {
+      "id": "rec2Mfu37Y5uf",
+      "goal": "Receive written Sirewall mix design document from Michael Palethorpe by March 15 at latest",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-14",
+      "business": "Crete Villa",
+      "notes": "OTA milestone: 'Michael delivers written mix design document.' If not received during trip, Piia follows up in writing by March 15. Document filed to CRETE tracker. Critical path to permit filing.",
+      "relatedTargetIds": [
+        "recuLB3lJpYX9"
+      ]
+    },
+    {
+      "id": "recZerzVmRJWU",
+      "goal": "Schedule follow-up meeting with Michael Palethorpe to review Phase 2 scope post-trip",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-14",
+      "business": "Crete Villa",
+      "notes": "Supporting milestone: keep momentum post-trip. Schedule Phase 2 scoping call or visit with Michael while on-site Mar 8-13. Prevents losing the relationship and stalling construction timeline.",
+      "relatedTargetIds": [
+        "recuLB3lJpYX9"
+      ]
+    },
+    {
+      "id": "recrPnircl4Iq",
+      "goal": "Write SOP: WhatsApp inquiry handling and booking confirmation workflow",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-14",
+      "business": "Lagoon Company",
+      "notes": "OTA milestone: 'Write SOP: WA inquiry handling and booking confirmation.' Template: greeting, price quote, availability check, booking confirmation, payment instructions. Covers all vehicle types. Staff handles without calling Beno.",
+      "relatedTargetIds": [
+        "recoY9hEmiVYo"
+      ]
+    },
+    {
+      "id": "recO8r9duTqW4",
+      "goal": "Write SOP: Vehicle checkout checklist \u2014 condition photos, fuel level, customer safety brief",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-14",
+      "business": "Lagoon Company",
+      "notes": "OTA milestone: 'Write SOP: Vehicle checkout checklist (condition, fuel, safety brief).' Required: pre-rental photos, fuel level recorded, customer signs condition form, safety rules per vehicle type (ATV/UTV/yacht). No Beno call needed.",
+      "relatedTargetIds": [
+        "recoY9hEmiVYo"
+      ]
+    },
+    {
+      "id": "recfHaiULliaP",
+      "goal": "Write SOP: Daily fleet check \u2014 tires, fuel, battery, cleanliness, mechanical inspection",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-14",
+      "business": "Lagoon Company",
+      "notes": "OTA milestone: 'Write SOP: Daily fleet check (tires, fuel, battery, cleanliness).' Morning pre-rental checklist for every vehicle. Flags mechanical issues before customer gets it. Includes escalation: when to pull a vehicle from fleet.",
+      "relatedTargetIds": [
+        "recoY9hEmiVYo"
+      ]
+    },
+    {
+      "id": "rectMPfoejwtg",
+      "goal": "Record 5-10 minute video walk-through for each of the 5 core Lagoon SOPs",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-14",
+      "business": "Lagoon Company",
+      "notes": "OTA milestone: 'Record 5-10 min video walk-through for each SOP.' Video SOPs > written only. Staff rewatches as needed. Priority order: 1) WA handling, 2) Checkout, 3) Return inspection, 4) Fleet check, 5) Emergency protocol.",
+      "relatedTargetIds": [
+        "recoY9hEmiVYo"
+      ]
+    },
+    {
+      "id": "rec8t8b2tN28H",
+      "goal": "Train Dubi on all 5+ Lagoon SOPs with formal sign-off before March 8 departure",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-14",
+      "business": "Lagoon Company",
+      "notes": "OTA milestone: 'Train Dubi (or on-site manager) using videos \u2014 sign-off required.' Training session: Dubi reviews each SOP video, practice run, Q&A, confirms understanding with sign-off. Must happen before Mar 8.",
+      "relatedTargetIds": [
+        "recoY9hEmiVYo"
+      ]
+    },
+    {
+      "id": "recABQXpg1sfE",
+      "goal": "Write and record minimum 5 Lagoon SOPs before March 8 Sirewall trip",
+      "status": "In Progress",
+      "month": "2026-03",
+      "dueDate": "2026-03-14",
+      "business": "Lagoon Company",
+      "notes": "SOPs needed BEFORE trip so Dubi can handle operations March 8-13. Priority order: 1) WA inquiry handling, 2) Vehicle checkout checklist, 3) Return inspection, 4) Daily fleet check, 5) Emergency contacts. Video walkthroughs for each. Then train Dubi with sign-off.",
+      "relatedTargetIds": [
+        "recoY9hEmiVYo"
+      ]
+    },
+    {
+      "id": "rec7PjfBo6rKI",
+      "goal": "Set up Fanvue account and post first 3 pieces of content for first creator",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-31",
+      "business": "OFM Agency",
+      "notes": "Fanvue account setup: disable free trials without payment method, enable auto PPV bundles, add intro video to Discover feed. Set to 18+ content enabled. Post minimum 3 content pieces. Kevin or AI-generated content. First subscriber target: March 21.",
+      "relatedTargetIds": [
+        "rece0f4J4MlnA"
+      ]
+    },
+    {
+      "id": "recKCzMIFngwi",
+      "goal": "Build LoRA training dataset for first AI character model (20-30 images, captioned)",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-31",
+      "business": "OFM Agency",
+      "notes": "Per LoRA training guide: sweet spot is 20-30 images (more = overfitting). Dataset composition: 70% face/upper body, 20% full body, 10% back views. Variety in: angles, backgrounds (different NOT removed), lighting, outfits. Caption using JoyCaption or Gemini API \u2014 describe what you DONT want burned in. Create unique trigger word. Use AI Studio prompts to generate varied angle dataset from single reference image.",
+      "relatedTargetIds": [
+        "reczbf37TIhbM"
+      ]
+    },
+    {
+      "id": "recquCXtz6qk7",
+      "goal": "Create and warm 2 Instagram accounts using Jacob 12-step method",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-31",
+      "business": "OFM Agency",
+      "notes": "Warmup is non-negotiable \u2014 skipping = instant death to accounts. Need: new phone (or GeeLark cloud phone), prepaid SIM. Create account on mobile data ONLY. Do nothing for 48 hours. Days 2-7: watch US reels, minimal engagement. Day 4+: post first reel. No bio link for 4-5 weeks. Build swipe file of hook formats: POV scenarios, found the cutest, may this type of energy find you. Goal: first post by March 15.",
+      "relatedTargetIds": [
+        "rec0IXhUyJgSo"
+      ]
+    },
+    {
+      "id": "rec5Q39iSOKNI",
+      "goal": "Create 2 TikTok accounts and complete 7-day pre-posting engagement phase",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-31",
+      "business": "OFM Agency",
+      "notes": "TikTok: no account warmup needed, but do 7-day engagement phase before posting (per Short-Form Video Playbook Phase 2). Scroll niche content, like, comment, save competitor videos. Build swipe file of formats that get 1000+ views. Note high-comment videos (comments = algorithm fuel). First post target: March 14. Post slideshows only on TikTok \u2014 AI video content gets instant shadowban.",
+      "relatedTargetIds": [
+        "rec0IXhUyJgSo"
+      ]
+    },
+    {
+      "id": "recf5baqpG0zL",
+      "goal": "Get written Phase 1 construction cost estimate from Michael Palethorpe post-trip",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-31",
+      "business": "Crete Villa",
+      "notes": "During the Sirewall trip (Mar 8-13), work with Michael to scope Phase 1 and request a written cost estimate. Must include: materials quantities, labor estimate, equipment needs, timeline. This is critical path \u2014 without this number we cannot plan the construction budget or financing. Follow up with Michael in writing by March 17 if not received during trip.",
+      "relatedTargetIds": [
+        "recuLB3lJpYX9"
+      ]
+    },
+    {
+      "id": "recUYvDpmCsqx",
+      "goal": "Verify Lagoon WA bridge handles Mar 8-13 trip operations without Beno",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-31",
+      "business": "Lagoon Company",
+      "notes": "Live test of remote ops during Sirewall trip. Success = all bookings handled, Beno makes 0 ops calls. Pre-trip: test WA bridge manually (send test inquiry, check response). Post-trip: report number of bookings handled, any issues, response times. This is the dress rehearsal for May move to Puerto Escondido.",
+      "relatedTargetIds": [
+        "rec3JpHolExEf"
+      ]
+    },
+    {
+      "id": "recoVdwK7x14o",
+      "goal": "Design AI character persona \u2014 visual concept, name, niche, viral angle",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-31",
+      "business": "OFM Agency",
+      "notes": "Most important creative decision. Viral balance of oddness + beauty (Aitana Lopez model). Unique feature: pink hair? unusual eyes? Choose niche. Name character. SFW for IG/TikTok, NSFW version for Fanvue. Character voice brief for chatters.",
+      "relatedTargetIds": [
+        "reczbf37TIhbM"
+      ]
+    },
+    {
+      "id": "reco6wYgNZ6Ao",
+      "goal": "Caption LoRA training dataset using JoyCaption/Gemini \u2014 describe what NOT to bake in",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-31",
+      "business": "OFM Agency",
+      "notes": "Caption each image for what you DONT want burned in. Consistent features = uncaptioned. Create unique trigger word (e.g. audr3yHepburn1). 20-30 images all captioned. Use JoyCaption or Gemini API.",
+      "relatedTargetIds": [
+        "reczbf37TIhbM"
+      ]
+    },
+    {
+      "id": "recrPh7Xue49z",
+      "goal": "Train LoRA model on GPU \u2014 WAN 2.1, 2000-3000 steps, sigmoid timesteps",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-31",
+      "business": "OFM Agency",
+      "notes": "AI Toolkit: WAN 2.1, rank 32-64, sigmoid timesteps, 2000-3000 steps, LR 0.0001 or Prodigy. Vast AI (~$5/run). Review checkpoints every 250 steps. Best usually 2000-2600 steps.",
+      "relatedTargetIds": [
+        "reczbf37TIhbM"
+      ]
+    },
+    {
+      "id": "recBzKDwxqZ6A",
+      "goal": "Deploy trained LoRA to ComfyUI and test 10 generations for character consistency",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-31",
+      "business": "OFM Agency",
+      "notes": "Install LoRA in ComfyUI models/loras. Build test workflow. Generate 10 samples: varied poses, outfits, settings. Check face/body consistency. If good: proceed to production pipeline.",
+      "relatedTargetIds": [
+        "reczbf37TIhbM"
+      ]
+    },
+    {
+      "id": "rech8Pbj83nXd",
+      "goal": "Build image-to-video (i2v) workflow in ComfyUI for AI model reel production",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-31",
+      "business": "OFM Agency",
+      "notes": "WAN 2.2 i2v in ComfyUI. LoRA image -> i2v -> 3-5 sec clip -> CapCut edit. 3 reels/week minimum. TikTok: slideshow only (AI video = shadowban). IG/Fanvue: video OK.",
+      "relatedTargetIds": [
+        "reczbf37TIhbM"
+      ]
+    },
+    {
+      "id": "recIUj3wu0yTT",
+      "goal": "Source new phone + prepaid SIM for IG account creation (mobile data only, NOT WiFi)",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-31",
+      "business": "OFM Agency",
+      "notes": "Jacob 12-step: NEVER create on WiFi. Buy prepaid SIM. Aged Gmail from AccsMarket. OR GeeLark cloud phone / AliRemote.com. Create 2 IG accounts for first AI model.",
+      "relatedTargetIds": [
+        "rec0IXhUyJgSo"
+      ]
+    },
+    {
+      "id": "recRQSDPcfcda",
+      "goal": "Post first IG reel for AI model \u2014 Day 4+ warmup, no bio link, proven hook format",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-31",
+      "business": "OFM Agency",
+      "notes": "Day 4+ post-creation. SFW only. No OF/Fanvue reference. No bio link for 4-5 weeks. Mobile data only. Carousel + poll sticker boosts reach. Provocative-but-clean for comment bait.",
+      "relatedTargetIds": [
+        "rec0IXhUyJgSo"
+      ]
+    },
+    {
+      "id": "recf50CLLXPiV",
+      "goal": "Brief chatters on PPV script, pricing psychology, fan type detection, DM upsell strategy",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-31",
+      "business": "OFM Agency",
+      "notes": "Never give price first. PPV: tease/wait/price. Fan type detection. Tip ladder: $5/$10/$25/custom. $50+ per fan session target. Build into dm-copilot skill.",
+      "relatedTargetIds": [
+        "rece0f4J4MlnA"
+      ]
+    },
+    {
+      "id": "recD2B17ZAKqi",
+      "goal": "Launch first PPV mass DM campaign to all Fanvue fans (once 20+ subscribers)",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-31",
+      "business": "OFM Agency",
+      "notes": "Once 20+ subscribers: mass DM with locked PPV at $15-25. Tease without showing. 30%+ open rate target. First real revenue test.",
+      "relatedTargetIds": [
+        "rece0f4J4MlnA"
+      ]
+    },
+    {
+      "id": "rec3dqJ0BQaim",
+      "goal": "Post-trip Lagoon debrief: fix SOP gaps, finalize SOP library, Dubi sign-off",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-31",
+      "business": "Lagoon Company",
+      "notes": "Return Mar 13. Debrief with Dubi. Review: any WA bridge failures? Beno contact needed? Fix every gap found. Target: zero gaps. SOPs finalized and signed off.",
+      "relatedTargetIds": [
+        "recoY9hEmiVYo"
+      ]
+    },
+    {
+      "id": "recxZY1gz0X6V",
+      "goal": "Post-trip: file all CRETE documents in tracker, update oaxaca-tracker.md",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-31",
+      "business": "Crete Villa",
+      "notes": "Within 48hrs of return. File: mix design PDF, Phase 1 cost estimate, soil analysis, site photos, meeting notes. Update oaxaca-tracker.md and Crete Critical Number. If estimate not received by Mar 15: Piia follows up with Michael.",
+      "relatedTargetIds": [
+        "recuLB3lJpYX9"
+      ]
+    },
+    {
+      "id": "recqgbwAWxfRR",
+      "goal": "Connect Stripe in Systeme.io and activate Power Independence Academy funnel",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-31",
+      "business": "Digital Products",
+      "notes": "Settings > Payment > Connect Stripe in Systeme.io (balsas37@proton.me). Replace checkout URLs in 4 funnel pages. Test purchase. Go live. $27/$47/$97 tiers. 15 minutes. HIGHEST LEVERAGE action blocked 2+ weeks. Beno does this himself.",
+      "relatedTargetIds": [
+        "rec5gcFPBoBnG"
+      ]
+    },
+    {
+      "id": "recfWLekiBIRm",
+      "goal": "Disable free trials without payment method on Fanvue account settings",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-31",
+      "business": "OFM Agency",
+      "notes": "OTA milestone: 'Disable free trials without payment method on Fanvue \u2014 Week 1.' Prevents non-paying subs from accessing content. Settings > Subscription > Disable free trial without payment. Must be done before first promotion.",
+      "relatedTargetIds": [
+        "rece0f4J4MlnA"
+      ]
+    },
+    {
+      "id": "rectSULMDaGPT",
+      "goal": "Enable auto PPV bundles on Fanvue account and configure pricing tiers",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-31",
+      "business": "OFM Agency",
+      "notes": "OTA milestone: 'Set up Fanvue account for first creator with auto PPV bundles enabled.' Configure PPV pricing: entry ($9.99), mid ($19.99), premium ($39.99). Bundles drive higher per-subscriber value.",
+      "relatedTargetIds": [
+        "rece0f4J4MlnA"
+      ]
+    },
+    {
+      "id": "reclnwqdyux3U",
+      "goal": "Add Fanvue link to AI model social profiles via Linkme once 500 followers reached",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-31",
+      "business": "OFM Agency",
+      "notes": "OTA milestone: 'Add Fanvue link to social profiles once 500 followers reached.' Use Linkme (NOT Linktree \u2014 shadowban risk). Add to bio only after 4-5 week warmup AND 500+ followers. Bio copy: 'secret page' or 'exclusive content' only.",
+      "relatedTargetIds": [
+        "rece0f4J4MlnA"
+      ]
+    },
+    {
+      "id": "reccYjI8wbCps",
+      "goal": "Get first paid subscriber on Fanvue \u2014 hard target date March 21, 2026",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-31",
+      "business": "OFM Agency",
+      "notes": "OTA milestone: 'First paid subscriber \u2014 target by March 21.' Proof-of-concept moment. Requires: Fanvue set up, content posted, chatters briefed, social traffic flowing. Piia flags if no subscriber by March 18.",
+      "relatedTargetIds": [
+        "rece0f4J4MlnA"
+      ]
+    },
+    {
+      "id": "recTQbZBz2WP4",
+      "goal": "Set up chatter manager role to oversee daily shifts and QC all DM responses",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-31",
+      "business": "OFM Agency",
+      "notes": "OTA accountability: 'Beno: hire chatters, approve first content batch.' Chatter manager reviews DM performance daily, coaches underperformers, tracks PPV conversion rate, reports weekly to Beno.",
+      "relatedTargetIds": [
+        "rece0f4J4MlnA"
+      ]
+    },
+    {
+      "id": "recfbna73XVc7",
+      "goal": "Generate AI Studio varied-angle dataset for LoRA: profile, 3/4, low-angle, high-angle views",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-31",
+      "business": "OFM Agency",
+      "notes": "OTA milestone: 'Generate varied angles via AI Studio dataset prompts.' Use AI Studio to expand single reference image to multi-angle dataset. Covers profile, 3/4, low-angle, high-angle, back views. Variety = better LoRA generalization.",
+      "relatedTargetIds": [
+        "reczbf37TIhbM"
+      ]
+    },
+    {
+      "id": "recXgZCWREKcO",
+      "goal": "Post first 3 AI-generated content pieces on Fanvue \u2014 SFW intro content for new subscribers",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-31",
+      "business": "OFM Agency",
+      "notes": "OTA milestone: 'Post first 3 pieces of content on Fanvue.' First content establishes character identity and tone. SFW teaser content hooks subscribers before NSFW PPV. Quality must be indistinguishable from real creator.",
+      "relatedTargetIds": [
+        "reczbf37TIhbM"
+      ]
+    },
+    {
+      "id": "recG5dz5TgEPr",
+      "goal": "Build production ComfyUI batch workflow: generate 10+ AI model images daily without manual intervention",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-31",
+      "business": "OFM Agency",
+      "notes": "Supporting pipeline milestone. ComfyUI production: LoRA loaded, trigger word set, prompt templates built, output organized by date/type (SFW/NSFW). Target: 10+ usable images per day for content queue.",
+      "relatedTargetIds": [
+        "reczbf37TIhbM"
+      ]
+    },
+    {
+      "id": "recyndy9XROsm",
+      "goal": "Create first SFW content batch: 50+ images queued for IG and TikTok posting schedule",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-31",
+      "business": "OFM Agency",
+      "notes": "Supporting pipeline milestone. SFW content for social: lifestyle shots, fashion, suggestive-but-clean. 50 images = ~17 days of content at 3/day. All with consistent character face via LoRA trigger word.",
+      "relatedTargetIds": [
+        "reczbf37TIhbM"
+      ]
+    },
+    {
+      "id": "recPq3NkguCPw",
+      "goal": "Create first NSFW content batch for Fanvue paying subscribers \u2014 locked PPV library (20+ pieces)",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-31",
+      "business": "OFM Agency",
+      "notes": "Supporting pipeline milestone. NSFW content library for Fanvue: PPV locked content for chatters to upsell in DMs. 20+ pieces minimum before first PPV mass DM campaign. Chatters use this for individual upsell sequences.",
+      "relatedTargetIds": [
+        "reczbf37TIhbM"
+      ]
+    },
+    {
+      "id": "recFqI6WH50Fb",
+      "goal": "Set up AI model IG profile: bio, profile photo, niche aesthetic \u2014 Day 3 of Jacob 12-step warmup",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-31",
+      "business": "OFM Agency",
+      "notes": "OTA milestone: 'Day 3: add profile pic + bio (NO link first 4-5 weeks).' Bio must intrigue without referencing OF/Fanvue. Profile photo = best character image. Visual identity must be consistent with all future content.",
+      "relatedTargetIds": [
+        "rec0IXhUyJgSo"
+      ]
+    },
+    {
+      "id": "recq9aE8MMNTr",
+      "goal": "Scale IG posting to 2 reels/day with carousel + poll sticker format starting Week 2 of warmup",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-31",
+      "business": "OFM Agency",
+      "notes": "OTA milestone: 'Week 2: scale to 2 reels/day, add carousels with poll stickers.' Carousels > single pic for reach. Poll stickers boost engagement (algorithm signal). 2 reels/day = more at-bats for viral content. SFW only.",
+      "relatedTargetIds": [
+        "rec0IXhUyJgSo"
+      ]
+    },
+    {
+      "id": "recrRcFR45vAb",
+      "goal": "Launch IG paid boost: $11-15/day targeting USA+UK+Canada, 'More Profile Views' objective",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-31",
+      "business": "OFM Agency",
+      "notes": "OTA milestone: 'Boost: $11-15/day, USA+UK+Canada, More Profile Views objective.' Wait until best reel hits 100+ organic views organically, then boost. Objective = profile views = more follows = eventual Fanvue conversions.",
+      "relatedTargetIds": [
+        "rec0IXhUyJgSo"
+      ]
+    },
+    {
+      "id": "recZZo7HELNbG",
+      "goal": "Build TikTok swipe file: 30+ hook formats from AI model niche that get 1000+ views",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-31",
+      "business": "OFM Agency",
+      "notes": "OTA milestone: 'Days 1-7: engage with niche content, build swipe file of hook formats.' Catalog what works in AI influencer niche: POV scenarios, found the cutest, may this type of energy find you. High-comment videos = algo fuel.",
+      "relatedTargetIds": [
+        "rec0IXhUyJgSo"
+      ]
+    },
+    {
+      "id": "recxq2kdafcuZ",
+      "goal": "Start TikTok posting schedule Day 8: 1 quality slideshow post/day (NO AI video)",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-31",
+      "business": "OFM Agency",
+      "notes": "OTA milestone: 'Day 8+: 1 quality post/day using proven hook formats.' CRITICAL: Only slideshows on TikTok. AI-generated video = instant shadowban. Use ComfyUI LoRA-generated images as slideshow source.",
+      "relatedTargetIds": [
+        "rec0IXhUyJgSo"
+      ]
+    },
+    {
+      "id": "recu8skDM4NXy",
+      "goal": "Hit 500 combined followers milestone across all 4 AI model social accounts",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-31",
+      "business": "OFM Agency",
+      "notes": "OTA milestone: 'At least 1 account hits 500+ followers.' This is the threshold for adding Fanvue link to bio. Can be IG or TikTok. Track daily follower growth. Target: strongest single account reaches 500 first.",
+      "relatedTargetIds": [
+        "rec0IXhUyJgSo"
+      ]
+    },
+    {
+      "id": "recU3rm8TwbLt",
+      "goal": "Brief Dubi on full Lagoon ops handoff before March 8: bookings, WA bridge, SOPs, emergency protocol",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-31",
+      "business": "Lagoon Company",
+      "notes": "OTA milestone: 'Beno: brief Dubi before departure.' Handoff meeting before Mar 8: review all SOPs, WA bridge flow, booking decision tree, what Dubi can handle vs escalate. Expectation: Dubi runs full day of ops solo.",
+      "relatedTargetIds": [
+        "rec3JpHolExEf"
+      ]
+    },
+    {
+      "id": "reckr947UefF8",
+      "goal": "Define emergency escalation protocol: what Dubi handles solo vs what requires calling Beno during Mar 8-13",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-31",
+      "business": "Lagoon Company",
+      "notes": "OTA milestone: 'Emergency escalation protocol defined.' Dubi handles: minor damage, late returns, flat tires. Escalate to Beno ONLY: major accidents, totaled vehicles, serious injury, police involvement, disputes >$5K. Write this down.",
+      "relatedTargetIds": [
+        "rec3JpHolExEf"
+      ]
+    },
+    {
+      "id": "recR2RDxQVudA",
+      "goal": "Test WA bridge manually before March 8: send test inquiry, verify response quality and timing",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-31",
+      "business": "Lagoon Company",
+      "notes": "OTA milestone: 'Verify WA bridge fully configured and auto-responding before March 8.' Pre-trip test: Beno or staff sends test inquiry, confirms AI response is appropriate and timely. Fix any issues before departure.",
+      "relatedTargetIds": [
+        "rec3JpHolExEf"
+      ]
+    },
+    {
+      "id": "recuMki5pWp3P",
+      "goal": "Set daily ops summary system: Dubi reports to Beno EOD during Mar 8-13 trip test week",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-31",
+      "business": "Lagoon Company",
+      "notes": "Supporting milestone: lightweight reporting. Dubi sends daily summary: bookings confirmed, any issues, revenue, WA response times. Beno monitors only, makes 0 ops calls. Test of remote-only management.",
+      "relatedTargetIds": [
+        "rec3JpHolExEf"
+      ]
+    },
+    {
+      "id": "recoHSNen5YCt",
+      "goal": "Document post-Mar 8-13 trip learnings and update SOPs for May remote handoff",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-31",
+      "business": "Lagoon Company",
+      "notes": "OTA milestone: 'Post-trip review: what broke, what worked, update SOPs.' Return Mar 13. Debrief same day. Document all gaps found. Fix SOPs. This is dress rehearsal for May move to Puerto Escondido.",
+      "relatedTargetIds": [
+        "rec3JpHolExEf"
+      ]
+    },
+    {
+      "id": "recOKTub0urGx",
+      "goal": "Define success metrics for Mar 8-13 Lagoon remote ops test: response time, bookings, escalations",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-31",
+      "business": "Lagoon Company",
+      "notes": "OTA metrics: WA response time <2 hours, bookings handled without Beno (count), incidents escalated (target: 0), revenue vs prior week (target: no drop >20%). Piia tracks and reports during test week.",
+      "relatedTargetIds": [
+        "rec3JpHolExEf"
+      ]
+    },
+    {
+      "id": "recVaTNz5pLCX",
+      "goal": "Test complete purchase flow on Power Independence Academy with test card before going live",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-31",
+      "business": "Digital Products",
+      "notes": "OTA milestone: 'Test purchase with test card.' Full end-to-end test: Stripe checkout, payment processing, confirmation email, product delivery, access granted. Test all 3 price points ($27/$47/$97).",
+      "relatedTargetIds": [
+        "rec5gcFPBoBnG"
+      ]
+    },
+    {
+      "id": "recVq1Hg5Po6N",
+      "goal": "Review all 4 Systeme.io funnel pages for errors, broken links, and copy issues",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-31",
+      "business": "Digital Products",
+      "notes": "OTA milestone: 'Review all funnel pages for errors.' Sales page, checkout, thank you, upsell pages. Check: all checkout URLs replaced (not YOUR_SYSTEMEIO_CHECKOUT_URL), mobile responsive, images loading, no typos.",
+      "relatedTargetIds": [
+        "rec5gcFPBoBnG"
+      ]
+    },
+    {
+      "id": "recfMRUm9GxET",
+      "goal": "Set up Meta Pixel on Power Independence Academy funnel pages for conversion tracking",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-31",
+      "business": "Digital Products",
+      "notes": "OTA milestone: 'Set up Meta Pixel on funnel pages for ad tracking.' Rex (Marketing) to implement. Required for paid traffic campaigns. Track: page views, add to cart, purchase. Enables retargeting and lookalike audiences.",
+      "relatedTargetIds": [
+        "rec5gcFPBoBnG"
+      ]
+    },
+    {
+      "id": "recJViCtwjtYs",
+      "goal": "Launch first paid traffic campaign to Academy: Meta or TikTok ads at $20-30/day",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-31",
+      "business": "Digital Products",
+      "notes": "OTA milestone: 'Launch first paid traffic campaign (Meta or TikTok, $20-30/day).' Rex (Marketing) to set up. Target: freedom/nomad/side-hustle audiences. Creative: result-driven, lifestyle freedom angle. Start small, prove ROAS.",
+      "relatedTargetIds": [
+        "rec5gcFPBoBnG"
+      ]
+    },
+    {
+      "id": "recddy6MS4yb5",
+      "goal": "Get first paying customer for Power Independence Academy and document the acquisition source",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-31",
+      "business": "Digital Products",
+      "notes": "OTA milestone: 'First paying customer.' The moment of validation. Document: which ad/traffic source, what price point, what creative. Proof the funnel works. Then scale to $100/day.",
+      "relatedTargetIds": [
+        "rec5gcFPBoBnG"
+      ]
+    },
+    {
+      "id": "recUpOBrQZ39T",
+      "goal": "Run pricing split test: $27 vs $37 vs $47 price points for 7 days each on same traffic",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-31",
+      "business": "Digital Products",
+      "notes": "Same traffic source, same creative, only price changes. Measure: conversion rate AND revenue. Winner = highest revenue (not just highest conversion).",
+      "relatedTargetIds": [
+        "rec5gcFPBoBnG"
+      ]
+    },
+    {
+      "id": "recl8hBUr22MO",
+      "goal": "Build email follow-up sequence for non-buyers who visited Academy funnel but didn't purchase",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-31",
+      "business": "Digital Products",
+      "notes": "OTA milestone: 'Set up email follow-up sequence for non-buyers.' Systeme.io automation: 3-email sequence over 5 days. Objections: price, timing, trust. Include social proof, case studies, limited-time offer.",
+      "relatedTargetIds": [
+        "rec5gcFPBoBnG"
+      ]
+    },
+    {
+      "id": "recVyMUqhb0Fg",
+      "goal": "Target $500 USD revenue for Power Independence Academy by March 31, 2026",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-03-31",
+      "business": "Digital Products",
+      "notes": "OTA milestone: 'Target: $500 USD revenue by March 31.' Requires ~11 sales at $47 avg. Achievable with paid traffic + email sequence. Piia to track weekly and alert Beno if behind by March 20. HIGHEST LEVERAGE action \u2014 unblocked for 2+ weeks.",
+      "relatedTargetIds": [
+        "rec5gcFPBoBnG"
+      ]
+    },
+    {
+      "id": "recTnUV79E1fC",
+      "goal": "Hire chatter VA and activate Filipino chatters on first Fanvue account",
+      "status": "In Progress",
+      "month": "2026-03",
+      "dueDate": "2026-03-31",
+      "business": "OFM Agency",
+      "notes": "Chatters on standby since Feb 16 \u2014 activate NOW. Post on r/OnlyFansChatter for chatter VA at $4/hr + commission (NOT percentage-only \u2014 pay by hour guaranteed). Brief chatters: pricing psychology (never give price first), PPV strategy, DM tone. Set up chatter manager to oversee daily shifts. Target: chatters live by March 10.",
+      "relatedTargetIds": [
+        "rece0f4J4MlnA"
+      ]
+    },
+    {
+      "id": "recW2Exh8Tnfr",
+      "goal": "Define MVP feature list for Puerto Escondido food delivery app: minimum viable for launch",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": "2026-07-01",
+      "business": "Digital Products",
+      "notes": "OTA milestone: 'Define MVP feature list: minimum viable for launch.' Strip to essentials: browse restaurants, place order, basic payment, driver assignment, order tracking. Nice-to-haves = v2. Prioritize based on user research.",
+      "relatedTargetIds": [
+        "recuaPxsR4bEV"
+      ]
+    },
+    {
+      "id": "recigClaCtZLi",
+      "goal": "Create wireframes: customer app (browse restaurants, order, track, pay)",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": "2026-07-01",
+      "business": "Digital Products",
+      "notes": "Create wireframes: customer app. Screens: home/browse, restaurant menu, cart, checkout, order tracking, payment. Mobile-first. English + Spanish support in design.",
+      "relatedTargetIds": [
+        "recuaPxsR4bEV"
+      ]
+    },
+    {
+      "id": "recPKtU2HTe6E",
+      "goal": "Create wireframes: restaurant dashboard (orders, menu management, accept/decline)",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": "2026-07-01",
+      "business": "Digital Products",
+      "notes": "Create wireframes: restaurant dashboard. Web app (not mobile). Real-time order stream, menu editing, order status updates, earnings view. Simple = restaurants actually use it.",
+      "relatedTargetIds": [
+        "recuaPxsR4bEV"
+      ]
+    },
+    {
+      "id": "rec6xQREuhxiM",
+      "goal": "Create wireframes: driver app (pick up, deliver, navigation, earnings)",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": "2026-07-01",
+      "business": "Digital Products",
+      "notes": "Create wireframes: driver app. Mobile-first. Flow: new order notification \u2192 accept/decline \u2192 navigate to restaurant \u2192 confirm pickup \u2192 navigate to customer \u2192 confirm delivery \u2192 earnings. GPS tracking throughout.",
+      "relatedTargetIds": [
+        "recuaPxsR4bEV"
+      ]
+    },
+    {
+      "id": "recObaOMLK3dt",
+      "goal": "Write product requirements document (PRD) for Puerto Escondido food delivery app",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": "2026-07-01",
+      "business": "Digital Products",
+      "notes": "Consolidate: problem statement, target users, user stories, MVP features, wireframes, tech constraints, success metrics. Zara (Dev) to validate.",
+      "relatedTargetIds": [
+        "recuaPxsR4bEV"
+      ]
+    },
+    {
+      "id": "rechTDlKvRdXy",
+      "goal": "Evaluate tech stack for food delivery app: React Native vs Flutter vs no-code (Adalo/Bubble)",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": "2026-07-01",
+      "business": "Digital Products",
+      "notes": "Zara (Dev) to evaluate. Tradeoffs: speed (no-code) vs flexibility (custom). Consider: 3 apps needed (customer, restaurant, driver), real-time updates, payment processing, GPS. Decision matrix required.",
+      "relatedTargetIds": [
+        "recuaPxsR4bEV"
+      ]
+    },
+    {
+      "id": "recP8Ywl2xnrT",
+      "goal": "Source and contract developer or dev agency for food delivery app MVP",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": "2026-07-01",
+      "business": "Digital Products",
+      "notes": "OTA milestone: 'Source and contract developer or dev agency.' Options: Upwork, Toptal, local Mexican dev (Oaxaca), Zara leads build. PRD must be complete before outreach. Get 3 quotes, check references, review portfolios.",
+      "relatedTargetIds": [
+        "recuaPxsR4bEV"
+      ]
+    },
+    {
+      "id": "recXKDQLgFmch",
+      "goal": "Set food delivery app development timeline, milestones, and MVP budget",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": "2026-07-01",
+      "business": "Digital Products",
+      "notes": "OTA milestone: 'Set launch timeline and budget.' Based on dev quotes and PRD scope. Milestones: design complete, alpha (internal), beta (limited users), public launch. Budget: dev costs, hosting, payment processing, contingency.",
+      "relatedTargetIds": [
+        "recuaPxsR4bEV"
+      ]
+    },
+    {
+      "id": "rec9Z5aI2Oviv",
+      "goal": "Analyze Uber Eats, Rappi, and local competitors in Puerto Escondido delivery market",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-07-01",
+      "business": "Digital Products",
+      "notes": "OTA milestone: 'Market research: analyze Uber Eats, Rappi, and local competitors in Puerto Escondido.' Document: who's operating, coverage gaps, pricing, restaurant partners, pain points. Competitive differentiation opportunities.",
+      "relatedTargetIds": [
+        "recuaPxsR4bEV"
+      ]
+    },
+    {
+      "id": "rec75Vt3z3Eh6",
+      "goal": "Interview 10 Puerto Escondido restaurant owners on delivery needs and pain points",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-07-01",
+      "business": "Digital Products",
+      "notes": "OTA milestone: 'User research: interview 10 restaurant owners in Puerto Escondido area.' Beno on-site Mar 8-13: leverage presence. Questions: commission rates, delivery reliability, order volume, wishlist features, switching incentives.",
+      "relatedTargetIds": [
+        "recuaPxsR4bEV"
+      ]
+    },
+    {
+      "id": "recqSZsodXZCk",
+      "goal": "Interview 20 potential customers in Puerto Escondido: expats, tourists, locals on delivery habits",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": "2026-07-01",
+      "business": "Digital Products",
+      "notes": "OTA milestone: 'User research: interview 20 potential customers.' Expats (English speakers), tourists (short stay), locals (price sensitive). Different needs = different features. Document: order frequency, price sensitivity, app preferences.",
+      "relatedTargetIds": [
+        "recuaPxsR4bEV"
+      ]
+    },
+    {
+      "id": "recdlLey8Ys7k",
+      "goal": "Research existing farmer direct-to-customer platforms (FarmLink, Harvie, LocalHarvest) and document feature gaps for Oaxaca market",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": null,
+      "business": "Digital Products",
+      "notes": "",
+      "relatedTargetIds": [
+        "recudENY2l3yl"
+      ]
+    },
+    {
+      "id": "recYNEJ7jyhsW",
+      "goal": "Conduct 5+ interviews with farmers/workers in Oaxaca/Puerto Escondido region to identify top pain points with selling direct",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": null,
+      "business": "Digital Products",
+      "notes": "",
+      "relatedTargetIds": [
+        "recudENY2l3yl"
+      ]
+    },
+    {
+      "id": "recJMjhd4JXzh",
+      "goal": "Conduct 5+ interviews with potential customers (expats, locals, tourists in Puerto Escondido) to validate demand and willingness to pay",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": null,
+      "business": "Digital Products",
+      "notes": "",
+      "relatedTargetIds": [
+        "recudENY2l3yl"
+      ]
+    },
+    {
+      "id": "recCnGL0WUsdP",
+      "goal": "Define MVP scope: finalize list of 10 core features for launch covering both farmer/worker seller and customer buyer needs",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": null,
+      "business": "Digital Products",
+      "notes": "",
+      "relatedTargetIds": [
+        "recudENY2l3yl"
+      ]
+    },
+    {
+      "id": "rectWzzhjCrK6",
+      "goal": "Create detailed user personas: Farmer/Worker seller profile and Customer buyer profile with key jobs-to-be-done",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": null,
+      "business": "Digital Products",
+      "notes": "",
+      "relatedTargetIds": [
+        "recudENY2l3yl"
+      ]
+    },
+    {
+      "id": "rec01D1y9MK2J",
+      "goal": "Map complete end-to-end user journey for farmer/worker seller: onboard, list product, manage inventory, receive order, fulfil",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": null,
+      "business": "Digital Products",
+      "notes": "",
+      "relatedTargetIds": [
+        "recudENY2l3yl"
+      ]
+    },
+    {
+      "id": "recoDWuunaFgD",
+      "goal": "Map complete end-to-end user journey for customer buyer: discover, browse, add to cart, checkout, arrange pickup/delivery",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": null,
+      "business": "Digital Products",
+      "notes": "",
+      "relatedTargetIds": [
+        "recudENY2l3yl"
+      ]
+    },
+    {
+      "id": "reca5UBDGgOx0",
+      "goal": "Build wireframes for farmer/worker-side app: product listing, inventory management, order management, and earnings screens",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": null,
+      "business": "Digital Products",
+      "notes": "",
+      "relatedTargetIds": [
+        "recudENY2l3yl"
+      ]
+    },
+    {
+      "id": "recePJc8rCfNF",
+      "goal": "Build wireframes for customer-side app: browse marketplace, product detail, cart, checkout, and pickup/delivery tracking screens",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": null,
+      "business": "Digital Products",
+      "notes": "",
+      "relatedTargetIds": [
+        "recudENY2l3yl"
+      ]
+    },
+    {
+      "id": "recncqJuEELWZ",
+      "goal": "Evaluate and decide tech stack with pros/cons doc: React Native vs Flutter vs no-code (Bubble/Adalo/Glide)",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": null,
+      "business": "Digital Products",
+      "notes": "",
+      "relatedTargetIds": [
+        "recudENY2l3yl"
+      ]
+    },
+    {
+      "id": "recNRVO3URnAo",
+      "goal": "Write full Product Requirements Document (PRD) covering all MVP features with user stories and acceptance criteria",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": null,
+      "business": "Digital Products",
+      "notes": "",
+      "relatedTargetIds": [
+        "recudENY2l3yl"
+      ]
+    },
+    {
+      "id": "recXOMb0zvizH",
+      "goal": "Shortlist 3 development partners or freelancers, get quotes, and recommend a development path to Beno",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": null,
+      "business": "Digital Products",
+      "notes": "",
+      "relatedTargetIds": [
+        "recudENY2l3yl"
+      ]
+    },
+    {
+      "id": "recaId9vY57Ui",
+      "goal": "Research AliRemote.com phone farm setup \u2014 confirm compatible phone models, Android versions, and account management workflow",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": null,
+      "business": "OFM Agency",
+      "notes": "",
+      "relatedTargetIds": [
+        "recRIoqRRY4ND"
+      ]
+    },
+    {
+      "id": "rec37DmoUTXkq",
+      "goal": "Determine optimal phone model and Android version for AliRemote \u2014 identify best-value bulk purchase source",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": null,
+      "business": "OFM Agency",
+      "notes": "",
+      "relatedTargetIds": [
+        "recRIoqRRY4ND"
+      ]
+    },
+    {
+      "id": "recZHoWwf6EUN",
+      "goal": "Purchase first 5 phones and complete AliRemote test setup \u2014 validate account creation workflow before bulk purchase",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": null,
+      "business": "OFM Agency",
+      "notes": "",
+      "relatedTargetIds": [
+        "recRIoqRRY4ND"
+      ]
+    },
+    {
+      "id": "recz0f0Cpkgma",
+      "goal": "Write step-by-step internal guide for phone farm setup: AliRemote configuration, proxy assignment, and account warmup protocol",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": null,
+      "business": "OFM Agency",
+      "notes": "",
+      "relatedTargetIds": [
+        "recRIoqRRY4ND"
+      ]
+    },
+    {
+      "id": "recdioXGcsb7q",
+      "goal": "Set up SIM/proxy rotation system to ensure unique residential IP per account \u2014 verify no IP overlap across accounts",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": null,
+      "business": "OFM Agency",
+      "notes": "",
+      "relatedTargetIds": [
+        "recRIoqRRY4ND"
+      ]
+    },
+    {
+      "id": "rec8OyEjQ9FXT",
+      "goal": "Create 3 Instagram accounts per model on first 5 phones following Jacob 12-step warmup \u2014 confirm zero shadowbans",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": null,
+      "business": "OFM Agency",
+      "notes": "",
+      "relatedTargetIds": [
+        "recRIoqRRY4ND"
+      ]
+    },
+    {
+      "id": "recp66FnDSWsi",
+      "goal": "Create 3 TikTok accounts per model on first 5 phones with proper warmup \u2014 confirm content posting works without restrictions",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": null,
+      "business": "OFM Agency",
+      "notes": "",
+      "relatedTargetIds": [
+        "recRIoqRRY4ND"
+      ]
+    },
+    {
+      "id": "recCfKtUj4vh6",
+      "goal": "Purchase remaining 15 phones after successful 5-phone pilot \u2014 verify bulk delivery and setup at scale",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": null,
+      "business": "OFM Agency",
+      "notes": "",
+      "relatedTargetIds": [
+        "recRIoqRRY4ND"
+      ]
+    },
+    {
+      "id": "recdfcosSlCsk",
+      "goal": "Build full account creation assembly line: create 3 accounts per model across all 20 phones (60 total accounts)",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": null,
+      "business": "OFM Agency",
+      "notes": "",
+      "relatedTargetIds": [
+        "recRIoqRRY4ND"
+      ]
+    },
+    {
+      "id": "recgAjCDhAoLz",
+      "goal": "Verify all 60 accounts active, warmed, and operational \u2014 confirm 20 phones online with AliRemote and accounts passing platform checks",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": null,
+      "business": "OFM Agency",
+      "notes": "",
+      "relatedTargetIds": [
+        "recRIoqRRY4ND"
+      ]
+    },
+    {
+      "id": "recjo8iLn6f3i",
+      "goal": "Audit current Lagoon Google Ads account \u2014 document all active campaigns, ad groups, and identify which lack conversion data",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": null,
+      "business": "Lagoon Company",
+      "notes": "",
+      "relatedTargetIds": [
+        "recXThPr3Z8io"
+      ]
+    },
+    {
+      "id": "recsOYeMmOOcL",
+      "goal": "Define 3 priority conversion actions: WhatsApp click-to-chat, booking form submission, and phone number click-to-call",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": null,
+      "business": "Lagoon Company",
+      "notes": "",
+      "relatedTargetIds": [
+        "recXThPr3Z8io"
+      ]
+    },
+    {
+      "id": "recCTQTKpf70d",
+      "goal": "Install and configure Google Tag Manager (GTM) on Lagoon website \u2014 verify container fires correctly on all pages",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": null,
+      "business": "Lagoon Company",
+      "notes": "",
+      "relatedTargetIds": [
+        "recXThPr3Z8io"
+      ]
+    },
+    {
+      "id": "recmJwD1r2dCd",
+      "goal": "Implement Google Ads conversion tag for WhatsApp click-to-chat via GTM \u2014 test and verify firing in Preview mode",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": null,
+      "business": "Lagoon Company",
+      "notes": "",
+      "relatedTargetIds": [
+        "recXThPr3Z8io"
+      ]
+    },
+    {
+      "id": "recrF1AFIyPj2",
+      "goal": "Implement Google Ads conversion tag for booking form submissions via GTM \u2014 test end-to-end with real form submission",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": null,
+      "business": "Lagoon Company",
+      "notes": "",
+      "relatedTargetIds": [
+        "recXThPr3Z8io"
+      ]
+    },
+    {
+      "id": "rec44XzeD16h6",
+      "goal": "Enable Google Ads call conversion tracking for phone number clicks \u2014 verify attribution window and value settings",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": null,
+      "business": "Lagoon Company",
+      "notes": "",
+      "relatedTargetIds": [
+        "recXThPr3Z8io"
+      ]
+    },
+    {
+      "id": "recdFUMAAzW5K",
+      "goal": "Verify all 3 conversion tags firing correctly \u2014 confirm conversions importing into Google Ads within 48 hours",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": null,
+      "business": "Lagoon Company",
+      "notes": "",
+      "relatedTargetIds": [
+        "recXThPr3Z8io"
+      ]
+    },
+    {
+      "id": "rechEJWAEJtVJ",
+      "goal": "Switch active campaigns to Smart Bidding with Target CPA \u2014 set initial CPA target based on historical cost-per-booking",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": null,
+      "business": "Lagoon Company",
+      "notes": "",
+      "relatedTargetIds": [
+        "recXThPr3Z8io"
+      ]
+    },
+    {
+      "id": "recVWNKCVRRUB",
+      "goal": "Audit ad groups and keywords \u2014 pause bottom 20% performers, reallocate budget to top-converting campaigns",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": null,
+      "business": "Lagoon Company",
+      "notes": "",
+      "relatedTargetIds": [
+        "recXThPr3Z8io"
+      ]
+    },
+    {
+      "id": "recF6pnjSxRIK",
+      "goal": "Set up weekly Google Ads performance report: clicks, conversions, cost-per-booking, ROAS \u2014 deliver to Beno every Monday",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": null,
+      "business": "Lagoon Company",
+      "notes": "",
+      "relatedTargetIds": [
+        "recXThPr3Z8io"
+      ]
+    },
+    {
+      "id": "recEEkeCftz1x",
+      "goal": "Define 3 distinct AI model characters/personas with visual identity, backstory, and target fan demographic for Fanvue",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": null,
+      "business": "OFM Agency",
+      "notes": "",
+      "relatedTargetIds": [
+        "rec9hp0Sq9BOz"
+      ]
+    },
+    {
+      "id": "reclkz7Jz8Teo",
+      "goal": "Train LoRA model #2 on Vast AI (A5000) using established pipeline \u2014 complete character review at checkpoints and approve final model",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": null,
+      "business": "OFM Agency",
+      "notes": "",
+      "relatedTargetIds": [
+        "rec9hp0Sq9BOz"
+      ]
+    },
+    {
+      "id": "recEyKkcHO8At",
+      "goal": "Train LoRA model #3 on Vast AI using established pipeline \u2014 complete character review at checkpoints and approve final model",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": null,
+      "business": "OFM Agency",
+      "notes": "",
+      "relatedTargetIds": [
+        "rec9hp0Sq9BOz"
+      ]
+    },
+    {
+      "id": "receKCWSpB1HA",
+      "goal": "Create dedicated Fanvue accounts for all 3 AI models with optimized bios, profile images, and PPV bundles enabled",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": null,
+      "business": "OFM Agency",
+      "notes": "",
+      "relatedTargetIds": [
+        "rec9hp0Sq9BOz"
+      ]
+    },
+    {
+      "id": "recAbMPQqDWKk",
+      "goal": "Build ComfyUI automation pipeline generating 10+ unique images per day for each of the 3 AI model accounts",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": null,
+      "business": "OFM Agency",
+      "notes": "",
+      "relatedTargetIds": [
+        "rec9hp0Sq9BOz"
+      ]
+    },
+    {
+      "id": "rec848KRRvHm6",
+      "goal": "Build image-to-video (i2v) reel workflow in ComfyUI \u2014 produce minimum 3 reels per week per AI model account",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": null,
+      "business": "OFM Agency",
+      "notes": "",
+      "relatedTargetIds": [
+        "rec9hp0Sq9BOz"
+      ]
+    },
+    {
+      "id": "recGpQ7UB5TyU",
+      "goal": "Launch IG + TikTok social accounts for all 3 AI models following Jacob 12-step warmup protocol",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": null,
+      "business": "OFM Agency",
+      "notes": "",
+      "relatedTargetIds": [
+        "rec9hp0Sq9BOz"
+      ]
+    },
+    {
+      "id": "recv7r3Y8WSwa",
+      "goal": "Warm up social accounts to 500+ followers on at least 1 account per model before adding Fanvue link",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": null,
+      "business": "OFM Agency",
+      "notes": "",
+      "relatedTargetIds": [
+        "rec9hp0Sq9BOz"
+      ]
+    },
+    {
+      "id": "rechNmE7wA6C6",
+      "goal": "Activate and brief chatter team across all 3 Fanvue model accounts \u2014 implement PPV pricing psychology and fan messaging flow",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": null,
+      "business": "OFM Agency",
+      "notes": "",
+      "relatedTargetIds": [
+        "rec9hp0Sq9BOz"
+      ]
+    },
+    {
+      "id": "recRgENLSJcde",
+      "goal": "Set individual revenue targets per model (50K MXN Month 1 \u2192 166K+ MXN Month 3) and track weekly toward combined 500K MXN/month",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": null,
+      "business": "OFM Agency",
+      "notes": "",
+      "relatedTargetIds": [
+        "rec9hp0Sq9BOz"
+      ]
+    },
+    {
+      "id": "recJUFwpDsGv5",
+      "goal": "Audit current Lagoon booking flow end-to-end and identify 3+ best upsell injection points (pre-booking, confirmation, checkout)",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": null,
+      "business": "Lagoon Company",
+      "notes": "",
+      "relatedTargetIds": [
+        "recVPiuoIX5es"
+      ]
+    },
+    {
+      "id": "recSC3BbAs0Ek",
+      "goal": "Research eco-yacht/boat rental partners near Tulum and Laguna de Manialtepec \u2014 identify 2-3 viable partners for package bundles",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": null,
+      "business": "Lagoon Company",
+      "notes": "",
+      "relatedTargetIds": [
+        "recVPiuoIX5es"
+      ]
+    },
+    {
+      "id": "rec9WErytefw3",
+      "goal": "Design eco-yacht package tiers (Basic, Premium, Luxury) with pricing, inclusions, and margin targets for each tier",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": null,
+      "business": "Lagoon Company",
+      "notes": "",
+      "relatedTargetIds": [
+        "recVPiuoIX5es"
+      ]
+    },
+    {
+      "id": "recuUh1jw8Q2Y",
+      "goal": "Create add-on menu items: cooler/ice, snorkeling gear, GoPro rental, guide service \u2014 with pricing and availability rules",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": null,
+      "business": "Lagoon Company",
+      "notes": "",
+      "relatedTargetIds": [
+        "recVPiuoIX5es"
+      ]
+    },
+    {
+      "id": "recP2c93xx5pa",
+      "goal": "Write upsell copy for each package and add-on: WhatsApp message scripts, Instagram caption hooks, and booking page descriptions",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": null,
+      "business": "Lagoon Company",
+      "notes": "",
+      "relatedTargetIds": [
+        "recVPiuoIX5es"
+      ]
+    },
+    {
+      "id": "recNeyZG7ki1a",
+      "goal": "Add upsell offer prompts to WA bridge booking confirmation messages \u2014 test flow with 3 test bookings",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": null,
+      "business": "Lagoon Company",
+      "notes": "",
+      "relatedTargetIds": [
+        "recVPiuoIX5es"
+      ]
+    },
+    {
+      "id": "recDa7O2YDbdz",
+      "goal": "Update Lagoon website and Google Business profile to feature eco-yacht packages prominently",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": null,
+      "business": "Lagoon Company",
+      "notes": "",
+      "relatedTargetIds": [
+        "recVPiuoIX5es"
+      ]
+    },
+    {
+      "id": "recMpHTbfy1A4",
+      "goal": "Train Dubi and on-site staff to present and confirm upsells at vehicle checkout \u2014 role-play script practice required",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": null,
+      "business": "Lagoon Company",
+      "notes": "",
+      "relatedTargetIds": [
+        "recVPiuoIX5es"
+      ]
+    },
+    {
+      "id": "rec3nLlWPk4ta",
+      "goal": "Set up weekly upsell revenue tracking: attachment rate %, average order value, revenue from upsells vs base bookings",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": null,
+      "business": "Lagoon Company",
+      "notes": "",
+      "relatedTargetIds": [
+        "recVPiuoIX5es"
+      ]
+    },
+    {
+      "id": "recxsXbg2bCIh",
+      "goal": "Confirm first eco-yacht package booking \u2014 validate the full upsell flow from inquiry to completed experience",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": null,
+      "business": "Lagoon Company",
+      "notes": "",
+      "relatedTargetIds": [
+        "recVPiuoIX5es"
+      ]
+    },
+    {
+      "id": "recgtqbN8VRZP",
+      "goal": "Compile complete list of permits required for Phase 1 rammed-earth construction in Oaxaca municipality \u2014 confirm with local architect",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": null,
+      "business": "Crete Villa",
+      "notes": "",
+      "relatedTargetIds": [
+        "recCkz7cDdlUM"
+      ]
+    },
+    {
+      "id": "rectPRQ3pbGjK",
+      "goal": "Receive and file Phase 1 cost estimate from Michael Palethorpe post-Sirewall trip \u2014 store in CRETE tracker",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": null,
+      "business": "Crete Villa",
+      "notes": "",
+      "relatedTargetIds": [
+        "recCkz7cDdlUM"
+      ]
+    },
+    {
+      "id": "reczc7q9FPWBE",
+      "goal": "Collect all required documents for permit applications: land title deed, topographic survey, architect stamp/c\u00e9dula professional",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": null,
+      "business": "Crete Villa",
+      "notes": "",
+      "relatedTargetIds": [
+        "recCkz7cDdlUM"
+      ]
+    },
+    {
+      "id": "recjEWpeBmynQ",
+      "goal": "Identify and contact the correct municipal and state agencies in Oaxaca for each permit type (uso de suelo, licencia de construcci\u00f3n)",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": null,
+      "business": "Crete Villa",
+      "notes": "",
+      "relatedTargetIds": [
+        "recCkz7cDdlUM"
+      ]
+    },
+    {
+      "id": "recNcUDPHO1HN",
+      "goal": "Draft and submit uso de suelo (land use) permit application to Oaxaca municipal authority",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": null,
+      "business": "Crete Villa",
+      "notes": "",
+      "relatedTargetIds": [
+        "recCkz7cDdlUM"
+      ]
+    },
+    {
+      "id": "receXcrzldrrJ",
+      "goal": "Draft and submit licencia de construcci\u00f3n (construction permit) application with Phase 1 scope documentation",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": null,
+      "business": "Crete Villa",
+      "notes": "",
+      "relatedTargetIds": [
+        "recCkz7cDdlUM"
+      ]
+    },
+    {
+      "id": "rechOZEoNTUI0",
+      "goal": "Research and shortlist 3 local rammed-earth or earthen construction contractors in the Oaxaca coast region",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": null,
+      "business": "Crete Villa",
+      "notes": "",
+      "relatedTargetIds": [
+        "recCkz7cDdlUM"
+      ]
+    },
+    {
+      "id": "recx3WsMJD8ei",
+      "goal": "Request formal quotes from each shortlisted contractor including materials breakdown, labor costs, and projected timeline",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": null,
+      "business": "Crete Villa",
+      "notes": "",
+      "relatedTargetIds": [
+        "recCkz7cDdlUM"
+      ]
+    },
+    {
+      "id": "recosVWTqxzcI",
+      "goal": "Evaluate contractor quotes against Michael Palethorpe cost estimate \u2014 present comparison analysis to Beno",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": null,
+      "business": "Crete Villa",
+      "notes": "",
+      "relatedTargetIds": [
+        "recCkz7cDdlUM"
+      ]
+    },
+    {
+      "id": "reciHZoWQt0To",
+      "goal": "Select final contractor, draft service agreement with Phase 1 scope and payment schedule, and set confirmed start date",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": null,
+      "business": "Crete Villa",
+      "notes": "",
+      "relatedTargetIds": [
+        "recCkz7cDdlUM"
+      ]
+    },
+    {
+      "id": "rec54PblTuNT7",
+      "goal": "Review and transcribe all available Nate Aston chatter training content \u2014 extract key frameworks, techniques, and principles",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": null,
+      "business": "OFM Agency",
+      "notes": "",
+      "relatedTargetIds": [
+        "rectDSP307Ej1"
+      ]
+    },
+    {
+      "id": "recZf0bfqQFZA",
+      "goal": "Document Nate Aston pricing psychology framework in full: never give price first, value-build sequence, and close structure",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": null,
+      "business": "OFM Agency",
+      "notes": "",
+      "relatedTargetIds": [
+        "rectDSP307Ej1"
+      ]
+    },
+    {
+      "id": "recOihhrDAMN6",
+      "goal": "Build fan segmentation model: define buyer types (whale, regular, casual, freebie-seeker) with behavioral markers and handling strategy per type",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": null,
+      "business": "OFM Agency",
+      "notes": "",
+      "relatedTargetIds": [
+        "rectDSP307Ej1"
+      ]
+    },
+    {
+      "id": "recgSFSNIaQWh",
+      "goal": "Extract and document full PPV messaging sequence: initial offer, upsell prompt, objection handling, close, and re-pitch flow",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": null,
+      "business": "OFM Agency",
+      "notes": "",
+      "relatedTargetIds": [
+        "rectDSP307Ej1"
+      ]
+    },
+    {
+      "id": "rece7kW6WPYmQ",
+      "goal": "Build chatter tone guide per model persona: voice, energy level, response style, and hard dos and donts for each active model",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": null,
+      "business": "OFM Agency",
+      "notes": "",
+      "relatedTargetIds": [
+        "rectDSP307Ej1"
+      ]
+    },
+    {
+      "id": "recXenyhRNkqj",
+      "goal": "Create 15+ proven conversation starter templates organized by fan type and entry point (new sub, returning, went cold)",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": null,
+      "business": "OFM Agency",
+      "notes": "",
+      "relatedTargetIds": [
+        "rectDSP307Ej1"
+      ]
+    },
+    {
+      "id": "recbOF8Qt6ZL0",
+      "goal": "Write SOP for shift handoff: required log entries, open conversation notes, fan flags, and next chatter briefing format",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": null,
+      "business": "OFM Agency",
+      "notes": "",
+      "relatedTargetIds": [
+        "rectDSP307Ej1"
+      ]
+    },
+    {
+      "id": "reczfmSdbWkrJ",
+      "goal": "Write SOP for PPV unlock flow: how to pitch content, set price anchor, handle resistance, and close the purchase",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": null,
+      "business": "OFM Agency",
+      "notes": "",
+      "relatedTargetIds": [
+        "rectDSP307Ej1"
+      ]
+    },
+    {
+      "id": "recGMcokhkujh",
+      "goal": "Write SOP for re-engagement: proven sequence to revive cold/dormant fans (silent 7+ days) without coming off desperate",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": null,
+      "business": "OFM Agency",
+      "notes": "",
+      "relatedTargetIds": [
+        "rectDSP307Ej1"
+      ]
+    },
+    {
+      "id": "rec4gZMZBMOfu",
+      "goal": "Compile all chatter SOPs into master Chatter Operations Manual and train active chatter team \u2014 get signed confirmation from each chatter",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": null,
+      "business": "OFM Agency",
+      "notes": "",
+      "relatedTargetIds": [
+        "rectDSP307Ej1"
+      ]
+    },
+    {
+      "id": "rec0T4vQt7w25",
+      "goal": "Run 1-week pilot measuring revenue per chatter-hour before vs after SOP implementation \u2014 report improvement delta",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": null,
+      "business": "OFM Agency",
+      "notes": "",
+      "relatedTargetIds": [
+        "rectDSP307Ej1"
+      ]
+    },
+    {
+      "id": "recezbCJlRf2C",
+      "goal": "Identify top 3 performing chatters from pilot data and assign as team leads for model-specific chatter groups",
+      "status": "Not Started",
+      "month": "2026-03",
+      "dueDate": null,
+      "business": "OFM Agency",
+      "notes": "",
+      "relatedTargetIds": [
+        "rectDSP307Ej1"
+      ]
+    }
+  ]
+}
