@@ -2006,9 +2006,13 @@
       background: rgba(255,255,255,0.05); border-left: 3px solid var(--text-3);
       border-radius: 0 8px 8px 0; padding: 7px 10px; font-size: 12px; font-weight: 500;
       color: var(--text-1); cursor: pointer; transition: opacity 0.2s; line-height: 1.3;
-      overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+      overflow: hidden;
     }
     .cal-week-event:hover { opacity: 0.7; }
+    .cal-week-event-title {
+      display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
     .cal-week-event-time { font-size: 11px; color: var(--text-3); margin-top: 2px; }
 
     /* Add-Event Modal */
@@ -2674,7 +2678,11 @@
        TIMELINE VIEW
        ======================================== */
     #cal-timeline {
-      padding: 0 0 40px 0;
+      padding: 0;
+      max-height: calc(100vh - 200px);
+      overflow-y: auto;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
     }
     .tl-wrap {
       width: 100%;
@@ -7153,9 +7161,9 @@
         var isToday = (dk === todayKey), events = calEventsForDate(dk), milestones = calMilestonesForDate(dk);
         html += '<div class="cal-week-col' + (isToday ? ' today' : '') + '" data-date="' + dk + '">';
         html += '<div class="cal-week-col-header"><div class="cal-week-day-name">' + dayNames[i] + '</div><div class="cal-week-day-num">' + date.getDate() + '</div></div>';
-        milestones.forEach(function(m) { html += '<div class="cal-week-event" style="border-left-color:' + m.color + ';background:' + m.color + '11;">&#x25C6; ' + escapeHtml(m.name) + '</div>'; });
+        milestones.forEach(function(m) { html += '<div class="cal-week-event" style="border-left-color:' + m.color + ';background:' + m.color + '11;"><div class="cal-week-event-title">&#x25C6; ' + escapeHtml(m.name) + '</div></div>'; });
         events.forEach(function(ev) {
-          html += '<div class="cal-week-event" style="border-left-color:' + ev.color + ';" data-event-id="' + ev.id + '">' + escapeHtml(ev.title);
+          html += '<div class="cal-week-event" style="border-left-color:' + ev.color + ';" data-event-id="' + ev.id + '"><div class="cal-week-event-title">' + escapeHtml(ev.title) + '</div>';
           if (ev.time) html += '<div class="cal-week-event-time">' + ev.time + '</div>';
           html += '</div>';
         });
