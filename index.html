@@ -3780,121 +3780,122 @@
     }
 
     /* ========================================
-       ORG CHART
+       ORG CHART — Premium Redesign
        ======================================== */
     #team-org-view {
-      padding: 8px 0 40px;
+      padding: 8px 0 48px;
       overflow-x: auto;
     }
 
-    .org-tree {
+    /* Main wrapper — column, centered */
+    .org-chart-wrapper {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 0;
+      padding: 32px 60px 48px;
       min-width: fit-content;
-      margin: 0 auto;
+      gap: 0;
     }
 
-    /* Classic CSS list-based org chart */
-    .org-tree ul {
-      padding-top: 24px;
-      position: relative;
-      display: flex;
-      justify-content: center;
-      list-style: none;
-      margin: 0;
-      padding-left: 0;
+    /* Section header labels (Command, etc.) */
+    .org-section-header {
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--text-3);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 20px;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.025);
+      border: 1px solid rgba(255,255,255,0.05);
     }
 
-    /* Vertical line from parent down to horizontal connector */
-    .org-tree ul::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 50%;
-      border-left: 2px solid rgba(255,255,255,0.15);
-      width: 0;
-      height: 24px;
+    /* Vertical connector lines */
+    .org-connector-v {
+      width: 1.5px;
+      height: 40px;
+      background: var(--border);
+      flex-shrink: 0;
+      align-self: center;
     }
 
-    .org-tree li {
-      float: none;
-      display: inline-block;
-      vertical-align: top;
-      text-align: center;
-      position: relative;
-      padding: 24px 8px 0;
-    }
-
-    /* Horizontal connector lines (top of each node) */
-    .org-tree li::before,
-    .org-tree li::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 50%;
-      border-top: 2px solid rgba(255,255,255,0.15);
-      width: 50%;
-      height: 24px;
-    }
-    .org-tree li::after {
-      right: auto;
-      left: 50%;
-      border-left: 2px solid rgba(255,255,255,0.15);
-    }
-    /* Only child: no horizontal lines */
-    .org-tree li:only-child::after,
-    .org-tree li:only-child::before { display: none; }
-    /* First child: no left branch */
-    .org-tree li:first-child::before { border: 0 none; }
-    .org-tree li:first-child::after { border-radius: 5px 0 0 0; }
-    /* Last child: no right branch */
-    .org-tree li:last-child::after { border: 0 none; }
-    .org-tree li:last-child::before {
-      border-right: 2px solid rgba(255,255,255,0.15);
-      border-radius: 0 5px 0 0;
-    }
-
-    /* Org node card */
+    /* ---- Org node cards ---- */
     .org-node {
-      display: inline-flex;
+      display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
       background: var(--bg-raised);
       border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 14px 16px 12px;
-      min-width: 110px;
-      max-width: 140px;
+      border-radius: 16px;
+      padding: 20px 20px 16px;
+      min-width: 160px;
+      max-width: 190px;
       cursor: pointer;
-      transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+      transition: border-color 0.2s ease, box-shadow 0.25s ease, transform 0.2s ease;
+      text-align: center;
       position: relative;
     }
 
     .org-node:hover {
-      border-color: rgba(74,144,217,0.5);
-      box-shadow: 0 0 0 3px rgba(74,144,217,0.1), 0 4px 16px rgba(0,0,0,0.3);
-      transform: translateY(-2px);
+      border-color: rgba(255,255,255,0.18);
+      box-shadow: 0 0 0 3px rgba(255,255,255,0.04), 0 8px 24px rgba(0,0,0,0.4);
+      transform: translateY(-3px);
     }
 
-    .org-node-emoji {
-      font-size: 22px;
-      line-height: 1;
+    /* CEO node: accent glow */
+    .org-node.beno-node {
+      border-color: rgba(124,158,245,0.3);
+      box-shadow: 0 0 24px rgba(124,158,245,0.08), 0 0 0 1px rgba(124,158,245,0.1);
+      cursor: default;
+    }
+    .org-node.beno-node:hover {
+      transform: none;
+      border-color: rgba(124,158,245,0.35);
     }
 
-    .org-node-name {
+    /* COO node: lighter accent */
+    .org-node.piia-node {
+      border-color: rgba(124,158,245,0.18);
+      box-shadow: 0 0 16px rgba(124,158,245,0.05);
+    }
+    .org-node.piia-node:hover {
+      border-color: rgba(124,158,245,0.38);
+      box-shadow: 0 0 0 3px rgba(124,158,245,0.08), 0 8px 24px rgba(0,0,0,0.4);
+      transform: translateY(-3px);
+    }
+
+    /* ---- Agent avatar circle ---- */
+    .org-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 14px;
-      font-weight: 500;
+      font-weight: 700;
+      color: rgba(0,0,0,0.72);
+      letter-spacing: -0.02em;
+      flex-shrink: 0;
+      margin-bottom: 2px;
+    }
+
+    /* ---- Node typography ---- */
+    .org-node-name {
+      font-size: 15px;
+      font-weight: 600;
       color: var(--text-1);
-      letter-spacing: -0.01em;
+      letter-spacing: -0.015em;
+      line-height: 1.2;
     }
 
     .org-node-title {
-      font-size: 10px;
-      color: var(--text-3);
+      font-size: 12px;
+      color: var(--text-2);
       text-align: center;
-      line-height: 1.3;
+      line-height: 1.4;
       letter-spacing: 0.01em;
     }
 
@@ -3903,13 +3904,15 @@
       gap: 4px;
       flex-wrap: wrap;
       justify-content: center;
-      margin-top: 2px;
+      margin-top: 4px;
     }
 
     .org-node-status {
-      font-size: 10px;
-      padding: 2px 7px;
+      font-size: 11px;
+      font-weight: 500;
+      padding: 3px 9px;
       border-radius: 999px;
+      letter-spacing: 0.01em;
     }
 
     .org-node-status.active {
@@ -3922,23 +3925,97 @@
       color: var(--pill-waiting-text);
     }
 
+    .org-node-status.human {
+      background: rgba(124,158,245,0.12);
+      color: #7C9EF5;
+    }
+
     .org-node-target-count {
-      font-size: 10px;
-      padding: 2px 7px;
+      font-size: 11px;
+      font-weight: 500;
+      padding: 3px 9px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.05);
       color: var(--text-3);
+      border: 1px solid rgba(255,255,255,0.05);
     }
 
-    .org-node.beno-node {
-      background: rgba(74,144,217,0.07);
-      border-color: rgba(74,144,217,0.25);
-      min-width: 130px;
+    /* ---- Department row (3-column grid) ---- */
+    .org-dept-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      position: relative;
     }
 
-    /* Special: on-demand row */
-    .org-ondemand-row {
-      margin-top: 0;
+    /* Horizontal connector — spans from center of col-1 to center of col-3 */
+    .org-dept-row::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: calc(100% / 6);
+      right: calc(100% / 6);
+      height: 1.5px;
+      background: var(--border);
+    }
+
+    .org-dept-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 40px;
+      position: relative;
+    }
+
+    /* Vertical drop from horizontal connector to dept label */
+    .org-dept-group::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1.5px;
+      height: 40px;
+      background: var(--border);
+    }
+
+    /* Department section labels */
+    .org-dept-label {
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--text-3);
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      margin-bottom: 16px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.025);
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    /* Node cluster inside a dept group */
+    .org-dept-nodes {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    /* ---- On-demand section ---- */
+    .org-ondemand-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    .org-ondemand-section .org-dept-label {
+      margin-top: 16px;
+      margin-bottom: 16px;
+      color: var(--pill-waiting-text);
+      background: var(--pill-waiting-bg);
+      border-color: transparent;
     }
 
     /* ========================================
@@ -8687,6 +8764,27 @@
       }) || null;
     }
 
+    // Agent colors for org chart avatars
+    var AGENT_COLORS = {
+      'Piia': '#7C9EF5',
+      'Kat': '#B07CE8',
+      'Vex': '#E87CA8',
+      'Rex': '#5CB85C',
+      'Zara': '#E8A87C',
+      'Mara': '#E87CA8',
+      'Cleo': '#DAB255',
+      'Nile': '#7CD4E8'
+    };
+
+    function getAgentInitials(name) {
+      return name.substring(0, 2);
+    }
+
+    function getAvatarStyle(name) {
+      var bg = AGENT_COLORS[name] || '#888888';
+      return 'background:' + bg + ';';
+    }
+
     function countTargets(agentRecordId) {
       if (!aitableTargets) return 0;
       return aitableTargets.filter(function(r) {
@@ -8695,9 +8793,8 @@
       }).length;
     }
 
-    function buildOrgNode(agentName, isOnDemand) {
+    function buildOrgNode(agentName, isOnDemand, isPiia) {
       var rec = getAgentByName(agentName);
-      var emoji = rec ? (rec.fields['Emoji'] || '🤖') : '🤖';
       var title = rec ? (rec.fields['Title'] || '') : '';
       var status = rec ? (rec.fields['Status'] || 'Active') : 'Active';
       var recordId = rec ? rec.recordId : null;
@@ -8705,14 +8802,18 @@
 
       var statusClass = (status === 'On-Demand' || isOnDemand) ? 'on-demand' : 'active';
       var statusLabel = (status === 'On-Demand' || isOnDemand) ? 'On-Demand' : 'Active';
+      var initials = getAgentInitials(agentName);
+      var avatarStyle = getAvatarStyle(agentName);
 
       var nodeEl = document.createElement('div');
-      nodeEl.className = 'org-node';
+      var className = 'org-node';
+      if (isPiia) className += ' piia-node';
+      nodeEl.className = className;
       if (recordId) nodeEl.dataset.recordId = recordId;
       nodeEl.dataset.agentName = agentName;
 
       nodeEl.innerHTML =
-        '<div class="org-node-emoji">' + emoji + '</div>' +
+        '<div class="org-avatar" style="' + avatarStyle + '">' + initials + '</div>' +
         '<div class="org-node-name">' + agentName + '</div>' +
         '<div class="org-node-title">' + title + '</div>' +
         '<div class="org-node-badges">' +
@@ -8732,58 +8833,114 @@
       if (!root) return;
       root.innerHTML = '';
 
-      // ----- Level 0: Beno -----
-      var benoLi = document.createElement('div');
-      benoLi.style.cssText = 'display:flex;flex-direction:column;align-items:center;margin-bottom:0';
+      var wrapper = document.createElement('div');
+      wrapper.className = 'org-chart-wrapper';
+      root.appendChild(wrapper);
+
+      // ----- Level 0: Beno (Command) -----
+      var commandHeader = document.createElement('div');
+      commandHeader.className = 'org-section-header';
+      commandHeader.textContent = 'Command';
+      wrapper.appendChild(commandHeader);
+
+      var benoRow = document.createElement('div');
+      benoRow.className = 'org-node-row';
+      benoRow.style.cssText = 'display:flex;flex-direction:column;align-items:center;';
 
       var benoNode = document.createElement('div');
       benoNode.className = 'org-node beno-node';
       benoNode.style.cursor = 'default';
       benoNode.innerHTML =
-        '<div class="org-node-emoji">👤</div>' +
+        '<div class="org-avatar" style="background:#E8A87C;">Be</div>' +
         '<div class="org-node-name">Beno</div>' +
         '<div class="org-node-title">CEO / Founder</div>' +
-        '<div class="org-node-badges"><span class="org-node-status active">Human</span></div>';
-      benoLi.appendChild(benoNode);
-      root.appendChild(benoLi);
+        '<div class="org-node-badges"><span class="org-node-status human">Human</span></div>';
+      benoRow.appendChild(benoNode);
+      wrapper.appendChild(benoRow);
+
+      // Connector: Beno -> Piia
+      var connector1 = document.createElement('div');
+      connector1.className = 'org-connector-v';
+      wrapper.appendChild(connector1);
 
       // ----- Level 1: Piia -----
-      var piiaRec = getAgentByName('Piia');
-      var l1Ul = document.createElement('ul');
-      var l1Li = document.createElement('li');
-      var piiaNode = buildOrgNode('Piia', false);
-      l1Li.appendChild(piiaNode);
+      var piiaRow = document.createElement('div');
+      piiaRow.className = 'org-node-row';
+      piiaRow.style.cssText = 'display:flex;flex-direction:column;align-items:center;';
 
-      // ----- Level 2: direct reports (under Piia) -----
-      var directReports = ['Kat', 'Vex', 'Rex', 'Zara', 'Mara', 'Cleo'];
-      var l2Ul = document.createElement('ul');
-      directReports.forEach(function(name) {
-        var li = document.createElement('li');
-        li.appendChild(buildOrgNode(name, false));
-        l2Ul.appendChild(li);
-      });
-      l1Li.appendChild(l2Ul);
+      var piiaNode = buildOrgNode('Piia', false, true);
+      piiaRow.appendChild(piiaNode);
+      wrapper.appendChild(piiaRow);
 
-      l1Ul.appendChild(l1Li);
-      root.appendChild(l1Ul);
+      // Connector: Piia -> Depts
+      var connector2 = document.createElement('div');
+      connector2.className = 'org-connector-v';
+      wrapper.appendChild(connector2);
 
-      // ----- On-demand tier (Nile, shown separately) -----
+      // ----- Level 2: Departments -----
+      var deptRow = document.createElement('div');
+      deptRow.className = 'org-dept-row';
+
+      // Operations: Kat, Vex
+      var opsGroup = document.createElement('div');
+      opsGroup.className = 'org-dept-group';
+      var opsLabel = document.createElement('div');
+      opsLabel.className = 'org-dept-label';
+      opsLabel.textContent = 'Operations';
+      opsGroup.appendChild(opsLabel);
+      var opsNodes = document.createElement('div');
+      opsNodes.className = 'org-dept-nodes';
+      opsNodes.appendChild(buildOrgNode('Kat', false, false));
+      opsNodes.appendChild(buildOrgNode('Vex', false, false));
+      opsGroup.appendChild(opsNodes);
+      deptRow.appendChild(opsGroup);
+
+      // Build: Rex, Zara
+      var buildGroup = document.createElement('div');
+      buildGroup.className = 'org-dept-group';
+      var buildLabel = document.createElement('div');
+      buildLabel.className = 'org-dept-label';
+      buildLabel.textContent = 'Build';
+      buildGroup.appendChild(buildLabel);
+      var buildNodes = document.createElement('div');
+      buildNodes.className = 'org-dept-nodes';
+      buildNodes.appendChild(buildOrgNode('Rex', false, false));
+      buildNodes.appendChild(buildOrgNode('Zara', false, false));
+      buildGroup.appendChild(buildNodes);
+      deptRow.appendChild(buildGroup);
+
+      // Intelligence: Mara, Cleo
+      var intelGroup = document.createElement('div');
+      intelGroup.className = 'org-dept-group';
+      var intelLabel = document.createElement('div');
+      intelLabel.className = 'org-dept-label';
+      intelLabel.textContent = 'Intelligence';
+      intelGroup.appendChild(intelLabel);
+      var intelNodes = document.createElement('div');
+      intelNodes.className = 'org-dept-nodes';
+      intelNodes.appendChild(buildOrgNode('Mara', false, false));
+      intelNodes.appendChild(buildOrgNode('Cleo', false, false));
+      intelGroup.appendChild(intelNodes);
+      deptRow.appendChild(intelGroup);
+
+      wrapper.appendChild(deptRow);
+
+      // ----- On-demand section: Nile -----
       var onDemandSection = document.createElement('div');
-      onDemandSection.style.cssText = 'margin-top:0;display:flex;flex-direction:column;align-items:center';
+      onDemandSection.className = 'org-ondemand-section';
 
       var odLabel = document.createElement('div');
-      odLabel.style.cssText = 'font-size:10px;color:var(--text-3);text-transform:uppercase;letter-spacing:0.08em;margin:8px 0 0;';
+      odLabel.className = 'org-dept-label';
       odLabel.textContent = 'On-Demand';
-
-      var odUl = document.createElement('ul');
-      odUl.style.cssText = 'padding-top:16px';
-      var odLi = document.createElement('li');
-      odLi.appendChild(buildOrgNode('Nile', true));
-      odUl.appendChild(odLi);
-
       onDemandSection.appendChild(odLabel);
-      onDemandSection.appendChild(odUl);
-      root.appendChild(onDemandSection);
+
+      var odNodeWrapper = document.createElement('div');
+      odNodeWrapper.className = 'org-node-row';
+      odNodeWrapper.style.cssText = 'display:flex;justify-content:center;';
+      odNodeWrapper.appendChild(buildOrgNode('Nile', true, false));
+      onDemandSection.appendChild(odNodeWrapper);
+
+      wrapper.appendChild(onDemandSection);
     }
 
     /* ============================
