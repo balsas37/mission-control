@@ -5132,6 +5132,7 @@
           <button class="cal-filter-chip active" data-cal-filter="bookings"><span class="cal-filter-dot" style="background:#5BC0DE"></span>Bookings</button>
           <button class="cal-filter-chip active" data-cal-filter="crons"><span class="cal-filter-dot" style="background:#5AB8B0"></span>Crons</button>
           <button class="cal-filter-chip active" data-cal-filter="tis"><span class="cal-filter-dot" style="background:#DAB255"></span>TIs</button>
+          <button class="cal-filter-chip active" data-cal-filter="commitments"><span class="cal-filter-dot" style="background:#F5A623"></span>Commitments</button>
         </div>
       </div>
 
@@ -6916,6 +6917,7 @@
     startActivityRefresh();
     loadCronEvents();
     loadTIEvents();
+    loadCommitmentEvents();
     loadDocuments();
 
     /* ---- Calendar: State & Data ---- */
@@ -6945,12 +6947,47 @@
       { name: 'Lagoon high season', date: '2026-12-01', color: '#DAB255' }
     ];
 
+    /* ---- Weekly Commitment Events for Calendar ---- */
+    var commitmentEvents = [];
+
+    function loadCommitmentEvents() {
+      return fetch('data/weekly-commitments.json?t=' + Date.now())
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+          commitmentEvents = [];
+          (data.records || []).forEach(function(c) {
+            if (!c.weekOf) return;
+            var dt = new Date(c.weekOf);
+            if (isNaN(dt.getTime())) return;
+            var dk = dt.getFullYear() + '-' +
+                     String(dt.getMonth() + 1).padStart(2, '0') + '-' +
+                     String(dt.getDate()).padStart(2, '0');
+            commitmentEvents.push({
+              id: c.id,
+              title: c.commitment,
+              date: dk,
+              color: '#F5A623',
+              isCommitment: true,
+              business: c.business,
+              status: c.status,
+              focus: c.focus,
+              owner: c.owner
+            });
+          });
+          calRender();
+        })
+        .catch(function(err) {
+          console.warn('[MC] Failed to load weekly-commitments.json:', err);
+        });
+    }
+
     function calDateKey(y, m, d) { return y + '-' + String(m+1).padStart(2,'0') + '-' + String(d).padStart(2,'0'); }
     var showEventsOnCalendar = true;
     var showTasksOnCalendar = true;
     var showBookingsOnCalendar = true;
     var showCronsOnCalendar = true;
     var showTIsOnCalendar = true;
+    var showCommitmentsOnCalendar = true;
 
     function calGetTaskEvents(dk) {
       if (!showTasksOnCalendar) return [];
@@ -7013,7 +7050,8 @@
       var bookings = calGetBookingEvents(dk);
       var crons = showCronsOnCalendar ? cronEvents.filter(function(e) { return e.date === dk; }) : [];
       var tis = showTIsOnCalendar ? tiEvents.filter(function(e) { return e.date === dk; }) : [];
-      return events.concat(tasks).concat(bookings).concat(crons).concat(tis);
+      var commitments = showCommitmentsOnCalendar ? commitmentEvents.filter(function(e) { return e.date === dk; }) : [];
+      return events.concat(tasks).concat(bookings).concat(crons).concat(tis).concat(commitments);
     }
     function calMilestonesForDate(dk) { return calMilestones.filter(function(m) { return m.date === dk; }); }
 
@@ -8445,11 +8483,12 @@
         chip.classList.toggle('active');
         var isActive = chip.classList.contains('active');
         switch (chip.dataset.calFilter) {
-          case 'tasks':    showTasksOnCalendar    = isActive; break;
-          case 'events':   showEventsOnCalendar   = isActive; break;
-          case 'bookings': showBookingsOnCalendar  = isActive; break;
-          case 'crons':    showCronsOnCalendar     = isActive; break;
-          case 'tis':      showTIsOnCalendar       = isActive; break;
+          case 'tasks':       showTasksOnCalendar       = isActive; break;
+          case 'events':      showEventsOnCalendar      = isActive; break;
+          case 'bookings':    showBookingsOnCalendar     = isActive; break;
+          case 'crons':       showCronsOnCalendar        = isActive; break;
+          case 'tis':         showTIsOnCalendar          = isActive; break;
+          case 'commitments': showCommitmentsOnCalendar  = isActive; break;
         }
         calRender();
       });
