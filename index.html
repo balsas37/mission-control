@@ -4230,6 +4230,196 @@
     }
     .matrix-td-cell.role-finance .matrix-cell-role { color: #DAB255; }
 
+    /* ========================================
+       TARGETS VIEW (Projects panel)
+       ======================================== */
+    #projects-targets-view {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .target-card {
+      background: var(--bg-raised);
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      transition: border-color 0.2s ease;
+    }
+
+    .target-card:hover {
+      border-color: var(--border-hover);
+    }
+
+    .target-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 20px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .target-business-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .target-priority-badge {
+      font-size: 11px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.5);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 999px;
+      padding: 2px 7px;
+      flex-shrink: 0;
+      letter-spacing: 0.02em;
+    }
+
+    .target-text {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--text-1);
+      flex: 1;
+      min-width: 0;
+      line-height: 1.4;
+    }
+
+    .target-meta-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+      margin-left: auto;
+    }
+
+    .target-quarter {
+      font-size: 12px;
+      color: var(--text-3);
+      white-space: nowrap;
+    }
+
+    .target-goal-count {
+      font-size: 12px;
+      color: var(--text-3);
+      white-space: nowrap;
+    }
+
+    .target-expand-icon {
+      font-size: 12px;
+      color: var(--text-3);
+      transition: transform 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .target-card.expanded .target-expand-icon {
+      transform: rotate(180deg);
+    }
+
+    .target-progress-row {
+      padding: 0 20px 14px 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .target-business-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+
+    .target-progress-bar-wrap {
+      flex: 1;
+      height: 4px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .target-progress-bar-fill {
+      height: 100%;
+      border-radius: 999px;
+      transition: width 0.4s ease;
+    }
+
+    .target-pct-label {
+      font-size: 11px;
+      color: var(--text-3);
+      white-space: nowrap;
+      min-width: 28px;
+      text-align: right;
+    }
+
+    .target-goals-panel {
+      border-top: 1px solid var(--border);
+      display: none;
+    }
+
+    .target-card.expanded .target-goals-panel {
+      display: block;
+    }
+
+    .target-goals-list {
+      padding: 10px 20px 14px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .target-goal-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 10px 12px;
+      background: var(--bg);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+
+    .target-goal-text {
+      flex: 1;
+      font-size: 13px;
+      color: var(--text-2);
+      line-height: 1.45;
+    }
+
+    .target-goal-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .target-goal-date {
+      font-size: 11px;
+      color: var(--text-3);
+      white-space: nowrap;
+    }
+
+    .target-goals-empty {
+      padding: 14px 20px;
+      font-size: 13px;
+      color: var(--text-3);
+    }
+
+    /* Targets status pills */
+    .pill-target-notstarted {
+      background: rgba(255,255,255,0.04);
+      color: var(--text-3);
+    }
+    .pill-target-inprogress {
+      background: rgba(100,165,215,0.14);
+      color: #6BA8DA;
+    }
+    .pill-target-complete {
+      background: rgba(100,190,100,0.14);
+      color: #6BBF6B;
+    }
+
   </style>
 </head>
 <body>
@@ -4783,6 +4973,7 @@
         <div class="view-toggle" id="projects-view-toggle">
           <button class="view-toggle-btn active" data-view="cards">Cards</button>
           <button class="view-toggle-btn" data-view="table">Table</button>
+          <button class="view-toggle-btn" data-view="targets">Targets</button>
         </div>
       </div>
 
@@ -4975,6 +5166,13 @@
               </tr>
             </tbody>
           </table>
+        </div>
+      </div>
+
+      <!-- Targets View -->
+      <div id="projects-targets-view" style="display:none">
+        <div id="targets-list">
+          <div style="padding:20px;color:var(--text-3);font-size:14px">Loading targets...</div>
         </div>
       </div>
 
@@ -6553,7 +6751,199 @@
         btn.addEventListener('click', function() { showView(btn.dataset.view); });
       });
     })();
-    initViewToggle('projects-view-toggle', 'projects-card-view', 'projects-table-view', 'mc-projects-view');
+    /* ---- Projects: 3-view toggle (Cards / Table / Targets) ---- */
+    (function initProjectsViewToggle() {
+      var toggle = document.getElementById('projects-view-toggle');
+      if (!toggle) return;
+      var views = {
+        'cards':   'projects-card-view',
+        'table':   'projects-table-view',
+        'targets': 'projects-targets-view'
+      };
+      var storageKey = 'mc-projects-view';
+      var savedView = null;
+      try { savedView = localStorage.getItem(storageKey); } catch(e) {}
+      if (!savedView || !views[savedView]) savedView = 'cards';
+
+      function showProjectsView(v) {
+        toggle.querySelectorAll('.view-toggle-btn').forEach(function(b) {
+          b.classList.toggle('active', b.dataset.view === v);
+        });
+        Object.keys(views).forEach(function(key) {
+          var el = document.getElementById(views[key]);
+          if (el) el.style.display = key === v ? '' : 'none';
+        });
+        try { localStorage.setItem(storageKey, v); } catch(e) {}
+        if (v === 'targets' && !window._targetsLoaded) {
+          window._targetsLoaded = true;
+          renderTargetsView();
+        }
+      }
+
+      showProjectsView(savedView);
+
+      toggle.querySelectorAll('.view-toggle-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() { showProjectsView(btn.dataset.view); });
+      });
+    })();
+
+    /* ---- Targets View Data + Rendering ---- */
+    var targetsData = [];
+    var goalsData = [];
+    var _targetsDataLoaded = false;
+
+    function loadTargetsData() {
+      return Promise.all([
+        fetch('data/90day-targets.json?t=' + Date.now()).then(function(r) { return r.json(); }).catch(function() { return { records: [] }; }),
+        fetch('data/30day-goals.json?t=' + Date.now()).then(function(r) { return r.json(); }).catch(function() { return { records: [] }; })
+      ]).then(function(results) {
+        targetsData = (results[0].records || []).slice().sort(function(a, b) {
+          return (a.priority || 99) - (b.priority || 99);
+        });
+        goalsData = results[1].records || [];
+        _targetsDataLoaded = true;
+      });
+    }
+
+    function getTargetStatusPill(status) {
+      if (!status) return '<span class="pill pill-target-notstarted">Not Started</span>';
+      var s = status.toLowerCase().replace(/\s+/g, '');
+      if (s === 'inprogress') return '<span class="pill pill-target-inprogress">In Progress</span>';
+      if (s === 'complete' || s === 'completed') return '<span class="pill pill-target-complete">Complete</span>';
+      return '<span class="pill pill-target-notstarted">' + (status || 'Not Started') + '</span>';
+    }
+
+    function getGoalStatusPill(status) {
+      return getTargetStatusPill(status);
+    }
+
+    var TARGET_BIZ_COLORS = {
+      'OFM Agency': '#B07CE8',
+      'Lagoon Company': '#5BC0DE',
+      'Lagoon': '#5BC0DE',
+      'Digital Products': '#F5A623',
+      'OpenClaw': '#6BA8DA',
+      'Crete Villa': '#D4A843',
+      'Farm': '#5CB85C',
+      'Off-Grid': '#5CB85C',
+      'Farm / Off-Grid': '#5CB85C',
+      'App Dev': '#888888',
+      'App Development': '#888888',
+      'General': '#888888'
+    };
+
+    function getBizColor(biz) {
+      if (!biz) return '#888888';
+      for (var key in TARGET_BIZ_COLORS) {
+        if (biz.toLowerCase().indexOf(key.toLowerCase()) !== -1 || key.toLowerCase().indexOf(biz.toLowerCase()) !== -1) {
+          return TARGET_BIZ_COLORS[key];
+        }
+      }
+      return '#888888';
+    }
+
+    function formatTargetDate(d) {
+      if (!d) return '';
+      try {
+        var dt = new Date(d);
+        return dt.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+      } catch(e) { return d; }
+    }
+
+    function renderTargetsView() {
+      var container = document.getElementById('targets-list');
+      if (!container) return;
+
+      if (!_targetsDataLoaded) {
+        loadTargetsData().then(function() { renderTargetsView(); });
+        return;
+      }
+
+      if (!targetsData.length) {
+        container.innerHTML = '<div style="padding:20px;color:var(--text-3);font-size:14px">No targets found.</div>';
+        return;
+      }
+
+      // Build a lookup: targetId -> goals[]
+      var goalsByTarget = {};
+      goalsData.forEach(function(g) {
+        (g.relatedTargetIds || []).forEach(function(tid) {
+          if (!goalsByTarget[tid]) goalsByTarget[tid] = [];
+          goalsByTarget[tid].push(g);
+        });
+      });
+
+      var html = '';
+      targetsData.forEach(function(t, idx) {
+        var color = getBizColor(t.business || '');
+        var pct = typeof t.completion === 'number' ? t.completion : 0;
+        var goals = goalsByTarget[t.id] || [];
+        var gCount = goals.length || t.goalCount || 0;
+
+        html += '<div class="target-card" id="tc-' + idx + '">';
+        // Header row
+        html += '<div class="target-header" onclick="toggleTargetCard(' + idx + ')">';
+        html += '<div class="target-business-dot" style="background:' + color + '"></div>';
+        html += '<span class="target-priority-badge">P' + (t.priority || '?') + '</span>';
+        html += '<span class="target-text">' + escapeHtml(t.target || '') + '</span>';
+        html += '<div class="target-meta-right">';
+        html += getTargetStatusPill(t.status);
+        if (t.quarter) html += '<span class="target-quarter">' + escapeHtml(t.quarter) + '</span>';
+        if (gCount) html += '<span class="target-goal-count">' + gCount + ' goal' + (gCount !== 1 ? 's' : '') + '</span>';
+        html += '<span class="target-expand-icon">&#9660;</span>';
+        html += '</div>';
+        html += '</div>';
+
+        // Progress row
+        html += '<div class="target-progress-row">';
+        html += '<span class="target-business-label" style="color:' + color + '">' + escapeHtml(t.business || '') + '</span>';
+        html += '<div class="target-progress-bar-wrap">';
+        html += '<div class="target-progress-bar-fill" style="width:' + pct + '%;background:' + color + '"></div>';
+        html += '</div>';
+        html += '<span class="target-pct-label">' + pct + '%</span>';
+        html += '</div>';
+
+        // Goals panel
+        html += '<div class="target-goals-panel">';
+        if (goals.length === 0) {
+          html += '<div class="target-goals-empty">No 30-day goals linked to this target.</div>';
+        } else {
+          html += '<div class="target-goals-list">';
+          goals.forEach(function(g) {
+            html += '<div class="target-goal-item">';
+            html += '<span class="target-goal-text">' + escapeHtml(g.goal || '') + '</span>';
+            html += '<div class="target-goal-meta">';
+            if (g.dueDate) html += '<span class="target-goal-date">' + formatTargetDate(g.dueDate) + '</span>';
+            html += getGoalStatusPill(g.status);
+            html += '</div>';
+            html += '</div>';
+          });
+          html += '</div>';
+        }
+        html += '</div>'; // /goals-panel
+
+        html += '</div>'; // /target-card
+      });
+
+      container.innerHTML = html;
+    }
+
+    function toggleTargetCard(idx) {
+      var card = document.getElementById('tc-' + idx);
+      if (!card) return;
+      card.classList.toggle('expanded');
+    }
+
+    function escapeHtml(str) {
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    // Pre-load targets data in the background so it's ready when user clicks
+    loadTargetsData().catch(function(e) { console.warn('[MC] Failed to load targets data:', e); });
 
     /* ---- Activity Feed ---- */
     var activityData = [];
