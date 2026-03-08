@@ -1,12 +1,12 @@
 {
-  "generated": "2026-03-08T07:31:48.894132+00:00",
+  "generated": "2026-03-08T07:54:12.657472+00:00",
   "records": [
     {
       "id": "recVlJVOsRU7g",
       "name": "Shiloh Call",
       "type": "Daily",
       "business": "Personal",
-      "nextScheduled": null,
+      "nextScheduled": "2026-03-08T19:00:00+00:00",
       "status": "Scheduled"
     },
     {
@@ -14,15 +14,7 @@
       "name": "Daily Huddle",
       "type": "Daily",
       "business": "All",
-      "nextScheduled": "2025-03-07T00:00:00+00:00",
-      "status": "Scheduled"
-    },
-    {
-      "id": "recZ7bTHho3iz",
-      "name": "Couples Weekly Alignment",
-      "type": "Weekly",
-      "business": "Personal",
-      "nextScheduled": "2025-03-08T00:00:00+00:00",
+      "nextScheduled": "2026-03-09T13:00:00+00:00",
       "status": "Scheduled"
     },
     {
@@ -30,7 +22,15 @@
       "name": "Weekly Planning TI",
       "type": "Weekly",
       "business": "All",
-      "nextScheduled": "2025-03-09T00:00:00+00:00",
+      "nextScheduled": "2026-03-10T14:00:00+00:00",
+      "status": "Scheduled"
+    },
+    {
+      "id": "recZ7bTHho3iz",
+      "name": "Couples Weekly Alignment",
+      "type": "Weekly",
+      "business": "Personal",
+      "nextScheduled": "2026-03-14T16:00:00+00:00",
       "status": "Scheduled"
     },
     {
@@ -38,7 +38,7 @@
       "name": "Q2 Quarterly Planning TI",
       "type": "Quarterly",
       "business": "All",
-      "nextScheduled": "2025-03-29T20:00:00+00:00",
+      "nextScheduled": "2026-03-29T14:00:00+00:00",
       "status": "Scheduled"
     },
     {
@@ -46,7 +46,7 @@
       "name": "Couples Financial Alignment",
       "type": "Monthly",
       "business": "Personal",
-      "nextScheduled": "2025-04-01T00:00:00+00:00",
+      "nextScheduled": "2026-04-01T16:00:00+00:00",
       "status": "Scheduled"
     },
     {
@@ -54,7 +54,7 @@
       "name": "Monthly Planning TI",
       "type": "Monthly",
       "business": "All",
-      "nextScheduled": "2025-04-05T12:00:00+00:00",
+      "nextScheduled": "2026-04-05T14:00:00+00:00",
       "status": "Scheduled"
     },
     {
@@ -62,7 +62,7 @@
       "name": "Annual Planning TI",
       "type": "Annual",
       "business": "All",
-      "nextScheduled": "2026-02-27T06:00:00+00:00",
+      "nextScheduled": "2026-12-27T14:00:00+00:00",
       "status": "Scheduled"
     }
   ]
