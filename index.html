@@ -692,11 +692,14 @@
     #panel-projects .stat-chip::before { display: none; }
     #panel-office .office-stats,
     #panel-projects .office-stats { width: auto; display: inline-flex; }
-    #panel-inbox .kb-metric {
+    #panel-inbox .kb-metric,
+    #panel-actions .kb-metric {
       border-radius: 14px;
       padding: 12px 16px;
     }
-    #panel-inbox .kb-metric::before { display: none; }
+    #panel-inbox .kb-metric::before,
+    #panel-actions .kb-metric::before { display: none; }
+    #panel-actions .kb-metrics { width: auto; display: inline-flex; }
 
     .stat-chip-value {
       font-size: 20px;
@@ -3427,6 +3430,181 @@
       animation: pulse 2s ease-in-out infinite;
     }
 
+    /* ---- Activity Filter Dropdown ---- */
+    .act-filter-wrap {
+      position: relative;
+    }
+    .act-filter-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: transparent;
+      color: var(--text-2);
+      font-size: 13px;
+      font-weight: 500;
+      font-family: inherit;
+      cursor: pointer;
+      transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    }
+    .act-filter-btn:hover {
+      background: rgba(255,255,255,0.05);
+      border-color: rgba(255,255,255,0.2);
+      color: var(--text-1);
+    }
+    .act-filter-btn.active {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.2);
+      color: var(--text-1);
+    }
+    .act-filter-dropdown {
+      display: none;
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0;
+      z-index: 200;
+      width: 280px;
+      background: #232323;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+      padding: 14px 16px 12px;
+    }
+    .act-filter-dropdown.open {
+      display: block;
+    }
+    .act-filter-section {
+      margin-bottom: 12px;
+    }
+    .act-filter-section:last-of-type {
+      margin-bottom: 0;
+    }
+    .act-filter-section-label {
+      display: block;
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-3);
+      margin-bottom: 8px;
+    }
+    .act-filter-checks {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .act-check-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      padding: 3px 0;
+    }
+    .act-check-item input[type="checkbox"] {
+      display: none;
+    }
+    .act-check-box {
+      width: 16px;
+      height: 16px;
+      border-radius: 4px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.04);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+    .act-check-item input:checked + .act-check-box {
+      background: var(--text-1);
+      border-color: var(--text-1);
+    }
+    .act-check-item input:checked + .act-check-box::after {
+      content: '';
+      display: block;
+      width: 9px;
+      height: 5px;
+      border-left: 1.5px solid #181818;
+      border-bottom: 1.5px solid #181818;
+      transform: rotate(-45deg) translate(1px, -1px);
+    }
+    .act-check-label {
+      font-size: 13px;
+      color: var(--text-2);
+      transition: color 0.15s ease;
+    }
+    .act-check-item:hover .act-check-label {
+      color: var(--text-1);
+    }
+    .act-check-item:hover .act-check-box {
+      border-color: rgba(255,255,255,0.3);
+    }
+    .act-agent-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .act-filter-footer {
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      justify-content: flex-end;
+    }
+    .act-clear-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-3);
+      font-size: 12px;
+      font-family: inherit;
+      cursor: pointer;
+      padding: 0;
+      transition: color 0.2s ease;
+    }
+    .act-clear-btn:hover {
+      color: var(--text-1);
+    }
+    .act-active-chips {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .act-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 6px;
+      padding: 3px 8px;
+      font-size: 12px;
+      color: var(--text-2);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .act-chip-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .act-chip-remove {
+      background: none;
+      border: none;
+      color: var(--text-3);
+      font-size: 14px;
+      line-height: 1;
+      cursor: pointer;
+      padding: 0;
+      margin-left: 2px;
+      transition: color 0.15s ease;
+    }
+    .act-chip-remove:hover {
+      color: var(--text-1);
+    }
+
     /* ========================================
        DOCUMENTS TAB
        ======================================== */
@@ -4016,6 +4194,70 @@
       color: var(--pill-waiting-text);
       background: var(--pill-waiting-bg);
       border-color: transparent;
+    }
+
+    /* ---- Org Chart Mobile ---- */
+    @media (max-width: 768px) {
+      .org-chart-wrapper {
+        padding: 20px 16px 32px;
+      }
+
+      .org-node {
+        min-width: 140px;
+        max-width: 170px;
+        padding: 16px 16px 12px;
+      }
+
+      .org-dept-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+        width: 100%;
+      }
+
+      /* Hide horizontal connector on mobile (no 3-col grid) */
+      .org-dept-row::before {
+        display: none;
+      }
+
+      .org-dept-group {
+        padding-top: 0;
+      }
+
+      /* Vertical connector between dept groups */
+      .org-dept-group::before {
+        position: relative;
+        left: auto;
+        transform: none;
+        width: 1.5px;
+        height: 24px;
+        margin: 0 auto;
+        display: block;
+        flex-shrink: 0;
+      }
+
+      .org-dept-nodes {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+      }
+
+      /* Tighter spacing for vertical connectors */
+      .org-connector-v {
+        height: 24px;
+      }
+
+      .org-ondemand-section {
+        margin-top: 0;
+      }
+
+      .org-ondemand-section .org-dept-label {
+        margin-top: 8px;
+      }
+
+      /* Section headers tighter */
+      .org-section-header {
+        margin-bottom: 12px;
+      }
     }
 
     /* ========================================
@@ -4769,12 +5011,34 @@
     <!-- Activity -->
     <section class="tab-panel" id="panel-activity">
       <div class="activity-toolbar reveal">
-        <div class="activity-filters">
-          <button class="inbox-filter active" data-act-filter="all">All</button>
-          <button class="inbox-filter" data-act-filter="message">Messages</button>
-          <button class="inbox-filter" data-act-filter="tool">Tools</button>
-          <button class="inbox-filter" data-act-filter="edit">Edits</button>
-          <button class="inbox-filter" data-act-filter="command">Commands</button>
+        <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;flex:1">
+          <div class="act-filter-wrap" id="act-filter-wrap">
+            <button class="act-filter-btn" id="act-filter-btn">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 2.5h12M3 7h8M5 11.5h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              <span id="act-filter-label">Filter</span>
+            </button>
+            <div class="act-filter-dropdown" id="act-filter-dropdown">
+              <div class="act-filter-section">
+                <span class="act-filter-section-label">Type</span>
+                <div class="act-filter-checks" id="act-type-checks">
+                  <label class="act-check-item"><input type="checkbox" class="act-check" data-type-filter="message"><span class="act-check-box"></span><span class="act-check-label">Message</span></label>
+                  <label class="act-check-item"><input type="checkbox" class="act-check" data-type-filter="tool"><span class="act-check-box"></span><span class="act-check-label">Tool</span></label>
+                  <label class="act-check-item"><input type="checkbox" class="act-check" data-type-filter="edit"><span class="act-check-box"></span><span class="act-check-label">Edit</span></label>
+                  <label class="act-check-item"><input type="checkbox" class="act-check" data-type-filter="command"><span class="act-check-box"></span><span class="act-check-label">Command</span></label>
+                </div>
+              </div>
+              <div class="act-filter-section">
+                <span class="act-filter-section-label">Agent</span>
+                <div class="act-filter-checks" id="act-agent-checks">
+                  <!-- Populated by JS -->
+                </div>
+              </div>
+              <div class="act-filter-footer" id="act-filter-footer" style="display:none">
+                <button class="act-clear-btn" id="act-clear-all">Clear All</button>
+              </div>
+            </div>
+          </div>
+          <div class="act-active-chips" id="act-active-chips"></div>
         </div>
         <div class="activity-refresh-indicator">
           <span class="activity-refresh-dot"></span>
@@ -5248,6 +5512,10 @@
 
       <!-- Targets View -->
       <div id="projects-targets-view" style="display:none">
+        <div id="targets-filter-bar" style="display:flex;align-items:center;gap:8px;padding:0 0 12px 0;flex-wrap:wrap">
+          <span style="font-size:12px;color:var(--text-3);text-transform:uppercase;letter-spacing:.06em">Filter:</span>
+          <button class="targets-filter-chip active" data-biz="all" style="font-size:12px;padding:4px 12px;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--text-1);cursor:pointer;transition:all .15s">All</button>
+        </div>
         <div id="targets-list">
           <div style="padding:20px;color:var(--text-3);font-size:14px">Loading targets...</div>
         </div>
@@ -6927,6 +7195,8 @@
       } catch(e) { return d; }
     }
 
+    var _targetsFilterBiz = 'all';
+
     function renderTargetsView() {
       var container = document.getElementById('targets-list');
       if (!container) return;
@@ -6941,6 +7211,29 @@
         return;
       }
 
+      // Build filter chips from unique businesses
+      var filterBar = document.getElementById('targets-filter-bar');
+      if (filterBar) {
+        var bizSet = {};
+        targetsData.forEach(function(t) { if (t.business) bizSet[t.business] = true; });
+        var bizList = Object.keys(bizSet).sort();
+        var chipHtml = '<span style="font-size:12px;color:var(--text-3);text-transform:uppercase;letter-spacing:.06em">Filter:</span>';
+        chipHtml += '<button class="targets-filter-chip' + (_targetsFilterBiz === 'all' ? ' active' : '') + '" data-biz="all" style="font-size:12px;padding:4px 12px;border-radius:999px;border:1px solid var(--border);background:' + (_targetsFilterBiz === 'all' ? 'var(--accent)' : 'var(--surface-2)') + ';color:' + (_targetsFilterBiz === 'all' ? '#fff' : 'var(--text-1)') + ';cursor:pointer;transition:all .15s">All</button>';
+        bizList.forEach(function(biz) {
+          var c = getBizColor(biz);
+          var isActive = _targetsFilterBiz === biz;
+          chipHtml += '<button class="targets-filter-chip' + (isActive ? ' active' : '') + '" data-biz="' + escapeHtml(biz) + '" style="font-size:12px;padding:4px 12px;border-radius:999px;border:1px solid ' + (isActive ? c : 'var(--border)') + ';background:' + (isActive ? c : 'var(--surface-2)') + ';color:' + (isActive ? '#fff' : 'var(--text-1)') + ';cursor:pointer;transition:all .15s">' + escapeHtml(biz) + '</button>';
+        });
+        filterBar.innerHTML = chipHtml;
+        // Bind filter click handlers
+        filterBar.querySelectorAll('.targets-filter-chip').forEach(function(btn) {
+          btn.addEventListener('click', function() {
+            _targetsFilterBiz = btn.dataset.biz;
+            renderTargetsView();
+          });
+        });
+      }
+
       // Build a lookup: targetId -> goals[]
       var goalsByTarget = {};
       goalsData.forEach(function(g) {
@@ -6950,56 +7243,89 @@
         });
       });
 
+      // Filter by selected business
+      var filtered = _targetsFilterBiz === 'all' ? targetsData : targetsData.filter(function(t) { return t.business === _targetsFilterBiz; });
+
+      // Group by business
+      var groups = {};
+      var groupOrder = [];
+      filtered.forEach(function(t) {
+        var biz = t.business || 'Other';
+        if (!groups[biz]) { groups[biz] = []; groupOrder.push(biz); }
+        groups[biz].push(t);
+      });
+
+      // Sort targets within each group by priority ascending
+      Object.keys(groups).forEach(function(biz) {
+        groups[biz].sort(function(a, b) { return (a.priority || 99) - (b.priority || 99); });
+      });
+
+      // Sort business groups by their highest (lowest number) priority
+      groupOrder.sort(function(a, b) {
+        var minA = groups[a].reduce(function(m, t) { return Math.min(m, t.priority || 99); }, 99);
+        var minB = groups[b].reduce(function(m, t) { return Math.min(m, t.priority || 99); }, 99);
+        return minA - minB;
+      });
+
       var html = '';
-      targetsData.forEach(function(t, idx) {
-        var color = getBizColor(t.business || '');
-        var pct = typeof t.completion === 'number' ? t.completion : 0;
-        var goals = goalsByTarget[t.id] || [];
-        var gCount = goals.length || t.goalCount || 0;
-
-        html += '<div class="target-card" id="tc-' + idx + '">';
-        // Header row
-        html += '<div class="target-header" onclick="toggleTargetCard(' + idx + ')">';
-        html += '<div class="target-business-dot" style="background:' + color + '"></div>';
-        html += '<span class="target-priority-badge">P' + (t.priority || '?') + '</span>';
-        html += '<span class="target-text">' + escapeHtml(t.target || '') + '</span>';
-        html += '<div class="target-meta-right">';
-        html += getTargetStatusPill(t.status);
-        if (t.quarter) html += '<span class="target-quarter">' + escapeHtml(t.quarter) + '</span>';
-        if (gCount) html += '<span class="target-goal-count">' + gCount + ' goal' + (gCount !== 1 ? 's' : '') + '</span>';
-        html += '<span class="target-expand-icon">&#9660;</span>';
-        html += '</div>';
+      var globalIdx = 0;
+      groupOrder.forEach(function(biz) {
+        var color = getBizColor(biz);
+        html += '<div class="targets-group" style="margin-bottom:20px">';
+        html += '<div style="display:flex;align-items:center;gap:8px;padding:8px 0 6px 0;border-bottom:1px solid var(--border);margin-bottom:8px">';
+        html += '<div style="width:10px;height:10px;border-radius:50%;background:' + color + ';flex-shrink:0"></div>';
+        html += '<span style="font-size:14px;font-weight:600;color:var(--text-1)">' + escapeHtml(biz) + '</span>';
+        html += '<span style="font-size:12px;color:var(--text-3)">' + groups[biz].length + ' target' + (groups[biz].length !== 1 ? 's' : '') + '</span>';
         html += '</div>';
 
-        // Progress row
-        html += '<div class="target-progress-row">';
-        html += '<span class="target-business-label" style="color:' + color + '">' + escapeHtml(t.business || '') + '</span>';
-        html += '<div class="target-progress-bar-wrap">';
-        html += '<div class="target-progress-bar-fill" style="width:' + pct + '%;background:' + color + '"></div>';
-        html += '</div>';
-        html += '<span class="target-pct-label">' + pct + '%</span>';
-        html += '</div>';
+        groups[biz].forEach(function(t) {
+          var pct = typeof t.completion === 'number' ? t.completion : 0;
+          var goals = goalsByTarget[t.id] || [];
+          var gCount = goals.length || t.goalCount || 0;
+          var idx = globalIdx++;
 
-        // Goals panel
-        html += '<div class="target-goals-panel">';
-        if (goals.length === 0) {
-          html += '<div class="target-goals-empty">No 30-day goals linked to this target.</div>';
-        } else {
-          html += '<div class="target-goals-list">';
-          goals.forEach(function(g) {
-            html += '<div class="target-goal-item">';
-            html += '<span class="target-goal-text">' + escapeHtml(g.goal || '') + '</span>';
-            html += '<div class="target-goal-meta">';
-            if (g.dueDate) html += '<span class="target-goal-date">' + formatTargetDate(g.dueDate) + '</span>';
-            html += getGoalStatusPill(g.status);
-            html += '</div>';
-            html += '</div>';
-          });
+          html += '<div class="target-card" id="tc-' + idx + '">';
+          html += '<div class="target-header" onclick="toggleTargetCard(' + idx + ')">';
+          html += '<div class="target-business-dot" style="background:' + color + '"></div>';
+          html += '<span class="target-priority-badge">P' + (t.priority || '?') + '</span>';
+          html += '<span class="target-text">' + escapeHtml(t.target || '') + '</span>';
+          html += '<div class="target-meta-right">';
+          html += getTargetStatusPill(t.status);
+          if (t.quarter) html += '<span class="target-quarter">' + escapeHtml(t.quarter) + '</span>';
+          if (gCount) html += '<span class="target-goal-count">' + gCount + ' goal' + (gCount !== 1 ? 's' : '') + '</span>';
+          html += '<span class="target-expand-icon">&#9660;</span>';
           html += '</div>';
-        }
-        html += '</div>'; // /goals-panel
+          html += '</div>';
 
-        html += '</div>'; // /target-card
+          html += '<div class="target-progress-row">';
+          html += '<div class="target-progress-bar-wrap">';
+          html += '<div class="target-progress-bar-fill" style="width:' + pct + '%;background:' + color + '"></div>';
+          html += '</div>';
+          html += '<span class="target-pct-label">' + pct + '%</span>';
+          html += '</div>';
+
+          html += '<div class="target-goals-panel">';
+          if (goals.length === 0) {
+            html += '<div class="target-goals-empty">No 30-day goals linked to this target.</div>';
+          } else {
+            html += '<div class="target-goals-list">';
+            goals.forEach(function(g) {
+              html += '<div class="target-goal-item">';
+              html += '<span class="target-goal-text">' + escapeHtml(g.goal || '') + '</span>';
+              html += '<div class="target-goal-meta">';
+              if (g.dueDate) html += '<span class="target-goal-date">' + formatTargetDate(g.dueDate) + '</span>';
+              html += getGoalStatusPill(g.status);
+              html += '</div>';
+              html += '</div>';
+            });
+            html += '</div>';
+          }
+          html += '</div>';
+
+          html += '</div>';
+        });
+
+        html += '</div>';
       });
 
       container.innerHTML = html;
@@ -7016,14 +7342,27 @@
 
     /* ---- Activity Feed ---- */
     var activityData = [];
-    var activityFilter = 'all';
+    var activityFilter = []; // empty = show all types
+    var activityAgentFilter = []; // empty = show all agents
     var activityRefreshInterval = null;
+    var activityDropdownOpen = false;
+
+    // Restore persisted filters
+    (function() {
+      try {
+        var tf = localStorage.getItem('mc-act-type-filter');
+        var af = localStorage.getItem('mc-act-agent-filter');
+        if (tf) activityFilter = JSON.parse(tf);
+        if (af) activityAgentFilter = JSON.parse(af);
+      } catch(e) {}
+    })();
 
     function loadActivity() {
       return fetch('data/activity.json?t=' + Date.now())
         .then(function(r) { return r.json(); })
         .then(function(data) {
           activityData = data;
+          buildAgentFilterChips();
           renderActivity();
         })
         .catch(function(err) {
@@ -7049,12 +7388,195 @@
       return date.toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
     }
 
+    function formatActivityTime(ts) {
+      try {
+        var d = new Date(ts);
+        return d.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit', hour12: true });
+      } catch(e) { return ''; }
+    }
+
+    function formatActivityDate(ts) {
+      try {
+        var d = new Date(ts);
+        return d.toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
+      } catch(e) { return ''; }
+    }
+
+    // Legacy stub (called after loadActivity) -- now delegates to new UI builder
+    function buildAgentFilterChips() {
+      buildActivityFilterDropdown();
+    }
+
+    function buildActivityFilterDropdown() {
+      var agentChecks = document.getElementById('act-agent-checks');
+      if (!agentChecks) return;
+
+      // Collect unique agents from data
+      var agents = {};
+      activityData.forEach(function(a) { if (a.agent) agents[a.agent] = true; });
+      var agentList = Object.keys(agents).sort();
+
+      // Build agent checkboxes
+      var html = '';
+      agentList.forEach(function(name) {
+        var col = agentColor(name);
+        var checked = activityAgentFilter.indexOf(name) !== -1;
+        html += '<label class="act-check-item">';
+        html += '<input type="checkbox" class="act-check" data-agent-filter="' + escapeHtml(name) + '"' + (checked ? ' checked' : '') + '>';
+        html += '<span class="act-check-box"></span>';
+        html += '<span class="act-agent-dot" style="background:' + col + '"></span>';
+        html += '<span class="act-check-label">' + escapeHtml(name) + '</span>';
+        html += '</label>';
+      });
+      agentChecks.innerHTML = html;
+
+      // Restore type checkbox states
+      document.querySelectorAll('.act-check[data-type-filter]').forEach(function(cb) {
+        cb.checked = activityFilter.indexOf(cb.dataset.typeFilter) !== -1;
+        cb.addEventListener('change', function() {
+          var val = cb.dataset.typeFilter;
+          if (cb.checked) {
+            if (activityFilter.indexOf(val) === -1) activityFilter.push(val);
+          } else {
+            activityFilter = activityFilter.filter(function(v) { return v !== val; });
+          }
+          try { localStorage.setItem('mc-act-type-filter', JSON.stringify(activityFilter)); } catch(e) {}
+          updateActivityFilterUI();
+          renderActivity();
+        });
+      });
+
+      // Bind agent checkbox events
+      agentChecks.querySelectorAll('.act-check[data-agent-filter]').forEach(function(cb) {
+        cb.addEventListener('change', function() {
+          var val = cb.dataset.agentFilter;
+          if (cb.checked) {
+            if (activityAgentFilter.indexOf(val) === -1) activityAgentFilter.push(val);
+          } else {
+            activityAgentFilter = activityAgentFilter.filter(function(v) { return v !== val; });
+          }
+          try { localStorage.setItem('mc-act-agent-filter', JSON.stringify(activityAgentFilter)); } catch(e) {}
+          updateActivityFilterUI();
+          renderActivity();
+        });
+      });
+
+      updateActivityFilterUI();
+    }
+
+    function updateActivityFilterUI() {
+      var totalActive = activityFilter.length + activityAgentFilter.length;
+      var label = document.getElementById('act-filter-label');
+      var btn = document.getElementById('act-filter-btn');
+      var footer = document.getElementById('act-filter-footer');
+      var chipsEl = document.getElementById('act-active-chips');
+
+      // Update button label + active state
+      if (label) label.textContent = totalActive > 0 ? 'Filter \xB7 ' + totalActive : 'Filter';
+      if (btn) btn.classList.toggle('active', totalActive > 0);
+      if (footer) footer.style.display = totalActive > 0 ? 'flex' : 'none';
+
+      // Render active chips
+      if (chipsEl) {
+        var html = '';
+        activityFilter.forEach(function(val) {
+          var display = val.charAt(0).toUpperCase() + val.slice(1);
+          html += '<span class="act-chip">' + display + '<button class="act-chip-remove" data-remove-type="' + escapeHtml(val) + '" title="Remove">\xD7</button></span>';
+        });
+        activityAgentFilter.forEach(function(val) {
+          var col = agentColor(val);
+          html += '<span class="act-chip"><span class="act-chip-dot" style="background:' + col + '"></span>' + escapeHtml(val) + '<button class="act-chip-remove" data-remove-agent="' + escapeHtml(val) + '" title="Remove">\xD7</button></span>';
+        });
+        chipsEl.innerHTML = html;
+
+        chipsEl.querySelectorAll('[data-remove-type]').forEach(function(btn) {
+          btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            var val = btn.dataset.removeType;
+            activityFilter = activityFilter.filter(function(v) { return v !== val; });
+            try { localStorage.setItem('mc-act-type-filter', JSON.stringify(activityFilter)); } catch(e) {}
+            // Sync checkbox
+            var cb = document.querySelector('.act-check[data-type-filter="' + val + '"]');
+            if (cb) cb.checked = false;
+            updateActivityFilterUI();
+            renderActivity();
+          });
+        });
+        chipsEl.querySelectorAll('[data-remove-agent]').forEach(function(btn) {
+          btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            var val = btn.dataset.removeAgent;
+            activityAgentFilter = activityAgentFilter.filter(function(v) { return v !== val; });
+            try { localStorage.setItem('mc-act-agent-filter', JSON.stringify(activityAgentFilter)); } catch(e) {}
+            var cb = document.querySelector('.act-check[data-agent-filter="' + val + '"]');
+            if (cb) cb.checked = false;
+            updateActivityFilterUI();
+            renderActivity();
+          });
+        });
+      }
+    }
+
+    // Wire up dropdown toggle + outside click + Escape
+    (function() {
+      var dropdownBound = false;
+      function bindDropdown() {
+        var btn = document.getElementById('act-filter-btn');
+        var dropdown = document.getElementById('act-filter-dropdown');
+        var clearBtn = document.getElementById('act-clear-all');
+        if (!btn || !dropdown || dropdownBound) return;
+        dropdownBound = true;
+
+        btn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          activityDropdownOpen = !activityDropdownOpen;
+          dropdown.classList.toggle('open', activityDropdownOpen);
+        });
+
+        document.addEventListener('click', function(e) {
+          if (activityDropdownOpen && !dropdown.contains(e.target) && e.target !== btn) {
+            activityDropdownOpen = false;
+            dropdown.classList.remove('open');
+          }
+        });
+
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && activityDropdownOpen) {
+            activityDropdownOpen = false;
+            dropdown.classList.remove('open');
+          }
+        });
+
+        if (clearBtn) {
+          clearBtn.addEventListener('click', function() {
+            activityFilter = [];
+            activityAgentFilter = [];
+            try {
+              localStorage.setItem('mc-act-type-filter', JSON.stringify([]));
+              localStorage.setItem('mc-act-agent-filter', JSON.stringify([]));
+            } catch(e) {}
+            // Uncheck all checkboxes
+            document.querySelectorAll('.act-check').forEach(function(cb) { cb.checked = false; });
+            updateActivityFilterUI();
+            renderActivity();
+          });
+        }
+      }
+      // Bind after DOM is ready (DOMContentLoaded or immediately if already loaded)
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', bindDropdown);
+      } else {
+        bindDropdown();
+      }
+    })();
+
     function renderActivity() {
       var container = document.getElementById('activity-list');
       if (!container) return;
       var filtered = activityData.filter(function(a) {
-        if (activityFilter === 'all') return true;
-        return a.type === activityFilter;
+        if (activityFilter.length > 0 && activityFilter.indexOf(a.type) === -1) return false;
+        if (activityAgentFilter.length > 0 && activityAgentFilter.indexOf(a.agent) === -1) return false;
+        return true;
       });
       if (!filtered.length) {
         container.innerHTML = '<div style="padding:20px;color:var(--text-3);text-align:center">No activity found</div>';
@@ -7071,7 +7593,8 @@
         html += '<span class="agent-avatar agent-avatar-sm" style="background:' + agentCol + '">' + a.agent.substring(0,2) + '</span>';
         html += '<span class="activity-agent-name" style="color:' + agentCol + '">' + escapeHtml(a.agent) + '</span>';
         html += '<span class="activity-type-pill">' + a.type + '</span>';
-        html += '<span>' + formatTimeAgo(a.timestamp) + '</span>';
+        html += '<span style="color:var(--text-2);font-size:12px">' + formatActivityDate(a.timestamp) + ' ' + formatActivityTime(a.timestamp) + '</span>';
+        html += '<span style="color:var(--text-3);font-size:11px">(' + formatTimeAgo(a.timestamp) + ')</span>';
         html += '</div></div></div>';
       });
       container.innerHTML = html;
@@ -7086,14 +7609,7 @@
       }, 30000);
     }
 
-    document.querySelectorAll('[data-act-filter]').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        document.querySelectorAll('[data-act-filter]').forEach(function(b) { b.classList.remove('active'); });
-        btn.classList.add('active');
-        activityFilter = btn.dataset.actFilter;
-        renderActivity();
-      });
-    });
+    // [data-act-filter] pill buttons removed -- replaced by dropdown filter UI
 
     /* ---- Cron Events for Calendar ---- */
     var cronEvents = [];
@@ -8097,6 +8613,18 @@
           e.preventDefault();
           var rect = axis.getBoundingClientRect();
           if (!rect.width) return;
+
+          // Horizontal scroll (deltaX) = pan left/right
+          if (Math.abs(e.deltaX) > Math.abs(e.deltaY) && Math.abs(e.deltaX) > 2) {
+            var panMs = (e.deltaX / rect.width) * tlZoomDays * 86400000;
+            tlViewCenter += panMs;
+            if (!isFinite(tlViewCenter) || isNaN(tlViewCenter)) tlViewCenter = new Date(2026,4,1).getTime();
+            renderTimelineView();
+            return;
+          }
+
+          // Vertical scroll (deltaY) = zoom in/out
+          if (Math.abs(e.deltaY) < 2) return;
           var mouseXPct = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
           var curTotalMs = tlZoomDays * 86400000;
           var curStart = tlViewCenter - curTotalMs / 2;
@@ -8140,13 +8668,13 @@
           if (tlPanState.active) { tlPanState.active = false; document.body.style.cursor = ''; }
         });
 
-        // Reset timeline view button handler
-        var tlResetBtn = document.getElementById('tl-reset-view');
-        if (tlResetBtn) {
-          tlResetBtn.addEventListener('click', function() {
+        // Reset timeline view button handler (delegated - button is re-created each render)
+        document.getElementById('cal-timeline').addEventListener('click', function(e) {
+          var resetBtn = e.target.closest('#tl-reset-view');
+          if (resetBtn) {
             tlZoomDays = 253; tlViewCenter = new Date(2026,4,1).getTime(); renderTimelineView();
-          });
-        }
+          }
+        });
       }
     }
 
