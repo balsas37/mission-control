@@ -2482,6 +2482,9 @@
     .shortcut-hint.visible {
       opacity: 1;
     }
+    @media (max-width: 768px) {
+      .shortcut-hint { display: none; }
+    }
 
     /* ── Polish: Badge pop animation ── */
     @keyframes badgePop {
@@ -3992,9 +3995,9 @@
     /* Vertical connector lines */
     .org-connector-v {
       width: 1.5px;
-      height: 40px;
+      min-height: 32px;
+      flex: 0 0 32px;
       background: var(--border);
-      flex-shrink: 0;
       align-self: center;
     }
 
