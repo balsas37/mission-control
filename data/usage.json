@@ -1,5 +1,5 @@
 {
-  "generated": "2026-03-10T05:03:56.512Z",
+  "generated": "2026-03-10T11:03:57.187Z",
   "week": 9,
   "reset": {
     "day_h": 22,
@@ -23,12 +23,12 @@
   },
   "anthropic_live": {
     "session": {
-      "reset_label": "in 4 hr 0 min",
-      "pct": 0
+      "reset_label": "in 2 hr 59 min",
+      "pct": 1
     },
     "weekly_all": {
       "reset_label": "Thu 11:00 PM",
-      "pct": 45
+      "pct": 46
     },
     "weekly_sonnet": {
       "reset_label": "Thu 11:00 PM",
@@ -38,9 +38,9 @@
       "spent_usd": 0,
       "balance_usd": 5,
       "resets": "Thu 11",
-      "pct_used": 0
+      "pct_used": 1
     },
     "plan": "Max",
-    "scraped_at": "2026-03-10T05:03:56.512Z"
+    "scraped_at": "2026-03-10T11:03:57.186Z"
   }
 }
