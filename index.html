@@ -9673,6 +9673,63 @@
       return pod;
     }
 
+    function drawOrgConnectors(wrapper) {
+      var svg = wrapper.querySelector('.org-connectors-svg');
+      if (!svg) return;
+      var wrapRect = wrapper.getBoundingClientRect();
+
+      function pos(el) {
+        var r = el.getBoundingClientRect();
+        return {
+          x: r.left - wrapRect.left + r.width / 2,
+          y: r.top - wrapRect.top,
+          b: r.bottom - wrapRect.top,
+          w: r.width,
+          h: r.height
+        };
+      }
+
+      var beno = wrapper.querySelector('.beno-hero');
+      var piia = wrapper.querySelector('.piia-hero');
+      var deptRow = wrapper.querySelector('.org-dept-row');
+      var pods = Array.from(wrapper.querySelectorAll('.org-dept-pod:not(.org-ondemand-pod)'));
+
+      var paths = [];
+      var color = 'rgba(255,255,255,0.12)';
+      var width = 1.5;
+
+      // Beno -> Piia
+      if (beno && piia) {
+        var b = pos(beno), p = pos(piia);
+        paths.push('<line x1="' + b.x + '" y1="' + b.b + '" x2="' + p.x + '" y2="' + p.y + '" stroke="' + color + '" stroke-width="' + width + '"/>');
+      }
+
+      // Piia -> Dept row midpoint
+      if (piia && deptRow && pods.length) {
+        var p = pos(piia);
+        var first = pos(pods[0]), last = pos(pods[pods.length - 1]);
+        var midX = (first.x + last.x) / 2;
+        var startY = p.b;
+        var midY = startY + 22;
+
+        // vertical drop
+        paths.push('<line x1="' + p.x + '" y1="' + startY + '" x2="' + p.x + '" y2="' + midY + '" stroke="' + color + '" stroke-width="' + width + '"/>');
+        // horizontal bar
+        paths.push('<line x1="' + first.x + '" y1="' + midY + '" x2="' + last.x + '" y2="' + midY + '" stroke="' + color + '" stroke-width="' + width + '"/>');
+        // drops to each pod
+        pods.forEach(function(pod) {
+          var pp = pos(pod);
+          paths.push('<line x1="' + pp.x + '" y1="' + midY + '" x2="' + pp.x + '" y2="' + pp.y + '" stroke="' + color + '" stroke-width="' + width + '"/>');
+          paths.push('<circle cx="' + pp.x + '" cy="' + midY + '" r="2" fill="' + color + '"/>');
+        });
+        paths.push('<circle cx="' + p.x + '" cy="' + midY + '" r="2" fill="' + color + '"/>');
+      }
+
+      svg.innerHTML = paths.join('');
+      svg.setAttribute('width', wrapRect.width);
+      svg.setAttribute('height', wrapRect.height);
+    }
+
     function renderOrgChart() {
       var root = document.getElementById('org-tree-root');
       if (!root) return;
@@ -9680,6 +9737,12 @@
 
       var wrapper = document.createElement('div');
       wrapper.className = 'org-chart-wrapper';
+
+      // SVG for connectors
+      var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      svg.classList.add('org-connectors-svg');
+      wrapper.appendChild(svg);
+
       root.appendChild(wrapper);
 
       // ----- Level 0: Beno -----
@@ -9737,6 +9800,20 @@
         { name: 'Nile', onDemand: true }
       ], true));
       wrapper.appendChild(level3);
+
+      // Draw connectors after layout
+      requestAnimationFrame(function() {
+        requestAnimationFrame(function() { drawOrgConnectors(wrapper); });
+      });
+
+      // Redraw on resize
+      if (!window._orgChartResizeHandler) {
+        window._orgChartResizeHandler = function() {
+          var w = document.querySelector('.org-chart-wrapper');
+          if (w) drawOrgConnectors(w);
+        };
+        window.addEventListener('resize', window._orgChartResizeHandler);
+      }
     }
 
     /* ============================
