@@ -43,6 +43,152 @@
     }
 
     /* ========================================
+       LIGHT MODE
+       ======================================== */
+    body.light-mode {
+      /* Core tokens - Apple-like light palette */
+      --bg:            #f5f5f7;
+      --bg-raised:     #ffffff;
+      --bg-card:       #f0f0f2;
+      --bg-hover:      #e8e8ed;
+      --border:        rgba(0,0,0,0.08);
+      --border-hover:  rgba(0,0,0,0.15);
+      --accent:        #000000;
+      --accent-muted:  #6e6e73;
+      --text-1:        #1d1d1f;
+      --text-2:        #6e6e73;
+      --text-3:        #aeaeb2;
+      --sidebar-bg:    #f0f0f2;
+
+      /* Status pills - adjusted for light backgrounds */
+      --pill-done-bg:      rgba(100,190,100,0.12);    --pill-done-text:      #3d8f3d;
+      --pill-active-bg:    rgba(100,165,215,0.12);    --pill-active-text:    #4a7fb5;
+      --pill-progress-bg:  rgba(165,105,195,0.12);    --pill-progress-text:  #8a5a9e;
+      --pill-waiting-bg:   rgba(218,178,85,0.12);     --pill-waiting-text:   #a08040;
+      --pill-urgent-bg:    rgba(217,83,79,0.10);      --pill-urgent-text:    #c0392b;
+      --pill-high-bg:      rgba(218,178,85,0.12);     --pill-high-text:      #a08040;
+      --pill-medium-bg:    rgba(100,165,215,0.12);    --pill-medium-text:    #4a7fb5;
+      --pill-low-bg:       rgba(0,0,0,0.04);          --pill-low-text:       #6e6e73;
+      --pill-backlog-bg:   rgba(0,0,0,0.03);          --pill-backlog-text:   #8e8e93;
+    }
+
+    /* Light mode scrollbar */
+    body.light-mode ::-webkit-scrollbar-thumb {
+      background: rgba(0,0,0,0.15);
+    }
+    body.light-mode ::-webkit-scrollbar-thumb:hover {
+      background: rgba(0,0,0,0.25);
+    }
+    body.light-mode * {
+      scrollbar-color: rgba(0,0,0,0.15) transparent;
+    }
+
+    /* Light mode - hardcoded rgba inversions */
+    body.light-mode .sidebar-nav-item:hover {
+      background: rgba(0,0,0,0.04);
+    }
+    body.light-mode .sidebar-nav-item.active {
+      color: #000;
+      background: rgba(0,0,0,0.06);
+    }
+    body.light-mode .sidebar-badge {
+      background: rgba(0,0,0,0.08);
+      color: #1d1d1f;
+    }
+    body.light-mode .sidebar-nav-item.active .sidebar-badge {
+      background: rgba(0,0,0,0.15);
+    }
+    body.light-mode .sidebar-toggle:hover {
+      background: rgba(0,0,0,0.05);
+    }
+    body.light-mode .live-badge {
+      background: rgba(0,0,0,0.05);
+    }
+    body.light-mode .view-toggle,
+    body.light-mode .kb-view-toggle,
+    body.light-mode .cal-view-toggle {
+      border-color: rgba(0,0,0,0.10);
+    }
+    body.light-mode .view-toggle-btn:not(:last-child),
+    body.light-mode .kb-view-btn:not(:last-child),
+    body.light-mode .cal-view-btn:not(:last-child) {
+      border-right-color: rgba(0,0,0,0.10);
+    }
+    body.light-mode .view-toggle-btn.active,
+    body.light-mode .kb-view-btn.active,
+    body.light-mode .cal-view-btn.active {
+      background: rgba(0,0,0,0.08) !important;
+      border-color: rgba(0,0,0,0.20) !important;
+    }
+    body.light-mode .inbox-filter,
+    body.light-mode .analytics-filter {
+      background: rgba(0,0,0,0.03);
+    }
+    body.light-mode .inbox-filter:hover,
+    body.light-mode .analytics-filter:hover {
+      background: rgba(0,0,0,0.06);
+    }
+    body.light-mode .inbox-filter.active,
+    body.light-mode .analytics-filter.active {
+      background: #1d1d1f;
+      color: #fff;
+      border-color: #1d1d1f;
+    }
+    body.light-mode .gsearch-shortcut {
+      background: rgba(0,0,0,0.06);
+    }
+    body.light-mode .cal-filter-chip.active {
+      background: rgba(0,0,0,0.06);
+      border-color: rgba(0,0,0,0.20);
+    }
+    body.light-mode .workstation-action:hover {
+      background: rgba(0,0,0,0.04);
+    }
+    body.light-mode .mission-statement:focus {
+      border-bottom-color: rgba(0,0,0,0.2);
+    }
+    body.light-mode .target-progress-bar-wrap {
+      background: rgba(0,0,0,0.06);
+    }
+    body.light-mode .cal-title {
+      color: #1d1d1f !important;
+    }
+    body.light-mode .cal-day.today .cal-day-num {
+      color: #1d1d1f !important;
+    }
+    body.light-mode .cal-week-col.today .cal-week-day-num {
+      color: #1d1d1f !important;
+    }
+    body.light-mode .cal-form-save {
+      background: #1d1d1f;
+      color: #fff;
+    }
+    body.light-mode .cal-form-save:hover {
+      background: #333;
+    }
+    body.light-mode .btn-cta {
+      color: #1d1d1f;
+      border-color: rgba(0,0,0,0.25);
+    }
+    body.light-mode .btn-cta:hover {
+      background: #1d1d1f;
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    body.light-mode .data-row:nth-child(even) {
+      background: rgba(0,0,0,0.015);
+    }
+    body.light-mode .data-row:hover {
+      background: rgba(0,0,0,0.04);
+    }
+    body.light-mode .kanban-col {
+      background: rgba(0,0,0,0.02);
+    }
+    body.light-mode .kb-task-card:hover {
+      background: rgba(0,0,0,0.04);
+    }
+
+    /* ========================================
        RESET & BASE
        ======================================== */
     *, *::before, *::after {
@@ -3961,7 +4107,7 @@
     }
 
     /* ========================================
-       ORG CHART — Premium Redesign
+       ORG CHART — Premium Redesign v2
        ======================================== */
     #team-org-view {
       padding: 8px 0 48px;
@@ -3973,105 +4119,269 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 32px 60px 48px;
+      padding: 40px 60px 48px;
       min-width: fit-content;
+      position: relative;
       gap: 0;
     }
 
-    /* Section header labels (Command, etc.) */
-    .org-section-header {
-      font-size: 10px;
-      font-weight: 500;
-      color: var(--text-3);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 20px;
-      padding: 4px 12px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.025);
-      border: 1px solid rgba(255,255,255,0.05);
+    /* SVG connector overlay */
+    .org-connectors-svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      overflow: visible;
+      z-index: 0;
     }
 
-    /* Vertical connector lines */
-    .org-connector-v {
-      width: 1.5px;
-      min-height: 32px;
-      flex: 0 0 32px;
-      background: var(--border);
-      align-self: center;
-    }
-
-    /* ---- Org node cards ---- */
-    .org-node {
+    /* Level rows */
+    .org-level {
       display: flex;
-      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      position: relative;
+      z-index: 1;
+      width: 100%;
+    }
+
+    /* === HERO NODES (CEO / COO) === */
+    .org-hero-node {
+      display: flex;
       align-items: center;
-      gap: 8px;
-      background: var(--bg-raised);
+      gap: 16px;
       border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 20px 20px 16px;
-      min-width: 160px;
-      max-width: 190px;
+      border-radius: 20px;
+      padding: 20px 28px;
+      min-width: 300px;
       cursor: pointer;
       transition: border-color 0.2s ease, box-shadow 0.25s ease, transform 0.2s ease;
-      text-align: center;
       position: relative;
+      overflow: hidden;
     }
 
-    .org-node:hover {
-      border-color: rgba(255,255,255,0.18);
-      box-shadow: 0 0 0 3px rgba(255,255,255,0.04), 0 8px 24px rgba(0,0,0,0.4);
-      transform: translateY(-3px);
-    }
-
-    /* CEO node: accent glow */
-    .org-node.beno-node {
-      border-color: rgba(124,158,245,0.3);
-      box-shadow: 0 0 24px rgba(124,158,245,0.08), 0 0 0 1px rgba(124,158,245,0.1);
+    .org-hero-node.beno-hero {
+      background: linear-gradient(135deg, rgba(232,168,124,0.1) 0%, var(--bg-raised) 60%);
+      border-color: rgba(232,168,124,0.28);
+      box-shadow: 0 0 40px rgba(232,168,124,0.08), 0 2px 12px rgba(0,0,0,0.3);
       cursor: default;
     }
-    .org-node.beno-node:hover {
-      transform: none;
-      border-color: rgba(124,158,245,0.35);
+    .org-hero-node.beno-hero:hover {
+      border-color: rgba(232,168,124,0.38);
+      box-shadow: 0 0 48px rgba(232,168,124,0.12), 0 4px 20px rgba(0,0,0,0.4);
     }
 
-    /* COO node: lighter accent */
-    .org-node.piia-node {
-      border-color: rgba(124,158,245,0.18);
-      box-shadow: 0 0 16px rgba(124,158,245,0.05);
+    .org-hero-node.piia-hero {
+      background: linear-gradient(135deg, rgba(124,158,245,0.1) 0%, var(--bg-raised) 60%);
+      border-color: rgba(124,158,245,0.22);
+      box-shadow: 0 0 32px rgba(124,158,245,0.06), 0 2px 12px rgba(0,0,0,0.3);
     }
-    .org-node.piia-node:hover {
-      border-color: rgba(124,158,245,0.38);
-      box-shadow: 0 0 0 3px rgba(124,158,245,0.08), 0 8px 24px rgba(0,0,0,0.4);
-      transform: translateY(-3px);
+    .org-hero-node.piia-hero:hover {
+      border-color: rgba(124,158,245,0.45);
+      box-shadow: 0 0 0 4px rgba(124,158,245,0.06), 0 8px 32px rgba(0,0,0,0.5);
+      transform: translateY(-2px);
     }
 
-    /* ---- Agent avatar circle ---- */
-    .org-avatar {
-      width: 44px;
-      height: 44px;
+    .org-hero-avatar {
+      width: 52px;
+      height: 52px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 14px;
+      font-size: 17px;
       font-weight: 700;
       color: rgba(0,0,0,0.72);
-      letter-spacing: -0.02em;
       flex-shrink: 0;
-      margin-bottom: 2px;
     }
 
-    /* ---- Node typography ---- */
-    .org-node-name {
-      font-size: 15px;
+    .org-hero-info { flex: 1; min-width: 0; }
+
+    .org-hero-role-label {
+      font-size: 10px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-3);
+      margin-bottom: 3px;
+    }
+
+    .org-hero-name {
+      font-size: 17px;
       font-weight: 600;
       color: var(--text-1);
-      letter-spacing: -0.015em;
+      letter-spacing: -0.02em;
+      margin-bottom: 2px;
       line-height: 1.2;
     }
 
+    .org-hero-title {
+      font-size: 12px;
+      color: var(--text-2);
+      margin-bottom: 8px;
+    }
+
+    .org-hero-badges {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    /* === DEPARTMENT PODS === */
+    .org-dept-row {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    .org-dept-pod {
+      background: var(--bg-raised);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+      min-width: 188px;
+      transition: border-color 0.2s ease, box-shadow 0.25s ease;
+    }
+
+    .org-dept-pod:hover {
+      border-color: var(--border-hover);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+    }
+
+    .org-dept-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .org-dept-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .org-dept-name {
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-2);
+    }
+
+    .org-dept-count {
+      margin-left: auto;
+      font-size: 10px;
+      color: var(--text-3);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 999px;
+      padding: 1px 7px;
+    }
+
+    .org-dept-body {
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    /* === MEMBER CARDS === */
+    .org-member {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 9px 12px;
+      cursor: pointer;
+      transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+    }
+
+    .org-member:hover {
+      background: var(--bg-hover);
+      border-color: var(--border-hover);
+      transform: translateX(3px);
+    }
+
+    .org-member-avatar {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: 700;
+      color: rgba(0,0,0,0.72);
+      flex-shrink: 0;
+    }
+
+    .org-member-info { flex: 1; min-width: 0; }
+
+    .org-member-name {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-1);
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+    }
+
+    .org-member-title {
+      font-size: 11px;
+      color: var(--text-3);
+      margin-top: 1px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .org-member-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .org-member-dot.active { background: var(--pill-done-text); }
+    .org-member-dot.on-demand { background: var(--pill-waiting-text); }
+
+    /* === ON-DEMAND POD === */
+    .org-ondemand-pod {
+      border-style: dashed;
+      border-color: rgba(218,178,85,0.28);
+      background: rgba(218,178,85,0.02);
+    }
+    .org-ondemand-pod .org-dept-header {
+      border-bottom-color: rgba(218,178,85,0.12);
+    }
+
+    /* Spacing shims */
+    .org-gap-sm { height: 28px; width: 1px; }
+    .org-gap-md { height: 44px; width: 1px; }
+
+    /* Entrance animations */
+    @keyframes orgFadeUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .org-hero-node {
+      animation: orgFadeUp 0.4s cubic-bezier(0.22,1,0.36,1) both;
+    }
+
+    .org-level-0 .org-hero-node { animation-delay: 0.05s; }
+    .org-level-1 .org-hero-node { animation-delay: 0.13s; }
+    .org-dept-pod:nth-child(1) { animation: orgFadeUp 0.4s cubic-bezier(0.22,1,0.36,1) 0.18s both; }
+    .org-dept-pod:nth-child(2) { animation: orgFadeUp 0.4s cubic-bezier(0.22,1,0.36,1) 0.22s both; }
+    .org-dept-pod:nth-child(3) { animation: orgFadeUp 0.4s cubic-bezier(0.22,1,0.36,1) 0.27s both; }
+    .org-level-3 .org-ondemand-pod { animation: orgFadeUp 0.4s cubic-bezier(0.22,1,0.36,1) 0.32s both; }
+
+    /* ---- Node status badges (kept for hero nodes + modal) ---- */
     .org-node-title {
       font-size: 12px;
       color: var(--text-2);
@@ -4121,146 +4431,31 @@
       border: 1px solid rgba(255,255,255,0.05);
     }
 
-    /* ---- Department row (3-column grid) ---- */
-    .org-dept-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 40px;
-      position: relative;
-    }
-
-    /* Horizontal connector — spans from center of col-1 to center of col-3 */
-    .org-dept-row::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: calc(100% / 6);
-      right: calc(100% / 6);
-      height: 1.5px;
-      background: var(--border);
-    }
-
-    .org-dept-group {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding-top: 40px;
-      position: relative;
-    }
-
-    /* Vertical drop from horizontal connector to dept label */
-    .org-dept-group::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 1.5px;
-      height: 40px;
-      background: var(--border);
-    }
-
-    /* Department section labels */
-    .org-dept-label {
-      font-size: 10px;
-      font-weight: 500;
-      color: var(--text-3);
-      text-transform: uppercase;
-      letter-spacing: 0.09em;
-      margin-bottom: 16px;
-      padding: 3px 10px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.025);
-      border: 1px solid rgba(255,255,255,0.05);
-    }
-
-    /* Node cluster inside a dept group */
-    .org-dept-nodes {
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    /* ---- On-demand section ---- */
-    .org-ondemand-section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0;
-    }
-
-    .org-ondemand-section .org-dept-label {
-      margin-top: 16px;
-      margin-bottom: 16px;
-      color: var(--pill-waiting-text);
-      background: var(--pill-waiting-bg);
-      border-color: transparent;
-    }
-
     /* ---- Org Chart Mobile ---- */
     @media (max-width: 768px) {
-      .org-chart-wrapper {
-        padding: 20px 16px 32px;
+      .org-chart-wrapper { padding: 24px 16px 32px; }
+
+      .org-hero-node {
+        min-width: 260px;
+        padding: 16px 20px;
       }
 
-      .org-node {
-        min-width: 140px;
-        max-width: 170px;
-        padding: 16px 16px 12px;
-      }
+      .org-hero-avatar { width: 44px; height: 44px; font-size: 14px; }
+      .org-hero-name { font-size: 15px; }
 
       .org-dept-row {
-        grid-template-columns: 1fr;
-        gap: 0;
-        width: 100%;
-      }
-
-      /* Hide horizontal connector on mobile (no 3-col grid) */
-      .org-dept-row::before {
-        display: none;
-      }
-
-      .org-dept-group {
-        padding-top: 0;
-      }
-
-      /* Vertical connector between dept groups */
-      .org-dept-group::before {
-        position: relative;
-        left: auto;
-        transform: none;
-        width: 1.5px;
-        height: 24px;
-        margin: 0 auto;
-        display: block;
-        flex-shrink: 0;
-      }
-
-      .org-dept-nodes {
         flex-direction: column;
         align-items: center;
         gap: 12px;
+        width: 100%;
       }
 
-      /* Tighter spacing for vertical connectors */
-      .org-connector-v {
-        height: 24px;
-      }
+      .org-dept-pod { width: 100%; max-width: 320px; }
+      .org-dept-body { flex-direction: row; flex-wrap: wrap; justify-content: center; }
+      .org-member { flex: 1 1 calc(50% - 8px); min-width: 140px; }
 
-      .org-ondemand-section {
-        margin-top: 0;
-      }
-
-      .org-ondemand-section .org-dept-label {
-        margin-top: 8px;
-      }
-
-      /* Section headers tighter */
-      .org-section-header {
-        margin-bottom: 12px;
-      }
+      .org-gap-sm { height: 20px; }
+      .org-gap-md { height: 32px; }
     }
 
     /* ========================================
@@ -4814,6 +5009,9 @@
     <div class="header-right">
       <button class="sidebar-toggle" id="gsearch-toggle" aria-label="Global search" title="Search (Cmd+K)">
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+      <button class="sidebar-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle light/dark mode">
+        <span id="theme-icon">☀️</span>
       </button>
       <div class="clock">
         <span class="clock-date" id="clock-date"></span>
@@ -6016,6 +6214,32 @@
 
   <!-- ======== JAVASCRIPT ======== -->
   <script>
+    /* ---- Theme: Light/Dark Mode ---- */
+    (function() {
+      var savedTheme = localStorage.getItem('mc-theme');
+      var prefersLight = savedTheme === 'light';
+      if (prefersLight) {
+        document.body.classList.add('light-mode');
+      }
+      function updateThemeIcon() {
+        var icon = document.getElementById('theme-icon');
+        if (icon) {
+          icon.textContent = document.body.classList.contains('light-mode') ? '🌙' : '☀️';
+        }
+      }
+      function toggleTheme() {
+        document.body.classList.toggle('light-mode');
+        var isLight = document.body.classList.contains('light-mode');
+        localStorage.setItem('mc-theme', isLight ? 'light' : 'dark');
+        updateThemeIcon();
+      }
+      document.addEventListener('DOMContentLoaded', function() {
+        updateThemeIcon();
+        var btn = document.getElementById('theme-toggle');
+        if (btn) btn.addEventListener('click', toggleTheme);
+      });
+    })();
+
     /* ---- Kanban: Data Model ---- */
     var KANBAN_COLUMNS = ['todo', 'inprogress', 'review', 'backlog', 'recurring', 'completed'];
     var KANBAN_COLUMN_LABELS = {
@@ -9359,6 +9583,96 @@
       return nodeEl;
     }
 
+    /* Build a hero node (Beno or Piia) */
+    function buildHeroNode(agentName, isHuman) {
+      var rec = isHuman ? null : getAgentByName(agentName);
+      var title = isHuman ? 'CEO / Founder' : (rec ? (rec.fields['Title'] || 'COO') : 'COO');
+      var status = isHuman ? 'Human' : (rec ? (rec.fields['Status'] || 'Active') : 'Active');
+      var recordId = rec ? rec.recordId : null;
+      var targetCount = recordId ? countTargets(recordId) : 0;
+      var initials = getAgentInitials(agentName);
+      var bg = isHuman ? '#E8A87C' : (AGENT_COLORS[agentName] || '#888');
+      var heroClass = isHuman ? 'beno-hero' : 'piia-hero';
+      var roleLabel = isHuman ? 'Command' : 'Operations Lead';
+
+      var statusClass = isHuman ? 'human' : 'active';
+      var statusLabel = status;
+
+      var el = document.createElement('div');
+      el.className = 'org-hero-node ' + heroClass;
+      if (recordId) el.dataset.recordId = recordId;
+      el.dataset.agentName = agentName;
+
+      el.innerHTML =
+        '<div class="org-hero-avatar" style="background:' + bg + ';">' + initials + '</div>' +
+        '<div class="org-hero-info">' +
+          '<div class="org-hero-role-label">' + roleLabel + '</div>' +
+          '<div class="org-hero-name">' + agentName + '</div>' +
+          '<div class="org-hero-title">' + title + '</div>' +
+          '<div class="org-hero-badges">' +
+            '<span class="org-node-status ' + statusClass + '">' + statusLabel + '</span>' +
+            (targetCount > 0 ? '<span class="org-node-target-count">' + targetCount + ' targets</span>' : '') +
+          '</div>' +
+        '</div>';
+
+      if (!isHuman) {
+        el.addEventListener('click', function() { openAgentModal(agentName, rec); });
+      }
+
+      return el;
+    }
+
+    /* Build a compact member row for dept pods */
+    function buildMemberNode(agentName, isOnDemand) {
+      var rec = getAgentByName(agentName);
+      var title = rec ? (rec.fields['Title'] || '') : '';
+      var status = rec ? (rec.fields['Status'] || 'Active') : 'Active';
+      var recordId = rec ? rec.recordId : null;
+      var initials = getAgentInitials(agentName);
+      var bg = AGENT_COLORS[agentName] || '#888';
+      var dotClass = (status === 'On-Demand' || isOnDemand) ? 'on-demand' : 'active';
+
+      var el = document.createElement('div');
+      el.className = 'org-member';
+      if (recordId) el.dataset.recordId = recordId;
+      el.dataset.agentName = agentName;
+
+      el.innerHTML =
+        '<div class="org-member-avatar" style="background:' + bg + ';">' + initials + '</div>' +
+        '<div class="org-member-info">' +
+          '<div class="org-member-name">' + agentName + '</div>' +
+          '<div class="org-member-title">' + title + '</div>' +
+        '</div>' +
+        '<div class="org-member-dot ' + dotClass + '"></div>';
+
+      el.addEventListener('click', function() { openAgentModal(agentName, rec); });
+
+      return el;
+    }
+
+    /* Build a department pod */
+    function buildDeptPod(name, color, agents, isOnDemand) {
+      var pod = document.createElement('div');
+      pod.className = 'org-dept-pod' + (isOnDemand ? ' org-ondemand-pod' : '');
+
+      var header = document.createElement('div');
+      header.className = 'org-dept-header';
+      header.innerHTML =
+        '<div class="org-dept-dot" style="background:' + color + ';"></div>' +
+        '<div class="org-dept-name">' + name + '</div>' +
+        '<div class="org-dept-count">' + agents.length + '</div>';
+      pod.appendChild(header);
+
+      var body = document.createElement('div');
+      body.className = 'org-dept-body';
+      agents.forEach(function(a) {
+        body.appendChild(buildMemberNode(a.name, a.onDemand || false));
+      });
+      pod.appendChild(body);
+
+      return pod;
+    }
+
     function renderOrgChart() {
       var root = document.getElementById('org-tree-root');
       if (!root) return;
@@ -9368,110 +9682,61 @@
       wrapper.className = 'org-chart-wrapper';
       root.appendChild(wrapper);
 
-      // ----- Level 0: Beno (Command) -----
-      var commandHeader = document.createElement('div');
-      commandHeader.className = 'org-section-header';
-      commandHeader.textContent = 'Command';
-      wrapper.appendChild(commandHeader);
+      // ----- Level 0: Beno -----
+      var level0 = document.createElement('div');
+      level0.className = 'org-level org-level-0';
+      level0.appendChild(buildHeroNode('Beno', true));
+      wrapper.appendChild(level0);
 
-      var benoRow = document.createElement('div');
-      benoRow.className = 'org-node-row';
-      benoRow.style.cssText = 'display:flex;flex-direction:column;align-items:center;';
-
-      var benoNode = document.createElement('div');
-      benoNode.className = 'org-node beno-node';
-      benoNode.style.cursor = 'default';
-      benoNode.innerHTML =
-        '<div class="org-avatar" style="background:#E8A87C;">Be</div>' +
-        '<div class="org-node-name">Beno</div>' +
-        '<div class="org-node-title">CEO / Founder</div>' +
-        '<div class="org-node-badges"><span class="org-node-status human">Human</span></div>';
-      benoRow.appendChild(benoNode);
-      wrapper.appendChild(benoRow);
-
-      // Connector: Beno -> Piia
-      var connector1 = document.createElement('div');
-      connector1.className = 'org-connector-v';
-      wrapper.appendChild(connector1);
+      // Spacing
+      var gap1 = document.createElement('div');
+      gap1.className = 'org-gap-sm';
+      wrapper.appendChild(gap1);
 
       // ----- Level 1: Piia -----
-      var piiaRow = document.createElement('div');
-      piiaRow.className = 'org-node-row';
-      piiaRow.style.cssText = 'display:flex;flex-direction:column;align-items:center;';
+      var level1 = document.createElement('div');
+      level1.className = 'org-level org-level-1';
+      level1.appendChild(buildHeroNode('Piia', false));
+      wrapper.appendChild(level1);
 
-      var piiaNode = buildOrgNode('Piia', false, true);
-      piiaRow.appendChild(piiaNode);
-      wrapper.appendChild(piiaRow);
-
-      // Connector: Piia -> Depts
-      var connector2 = document.createElement('div');
-      connector2.className = 'org-connector-v';
-      wrapper.appendChild(connector2);
+      // Spacing
+      var gap2 = document.createElement('div');
+      gap2.className = 'org-gap-md';
+      wrapper.appendChild(gap2);
 
       // ----- Level 2: Departments -----
+      var level2 = document.createElement('div');
+      level2.className = 'org-level org-level-2';
       var deptRow = document.createElement('div');
       deptRow.className = 'org-dept-row';
 
-      // Operations: Kat, Vex
-      var opsGroup = document.createElement('div');
-      opsGroup.className = 'org-dept-group';
-      var opsLabel = document.createElement('div');
-      opsLabel.className = 'org-dept-label';
-      opsLabel.textContent = 'Operations';
-      opsGroup.appendChild(opsLabel);
-      var opsNodes = document.createElement('div');
-      opsNodes.className = 'org-dept-nodes';
-      opsNodes.appendChild(buildOrgNode('Kat', false, false));
-      opsNodes.appendChild(buildOrgNode('Vex', false, false));
-      opsGroup.appendChild(opsNodes);
-      deptRow.appendChild(opsGroup);
+      deptRow.appendChild(buildDeptPod('Operations', '#B07CE8', [
+        { name: 'Kat' }, { name: 'Vex' }
+      ]));
 
-      // Build: Rex, Zara
-      var buildGroup = document.createElement('div');
-      buildGroup.className = 'org-dept-group';
-      var buildLabel = document.createElement('div');
-      buildLabel.className = 'org-dept-label';
-      buildLabel.textContent = 'Build';
-      buildGroup.appendChild(buildLabel);
-      var buildNodes = document.createElement('div');
-      buildNodes.className = 'org-dept-nodes';
-      buildNodes.appendChild(buildOrgNode('Rex', false, false));
-      buildNodes.appendChild(buildOrgNode('Zara', false, false));
-      buildGroup.appendChild(buildNodes);
-      deptRow.appendChild(buildGroup);
+      deptRow.appendChild(buildDeptPod('Build', '#5CB85C', [
+        { name: 'Rex' }, { name: 'Zara' }
+      ]));
 
-      // Intelligence: Mara, Cleo
-      var intelGroup = document.createElement('div');
-      intelGroup.className = 'org-dept-group';
-      var intelLabel = document.createElement('div');
-      intelLabel.className = 'org-dept-label';
-      intelLabel.textContent = 'Intelligence';
-      intelGroup.appendChild(intelLabel);
-      var intelNodes = document.createElement('div');
-      intelNodes.className = 'org-dept-nodes';
-      intelNodes.appendChild(buildOrgNode('Mara', false, false));
-      intelNodes.appendChild(buildOrgNode('Cleo', false, false));
-      intelGroup.appendChild(intelNodes);
-      deptRow.appendChild(intelGroup);
+      deptRow.appendChild(buildDeptPod('Intelligence', '#DAB255', [
+        { name: 'Mara' }, { name: 'Cleo' }
+      ]));
 
-      wrapper.appendChild(deptRow);
+      level2.appendChild(deptRow);
+      wrapper.appendChild(level2);
 
-      // ----- On-demand section: Nile -----
-      var onDemandSection = document.createElement('div');
-      onDemandSection.className = 'org-ondemand-section';
+      // Spacing
+      var gap3 = document.createElement('div');
+      gap3.className = 'org-gap-sm';
+      wrapper.appendChild(gap3);
 
-      var odLabel = document.createElement('div');
-      odLabel.className = 'org-dept-label';
-      odLabel.textContent = 'On-Demand';
-      onDemandSection.appendChild(odLabel);
-
-      var odNodeWrapper = document.createElement('div');
-      odNodeWrapper.className = 'org-node-row';
-      odNodeWrapper.style.cssText = 'display:flex;justify-content:center;';
-      odNodeWrapper.appendChild(buildOrgNode('Nile', true, false));
-      onDemandSection.appendChild(odNodeWrapper);
-
-      wrapper.appendChild(onDemandSection);
+      // ----- Level 3: On-demand -----
+      var level3 = document.createElement('div');
+      level3.className = 'org-level org-level-3';
+      level3.appendChild(buildDeptPod('On-Demand', '#DAB255', [
+        { name: 'Nile', onDemand: true }
+      ], true));
+      wrapper.appendChild(level3);
     }
 
     /* ============================
