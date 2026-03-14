@@ -285,7 +285,7 @@
     .header-right {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       flex-shrink: 0;
     }
 
@@ -5588,12 +5588,6 @@
       <span class="topbar-title" id="topbar-title">Office</span>
     </div>
     <div class="header-right">
-      <button class="sidebar-toggle" id="gsearch-toggle" aria-label="Global search" title="Search (Cmd+K)">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      </button>
-      <button class="sidebar-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle light/dark mode">
-        <span id="theme-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></span>
-      </button>
       <div class="clock">
         <span class="clock-date" id="clock-date"></span>
         <span class="clock-time" id="clock-time"></span>
@@ -5601,6 +5595,12 @@
       <div class="live-badge" title="Live">
         <span class="live-dot"></span>
       </div>
+      <button class="sidebar-toggle" id="gsearch-toggle" aria-label="Global search" title="Search (Cmd+K)">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+      <button class="sidebar-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle light/dark mode">
+        <span id="theme-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></span>
+      </button>
       <!-- Three-dot menu -->
       <div class="topbar-menu-wrap" id="topbar-menu-wrap">
         <button class="topbar-dots-btn" id="topbar-dots-btn" aria-label="More options" title="More options">
