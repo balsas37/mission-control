@@ -11661,20 +11661,22 @@
     });
 
     /* ---- Synapse particles (subtle dots drifting along edges) ---- */
-    var PARTICLE_COUNT = 80;
-    var PARTICLE_SPEED = 0.0015;
-    var PARTICLE_SIZE  = 1;
-    var PARTICLE_OPACITY = 0.25;
+    var PARTICLE_COUNT = 60;
+    var PARTICLE_SPEED = 0.002;
+    var PARTICLE_SIZE  = 1.2;
+    var PARTICLE_OPACITY = 0.3;
     var graphParticles = [];
     var particleCanvas = null;
     var particleCtx = null;
-    var particleAnimId = null;
     var particlesInited = false;
 
     function initParticles() {
+      if (particlesInited) return;
       var container = document.getElementById('graph-svg-container');
       if (!container) return;
-      /* Create canvas dynamically (static one gets removed by SVG render) */
+      /* Remove any existing particle canvas */
+      var old = container.querySelector('#graph-particle-canvas');
+      if (old) old.remove();
       particleCanvas = document.createElement('canvas');
       particleCanvas.id = 'graph-particle-canvas';
       particleCanvas.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;';
@@ -11682,24 +11684,36 @@
       particleCtx = particleCanvas.getContext('2d');
       particlesInited = true;
       spawnParticles();
-      tickParticles();
+      requestAnimationFrame(tickParticles);
+    }
+
+    function getVisibleEdges() {
+      if (!graphData || !graphData.edges) return [];
+      /* Read positions directly from the SVG line elements */
+      var lines = document.querySelectorAll('#graph-svg-container .links line');
+      var edges = [];
+      lines.forEach(function(line) {
+        var x1 = parseFloat(line.getAttribute('x1'));
+        var y1 = parseFloat(line.getAttribute('y1'));
+        var x2 = parseFloat(line.getAttribute('x2'));
+        var y2 = parseFloat(line.getAttribute('y2'));
+        var op = parseFloat(line.getAttribute('opacity') || '1');
+        if (op > 0 && !isNaN(x1) && !isNaN(y1)) {
+          edges.push({ x1: x1, y1: y1, x2: x2, y2: y2 });
+        }
+      });
+      return edges;
     }
 
     function spawnParticles() {
       graphParticles = [];
-      if (!graphData || !graphData.edges) return;
-      var visibleEdges = graphData.edges.filter(function(e) {
-        var src = typeof e.source === 'object' ? e.source : graphData.nodes.find(function(n) { return n.id === e.source; });
-        var tgt = typeof e.target === 'object' ? e.target : graphData.nodes.find(function(n) { return n.id === e.target; });
-        return src && tgt && nodeVisible(src) && nodeVisible(tgt);
-      });
-      if (visibleEdges.length === 0) return;
+      var edges = getVisibleEdges();
+      if (edges.length === 0) return;
       for (var i = 0; i < PARTICLE_COUNT; i++) {
-        var edge = visibleEdges[Math.floor(Math.random() * visibleEdges.length)];
         graphParticles.push({
-          edge: edge,
+          edgeIdx: Math.floor(Math.random() * edges.length),
           t: Math.random(),
-          speed: PARTICLE_SPEED * (0.8 + Math.random() * 0.4)
+          speed: PARTICLE_SPEED * (0.7 + Math.random() * 0.6)
         });
       }
     }
@@ -11707,7 +11721,7 @@
     function tickParticles() {
       if (!particlesInited || !particleCanvas || !particleCtx) return;
       var container = document.getElementById('graph-svg-container');
-      if (!container) return;
+      if (!container) { requestAnimationFrame(tickParticles); return; }
 
       var W = container.clientWidth;
       var H = container.clientHeight;
@@ -11720,17 +11734,20 @@
 
       particleCtx.clearRect(0, 0, W, H);
 
-      /* Get current D3 zoom transform */
-      var svg = container.querySelector('svg');
-      var zoomG = svg ? svg.querySelector('g') : null;
-      var transform = { x: 0, y: 0, k: 1 };
+      /* Read current line positions directly from SVG */
+      var edges = getVisibleEdges();
+      if (edges.length === 0) { requestAnimationFrame(tickParticles); return; }
+
+      /* Get zoom transform from the zoom group */
+      var zoomG = container.querySelector('.graph-zoom-group');
+      var tx = 0, ty = 0, tk = 1;
       if (zoomG) {
         var t = zoomG.getAttribute('transform');
         if (t) {
-          var match = t.match(/translate\(([^,]+),\s*([^)]+)\)\s*scale\(([^)]+)\)/);
-          if (match) {
-            transform = { x: parseFloat(match[1]), y: parseFloat(match[2]), k: parseFloat(match[3]) };
-          }
+          var m1 = t.match(/translate\(([^,)]+)[,\s]+([^)]+)\)/);
+          var m2 = t.match(/scale\(([^)]+)\)/);
+          if (m1) { tx = parseFloat(m1[1]); ty = parseFloat(m1[2]); }
+          if (m2) { tk = parseFloat(m2[1]); }
         }
       }
 
@@ -11738,25 +11755,16 @@
         p.t += p.speed;
         if (p.t >= 1) {
           p.t = 0;
-          /* Pick a new random visible edge */
-          var visibleEdges = graphData.edges.filter(function(e) {
-            var src = typeof e.source === 'object' ? e.source : null;
-            var tgt = typeof e.target === 'object' ? e.target : null;
-            return src && tgt && nodeVisible(src) && nodeVisible(tgt);
-          });
-          if (visibleEdges.length > 0) {
-            p.edge = visibleEdges[Math.floor(Math.random() * visibleEdges.length)];
-          }
+          p.edgeIdx = Math.floor(Math.random() * edges.length);
         }
-        var src = typeof p.edge.source === 'object' ? p.edge.source : null;
-        var tgt = typeof p.edge.target === 'object' ? p.edge.target : null;
-        if (!src || !tgt || src.x == null || tgt.x == null) return;
+        var edge = edges[p.edgeIdx % edges.length];
+        if (!edge) return;
 
-        var x = src.x + (tgt.x - src.x) * p.t;
-        var y = src.y + (tgt.y - src.y) * p.t;
-        /* Apply zoom transform */
-        var sx = x * transform.k + transform.x;
-        var sy = y * transform.k + transform.y;
+        var x = edge.x1 + (edge.x2 - edge.x1) * p.t;
+        var y = edge.y1 + (edge.y2 - edge.y1) * p.t;
+        /* Apply zoom */
+        var sx = x * tk + tx;
+        var sy = y * tk + ty;
 
         particleCtx.beginPath();
         particleCtx.arc(sx, sy, PARTICLE_SIZE, 0, Math.PI * 2);
@@ -11764,27 +11772,25 @@
         particleCtx.fill();
       });
 
-      particleAnimId = requestAnimationFrame(tickParticles);
+      requestAnimationFrame(tickParticles);
     }
 
-    /* Hook particles into graph lifecycle */
-    var origDrawGraph = typeof drawGraph === 'function' ? drawGraph : null;
-    var _drawGraphPatched = false;
-
-    /* Watch for graph loaded, then init particles */
+    /* Wait for graph to be loaded and simulation to settle, then init */
     var particleCheckInterval = setInterval(function() {
       if (graphLoaded && graphData && !particlesInited) {
-        /* Wait a tick for D3 to set up simulation */
-        setTimeout(function() { initParticles(); }, 500);
+        var lines = document.querySelectorAll('#graph-svg-container .links line');
+        if (lines.length > 0) {
+          clearInterval(particleCheckInterval);
+          setTimeout(initParticles, 800);
+        }
       }
-      if (particlesInited) clearInterval(particleCheckInterval);
-    }, 300);
+    }, 500);
 
     /* Respawn particles on filter change */
     var origRedraw = redraw;
     redraw = function() {
       origRedraw();
-      if (particlesInited) spawnParticles();
+      if (particlesInited) setTimeout(spawnParticles, 300);
     };
 
   })();
