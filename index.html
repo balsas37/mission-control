@@ -530,26 +530,25 @@
       opacity: 1;
     }
 
-    /* Floating sidebar toggle - top-left of page */
+    /* Floating sidebar toggle - centered in the collapsed sidebar header area */
     .mc-sidebar-float-toggle {
       position: fixed;
-      top: 12px;
-      left: 12px;
+      top: 0;
+      left: 0;
+      width: var(--sidebar-collapsed);
+      height: 48px;
       z-index: 150;
-      background: var(--bg-raised);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 8px;
+      background: transparent;
+      border: none;
       color: var(--text-2);
       cursor: pointer;
       display: none;
       align-items: center;
       justify-content: center;
-      transition: all 0.2s;
+      transition: color 0.2s;
       line-height: 1;
     }
     .mc-sidebar-float-toggle:hover {
-      border-color: var(--border-hover);
       color: var(--text-1);
     }
     body.sidebar-collapsed .mc-sidebar-float-toggle {
