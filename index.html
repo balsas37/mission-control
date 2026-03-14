@@ -5104,7 +5104,7 @@
       gap: 12px;
       flex-wrap: wrap;
       border-bottom: 1px solid rgba(255,255,255,0.05);
-      background: #1a1a1e;
+      background: var(--bg);
       z-index: 2;
     }
     .graph-stats {
@@ -5173,7 +5173,8 @@
       color: var(--text-1);
       border-color: rgba(255,255,255,0.2);
     }
-    .graph-filter-dot {
+    .graph-filter-dot,
+    .cal-filter-dot {
       width: 7px;
       height: 7px;
       border-radius: 50%;
@@ -5219,7 +5220,7 @@
     }
     #graph-svg-container {
       flex: 1;
-      background: #1a1a1e;
+      background: var(--bg);
       overflow: hidden;
       position: relative;
       cursor: grab;
@@ -5415,8 +5416,8 @@
     }
     body.light-mode .graph-search-input::placeholder { color: #aeaeb2; }
     /* Canvas and detail panel stay dark even in light mode */
-    body.light-mode #graph-svg-container { background: #1a1a1e; }
-    body.light-mode .graph-detail-panel { background: #1e1e1e; border-left-color: rgba(255,255,255,0.06); }
+    body.light-mode #graph-svg-container { background: var(--bg); }
+    body.light-mode .graph-detail-panel { background: var(--bg-raised); border-left-color: rgba(255,255,255,0.06); }
 
     @media (max-width: 768px) {
       .graph-main { flex-direction: column; }
@@ -6507,7 +6508,11 @@
         <div class="graph-stats">
           <div class="graph-stat-chip">
             <div class="graph-stat-chip-value" id="graph-stat-total">--</div>
-            <div class="graph-stat-chip-label">Total Nodes</div>
+            <div class="graph-stat-chip-label">Notes</div>
+          </div>
+          <div class="graph-stat-chip">
+            <div class="graph-stat-chip-value" id="graph-stat-edges">--</div>
+            <div class="graph-stat-chip-label">Connections</div>
           </div>
           <div class="graph-stat-chip">
             <div class="graph-stat-chip-value" id="graph-stat-skills">--</div>
@@ -6519,18 +6524,19 @@
           </div>
           <div class="graph-stat-chip">
             <div class="graph-stat-chip-value" id="graph-stat-entities">--</div>
-            <div class="graph-stat-chip-label">Entities</div>
-          </div>
-          <div class="graph-stat-chip">
-            <div class="graph-stat-chip-value" id="graph-stat-edges">--</div>
-            <div class="graph-stat-chip-label">Edges</div>
+            <div class="graph-stat-chip-label">People</div>
           </div>
         </div>
         <div class="graph-filters">
-          <button class="graph-filter-pill active" data-layer="skill"><span class="graph-filter-dot" style="background:#6BA8DA"></span>Skills</button>
-          <button class="graph-filter-pill active" data-layer="domain"><span class="graph-filter-dot" style="background:#6BBF6B"></span>Domain</button>
-          <button class="graph-filter-pill active" data-layer="entity"><span class="graph-filter-dot" style="background:#A86DBF"></span>Entities</button>
-          <button class="graph-filter-pill active" data-layer="context"><span class="graph-filter-dot" style="background:#DAB255"></span>Context</button>
+          <button class="graph-filter-pill active" data-cluster="all"><span class="graph-filter-dot" style="background:var(--text-2)"></span>All</button>
+          <button class="graph-filter-pill" data-cluster="ofm"><span class="graph-filter-dot" style="background:#DAB255"></span>OFM</button>
+          <button class="graph-filter-pill" data-cluster="lagoon"><span class="graph-filter-dot" style="background:#6BA8DA"></span>Lagoon</button>
+          <button class="graph-filter-pill" data-cluster="property"><span class="graph-filter-dot" style="background:#6BBF6B"></span>Property</button>
+          <button class="graph-filter-pill" data-cluster="business"><span class="graph-filter-dot" style="background:#A86DBF"></span>Business</button>
+          <button class="graph-filter-pill" data-cluster="skills"><span class="graph-filter-dot" style="background:#5BC0DE"></span>Skills</button>
+          <button class="graph-filter-pill" data-cluster="system"><span class="graph-filter-dot" style="background:#5AB8B0"></span>System</button>
+          <button class="graph-filter-pill" data-cluster="people"><span class="graph-filter-dot" style="background:#D9534F"></span>People</button>
+          <button class="graph-filter-pill" data-cluster="daily"><span class="graph-filter-dot" style="background:#888888"></span>Daily</button>
           <div class="graph-search-wrap">
             <svg class="graph-search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             <input type="text" class="graph-search-input" id="graph-search-input" placeholder="Search nodes..." autocomplete="off">
@@ -10872,6 +10878,7 @@
     var glowElements    = null;
 
     var activeLayers    = { skill: true, domain: true, entity: true, context: true };
+    var activeCluster   = 'all';
     var searchQuery     = '';
     var selectedNode    = null;
     var hoveredNode     = null;
@@ -10929,9 +10936,9 @@
       return str.length > max ? str.slice(0, max - 1) + '\u2026' : str;
     }
 
-    /* ---- Filter: which nodes pass current layer + search filters ---- */
+    /* ---- Filter: which nodes pass current cluster + search filters ---- */
     function nodeVisible(d) {
-      if (!activeLayers[d.layer]) return false;
+      if (activeCluster !== 'all' && d.cluster !== activeCluster) return false;
       if (searchQuery) {
         var q = searchQuery.toLowerCase();
         var inTitle = (d.title || '').toLowerCase().indexOf(q) !== -1;
@@ -10945,11 +10952,16 @@
     /* ---- Stats update ---- */
     function updateStats() {
       if (!graphData) return;
-      var layers = graphData.meta && graphData.meta.layers ? graphData.meta.layers : {};
-      document.getElementById('graph-stat-total').textContent   = graphData.nodes.length;
-      document.getElementById('graph-stat-skills').textContent  = layers.skill   || 0;
-      document.getElementById('graph-stat-domain').textContent  = layers.domain  || 0;
-      document.getElementById('graph-stat-entities').textContent= layers.entity  || 0;
+      /* Count by cluster */
+      var clusterCounts = {};
+      graphData.nodes.forEach(function(n) {
+        clusterCounts[n.cluster] = (clusterCounts[n.cluster] || 0) + 1;
+      });
+      var visibleNodes = graphData.nodes.filter(nodeVisible).length;
+      document.getElementById('graph-stat-total').textContent   = activeCluster === 'all' ? graphData.nodes.length : visibleNodes;
+      document.getElementById('graph-stat-skills').textContent  = clusterCounts.skills  || 0;
+      document.getElementById('graph-stat-domain').textContent  = (clusterCounts.business || 0) + (clusterCounts.daily || 0);
+      document.getElementById('graph-stat-entities').textContent= clusterCounts.people  || 0;
       document.getElementById('graph-stat-edges').textContent   = graphData.edges.length;
     }
 
@@ -11478,20 +11490,25 @@
     function initFilterPills() {
       /* Restore from localStorage */
       try {
-        var saved = localStorage.getItem(LS_LAYERS);
-        if (saved) activeLayers = JSON.parse(saved);
+        var saved = localStorage.getItem('mc-graph-cluster');
+        if (saved) activeCluster = saved;
       } catch(e) {}
 
-      document.querySelectorAll('.graph-filter-pill[data-layer]').forEach(function(btn) {
-        var layer = btn.dataset.layer;
-        /* Sync DOM with state */
-        if (activeLayers[layer]) btn.classList.add('active');
-        else btn.classList.remove('active');
+      var pills = document.querySelectorAll('.graph-filter-pill[data-cluster]');
+      function syncPillUI() {
+        pills.forEach(function(p) {
+          if (p.dataset.cluster === activeCluster) p.classList.add('active');
+          else p.classList.remove('active');
+        });
+      }
+      syncPillUI();
 
+      pills.forEach(function(btn) {
         btn.addEventListener('click', function() {
-          activeLayers[layer] = !activeLayers[layer];
-          btn.classList.toggle('active', activeLayers[layer]);
-          try { localStorage.setItem(LS_LAYERS, JSON.stringify(activeLayers)); } catch(e) {}
+          activeCluster = btn.dataset.cluster;
+          try { localStorage.setItem('mc-graph-cluster', activeCluster); } catch(e) {}
+          syncPillUI();
+          updateStats();
           if (graphLoaded) redraw();
         });
       });
