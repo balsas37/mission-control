@@ -173,11 +173,11 @@ canvas {
 }
 canvas:active { cursor: grabbing; }
 
-/* Toggle sidebar button */
+/* Toggle sidebar button - only when sidebar collapsed on desktop or hidden on mobile */
 .toggle-sidebar {
   position: fixed;
   top: 12px;
-  left: calc(var(--sidebar-width) + 12px);
+  left: 12px;
   z-index: 101;
   background: var(--bg-raised);
   border: 1px solid var(--border);
@@ -185,14 +185,14 @@ canvas:active { cursor: grabbing; }
   padding: 8px;
   color: var(--text-2);
   cursor: pointer;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.2s;
   line-height: 1;
 }
 .sidebar.collapsed ~ .toggle-sidebar {
-  left: 12px;
+  display: flex;
 }
 .toggle-sidebar:hover { border-color: var(--border-hover); color: var(--text-1); }
 
@@ -343,7 +343,7 @@ canvas:active { cursor: grabbing; }
 <!-- Backdrop for mobile -->
 <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
 
-<!-- Toggle -->
+<!-- Toggle (mobile only, when sidebar fully hidden) -->
 <button class="toggle-sidebar" id="toggleSidebar">
   <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/></svg>
 </button>
