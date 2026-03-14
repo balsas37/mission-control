@@ -5089,6 +5089,7 @@
       flex-direction: column;
       height: calc(100vh - 48px);
       overflow: hidden;
+      margin: -24px;
     }
     #panel-graph.active {
       display: flex;
@@ -5234,19 +5235,21 @@
 
     /* Detail panel - slides in from right */
     .graph-detail-panel {
-      width: 260px;
-      flex-shrink: 0;
-      background: #1e1e1e;
+      width: 280px;
+      background: var(--bg-raised);
       border-left: 1px solid rgba(255,255,255,0.10);
       overflow-y: auto;
       padding: 20px;
       display: flex;
       flex-direction: column;
       gap: 16px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
       transform: translateX(100%);
       transition: transform 0.22s cubic-bezier(0.4,0,0.2,1);
-      /* Panel is always in DOM but off-screen until visible */
-      position: relative;
+      z-index: 5;
     }
     .graph-detail-panel.visible {
       transform: translateX(0);
