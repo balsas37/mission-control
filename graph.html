@@ -309,11 +309,13 @@ const CONFIG = {
   nodeMinSize: 3,
   nodeMaxSize: 14,
   labelMinZoom: 1.2,
-  // Synapse particles
-  particleCount: 120,
-  particleSpeed: 0.003,
-  particleSize: 1.5,
-  particleOpacity: 0.35,
+  // Synapse particles (living nerve pulses)
+  particleCount: 350,
+  particleSpeed: 0.004,
+  particleSize: 2,
+  particleOpacity: 0.6,
+  particleGlow: true,
+  particleTrailLength: 3,  // trail segments behind each particle
   // Interaction
   hoverRadius: 20,
   clickRadius: 15,
@@ -403,14 +405,23 @@ function initParticles() {
   const validEdges = edges.filter(e =>
     nodes.find(n => n.id === e.source) && nodes.find(n => n.id === e.target)
   );
+  if (!validEdges.length) return;
+
   for (let i = 0; i < CONFIG.particleCount; i++) {
     const edge = validEdges[Math.floor(Math.random() * validEdges.length)];
+    // Vary speed: some fast pulses, some slow drifters
+    const isFast = Math.random() < 0.3;
     particles.push({
       edge,
-      t: Math.random(), // position along edge [0,1]
-      speed: CONFIG.particleSpeed * (0.5 + Math.random()),
-      size: CONFIG.particleSize * (0.6 + Math.random() * 0.8),
-      opacity: CONFIG.particleOpacity * (0.4 + Math.random() * 0.6),
+      t: Math.random(),
+      speed: isFast
+        ? CONFIG.particleSpeed * (1.5 + Math.random() * 2)
+        : CONFIG.particleSpeed * (0.3 + Math.random() * 0.7),
+      size: CONFIG.particleSize * (0.5 + Math.random() * (isFast ? 1.2 : 0.6)),
+      opacity: CONFIG.particleOpacity * (0.5 + Math.random() * 0.5),
+      isFast,
+      // Store trail history
+      trail: [],
     });
   }
 }
@@ -422,12 +433,53 @@ function updateParticles() {
   if (!validEdges.length) return;
 
   particles.forEach(p => {
+    // Store previous position for trail
+    const s = nodes.find(n => n.id === p.edge.source);
+    const t = nodes.find(n => n.id === p.edge.target);
+    if (s && t) {
+      const x = s.x + (t.x - s.x) * p.t;
+      const y = s.y + (t.y - s.y) * p.t;
+      p.trail.unshift({ x, y });
+      if (p.trail.length > CONFIG.particleTrailLength) {
+        p.trail.pop();
+      }
+    }
+
     p.t += p.speed;
     if (p.t > 1) {
-      // Jump to random edge
-      p.edge = validEdges[Math.floor(Math.random() * validEdges.length)];
+      // Jump to random edge, sometimes follow a connected path
+      const currentTarget = p.edge.target;
+      const connectedEdges = validEdges.filter(e =>
+        e.source === currentTarget || e.target === currentTarget
+      );
+      if (connectedEdges.length > 0 && Math.random() < 0.6) {
+        // Follow a connected path (like a real nerve signal)
+        p.edge = connectedEdges[Math.floor(Math.random() * connectedEdges.length)];
+        // If edge is reversed, start from the right end
+        if (p.edge.target === currentTarget) {
+          p.t = 1;
+          p.speed = -Math.abs(p.speed);
+        } else {
+          p.t = 0;
+          p.speed = Math.abs(p.speed);
+        }
+      } else {
+        p.edge = validEdges[Math.floor(Math.random() * validEdges.length)];
+        p.t = 0;
+        p.speed = Math.abs(p.speed);
+      }
+      p.trail = [];
+      const isFast = Math.random() < 0.3;
+      p.speed = isFast
+        ? CONFIG.particleSpeed * (1.5 + Math.random() * 2)
+        : CONFIG.particleSpeed * (0.3 + Math.random() * 0.7);
+      if (p.t === 1) p.speed = -Math.abs(p.speed);
+    }
+    if (p.t < 0) {
       p.t = 0;
-      p.speed = CONFIG.particleSpeed * (0.5 + Math.random());
+      p.speed = Math.abs(p.speed);
+      p.edge = validEdges[Math.floor(Math.random() * validEdges.length)];
+      p.trail = [];
     }
   });
 }
@@ -583,20 +635,50 @@ function render() {
     ctx.stroke();
   });
 
-  // Draw particles (synapses)
+  // Draw particles (living nerve pulses)
   particles.forEach(p => {
     const s = nodes.find(n => n.id === p.edge.source);
     const t = nodes.find(n => n.id === p.edge.target);
     if (!s || !t) return;
     if (!visibleIds.has(s.id) && !visibleIds.has(t.id)) return;
 
-    const x = s.x + (t.x - s.x) * p.t;
-    const y = s.y + (t.y - s.y) * p.t;
+    const x = s.x + (t.x - s.x) * Math.max(0, Math.min(1, p.t));
+    const y = s.y + (t.y - s.y) * Math.max(0, Math.min(1, p.t));
     const sp = worldToScreen(x, y);
+    const sz = p.size * camera.zoom;
 
+    // Draw trail (fading segments behind the particle)
+    if (p.trail.length > 0) {
+      for (let i = 0; i < p.trail.length; i++) {
+        const tp = worldToScreen(p.trail[i].x, p.trail[i].y);
+        const trailAlpha = p.opacity * (1 - (i + 1) / (p.trail.length + 1)) * 0.5;
+        const trailSize = sz * (1 - (i + 1) / (p.trail.length + 1)) * 0.7;
+        ctx.beginPath();
+        ctx.arc(tp.x, tp.y, trailSize, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(210, 205, 195, ${trailAlpha})`;
+        ctx.fill();
+      }
+    }
+
+    // Outer glow
+    if (CONFIG.particleGlow) {
+      ctx.beginPath();
+      ctx.arc(sp.x, sp.y, sz * 3, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(220, 215, 200, ${p.opacity * 0.08})`;
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.arc(sp.x, sp.y, sz * 1.8, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(230, 225, 210, ${p.opacity * 0.15})`;
+      ctx.fill();
+    }
+
+    // Core particle
     ctx.beginPath();
-    ctx.arc(sp.x, sp.y, p.size * camera.zoom, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(220, 215, 200, ${p.opacity})`;
+    ctx.arc(sp.x, sp.y, sz, 0, Math.PI * 2);
+    ctx.fillStyle = p.isFast
+      ? `rgba(255, 250, 240, ${p.opacity})`   // bright white for fast pulses
+      : `rgba(200, 195, 185, ${p.opacity})`;   // warm grey for slow drifters
     ctx.fill();
   });
 
