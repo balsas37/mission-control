@@ -6541,6 +6541,7 @@
       <!-- Main area: SVG + detail panel -->
       <div class="graph-main">
         <div id="graph-svg-container">
+          <canvas id="graph-particle-canvas" style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;"></canvas>
           <div class="graph-empty-state" id="graph-empty-state" style="display:none">No nodes match your filter.</div>
         </div>
         <div class="graph-detail-panel" id="graph-detail-panel">
@@ -11620,6 +11621,128 @@
     window.addEventListener('resize', function() {
       if (graphPanel && graphPanel.classList.contains('active')) handleResize();
     });
+
+    /* ---- Synapse particles (subtle dots drifting along edges) ---- */
+    var PARTICLE_COUNT = 80;
+    var PARTICLE_SPEED = 0.0015;
+    var PARTICLE_SIZE  = 1;
+    var PARTICLE_OPACITY = 0.25;
+    var graphParticles = [];
+    var particleCanvas = null;
+    var particleCtx = null;
+    var particleAnimId = null;
+    var particlesInited = false;
+
+    function initParticles() {
+      particleCanvas = document.getElementById('graph-particle-canvas');
+      if (!particleCanvas) return;
+      particleCtx = particleCanvas.getContext('2d');
+      particlesInited = true;
+      spawnParticles();
+      tickParticles();
+    }
+
+    function spawnParticles() {
+      graphParticles = [];
+      if (!graphData || !graphData.edges) return;
+      var visibleEdges = graphData.edges.filter(function(e) {
+        var src = typeof e.source === 'object' ? e.source : graphData.nodes.find(function(n) { return n.id === e.source; });
+        var tgt = typeof e.target === 'object' ? e.target : graphData.nodes.find(function(n) { return n.id === e.target; });
+        return src && tgt && nodeVisible(src) && nodeVisible(tgt);
+      });
+      if (visibleEdges.length === 0) return;
+      for (var i = 0; i < PARTICLE_COUNT; i++) {
+        var edge = visibleEdges[Math.floor(Math.random() * visibleEdges.length)];
+        graphParticles.push({
+          edge: edge,
+          t: Math.random(),
+          speed: PARTICLE_SPEED * (0.8 + Math.random() * 0.4)
+        });
+      }
+    }
+
+    function tickParticles() {
+      if (!particlesInited || !particleCanvas || !particleCtx) return;
+      var container = document.getElementById('graph-svg-container');
+      if (!container) return;
+
+      var W = container.clientWidth;
+      var H = container.clientHeight;
+      var dpr = window.devicePixelRatio || 1;
+      if (particleCanvas.width !== W * dpr || particleCanvas.height !== H * dpr) {
+        particleCanvas.width = W * dpr;
+        particleCanvas.height = H * dpr;
+        particleCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      }
+
+      particleCtx.clearRect(0, 0, W, H);
+
+      /* Get current D3 zoom transform */
+      var svg = container.querySelector('svg');
+      var zoomG = svg ? svg.querySelector('g') : null;
+      var transform = { x: 0, y: 0, k: 1 };
+      if (zoomG) {
+        var t = zoomG.getAttribute('transform');
+        if (t) {
+          var match = t.match(/translate\(([^,]+),\s*([^)]+)\)\s*scale\(([^)]+)\)/);
+          if (match) {
+            transform = { x: parseFloat(match[1]), y: parseFloat(match[2]), k: parseFloat(match[3]) };
+          }
+        }
+      }
+
+      graphParticles.forEach(function(p) {
+        p.t += p.speed;
+        if (p.t >= 1) {
+          p.t = 0;
+          /* Pick a new random visible edge */
+          var visibleEdges = graphData.edges.filter(function(e) {
+            var src = typeof e.source === 'object' ? e.source : null;
+            var tgt = typeof e.target === 'object' ? e.target : null;
+            return src && tgt && nodeVisible(src) && nodeVisible(tgt);
+          });
+          if (visibleEdges.length > 0) {
+            p.edge = visibleEdges[Math.floor(Math.random() * visibleEdges.length)];
+          }
+        }
+        var src = typeof p.edge.source === 'object' ? p.edge.source : null;
+        var tgt = typeof p.edge.target === 'object' ? p.edge.target : null;
+        if (!src || !tgt || src.x == null || tgt.x == null) return;
+
+        var x = src.x + (tgt.x - src.x) * p.t;
+        var y = src.y + (tgt.y - src.y) * p.t;
+        /* Apply zoom transform */
+        var sx = x * transform.k + transform.x;
+        var sy = y * transform.k + transform.y;
+
+        particleCtx.beginPath();
+        particleCtx.arc(sx, sy, PARTICLE_SIZE, 0, Math.PI * 2);
+        particleCtx.fillStyle = 'rgba(200, 198, 190, ' + PARTICLE_OPACITY + ')';
+        particleCtx.fill();
+      });
+
+      particleAnimId = requestAnimationFrame(tickParticles);
+    }
+
+    /* Hook particles into graph lifecycle */
+    var origDrawGraph = typeof drawGraph === 'function' ? drawGraph : null;
+    var _drawGraphPatched = false;
+
+    /* Watch for graph loaded, then init particles */
+    var particleCheckInterval = setInterval(function() {
+      if (graphLoaded && graphData && !particlesInited) {
+        /* Wait a tick for D3 to set up simulation */
+        setTimeout(function() { initParticles(); }, 500);
+      }
+      if (particlesInited) clearInterval(particleCheckInterval);
+    }, 300);
+
+    /* Respawn particles on filter change */
+    var origRedraw = redraw;
+    redraw = function() {
+      origRedraw();
+      if (particlesInited) spawnParticles();
+    };
 
   })();
   </script>
