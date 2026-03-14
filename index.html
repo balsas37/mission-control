@@ -520,6 +520,14 @@
     body.sidebar-collapsed .sidebar-header {
       padding: 0;
       justify-content: center;
+      min-height: 48px;
+    }
+    body.sidebar-collapsed .sidebar-logo-icon svg {
+      opacity: 0.6;
+      transition: opacity 0.15s;
+    }
+    body.sidebar-collapsed .sidebar-header:hover .sidebar-logo-icon svg {
+      opacity: 1;
     }
 
     .sidebar-badge {
