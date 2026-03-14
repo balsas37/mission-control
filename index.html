@@ -244,8 +244,7 @@
       height: 48px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      padding: 0 24px 0 14px;
+      padding: 0 14px;
       background: var(--bg);
       border-bottom: 1px solid var(--border);
       z-index: 100;
@@ -671,6 +670,11 @@
     .topbar-nav-btn:disabled {
       opacity: 0.25;
       cursor: default;
+    }
+
+    .topbar-spacer {
+      flex: 1;
+      min-width: 20px;
     }
 
     .topbar-title {
@@ -5397,7 +5401,7 @@
     /* Edge context tooltip */
     .graph-open-full-btn {
       position: absolute;
-      bottom: 16px;
+      bottom: 80px;
       left: 50%;
       transform: translateX(-50%);
       font-size: 12px;
@@ -5586,6 +5590,7 @@
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
       </button>
       <span class="topbar-title" id="topbar-title">Office</span>
+      <div class="topbar-spacer"></div>
     </div>
     <div class="header-right">
       <div class="clock">
