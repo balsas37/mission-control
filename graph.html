@@ -19,7 +19,7 @@
   --text-2: #888888;
   --text-3: #555555;
   --accent: #ffffff;
-  --sidebar-width: 170px;
+  --sidebar-width: 200px;
   --sidebar-bg: #1a1a1a;
   --sidebar-transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -77,11 +77,13 @@ html, body {
 }
 .sidebar-header .back-link:hover { color: var(--text-1); background: rgba(255,255,255,0.06); }
 .sidebar-header h1 {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 400;
   letter-spacing: -0.02em;
   color: var(--text-1);
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .sidebar-search {
@@ -127,10 +129,13 @@ html, body {
 }
 .cluster-label {
   flex: 1;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 400;
   color: var(--text-2);
   letter-spacing: -0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .cluster-item.active .cluster-label { color: var(--text-1); font-weight: 500; }
 .cluster-count {
