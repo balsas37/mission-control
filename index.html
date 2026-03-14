@@ -5149,46 +5149,35 @@
       margin-left: auto;
     }
     .graph-filter-pill {
-      padding: 7px 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
       border-radius: 999px;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 500;
-      color: #555555;
-      background: rgba(255,255,255,0.02);
-      border: 1px solid rgba(255,255,255,0.06);
       cursor: pointer;
-      transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-2);
+      font-family: inherit;
+      transition: all 0.2s;
       white-space: nowrap;
     }
     .graph-filter-pill:hover {
-      background: rgba(255,255,255,0.05);
+      background: rgba(255,255,255,0.04);
       border-color: rgba(255,255,255,0.10);
-      color: #888888;
     }
-    /* Layer accent colors on active pills only */
-    .graph-filter-pill.layer-skill.active {
-      background: rgba(107,168,218,0.12);
-      border-color: rgba(107,168,218,0.35);
-      color: #6BA8DA;
-      font-weight: 400;
+    .graph-filter-pill.active {
+      background: rgba(255,255,255,0.08);
+      color: var(--text-1);
+      border-color: rgba(255,255,255,0.2);
     }
-    .graph-filter-pill.layer-domain.active {
-      background: rgba(107,191,107,0.12);
-      border-color: rgba(107,191,107,0.35);
-      color: #6BBF6B;
-      font-weight: 400;
-    }
-    .graph-filter-pill.layer-entity.active {
-      background: rgba(168,109,191,0.12);
-      border-color: rgba(168,109,191,0.35);
-      color: #A86DBF;
-      font-weight: 400;
-    }
-    .graph-filter-pill.layer-context.active {
-      background: rgba(218,178,85,0.12);
-      border-color: rgba(218,178,85,0.35);
-      color: #DAB255;
-      font-weight: 400;
+    .graph-filter-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      flex-shrink: 0;
     }
 
     /* Search */
@@ -6538,10 +6527,10 @@
           </div>
         </div>
         <div class="graph-filters">
-          <button class="graph-filter-pill layer-skill active" data-layer="skill">Skills</button>
-          <button class="graph-filter-pill layer-domain active" data-layer="domain">Domain</button>
-          <button class="graph-filter-pill layer-entity active" data-layer="entity">Entities</button>
-          <button class="graph-filter-pill layer-context active" data-layer="context">Context</button>
+          <button class="graph-filter-pill active" data-layer="skill"><span class="graph-filter-dot" style="background:#6BA8DA"></span>Skills</button>
+          <button class="graph-filter-pill active" data-layer="domain"><span class="graph-filter-dot" style="background:#6BBF6B"></span>Domain</button>
+          <button class="graph-filter-pill active" data-layer="entity"><span class="graph-filter-dot" style="background:#A86DBF"></span>Entities</button>
+          <button class="graph-filter-pill active" data-layer="context"><span class="graph-filter-dot" style="background:#DAB255"></span>Context</button>
           <div class="graph-search-wrap">
             <svg class="graph-search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             <input type="text" class="graph-search-input" id="graph-search-input" placeholder="Search nodes..." autocomplete="off">
