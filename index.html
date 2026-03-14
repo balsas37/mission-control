@@ -5098,13 +5098,10 @@
     /* Toolbar */
     .graph-toolbar {
       flex-shrink: 0;
-      padding: 14px 20px 12px;
-      border-bottom: 1px solid var(--border);
+      padding: 20px 24px 14px;
       display: flex;
-      align-items: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
+      flex-direction: column;
+      position: relative;
       background: var(--bg);
       z-index: 2;
     }
@@ -6505,46 +6502,34 @@
 
     <!-- Graph -->
     <section class="tab-panel" id="panel-graph">
-      <!-- Toolbar: stats + filters + search -->
+      <!-- Toolbar: search + filters (matches Documents tab layout) -->
       <div class="graph-toolbar">
-        <a href="graph.html" target="_blank" style="position:absolute;right:16px;top:12px;font-size:12px;color:var(--text-3);text-decoration:none;padding:4px 10px;border:1px solid var(--border);border-radius:6px;transition:all 0.2s;z-index:10;" onmouseover="this.style.color='var(--text-1)';this.style.borderColor='var(--border-hover)'" onmouseout="this.style.color='var(--text-3)';this.style.borderColor='var(--border)'">open graph →</a>
-        <div class="graph-stats">
-          <div class="graph-stat-chip">
-            <div class="graph-stat-chip-value" id="graph-stat-total">--</div>
-            <div class="graph-stat-chip-label">Notes</div>
-          </div>
-          <div class="graph-stat-chip">
-            <div class="graph-stat-chip-value" id="graph-stat-edges">--</div>
-            <div class="graph-stat-chip-label">Connections</div>
-          </div>
-          <div class="graph-stat-chip">
-            <div class="graph-stat-chip-value" id="graph-stat-skills">--</div>
-            <div class="graph-stat-chip-label">Skills</div>
-          </div>
-          <div class="graph-stat-chip">
-            <div class="graph-stat-chip-value" id="graph-stat-domain">--</div>
-            <div class="graph-stat-chip-label">Domain</div>
-          </div>
-          <div class="graph-stat-chip">
-            <div class="graph-stat-chip-value" id="graph-stat-entities">--</div>
-            <div class="graph-stat-chip-label">People</div>
-          </div>
+        <a href="graph.html" target="_blank" style="position:absolute;right:16px;top:14px;font-size:12px;color:var(--text-3);text-decoration:none;padding:4px 10px;border:1px solid var(--border);border-radius:6px;transition:all 0.2s;z-index:10;" onmouseover="this.style.color='var(--text-1)';this.style.borderColor='var(--border-hover)'" onmouseout="this.style.color='var(--text-3)';this.style.borderColor='var(--border)'">open graph →</a>
+        <!-- Full-width search bar -->
+        <div class="docs-search-wrap" style="margin-bottom:12px;">
+          <svg class="docs-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" class="docs-search" id="graph-search-input" placeholder="Search nodes..." autocomplete="off">
         </div>
-        <div class="graph-filters">
-          <button class="graph-filter-pill active" data-cluster="all"><span class="graph-filter-dot" style="background:var(--text-2)"></span>All</button>
-          <button class="graph-filter-pill" data-cluster="ofm"><span class="graph-filter-dot" style="background:#DAB255"></span>OFM</button>
-          <button class="graph-filter-pill" data-cluster="lagoon"><span class="graph-filter-dot" style="background:#6BA8DA"></span>Lagoon</button>
-          <button class="graph-filter-pill" data-cluster="property"><span class="graph-filter-dot" style="background:#6BBF6B"></span>Property</button>
-          <button class="graph-filter-pill" data-cluster="business"><span class="graph-filter-dot" style="background:#A86DBF"></span>Business</button>
-          <button class="graph-filter-pill" data-cluster="skills"><span class="graph-filter-dot" style="background:#5BC0DE"></span>Skills</button>
-          <button class="graph-filter-pill" data-cluster="system"><span class="graph-filter-dot" style="background:#5AB8B0"></span>System</button>
-          <button class="graph-filter-pill" data-cluster="people"><span class="graph-filter-dot" style="background:#D9534F"></span>People</button>
-          <button class="graph-filter-pill" data-cluster="daily"><span class="graph-filter-dot" style="background:#888888"></span>Daily</button>
-          <div class="graph-search-wrap">
-            <svg class="graph-search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            <input type="text" class="graph-search-input" id="graph-search-input" placeholder="Search nodes..." autocomplete="off">
-          </div>
+        <!-- Centered filter pills -->
+        <div class="docs-cat-filters" style="margin-bottom:0;">
+          <button class="cal-filter-chip active" data-cluster="all"><span class="cal-filter-dot" style="background:var(--text-2)"></span>All</button>
+          <button class="cal-filter-chip" data-cluster="ofm"><span class="cal-filter-dot" style="background:#DAB255"></span>OFM</button>
+          <button class="cal-filter-chip" data-cluster="lagoon"><span class="cal-filter-dot" style="background:#6BA8DA"></span>Lagoon</button>
+          <button class="cal-filter-chip" data-cluster="property"><span class="cal-filter-dot" style="background:#6BBF6B"></span>Property</button>
+          <button class="cal-filter-chip" data-cluster="business"><span class="cal-filter-dot" style="background:#A86DBF"></span>Business</button>
+          <button class="cal-filter-chip" data-cluster="skills"><span class="cal-filter-dot" style="background:#5BC0DE"></span>Skills</button>
+          <button class="cal-filter-chip" data-cluster="system"><span class="cal-filter-dot" style="background:#5AB8B0"></span>System</button>
+          <button class="cal-filter-chip" data-cluster="people"><span class="cal-filter-dot" style="background:#D9534F"></span>People</button>
+          <button class="cal-filter-chip" data-cluster="daily"><span class="cal-filter-dot" style="background:#888888"></span>Daily</button>
         </div>
+      </div>
+      <!-- Hidden stat values for JS -->
+      <div style="display:none;">
+        <span id="graph-stat-total"></span>
+        <span id="graph-stat-edges"></span>
+        <span id="graph-stat-skills"></span>
+        <span id="graph-stat-domain"></span>
+        <span id="graph-stat-entities"></span>
       </div>
       <!-- Main area: SVG + detail panel -->
       <div class="graph-main">
@@ -11497,7 +11482,7 @@
         if (saved) activeCluster = saved;
       } catch(e) {}
 
-      var pills = document.querySelectorAll('.graph-filter-pill[data-cluster]');
+      var pills = document.querySelectorAll('.cal-filter-chip[data-cluster]');
       function syncPillUI() {
         pills.forEach(function(p) {
           if (p.dataset.cluster === activeCluster) p.classList.add('active');
