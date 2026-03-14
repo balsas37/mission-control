@@ -173,11 +173,11 @@ canvas {
 }
 canvas:active { cursor: grabbing; }
 
-/* Toggle sidebar button - only visible when sidebar is collapsed */
+/* Toggle sidebar button */
 .toggle-sidebar {
   position: fixed;
   top: 12px;
-  left: 12px;
+  left: calc(var(--sidebar-width) + 12px);
   z-index: 101;
   background: var(--bg-raised);
   border: 1px solid var(--border);
@@ -185,14 +185,14 @@ canvas:active { cursor: grabbing; }
   padding: 8px;
   color: var(--text-2);
   cursor: pointer;
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   line-height: 1;
 }
 .sidebar.collapsed ~ .toggle-sidebar {
-  display: flex;
+  left: 12px;
 }
 .toggle-sidebar:hover { border-color: var(--border-hover); color: var(--text-1); }
 
@@ -300,7 +300,7 @@ canvas:active { cursor: grabbing; }
   }
   .sidebar.open { transform: translateX(0); }
   .graph-container { left: 0; }
-  .toggle-sidebar { left: 12px; z-index: 201; }
+  .toggle-sidebar { left: 12px; z-index: 201; display: flex; }
   .sidebar.open ~ .toggle-sidebar { left: calc(var(--sidebar-width) + 8px); }
   .node-detail { left: 0; max-height: 45vh; padding: 16px 20px; }
   .node-detail-title { font-size: 15px; }
