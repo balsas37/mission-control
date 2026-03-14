@@ -530,6 +530,32 @@
       opacity: 1;
     }
 
+    /* Floating sidebar toggle - top-left of page */
+    .mc-sidebar-float-toggle {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 150;
+      background: var(--bg-raised);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px;
+      color: var(--text-2);
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+      line-height: 1;
+    }
+    .mc-sidebar-float-toggle:hover {
+      border-color: var(--border-hover);
+      color: var(--text-1);
+    }
+    body.sidebar-collapsed .mc-sidebar-float-toggle {
+      display: flex;
+    }
+
     .sidebar-badge {
       background: rgba(255,255,255,0.15);
       color: #fff;
@@ -5522,12 +5548,14 @@
   <!-- ======== SIDEBAR BACKDROP (mobile) ======== -->
   <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
 
+  <!-- Floating sidebar toggle (top-left of page, visible when sidebar collapsed) -->
+  <button class="mc-sidebar-float-toggle" id="mc-sidebar-float-toggle" aria-label="Open sidebar">
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/></svg>
+  </button>
+
   <!-- ======== TOP BAR ======== -->
   <header class="top-bar">
     <div style="display:flex;align-items:center;gap:4px;">
-      <button class="sidebar-toggle" id="sidebar-toggle-topbar" aria-label="Toggle sidebar">
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/></svg>
-      </button>
       <button class="topbar-nav-btn" id="nav-back" aria-label="Back" title="Go back" disabled>
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
       </button>
@@ -7091,8 +7119,8 @@
 
     sidebarToggleBtn.addEventListener('click', toggleSidebar);
 
-    var topbarToggle = document.getElementById('sidebar-toggle-topbar');
-    if (topbarToggle) topbarToggle.addEventListener('click', toggleSidebar);
+    var floatToggle = document.getElementById('mc-sidebar-float-toggle');
+    if (floatToggle) floatToggle.addEventListener('click', toggleSidebar);
 
     sidebarBackdrop.addEventListener('click', function() {
       document.body.classList.add('sidebar-collapsed');
