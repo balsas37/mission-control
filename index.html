@@ -5404,7 +5404,7 @@
       font-family: 'Inter', sans-serif;
       color: var(--text-3);
       text-decoration: none;
-      padding: 6px 16px;
+      padding: 8px 16px;
       border: 1px solid var(--border);
       border-radius: 999px;
       background: rgba(24, 24, 24, 0.85);
@@ -5413,6 +5413,9 @@
       z-index: 10;
       transition: all 0.2s;
       white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      line-height: 1;
     }
     .graph-open-full-btn:hover {
       color: var(--text-1);
@@ -6611,7 +6614,7 @@
       <!-- Edge context tooltip -->
       <div class="graph-tooltip" id="graph-tooltip"></div>
       <!-- Open full graph - pinned to bottom center -->
-      <a href="graph.html" target="_blank" class="graph-open-full-btn">open full graph →</a>
+      <a href="graph.html" target="_blank" class="graph-open-full-btn">open graph <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-left:2px;"><polyline points="9 18 15 12 9 6"/></svg></a>
     </section>
 
     <!-- Memory -->
