@@ -1,5 +1,5 @@
 {
-  "generated": "2026-03-14T07:20:14.646634",
+  "generated": "2026-03-14T07:43:59.690644",
   "stats": {
     "nodes": 188,
     "edges": 65,
@@ -10,49 +10,49 @@
       "id": "ofm",
       "label": "OFM Agency",
       "count": 9,
-      "color": "#DAB255"
+      "color": "#b8a06a"
     },
     {
       "id": "lagoon",
       "label": "Lagoon Company",
       "count": 21,
-      "color": "#6BA8DA"
+      "color": "#7a9db5"
     },
     {
       "id": "property",
       "label": "Property & Farm",
       "count": 17,
-      "color": "#6BBF6B"
+      "color": "#7aaa7a"
     },
     {
       "id": "business",
       "label": "Business",
       "count": 64,
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": "skills",
       "label": "Skills & Frameworks",
       "count": 12,
-      "color": "#e8ecf0"
+      "color": "#a8a8a8"
     },
     {
       "id": "people",
       "label": "People",
       "count": 4,
-      "color": "#D9534F"
+      "color": "#b07a78"
     },
     {
       "id": "system",
       "label": "System & Ops",
       "count": 31,
-      "color": "#5AB8B0"
+      "color": "#6d9e99"
     },
     {
       "id": "daily",
       "label": "Daily Notes",
       "count": 30,
-      "color": "#555555"
+      "color": "#6a6a6a"
     }
   ],
   "nodes": [
@@ -66,7 +66,7 @@
       ],
       "cluster": "system",
       "layer": "context",
-      "color": "#5AB8B0",
+      "color": "#6d9e99",
       "size": 4,
       "lastReweave": "null",
       "created": "2026-03-14"
@@ -81,7 +81,7 @@
       ],
       "cluster": "system",
       "layer": "context",
-      "color": "#5AB8B0",
+      "color": "#6d9e99",
       "size": 4,
       "lastReweave": "null",
       "created": "2026-03-09"
@@ -96,7 +96,7 @@
       ],
       "cluster": "system",
       "layer": "context",
-      "color": "#5AB8B0",
+      "color": "#6d9e99",
       "size": 5.7725,
       "lastReweave": "null",
       "created": "2026-03-10"
@@ -111,7 +111,7 @@
       ],
       "cluster": "system",
       "layer": "context",
-      "color": "#5AB8B0",
+      "color": "#6d9e99",
       "size": 4,
       "lastReweave": "null",
       "created": "2026-03-14"
@@ -126,7 +126,7 @@
       ],
       "cluster": "system",
       "layer": "context",
-      "color": "#5AB8B0",
+      "color": "#6d9e99",
       "size": 4,
       "lastReweave": "null",
       "created": "2026-03-14"
@@ -141,7 +141,7 @@
       ],
       "cluster": "system",
       "layer": "context",
-      "color": "#5AB8B0",
+      "color": "#6d9e99",
       "size": 4,
       "lastReweave": "null",
       "created": "2026-03-14"
@@ -150,15 +150,15 @@
       "id": 6,
       "label": "AI Executive Team",
       "path": "ai-executive-team-plan.md",
-      "description": "AI Executive Team - CharFen Cadence \u00d7 Multi-Business \u00d7 Agent Architecture",
+      "description": "AI Executive Team plan (pre-March 8) \u2014 superseded by org-chart-proposal.md which is the approved current structure",
       "tags": [
         "memory"
       ],
       "cluster": "system",
       "layer": "context",
-      "color": "#5AB8B0",
-      "size": 20,
-      "lastReweave": "null",
+      "color": "#6d9e99",
+      "size": 4.715,
+      "lastReweave": "2026-03-14",
       "created": "2026-03-14"
     },
     {
@@ -171,9 +171,9 @@
       ],
       "cluster": "system",
       "layer": "context",
-      "color": "#5AB8B0",
-      "size": 20,
-      "lastReweave": "null",
+      "color": "#6d9e99",
+      "size": 5.74,
+      "lastReweave": "2026-03-14",
       "created": "2026-03-07"
     },
     {
@@ -186,7 +186,7 @@
       ],
       "cluster": "system",
       "layer": "context",
-      "color": "#5AB8B0",
+      "color": "#6d9e99",
       "size": 4,
       "lastReweave": "null",
       "created": "2026-03-07"
@@ -201,7 +201,7 @@
       ],
       "cluster": "system",
       "layer": "context",
-      "color": "#5AB8B0",
+      "color": "#6d9e99",
       "size": 10.5075,
       "lastReweave": "null",
       "created": "2026-03-14"
@@ -216,7 +216,7 @@
       ],
       "cluster": "system",
       "layer": "context",
-      "color": "#5AB8B0",
+      "color": "#6d9e99",
       "size": 7.9375,
       "lastReweave": "null",
       "created": "2026-02-27"
@@ -231,7 +231,7 @@
       ],
       "cluster": "system",
       "layer": "context",
-      "color": "#5AB8B0",
+      "color": "#6d9e99",
       "size": 7.0675,
       "lastReweave": "2026-03-14",
       "created": "2026-03-14"
@@ -246,39 +246,39 @@
       ],
       "cluster": "system",
       "layer": "context",
-      "color": "#5AB8B0",
-      "size": 20,
-      "lastReweave": "null",
+      "color": "#6d9e99",
+      "size": 9.9175,
+      "lastReweave": "2026-03-14",
       "created": "2026-03-06"
     },
     {
       "id": 13,
       "label": "CharFen Operating Rules",
       "path": "charfen-operating-rules.md",
-      "description": "CharFen Cadence - Operating Rules",
+      "description": "CharFen Cadence Operating Rules \u2014 terminology, waterfall flow, OTA structure, naming consistency",
       "tags": [
         "memory"
       ],
       "cluster": "system",
       "layer": "context",
-      "color": "#5AB8B0",
-      "size": 20,
-      "lastReweave": "null",
+      "color": "#6d9e99",
+      "size": 11.8925,
+      "lastReweave": "2026-03-14",
       "created": "2026-03-07"
     },
     {
       "id": 14,
       "label": "Org Chart",
       "path": "org-chart-proposal.md",
-      "description": "Org Chart Proposal: AI-Native Multi-Business Operation",
+      "description": "Org Chart: AI-Native Multi-Business Operation \u2014 8-agent architecture (APPROVED March 8, 2026)",
       "tags": [
         "memory"
       ],
       "cluster": "system",
       "layer": "context",
-      "color": "#5AB8B0",
-      "size": 20,
-      "lastReweave": "null",
+      "color": "#6d9e99",
+      "size": 7.0775,
+      "lastReweave": "2026-03-14",
       "created": "2026-03-14"
     },
     {
@@ -291,7 +291,7 @@
       ],
       "cluster": "system",
       "layer": "context",
-      "color": "#5AB8B0",
+      "color": "#6d9e99",
       "size": 10.775,
       "lastReweave": "2026-03-14",
       "created": "2026-03-14"
@@ -306,7 +306,7 @@
       ],
       "cluster": "daily",
       "layer": "context",
-      "color": "#555555",
+      "color": "#6a6a6a",
       "size": 10.7975,
       "lastReweave": "null",
       "created": "2026-02-28"
@@ -321,7 +321,7 @@
       ],
       "cluster": "daily",
       "layer": "context",
-      "color": "#555555",
+      "color": "#6a6a6a",
       "size": 4,
       "lastReweave": "null",
       "created": "2026-03-01"
@@ -336,7 +336,7 @@
       ],
       "cluster": "daily",
       "layer": "context",
-      "color": "#555555",
+      "color": "#6a6a6a",
       "size": 4,
       "lastReweave": "null",
       "created": "2026-03-02"
@@ -351,7 +351,7 @@
       ],
       "cluster": "daily",
       "layer": "context",
-      "color": "#555555",
+      "color": "#6a6a6a",
       "size": 4,
       "lastReweave": "null",
       "created": "2026-03-03"
@@ -366,7 +366,7 @@
       ],
       "cluster": "daily",
       "layer": "context",
-      "color": "#555555",
+      "color": "#6a6a6a",
       "size": 13.84,
       "lastReweave": "null",
       "created": "2026-03-04"
@@ -381,7 +381,7 @@
       ],
       "cluster": "daily",
       "layer": "context",
-      "color": "#555555",
+      "color": "#6a6a6a",
       "size": 9.585,
       "lastReweave": "null",
       "created": "2026-03-05"
@@ -390,45 +390,45 @@
       "id": 22,
       "label": "2026 03 06",
       "path": "01_daily/2026-03-06.md",
-      "description": "2026-03-06 Daily Notes",
+      "description": "3 skills built (ofm-metrics, rental-ops, failover-watch) + MC relay wired + Charfen system received + prayers finalized + Cloudflare deployed",
       "tags": [
         "daily"
       ],
       "cluster": "daily",
       "layer": "context",
-      "color": "#555555",
-      "size": 20,
-      "lastReweave": "null",
+      "color": "#6a6a6a",
+      "size": 4.905,
+      "lastReweave": "2026-03-14",
       "created": "2026-03-06"
     },
     {
       "id": 23,
       "label": "2026 03 07",
       "path": "01_daily/2026-03-07.md",
-      "description": "2026-03-07",
+      "description": "Cron optimization + CharFen cadence build + model allocation policy + Aitable datasheet IDs",
       "tags": [
         "daily"
       ],
       "cluster": "daily",
       "layer": "context",
-      "color": "#555555",
-      "size": 20,
-      "lastReweave": "null",
+      "color": "#6a6a6a",
+      "size": 4.5125,
+      "lastReweave": "2026-03-14",
       "created": "2026-03-06"
     },
     {
       "id": 24,
       "label": "2026 03 08",
       "path": "01_daily/2026-03-08.md",
-      "description": "2026-03-08",
+      "description": "Whisper live + Aitable data fixes + org chart approved + SIREWALL alpha tester + OFM character specs saved",
       "tags": [
         "daily"
       ],
       "cluster": "daily",
       "layer": "context",
-      "color": "#555555",
-      "size": 20,
-      "lastReweave": "null",
+      "color": "#6a6a6a",
+      "size": 7.155,
+      "lastReweave": "2026-03-14",
       "created": "2026-03-08"
     },
     {
@@ -441,7 +441,7 @@
       ],
       "cluster": "daily",
       "layer": "context",
-      "color": "#555555",
+      "color": "#6a6a6a",
       "size": 11.3125,
       "lastReweave": "null",
       "created": "2026-03-09"
@@ -456,7 +456,7 @@
       ],
       "cluster": "daily",
       "layer": "context",
-      "color": "#555555",
+      "color": "#6a6a6a",
       "size": 4,
       "lastReweave": "null",
       "created": "2026-03-10"
@@ -471,7 +471,7 @@
       ],
       "cluster": "daily",
       "layer": "context",
-      "color": "#555555",
+      "color": "#6a6a6a",
       "size": 4,
       "lastReweave": "null",
       "created": "2026-03-11"
@@ -486,7 +486,7 @@
       ],
       "cluster": "daily",
       "layer": "context",
-      "color": "#555555",
+      "color": "#6a6a6a",
       "size": 4,
       "lastReweave": "null",
       "created": "2026-03-12"
@@ -501,7 +501,7 @@
       ],
       "cluster": "daily",
       "layer": "context",
-      "color": "#555555",
+      "color": "#6a6a6a",
       "size": 4,
       "lastReweave": "null",
       "created": "2026-03-13"
@@ -516,7 +516,7 @@
       ],
       "cluster": "daily",
       "layer": "context",
-      "color": "#555555",
+      "color": "#6a6a6a",
       "size": 4.425,
       "lastReweave": "null",
       "created": "2026-03-13"
@@ -531,7 +531,7 @@
       ],
       "cluster": "property",
       "layer": "domain",
-      "color": "#6BBF6B",
+      "color": "#7aaa7a",
       "size": 5.05,
       "lastReweave": "null",
       "created": "2026-03-14"
@@ -546,7 +546,7 @@
       ],
       "cluster": "lagoon",
       "layer": "domain",
-      "color": "#6BA8DA",
+      "color": "#7a9db5",
       "size": 7.245,
       "lastReweave": "null",
       "created": "2026-03-14"
@@ -561,7 +561,7 @@
       ],
       "cluster": "ofm",
       "layer": "domain",
-      "color": "#DAB255",
+      "color": "#b8a06a",
       "size": 4,
       "lastReweave": "null",
       "created": "2026-03-14"
@@ -576,7 +576,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2026-03-14"
@@ -585,15 +585,15 @@
       "id": 35,
       "label": "Active Projects",
       "path": "02_projects/active-projects.md",
-      "description": "Master active projects list (OFM, Lagoon, Crete, Farm, etc.)",
+      "description": "Master active projects list \u2014 OFM, Lagoon, Digital Products, Crete, Farm, App Dev, Infrastructure",
       "tags": [
         "project"
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
-      "size": 20,
-      "lastReweave": "null",
+      "color": "#9a7daa",
+      "size": 12.535,
+      "lastReweave": "2026-03-14",
       "created": "2026-03-05"
     },
     {
@@ -606,7 +606,7 @@
       ],
       "cluster": "system",
       "layer": "context",
-      "color": "#5AB8B0",
+      "color": "#6d9e99",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-03-17"
@@ -621,7 +621,7 @@
       ],
       "cluster": "system",
       "layer": "context",
-      "color": "#5AB8B0",
+      "color": "#6d9e99",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-07-30"
@@ -636,7 +636,7 @@
       ],
       "cluster": "system",
       "layer": "context",
-      "color": "#5AB8B0",
+      "color": "#6d9e99",
       "size": 17.065,
       "lastReweave": "null",
       "created": "2026-03-14"
@@ -651,7 +651,7 @@
       ],
       "cluster": "lagoon",
       "layer": "domain",
-      "color": "#6BA8DA",
+      "color": "#7a9db5",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-05-15"
@@ -666,7 +666,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2024-12-27"
@@ -681,7 +681,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-10-17"
@@ -696,7 +696,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-08-16"
@@ -711,7 +711,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2024-12-21"
@@ -726,7 +726,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2023-09-04"
@@ -741,7 +741,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-04-04"
@@ -756,7 +756,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-11-16"
@@ -771,7 +771,7 @@
       ],
       "cluster": "lagoon",
       "layer": "domain",
-      "color": "#6BA8DA",
+      "color": "#7a9db5",
       "size": 4,
       "lastReweave": "null",
       "created": "2024-05-24"
@@ -786,7 +786,7 @@
       ],
       "cluster": "property",
       "layer": "domain",
-      "color": "#6BBF6B",
+      "color": "#7aaa7a",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-04-05"
@@ -801,7 +801,7 @@
       ],
       "cluster": "property",
       "layer": "domain",
-      "color": "#6BBF6B",
+      "color": "#7aaa7a",
       "size": 4,
       "lastReweave": "null",
       "created": "2024-04-22"
@@ -816,7 +816,7 @@
       ],
       "cluster": "property",
       "layer": "domain",
-      "color": "#6BBF6B",
+      "color": "#7aaa7a",
       "size": 4.1275,
       "lastReweave": "null",
       "created": "2025-04-04"
@@ -825,15 +825,15 @@
       "id": 51,
       "label": "Lagoon History",
       "path": "02_projects/chatgpt-lagoon-rentals.md",
-      "description": "ChatGPT history: Lagoon/ATV-UTV Rentals (49 convos)",
+      "description": "ChatGPT history: Lagoon/ATV-UTV Rentals (49 conversations, 2023-2025)",
       "tags": [
         "project"
       ],
       "cluster": "lagoon",
       "layer": "domain",
-      "color": "#6BA8DA",
-      "size": 20,
-      "lastReweave": "null",
+      "color": "#7a9db5",
+      "size": 4,
+      "lastReweave": "2026-03-14",
       "created": "2023-04-05"
     },
     {
@@ -846,7 +846,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 8.3825,
       "lastReweave": "null",
       "created": "2023-05-05"
@@ -861,7 +861,7 @@
       ],
       "cluster": "property",
       "layer": "domain",
-      "color": "#6BBF6B",
+      "color": "#7aaa7a",
       "size": 4,
       "lastReweave": "null",
       "created": "2023-11-15"
@@ -876,7 +876,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-03-23"
@@ -891,7 +891,7 @@
       ],
       "cluster": "property",
       "layer": "domain",
-      "color": "#6BBF6B",
+      "color": "#7aaa7a",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-03-16"
@@ -906,7 +906,7 @@
       ],
       "cluster": "property",
       "layer": "domain",
-      "color": "#6BBF6B",
+      "color": "#7aaa7a",
       "size": 4,
       "lastReweave": "null",
       "created": "2026-01-09"
@@ -921,7 +921,7 @@
       ],
       "cluster": "property",
       "layer": "domain",
-      "color": "#6BBF6B",
+      "color": "#7aaa7a",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-06-24"
@@ -936,7 +936,7 @@
       ],
       "cluster": "property",
       "layer": "domain",
-      "color": "#6BBF6B",
+      "color": "#7aaa7a",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-10-29"
@@ -951,7 +951,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-09-30"
@@ -966,7 +966,7 @@
       ],
       "cluster": "property",
       "layer": "domain",
-      "color": "#6BBF6B",
+      "color": "#7aaa7a",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-08-23"
@@ -981,7 +981,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2024-12-07"
@@ -996,7 +996,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-09-05"
@@ -1011,7 +1011,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-10-14"
@@ -1026,7 +1026,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-04-09"
@@ -1041,7 +1041,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-06-03"
@@ -1056,7 +1056,7 @@
       ],
       "cluster": "property",
       "layer": "domain",
-      "color": "#6BBF6B",
+      "color": "#7aaa7a",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-10-18"
@@ -1071,7 +1071,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2023-11-12"
@@ -1086,7 +1086,7 @@
       ],
       "cluster": "lagoon",
       "layer": "domain",
-      "color": "#6BA8DA",
+      "color": "#7a9db5",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-01-25"
@@ -1101,7 +1101,7 @@
       ],
       "cluster": "property",
       "layer": "domain",
-      "color": "#6BBF6B",
+      "color": "#7aaa7a",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-04-05"
@@ -1116,7 +1116,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-04-24"
@@ -1125,15 +1125,15 @@
       "id": 71,
       "label": "Instagram Marketing Guide",
       "path": "02_projects/instagram-marketing-guide.md",
-      "description": "AI influencer marketing guide (Instara community)",
+      "description": "AI influencer Instagram marketing guide \u2014 warmup, growth tactics, monetization, safety limits (Instara community)",
       "tags": [
         "project"
       ],
       "cluster": "ofm",
       "layer": "domain",
-      "color": "#DAB255",
-      "size": 20,
-      "lastReweave": "null",
+      "color": "#b8a06a",
+      "size": 9.235,
+      "lastReweave": "2026-03-14",
       "created": "2026-03-14"
     },
     {
@@ -1146,7 +1146,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-08-27"
@@ -1161,7 +1161,7 @@
       ],
       "cluster": "lagoon",
       "layer": "domain",
-      "color": "#6BA8DA",
+      "color": "#7a9db5",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-08-10"
@@ -1176,7 +1176,7 @@
       ],
       "cluster": "lagoon",
       "layer": "domain",
-      "color": "#6BA8DA",
+      "color": "#7a9db5",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-02-16"
@@ -1191,7 +1191,7 @@
       ],
       "cluster": "lagoon",
       "layer": "domain",
-      "color": "#6BA8DA",
+      "color": "#7a9db5",
       "size": 4,
       "lastReweave": "null",
       "created": "2023-09-13"
@@ -1206,7 +1206,7 @@
       ],
       "cluster": "lagoon",
       "layer": "domain",
-      "color": "#6BA8DA",
+      "color": "#7a9db5",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-11-17"
@@ -1221,7 +1221,7 @@
       ],
       "cluster": "lagoon",
       "layer": "domain",
-      "color": "#6BA8DA",
+      "color": "#7a9db5",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-03-04"
@@ -1236,7 +1236,7 @@
       ],
       "cluster": "lagoon",
       "layer": "domain",
-      "color": "#6BA8DA",
+      "color": "#7a9db5",
       "size": 8.6025,
       "lastReweave": "null",
       "created": "2026-03-14"
@@ -1251,7 +1251,7 @@
       ],
       "cluster": "lagoon",
       "layer": "domain",
-      "color": "#6BA8DA",
+      "color": "#7a9db5",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-06-21"
@@ -1266,7 +1266,7 @@
       ],
       "cluster": "lagoon",
       "layer": "domain",
-      "color": "#6BA8DA",
+      "color": "#7a9db5",
       "size": 4,
       "lastReweave": "null",
       "created": "2024-12-05"
@@ -1281,7 +1281,7 @@
       ],
       "cluster": "lagoon",
       "layer": "domain",
-      "color": "#6BA8DA",
+      "color": "#7a9db5",
       "size": 4,
       "lastReweave": "null",
       "created": "2024-10-08"
@@ -1296,7 +1296,7 @@
       ],
       "cluster": "lagoon",
       "layer": "domain",
-      "color": "#6BA8DA",
+      "color": "#7a9db5",
       "size": 4,
       "lastReweave": "null",
       "created": "2024-06-07"
@@ -1305,15 +1305,15 @@
       "id": 83,
       "label": "Lagoon Sops Draft",
       "path": "02_projects/lagoon-sops-draft.md",
-      "description": "Lagoon Company \u2014 Standard Operating Procedures",
+      "description": "Lagoon Company SOPs \u2014 vehicle checkout, inspection, return, damage reporting, WhatsApp workflows",
       "tags": [
         "project"
       ],
       "cluster": "lagoon",
       "layer": "domain",
-      "color": "#6BA8DA",
-      "size": 20,
-      "lastReweave": "null",
+      "color": "#7a9db5",
+      "size": 11.2325,
+      "lastReweave": "2026-03-14",
       "created": "2026-03-08"
     },
     {
@@ -1326,7 +1326,7 @@
       ],
       "cluster": "lagoon",
       "layer": "domain",
-      "color": "#6BA8DA",
+      "color": "#7a9db5",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-12-12"
@@ -1341,7 +1341,7 @@
       ],
       "cluster": "lagoon",
       "layer": "domain",
-      "color": "#6BA8DA",
+      "color": "#7a9db5",
       "size": 4,
       "lastReweave": "null",
       "created": "2023-04-11"
@@ -1356,7 +1356,7 @@
       ],
       "cluster": "lagoon",
       "layer": "domain",
-      "color": "#6BA8DA",
+      "color": "#7a9db5",
       "size": 4,
       "lastReweave": "null",
       "created": "2024-06-20"
@@ -1371,7 +1371,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-05-26"
@@ -1386,7 +1386,7 @@
       ],
       "cluster": "property",
       "layer": "domain",
-      "color": "#6BBF6B",
+      "color": "#7aaa7a",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-07-04"
@@ -1401,7 +1401,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-06-18"
@@ -1416,7 +1416,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2023-08-07"
@@ -1431,7 +1431,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-05-04"
@@ -1446,7 +1446,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2024-03-19"
@@ -1461,7 +1461,7 @@
       ],
       "cluster": "property",
       "layer": "domain",
-      "color": "#6BBF6B",
+      "color": "#7aaa7a",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-12-28"
@@ -1476,7 +1476,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-05-27"
@@ -1491,7 +1491,7 @@
       ],
       "cluster": "ofm",
       "layer": "domain",
-      "color": "#DAB255",
+      "color": "#b8a06a",
       "size": 7.8825,
       "lastReweave": "null",
       "created": "2026-02-27"
@@ -1500,15 +1500,15 @@
       "id": 96,
       "label": "OFM AI Models",
       "path": "02_projects/ofm-ai-model-concepts.md",
-      "description": "OFM AI Model Concepts \u2014 Character Proposal",
+      "description": "OFM AI Model Concepts \u2014 Character proposals: Valentina Cruz (Latina fitness), Aiko Yume (Asian elegance), Noa Blaze (Nordic alt)",
       "tags": [
         "project"
       ],
       "cluster": "ofm",
       "layer": "domain",
-      "color": "#DAB255",
-      "size": 20,
-      "lastReweave": "null",
+      "color": "#b8a06a",
+      "size": 11.1075,
+      "lastReweave": "2026-03-14",
       "created": "2026-03-08"
     },
     {
@@ -1521,7 +1521,7 @@
       ],
       "cluster": "ofm",
       "layer": "domain",
-      "color": "#DAB255",
+      "color": "#b8a06a",
       "size": 7.74,
       "lastReweave": "null",
       "created": "2026-03-08"
@@ -1536,7 +1536,7 @@
       ],
       "cluster": "ofm",
       "layer": "domain",
-      "color": "#DAB255",
+      "color": "#b8a06a",
       "size": 9.5825,
       "lastReweave": "null",
       "created": "2026-02-16"
@@ -1551,7 +1551,7 @@
       ],
       "cluster": "ofm",
       "layer": "domain",
-      "color": "#DAB255",
+      "color": "#b8a06a",
       "size": 4,
       "lastReweave": "null",
       "created": "2026-02-06"
@@ -1566,7 +1566,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2024-12-13"
@@ -1581,7 +1581,7 @@
       ],
       "cluster": "ofm",
       "layer": "domain",
-      "color": "#DAB255",
+      "color": "#b8a06a",
       "size": 11.84,
       "lastReweave": "null",
       "created": "2026-02-22"
@@ -1596,7 +1596,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-03-12"
@@ -1611,7 +1611,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2024-05-06"
@@ -1626,7 +1626,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2023-12-13"
@@ -1641,7 +1641,7 @@
       ],
       "cluster": "ofm",
       "layer": "domain",
-      "color": "#DAB255",
+      "color": "#b8a06a",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-03-14"
@@ -1656,7 +1656,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 9.5275,
       "lastReweave": "null",
       "created": "2026-03-14"
@@ -1671,7 +1671,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-08-09"
@@ -1686,7 +1686,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-10-27"
@@ -1701,7 +1701,7 @@
       ],
       "cluster": "property",
       "layer": "domain",
-      "color": "#6BBF6B",
+      "color": "#7aaa7a",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-02-06"
@@ -1716,7 +1716,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2023-08-11"
@@ -1731,7 +1731,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2023-05-05"
@@ -1746,7 +1746,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2024-07-28"
@@ -1761,7 +1761,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2024-07-07"
@@ -1776,7 +1776,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2024-07-01"
@@ -1791,7 +1791,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2024-05-20"
@@ -1806,7 +1806,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2024-05-23"
@@ -1821,7 +1821,7 @@
       ],
       "cluster": "property",
       "layer": "domain",
-      "color": "#6BBF6B",
+      "color": "#7aaa7a",
       "size": 19.0925,
       "lastReweave": "null",
       "created": "2026-03-14"
@@ -1836,7 +1836,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-07-24"
@@ -1851,7 +1851,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-05-09"
@@ -1866,7 +1866,7 @@
       ],
       "cluster": "lagoon",
       "layer": "domain",
-      "color": "#6BA8DA",
+      "color": "#7a9db5",
       "size": 4,
       "lastReweave": "null",
       "created": "2024-05-10"
@@ -1881,7 +1881,7 @@
       ],
       "cluster": "lagoon",
       "layer": "domain",
-      "color": "#6BA8DA",
+      "color": "#7a9db5",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-04-16"
@@ -1896,7 +1896,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2024-04-29"
@@ -1911,7 +1911,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2024-05-13"
@@ -1926,7 +1926,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2024-05-08"
@@ -1941,7 +1941,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-04-19"
@@ -1956,7 +1956,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-05-21"
@@ -1971,7 +1971,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2023-09-12"
@@ -1986,7 +1986,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-06-27"
@@ -2001,7 +2001,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2023-09-08"
@@ -2016,7 +2016,7 @@
       ],
       "cluster": "people",
       "layer": "entity",
-      "color": "#D9534F",
+      "color": "#b07a78",
       "size": 4,
       "lastReweave": "null",
       "created": "2026-03-14"
@@ -2031,7 +2031,7 @@
       ],
       "cluster": "people",
       "layer": "entity",
-      "color": "#D9534F",
+      "color": "#b07a78",
       "size": 4,
       "lastReweave": "null",
       "created": "2026-02-07"
@@ -2046,7 +2046,7 @@
       ],
       "cluster": "people",
       "layer": "entity",
-      "color": "#D9534F",
+      "color": "#b07a78",
       "size": 4,
       "lastReweave": "null",
       "created": "2024-06-02"
@@ -2061,7 +2061,7 @@
       ],
       "cluster": "people",
       "layer": "entity",
-      "color": "#D9534F",
+      "color": "#b07a78",
       "size": 4,
       "lastReweave": "null",
       "created": "2024-09-06"
@@ -2076,7 +2076,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-09-10"
@@ -2091,7 +2091,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2023-09-07"
@@ -2106,7 +2106,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2024-05-29"
@@ -2121,7 +2121,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-01-17"
@@ -2136,7 +2136,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2024-11-17"
@@ -2151,7 +2151,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-08-12"
@@ -2166,7 +2166,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-12-07"
@@ -2181,7 +2181,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-10-03"
@@ -2196,7 +2196,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 6.405,
       "lastReweave": "null",
       "created": "2026-03-04"
@@ -2211,7 +2211,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2023-09-07"
@@ -2226,7 +2226,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2023-12-26"
@@ -2241,7 +2241,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2023-10-24"
@@ -2256,7 +2256,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2024-08-29"
@@ -2271,7 +2271,7 @@
       ],
       "cluster": "business",
       "layer": "domain",
-      "color": "#A86DBF",
+      "color": "#9a7daa",
       "size": 4,
       "lastReweave": "null",
       "created": "2024-10-16"
@@ -2286,7 +2286,7 @@
       ],
       "cluster": "skills",
       "layer": "skill",
-      "color": "#e8ecf0",
+      "color": "#a8a8a8",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-06-25"
@@ -2301,7 +2301,7 @@
       ],
       "cluster": "skills",
       "layer": "skill",
-      "color": "#e8ecf0",
+      "color": "#a8a8a8",
       "size": 8.905,
       "lastReweave": "null",
       "created": "2026-03-14"
@@ -2316,7 +2316,7 @@
       ],
       "cluster": "skills",
       "layer": "skill",
-      "color": "#e8ecf0",
+      "color": "#a8a8a8",
       "size": 7.005,
       "lastReweave": "null",
       "created": "2026-03-14"
@@ -2331,7 +2331,7 @@
       ],
       "cluster": "skills",
       "layer": "skill",
-      "color": "#e8ecf0",
+      "color": "#a8a8a8",
       "size": 4,
       "lastReweave": "null",
       "created": "2024-07-20"
@@ -2346,7 +2346,7 @@
       ],
       "cluster": "skills",
       "layer": "skill",
-      "color": "#e8ecf0",
+      "color": "#a8a8a8",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-05-01"
@@ -2361,7 +2361,7 @@
       ],
       "cluster": "skills",
       "layer": "skill",
-      "color": "#e8ecf0",
+      "color": "#a8a8a8",
       "size": 8.865,
       "lastReweave": "2026-03-14",
       "created": "2026-02-27"
@@ -2370,30 +2370,30 @@
       "id": 154,
       "label": "AI Influencer Guide",
       "path": "05_resources/instagram-ai-influencer-guide.md",
-      "description": "Instagram AI influencer guide (PDF extract)",
+      "description": "Instagram AI influencer guide \u2014 account setup, content strategy, boosting, trial reels, and Meta verification for AI creator accounts",
       "tags": [
         "resource"
       ],
       "cluster": "skills",
       "layer": "skill",
-      "color": "#e8ecf0",
-      "size": 20,
-      "lastReweave": "null",
+      "color": "#a8a8a8",
+      "size": 8.435,
+      "lastReweave": "2026-03-14",
       "created": "2026-02-27"
     },
     {
       "id": 155,
       "label": "LoRA Training Guide",
       "path": "05_resources/lora-training-comprehensive.md",
-      "description": "Comprehensive LoRA training guide",
+      "description": "Comprehensive LoRA training guide \u2014 WAN 2.1/2.2, dataset prep, captioning strategy, training params, ComfyUI deployment",
       "tags": [
         "resource"
       ],
       "cluster": "skills",
       "layer": "skill",
-      "color": "#e8ecf0",
-      "size": 20,
-      "lastReweave": "null",
+      "color": "#a8a8a8",
+      "size": 8.4375,
+      "lastReweave": "2026-03-14",
       "created": "2026-03-14"
     },
     {
@@ -2406,7 +2406,7 @@
       ],
       "cluster": "skills",
       "layer": "skill",
-      "color": "#e8ecf0",
+      "color": "#a8a8a8",
       "size": 4,
       "lastReweave": "null",
       "created": "2024-06-16"
@@ -2421,7 +2421,7 @@
       ],
       "cluster": "property",
       "layer": "domain",
-      "color": "#6BBF6B",
+      "color": "#7aaa7a",
       "size": 4,
       "lastReweave": "null",
       "created": "2024-06-04"
@@ -2430,15 +2430,15 @@
       "id": 158,
       "label": "Paid Creators Course",
       "path": "05_resources/paid-creators-course.md",
-      "description": "Paid Creators course notes (Travis Stephenson)",
+      "description": "Paid Creators course (Travis Stephenson/Wealthery) \u2014 PERC method and 6-pillar framework for low-ticket digital products",
       "tags": [
         "resource"
       ],
       "cluster": "skills",
       "layer": "skill",
-      "color": "#e8ecf0",
-      "size": 20,
-      "lastReweave": "null",
+      "color": "#a8a8a8",
+      "size": 4.1625,
+      "lastReweave": "2026-03-14",
       "created": "2026-02-22"
     },
     {
@@ -2451,7 +2451,7 @@
       ],
       "cluster": "skills",
       "layer": "skill",
-      "color": "#e8ecf0",
+      "color": "#a8a8a8",
       "size": 8.455,
       "lastReweave": "null",
       "created": "2026-03-14"
@@ -2466,7 +2466,7 @@
       ],
       "cluster": "skills",
       "layer": "skill",
-      "color": "#e8ecf0",
+      "color": "#a8a8a8",
       "size": 8.8725,
       "lastReweave": "null",
       "created": "2026-03-14"
@@ -2481,7 +2481,7 @@
       ],
       "cluster": "system",
       "layer": "context",
-      "color": "#5AB8B0",
+      "color": "#6d9e99",
       "size": 6.115,
       "lastReweave": "null",
       "created": "2026-03-14"
@@ -2496,7 +2496,7 @@
       ],
       "cluster": "system",
       "layer": "context",
-      "color": "#5AB8B0",
+      "color": "#6d9e99",
       "size": 6.3825,
       "lastReweave": "null",
       "created": "2026-03-14"
@@ -2511,7 +2511,7 @@
       ],
       "cluster": "system",
       "layer": "context",
-      "color": "#5AB8B0",
+      "color": "#6d9e99",
       "size": 8.355,
       "lastReweave": "null",
       "created": "2026-02-17"
@@ -2526,7 +2526,7 @@
       ],
       "cluster": "system",
       "layer": "context",
-      "color": "#5AB8B0",
+      "color": "#6d9e99",
       "size": 18.8325,
       "lastReweave": "null",
       "created": "2026-03-05"
@@ -2541,7 +2541,7 @@
       ],
       "cluster": "system",
       "layer": "context",
-      "color": "#5AB8B0",
+      "color": "#6d9e99",
       "size": 18.9475,
       "lastReweave": "null",
       "created": "2026-03-07"
@@ -2556,7 +2556,7 @@
       ],
       "cluster": "system",
       "layer": "context",
-      "color": "#5AB8B0",
+      "color": "#6d9e99",
       "size": 4,
       "lastReweave": "null",
       "created": "2025-08-31"
@@ -2565,15 +2565,15 @@
       "id": 167,
       "label": "Integration Map",
       "path": "06_system/integration-map.md",
-      "description": "Integration Map",
+      "description": "Integration map \u2014 Aitable, GitHub, WhatsApp Bridge, Cloudflare, Telegram, Systeme.io connections",
       "tags": [
         "system"
       ],
       "cluster": "system",
       "layer": "context",
-      "color": "#5AB8B0",
-      "size": 20,
-      "lastReweave": "null",
+      "color": "#6d9e99",
+      "size": 11.33,
+      "lastReweave": "2026-03-14",
       "created": "2026-03-05"
     },
     {
@@ -2586,7 +2586,7 @@
       ],
       "cluster": "system",
       "layer": "context",
-      "color": "#5AB8B0",
+      "color": "#6d9e99",
       "size": 4,
       "lastReweave": "null",
       "created": "2026-03-14"
@@ -2601,7 +2601,7 @@
       ],
       "cluster": "system",
       "layer": "context",
-      "color": "#5AB8B0",
+      "color": "#6d9e99",
       "size": 4,
       "lastReweave": "null",
       "created": "2026-02-10"
@@ -2616,7 +2616,7 @@
       ],
       "cluster": "system",
       "layer": "context",
-      "color": "#5AB8B0",
+      "color": "#6d9e99",
       "size": 10.33,
       "lastReweave": "null",
       "created": "2026-03-14"
@@ -2625,15 +2625,15 @@
       "id": 171,
       "label": "Mission Control Spec",
       "path": "06_system/mission-control-spec.md",
-      "description": "Mission Control - Full Specification",
+      "description": "Mission Control specification \u2014 architecture, tabs, data flow, sync scripts, color system",
       "tags": [
         "system"
       ],
       "cluster": "system",
       "layer": "context",
-      "color": "#5AB8B0",
-      "size": 20,
-      "lastReweave": "null",
+      "color": "#6d9e99",
+      "size": 10.515,
+      "lastReweave": "2026-03-14",
       "created": "2026-03-05"
     },
     {
@@ -2646,7 +2646,7 @@
       ],
       "cluster": "system",
       "layer": "context",
-      "color": "#5AB8B0",
+      "color": "#6d9e99",
       "size": 7.1975,
       "lastReweave": "null",
       "created": "2026-03-04"
@@ -2661,7 +2661,7 @@
       ],
       "cluster": "daily",
       "layer": "context",
-      "color": "#555555",
+      "color": "#6a6a6a",
       "size": 11.79,
       "lastReweave": "null",
       "created": "2026-02-27"
@@ -2676,7 +2676,7 @@
       ],
       "cluster": "daily",
       "layer": "context",
-      "color": "#555555",
+      "color": "#6a6a6a",
       "size": 7.57,
       "lastReweave": "null",
       "created": "2026-02-28"
@@ -2691,7 +2691,7 @@
       ],
       "cluster": "daily",
       "layer": "context",
-      "color": "#555555",
+      "color": "#6a6a6a",
       "size": 4.015,
       "lastReweave": "null",
       "created": "2026-03-02"
@@ -2706,7 +2706,7 @@
       ],
       "cluster": "daily",
       "layer": "context",
-      "color": "#555555",
+      "color": "#6a6a6a",
       "size": 4.475,
       "lastReweave": "null",
       "created": "2026-03-03"
@@ -2721,7 +2721,7 @@
       ],
       "cluster": "daily",
       "layer": "context",
-      "color": "#555555",
+      "color": "#6a6a6a",
       "size": 4.44,
       "lastReweave": "null",
       "created": "2026-03-04"
@@ -2736,7 +2736,7 @@
       ],
       "cluster": "daily",
       "layer": "context",
-      "color": "#555555",
+      "color": "#6a6a6a",
       "size": 9.915,
       "lastReweave": "null",
       "created": "2026-03-04"
@@ -2751,7 +2751,7 @@
       ],
       "cluster": "daily",
       "layer": "context",
-      "color": "#555555",
+      "color": "#6a6a6a",
       "size": 8.43,
       "lastReweave": "null",
       "created": "2026-03-05"
@@ -2766,7 +2766,7 @@
       ],
       "cluster": "daily",
       "layer": "context",
-      "color": "#555555",
+      "color": "#6a6a6a",
       "size": 15.6675,
       "lastReweave": "null",
       "created": "2026-03-06"
@@ -2781,7 +2781,7 @@
       ],
       "cluster": "daily",
       "layer": "context",
-      "color": "#555555",
+      "color": "#6a6a6a",
       "size": 18.3775,
       "lastReweave": "null",
       "created": "2026-03-08"
@@ -2796,7 +2796,7 @@
       ],
       "cluster": "daily",
       "layer": "context",
-      "color": "#555555",
+      "color": "#6a6a6a",
       "size": 17.3625,
       "lastReweave": "null",
       "created": "2026-03-09"
@@ -2811,7 +2811,7 @@
       ],
       "cluster": "daily",
       "layer": "context",
-      "color": "#555555",
+      "color": "#6a6a6a",
       "size": 10.2125,
       "lastReweave": "null",
       "created": "2026-03-09"
@@ -2826,7 +2826,7 @@
       ],
       "cluster": "daily",
       "layer": "context",
-      "color": "#555555",
+      "color": "#6a6a6a",
       "size": 9.485,
       "lastReweave": "null",
       "created": "2026-03-11"
@@ -2841,7 +2841,7 @@
       ],
       "cluster": "daily",
       "layer": "context",
-      "color": "#555555",
+      "color": "#6a6a6a",
       "size": 9.855,
       "lastReweave": "null",
       "created": "2026-03-12"
@@ -2856,7 +2856,7 @@
       ],
       "cluster": "daily",
       "layer": "context",
-      "color": "#555555",
+      "color": "#6a6a6a",
       "size": 11.2,
       "lastReweave": "null",
       "created": "2026-03-12"
@@ -2871,7 +2871,7 @@
       ],
       "cluster": "daily",
       "layer": "context",
-      "color": "#555555",
+      "color": "#6a6a6a",
       "size": 11.0425,
       "lastReweave": "null",
       "created": "2026-03-13"
@@ -2881,115 +2881,115 @@
     {
       "id": 0,
       "source": 31,
-      "target": 60,
+      "target": 50,
       "type": "wikilink"
     },
     {
       "id": 1,
       "source": 31,
-      "target": 58,
+      "target": 55,
       "type": "wikilink"
     },
     {
       "id": 2,
       "source": 31,
-      "target": 88,
+      "target": 45,
       "type": "wikilink"
     },
     {
       "id": 3,
       "source": 31,
-      "target": 45,
+      "target": 57,
       "type": "wikilink"
     },
     {
       "id": 4,
       "source": 31,
-      "target": 109,
+      "target": 69,
       "type": "wikilink"
     },
     {
       "id": 5,
       "source": 31,
-      "target": 46,
+      "target": 49,
       "type": "wikilink"
     },
     {
       "id": 6,
       "source": 31,
-      "target": 92,
+      "target": 46,
       "type": "wikilink"
     },
     {
       "id": 7,
       "source": 31,
-      "target": 69,
+      "target": 109,
       "type": "wikilink"
     },
     {
       "id": 8,
       "source": 31,
-      "target": 55,
+      "target": 60,
       "type": "wikilink"
     },
     {
       "id": 9,
       "source": 31,
-      "target": 91,
+      "target": 64,
       "type": "wikilink"
     },
     {
       "id": 10,
       "source": 31,
-      "target": 64,
+      "target": 48,
       "type": "wikilink"
     },
     {
       "id": 11,
       "source": 31,
-      "target": 49,
+      "target": 56,
       "type": "wikilink"
     },
     {
       "id": 12,
       "source": 31,
-      "target": 50,
+      "target": 53,
       "type": "wikilink"
     },
     {
       "id": 13,
       "source": 31,
-      "target": 48,
+      "target": 92,
       "type": "wikilink"
     },
     {
       "id": 14,
       "source": 31,
-      "target": 66,
+      "target": 88,
       "type": "wikilink"
     },
     {
       "id": 15,
       "source": 31,
-      "target": 126,
+      "target": 89,
       "type": "wikilink"
     },
     {
       "id": 16,
       "source": 31,
-      "target": 157,
+      "target": 93,
       "type": "wikilink"
     },
     {
       "id": 17,
       "source": 31,
-      "target": 93,
+      "target": 66,
       "type": "wikilink"
     },
     {
       "id": 18,
       "source": 31,
-      "target": 89,
+      "target": 157,
       "type": "wikilink"
     },
     {
@@ -3001,115 +3001,115 @@
     {
       "id": 20,
       "source": 31,
-      "target": 57,
+      "target": 126,
       "type": "wikilink"
     },
     {
       "id": 21,
       "source": 31,
-      "target": 56,
+      "target": 58,
       "type": "wikilink"
     },
     {
       "id": 22,
       "source": 31,
-      "target": 53,
+      "target": 91,
       "type": "wikilink"
     },
     {
       "id": 23,
       "source": 32,
-      "target": 73,
+      "target": 121,
       "type": "wikilink"
     },
     {
       "id": 24,
       "source": 32,
-      "target": 86,
+      "target": 137,
       "type": "wikilink"
     },
     {
       "id": 25,
       "source": 32,
-      "target": 87,
+      "target": 129,
       "type": "wikilink"
     },
     {
       "id": 26,
       "source": 32,
-      "target": 129,
+      "target": 74,
       "type": "wikilink"
     },
     {
       "id": 27,
       "source": 32,
-      "target": 137,
+      "target": 76,
       "type": "wikilink"
     },
     {
       "id": 28,
       "source": 32,
-      "target": 68,
+      "target": 47,
       "type": "wikilink"
     },
     {
       "id": 29,
       "source": 32,
-      "target": 103,
+      "target": 77,
       "type": "wikilink"
     },
     {
       "id": 30,
       "source": 32,
-      "target": 41,
+      "target": 84,
       "type": "wikilink"
     },
     {
       "id": 31,
       "source": 32,
-      "target": 121,
+      "target": 73,
       "type": "wikilink"
     },
     {
       "id": 32,
       "source": 32,
-      "target": 70,
+      "target": 68,
       "type": "wikilink"
     },
     {
       "id": 33,
       "source": 32,
-      "target": 125,
+      "target": 75,
       "type": "wikilink"
     },
     {
       "id": 34,
       "source": 32,
-      "target": 77,
+      "target": 41,
       "type": "wikilink"
     },
     {
       "id": 35,
       "source": 32,
-      "target": 42,
+      "target": 86,
       "type": "wikilink"
     },
     {
       "id": 36,
       "source": 32,
-      "target": 75,
+      "target": 70,
       "type": "wikilink"
     },
     {
       "id": 37,
       "source": 32,
-      "target": 81,
+      "target": 42,
       "type": "wikilink"
     },
     {
       "id": 38,
       "source": 32,
-      "target": 84,
+      "target": 120,
       "type": "wikilink"
     },
     {
@@ -3127,55 +3127,55 @@
     {
       "id": 41,
       "source": 32,
-      "target": 39,
+      "target": 87,
       "type": "wikilink"
     },
     {
       "id": 42,
       "source": 32,
-      "target": 51,
+      "target": 81,
       "type": "wikilink"
     },
     {
       "id": 43,
       "source": 32,
-      "target": 47,
+      "target": 51,
       "type": "wikilink"
     },
     {
       "id": 44,
       "source": 32,
-      "target": 120,
+      "target": 39,
       "type": "wikilink"
     },
     {
       "id": 45,
       "source": 32,
-      "target": 74,
+      "target": 125,
       "type": "wikilink"
     },
     {
       "id": 46,
       "source": 32,
-      "target": 76,
+      "target": 103,
       "type": "wikilink"
     },
     {
       "id": 47,
       "source": 33,
-      "target": 105,
+      "target": 98,
       "type": "wikilink"
     },
     {
       "id": 48,
       "source": 33,
-      "target": 99,
+      "target": 154,
       "type": "wikilink"
     },
     {
       "id": 49,
       "source": 33,
-      "target": 108,
+      "target": 155,
       "type": "wikilink"
     },
     {
@@ -3187,55 +3187,55 @@
     {
       "id": 51,
       "source": 33,
-      "target": 35,
+      "target": 95,
       "type": "wikilink"
     },
     {
       "id": 52,
       "source": 33,
-      "target": 101,
+      "target": 108,
       "type": "wikilink"
     },
     {
       "id": 53,
       "source": 33,
-      "target": 158,
+      "target": 153,
       "type": "wikilink"
     },
     {
       "id": 54,
       "source": 33,
-      "target": 154,
+      "target": 101,
       "type": "wikilink"
     },
     {
       "id": 55,
       "source": 33,
-      "target": 155,
+      "target": 158,
       "type": "wikilink"
     },
     {
       "id": 56,
       "source": 33,
-      "target": 95,
+      "target": 99,
       "type": "wikilink"
     },
     {
       "id": 57,
       "source": 33,
-      "target": 153,
+      "target": 35,
       "type": "wikilink"
     },
     {
       "id": 58,
       "source": 33,
-      "target": 98,
+      "target": 105,
       "type": "wikilink"
     },
     {
       "id": 59,
       "source": 34,
-      "target": 38,
+      "target": 37,
       "type": "wikilink"
     },
     {
@@ -3247,7 +3247,7 @@
     {
       "id": 61,
       "source": 34,
-      "target": 37,
+      "target": 63,
       "type": "wikilink"
     },
     {
@@ -3265,7 +3265,7 @@
     {
       "id": 64,
       "source": 34,
-      "target": 63,
+      "target": 38,
       "type": "wikilink"
     }
   ]

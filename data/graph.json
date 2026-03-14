@@ -6,7 +6,7 @@
       "entity": 4,
       "skill": 12
     },
-    "generated": "2026-03-14T07:20:14.648898"
+    "generated": "2026-03-14T07:43:59.692934"
   },
   "nodes": [
     {
@@ -19,7 +19,7 @@
       "summary": "2026 03 07",
       "connections": 0,
       "cluster": "system",
-      "color": "#5AB8B0"
+      "color": "#6d9e99"
     },
     {
       "id": 1,
@@ -31,7 +31,7 @@
       "summary": "Daily Note \u2014 2026-03-09",
       "connections": 0,
       "cluster": "system",
-      "color": "#5AB8B0"
+      "color": "#6d9e99"
     },
     {
       "id": 2,
@@ -43,7 +43,7 @@
       "summary": "2026-03-10 \u2014 Daily Notes",
       "connections": 0,
       "cluster": "system",
-      "color": "#5AB8B0"
+      "color": "#6d9e99"
     },
     {
       "id": 3,
@@ -55,7 +55,7 @@
       "summary": "2026 03 11",
       "connections": 0,
       "cluster": "system",
-      "color": "#5AB8B0"
+      "color": "#6d9e99"
     },
     {
       "id": 4,
@@ -67,7 +67,7 @@
       "summary": "2026 03 12",
       "connections": 0,
       "cluster": "system",
-      "color": "#5AB8B0"
+      "color": "#6d9e99"
     },
     {
       "id": 5,
@@ -79,7 +79,7 @@
       "summary": "2026 03 13",
       "connections": 0,
       "cluster": "system",
-      "color": "#5AB8B0"
+      "color": "#6d9e99"
     },
     {
       "id": 6,
@@ -88,10 +88,10 @@
       "tags": [
         "memory"
       ],
-      "summary": "AI Executive Team - CharFen Cadence \u00d7 Multi-Business \u00d7 Agent Architecture",
+      "summary": "AI Executive Team plan (pre-March 8) \u2014 superseded by org-chart-proposal.md which is the approved current structure",
       "connections": 0,
       "cluster": "system",
-      "color": "#5AB8B0"
+      "color": "#6d9e99"
     },
     {
       "id": 7,
@@ -103,7 +103,7 @@
       "summary": "Aitable Build Report",
       "connections": 0,
       "cluster": "system",
-      "color": "#5AB8B0"
+      "color": "#6d9e99"
     },
     {
       "id": 8,
@@ -115,7 +115,7 @@
       "summary": "AITable Final IDs \u2014 KadanKadan Waterfall",
       "connections": 0,
       "cluster": "system",
-      "color": "#5AB8B0"
+      "color": "#6d9e99"
     },
     {
       "id": 9,
@@ -127,7 +127,7 @@
       "summary": "Aitable Space Map",
       "connections": 0,
       "cluster": "system",
-      "color": "#5AB8B0"
+      "color": "#6d9e99"
     },
     {
       "id": 10,
@@ -139,7 +139,7 @@
       "summary": "Alex Finn - Agent Factory Livestream (2026-02-27)",
       "connections": 0,
       "cluster": "system",
-      "color": "#5AB8B0"
+      "color": "#6d9e99"
     },
     {
       "id": 11,
@@ -151,7 +151,7 @@
       "summary": "The Momentum Operating System \u2014 Alex Charfen's 12-day personal cadence, adapted for Beno",
       "connections": 0,
       "cluster": "system",
-      "color": "#5AB8B0"
+      "color": "#6d9e99"
     },
     {
       "id": 12,
@@ -163,7 +163,7 @@
       "summary": "Charfen Momentum Planner System (Beno's Implementation)",
       "connections": 0,
       "cluster": "system",
-      "color": "#5AB8B0"
+      "color": "#6d9e99"
     },
     {
       "id": 13,
@@ -172,10 +172,10 @@
       "tags": [
         "memory"
       ],
-      "summary": "CharFen Cadence - Operating Rules",
+      "summary": "CharFen Cadence Operating Rules \u2014 terminology, waterfall flow, OTA structure, naming consistency",
       "connections": 0,
       "cluster": "system",
-      "color": "#5AB8B0"
+      "color": "#6d9e99"
     },
     {
       "id": 14,
@@ -184,10 +184,10 @@
       "tags": [
         "memory"
       ],
-      "summary": "Org Chart Proposal: AI-Native Multi-Business Operation",
+      "summary": "Org Chart: AI-Native Multi-Business Operation \u2014 8-agent architecture (APPROVED March 8, 2026)",
       "connections": 0,
       "cluster": "system",
-      "color": "#5AB8B0"
+      "color": "#6d9e99"
     },
     {
       "id": 15,
@@ -199,7 +199,7 @@
       "summary": "Simple Operations Business Framework \u2014 Beno's business operating system: missions, OTA, 5 core functions, critical numbers, 2026 goals",
       "connections": 0,
       "cluster": "system",
-      "color": "#5AB8B0"
+      "color": "#6d9e99"
     },
     {
       "id": 16,
@@ -211,7 +211,7 @@
       "summary": "Daily log Feb 28",
       "connections": 0,
       "cluster": "daily",
-      "color": "#555555"
+      "color": "#6a6a6a"
     },
     {
       "id": 17,
@@ -223,7 +223,7 @@
       "summary": "Daily log Mar 1",
       "connections": 0,
       "cluster": "daily",
-      "color": "#555555"
+      "color": "#6a6a6a"
     },
     {
       "id": 18,
@@ -235,7 +235,7 @@
       "summary": "Daily log Mar 2",
       "connections": 0,
       "cluster": "daily",
-      "color": "#555555"
+      "color": "#6a6a6a"
     },
     {
       "id": 19,
@@ -247,7 +247,7 @@
       "summary": "Daily log Mar 3",
       "connections": 0,
       "cluster": "daily",
-      "color": "#555555"
+      "color": "#6a6a6a"
     },
     {
       "id": 20,
@@ -259,7 +259,7 @@
       "summary": "Daily log Mar 4",
       "connections": 0,
       "cluster": "daily",
-      "color": "#555555"
+      "color": "#6a6a6a"
     },
     {
       "id": 21,
@@ -271,7 +271,7 @@
       "summary": "2026-03-05 Daily Notes",
       "connections": 0,
       "cluster": "daily",
-      "color": "#555555"
+      "color": "#6a6a6a"
     },
     {
       "id": 22,
@@ -280,10 +280,10 @@
       "tags": [
         "daily"
       ],
-      "summary": "2026-03-06 Daily Notes",
+      "summary": "3 skills built (ofm-metrics, rental-ops, failover-watch) + MC relay wired + Charfen system received + prayers finalized + Cloudflare deployed",
       "connections": 0,
       "cluster": "daily",
-      "color": "#555555"
+      "color": "#6a6a6a"
     },
     {
       "id": 23,
@@ -292,10 +292,10 @@
       "tags": [
         "daily"
       ],
-      "summary": "2026-03-07",
+      "summary": "Cron optimization + CharFen cadence build + model allocation policy + Aitable datasheet IDs",
       "connections": 0,
       "cluster": "daily",
-      "color": "#555555"
+      "color": "#6a6a6a"
     },
     {
       "id": 24,
@@ -304,10 +304,10 @@
       "tags": [
         "daily"
       ],
-      "summary": "2026-03-08",
+      "summary": "Whisper live + Aitable data fixes + org chart approved + SIREWALL alpha tester + OFM character specs saved",
       "connections": 0,
       "cluster": "daily",
-      "color": "#555555"
+      "color": "#6a6a6a"
     },
     {
       "id": 25,
@@ -319,7 +319,7 @@
       "summary": "2026-03-09",
       "connections": 0,
       "cluster": "daily",
-      "color": "#555555"
+      "color": "#6a6a6a"
     },
     {
       "id": 26,
@@ -331,7 +331,7 @@
       "summary": "2026-03-10",
       "connections": 0,
       "cluster": "daily",
-      "color": "#555555"
+      "color": "#6a6a6a"
     },
     {
       "id": 27,
@@ -343,7 +343,7 @@
       "summary": "2026-03-11",
       "connections": 0,
       "cluster": "daily",
-      "color": "#555555"
+      "color": "#6a6a6a"
     },
     {
       "id": 28,
@@ -355,7 +355,7 @@
       "summary": "2026-03-12",
       "connections": 0,
       "cluster": "daily",
-      "color": "#555555"
+      "color": "#6a6a6a"
     },
     {
       "id": 29,
@@ -367,7 +367,7 @@
       "summary": "2026-03-13",
       "connections": 0,
       "cluster": "daily",
-      "color": "#555555"
+      "color": "#6a6a6a"
     },
     {
       "id": 30,
@@ -379,7 +379,7 @@
       "summary": "2026-03-14",
       "connections": 0,
       "cluster": "daily",
-      "color": "#555555"
+      "color": "#6a6a6a"
     },
     {
       "id": 31,
@@ -391,7 +391,7 @@
       "summary": "MOC: Crete Villa & Farm / Off-Grid",
       "connections": 23,
       "cluster": "property",
-      "color": "#6BBF6B"
+      "color": "#7aaa7a"
     },
     {
       "id": 32,
@@ -403,7 +403,7 @@
       "summary": "MOC: Lagoon Company",
       "connections": 24,
       "cluster": "lagoon",
-      "color": "#6BA8DA"
+      "color": "#7a9db5"
     },
     {
       "id": 33,
@@ -415,7 +415,7 @@
       "summary": "MOC: OFM Agency",
       "connections": 12,
       "cluster": "ofm",
-      "color": "#DAB255"
+      "color": "#b8a06a"
     },
     {
       "id": 34,
@@ -427,7 +427,7 @@
       "summary": "MOC: Power Independence Academy",
       "connections": 6,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 35,
@@ -436,10 +436,10 @@
       "tags": [
         "project"
       ],
-      "summary": "Master active projects list (OFM, Lagoon, Crete, Farm, etc.)",
+      "summary": "Master active projects list \u2014 OFM, Lagoon, Digital Products, Crete, Farm, App Dev, Infrastructure",
       "connections": 1,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 36,
@@ -451,7 +451,7 @@
       "summary": "Aitable formula adjustment discussion",
       "connections": 1,
       "cluster": "system",
-      "color": "#5AB8B0"
+      "color": "#6d9e99"
     },
     {
       "id": 37,
@@ -463,7 +463,7 @@
       "summary": "AI Table integration for student status",
       "connections": 1,
       "cluster": "system",
-      "color": "#5AB8B0"
+      "color": "#6d9e99"
     },
     {
       "id": 38,
@@ -475,7 +475,7 @@
       "summary": "Aitable schema reference for Verboten Industries space",
       "connections": 1,
       "cluster": "system",
-      "color": "#5AB8B0"
+      "color": "#6d9e99"
     },
     {
       "id": 39,
@@ -487,7 +487,7 @@
       "summary": "Best ATV rentals Tulum SEO/competitive research",
       "connections": 1,
       "cluster": "lagoon",
-      "color": "#6BA8DA"
+      "color": "#7a9db5"
     },
     {
       "id": 40,
@@ -499,7 +499,7 @@
       "summary": "Blue Deer review discussion",
       "connections": 0,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 41,
@@ -511,7 +511,7 @@
       "summary": "Boat trip time estimate calculations",
       "connections": 1,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 42,
@@ -523,7 +523,7 @@
       "summary": "Handling booking cancellations for hospitality",
       "connections": 1,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 43,
@@ -535,7 +535,7 @@
       "summary": "Bot crawling and widget troubleshooting",
       "connections": 0,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 44,
@@ -547,7 +547,7 @@
       "summary": "Broad market research for ecommerce",
       "connections": 0,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 45,
@@ -559,7 +559,7 @@
       "summary": "Business ideas for retreat/hospitality concept",
       "connections": 1,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 46,
@@ -571,7 +571,7 @@
       "summary": "Cambio de condici\u00f3n hijo (real estate)",
       "connections": 1,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 47,
@@ -583,7 +583,7 @@
       "summary": "Can-Am X3 Turbo vehicle details",
       "connections": 1,
       "cluster": "lagoon",
-      "color": "#6BA8DA"
+      "color": "#7a9db5"
     },
     {
       "id": 48,
@@ -595,7 +595,7 @@
       "summary": "ChatGPT history: Crete/Hilltop Villa/Ranch (4 convos)",
       "connections": 1,
       "cluster": "property",
-      "color": "#6BBF6B"
+      "color": "#7aaa7a"
     },
     {
       "id": 49,
@@ -607,7 +607,7 @@
       "summary": "ChatGPT history: Farm/Off-Grid/Livestock (7 convos)",
       "connections": 1,
       "cluster": "property",
-      "color": "#6BBF6B"
+      "color": "#7aaa7a"
     },
     {
       "id": 50,
@@ -619,7 +619,7 @@
       "summary": "ChatGPT history: Hospitality/Tourism (7 convos)",
       "connections": 1,
       "cluster": "property",
-      "color": "#6BBF6B"
+      "color": "#7aaa7a"
     },
     {
       "id": 51,
@@ -628,10 +628,10 @@
       "tags": [
         "project"
       ],
-      "summary": "ChatGPT history: Lagoon/ATV-UTV Rentals (49 convos)",
+      "summary": "ChatGPT history: Lagoon/ATV-UTV Rentals (49 conversations, 2023-2025)",
       "connections": 1,
       "cluster": "lagoon",
-      "color": "#6BA8DA"
+      "color": "#7a9db5"
     },
     {
       "id": 52,
@@ -643,7 +643,7 @@
       "summary": "ChatGPT history: Marketing/Branding/SEO (18 convos)",
       "connections": 0,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 53,
@@ -655,7 +655,7 @@
       "summary": "ChatGPT history: Real Estate/Property (3 convos)",
       "connections": 1,
       "cluster": "property",
-      "color": "#6BBF6B"
+      "color": "#7aaa7a"
     },
     {
       "id": 54,
@@ -667,7 +667,7 @@
       "summary": "Compra grano de oro discussion",
       "connections": 0,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 55,
@@ -679,7 +679,7 @@
       "summary": "Concrete wall types research",
       "connections": 1,
       "cluster": "property",
-      "color": "#6BBF6B"
+      "color": "#7aaa7a"
     },
     {
       "id": 56,
@@ -691,7 +691,7 @@
       "summary": "Cornish Cross chickens in Mexico farm planning",
       "connections": 1,
       "cluster": "property",
-      "color": "#6BBF6B"
+      "color": "#7aaa7a"
     },
     {
       "id": 57,
@@ -703,7 +703,7 @@
       "summary": "Crete Oaxaca site plan design",
       "connections": 1,
       "cluster": "property",
-      "color": "#6BBF6B"
+      "color": "#7aaa7a"
     },
     {
       "id": 58,
@@ -715,7 +715,7 @@
       "summary": "CRETE 2.0 property planning",
       "connections": 1,
       "cluster": "property",
-      "color": "#6BBF6B"
+      "color": "#7aaa7a"
     },
     {
       "id": 59,
@@ -727,7 +727,7 @@
       "summary": "Customs agent vs comercializadora comparison",
       "connections": 0,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 60,
@@ -739,7 +739,7 @@
       "summary": "Egg business viability analysis",
       "connections": 1,
       "cluster": "property",
-      "color": "#6BBF6B"
+      "color": "#7aaa7a"
     },
     {
       "id": 61,
@@ -751,7 +751,7 @@
       "summary": "Encuentro en Tulum event/concept",
       "connections": 0,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 62,
@@ -763,7 +763,7 @@
       "summary": "Execution plan 1.0 (dev tools)",
       "connections": 1,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 63,
@@ -775,7 +775,7 @@
       "summary": "Execution plan 2.0 (marketing focus)",
       "connections": 1,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 64,
@@ -787,7 +787,7 @@
       "summary": "Experiential hospitality project plan",
       "connections": 1,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 65,
@@ -799,7 +799,7 @@
       "summary": "FedEx shipping DDP clarification",
       "connections": 0,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 66,
@@ -811,7 +811,7 @@
       "summary": "Formwork brands research for construction",
       "connections": 1,
       "cluster": "property",
-      "color": "#6BBF6B"
+      "color": "#7aaa7a"
     },
     {
       "id": 67,
@@ -823,7 +823,7 @@
       "summary": "Google search testing for SEO",
       "connections": 0,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 68,
@@ -835,7 +835,7 @@
       "summary": "High vibe music list + Can-Am clunking issue",
       "connections": 1,
       "cluster": "lagoon",
-      "color": "#6BA8DA"
+      "color": "#7a9db5"
     },
     {
       "id": 69,
@@ -847,7 +847,7 @@
       "summary": "Hilltop beach villa Crete project",
       "connections": 1,
       "cluster": "property",
-      "color": "#6BBF6B"
+      "color": "#7aaa7a"
     },
     {
       "id": 70,
@@ -859,7 +859,7 @@
       "summary": "Inflatable yacht drone shot planning",
       "connections": 1,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 71,
@@ -868,10 +868,10 @@
       "tags": [
         "project"
       ],
-      "summary": "AI influencer marketing guide (Instara community)",
+      "summary": "AI influencer Instagram marketing guide \u2014 warmup, growth tactics, monetization, safety limits (Instara community)",
       "connections": 1,
       "cluster": "ofm",
-      "color": "#DAB255"
+      "color": "#b8a06a"
     },
     {
       "id": 72,
@@ -883,7 +883,7 @@
       "summary": "KadanKadan marketing (Maloby's project)",
       "connections": 0,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 73,
@@ -895,7 +895,7 @@
       "summary": "Lagoon ad headline brainstorming",
       "connections": 1,
       "cluster": "lagoon",
-      "color": "#6BA8DA"
+      "color": "#7a9db5"
     },
     {
       "id": 74,
@@ -907,7 +907,7 @@
       "summary": "ATV/UTV rental agreement draft",
       "connections": 1,
       "cluster": "lagoon",
-      "color": "#6BA8DA"
+      "color": "#7a9db5"
     },
     {
       "id": 75,
@@ -919,7 +919,7 @@
       "summary": "ATV rental Tulum keyword variations",
       "connections": 1,
       "cluster": "lagoon",
-      "color": "#6BA8DA"
+      "color": "#7a9db5"
     },
     {
       "id": 76,
@@ -931,7 +931,7 @@
       "summary": "Can-Am description rewrite for listings",
       "connections": 1,
       "cluster": "lagoon",
-      "color": "#6BA8DA"
+      "color": "#7a9db5"
     },
     {
       "id": 77,
@@ -943,7 +943,7 @@
       "summary": "Concierge commission adjustment + IP theft",
       "connections": 1,
       "cluster": "lagoon",
-      "color": "#6BA8DA"
+      "color": "#7a9db5"
     },
     {
       "id": 78,
@@ -955,7 +955,7 @@
       "summary": "Lagoon Company -- Delegation Audit",
       "connections": 0,
       "cluster": "lagoon",
-      "color": "#6BA8DA"
+      "color": "#7a9db5"
     },
     {
       "id": 79,
@@ -967,7 +967,7 @@
       "summary": "Lagoon Company growth strategy",
       "connections": 0,
       "cluster": "lagoon",
-      "color": "#6BA8DA"
+      "color": "#7a9db5"
     },
     {
       "id": 80,
@@ -979,7 +979,7 @@
       "summary": "Privacy policy for Tulum operations",
       "connections": 1,
       "cluster": "lagoon",
-      "color": "#6BA8DA"
+      "color": "#7a9db5"
     },
     {
       "id": 81,
@@ -991,7 +991,7 @@
       "summary": "Privacy policy creation",
       "connections": 1,
       "cluster": "lagoon",
-      "color": "#6BA8DA"
+      "color": "#7a9db5"
     },
     {
       "id": 82,
@@ -1003,7 +1003,7 @@
       "summary": "Entrepreneurial profile + Tulum property",
       "connections": 0,
       "cluster": "lagoon",
-      "color": "#6BA8DA"
+      "color": "#7a9db5"
     },
     {
       "id": 83,
@@ -1012,10 +1012,10 @@
       "tags": [
         "project"
       ],
-      "summary": "Lagoon Company \u2014 Standard Operating Procedures",
+      "summary": "Lagoon Company SOPs \u2014 vehicle checkout, inspection, return, damage reporting, WhatsApp workflows",
       "connections": 0,
       "cluster": "lagoon",
-      "color": "#6BA8DA"
+      "color": "#7a9db5"
     },
     {
       "id": 84,
@@ -1027,7 +1027,7 @@
       "summary": "Warranty claim response template",
       "connections": 1,
       "cluster": "lagoon",
-      "color": "#6BA8DA"
+      "color": "#7a9db5"
     },
     {
       "id": 85,
@@ -1039,7 +1039,7 @@
       "summary": "Lagoon website copy",
       "connections": 1,
       "cluster": "lagoon",
-      "color": "#6BA8DA"
+      "color": "#7a9db5"
     },
     {
       "id": 86,
@@ -1051,7 +1051,7 @@
       "summary": "Zapier automation overview for Lagoon",
       "connections": 1,
       "cluster": "lagoon",
-      "color": "#6BA8DA"
+      "color": "#7a9db5"
     },
     {
       "id": 87,
@@ -1063,7 +1063,7 @@
       "summary": "Landing page layout for vehicle rental",
       "connections": 1,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 88,
@@ -1075,7 +1075,7 @@
       "summary": "LiFePO4 battery options for marina",
       "connections": 1,
       "cluster": "property",
-      "color": "#6BBF6B"
+      "color": "#7aaa7a"
     },
     {
       "id": 89,
@@ -1087,7 +1087,7 @@
       "summary": "Villa marketing project",
       "connections": 1,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 90,
@@ -1099,7 +1099,7 @@
       "summary": "Market research specialist ecommerce",
       "connections": 0,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 91,
@@ -1111,7 +1111,7 @@
       "summary": "Micro resort crowdfunding strategy",
       "connections": 1,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 92,
@@ -1123,7 +1123,7 @@
       "summary": "MidJourney real estate renders",
       "connections": 1,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 93,
@@ -1135,7 +1135,7 @@
       "summary": "Oaxaca farm climate advice",
       "connections": 1,
       "cluster": "property",
-      "color": "#6BBF6B"
+      "color": "#7aaa7a"
     },
     {
       "id": 94,
@@ -1147,7 +1147,7 @@
       "summary": "Ocean freight quote summary",
       "connections": 0,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 95,
@@ -1159,7 +1159,7 @@
       "summary": "OFM agency operational overview, co-founders, creator workflows",
       "connections": 1,
       "cluster": "ofm",
-      "color": "#DAB255"
+      "color": "#b8a06a"
     },
     {
       "id": 96,
@@ -1168,10 +1168,10 @@
       "tags": [
         "project"
       ],
-      "summary": "OFM AI Model Concepts \u2014 Character Proposal",
+      "summary": "OFM AI Model Concepts \u2014 Character proposals: Valentina Cruz (Latina fitness), Aiko Yume (Asian elegance), Noa Blaze (Nordic alt)",
       "connections": 0,
       "cluster": "ofm",
-      "color": "#DAB255"
+      "color": "#b8a06a"
     },
     {
       "id": 97,
@@ -1183,7 +1183,7 @@
       "summary": "OFM Chatter Hiring Post \u2014 r/OnlyFansChatter",
       "connections": 0,
       "cluster": "ofm",
-      "color": "#DAB255"
+      "color": "#b8a06a"
     },
     {
       "id": 98,
@@ -1195,7 +1195,7 @@
       "summary": "OFM operational overview 2026 + OpenClaw setup",
       "connections": 1,
       "cluster": "ofm",
-      "color": "#DAB255"
+      "color": "#b8a06a"
     },
     {
       "id": 99,
@@ -1207,7 +1207,7 @@
       "summary": "OnlyFans link on Instagram strategy",
       "connections": 1,
       "cluster": "ofm",
-      "color": "#DAB255"
+      "color": "#b8a06a"
     },
     {
       "id": 100,
@@ -1219,7 +1219,7 @@
       "summary": "Outline creation process for dev tools",
       "connections": 0,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 101,
@@ -1231,7 +1231,7 @@
       "summary": "250 niche ideas + 8-step AI prompt (Travis Stephenson)",
       "connections": 1,
       "cluster": "ofm",
-      "color": "#DAB255"
+      "color": "#b8a06a"
     },
     {
       "id": 102,
@@ -1243,7 +1243,7 @@
       "summary": "Parked domains in Google Ads",
       "connections": 0,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 103,
@@ -1255,7 +1255,7 @@
       "summary": "Parts pricing guide",
       "connections": 1,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 104,
@@ -1267,7 +1267,7 @@
       "summary": "Pinseeker partnership inquiry",
       "connections": 0,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 105,
@@ -1279,7 +1279,7 @@
       "summary": "Posting frequency strategy for social",
       "connections": 1,
       "cluster": "ofm",
-      "color": "#DAB255"
+      "color": "#b8a06a"
     },
     {
       "id": 106,
@@ -1291,7 +1291,7 @@
       "summary": "PIA digital product course ($27 offer)",
       "connections": 1,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 107,
@@ -1303,7 +1303,7 @@
       "summary": "Product idea generation session",
       "connections": 0,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 108,
@@ -1315,7 +1315,7 @@
       "summary": "Profile setup review",
       "connections": 1,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 109,
@@ -1327,7 +1327,7 @@
       "summary": "Puerto Escondido housing options research",
       "connections": 1,
       "cluster": "property",
-      "color": "#6BBF6B"
+      "color": "#7aaa7a"
     },
     {
       "id": 110,
@@ -1339,7 +1339,7 @@
       "summary": "SEO content writer + MidJourney",
       "connections": 0,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 111,
@@ -1351,7 +1351,7 @@
       "summary": "SEO & Google Ads strategy 2023",
       "connections": 0,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 112,
@@ -1363,7 +1363,7 @@
       "summary": "Shopify to Airtable error debugging",
       "connections": 0,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 113,
@@ -1375,7 +1375,7 @@
       "summary": "Shopify CLI debug + MidJourney",
       "connections": 0,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 114,
@@ -1387,7 +1387,7 @@
       "summary": "Shopify Liquid coding 2024",
       "connections": 0,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 115,
@@ -1399,7 +1399,7 @@
       "summary": "Shopify Liquid coding help",
       "connections": 0,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 116,
@@ -1411,7 +1411,7 @@
       "summary": "Shopify sections support",
       "connections": 0,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 117,
@@ -1423,7 +1423,7 @@
       "summary": "Sirewall Mix Design Log - Oaxaca",
       "connections": 0,
       "cluster": "property",
-      "color": "#6BBF6B"
+      "color": "#7aaa7a"
     },
     {
       "id": 118,
@@ -1435,7 +1435,7 @@
       "summary": "Strategy for thriving now",
       "connections": 0,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 119,
@@ -1447,7 +1447,7 @@
       "summary": "Truthful brand voice guidelines + fonts",
       "connections": 0,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 120,
@@ -1459,7 +1459,7 @@
       "summary": "Tulum ATV logo concept design",
       "connections": 1,
       "cluster": "lagoon",
-      "color": "#6BA8DA"
+      "color": "#7a9db5"
     },
     {
       "id": 121,
@@ -1471,7 +1471,7 @@
       "summary": "Tulum ATV safety tips content",
       "connections": 1,
       "cluster": "lagoon",
-      "color": "#6BA8DA"
+      "color": "#7a9db5"
     },
     {
       "id": 122,
@@ -1483,7 +1483,7 @@
       "summary": "Upholstery cleaning price list",
       "connections": 0,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 123,
@@ -1495,7 +1495,7 @@
       "summary": "Improved upholstery cleaning system",
       "connections": 0,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 124,
@@ -1507,7 +1507,7 @@
       "summary": "Sustainable upholstery cleaning brand tone",
       "connections": 0,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 125,
@@ -1519,7 +1519,7 @@
       "summary": "UTV rental pricing justification",
       "connections": 1,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 126,
@@ -1531,7 +1531,7 @@
       "summary": "Visual prompt blueprint for resort visualization",
       "connections": 1,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 127,
@@ -1543,7 +1543,7 @@
       "summary": "Website copywriter general",
       "connections": 0,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 128,
@@ -1555,7 +1555,7 @@
       "summary": "X Residence floorplan request",
       "connections": 1,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 129,
@@ -1567,7 +1567,7 @@
       "summary": "Yacht reservation form guide",
       "connections": 1,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 130,
@@ -1579,7 +1579,7 @@
       "summary": "Birthdays for family and key people",
       "connections": 0,
       "cluster": "people",
-      "color": "#D9534F"
+      "color": "#b07a78"
     },
     {
       "id": 131,
@@ -1591,7 +1591,7 @@
       "summary": "DISC personality analysis",
       "connections": 0,
       "cluster": "people",
-      "color": "#D9534F"
+      "color": "#b07a78"
     },
     {
       "id": 132,
@@ -1603,7 +1603,7 @@
       "summary": "European last name Bergstr\u00f6m discussion",
       "connections": 0,
       "cluster": "people",
-      "color": "#D9534F"
+      "color": "#b07a78"
     },
     {
       "id": 133,
@@ -1615,7 +1615,7 @@
       "summary": "Triad meeting scheduling",
       "connections": 0,
       "cluster": "people",
-      "color": "#D9534F"
+      "color": "#b07a78"
     },
     {
       "id": 134,
@@ -1627,7 +1627,7 @@
       "summary": "Agreement review and feedback",
       "connections": 0,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 135,
@@ -1639,7 +1639,7 @@
       "summary": "ChatGPT history: Finance/Tax (6 convos)",
       "connections": 0,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 136,
@@ -1651,7 +1651,7 @@
       "summary": "ChatGPT history: Legal/Immigration/Contracts (4 convos)",
       "connections": 0,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 137,
@@ -1663,7 +1663,7 @@
       "summary": "Contrato alquiler y subarriendo (rental)",
       "connections": 1,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 138,
@@ -1675,7 +1675,7 @@
       "summary": "Devolver cascos o consecuencias (helmet return)",
       "connections": 0,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 139,
@@ -1687,7 +1687,7 @@
       "summary": "Incorporating USA company plan",
       "connections": 0,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 140,
@@ -1699,7 +1699,7 @@
       "summary": "Legalidad arrendamiento M\u00e9xico",
       "connections": 0,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 141,
@@ -1711,7 +1711,7 @@
       "summary": "Migraci\u00f3n office hours",
       "connections": 0,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 142,
@@ -1723,7 +1723,7 @@
       "summary": "Paramar Viva Condo Dispute",
       "connections": 0,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 143,
@@ -1735,7 +1735,7 @@
       "summary": "Profit First bookkeeping approach",
       "connections": 0,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 144,
@@ -1747,7 +1747,7 @@
       "summary": "Tax exemption correction",
       "connections": 0,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 145,
@@ -1759,7 +1759,7 @@
       "summary": "Tax exemption verification request",
       "connections": 0,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 146,
@@ -1771,7 +1771,7 @@
       "summary": "Visa requirements for Nigerians",
       "connections": 0,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 147,
@@ -1783,7 +1783,7 @@
       "summary": "Zero tax jurisdictions + banking options",
       "connections": 0,
       "cluster": "business",
-      "color": "#A86DBF"
+      "color": "#9a7daa"
     },
     {
       "id": 148,
@@ -1795,7 +1795,7 @@
       "summary": "Alpha Prompting System for AI image gen",
       "connections": 0,
       "cluster": "skills",
-      "color": "#e8ecf0"
+      "color": "#a8a8a8"
     },
     {
       "id": 149,
@@ -1807,7 +1807,7 @@
       "summary": "Hormozi 4-step outreach system, ICP template, sequence blueprint, benchmarks",
       "connections": 0,
       "cluster": "skills",
-      "color": "#e8ecf0"
+      "color": "#a8a8a8"
     },
     {
       "id": 150,
@@ -1819,7 +1819,7 @@
       "summary": "6 core frameworks (PAS, AIDA, FAB, BAB, 4Ps, Star-Story-Solution), landing page structure, copy rules",
       "connections": 0,
       "cluster": "skills",
-      "color": "#e8ecf0"
+      "color": "#a8a8a8"
     },
     {
       "id": 151,
@@ -1831,7 +1831,7 @@
       "summary": "Creating images with diffusion models",
       "connections": 0,
       "cluster": "skills",
-      "color": "#e8ecf0"
+      "color": "#a8a8a8"
     },
     {
       "id": 152,
@@ -1843,7 +1843,7 @@
       "summary": "Emotional Architecture Prompt Guide",
       "connections": 0,
       "cluster": "skills",
-      "color": "#e8ecf0"
+      "color": "#a8a8a8"
     },
     {
       "id": 153,
@@ -1855,7 +1855,7 @@
       "summary": "Hack Your Agency Supercourse \u2014 key frameworks for conversion, traffic, funnels, and agency ops",
       "connections": 1,
       "cluster": "skills",
-      "color": "#e8ecf0"
+      "color": "#a8a8a8"
     },
     {
       "id": 154,
@@ -1864,10 +1864,10 @@
       "tags": [
         "resource"
       ],
-      "summary": "Instagram AI influencer guide (PDF extract)",
+      "summary": "Instagram AI influencer guide \u2014 account setup, content strategy, boosting, trial reels, and Meta verification for AI creator accounts",
       "connections": 1,
       "cluster": "skills",
-      "color": "#e8ecf0"
+      "color": "#a8a8a8"
     },
     {
       "id": 155,
@@ -1876,10 +1876,10 @@
       "tags": [
         "resource"
       ],
-      "summary": "Comprehensive LoRA training guide",
+      "summary": "Comprehensive LoRA training guide \u2014 WAN 2.1/2.2, dataset prep, captioning strategy, training params, ComfyUI deployment",
       "connections": 1,
       "cluster": "skills",
-      "color": "#e8ecf0"
+      "color": "#a8a8a8"
     },
     {
       "id": 156,
@@ -1891,7 +1891,7 @@
       "summary": "Copy image style MidJourney + Father's Day",
       "connections": 0,
       "cluster": "skills",
-      "color": "#e8ecf0"
+      "color": "#a8a8a8"
     },
     {
       "id": 157,
@@ -1903,7 +1903,7 @@
       "summary": "Off-grid generator guide",
       "connections": 1,
       "cluster": "property",
-      "color": "#6BBF6B"
+      "color": "#7aaa7a"
     },
     {
       "id": 158,
@@ -1912,10 +1912,10 @@
       "tags": [
         "resource"
       ],
-      "summary": "Paid Creators course notes (Travis Stephenson)",
+      "summary": "Paid Creators course (Travis Stephenson/Wealthery) \u2014 PERC method and 6-pillar framework for low-ticket digital products",
       "connections": 1,
       "cluster": "skills",
-      "color": "#e8ecf0"
+      "color": "#a8a8a8"
     },
     {
       "id": 159,
@@ -1927,7 +1927,7 @@
       "summary": "9 core pricing principles (charm, anchoring, decoy, bundling, scarcity, framing, social proof, tiers)",
       "connections": 0,
       "cluster": "skills",
-      "color": "#e8ecf0"
+      "color": "#a8a8a8"
     },
     {
       "id": 160,
@@ -1939,7 +1939,7 @@
       "summary": "6-phase organic growth system (500M+ views), hook formulas, CTA strategy, scaling rules",
       "connections": 0,
       "cluster": "skills",
-      "color": "#e8ecf0"
+      "color": "#a8a8a8"
     },
     {
       "id": 161,
@@ -1951,7 +1951,7 @@
       "summary": "Nova product development agent definition",
       "connections": 0,
       "cluster": "system",
-      "color": "#5AB8B0"
+      "color": "#6d9e99"
     },
     {
       "id": 162,
@@ -1963,7 +1963,7 @@
       "summary": "Auth & proxy setup stack",
       "connections": 0,
       "cluster": "system",
-      "color": "#5AB8B0"
+      "color": "#6d9e99"
     },
     {
       "id": 163,
@@ -1975,7 +1975,7 @@
       "summary": "Workspace conventions + three-tier memory system",
       "connections": 0,
       "cluster": "system",
-      "color": "#5AB8B0"
+      "color": "#6d9e99"
     },
     {
       "id": 164,
@@ -1987,7 +1987,7 @@
       "summary": "Mission Control - Design Language",
       "connections": 0,
       "cluster": "system",
-      "color": "#5AB8B0"
+      "color": "#6d9e99"
     },
     {
       "id": 165,
@@ -1999,7 +1999,7 @@
       "summary": "Feature Specs",
       "connections": 0,
       "cluster": "system",
-      "color": "#5AB8B0"
+      "color": "#6d9e99"
     },
     {
       "id": 166,
@@ -2011,7 +2011,7 @@
       "summary": "Integration hub setup",
       "connections": 0,
       "cluster": "system",
-      "color": "#5AB8B0"
+      "color": "#6d9e99"
     },
     {
       "id": 167,
@@ -2020,10 +2020,10 @@
       "tags": [
         "system"
       ],
-      "summary": "Integration Map",
+      "summary": "Integration map \u2014 Aitable, GitHub, WhatsApp Bridge, Cloudflare, Telegram, Systeme.io connections",
       "connections": 0,
       "cluster": "system",
-      "color": "#5AB8B0"
+      "color": "#6d9e99"
     },
     {
       "id": 168,
@@ -2035,7 +2035,7 @@
       "summary": "Learnings & Failure Tracking",
       "connections": 0,
       "cluster": "system",
-      "color": "#5AB8B0"
+      "color": "#6d9e99"
     },
     {
       "id": 169,
@@ -2047,7 +2047,7 @@
       "summary": "Mac setup + OpenClaw privacy config",
       "connections": 0,
       "cluster": "system",
-      "color": "#5AB8B0"
+      "color": "#6d9e99"
     },
     {
       "id": 170,
@@ -2059,7 +2059,7 @@
       "summary": "Ideas from agent-memory-ultimate, failure-memory, close-loop skills (decay, R/C/D tracking, cache eviction)",
       "connections": 0,
       "cluster": "system",
-      "color": "#5AB8B0"
+      "color": "#6d9e99"
     },
     {
       "id": 171,
@@ -2068,10 +2068,10 @@
       "tags": [
         "system"
       ],
-      "summary": "Mission Control - Full Specification",
+      "summary": "Mission Control specification \u2014 architecture, tabs, data flow, sync scripts, color system",
       "connections": 0,
       "cluster": "system",
-      "color": "#5AB8B0"
+      "color": "#6d9e99"
     },
     {
       "id": 172,
@@ -2083,7 +2083,7 @@
       "summary": "AdaptlyPost, EachLabs, fal.ai pricing/viability investigation (2026-03-04)",
       "connections": 0,
       "cluster": "system",
-      "color": "#5AB8B0"
+      "color": "#6d9e99"
     },
     {
       "id": 173,
@@ -2095,7 +2095,7 @@
       "summary": "Dream cycle brief Feb 28",
       "connections": 0,
       "cluster": "daily",
-      "color": "#555555"
+      "color": "#6a6a6a"
     },
     {
       "id": 174,
@@ -2107,7 +2107,7 @@
       "summary": "Dream cycle brief Mar 1",
       "connections": 0,
       "cluster": "daily",
-      "color": "#555555"
+      "color": "#6a6a6a"
     },
     {
       "id": 175,
@@ -2119,7 +2119,7 @@
       "summary": "Dream cycle brief Mar 2",
       "connections": 0,
       "cluster": "daily",
-      "color": "#555555"
+      "color": "#6a6a6a"
     },
     {
       "id": 176,
@@ -2131,7 +2131,7 @@
       "summary": "Dream cycle brief Mar 3",
       "connections": 0,
       "cluster": "daily",
-      "color": "#555555"
+      "color": "#6a6a6a"
     },
     {
       "id": 177,
@@ -2143,7 +2143,7 @@
       "summary": "Dream cycle brief Mar 4",
       "connections": 0,
       "cluster": "daily",
-      "color": "#555555"
+      "color": "#6a6a6a"
     },
     {
       "id": 178,
@@ -2155,7 +2155,7 @@
       "summary": "Dream Brief \u2014 2026-03-05",
       "connections": 0,
       "cluster": "daily",
-      "color": "#555555"
+      "color": "#6a6a6a"
     },
     {
       "id": 179,
@@ -2167,7 +2167,7 @@
       "summary": "Dream Brief \u2014 2026-03-06",
       "connections": 0,
       "cluster": "daily",
-      "color": "#555555"
+      "color": "#6a6a6a"
     },
     {
       "id": 180,
@@ -2179,7 +2179,7 @@
       "summary": "Dream Brief \u2014 2026-03-07",
       "connections": 0,
       "cluster": "daily",
-      "color": "#555555"
+      "color": "#6a6a6a"
     },
     {
       "id": 181,
@@ -2191,7 +2191,7 @@
       "summary": "Dream Brief \u2014 2026-03-08",
       "connections": 0,
       "cluster": "daily",
-      "color": "#555555"
+      "color": "#6a6a6a"
     },
     {
       "id": 182,
@@ -2203,7 +2203,7 @@
       "summary": "Dream Brief \u2014 2026-03-09",
       "connections": 0,
       "cluster": "daily",
-      "color": "#555555"
+      "color": "#6a6a6a"
     },
     {
       "id": 183,
@@ -2215,7 +2215,7 @@
       "summary": "Dream Brief \u2014 2026-03-10",
       "connections": 0,
       "cluster": "daily",
-      "color": "#555555"
+      "color": "#6a6a6a"
     },
     {
       "id": 184,
@@ -2227,7 +2227,7 @@
       "summary": "Dream Brief \u2014 2026-03-11",
       "connections": 0,
       "cluster": "daily",
-      "color": "#555555"
+      "color": "#6a6a6a"
     },
     {
       "id": 185,
@@ -2239,7 +2239,7 @@
       "summary": "Dream Brief \u2014 2026-03-12",
       "connections": 0,
       "cluster": "daily",
-      "color": "#555555"
+      "color": "#6a6a6a"
     },
     {
       "id": 186,
@@ -2251,7 +2251,7 @@
       "summary": "Dream Brief \u2014 2026-03-13",
       "connections": 0,
       "cluster": "daily",
-      "color": "#555555"
+      "color": "#6a6a6a"
     },
     {
       "id": 187,
@@ -2263,41 +2263,13 @@
       "summary": "Dream Brief \u2014 2026-03-14",
       "connections": 0,
       "cluster": "daily",
-      "color": "#555555"
+      "color": "#6a6a6a"
     }
   ],
   "edges": [
     {
       "source": 31,
-      "target": 60
-    },
-    {
-      "source": 31,
-      "target": 58
-    },
-    {
-      "source": 31,
-      "target": 88
-    },
-    {
-      "source": 31,
-      "target": 45
-    },
-    {
-      "source": 31,
-      "target": 109
-    },
-    {
-      "source": 31,
-      "target": 46
-    },
-    {
-      "source": 31,
-      "target": 92
-    },
-    {
-      "source": 31,
-      "target": 69
+      "target": 50
     },
     {
       "source": 31,
@@ -2305,11 +2277,15 @@
     },
     {
       "source": 31,
-      "target": 91
+      "target": 45
     },
     {
       "source": 31,
-      "target": 64
+      "target": 57
+    },
+    {
+      "source": 31,
+      "target": 69
     },
     {
       "source": 31,
@@ -2317,39 +2293,23 @@
     },
     {
       "source": 31,
-      "target": 50
+      "target": 46
+    },
+    {
+      "source": 31,
+      "target": 109
+    },
+    {
+      "source": 31,
+      "target": 60
+    },
+    {
+      "source": 31,
+      "target": 64
     },
     {
       "source": 31,
       "target": 48
-    },
-    {
-      "source": 31,
-      "target": 66
-    },
-    {
-      "source": 31,
-      "target": 126
-    },
-    {
-      "source": 31,
-      "target": 157
-    },
-    {
-      "source": 31,
-      "target": 93
-    },
-    {
-      "source": 31,
-      "target": 89
-    },
-    {
-      "source": 31,
-      "target": 128
-    },
-    {
-      "source": 31,
-      "target": 57
     },
     {
       "source": 31,
@@ -2360,36 +2320,44 @@
       "target": 53
     },
     {
-      "source": 32,
-      "target": 73
+      "source": 31,
+      "target": 92
     },
     {
-      "source": 32,
-      "target": 86
+      "source": 31,
+      "target": 88
     },
     {
-      "source": 32,
-      "target": 87
+      "source": 31,
+      "target": 89
     },
     {
-      "source": 32,
-      "target": 129
+      "source": 31,
+      "target": 93
     },
     {
-      "source": 32,
-      "target": 137
+      "source": 31,
+      "target": 66
     },
     {
-      "source": 32,
-      "target": 68
+      "source": 31,
+      "target": 157
     },
     {
-      "source": 32,
-      "target": 103
+      "source": 31,
+      "target": 128
     },
     {
-      "source": 32,
-      "target": 41
+      "source": 31,
+      "target": 126
+    },
+    {
+      "source": 31,
+      "target": 58
+    },
+    {
+      "source": 31,
+      "target": 91
     },
     {
       "source": 32,
@@ -2397,11 +2365,23 @@
     },
     {
       "source": 32,
-      "target": 70
+      "target": 137
     },
     {
       "source": 32,
-      "target": 125
+      "target": 129
+    },
+    {
+      "source": 32,
+      "target": 74
+    },
+    {
+      "source": 32,
+      "target": 76
+    },
+    {
+      "source": 32,
+      "target": 47
     },
     {
       "source": 32,
@@ -2409,7 +2389,15 @@
     },
     {
       "source": 32,
-      "target": 42
+      "target": 84
+    },
+    {
+      "source": 32,
+      "target": 73
+    },
+    {
+      "source": 32,
+      "target": 68
     },
     {
       "source": 32,
@@ -2417,11 +2405,23 @@
     },
     {
       "source": 32,
-      "target": 81
+      "target": 41
     },
     {
       "source": 32,
-      "target": 84
+      "target": 86
+    },
+    {
+      "source": 32,
+      "target": 70
+    },
+    {
+      "source": 32,
+      "target": 42
+    },
+    {
+      "source": 32,
+      "target": 120
     },
     {
       "source": 32,
@@ -2433,7 +2433,11 @@
     },
     {
       "source": 32,
-      "target": 39
+      "target": 87
+    },
+    {
+      "source": 32,
+      "target": 81
     },
     {
       "source": 32,
@@ -2441,47 +2445,19 @@
     },
     {
       "source": 32,
-      "target": 47
+      "target": 39
     },
     {
       "source": 32,
-      "target": 120
+      "target": 125
     },
     {
       "source": 32,
-      "target": 74
-    },
-    {
-      "source": 32,
-      "target": 76
+      "target": 103
     },
     {
       "source": 33,
-      "target": 105
-    },
-    {
-      "source": 33,
-      "target": 99
-    },
-    {
-      "source": 33,
-      "target": 108
-    },
-    {
-      "source": 33,
-      "target": 71
-    },
-    {
-      "source": 33,
-      "target": 35
-    },
-    {
-      "source": 33,
-      "target": 101
-    },
-    {
-      "source": 33,
-      "target": 158
+      "target": 98
     },
     {
       "source": 33,
@@ -2493,7 +2469,15 @@
     },
     {
       "source": 33,
+      "target": 71
+    },
+    {
+      "source": 33,
       "target": 95
+    },
+    {
+      "source": 33,
+      "target": 108
     },
     {
       "source": 33,
@@ -2501,11 +2485,27 @@
     },
     {
       "source": 33,
-      "target": 98
+      "target": 101
+    },
+    {
+      "source": 33,
+      "target": 158
+    },
+    {
+      "source": 33,
+      "target": 99
+    },
+    {
+      "source": 33,
+      "target": 35
+    },
+    {
+      "source": 33,
+      "target": 105
     },
     {
       "source": 34,
-      "target": 38
+      "target": 37
     },
     {
       "source": 34,
@@ -2513,7 +2513,7 @@
     },
     {
       "source": 34,
-      "target": 37
+      "target": 63
     },
     {
       "source": 34,
@@ -2525,7 +2525,7 @@
     },
     {
       "source": 34,
-      "target": 63
+      "target": 38
     }
   ]
 }

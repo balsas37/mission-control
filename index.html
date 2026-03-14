@@ -10842,6 +10842,7 @@
     /* ---- Constants ---- */
     var GRAPH_DATA_URL = 'data/graph.json';
     var NODE_COLOR_DEFAULT = '#C8C8CC';
+    function nodeColor(d) { return d.color || NODE_COLOR_DEFAULT; }
     var NODE_COLOR_SELECTED = '#A855F7';
     var GLOW_COLOR = 'rgba(168,85,247,0.35)';
     var EDGE_COLOR_BASE = 'rgba(100,100,110,0.22)';
@@ -11181,7 +11182,7 @@
       nodeElements = nodeGroups.append('circle')
         .attr('class', 'node-circle')
         .attr('r', function(d) { return d._r; })
-        .attr('fill', NODE_COLOR_DEFAULT)
+        .attr('fill', function(d) { return nodeColor(d); })
         .attr('opacity', function(d) { return nodeBaseOpacity(d); })
         .attr('stroke', 'rgba(255,255,255,0.06)')
         .attr('stroke-width', 0.5);
@@ -11271,14 +11272,14 @@
           applyHoverState(null);
           d3.select(this).select('.node-circle')
             .transition().duration(200)
-            .attr('fill', NODE_COLOR_DEFAULT)
+            .attr('fill', function(d) { return nodeColor(d); })
             .attr('opacity', nodeBaseOpacity(d));
           d3.select(this).select('.node-glow')
             .transition().duration(200).attr('opacity', 0);
         } else if (selectedNode.id !== d.id) {
           d3.select(this).select('.node-circle')
             .transition().duration(200)
-            .attr('fill', NODE_COLOR_DEFAULT)
+            .attr('fill', function(d) { return nodeColor(d); })
             .attr('opacity', nodeBaseOpacity(d));
           d3.select(this).select('.node-glow')
             .transition().duration(200).attr('opacity', 0);
@@ -11373,7 +11374,7 @@
               .transition().duration(150).attr('opacity', 1);
           } else {
             d3.select(this).select('.node-circle')
-              .transition().duration(150).attr('fill', NODE_COLOR_DEFAULT);
+              .transition().duration(150).attr('fill', function(d) { return nodeColor(d); });
             d3.select(this).select('.node-glow')
               .transition().duration(150).attr('opacity', 0);
           }
@@ -11387,7 +11388,7 @@
       applyHoverState(null);
       if (gNodes) {
         gNodes.selectAll('.node-circle')
-          .transition().duration(150).attr('fill', NODE_COLOR_DEFAULT);
+          .transition().duration(150).attr('fill', function(d) { return nodeColor(d); });
         gNodes.selectAll('.node-glow')
           .transition().duration(150).attr('opacity', 0);
       }

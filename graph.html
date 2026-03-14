@@ -1011,14 +1011,16 @@ function renderClusters() {
   // "All" option
   html += `<div class="cluster-item ${!activeCluster ? 'active' : ''}" onclick="setCluster(null)">
     <div class="cluster-dot" style="background: var(--text-1)"></div>
-    <div class="cluster-label">all notes</div>
+    <div class="cluster-label">All Notes</div>
     <div class="cluster-count">${graph.stats.nodes}</div>
   </div>`;
 
   graph.clusters.forEach(c => {
+    // Title case the label
+    const label = c.label.replace(/\b\w/g, l => l.toUpperCase());
     html += `<div class="cluster-item ${activeCluster === c.id ? 'active' : ''}" onclick="setCluster('${c.id}')">
       <div class="cluster-dot" style="background: ${c.color}"></div>
-      <div class="cluster-label">${c.label}</div>
+      <div class="cluster-label">${label}</div>
       <div class="cluster-count">${c.count}</div>
     </div>`;
   });
