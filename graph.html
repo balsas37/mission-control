@@ -298,17 +298,17 @@ canvas:active { cursor: grabbing; }
 
 const CONFIG = {
   // Physics
-  repulsion: 800,
-  attraction: 0.008,
-  damping: 0.92,
-  centerGravity: 0.01,
-  maxVelocity: 4,
+  repulsion: 2000,
+  attraction: 0.005,
+  damping: 0.9,
+  centerGravity: 0.008,
+  maxVelocity: 3,
   // Rendering
   edgeOpacity: 0.08,
   edgeWidth: 0.5,
   nodeMinSize: 3,
   nodeMaxSize: 14,
-  labelMinZoom: 0.6,
+  labelMinZoom: 1.2,
   // Synapse particles
   particleCount: 120,
   particleSpeed: 0.003,
@@ -327,8 +327,8 @@ let canvas, ctx;
 let width, height, dpr;
 
 // Camera
-let camera = { x: 0, y: 0, zoom: 1 };
-let targetCamera = { x: 0, y: 0, zoom: 1 };
+let camera = { x: 0, y: 0, zoom: 0.45 };
+let targetCamera = { x: 0, y: 0, zoom: 0.45 };
 
 // Interaction state
 let dragging = false;
