@@ -672,11 +672,6 @@
       cursor: default;
     }
 
-    .topbar-spacer {
-      flex: 1;
-      min-width: 20px;
-    }
-
     .topbar-title {
       font-size: 14px;
       font-weight: 600;
@@ -752,7 +747,7 @@
 
     @media (max-width: 768px) {
       .graph-open-full-btn {
-        bottom: 100px;
+        bottom: 140px;
       }
       .sidebar {
         width: var(--sidebar-collapsed);
@@ -5404,29 +5399,30 @@
     /* Edge context tooltip */
     .graph-open-full-btn {
       position: absolute;
-      bottom: 140px;
+      bottom: 180px;
       left: 50%;
       transform: translateX(-50%);
-      font-size: 12px;
+      font-size: 13px;
+      font-weight: 500;
       font-family: 'Inter', sans-serif;
-      color: var(--text-3);
+      color: var(--text-2);
       text-decoration: none;
       padding: 8px 16px;
       border: 1px solid var(--border);
       border-radius: 999px;
-      background: rgba(24, 24, 24, 0.85);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
+      background: var(--bg-card);
       z-index: 10;
       transition: all 0.2s;
       white-space: nowrap;
       display: inline-flex;
       align-items: center;
       line-height: 1;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
     }
     .graph-open-full-btn:hover {
       color: var(--text-1);
       border-color: var(--border-hover);
+      background: var(--bg-hover);
     }
 
     .graph-tooltip {
@@ -5585,7 +5581,7 @@
 
   <!-- ======== TOP BAR ======== -->
   <header class="top-bar">
-    <div style="display:flex;align-items:center;gap:4px;">
+    <div style="display:flex;align-items:center;gap:4px;flex:1;min-width:0;">
       <button class="topbar-nav-btn" id="nav-back" aria-label="Back" title="Go back" disabled>
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
       </button>
@@ -5593,7 +5589,6 @@
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
       </button>
       <span class="topbar-title" id="topbar-title">Office</span>
-      <div class="topbar-spacer"></div>
     </div>
     <div class="header-right">
       <div class="clock">
