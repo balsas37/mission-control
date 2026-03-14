@@ -5117,6 +5117,7 @@
       height: calc(100vh - 48px);
       overflow: hidden;
       margin: -24px;
+      position: relative;
     }
     #panel-graph.active {
       display: flex;
@@ -5393,6 +5394,30 @@
     }
 
     /* Edge context tooltip */
+    .graph-open-full-btn {
+      position: absolute;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 12px;
+      font-family: 'Inter', sans-serif;
+      color: var(--text-3);
+      text-decoration: none;
+      padding: 6px 16px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(24, 24, 24, 0.85);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 10;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .graph-open-full-btn:hover {
+      color: var(--text-1);
+      border-color: var(--border-hover);
+    }
+
     .graph-tooltip {
       position: fixed;
       background: #1e1e1e;
@@ -6570,7 +6595,7 @@
         <div id="graph-svg-container">
 
           <div class="graph-empty-state" id="graph-empty-state" style="display:none">No nodes match your filter.</div>
-          <a href="graph.html" target="_blank" style="position:absolute;bottom:16px;left:50%;transform:translateX(-50%);font-size:12px;color:var(--text-3);text-decoration:none;padding:6px 14px;border:1px solid var(--border);border-radius:999px;transition:all 0.2s;z-index:10;background:rgba(24,24,24,0.85);backdrop-filter:blur(8px);pointer-events:auto;" onmouseover="this.style.color='var(--text-1)';this.style.borderColor='var(--border-hover)'" onmouseout="this.style.color='var(--text-3)';this.style.borderColor='var(--border)'">open full graph →</a>
+
         </div>
         <div class="graph-detail-panel" id="graph-detail-panel">
           <button class="graph-detail-close" id="graph-detail-close" title="Close">&times;</button>
@@ -6584,6 +6609,8 @@
       </div>
       <!-- Edge context tooltip -->
       <div class="graph-tooltip" id="graph-tooltip"></div>
+      <!-- Open full graph - pinned to bottom center -->
+      <a href="graph.html" target="_blank" class="graph-open-full-btn">open full graph →</a>
     </section>
 
     <!-- Memory -->
