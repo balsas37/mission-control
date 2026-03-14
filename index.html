@@ -5245,11 +5245,16 @@
       top: 0;
       bottom: 0;
       transform: translateX(100%);
-      transition: transform 0.22s cubic-bezier(0.4,0,0.2,1);
+      transition: transform 0.22s cubic-bezier(0.4,0,0.2,1), visibility 0s 0.22s;
       z-index: 5;
+      visibility: hidden;
+      pointer-events: none;
     }
     .graph-detail-panel.visible {
       transform: translateX(0);
+      visibility: visible;
+      pointer-events: auto;
+      transition: transform 0.22s cubic-bezier(0.4,0,0.2,1), visibility 0s 0s;
     }
     .graph-detail-header {
       display: flex;
@@ -5423,15 +5428,17 @@
       .graph-main { flex-direction: column; }
       .graph-detail-panel {
         width: 100%;
+        height: auto;
+        max-height: 45vh;
+        left: 0;
+        right: 0;
+        top: auto;
+        bottom: 0;
         border-left: none;
         border-top: 1px solid rgba(255,255,255,0.06);
         transform: translateY(100%);
-        max-height: 45vh;
       }
       .graph-detail-panel.visible { transform: translateY(0); }
-      .graph-filters { margin-left: 0; }
-      .graph-search-input { width: 140px; }
-      .graph-search-input:focus { width: 160px; }
     }
 
   </style>
