@@ -1,0 +1,49 @@
+{
+  "content": [
+    {
+      "id": "1",
+      "title": "Beach sunset photoshoot",
+      "model": "Luna",
+      "platform": "Fanvue",
+      "type": "image",
+      "status": "draft",
+      "scheduledFor": null
+    },
+    {
+      "id": "2",
+      "title": "Morning routine reel",
+      "model": "Luna",
+      "platform": "Instagram",
+      "type": "reel",
+      "status": "review",
+      "scheduledFor": null
+    },
+    {
+      "id": "3",
+      "title": "Poolside TikTok",
+      "model": "Maya",
+      "platform": "TikTok",
+      "type": "video",
+      "status": "scheduled",
+      "scheduledFor": "2026-03-16T14:00:00Z"
+    },
+    {
+      "id": "4",
+      "title": "Behind the scenes",
+      "model": "Maya",
+      "platform": "Fanvue",
+      "type": "video",
+      "status": "published",
+      "scheduledFor": "2026-03-10T10:00:00Z"
+    },
+    {
+      "id": "5",
+      "title": "New lingerie set",
+      "model": "Luna",
+      "platform": "Fanvue",
+      "type": "image",
+      "status": "draft",
+      "scheduledFor": null
+    }
+  ]
+}

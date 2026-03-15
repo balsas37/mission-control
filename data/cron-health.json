@@ -1,0 +1,40 @@
+{
+  "crons": [
+    {
+      "name": "sync-tasks",
+      "lastRun": "2026-03-15T00:00:00Z",
+      "status": "ok",
+      "duration": 1200
+    },
+    {
+      "name": "sync-lagoon",
+      "lastRun": "2026-03-15T00:00:00Z",
+      "status": "ok",
+      "duration": 800
+    },
+    {
+      "name": "sync-activity",
+      "lastRun": "2026-03-15T00:00:00Z",
+      "status": "ok",
+      "duration": 450
+    },
+    {
+      "name": "sync-radar",
+      "lastRun": "2026-03-14T23:00:00Z",
+      "status": "ok",
+      "duration": 3200
+    },
+    {
+      "name": "daily-digest",
+      "lastRun": "2026-03-15T06:00:00Z",
+      "status": "ok",
+      "duration": 600
+    }
+  ],
+  "errors": [
+    {
+      "timestamp": "2026-03-14T18:30:00Z",
+      "message": "Failed to sync targets: Aitable timeout"
+    }
+  ]
+}

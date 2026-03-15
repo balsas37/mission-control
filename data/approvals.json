@@ -1,0 +1,28 @@
+{
+  "approvals": [
+    {
+      "id": "1",
+      "title": "Approve new AI model content batch",
+      "description": "Review and approve 15 generated images for Luna's Fanvue profile",
+      "requestedBy": "Kat",
+      "date": "2026-03-14",
+      "status": "pending"
+    },
+    {
+      "id": "2",
+      "title": "Kevin deal contract amendment",
+      "description": "Update revenue split terms from 25% to 30% for agency portion",
+      "requestedBy": "Cleo",
+      "date": "2026-03-13",
+      "status": "pending"
+    },
+    {
+      "id": "3",
+      "title": "New scooter purchase - Lagoon",
+      "description": "Approve purchase of 2x Honda Click 125i for rental fleet expansion",
+      "requestedBy": "Rex",
+      "date": "2026-03-10",
+      "status": "approved"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "updatedAt": "2026-03-15T00:00:00Z",
+  "ofm": [
+    {
+      "title": "Fanvue launches new AI creator tools",
+      "source": "Fanvue Blog",
+      "url": "https://fanvue.com/blog",
+      "summary": "Platform rolling out enhanced AI model features including automated content scheduling and fan interaction analytics."
+    },
+    {
+      "title": "New OFM agency pricing benchmarks released",
+      "source": "Industry Report",
+      "url": "https://example.com/report",
+      "summary": "Average agency commission rates trending toward 30-40% for established creators."
+    }
+  ],
+  "tools": [
+    {
+      "title": "ComfyUI v1.5 released with LoRA improvements",
+      "source": "ComfyUI GitHub",
+      "url": "https://github.com/comfyanonymous/ComfyUI",
+      "summary": "Significant speed improvements for LoRA loading and new node types for batch processing."
+    },
+    {
+      "title": "Vast.ai pricing update",
+      "source": "Vast.ai",
+      "url": "https://vast.ai",
+      "summary": "RTX 4090 instances now available at $0.35/hr in selected regions."
+    }
+  ],
+  "market": [
+    {
+      "title": "Mexico digital payments growth",
+      "source": "Fintech News",
+      "url": "https://example.com/fintech",
+      "summary": "Digital payment adoption in Mexico up 34% year-over-year, favorable for online business expansion."
+    }
+  ],
+  "actions": [
+    {
+      "text": "Test new ComfyUI LoRA workflow",
+      "done": false
+    },
+    {
+      "text": "Review Fanvue AI tools announcement",
+      "done": false
+    },
+    {
+      "text": "Compare Vast.ai vs RunPod pricing",
+      "done": true
+    }
+  ]
+}

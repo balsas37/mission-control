@@ -4037,6 +4037,262 @@
     .doc-card-dim { opacity: 0.15 !important; }
 
     /* ========================================
+       RADAR TAB
+       ======================================== */
+    .radar-wrap { max-width: 1200px; }
+    .radar-section { margin-bottom: 28px; }
+    .radar-section-header {
+      display: flex; align-items: center; gap: 10px;
+      cursor: pointer; user-select: none;
+      padding-bottom: 12px; margin-bottom: 0;
+    }
+    .radar-section-title {
+      font-size: 11px; font-weight: 400; color: var(--text-1);
+      text-transform: uppercase; letter-spacing: 0.08em;
+    }
+    .radar-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
+    }
+    @media (max-width: 768px) {
+      .radar-grid { grid-template-columns: 1fr; }
+    }
+    .radar-card {
+      background: var(--bg-raised); border: 1px solid var(--border);
+      border-radius: 14px; padding: 16px;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+    .radar-card:hover {
+      border-color: var(--border-hover); transform: translateY(-1px);
+    }
+    .radar-card-title {
+      font-size: 15px; font-weight: 500; color: var(--text-1);
+      margin-bottom: 6px; line-height: 1.3;
+    }
+    .radar-card-source {
+      font-size: 12px; color: var(--text-3); margin-bottom: 10px;
+    }
+    .radar-card-source a {
+      color: var(--text-2); text-decoration: none;
+    }
+    .radar-card-source a:hover {
+      color: var(--text-1); text-decoration: underline;
+    }
+    .radar-card-summary {
+      font-size: 13px; color: var(--text-2); line-height: 1.6;
+    }
+    .radar-actions {
+      background: var(--bg-raised); border: 1px solid var(--border);
+      border-radius: 14px; padding: 16px; margin-top: 20px;
+    }
+    .radar-actions-title {
+      font-size: 13px; font-weight: 500; color: var(--text-1);
+      text-transform: uppercase; letter-spacing: 0.04em;
+      margin-bottom: 12px;
+    }
+    .radar-action-item {
+      display: flex; align-items: flex-start; gap: 10px;
+      padding: 8px 0; border-bottom: 1px solid var(--border);
+    }
+    .radar-action-item:last-child { border-bottom: none; }
+    .radar-action-check {
+      width: 18px; height: 18px; border-radius: 4px;
+      border: 1px solid var(--border); flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; margin-top: 1px;
+    }
+    .radar-action-check.done {
+      background: var(--pill-done-text); border-color: var(--pill-done-text);
+    }
+    .radar-action-check.done::after {
+      content: ''; display: block; width: 8px; height: 4px;
+      border-left: 2px solid #181818; border-bottom: 2px solid #181818;
+      transform: rotate(-45deg) translate(1px, -1px);
+    }
+    .radar-action-text {
+      font-size: 14px; color: var(--text-1); flex: 1;
+    }
+    .radar-action-text.done {
+      text-decoration: line-through; color: var(--text-3);
+    }
+    .radar-timestamp {
+      font-size: 12px; color: var(--text-3); text-align: right; margin-top: 16px;
+    }
+    .radar-placeholder {
+      display: flex; flex-direction: column; align-items: center;
+      justify-content: center; padding: 60px 20px; gap: 12px;
+    }
+    .radar-placeholder-icon {
+      font-size: 40px; opacity: 0.3;
+    }
+    .radar-placeholder-text {
+      font-size: 14px; color: var(--text-2);
+    }
+
+    /* ========================================
+       SYSTEM TAB
+       ======================================== */
+    .system-wrap { max-width: 1200px; }
+    .system-section { margin-bottom: 28px; }
+    .system-section-header {
+      display: flex; align-items: center; gap: 10px;
+      cursor: pointer; user-select: none;
+      padding-bottom: 12px; margin-bottom: 0;
+    }
+    .system-section-title {
+      font-size: 11px; font-weight: 400; color: var(--text-1);
+      text-transform: uppercase; letter-spacing: 0.08em;
+    }
+    .system-table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--border); border-radius: 14px;
+      background: var(--bg-raised);
+    }
+    .system-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    .system-th {
+      background: var(--bg-card);
+      font-size: 12px; font-weight: 400; color: var(--text-3);
+      text-transform: uppercase; letter-spacing: 0.04em;
+      text-align: left; padding: 10px 16px;
+      border-bottom: 1px solid var(--border); white-space: nowrap;
+    }
+    .system-row { transition: background 0.15s ease; }
+    .system-row:nth-child(even) { background: rgba(255,255,255,0.015); }
+    .system-row:hover { background: rgba(255,255,255,0.04); }
+    .system-td {
+      padding: 12px 16px; border-bottom: 1px solid var(--border);
+      color: var(--text-1); vertical-align: middle;
+    }
+    .system-td:first-child { font-weight: 500; }
+    .system-status-dot {
+      width: 8px; height: 8px; border-radius: 50%; display: inline-block;
+    }
+    .system-status-dot.ok { background: var(--pill-done-text); }
+    .system-status-dot.error { background: var(--pill-urgent-text); }
+    .system-status-dot.warn { background: var(--pill-waiting-text); }
+    .error-log-item {
+      background: var(--bg-raised); border: 1px solid var(--border);
+      border-radius: 14px; padding: 14px 16px; margin-bottom: 8px;
+    }
+    .error-log-time {
+      font-size: 11px; color: var(--text-3); margin-bottom: 6px;
+    }
+    .error-log-msg {
+      font-size: 13px; color: var(--pill-urgent-text); font-family: monospace;
+    }
+    .system-placeholder {
+      display: flex; flex-direction: column; align-items: center;
+      justify-content: center; padding: 40px 20px; gap: 12px;
+    }
+
+    /* ========================================
+       APPROVALS TAB
+       ======================================== */
+    .approvals-wrap { max-width: 960px; }
+    .approvals-filters {
+      display: flex; gap: 8px; margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .approvals-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
+    }
+    @media (max-width: 768px) {
+      .approvals-grid { grid-template-columns: 1fr; }
+    }
+    .approval-card {
+      background: var(--bg-raised); border: 1px solid var(--border);
+      border-radius: 14px; padding: 18px;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+    .approval-card:hover {
+      border-color: var(--border-hover); transform: translateY(-1px);
+    }
+    .approval-card-header {
+      display: flex; align-items: flex-start; justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .approval-card-title {
+      font-size: 15px; font-weight: 500; color: var(--text-1);
+      flex: 1; line-height: 1.3;
+    }
+    .approval-card-status {
+      flex-shrink: 0; margin-left: 8px;
+    }
+    .approval-card-desc {
+      font-size: 13px; color: var(--text-2); line-height: 1.6;
+      margin-bottom: 14px;
+    }
+    .approval-card-meta {
+      display: flex; align-items: center; gap: 12px;
+      font-size: 12px; color: var(--text-3);
+    }
+    .approval-card-requester {
+      display: flex; align-items: center; gap: 6px;
+    }
+    .approval-placeholder {
+      display: flex; flex-direction: column; align-items: center;
+      justify-content: center; padding: 60px 20px; gap: 12px;
+    }
+
+    /* ========================================
+       CONTENT TAB
+       ======================================== */
+    .content-wrap { max-width: 1200px; }
+    .content-toolbar {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 12px; margin-bottom: 20px; flex-wrap: wrap;
+    }
+    .content-pipeline {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+    }
+    @media (max-width: 960px) {
+      .content-pipeline { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .content-pipeline { grid-template-columns: 1fr; }
+    }
+    .content-col {
+      background: var(--bg-raised); border: 1px solid var(--border);
+      border-radius: 14px; padding: 14px;
+      min-height: 200px;
+    }
+    .content-col-header {
+      display: flex; align-items: center; gap: 8px;
+      padding-bottom: 10px; border-bottom: 1px solid var(--border);
+      margin-bottom: 12px;
+    }
+    .content-col-title {
+      font-size: 12px; font-weight: 500; color: var(--text-2);
+      text-transform: uppercase; letter-spacing: 0.04em;
+    }
+    .content-col-count {
+      background: rgba(255,255,255,0.08); color: var(--text-3);
+      border-radius: 999px; padding: 1px 7px; font-size: 12px;
+    }
+    .content-item {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 12px; margin-bottom: 8px;
+      cursor: pointer; transition: border-color 0.15s, transform 0.15s;
+    }
+    .content-item:hover {
+      border-color: var(--border-hover); transform: translateY(-1px);
+    }
+    .content-item-model {
+      font-size: 13px; font-weight: 500; color: var(--text-1);
+      margin-bottom: 4px;
+    }
+    .content-item-meta {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 11px; color: var(--text-3);
+    }
+    .content-type-icon {
+      width: 14px; height: 14px;
+    }
+    .content-placeholder {
+      display: flex; flex-direction: column; align-items: center;
+      justify-content: center; padding: 60px 20px; gap: 12px;
+    }
+
+    /* ========================================
        GLOBAL SEARCH MODAL
        ======================================== */
     .gsearch-backdrop {
@@ -5564,6 +5820,23 @@
         <span class="sidebar-nav-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></span>
         <span class="sidebar-nav-label">Documents</span>
       </button>
+      <button class="sidebar-nav-item" data-tab="radar">
+        <span class="sidebar-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></span>
+        <span class="sidebar-nav-label">Radar</span>
+      </button>
+      <button class="sidebar-nav-item" data-tab="system">
+        <span class="sidebar-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span>
+        <span class="sidebar-nav-label">System</span>
+      </button>
+      <button class="sidebar-nav-item" data-tab="approvals">
+        <span class="sidebar-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>
+        <span class="sidebar-nav-label">Approvals</span>
+        <span class="sidebar-badge" id="approvals-badge" style="display:none">0</span>
+      </button>
+      <button class="sidebar-nav-item" data-tab="content">
+        <span class="sidebar-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></span>
+        <span class="sidebar-nav-label">Content</span>
+      </button>
     </nav>
     <div class="sidebar-bottom">
       <button class="sidebar-bottom-btn" id="sidebar-magic-btn" title="AI Actions">
@@ -6836,6 +7109,173 @@
       </div>
     </section>
 
+    <!-- Radar -->
+    <section class="tab-panel" id="panel-radar">
+      <div class="radar-wrap">
+        <div class="radar-section reveal">
+          <div class="radar-section-header" data-collapse="radar-ofm">
+            <svg class="analytics-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4,6 8,10 12,6"/></svg>
+            <span class="radar-section-title">OFM & AI Models</span>
+          </div>
+          <div id="radar-ofm" class="radar-grid"></div>
+        </div>
+        <div class="radar-section reveal">
+          <div class="radar-section-header" data-collapse="radar-tools">
+            <svg class="analytics-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4,6 8,10 12,6"/></svg>
+            <span class="radar-section-title">AI Tools & Automation</span>
+          </div>
+          <div id="radar-tools" class="radar-grid"></div>
+        </div>
+        <div class="radar-section reveal">
+          <div class="radar-section-header" data-collapse="radar-market">
+            <svg class="analytics-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4,6 8,10 12,6"/></svg>
+            <span class="radar-section-title">Market Pulse</span>
+          </div>
+          <div id="radar-market" class="radar-grid"></div>
+        </div>
+        <div class="radar-actions reveal" id="radar-actions-section" style="display:none">
+          <div class="radar-actions-title">Action Items</div>
+          <div id="radar-actions-list"></div>
+        </div>
+        <div class="radar-timestamp" id="radar-timestamp"></div>
+        <div class="radar-placeholder" id="radar-placeholder">
+          <div class="radar-placeholder-icon">&#x1F4E1;</div>
+          <div class="radar-placeholder-text">Radar data syncing...</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- System -->
+    <section class="tab-panel" id="panel-system">
+      <div class="system-wrap">
+        <div class="system-section reveal">
+          <div class="system-section-header" data-collapse="system-cron">
+            <svg class="analytics-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4,6 8,10 12,6"/></svg>
+            <span class="system-section-title">Cron Health</span>
+          </div>
+          <div id="system-cron">
+            <div class="system-table-wrap">
+              <table class="system-table">
+                <thead>
+                  <tr>
+                    <th class="system-th">Job Name</th>
+                    <th class="system-th">Last Run</th>
+                    <th class="system-th">Status</th>
+                    <th class="system-th">Duration</th>
+                  </tr>
+                </thead>
+                <tbody id="system-cron-tbody">
+                  <tr class="system-row">
+                    <td class="system-td" colspan="4" style="text-align:center;color:var(--text-3)">Loading cron data...</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="system-section reveal">
+          <div class="system-section-header" data-collapse="system-model">
+            <svg class="analytics-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4,6 8,10 12,6"/></svg>
+            <span class="system-section-title">Model Usage</span>
+          </div>
+          <div id="system-model">
+            <div class="mu-timeout-bars" id="system-mu-timeout-bars"></div>
+            <div class="analytics-table-wrap">
+              <table class="analytics-table">
+                <thead>
+                  <tr>
+                    <th class="analytics-th">Metric</th>
+                    <th class="analytics-th">Current</th>
+                    <th class="analytics-th">Change</th>
+                    <th class="analytics-th">Status</th>
+                  </tr>
+                </thead>
+                <tbody id="system-model-tbody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="system-section reveal">
+          <div class="system-section-header" data-collapse="system-errors">
+            <svg class="analytics-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4,6 8,10 12,6"/></svg>
+            <span class="system-section-title">Error Log</span>
+          </div>
+          <div id="system-errors">
+            <div id="system-error-list">
+              <div class="system-placeholder">
+                <div class="radar-placeholder-icon">&#x26A0;</div>
+                <div class="radar-placeholder-text">No errors logged</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Approvals -->
+    <section class="tab-panel" id="panel-approvals">
+      <div class="approvals-wrap">
+        <div class="approvals-filters reveal">
+          <button class="cal-filter-chip active" data-approval-filter="all"><span class="cal-filter-dot" style="background:var(--text-2)"></span>All</button>
+          <button class="cal-filter-chip" data-approval-filter="pending"><span class="cal-filter-dot" style="background:#DAB255"></span>Pending</button>
+          <button class="cal-filter-chip" data-approval-filter="approved"><span class="cal-filter-dot" style="background:#6BBF6B"></span>Approved</button>
+          <button class="cal-filter-chip" data-approval-filter="rejected"><span class="cal-filter-dot" style="background:#D9534F"></span>Rejected</button>
+        </div>
+        <div class="approvals-grid reveal" id="approvals-grid">
+          <div class="approval-placeholder">
+            <div class="radar-placeholder-icon">&#x2705;</div>
+            <div class="radar-placeholder-text">No pending approvals</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <section class="tab-panel" id="panel-content">
+      <div class="content-wrap">
+        <div class="content-toolbar reveal">
+          <div class="docs-search-wrap" style="margin:0;flex:1;max-width:400px">
+            <svg class="docs-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" class="docs-search" id="content-search-input" placeholder="Filter by model name...">
+          </div>
+        </div>
+        <div class="content-pipeline reveal" id="content-pipeline">
+          <div class="content-col">
+            <div class="content-col-header">
+              <span class="content-col-title">Draft</span>
+              <span class="content-col-count" id="content-count-draft">0</span>
+            </div>
+            <div id="content-col-draft"></div>
+          </div>
+          <div class="content-col">
+            <div class="content-col-header">
+              <span class="content-col-title">Review</span>
+              <span class="content-col-count" id="content-count-review">0</span>
+            </div>
+            <div id="content-col-review"></div>
+          </div>
+          <div class="content-col">
+            <div class="content-col-header">
+              <span class="content-col-title">Scheduled</span>
+              <span class="content-col-count" id="content-count-scheduled">0</span>
+            </div>
+            <div id="content-col-scheduled"></div>
+          </div>
+          <div class="content-col">
+            <div class="content-col-header">
+              <span class="content-col-title">Published</span>
+              <span class="content-col-count" id="content-count-published">0</span>
+            </div>
+            <div id="content-col-published"></div>
+          </div>
+        </div>
+        <div class="content-placeholder" id="content-placeholder" style="display:none">
+          <div class="radar-placeholder-icon">&#x1F4F8;</div>
+          <div class="radar-placeholder-text">Content pipeline empty</div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- Global Search Modal -->
@@ -7068,6 +7508,8 @@
     })();
 
     /* ---- Keyboard Shortcuts (1-0) ---- */
+    const tabIds = ['office', 'activity', 'actions', 'projects', 'team', 'calendar', 'analytics', 'focus', 'graph', 'memory', 'documents', 'radar', 'system', 'approvals', 'content'];
+
     /* ---- Three-dot dropdown ---- */
     (function() {
       var dotsBtn = document.getElementById('topbar-dots-btn');
@@ -10893,6 +11335,392 @@
       setTimeout(function() { hint.classList.add('visible'); }, 500);
       setTimeout(function() { hint.classList.remove('visible'); }, 3500);
     }
+
+    /* ============================================================
+       NEW TABS: RADAR, SYSTEM, APPROVALS, CONTENT
+       ============================================================ */
+
+    /* ---- Radar Tab ---- */
+    var radarData = null;
+    function loadRadarData() {
+      return fetch('data/radar.json?t=' + Date.now())
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+          radarData = data;
+          renderRadar();
+        })
+        .catch(function(err) {
+          console.warn('[MC] Failed to load radar.json:', err);
+          document.getElementById('radar-placeholder').style.display = 'flex';
+          document.getElementById('radar-ofm').style.display = 'none';
+          document.getElementById('radar-tools').style.display = 'none';
+          document.getElementById('radar-market').style.display = 'none';
+          document.getElementById('radar-actions-section').style.display = 'none';
+          document.getElementById('radar-timestamp').style.display = 'none';
+        });
+    }
+    function renderRadar() {
+      if (!radarData) return;
+      var hasData = false;
+      ['ofm', 'tools', 'market'].forEach(function(cat) {
+        var items = radarData[cat] || [];
+        var container = document.getElementById('radar-' + cat);
+        if (!container) return;
+        if (items.length) hasData = true;
+        var html = items.map(function(item) {
+          return '<div class="radar-card">' +
+            '<div class="radar-card-title">' + escapeHtml(item.title || '') + '</div>' +
+            '<div class="radar-card-source">' +
+              '<a href="' + escapeHtml(item.url || '#') + '" target="_blank">' + escapeHtml(item.source || 'View source') + '</a>' +
+            '</div>' +
+            '<div class="radar-card-summary">' + escapeHtml(item.summary || '') + '</div>' +
+          '</div>';
+        }).join('');
+        container.innerHTML = html || '<div style="padding:20px;color:var(--text-3);font-size:13px">No findings yet</div>';
+      });
+
+      // Actions
+      var actions = radarData.actions || [];
+      var actionsList = document.getElementById('radar-actions-list');
+      var actionsSection = document.getElementById('radar-actions-section');
+      if (actionsList && actions.length) {
+        actionsSection.style.display = 'block';
+        actionsList.innerHTML = actions.map(function(a, i) {
+          return '<div class="radar-action-item" data-action-idx="' + i + '">' +
+            '<div class="radar-action-check' + (a.done ? ' done' : '') + '"></div>' +
+            '<div class="radar-action-text' + (a.done ? ' done' : '') + '">' + escapeHtml(a.text || '') + '</div>' +
+          '</div>';
+        }).join('');
+        actionsList.querySelectorAll('.radar-action-item').forEach(function(el) {
+          el.addEventListener('click', function() {
+            var idx = parseInt(this.dataset.actionIdx);
+            var check = this.querySelector('.radar-action-check');
+            var text = this.querySelector('.radar-action-text');
+            if (radarData.actions && radarData.actions[idx]) {
+              radarData.actions[idx].done = !radarData.actions[idx].done;
+              check.classList.toggle('done', radarData.actions[idx].done);
+              text.classList.toggle('done', radarData.actions[idx].done);
+            }
+          });
+        });
+      } else if (actionsSection) {
+        actionsSection.style.display = 'none';
+      }
+
+      // Timestamp
+      var ts = document.getElementById('radar-timestamp');
+      if (ts && radarData.updatedAt) {
+        ts.textContent = 'Last updated: ' + new Date(radarData.updatedAt).toLocaleString();
+      }
+
+      // Show/hide placeholder
+      document.getElementById('radar-placeholder').style.display = hasData ? 'none' : 'flex';
+      if (hasData) {
+        ['radar-ofm', 'radar-tools', 'radar-market'].forEach(function(id) {
+          document.getElementById(id).style.display = 'grid';
+        });
+        document.getElementById('radar-timestamp').style.display = 'block';
+      }
+    }
+
+    // Collapse handlers for radar sections
+    document.querySelectorAll('.radar-section-header[data-collapse]').forEach(function(h) {
+      h.addEventListener('click', function() {
+        h.classList.toggle('collapsed');
+        var wrap = document.getElementById(h.dataset.collapse);
+        if (wrap) wrap.style.display = h.classList.contains('collapsed') ? 'none' : 'grid';
+      });
+    });
+
+    // Load radar when tab becomes active
+    document.querySelector('.sidebar-nav-item[data-tab="radar"]').addEventListener('click', function() {
+      if (!radarData) loadRadarData();
+    });
+
+    /* ---- System Tab ---- */
+    var cronHealthData = null;
+    var systemErrorsData = null;
+    function loadSystemData() {
+      // Load cron health
+      fetch('data/cron-health.json?t=' + Date.now())
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+          cronHealthData = data.crons || [];
+          systemErrorsData = data.errors || [];
+          renderCronHealth();
+          renderSystemErrors();
+        })
+        .catch(function(err) {
+          console.warn('[MC] Failed to load cron-health.json:', err);
+          document.getElementById('system-cron-tbody').innerHTML =
+            '<tr class="system-row"><td class="system-td" colspan="4" style="text-align:center;color:var(--text-3)">No cron data available</td></tr>';
+        });
+
+      // Load model usage (reuse existing function logic)
+      loadSystemModelUsage();
+    }
+    function renderCronHealth() {
+      var tbody = document.getElementById('system-cron-tbody');
+      if (!tbody) return;
+      if (!cronHealthData || !cronHealthData.length) {
+        tbody.innerHTML = '<tr class="system-row"><td class="system-td" colspan="4" style="text-align:center;color:var(--text-3)">No cron jobs configured</td></tr>';
+        return;
+      }
+      tbody.innerHTML = cronHealthData.map(function(c) {
+        var statusClass = c.status === 'ok' ? 'ok' : (c.status === 'error' ? 'error' : 'warn');
+        var statusText = c.status === 'ok' ? 'OK' : (c.status === 'error' ? 'Error' : 'Warning');
+        return '<tr class="system-row">' +
+          '<td class="system-td">' + escapeHtml(c.name || '') + '</td>' +
+          '<td class="system-td">' + (c.lastRun ? new Date(c.lastRun).toLocaleString() : 'Never') + '</td>' +
+          '<td class="system-td"><span class="system-status-dot ' + statusClass + '"></span> ' + statusText + '</td>' +
+          '<td class="system-td">' + (c.duration ? c.duration + 'ms' : '--') + '</td>' +
+        '</tr>';
+      }).join('');
+    }
+    function renderSystemErrors() {
+      var list = document.getElementById('system-error-list');
+      if (!list) return;
+      if (!systemErrorsData || !systemErrorsData.length) {
+        list.innerHTML = '<div class="system-placeholder"><div class="radar-placeholder-icon">&#x2713;</div><div class="radar-placeholder-text">No errors logged</div></div>';
+        return;
+      }
+      list.innerHTML = systemErrorsData.slice(0, 10).map(function(e) {
+        return '<div class="error-log-item">' +
+          '<div class="error-log-time">' + new Date(e.timestamp).toLocaleString() + '</div>' +
+          '<div class="error-log-msg">' + escapeHtml(e.message || '') + '</div>' +
+        '</div>';
+      }).join('');
+    }
+    function loadSystemModelUsage() {
+      function fmtTokens(n) {
+        if (n >= 1000000) return (n/1000000).toFixed(1) + 'M';
+        if (n >= 1000) return (n/1000).toFixed(0) + 'k';
+        return String(n);
+      }
+      function costEquiv(tokens) {
+        return ((tokens * 0.9 * 15 + tokens * 0.1 * 75) / 1000000).toFixed(2);
+      }
+      function timeoutFillClass(pct) {
+        if (pct >= 80) return 'high';
+        if (pct >= 50) return 'medium';
+        return 'low';
+      }
+      fetch('data/usage.json?t=' + Date.now())
+        .then(function(r) { return r.json(); })
+        .then(function(u) {
+          var a = u.anthropic || {};
+          var live = u.anthropic_live || {};
+          var plan = a.plan || live.plan || 'Unknown';
+          var todayTotal = a.today_total || 0;
+          var weekTotal = a.week_total || 0;
+          var todayPct = a.today_pct || 0;
+          var weekCost = '$' + costEquiv(weekTotal);
+
+          var tbody = document.getElementById('system-model-tbody');
+          if (!tbody) return;
+          var rows = [
+            { metric: 'Plan', value: plan, change: '--', status: 'green' },
+            { metric: 'Tokens Today', value: fmtTokens(todayTotal), change: todayPct + '% of limit', status: todayPct > 80 ? 'red' : (todayPct > 50 ? 'amber' : 'green') },
+            { metric: 'Tokens This Week', value: fmtTokens(weekTotal), change: (live.weekly_all ? live.weekly_all.pct + '% used' : '--'), status: (live.weekly_all && live.weekly_all.pct > 80) ? 'red' : 'green' },
+            { metric: 'API Cost Equivalent', value: weekCost, change: 'this week', status: 'green' }
+          ];
+          var html = '';
+          rows.forEach(function(row) {
+            html += '<tr class="analytics-row">';
+            html += '<td class="analytics-td">' + row.metric + '</td>';
+            html += '<td class="analytics-td analytics-td-value">' + row.value + '</td>';
+            html += '<td class="analytics-td"><span class="analytics-td-change neutral">' + row.change + '</span></td>';
+            html += '<td class="analytics-td"><span class="analytics-status-dot ' + row.status + '"></span></td>';
+            html += '</tr>';
+          });
+          tbody.innerHTML = html;
+
+          var barsEl = document.getElementById('system-mu-timeout-bars');
+          if (!barsEl) return;
+          var bars = [];
+          if (live.session) bars.push({ label: 'Session', pct: live.session.pct || 0, reset: live.session.reset_label || '' });
+          if (live.weekly_all) bars.push({ label: 'Weekly (All)', pct: live.weekly_all.pct || 0, reset: live.weekly_all.reset_label || '' });
+          if (live.weekly_sonnet) bars.push({ label: 'Weekly (Sonnet)', pct: live.weekly_sonnet.pct || 0, reset: live.weekly_sonnet.reset_label || '' });
+          if (live.extra_usage) bars.push({ label: 'Extra Usage', pct: live.extra_usage.pct_used || 0, reset: '$' + (live.extra_usage.balance_usd || 0) + ' left · resets ' + (live.extra_usage.resets || '') });
+          if (!bars.length) { barsEl.innerHTML = ''; return; }
+          var bhtml = '';
+          bars.forEach(function(b) {
+            bhtml += '<div class="mu-timeout-row">';
+            bhtml += '<span class="mu-timeout-label">' + b.label + '</span>';
+            bhtml += '<div class="mu-timeout-bar"><div class="mu-timeout-fill ' + timeoutFillClass(b.pct) + '" style="width:' + b.pct + '%"></div></div>';
+            bhtml += '<span class="mu-timeout-time">' + b.pct + '% · ' + b.reset + '</span>';
+            bhtml += '</div>';
+          });
+          barsEl.innerHTML = bhtml;
+        })
+        .catch(function() {
+          var tbody = document.getElementById('system-model-tbody');
+          if (tbody) tbody.innerHTML = '<tr class="analytics-row"><td class="analytics-td" colspan="4" style="color:var(--text-3)">No usage data available</td></tr>';
+        });
+    }
+    // Collapse handlers for system sections
+    document.querySelectorAll('.system-section-header[data-collapse]').forEach(function(h) {
+      h.addEventListener('click', function() {
+        h.classList.toggle('collapsed');
+        var wrap = document.getElementById(h.dataset.collapse);
+        if (wrap) wrap.style.display = h.classList.contains('collapsed') ? 'none' : '';
+      });
+    });
+    // Load system when tab becomes active
+    document.querySelector('.sidebar-nav-item[data-tab="system"]').addEventListener('click', function() {
+      loadSystemData();
+    });
+
+    /* ---- Approvals Tab ---- */
+    var approvalsData = [];
+    var approvalsFilter = 'all';
+    function loadApprovals() {
+      fetch('data/approvals.json?t=' + Date.now())
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+          approvalsData = data.approvals || [];
+          renderApprovals();
+          updateApprovalsBadge();
+        })
+        .catch(function(err) {
+          console.warn('[MC] Failed to load approvals.json:', err);
+          document.getElementById('approvals-grid').innerHTML =
+            '<div class="approval-placeholder"><div class="radar-placeholder-icon">&#x2705;</div><div class="radar-placeholder-text">No pending approvals</div></div>';
+          document.getElementById('approvals-badge').style.display = 'none';
+        });
+    }
+    function renderApprovals() {
+      var grid = document.getElementById('approvals-grid');
+      if (!grid) return;
+      var filtered = approvalsData.filter(function(a) {
+        if (approvalsFilter === 'all') return true;
+        return a.status === approvalsFilter;
+      });
+      if (!filtered.length) {
+        grid.innerHTML = '<div class="approval-placeholder"><div class="radar-placeholder-icon">&#x2705;</div><div class="radar-placeholder-text">No ' + approvalsFilter + ' approvals</div></div>';
+        return;
+      }
+      var statusPills = {
+        pending: '<span class="pill pill-waiting">Pending</span>',
+        approved: '<span class="pill pill-done">Approved</span>',
+        rejected: '<span class="pill pill-urgent">Rejected</span>'
+      };
+      grid.innerHTML = filtered.map(function(a) {
+        return '<div class="approval-card">' +
+          '<div class="approval-card-header">' +
+            '<div class="approval-card-title">' + escapeHtml(a.title || '') + '</div>' +
+            '<div class="approval-card-status">' + (statusPills[a.status] || statusPills.pending) + '</div>' +
+          '</div>' +
+          '<div class="approval-card-desc">' + escapeHtml(a.description || '') + '</div>' +
+          '<div class="approval-card-meta">' +
+            '<span class="approval-card-requester"><span style="color:var(--text-3)">Requested by:</span> ' + escapeHtml(a.requestedBy || '') + '</span>' +
+            '<span>' + new Date(a.date).toLocaleDateString() + '</span>' +
+          '</div>' +
+        '</div>';
+      }).join('');
+    }
+    function updateApprovalsBadge() {
+      var badge = document.getElementById('approvals-badge');
+      if (!badge) return;
+      var pending = approvalsData.filter(function(a) { return a.status === 'pending'; }).length;
+      if (pending > 0) {
+        badge.textContent = pending;
+        badge.style.display = '';
+      } else {
+        badge.style.display = 'none';
+      }
+    }
+    // Filter handlers
+    document.querySelectorAll('.approvals-filters .cal-filter-chip').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.approvals-filters .cal-filter-chip').forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        approvalsFilter = btn.dataset.approvalFilter || 'all';
+        renderApprovals();
+      });
+    });
+    // Load approvals when tab becomes active
+    document.querySelector('.sidebar-nav-item[data-tab="approvals"]').addEventListener('click', function() {
+      loadApprovals();
+    });
+
+    /* ---- Content Tab ---- */
+    var contentData = [];
+    var contentFilter = '';
+    function loadContent() {
+      fetch('data/content-pipeline.json?t=' + Date.now())
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+          contentData = data.content || [];
+          renderContent();
+        })
+        .catch(function(err) {
+          console.warn('[MC] Failed to load content-pipeline.json:', err);
+          document.getElementById('content-placeholder').style.display = 'flex';
+          document.getElementById('content-pipeline').style.display = 'none';
+        });
+    }
+    function renderContent() {
+      var cols = { draft: [], review: [], scheduled: [], published: [] };
+      var counts = { draft: 0, review: 0, scheduled: 0, published: 0 };
+      var typeIcons = {
+        image: '<svg class="content-type-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>',
+        video: '<svg class="content-type-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="2.18"/><polygon points="10 8 16 12 10 16 10 8"/></svg>',
+        reel: '<svg class="content-type-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>'
+      };
+      contentData.forEach(function(c) {
+        if (contentFilter && c.model && !c.model.toLowerCase().includes(contentFilter.toLowerCase())) return;
+        var status = c.status || 'draft';
+        if (cols[status]) cols[status].push(c);
+        counts[status]++;
+      });
+      ['draft', 'review', 'scheduled', 'published'].forEach(function(s) {
+        var col = document.getElementById('content-col-' + s);
+        var countEl = document.getElementById('content-count-' + s);
+        if (col) {
+          if (cols[s].length) {
+            col.innerHTML = cols[s].map(function(c) {
+              return '<div class="content-item" title="' + escapeHtml(c.title || '') + '">' +
+                '<div class="content-item-model">' + escapeHtml(c.model || 'Unknown') + '</div>' +
+                '<div class="content-item-meta">' +
+                  (typeIcons[c.type] || typeIcons.image) +
+                  '<span>' + escapeHtml(c.platform || '') + '</span>' +
+                  (c.scheduledFor ? '<span>· ' + new Date(c.scheduledFor).toLocaleDateString() + '</span>' : '') +
+                '</div>' +
+              '</div>';
+            }).join('');
+          } else {
+            col.innerHTML = '<div style="text-align:center;padding:30px 10px;color:var(--text-3);font-size:12px">No items</div>';
+          }
+        }
+        if (countEl) countEl.textContent = counts[s];
+      });
+      var hasContent = contentData.length > 0 && (contentFilter === '' || Object.values(cols).some(function(arr) { return arr.length > 0; }));
+      document.getElementById('content-placeholder').style.display = hasContent ? 'none' : 'flex';
+      document.getElementById('content-pipeline').style.display = hasContent ? 'grid' : 'none';
+    }
+    // Search handler
+    var contentSearchInput = document.getElementById('content-search-input');
+    if (contentSearchInput) {
+      contentSearchInput.addEventListener('input', function() {
+        contentFilter = contentSearchInput.value.trim();
+        renderContent();
+      });
+    }
+    // Load content when tab becomes active
+    document.querySelector('.sidebar-nav-item[data-tab="content"]').addEventListener('click', function() {
+      loadContent();
+    });
+
+    // Collapse handlers using existing analytics-chevron pattern
+    document.querySelectorAll('.radar-section-header, .system-section-header').forEach(function(h) {
+      var chevron = h.querySelector('.analytics-chevron');
+      if (chevron) {
+        h.addEventListener('click', function() {
+          chevron.style.transform = h.classList.contains('collapsed') ? 'rotate(0deg)' : 'rotate(-90deg)';
+        });
+      }
+    });
   </script>
 
   <!-- ======== GRAPH TAB: D3 FORCE-DIRECTED GRAPH ======== -->
