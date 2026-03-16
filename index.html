@@ -7553,16 +7553,18 @@
       });
     })();
 
-    const tabIds = ['office', 'activity', 'actions', 'projects', 'team', 'calendar', 'analytics', 'focus', 'graph', 'memory', 'documents'];
-
     document.addEventListener('keydown', (e) => {
       const tag = document.activeElement.tagName;
       if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || document.activeElement.isContentEditable) return;
 
       const num = parseInt(e.key);
-      if (num >= 1 && num <= 8) {
+      if (num >= 1 && num <= 9) {
         e.preventDefault();
         switchTab(tabIds[num - 1]);
+      }
+      if (e.key === '0') {
+        e.preventDefault();
+        switchTab(tabIds[9]);
       }
       if (e.key === '[') {
         e.preventDefault();
