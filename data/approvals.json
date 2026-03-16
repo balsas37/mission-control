@@ -1,28 +1,30 @@
 {
   "approvals": [
     {
-      "id": "1",
-      "title": "Approve new AI model content batch",
-      "description": "Review and approve 15 generated images for Luna's Fanvue profile",
-      "requestedBy": "Kat",
-      "date": "2026-03-14",
-      "status": "pending"
-    },
-    {
-      "id": "2",
-      "title": "Kevin deal contract amendment",
-      "description": "Update revenue split terms from 25% to 30% for agency portion",
-      "requestedBy": "Cleo",
-      "date": "2026-03-13",
-      "status": "pending"
-    },
-    {
-      "id": "3",
-      "title": "New scooter purchase - Lagoon",
-      "description": "Approve purchase of 2x Honda Click 125i for rental fleet expansion",
-      "requestedBy": "Rex",
-      "date": "2026-03-10",
-      "status": "approved"
+      "id": "apv_1772955942_qf86",
+      "agent": "Piia",
+      "type": "social_post",
+      "summary": "Test: Lagoon X3 promo caption (approval system test)",
+      "content": "\ud83c\udfce\ufe0f Experience the ultimate adrenaline rush in Tulum.\n\nCan-Am Maverick X3 \u2014 the most powerful side-by-side on the market. Rip through the jungle, conquer the dunes, and feel what real performance feels like.\n\nBook your ride with Lagoon Company. Limited slots daily. \n\n\ud83d\udccd Tulum, Mexico\n\ud83d\udd17 thelagooncompany.mx\n\n#Tulum #CanAm #X3 #ATV #Adventure #Mexico",
+      "status": "approved",
+      "timestamp": "2026-03-08T07:45:42.879338+00:00",
+      "topic_id": 8,
+      "message_id": 1747,
+      "reason": null,
+      "resolved_at": "2026-03-08T07:57:41.038229+00:00"
     }
-  ]
+  ],
+  "_schema": {
+    "id": "string - unique approval ID (e.g. apv_1741234567_abc)",
+    "agent": "string - agent name (e.g. Piia, Mara, Kat)",
+    "type": "string - content type (e.g. social_post, ad_copy, report, deployment, goal)",
+    "summary": "string - short description of what's being approved",
+    "content": "string - full content being approved",
+    "status": "enum - pending | approved | rejected | revision_requested",
+    "timestamp": "ISO8601 - when the approval was created",
+    "topic_id": "number - Telegram topic ID where approval was posted",
+    "message_id": "number - Telegram message ID (for editing/deleting)",
+    "reason": "string - rejection reason or revision notes (filled after action)",
+    "resolved_at": "ISO8601 - when the approval was actioned"
+  }
 }

@@ -4228,6 +4228,75 @@
     .approval-card-requester {
       display: flex; align-items: center; gap: 6px;
     }
+    .approval-card-type {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 3px 8px;
+      border-radius: 4px;
+      background: rgba(100,165,215,0.14);
+      color: #6BA8DA;
+      margin-right: 8px;
+    }
+    .approval-card-type.social_post { background: rgba(100,165,215,0.14); color: #6BA8DA; }
+    .approval-card-type.ad_copy { background: rgba(165,105,195,0.14); color: #A86DBF; }
+    .approval-card-type.report { background: rgba(100,190,100,0.14); color: #6BBF6B; }
+    .approval-card-type.deployment { background: rgba(218,178,85,0.14); color: #DAB255; }
+    .approval-card-type.goal { background: rgba(255,255,255,0.08); color: var(--text-2); }
+    .approval-card-content {
+      font-size: 13px;
+      color: var(--text-2);
+      line-height: 1.6;
+      margin-bottom: 12px;
+      max-height: 80px;
+      overflow: hidden;
+      position: relative;
+    }
+    .approval-card-content.expanded {
+      max-height: none;
+    }
+    .approval-card-content-truncated::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 30px;
+      background: linear-gradient(transparent, var(--bg-raised));
+    }
+    .approval-card-content-toggle {
+      font-size: 11px;
+      color: var(--accent-muted);
+      cursor: pointer;
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+    .approval-card-content-toggle:hover {
+      color: var(--text-1);
+    }
+    .approval-card-reason {
+      font-size: 12px;
+      color: var(--text-2);
+      background: rgba(217,83,79,0.08);
+      border-left: 3px solid #D9534F;
+      padding: 10px 12px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 12px;
+    }
+    .approval-card-reason-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #D9534F;
+      margin-bottom: 4px;
+    }
+    .approval-card-resolved {
+      font-size: 11px;
+      color: var(--text-3);
+      font-style: italic;
+    }
     .approval-placeholder {
       display: flex; flex-direction: column; align-items: center;
       justify-content: center; padding: 60px 20px; gap: 12px;
@@ -11605,21 +11674,71 @@
       var statusPills = {
         pending: '<span class="pill pill-waiting">Pending</span>',
         approved: '<span class="pill pill-done">Approved</span>',
-        rejected: '<span class="pill pill-urgent">Rejected</span>'
+        rejected: '<span class="pill pill-urgent">Rejected</span>',
+        revision_requested: '<span class="pill pill-waiting">Revision</span>'
       };
-      grid.innerHTML = filtered.map(function(a) {
-        return '<div class="approval-card">' +
+      grid.innerHTML = filtered.map(function(a, idx) {
+        var content = a.content || '';
+        var isLongContent = content.length > 200;
+        var displayContent = isLongContent ? content.substring(0, 200) + '...' : content;
+        var typeClass = (a.type || 'other').replace(/[^a-zA-Z0-9_]/g, '_');
+        var timestamp = a.timestamp ? new Date(a.timestamp).toLocaleString() : '';
+        var resolvedAt = a.resolved_at ? new Date(a.resolved_at).toLocaleString() : '';
+
+        var reasonHtml = '';
+        if ((a.status === 'rejected' || a.status === 'revision_requested') && a.reason) {
+          reasonHtml = '<div class="approval-card-reason">' +
+            '<div class="approval-card-reason-label">' + (a.status === 'rejected' ? 'Rejection Reason' : 'Revision Notes') + '</div>' +
+            escapeHtml(a.reason) +
+          '</div>';
+        }
+
+        var resolvedHtml = '';
+        if (resolvedAt && a.status !== 'pending') {
+          resolvedHtml = '<div class="approval-card-resolved">Resolved: ' + resolvedAt + '</div>';
+        }
+
+        var contentToggleHtml = '';
+        if (isLongContent) {
+          contentToggleHtml = '<span class="approval-card-content-toggle" onclick="toggleApprovalContent(this, ' + idx + ')">Show more</span>';
+        }
+
+        return '<div class="approval-card" data-approval-idx="' + idx + '">' +
           '<div class="approval-card-header">' +
-            '<div class="approval-card-title">' + escapeHtml(a.title || '') + '</div>' +
+            '<div class="approval-card-title">' +
+              '<span class="approval-card-type ' + typeClass + '">' + escapeHtml(a.type || 'other') + '</span>' +
+              escapeHtml(a.summary || '') +
+            '</div>' +
             '<div class="approval-card-status">' + (statusPills[a.status] || statusPills.pending) + '</div>' +
           '</div>' +
-          '<div class="approval-card-desc">' + escapeHtml(a.description || '') + '</div>' +
+          '<div class="approval-card-content approval-card-content-truncated" data-content="' + escapeHtml(content) + '">' + escapeHtml(displayContent) + '</div>' +
+          contentToggleHtml +
+          reasonHtml +
           '<div class="approval-card-meta">' +
-            '<span class="approval-card-requester"><span style="color:var(--text-3)">Requested by:</span> ' + escapeHtml(a.requestedBy || '') + '</span>' +
-            '<span>' + new Date(a.date).toLocaleDateString() + '</span>' +
+            '<span class="approval-card-requester"><span style="color:var(--text-3)">By:</span> ' + escapeHtml(a.agent || '') + '</span>' +
+            '<span>' + timestamp + '</span>' +
           '</div>' +
+          resolvedHtml +
         '</div>';
       }).join('');
+    }
+    function toggleApprovalContent(el, idx) {
+      var card = document.querySelector('.approval-card[data-approval-idx="' + idx + '"');
+      if (!card) return;
+      var contentEl = card.querySelector('.approval-card-content');
+      var fullContent = contentEl.getAttribute('data-content');
+      if (el.textContent === 'Show more') {
+        contentEl.textContent = fullContent;
+        contentEl.classList.add('expanded');
+        contentEl.classList.remove('approval-card-content-truncated');
+        el.textContent = 'Show less';
+      } else {
+        var truncated = fullContent.substring(0, 200) + '...';
+        contentEl.textContent = truncated;
+        contentEl.classList.remove('expanded');
+        contentEl.classList.add('approval-card-content-truncated');
+        el.textContent = 'Show more';
+      }
     }
     function updateApprovalsBadge() {
       var badge = document.getElementById('approvals-badge');
