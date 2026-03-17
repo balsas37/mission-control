@@ -11719,9 +11719,9 @@
           '</div>' +
           resolvedHtml +
           (a.status === 'pending' ? '<div class="approval-card-actions">' +
-            '<button class="approval-btn approval-btn-approve" onclick="handleApprovalAction(\'' + escapeHtml(a.id) + '\', \'approve\')">✅ Approve</button>' +
-            '<button class="approval-btn approval-btn-reject" onclick="handleApprovalAction(\'' + escapeHtml(a.id) + '\', \'reject\')">❌ Reject</button>' +
-            '<button class="approval-btn approval-btn-revise" onclick="handleApprovalAction(\'' + escapeHtml(a.id) + '\', \'revise\')">✏️ Revise</button>' +
+            '<button class="approval-btn approval-btn-approve" data-apv-id="' + a.id + '" data-apv-action="approve">✅ Approve</button>' +
+            '<button class="approval-btn approval-btn-reject" data-apv-id="' + a.id + '" data-apv-action="reject">❌ Reject</button>' +
+            '<button class="approval-btn approval-btn-revise" data-apv-id="' + a.id + '" data-apv-action="revise">✏️ Revise</button>' +
           '</div>' : '') +
         '</div>';
       }).join('');
@@ -11735,21 +11735,47 @@
         if (reason === null) return;
         body.reason = reason;
       }
+      var clickedBtn = document.querySelector('[data-apv-id="' + id + '"][data-apv-action="' + action + '"]');
+      if (clickedBtn) { clickedBtn.disabled = true; clickedBtn.textContent = '⏳'; }
       fetch(MC_API_BASE + '/api/approvals/' + id + '/' + action, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + MC_API_TOKEN },
         body: JSON.stringify(body)
       })
-      .then(function(r) { return r.json(); })
+      .then(function(r) {
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.json();
+      })
       .then(function(data) {
-        if (data.status === 'ok' || data.ok) {
-          loadApprovals();
+        if (data.ok) {
+          // Update local data immediately so UI refreshes
+          approvalsData.forEach(function(a) {
+            if (a.id === id) {
+              a.status = action === 'approve' ? 'approved' : (action === 'reject' ? 'rejected' : 'revision_requested');
+              a.resolved_at = new Date().toISOString();
+              if (body.reason) a.reason = body.reason;
+            }
+          });
+          renderApprovals();
+          updateApprovalsBadge();
         } else {
           alert('Error: ' + (data.error || 'Unknown error'));
+          if (clickedBtn) { clickedBtn.disabled = false; clickedBtn.textContent = action === 'approve' ? '✅ Approve' : (action === 'reject' ? '❌ Reject' : '✏️ Revise'); }
         }
       })
-      .catch(function(err) { alert('API error: ' + err.message); });
+      .catch(function(err) {
+        alert('API error: ' + err.message);
+        if (clickedBtn) { clickedBtn.disabled = false; clickedBtn.textContent = action === 'approve' ? '✅ Approve' : (action === 'reject' ? '❌ Reject' : '✏️ Revise'); }
+      });
     }
+    // Event delegation for approval buttons
+    document.addEventListener('click', function(e) {
+      var btn = e.target.closest('[data-apv-action]');
+      if (!btn) return;
+      var id = btn.getAttribute('data-apv-id');
+      var action = btn.getAttribute('data-apv-action');
+      if (id && action) handleApprovalAction(id, action);
+    });
     function toggleApprovalContent(el, idx) {
       var card = document.querySelector('.approval-card[data-approval-idx="' + idx + '"');
       if (!card) return;
