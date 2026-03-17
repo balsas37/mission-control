@@ -62,15 +62,6 @@
       "agent": "Piia",
       "status": "pending",
       "timestamp": "2026-03-17T05:19:19.391574+00:00"
-    },
-    {
-      "id": "apv_condominio_dispute",
-      "type": "ad_copy",
-      "summary": "Condominio fine dispute letter -- needs review before sending",
-      "content": "Task from Aitable (status: Review). Dispute letter for condominium fine. Needs your review and approval before it gets sent.",
-      "agent": "Beno",
-      "status": "pending",
-      "timestamp": "2026-03-17T05:19:19.391574+00:00"
     }
   ],
   "_schema": {
