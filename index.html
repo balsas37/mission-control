@@ -3535,7 +3535,7 @@
       }
     }
 
-    /* Fix 15 + 17: Analytics model usage + lagoon bookings sections */
+    /* Model usage bars (System tab) + lagoon bookings sections */
     .mu-timeout-bars { margin-top: 8px; margin-bottom: 16px; }
     .mu-timeout-row {
       display: flex;
@@ -6713,28 +6713,6 @@
         <button class="analytics-filter" data-range="last">Previous Month</button>
         <button class="analytics-filter" data-range="quarter">Last 3 Months</button>
         <button class="analytics-filter" data-range="alltime">All Time</button>
-      </div>
-
-      <!-- Fix 15: MODEL USAGE (restored) -->
-      <div class="analytics-section reveal">
-        <div class="analytics-section-header" data-collapse="model-usage-analytics">
-          <svg class="analytics-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4,6 8,10 12,6"/></svg>
-          <span class="analytics-section-title">Model Usage</span>
-        </div>
-        <div id="model-usage-analytics">
-          <div class="mu-timeout-bars" id="mu-timeout-bars"></div>
-          <div class="analytics-table-wrap">
-            <table class="analytics-table">
-              <thead><tr>
-                <th class="analytics-th">Metric</th>
-                <th class="analytics-th">Current</th>
-                <th class="analytics-th">Change</th>
-                <th class="analytics-th">Status</th>
-              </tr></thead>
-              <tbody id="model-usage-tbody"></tbody>
-            </table>
-          </div>
-        </div>
       </div>
 
       <!-- OFM AGENCY -->
