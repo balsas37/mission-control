@@ -12,6 +12,15 @@
       "message_id": 1747,
       "reason": null,
       "resolved_at": "2026-03-08T07:57:41.038229+00:00"
+    },
+    {
+      "id": "test-20260317034446",
+      "type": "social_post",
+      "summary": "Test approval - Lagoon Instagram Reel caption",
+      "content": "The jungle called. We answered with 200hp.\n\nCan-Am X3 through the Tulum backroads. No script. No filter. Just pure adrenaline.\n\nBook your ride: thelagooncompany.mx\n\n#Tulum #CanAm #X3 #Adventure",
+      "agent": "Rex",
+      "status": "pending",
+      "timestamp": "2026-03-17T03:44:46.999234+00:00"
     }
   ],
   "_schema": {
