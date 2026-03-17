@@ -1,5 +1,78 @@
 {
-  "approvals": [],
+  "approvals": [
+    {
+      "id": "apv_lagoon_sops_draft",
+      "type": "document",
+      "summary": "Lagoon SOPs draft (4 procedures) -- AI-generated, never reviewed",
+      "content": "AI agents drafted 4 Lagoon SOPs on Mar 8 during your Sirewall trip: Vehicle Checkout, Vehicle Return, Damage Reporting, WhatsApp Inquiry. File: memory/02_projects/lagoon-sops-draft.md\n\nThese were reported as 'in progress' in the TI but you never reviewed them. Need your sign-off or rejection before they count as real progress.",
+      "agent": "Piia",
+      "status": "pending",
+      "timestamp": "2026-03-17T05:19:19.391574+00:00"
+    },
+    {
+      "id": "apv_ti_march14",
+      "type": "report",
+      "summary": "March 14 TI Report -- review commitments & 5CF scores",
+      "content": "Full monthly planning TI at memory/01_daily/2026-03-14-TI-report.md. Contains: executive summary, per-business waterfall, 30-day goal review, 5 Core Function scores, new commitments for remaining 2 weeks, resource allocation recommendations.\n\nKey items needing your sign-off:\n- Time allocation shift (OFM from 25% to 50%)\n- Daily non-negotiables structure\n- Week of March 17-21 commitments\n- Delegation moves (Kat, Vex, Rex ownership)",
+      "agent": "Piia",
+      "status": "pending",
+      "timestamp": "2026-03-17T05:19:19.391574+00:00"
+    },
+    {
+      "id": "apv_lagoon_delegation_audit",
+      "type": "document",
+      "summary": "Lagoon delegation audit -- AI-drafted task list for Dubi handoff",
+      "content": "File: memory/02_projects/lagoon-delegation-audit.md. Lists all Lagoon recurring tasks currently requiring Beno and proposes delegation to Dubi. Needs your review to confirm accuracy before acting on it.",
+      "agent": "Piia",
+      "status": "pending",
+      "timestamp": "2026-03-17T05:19:19.391574+00:00"
+    },
+    {
+      "id": "apv_lagoon_rental_agreement",
+      "type": "document",
+      "summary": "Lagoon ATV rental agreement -- AI-drafted legal template",
+      "content": "File: memory/02_projects/lagoon-atv-rental-agreement.md. Rental agreement template for Lagoon Company. AI-generated, needs your legal review before use with customers.",
+      "agent": "Piia",
+      "status": "pending",
+      "timestamp": "2026-03-17T05:19:19.391574+00:00"
+    },
+    {
+      "id": "apv_hr_offer_letter",
+      "type": "document",
+      "summary": "HR offer letter template -- AI-drafted",
+      "content": "File: memory/02_projects/hr-offer-letter.md. Generic offer letter template. Needs review before sending to any hire (chatters, VA, etc).",
+      "agent": "Piia",
+      "status": "pending",
+      "timestamp": "2026-03-17T05:19:19.391574+00:00"
+    },
+    {
+      "id": "apv_stripe_systeme",
+      "type": "deployment",
+      "summary": "Connect Stripe to Systeme.io -- BLOCKED on Beno action (15 min)",
+      "content": "Power Independence Academy is fully built but generating zero revenue because Stripe isn't connected to Systeme.io. This is a 15-minute task that only you can do (requires Stripe login). Highest leverage action on the board right now.",
+      "agent": "Piia",
+      "status": "pending",
+      "timestamp": "2026-03-17T05:19:19.391574+00:00"
+    },
+    {
+      "id": "apv_ai_character_concept",
+      "type": "goal",
+      "summary": "OFM AI character concept decision -- blocks entire content pipeline",
+      "content": "Need creative direction decision: niche, visual concept, name, viral angle for first AI model. This single decision blocks: LoRA training, content generation, Fanvue setup, IG account aesthetic, chatter briefing. Everything downstream is waiting on this.\n\nSee existing concepts at: memory/02_projects/ofm-ai-model-concepts.md",
+      "agent": "Piia",
+      "status": "pending",
+      "timestamp": "2026-03-17T05:19:19.391574+00:00"
+    },
+    {
+      "id": "apv_condominio_dispute",
+      "type": "ad_copy",
+      "summary": "Condominio fine dispute letter -- needs review before sending",
+      "content": "Task from Aitable (status: Review). Dispute letter for condominium fine. Needs your review and approval before it gets sent.",
+      "agent": "Beno",
+      "status": "pending",
+      "timestamp": "2026-03-17T05:19:19.391574+00:00"
+    }
+  ],
   "_schema": {
     "id": "string - unique approval ID (e.g. apv_1741234567_abc)",
     "agent": "string - agent name (e.g. Piia, Mara, Kat)",
