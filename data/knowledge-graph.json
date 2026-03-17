@@ -1,8 +1,8 @@
 {
-  "generated": "2026-03-16T06:00:09.846337",
+  "generated": "2026-03-16T23:41:33.214976",
   "stats": {
     "nodes": 193,
-    "edges": 74,
+    "edges": 72,
     "clusters": 8
   },
   "clusters": [
@@ -2417,9 +2417,10 @@
       "id": 157,
       "label": "Agency Supercourse",
       "path": "05_resources/hack-your-agency-supercourse.md",
-      "description": "Hack Your Agency Supercourse notes",
+      "description": "Hack Your Agency Supercourse notes -- general agency growth hacking & marketing (NOT OFM-specific)",
       "tags": [
-        "resource"
+        "resource",
+        " marketing"
       ],
       "cluster": "skills",
       "layer": "skill",
@@ -2709,7 +2710,7 @@
       "cluster": "system",
       "layer": "context",
       "color": "#5AB8B0",
-      "size": 13.32,
+      "size": 12.7475,
       "lastReweave": "null",
       "created": "2026-03-16"
     },
@@ -2970,163 +2971,163 @@
     {
       "id": 2,
       "source": 35,
-      "target": 49,
+      "target": 161,
       "type": "wikilink"
     },
     {
       "id": 3,
       "source": 35,
-      "target": 95,
+      "target": 73,
       "type": "wikilink"
     },
     {
       "id": 4,
       "source": 35,
-      "target": 68,
+      "target": 54,
       "type": "wikilink"
     },
     {
       "id": 5,
       "source": 35,
-      "target": 93,
+      "target": 62,
       "type": "wikilink"
     },
     {
       "id": 6,
       "source": 35,
-      "target": 52,
+      "target": 53,
       "type": "wikilink"
     },
     {
       "id": 7,
       "source": 35,
-      "target": 53,
+      "target": 70,
       "type": "wikilink"
     },
     {
       "id": 8,
       "source": 35,
-      "target": 96,
+      "target": 50,
       "type": "wikilink"
     },
     {
       "id": 9,
       "source": 35,
-      "target": 61,
+      "target": 52,
       "type": "wikilink"
     },
     {
       "id": 10,
       "source": 35,
-      "target": 97,
+      "target": 95,
       "type": "wikilink"
     },
     {
       "id": 11,
       "source": 35,
-      "target": 59,
+      "target": 61,
       "type": "wikilink"
     },
     {
       "id": 12,
       "source": 35,
-      "target": 54,
+      "target": 93,
       "type": "wikilink"
     },
     {
       "id": 13,
       "source": 35,
-      "target": 73,
+      "target": 64,
       "type": "wikilink"
     },
     {
       "id": 14,
       "source": 35,
-      "target": 60,
+      "target": 132,
       "type": "wikilink"
     },
     {
       "id": 15,
       "source": 35,
-      "target": 132,
+      "target": 92,
       "type": "wikilink"
     },
     {
       "id": 16,
       "source": 35,
-      "target": 113,
+      "target": 57,
       "type": "wikilink"
     },
     {
       "id": 17,
       "source": 35,
-      "target": 62,
+      "target": 59,
       "type": "wikilink"
     },
     {
       "id": 18,
       "source": 35,
-      "target": 64,
+      "target": 130,
       "type": "wikilink"
     },
     {
       "id": 19,
       "source": 35,
-      "target": 130,
+      "target": 60,
       "type": "wikilink"
     },
     {
       "id": 20,
       "source": 35,
-      "target": 70,
+      "target": 113,
       "type": "wikilink"
     },
     {
       "id": 21,
       "source": 35,
-      "target": 161,
+      "target": 96,
       "type": "wikilink"
     },
     {
       "id": 22,
       "source": 35,
-      "target": 92,
+      "target": 49,
       "type": "wikilink"
     },
     {
       "id": 23,
       "source": 35,
-      "target": 50,
+      "target": 97,
       "type": "wikilink"
     },
     {
       "id": 24,
       "source": 35,
-      "target": 57,
+      "target": 68,
       "type": "wikilink"
     },
     {
       "id": 25,
       "source": 36,
-      "target": 79,
+      "target": 88,
       "type": "wikilink"
     },
     {
       "id": 26,
       "source": 36,
-      "target": 74,
+      "target": 84,
       "type": "wikilink"
     },
     {
       "id": 27,
       "source": 36,
-      "target": 45,
+      "target": 51,
       "type": "wikilink"
     },
     {
       "id": 28,
       "source": 36,
-      "target": 90,
+      "target": 43,
       "type": "wikilink"
     },
     {
@@ -3144,109 +3145,109 @@
     {
       "id": 31,
       "source": 36,
-      "target": 129,
+      "target": 72,
       "type": "wikilink"
     },
     {
       "id": 32,
       "source": 36,
-      "target": 85,
+      "target": 124,
       "type": "wikilink"
     },
     {
       "id": 33,
       "source": 36,
-      "target": 124,
+      "target": 77,
       "type": "wikilink"
     },
     {
       "id": 34,
       "source": 36,
-      "target": 81,
+      "target": 85,
       "type": "wikilink"
     },
     {
       "id": 35,
       "source": 36,
-      "target": 46,
+      "target": 79,
       "type": "wikilink"
     },
     {
       "id": 36,
       "source": 36,
-      "target": 84,
+      "target": 89,
       "type": "wikilink"
     },
     {
       "id": 37,
       "source": 36,
-      "target": 91,
+      "target": 45,
       "type": "wikilink"
     },
     {
       "id": 38,
       "source": 36,
-      "target": 51,
+      "target": 74,
       "type": "wikilink"
     },
     {
       "id": 39,
       "source": 36,
-      "target": 80,
+      "target": 107,
       "type": "wikilink"
     },
     {
       "id": 40,
       "source": 36,
-      "target": 55,
+      "target": 129,
       "type": "wikilink"
     },
     {
       "id": 41,
       "source": 36,
-      "target": 72,
+      "target": 81,
       "type": "wikilink"
     },
     {
       "id": 42,
       "source": 36,
-      "target": 133,
+      "target": 90,
       "type": "wikilink"
     },
     {
       "id": 43,
       "source": 36,
-      "target": 43,
+      "target": 125,
       "type": "wikilink"
     },
     {
       "id": 44,
       "source": 36,
-      "target": 125,
+      "target": 133,
       "type": "wikilink"
     },
     {
       "id": 45,
       "source": 36,
-      "target": 88,
+      "target": 91,
       "type": "wikilink"
     },
     {
       "id": 46,
       "source": 36,
-      "target": 77,
+      "target": 55,
       "type": "wikilink"
     },
     {
       "id": 47,
       "source": 36,
-      "target": 107,
+      "target": 46,
       "type": "wikilink"
     },
     {
       "id": 48,
       "source": 36,
-      "target": 89,
+      "target": 80,
       "type": "wikilink"
     },
     {
@@ -3258,37 +3259,37 @@
     {
       "id": 50,
       "source": 37,
-      "target": 157,
+      "target": 158,
       "type": "wikilink"
     },
     {
       "id": 51,
       "source": 37,
-      "target": 162,
+      "target": 159,
       "type": "wikilink"
     },
     {
       "id": 52,
       "source": 37,
-      "target": 158,
+      "target": 99,
       "type": "wikilink"
     },
     {
       "id": 53,
       "source": 37,
-      "target": 112,
+      "target": 105,
       "type": "wikilink"
     },
     {
       "id": 54,
       "source": 37,
-      "target": 75,
+      "target": 102,
       "type": "wikilink"
     },
     {
       "id": 55,
       "source": 37,
-      "target": 159,
+      "target": 112,
       "type": "wikilink"
     },
     {
@@ -3300,61 +3301,61 @@
     {
       "id": 57,
       "source": 37,
-      "target": 109,
+      "target": 162,
       "type": "wikilink"
     },
     {
       "id": 58,
       "source": 37,
-      "target": 105,
+      "target": 75,
       "type": "wikilink"
     },
     {
       "id": 59,
       "source": 37,
-      "target": 99,
+      "target": 109,
       "type": "wikilink"
     },
     {
       "id": 60,
-      "source": 37,
-      "target": 102,
-      "type": "wikilink"
-    },
-    {
-      "id": 61,
-      "source": 38,
-      "target": 110,
-      "type": "wikilink"
-    },
-    {
-      "id": 62,
-      "source": 38,
-      "target": 66,
-      "type": "wikilink"
-    },
-    {
-      "id": 63,
-      "source": 38,
-      "target": 40,
-      "type": "wikilink"
-    },
-    {
-      "id": 64,
       "source": 38,
       "target": 42,
       "type": "wikilink"
     },
     {
-      "id": 65,
+      "id": 61,
+      "source": 38,
+      "target": 40,
+      "type": "wikilink"
+    },
+    {
+      "id": 62,
       "source": 38,
       "target": 41,
       "type": "wikilink"
     },
     {
-      "id": 66,
+      "id": 63,
+      "source": 38,
+      "target": 66,
+      "type": "wikilink"
+    },
+    {
+      "id": 64,
       "source": 38,
       "target": 67,
+      "type": "wikilink"
+    },
+    {
+      "id": 65,
+      "source": 38,
+      "target": 110,
+      "type": "wikilink"
+    },
+    {
+      "id": 66,
+      "source": 56,
+      "target": 99,
       "type": "wikilink"
     },
     {
@@ -3365,36 +3366,24 @@
     },
     {
       "id": 68,
-      "source": 56,
-      "target": 99,
-      "type": "wikilink"
-    },
-    {
-      "id": 69,
       "source": 157,
       "target": 39,
       "type": "wikilink"
     },
     {
-      "id": 70,
-      "source": 157,
-      "target": 99,
-      "type": "wikilink"
-    },
-    {
-      "id": 71,
+      "id": 69,
       "source": 191,
       "target": 52,
       "type": "wikilink"
     },
     {
-      "id": 72,
+      "id": 70,
       "source": 191,
       "target": 101,
       "type": "wikilink"
     },
     {
-      "id": 73,
+      "id": 71,
       "source": 192,
       "target": 121,
       "type": "wikilink"
