@@ -11667,7 +11667,8 @@
         return a.status === approvalsFilter;
       });
       if (!filtered.length) {
-        grid.innerHTML = '<div class="approval-placeholder"><div class="radar-placeholder-text" style="color:var(--text-3);font-size:13px">No ' + approvalsFilter + ' approvals</div></div>';
+        var emptyMsg = { all: 'Nothing to review', pending: 'Nothing pending', approved: 'Nothing approved yet', rejected: 'Nothing rejected' };
+        grid.innerHTML = '<div class="approval-placeholder"><div class="radar-placeholder-text" style="color:var(--text-3);font-size:13px">' + (emptyMsg[approvalsFilter] || 'Nothing here') + '</div></div>';
         return;
       }
       var statusPills = {
