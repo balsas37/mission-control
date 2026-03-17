@@ -7289,12 +7289,7 @@
           <button class="cal-filter-chip" data-approval-filter="approved"><span class="cal-filter-dot" style="background:#6BBF6B"></span>Approved</button>
           <button class="cal-filter-chip" data-approval-filter="rejected"><span class="cal-filter-dot" style="background:#D9534F"></span>Rejected</button>
         </div>
-        <div class="approvals-grid reveal" id="approvals-grid">
-          <div class="approval-placeholder">
-            <div class="radar-placeholder-icon">&#x2705;</div>
-            <div class="radar-placeholder-text">No pending approvals</div>
-          </div>
-        </div>
+        <div class="approvals-grid reveal" id="approvals-grid"></div>
       </div>
     </section>
 
@@ -11655,7 +11650,7 @@
         .catch(function(err) {
           console.warn('[MC] Failed to load approvals.json:', err);
           document.getElementById('approvals-grid').innerHTML =
-            '<div class="approval-placeholder"><div class="radar-placeholder-icon">&#x2705;</div><div class="radar-placeholder-text">No pending approvals</div></div>';
+            '<div class="approval-placeholder"><div class="radar-placeholder-text" style="color:var(--text-3);font-size:13px">Nothing to review</div></div>';
           document.getElementById('approvals-badge').style.display = 'none';
         });
     }
@@ -11819,6 +11814,8 @@
     document.querySelector('.sidebar-nav-item[data-tab="approvals"]').addEventListener('click', function() {
       loadApprovals();
     });
+    // Auto-load approvals on page load
+    loadApprovals();
 
     /* ---- Content Tab ---- */
     var contentData = [];
