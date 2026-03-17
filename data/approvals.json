@@ -1,28 +1,5 @@
 {
-  "approvals": [
-    {
-      "id": "apv_1772955942_qf86",
-      "agent": "Piia",
-      "type": "social_post",
-      "summary": "Test: Lagoon X3 promo caption (approval system test)",
-      "content": "\ud83c\udfce\ufe0f Experience the ultimate adrenaline rush in Tulum.\n\nCan-Am Maverick X3 \u2014 the most powerful side-by-side on the market. Rip through the jungle, conquer the dunes, and feel what real performance feels like.\n\nBook your ride with Lagoon Company. Limited slots daily. \n\n\ud83d\udccd Tulum, Mexico\n\ud83d\udd17 thelagooncompany.mx\n\n#Tulum #CanAm #X3 #ATV #Adventure #Mexico",
-      "status": "approved",
-      "timestamp": "2026-03-08T07:45:42.879338+00:00",
-      "topic_id": 8,
-      "message_id": 1747,
-      "reason": null,
-      "resolved_at": "2026-03-08T07:57:41.038229+00:00"
-    },
-    {
-      "id": "test-20260317034446",
-      "type": "social_post",
-      "summary": "Test approval - Lagoon Instagram Reel caption",
-      "content": "The jungle called. We answered with 200hp.\n\nCan-Am X3 through the Tulum backroads. No script. No filter. Just pure adrenaline.\n\nBook your ride: thelagooncompany.mx\n\n#Tulum #CanAm #X3 #Adventure",
-      "agent": "Rex",
-      "status": "pending",
-      "timestamp": "2026-03-17T03:44:46.999234+00:00"
-    }
-  ],
+  "approvals": [],
   "_schema": {
     "id": "string - unique approval ID (e.g. apv_1741234567_abc)",
     "agent": "string - agent name (e.g. Piia, Mara, Kat)",
