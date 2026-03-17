@@ -4297,6 +4297,27 @@
       color: var(--text-3);
       font-style: italic;
     }
+    .approval-card-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+    }
+    .approval-btn {
+      padding: 6px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-2);
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .approval-btn:hover { background: rgba(255,255,255,0.06); color: var(--text-1); }
+    .approval-btn-approve:hover { border-color: #6BBF6B; color: #6BBF6B; }
+    .approval-btn-reject:hover { border-color: #D9534F; color: #D9534F; }
+    .approval-btn-revise:hover { border-color: #DAB255; color: #DAB255; }
     .approval-placeholder {
       display: flex; flex-direction: column; align-items: center;
       justify-content: center; padding: 60px 20px; gap: 12px;
@@ -11697,8 +11718,37 @@
             '<span>' + timestamp + '</span>' +
           '</div>' +
           resolvedHtml +
+          (a.status === 'pending' ? '<div class="approval-card-actions">' +
+            '<button class="approval-btn approval-btn-approve" onclick="handleApprovalAction(\'' + escapeHtml(a.id) + '\', \'approve\')">✅ Approve</button>' +
+            '<button class="approval-btn approval-btn-reject" onclick="handleApprovalAction(\'' + escapeHtml(a.id) + '\', \'reject\')">❌ Reject</button>' +
+            '<button class="approval-btn approval-btn-revise" onclick="handleApprovalAction(\'' + escapeHtml(a.id) + '\', \'revise\')">✏️ Revise</button>' +
+          '</div>' : '') +
         '</div>';
       }).join('');
+    }
+    var MC_API_BASE = 'https://mc-api.verboten-industries.com';
+    var MC_API_TOKEN = 'EqguFPFFTH9cuu1Nl3H0tlRc-MiB6ROEg6Z59o-ZZeY';
+    function handleApprovalAction(id, action) {
+      var body = {};
+      if (action === 'reject' || action === 'revise') {
+        var reason = prompt(action === 'reject' ? 'Rejection reason:' : 'Revision notes:');
+        if (reason === null) return;
+        body.reason = reason;
+      }
+      fetch(MC_API_BASE + '/api/approvals/' + id + '/' + action, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + MC_API_TOKEN },
+        body: JSON.stringify(body)
+      })
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        if (data.status === 'ok' || data.ok) {
+          loadApprovals();
+        } else {
+          alert('Error: ' + (data.error || 'Unknown error'));
+        }
+      })
+      .catch(function(err) { alert('API error: ' + err.message); });
     }
     function toggleApprovalContent(el, idx) {
       var card = document.querySelector('.approval-card[data-approval-idx="' + idx + '"');
