@@ -6,7 +6,7 @@
       "entity": 4,
       "skill": 12
     },
-    "generated": "2026-03-16T23:41:33.217459"
+    "generated": "2026-03-17T06:00:07.893833"
   },
   "nodes": [
     {
@@ -252,18 +252,6 @@
     },
     {
       "id": 20,
-      "title": "2026 03 02",
-      "layer": "context",
-      "tags": [
-        "daily"
-      ],
-      "summary": "Daily log Mar 2",
-      "connections": 0,
-      "cluster": "daily",
-      "color": "#888888"
-    },
-    {
-      "id": 21,
       "title": "2026 03 03",
       "layer": "context",
       "tags": [
@@ -275,7 +263,7 @@
       "color": "#888888"
     },
     {
-      "id": 22,
+      "id": 21,
       "title": "2026 03 04",
       "layer": "context",
       "tags": [
@@ -287,7 +275,7 @@
       "color": "#888888"
     },
     {
-      "id": 23,
+      "id": 22,
       "title": "2026 03 05",
       "layer": "context",
       "tags": [
@@ -299,7 +287,7 @@
       "color": "#888888"
     },
     {
-      "id": 24,
+      "id": 23,
       "title": "2026 03 06",
       "layer": "context",
       "tags": [
@@ -311,7 +299,7 @@
       "color": "#888888"
     },
     {
-      "id": 25,
+      "id": 24,
       "title": "2026 03 07",
       "layer": "context",
       "tags": [
@@ -323,7 +311,7 @@
       "color": "#888888"
     },
     {
-      "id": 26,
+      "id": 25,
       "title": "2026 03 08",
       "layer": "context",
       "tags": [
@@ -335,7 +323,7 @@
       "color": "#888888"
     },
     {
-      "id": 27,
+      "id": 26,
       "title": "2026 03 09",
       "layer": "context",
       "tags": [
@@ -347,7 +335,7 @@
       "color": "#888888"
     },
     {
-      "id": 28,
+      "id": 27,
       "title": "2026 03 10",
       "layer": "context",
       "tags": [
@@ -359,7 +347,7 @@
       "color": "#888888"
     },
     {
-      "id": 29,
+      "id": 28,
       "title": "2026 03 11",
       "layer": "context",
       "tags": [
@@ -371,7 +359,7 @@
       "color": "#888888"
     },
     {
-      "id": 30,
+      "id": 29,
       "title": "2026 03 12",
       "layer": "context",
       "tags": [
@@ -383,7 +371,7 @@
       "color": "#888888"
     },
     {
-      "id": 31,
+      "id": 30,
       "title": "2026 03 13",
       "layer": "context",
       "tags": [
@@ -395,7 +383,7 @@
       "color": "#888888"
     },
     {
-      "id": 32,
+      "id": 31,
       "title": "2026 03 14 Ti Report",
       "layer": "context",
       "tags": [
@@ -410,7 +398,7 @@
       "color": "#888888"
     },
     {
-      "id": 33,
+      "id": 32,
       "title": "2026 03 14",
       "layer": "context",
       "tags": [
@@ -422,12 +410,22 @@
       "color": "#888888"
     },
     {
-      "id": 34,
+      "id": 33,
       "title": "2026 03 16",
       "layer": "context",
       "tags": [],
       "summary": "Daily log for March 16, 2026",
       "connections": 2,
+      "cluster": "daily",
+      "color": "#888888"
+    },
+    {
+      "id": 34,
+      "title": "2026 03 17",
+      "layer": "context",
+      "tags": [],
+      "summary": "Daily log for March 17, 2026",
+      "connections": 0,
       "cluster": "daily",
       "color": "#888888"
     },
@@ -2150,18 +2148,6 @@
     },
     {
       "id": 178,
-      "title": "2026 03 02",
-      "layer": "context",
-      "tags": [
-        "brief"
-      ],
-      "summary": "Dream cycle brief Mar 2",
-      "connections": 0,
-      "cluster": "daily",
-      "color": "#888888"
-    },
-    {
-      "id": 179,
       "title": "2026 03 03",
       "layer": "context",
       "tags": [
@@ -2173,7 +2159,7 @@
       "color": "#888888"
     },
     {
-      "id": 180,
+      "id": 179,
       "title": "2026 03 04",
       "layer": "context",
       "tags": [
@@ -2185,7 +2171,7 @@
       "color": "#888888"
     },
     {
-      "id": 181,
+      "id": 180,
       "title": "2026 03 05",
       "layer": "context",
       "tags": [
@@ -2197,7 +2183,7 @@
       "color": "#888888"
     },
     {
-      "id": 182,
+      "id": 181,
       "title": "2026 03 06",
       "layer": "context",
       "tags": [
@@ -2209,7 +2195,7 @@
       "color": "#888888"
     },
     {
-      "id": 183,
+      "id": 182,
       "title": "2026 03 07",
       "layer": "context",
       "tags": [
@@ -2221,7 +2207,7 @@
       "color": "#888888"
     },
     {
-      "id": 184,
+      "id": 183,
       "title": "2026 03 08",
       "layer": "context",
       "tags": [
@@ -2233,7 +2219,7 @@
       "color": "#888888"
     },
     {
-      "id": 185,
+      "id": 184,
       "title": "2026 03 09",
       "layer": "context",
       "tags": [
@@ -2245,7 +2231,7 @@
       "color": "#888888"
     },
     {
-      "id": 186,
+      "id": 185,
       "title": "2026 03 10",
       "layer": "context",
       "tags": [
@@ -2257,7 +2243,7 @@
       "color": "#888888"
     },
     {
-      "id": 187,
+      "id": 186,
       "title": "2026 03 11",
       "layer": "context",
       "tags": [
@@ -2269,7 +2255,7 @@
       "color": "#888888"
     },
     {
-      "id": 188,
+      "id": 187,
       "title": "2026 03 12",
       "layer": "context",
       "tags": [
@@ -2281,7 +2267,7 @@
       "color": "#888888"
     },
     {
-      "id": 189,
+      "id": 188,
       "title": "2026 03 13",
       "layer": "context",
       "tags": [
@@ -2293,7 +2279,7 @@
       "color": "#888888"
     },
     {
-      "id": 190,
+      "id": 189,
       "title": "2026 03 14",
       "layer": "context",
       "tags": [
@@ -2305,7 +2291,7 @@
       "color": "#888888"
     },
     {
-      "id": 191,
+      "id": 190,
       "title": "2026 03 15",
       "layer": "context",
       "tags": [
@@ -2317,7 +2303,7 @@
       "color": "#888888"
     },
     {
-      "id": 192,
+      "id": 191,
       "title": "2026 03 16",
       "layer": "context",
       "tags": [
@@ -2327,20 +2313,28 @@
       "connections": 1,
       "cluster": "daily",
       "color": "#888888"
+    },
+    {
+      "id": 192,
+      "title": "2026 03 17",
+      "layer": "context",
+      "tags": [
+        "brief"
+      ],
+      "summary": "Dream Brief \u2014 Mar 17, 2026",
+      "connections": 0,
+      "cluster": "daily",
+      "color": "#888888"
     }
   ],
   "edges": [
     {
-      "source": 34,
+      "source": 33,
       "target": 39
     },
     {
-      "source": 34,
+      "source": 33,
       "target": 99
-    },
-    {
-      "source": 35,
-      "target": 161
     },
     {
       "source": 35,
@@ -2348,79 +2342,11 @@
     },
     {
       "source": 35,
-      "target": 54
-    },
-    {
-      "source": 35,
-      "target": 62
-    },
-    {
-      "source": 35,
-      "target": 53
-    },
-    {
-      "source": 35,
-      "target": 70
-    },
-    {
-      "source": 35,
-      "target": 50
-    },
-    {
-      "source": 35,
-      "target": 52
-    },
-    {
-      "source": 35,
-      "target": 95
-    },
-    {
-      "source": 35,
-      "target": 61
-    },
-    {
-      "source": 35,
-      "target": 93
-    },
-    {
-      "source": 35,
-      "target": 64
-    },
-    {
-      "source": 35,
-      "target": 132
-    },
-    {
-      "source": 35,
-      "target": 92
-    },
-    {
-      "source": 35,
-      "target": 57
-    },
-    {
-      "source": 35,
       "target": 59
     },
     {
       "source": 35,
-      "target": 130
-    },
-    {
-      "source": 35,
-      "target": 60
-    },
-    {
-      "source": 35,
-      "target": 113
-    },
-    {
-      "source": 35,
-      "target": 96
-    },
-    {
-      "source": 35,
-      "target": 49
+      "target": 54
     },
     {
       "source": 35,
@@ -2428,35 +2354,79 @@
     },
     {
       "source": 35,
+      "target": 53
+    },
+    {
+      "source": 35,
+      "target": 64
+    },
+    {
+      "source": 35,
+      "target": 57
+    },
+    {
+      "source": 35,
+      "target": 50
+    },
+    {
+      "source": 35,
+      "target": 96
+    },
+    {
+      "source": 35,
+      "target": 93
+    },
+    {
+      "source": 35,
       "target": 68
     },
     {
-      "source": 36,
-      "target": 88
+      "source": 35,
+      "target": 95
     },
     {
-      "source": 36,
-      "target": 84
+      "source": 35,
+      "target": 130
     },
     {
-      "source": 36,
-      "target": 51
+      "source": 35,
+      "target": 161
     },
     {
-      "source": 36,
-      "target": 43
+      "source": 35,
+      "target": 49
     },
     {
-      "source": 36,
-      "target": 141
+      "source": 35,
+      "target": 61
     },
     {
-      "source": 36,
-      "target": 78
+      "source": 35,
+      "target": 92
     },
     {
-      "source": 36,
-      "target": 72
+      "source": 35,
+      "target": 132
+    },
+    {
+      "source": 35,
+      "target": 52
+    },
+    {
+      "source": 35,
+      "target": 62
+    },
+    {
+      "source": 35,
+      "target": 70
+    },
+    {
+      "source": 35,
+      "target": 113
+    },
+    {
+      "source": 35,
+      "target": 60
     },
     {
       "source": 36,
@@ -2464,15 +2434,11 @@
     },
     {
       "source": 36,
-      "target": 77
+      "target": 84
     },
     {
       "source": 36,
-      "target": 85
-    },
-    {
-      "source": 36,
-      "target": 79
+      "target": 141
     },
     {
       "source": 36,
@@ -2480,7 +2446,19 @@
     },
     {
       "source": 36,
-      "target": 45
+      "target": 129
+    },
+    {
+      "source": 36,
+      "target": 72
+    },
+    {
+      "source": 36,
+      "target": 77
+    },
+    {
+      "source": 36,
+      "target": 80
     },
     {
       "source": 36,
@@ -2488,27 +2466,15 @@
     },
     {
       "source": 36,
-      "target": 107
-    },
-    {
-      "source": 36,
-      "target": 129
-    },
-    {
-      "source": 36,
-      "target": 81
-    },
-    {
-      "source": 36,
-      "target": 90
-    },
-    {
-      "source": 36,
-      "target": 125
-    },
-    {
-      "source": 36,
       "target": 133
+    },
+    {
+      "source": 36,
+      "target": 78
+    },
+    {
+      "source": 36,
+      "target": 51
     },
     {
       "source": 36,
@@ -2516,7 +2482,35 @@
     },
     {
       "source": 36,
+      "target": 88
+    },
+    {
+      "source": 36,
+      "target": 90
+    },
+    {
+      "source": 36,
+      "target": 43
+    },
+    {
+      "source": 36,
+      "target": 125
+    },
+    {
+      "source": 36,
+      "target": 81
+    },
+    {
+      "source": 36,
       "target": 55
+    },
+    {
+      "source": 36,
+      "target": 107
+    },
+    {
+      "source": 36,
+      "target": 45
     },
     {
       "source": 36,
@@ -2524,39 +2518,11 @@
     },
     {
       "source": 36,
-      "target": 80
+      "target": 79
     },
     {
-      "source": 37,
-      "target": 39
-    },
-    {
-      "source": 37,
-      "target": 158
-    },
-    {
-      "source": 37,
-      "target": 159
-    },
-    {
-      "source": 37,
-      "target": 99
-    },
-    {
-      "source": 37,
-      "target": 105
-    },
-    {
-      "source": 37,
-      "target": 102
-    },
-    {
-      "source": 37,
-      "target": 112
-    },
-    {
-      "source": 37,
-      "target": 103
+      "source": 36,
+      "target": 85
     },
     {
       "source": 37,
@@ -2564,23 +2530,47 @@
     },
     {
       "source": 37,
-      "target": 75
+      "target": 39
     },
     {
       "source": 37,
       "target": 109
     },
     {
-      "source": 38,
-      "target": 42
+      "source": 37,
+      "target": 75
+    },
+    {
+      "source": 37,
+      "target": 105
+    },
+    {
+      "source": 37,
+      "target": 99
+    },
+    {
+      "source": 37,
+      "target": 103
+    },
+    {
+      "source": 37,
+      "target": 159
+    },
+    {
+      "source": 37,
+      "target": 112
+    },
+    {
+      "source": 37,
+      "target": 158
+    },
+    {
+      "source": 37,
+      "target": 102
     },
     {
       "source": 38,
       "target": 40
-    },
-    {
-      "source": 38,
-      "target": 41
     },
     {
       "source": 38,
@@ -2595,27 +2585,35 @@
       "target": 110
     },
     {
-      "source": 56,
-      "target": 99
+      "source": 38,
+      "target": 41
+    },
+    {
+      "source": 38,
+      "target": 42
     },
     {
       "source": 56,
       "target": 157
     },
     {
+      "source": 56,
+      "target": 99
+    },
+    {
       "source": 157,
       "target": 39
     },
     {
-      "source": 191,
+      "source": 190,
+      "target": 101
+    },
+    {
+      "source": 190,
       "target": 52
     },
     {
       "source": 191,
-      "target": 101
-    },
-    {
-      "source": 192,
       "target": 121
     }
   ]
