@@ -6,7 +6,7 @@
   <title>Verboten Industries</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
   <script src="https://d3js.org/d3.v7.min.js"></script>
   <style>
     /* ========================================
@@ -939,6 +939,181 @@
       flex-wrap: wrap;
       gap: 8px;
       margin-top: 16px;
+    }
+
+    /* ========================================
+       AGENT MODAL
+       ======================================== */
+    .workstation { cursor: pointer; }
+    .team-card { cursor: pointer; }
+
+    .agent-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 9998;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+    }
+    .agent-modal-backdrop.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .agent-modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.96);
+      width: min(520px, calc(100vw - 32px));
+      max-height: calc(100vh - 64px);
+      background: var(--bg-raised);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      z-index: 9999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+    }
+    .agent-modal.visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    .agent-modal-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 24px 24px 0;
+    }
+    .agent-modal-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 400;
+      color: #fff;
+      text-transform: uppercase;
+      flex-shrink: 0;
+    }
+    .agent-modal-meta {
+      flex: 1;
+      min-width: 0;
+    }
+    .agent-modal-name {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-1);
+    }
+    .agent-modal-role {
+      font-size: 13px;
+      color: var(--text-2);
+      margin-top: 2px;
+    }
+    .agent-modal-close {
+      background: none;
+      border: none;
+      color: var(--text-3);
+      font-size: 20px;
+      cursor: pointer;
+      padding: 4px 8px;
+      border-radius: 8px;
+      transition: background 0.15s, color 0.15s;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .agent-modal-close:hover {
+      background: var(--bg-hover);
+      color: var(--text-1);
+    }
+
+    .agent-modal-body {
+      padding: 20px 24px 24px;
+    }
+    .agent-modal-section {
+      margin-bottom: 20px;
+    }
+    .agent-modal-section:last-child {
+      margin-bottom: 0;
+    }
+    .agent-modal-section-title {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--text-3);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 8px;
+    }
+    .agent-modal-section-text {
+      font-size: 14px;
+      color: var(--text-1);
+      line-height: 1.6;
+    }
+    .agent-modal-section ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .agent-modal-section li {
+      font-size: 13px;
+      color: var(--text-2);
+      line-height: 1.7;
+      padding-left: 14px;
+      position: relative;
+    }
+    .agent-modal-section li::before {
+      content: '·';
+      position: absolute;
+      left: 0;
+      color: var(--text-3);
+      font-weight: 700;
+    }
+
+    .agent-modal-tasks {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+    .agent-modal-tasks-title {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--text-3);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 10px;
+    }
+    .agent-modal-tasks-empty {
+      font-size: 13px;
+      color: var(--text-3);
+      font-style: italic;
+    }
+
+    .agent-modal-send-btn {
+      display: block;
+      width: 100%;
+      margin-top: 20px;
+      padding: 10px 0;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: var(--text-1);
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .agent-modal-send-btn:hover {
+      background: var(--bg-hover);
+      border-color: var(--border-hover);
     }
 
     /* ========================================
@@ -2117,6 +2292,152 @@
     .workstation.active {
       border-color: rgba(92,184,92,0.25);
       box-shadow: 0 0 0 1px rgba(92,184,92,0.08);
+    }
+
+    /* ========================================
+       OVERNIGHT ACTIVITY FEED (Office tab)
+       ======================================== */
+    .overnight-activity {
+      background: var(--bg-raised);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px 24px;
+      margin-top: 24px;
+    }
+    .overnight-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+    .overnight-title {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--text-3);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .overnight-refresh {
+      background: none;
+      border: none;
+      color: var(--text-3);
+      cursor: pointer;
+      padding: 4px;
+      border-radius: 6px;
+      transition: color 0.15s, background 0.15s;
+      display: flex;
+      align-items: center;
+    }
+    .overnight-refresh:hover {
+      color: var(--text-2);
+      background: var(--bg-hover);
+    }
+    .overnight-refresh.spinning svg {
+      animation: overnight-spin 0.6s ease;
+    }
+    @keyframes overnight-spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .overnight-timeline {
+      position: relative;
+      max-height: 420px;
+      overflow-y: auto;
+      padding-left: 20px;
+    }
+    .overnight-timeline::before {
+      content: '';
+      position: absolute;
+      left: 4px;
+      top: 4px;
+      bottom: 4px;
+      width: 1px;
+      background: var(--border);
+    }
+    .overnight-item {
+      position: relative;
+      padding: 8px 0 8px 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .overnight-item + .overnight-item {
+      border-top: 1px solid var(--border);
+    }
+    .overnight-dot {
+      position: absolute;
+      left: -18px;
+      top: 14px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--text-3);
+      border: 1.5px solid var(--bg-raised);
+    }
+    .overnight-dot.completed { background: var(--pill-done-text); }
+    .overnight-dot.in-progress { background: var(--pill-waiting-text); }
+    .overnight-dot.review { background: var(--pill-urgent-text); }
+    .overnight-body {
+      flex: 1;
+      min-width: 0;
+    }
+    .overnight-what {
+      font-size: 13px;
+      color: var(--text-1);
+      line-height: 1.4;
+      margin-bottom: 3px;
+    }
+    .overnight-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .overnight-time {
+      font-size: 11px;
+      color: var(--text-3);
+      white-space: nowrap;
+    }
+    .overnight-loc {
+      font-size: 11px;
+      color: var(--text-3);
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      background: rgba(255,255,255,0.03);
+      padding: 1px 6px;
+      border-radius: 4px;
+    }
+    body.light-mode .overnight-loc {
+      background: rgba(0,0,0,0.04);
+    }
+    .overnight-badge {
+      font-size: 10px;
+      padding: 1px 7px;
+      border-radius: 8px;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .overnight-badge.completed {
+      background: var(--pill-done-bg);
+      color: var(--pill-done-text);
+    }
+    .overnight-badge.in-progress {
+      background: var(--pill-waiting-bg);
+      color: var(--pill-waiting-text);
+    }
+    .overnight-badge.review {
+      background: var(--pill-urgent-bg);
+      color: var(--pill-urgent-text);
+    }
+    .overnight-view {
+      font-size: 11px;
+      color: var(--text-3);
+      text-decoration: none;
+      margin-left: auto;
+      white-space: nowrap;
+      transition: color 0.15s;
+    }
+    .overnight-view:hover {
+      color: var(--text-1);
     }
 
     /* ========================================
@@ -5850,6 +6171,517 @@
       .graph-detail-panel.visible { transform: translateY(0); }
     }
 
+    /* ========================================
+       AUTOMATION RHYTHM GRID
+       ======================================== */
+    .cron-rhythm-header {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-top: 32px;
+    }
+    .cron-rhythm-refresh {
+      background: none; border: none; color: var(--text-3); cursor: pointer;
+      padding: 4px 8px; border-radius: 8px; transition: background 0.15s, color 0.15s;
+      display: flex; align-items: center; gap: 4px; font-size: 12px;
+    }
+    .cron-rhythm-refresh:hover { background: var(--bg-hover); color: var(--text-1); }
+    .cron-rhythm-refresh svg { width: 14px; height: 14px; }
+    .cron-rhythm-refresh.spinning svg { animation: cronSpin 0.6s linear; }
+    @keyframes cronSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+    .cron-rhythm-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 16px;
+      margin-bottom: 32px;
+    }
+
+    .cron-rhythm-card {
+      background: var(--bg-raised);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 18px;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .cron-rhythm-card:hover {
+      border-color: var(--border-hover);
+      background: var(--bg-hover);
+    }
+
+    .cron-rhythm-top {
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .cron-rhythm-name {
+      font-size: 14px; font-weight: 500; color: var(--text-1);
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .cron-rhythm-dot {
+      width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+    }
+    .cron-rhythm-dot.green  { background: #5CB85C; box-shadow: 0 0 6px rgba(92,184,92,0.4); }
+    .cron-rhythm-dot.orange { background: #F5A623; box-shadow: 0 0 6px rgba(245,166,35,0.4); }
+    .cron-rhythm-dot.red    { background: #D9534F; box-shadow: 0 0 6px rgba(217,83,79,0.4); }
+    .cron-rhythm-dot.gray   { background: #555; }
+
+    .cron-rhythm-schedule {
+      font-size: 12px; color: var(--text-3); font-family: 'SF Mono', 'Fira Code', monospace;
+      letter-spacing: 0.04em;
+    }
+    .cron-rhythm-next {
+      font-size: 12px; color: var(--text-2);
+    }
+
+    /* Cron Detail Modal */
+    .cron-modal-backdrop {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+      z-index: 9998; opacity: 0; pointer-events: none; transition: opacity 0.2s ease;
+    }
+    .cron-modal-backdrop.visible { opacity: 1; pointer-events: auto; }
+
+    .cron-modal {
+      position: fixed; top: 50%; left: 50%;
+      transform: translate(-50%, -50%) scale(0.96);
+      width: min(520px, calc(100vw - 32px));
+      max-height: calc(100vh - 64px);
+      background: var(--bg-raised); border: 1px solid var(--border);
+      border-radius: 16px; z-index: 9999;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      overflow-y: auto; overscroll-behavior: contain;
+    }
+    .cron-modal.visible {
+      opacity: 1; pointer-events: auto;
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    .cron-modal-header {
+      display: flex; align-items: center; gap: 14px; padding: 24px 24px 0;
+    }
+    .cron-modal-icon {
+      width: 44px; height: 44px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; flex-shrink: 0;
+    }
+    .cron-modal-meta { flex: 1; min-width: 0; }
+    .cron-modal-name { font-size: 18px; font-weight: 600; color: var(--text-1); }
+    .cron-modal-schedule { font-size: 13px; color: var(--text-2); margin-top: 2px; font-family: 'SF Mono', 'Fira Code', monospace; }
+    .cron-modal-close {
+      background: none; border: none; color: var(--text-3); font-size: 20px;
+      cursor: pointer; padding: 4px 8px; border-radius: 8px;
+      transition: background 0.15s, color 0.15s; line-height: 1; flex-shrink: 0;
+    }
+    .cron-modal-close:hover { background: var(--bg-hover); color: var(--text-1); }
+
+    .cron-modal-body { padding: 20px 24px 24px; }
+    .cron-modal-section { margin-bottom: 20px; }
+    .cron-modal-section:last-child { margin-bottom: 0; }
+    .cron-modal-section-title {
+      font-size: 11px; font-weight: 500; color: var(--text-3);
+      text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px;
+    }
+    .cron-modal-section-text { font-size: 14px; color: var(--text-1); line-height: 1.6; }
+
+    .cron-modal-config-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 6px 0; border-bottom: 1px solid var(--border);
+    }
+    .cron-modal-config-row:last-child { border-bottom: none; }
+    .cron-modal-config-key { font-size: 13px; color: var(--text-3); }
+    .cron-modal-config-val { font-size: 13px; color: var(--text-1); font-weight: 500; }
+
+    .cron-modal-run-row {
+      display: flex; align-items: center; gap: 10px;
+      padding: 8px 0; border-bottom: 1px solid var(--border);
+      font-size: 13px;
+    }
+    .cron-modal-run-row:last-child { border-bottom: none; }
+    .cron-modal-run-dot {
+      width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0;
+    }
+    .cron-modal-run-dot.ok    { background: #5CB85C; }
+    .cron-modal-run-dot.error { background: #D9534F; }
+    .cron-modal-run-time { color: var(--text-2); flex: 1; }
+    .cron-modal-run-dur  { color: var(--text-3); }
+
+    .cron-modal-error-counter {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(217,83,79,0.12); color: #D9534F;
+      padding: 4px 10px; border-radius: 8px; font-size: 13px; font-weight: 500;
+    }
+    .cron-modal-error-counter.zero {
+      background: rgba(92,184,92,0.12); color: #5CB85C;
+    }
+
+    @media (max-width: 900px) {
+      .cron-rhythm-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 520px) {
+      .cron-rhythm-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ---- Pixel Art Mode ---- */
+    body.pixel-art-mode {
+      font-family: 'Press Start 2P', 'Courier New', monospace !important;
+      letter-spacing: 2px;
+      filter: contrast(1.2) brightness(0.95) saturate(1.1);
+    }
+    body.pixel-art-mode * {
+      font-family: inherit !important;
+    }
+    body.pixel-art-mode img,
+    body.pixel-art-mode canvas {
+      image-rendering: pixelated;
+    }
+    body.pixel-art-mode::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 0, 0, 0.03) 2px,
+        rgba(0, 0, 0, 0.03) 4px
+      );
+    }
+
+    /* ========================================
+       CRM TAB
+       ======================================== */
+    .crm-toolbar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 0 0 16px;
+      flex-wrap: wrap;
+    }
+    .crm-search {
+      flex: 1;
+      min-width: 180px;
+      max-width: 340px;
+      background: var(--bg-raised);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 8px 14px;
+      color: var(--text-1);
+      font-size: 14px;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .crm-search:focus { border-color: var(--border-hover); }
+    .crm-search::placeholder { color: var(--text-3); }
+    .crm-filter-group {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .crm-filter-btn {
+      background: var(--bg-raised);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 5px 12px;
+      color: var(--text-2);
+      font-size: 12px;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .crm-filter-btn:hover { border-color: var(--border-hover); color: var(--text-1); }
+    .crm-filter-btn.active { background: rgba(255,255,255,0.08); color: var(--text-1); border-color: var(--border-hover); }
+    body.light-mode .crm-filter-btn.active { background: rgba(0,0,0,0.06); }
+
+    /* CRM View Toggle */
+    .crm-view-toggle {
+      display: flex;
+      gap: 4px;
+      margin-left: auto;
+    }
+    .crm-view-btn {
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 5px 14px;
+      color: var(--text-3);
+      font-size: 12px;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .crm-view-btn:hover { color: var(--text-2); border-color: var(--border-hover); }
+    .crm-view-btn.active { color: var(--text-1); background: rgba(255,255,255,0.06); border-color: var(--border-hover); }
+    body.light-mode .crm-view-btn.active { background: rgba(0,0,0,0.04); }
+
+    /* CRM Contacts Table */
+    .crm-table-wrap {
+      overflow-x: auto;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+    }
+    .crm-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+    .crm-table th {
+      text-align: left;
+      padding: 10px 14px;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--text-3);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-raised);
+      cursor: pointer;
+      user-select: none;
+      white-space: nowrap;
+      transition: color 0.15s;
+    }
+    .crm-table th:hover { color: var(--text-2); }
+    .crm-table th .sort-arrow { font-size: 10px; margin-left: 4px; opacity: 0.4; }
+    .crm-table th.sorted .sort-arrow { opacity: 1; color: var(--text-1); }
+    .crm-table td {
+      padding: 10px 14px;
+      color: var(--text-2);
+      border-bottom: 1px solid var(--border);
+      white-space: nowrap;
+      max-width: 200px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .crm-table tr { cursor: pointer; transition: background 0.15s; }
+    .crm-table tbody tr:hover { background: var(--bg-hover); }
+    .crm-table .crm-name { color: var(--text-1); font-weight: 500; }
+    .crm-biz-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      margin-right: 6px;
+      flex-shrink: 0;
+    }
+    .crm-pill {
+      display: inline-block;
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .crm-pill-active   { background: var(--pill-active-bg);   color: var(--pill-active-text); }
+    .crm-pill-onhold   { background: var(--pill-waiting-bg);  color: var(--pill-waiting-text); }
+    .crm-pill-stale    { background: var(--pill-backlog-bg);  color: var(--pill-backlog-text); }
+    .crm-pill-done     { background: var(--pill-done-bg);     color: var(--pill-done-text); }
+    .crm-tag {
+      display: inline-block;
+      font-size: 10px;
+      padding: 1px 6px;
+      border-radius: 4px;
+      background: rgba(255,255,255,0.05);
+      color: var(--text-3);
+      margin-right: 3px;
+    }
+    body.light-mode .crm-tag { background: rgba(0,0,0,0.04); }
+
+    /* CRM Relationships View */
+    .crm-relationships {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .crm-rel-group {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .crm-rel-group-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      background: var(--bg-raised);
+      border-bottom: 1px solid var(--border);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-1);
+    }
+    .crm-rel-group-count {
+      font-size: 11px;
+      color: var(--text-3);
+      background: rgba(255,255,255,0.06);
+      border-radius: 999px;
+      padding: 1px 8px;
+    }
+    body.light-mode .crm-rel-group-count { background: rgba(0,0,0,0.05); }
+    .crm-rel-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .crm-rel-row:last-child { border-bottom: none; }
+    .crm-rel-row:hover { background: var(--bg-hover); }
+    .crm-rel-name { flex: 1; min-width: 120px; color: var(--text-1); font-size: 13px; font-weight: 500; }
+    .crm-rel-status { min-width: 70px; }
+    .crm-rel-date { min-width: 90px; color: var(--text-3); font-size: 12px; }
+    .crm-rel-action { flex: 2; color: var(--text-2); font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+    /* CRM Pipeline Kanban */
+    .crm-pipeline {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      padding-bottom: 24px;
+      min-height: calc(100vh - 48px - 180px);
+      align-items: flex-start;
+    }
+    .crm-pipe-col {
+      flex: 0 0 240px;
+      min-width: 240px;
+      max-width: 240px;
+      display: flex;
+      flex-direction: column;
+      background: var(--bg);
+      border-radius: 14px;
+    }
+    .crm-pipe-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 8px;
+    }
+    .crm-pipe-title {
+      font-size: 13px;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .crm-pipe-count {
+      background: rgba(255,255,255,0.08);
+      color: var(--text-3);
+      border-radius: 999px;
+      padding: 1px 7px;
+      font-size: 12px;
+      min-width: 18px;
+      text-align: center;
+    }
+    body.light-mode .crm-pipe-count { background: rgba(0,0,0,0.06); }
+    .crm-pipe-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      min-height: 60px;
+      padding: 4px 4px 12px;
+      border-radius: 8px;
+      transition: background 0.2s;
+    }
+    .crm-pipe-list.drag-over {
+      background: rgba(255,255,255,0.03);
+      outline: 1px dashed rgba(255,255,255,0.12);
+      outline-offset: -1px;
+      border-radius: 8px;
+    }
+    body.light-mode .crm-pipe-list.drag-over {
+      background: rgba(0,0,0,0.02);
+      outline-color: rgba(0,0,0,0.12);
+    }
+    .crm-pipe-card {
+      background: var(--bg-raised);
+      border-radius: 0 12px 12px 0;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-left: none;
+      cursor: grab;
+      transition: border-color 0.2s, opacity 0.2s, transform 0.15s;
+      user-select: none;
+    }
+    .crm-pipe-card:hover { border-color: var(--border-hover); }
+    .crm-pipe-card:active { cursor: grabbing; }
+    .crm-pipe-card.dragging { opacity: 0.4; transform: scale(0.97); }
+    .crm-pipe-card.just-dropped { animation: kbCardDrop 200ms ease-out; }
+    .crm-pipe-card-name {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-1);
+      margin-bottom: 4px;
+    }
+    .crm-pipe-card-meta {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+      font-size: 11px;
+      color: var(--text-3);
+    }
+    .crm-pipe-card-type {
+      font-size: 11px;
+      color: var(--text-2);
+    }
+    .crm-pipe-empty {
+      padding: 20px 12px;
+      color: var(--text-3);
+      font-size: 12px;
+      text-align: center;
+      font-style: italic;
+    }
+
+    /* CRM Detail Modal */
+    .crm-modal-meta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    .crm-modal-field {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .crm-modal-field-label {
+      font-size: 10px;
+      color: var(--text-3);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .crm-modal-field-value {
+      font-size: 13px;
+      color: var(--text-2);
+    }
+    .crm-modal-tags {
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+      padding: 10px 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    .crm-modal-notes {
+      padding: 16px 20px;
+      font-size: 13px;
+      color: var(--text-2);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 900px) {
+      .crm-pipe-col { flex: 0 0 220px; min-width: 220px; max-width: 220px; }
+    }
+    @media (max-width: 600px) {
+      .crm-pipe-col { flex: 0 0 85vw; min-width: 85vw; max-width: 85vw; }
+      .crm-pipeline { gap: 12px; }
+    }
+
   </style>
 </head>
 <body>
@@ -5923,6 +6755,10 @@
         <span class="sidebar-nav-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></span>
         <span class="sidebar-nav-label">Documents</span>
       </button>
+      <button class="sidebar-nav-item" data-tab="crm">
+        <span class="sidebar-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+        <span class="sidebar-nav-label">CRM</span>
+      </button>
       <button class="sidebar-nav-item" data-tab="system">
         <span class="sidebar-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span>
         <span class="sidebar-nav-label">System</span>
@@ -5970,6 +6806,9 @@
       </button>
       <button class="sidebar-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle light/dark mode">
         <span id="theme-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></span>
+      </button>
+      <button class="sidebar-toggle" id="pixel-art-toggle" aria-label="Toggle pixel art mode" title="Toggle pixel art mode">
+        <span id="pixel-art-label" style="font-size:10px;white-space:nowrap;">Pixel Art: Off</span>
       </button>
       <!-- Three-dot menu -->
       <div class="topbar-menu-wrap" id="topbar-menu-wrap">
@@ -6177,6 +7016,114 @@
         </div>
 
       </div>
+
+      <!-- Overnight Activity Feed -->
+      <div class="overnight-activity reveal">
+        <div class="overnight-header">
+          <div class="overnight-title">Overnight Activity</div>
+          <button class="overnight-refresh" id="overnight-refresh-btn" title="Refresh activity feed">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M11.5 2.5v3h-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.6 8.5A4.5 4.5 0 1 1 11.5 5.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+        <div class="overnight-timeline" id="overnight-timeline">
+          <div class="overnight-item">
+            <span class="overnight-dot completed"></span>
+            <div class="overnight-body">
+              <div class="overnight-what">Nightly Execution: Competitor pricing scan — Lagoon, MYM, Fansly</div>
+              <div class="overnight-meta">
+                <span class="overnight-time">tonight at 11:00pm</span>
+                <span class="overnight-loc">memory/radar-daily.md</span>
+                <span class="overnight-badge completed">completed</span>
+                <a href="#" class="overnight-view">view →</a>
+              </div>
+            </div>
+          </div>
+          <div class="overnight-item">
+            <span class="overnight-dot completed"></span>
+            <div class="overnight-body">
+              <div class="overnight-what">Nightly Execution: CharFen goal sync & progress tracking</div>
+              <div class="overnight-meta">
+                <span class="overnight-time">tonight at 11:02pm</span>
+                <span class="overnight-loc">data/charfen-goals.json</span>
+                <span class="overnight-badge completed">completed</span>
+                <a href="#" class="overnight-view">view →</a>
+              </div>
+            </div>
+          </div>
+          <div class="overnight-item">
+            <span class="overnight-dot completed"></span>
+            <div class="overnight-body">
+              <div class="overnight-what">Nightly Execution: Kimi usage metrics pull & cost analysis</div>
+              <div class="overnight-meta">
+                <span class="overnight-time">tonight at 11:04pm</span>
+                <span class="overnight-loc">data/kimi-usage.json</span>
+                <span class="overnight-badge completed">completed</span>
+                <a href="#" class="overnight-view">view →</a>
+              </div>
+            </div>
+          </div>
+          <div class="overnight-item">
+            <span class="overnight-dot completed"></span>
+            <div class="overnight-body">
+              <div class="overnight-what">Draft: OFM onboarding email sequence — 5 emails, welcome through upsell</div>
+              <div class="overnight-meta">
+                <span class="overnight-time">6h ago</span>
+                <span class="overnight-loc">drafts/ofm-email-sequence/</span>
+                <span class="overnight-badge completed">completed</span>
+                <a href="#" class="overnight-view">view →</a>
+              </div>
+            </div>
+          </div>
+          <div class="overnight-item">
+            <span class="overnight-dot completed"></span>
+            <div class="overnight-body">
+              <div class="overnight-what">Research: Ready Life Academy — Nick Meissner source material extraction</div>
+              <div class="overnight-meta">
+                <span class="overnight-time">5h ago</span>
+                <span class="overnight-loc">research/ready-life/</span>
+                <span class="overnight-badge completed">completed</span>
+                <a href="#" class="overnight-view">view →</a>
+              </div>
+            </div>
+          </div>
+          <div class="overnight-item">
+            <span class="overnight-dot completed"></span>
+            <div class="overnight-body">
+              <div class="overnight-what">Build: Power Independence product stack — 24 worksheets generated</div>
+              <div class="overnight-meta">
+                <span class="overnight-time">3h ago</span>
+                <span class="overnight-loc">products/power-independence/</span>
+                <span class="overnight-badge completed">completed</span>
+                <a href="#" class="overnight-view">view →</a>
+              </div>
+            </div>
+          </div>
+          <div class="overnight-item">
+            <span class="overnight-dot in-progress"></span>
+            <div class="overnight-body">
+              <div class="overnight-what">Analysis: Weekly revenue report — OFM + digital products pipeline</div>
+              <div class="overnight-meta">
+                <span class="overnight-time">2h ago</span>
+                <span class="overnight-loc">reports/weekly-revenue.md</span>
+                <span class="overnight-badge in-progress">in progress</span>
+              </div>
+            </div>
+          </div>
+          <div class="overnight-item">
+            <span class="overnight-dot review"></span>
+            <div class="overnight-body">
+              <div class="overnight-what">Draft: Creator outreach DMs — 3 templates for Fansly migration pitch</div>
+              <div class="overnight-meta">
+                <span class="overnight-time">1h ago</span>
+                <span class="overnight-loc">drafts/creator-outreach/</span>
+                <span class="overnight-badge review">needs review</span>
+                <a href="#" class="overnight-view">view →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </section>
 
     <!-- Activity -->
@@ -6892,6 +7839,30 @@
         </div>
       </div>
 
+      <!-- Automation Rhythm -->
+      <div class="cron-rhythm-header">
+        <h2 class="dept-label reveal" style="margin-top:0;flex:1">Automation Rhythm</h2>
+        <button class="cron-rhythm-refresh" id="cron-rhythm-refresh" title="Refresh cron data">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 8a6.5 6.5 0 0 1 11.48-4.17M14.5 8a6.5 6.5 0 0 1-11.48 4.17"/><polyline points="13 1 13 4 10 4"/><polyline points="3 15 3 12 6 12"/></svg>
+        </button>
+      </div>
+      <div class="cron-rhythm-grid" id="cron-rhythm-grid"></div>
+
+      <!-- Cron Detail Modal -->
+      <div class="cron-modal-backdrop" id="cron-modal-backdrop">
+        <div class="cron-modal" id="cron-modal">
+          <div class="cron-modal-header">
+            <div class="cron-modal-icon" id="cron-modal-icon"></div>
+            <div class="cron-modal-meta">
+              <div class="cron-modal-name" id="cron-modal-name"></div>
+              <div class="cron-modal-schedule" id="cron-modal-schedule"></div>
+            </div>
+            <button class="cron-modal-close" id="cron-modal-close">&times;</button>
+          </div>
+          <div class="cron-modal-body" id="cron-modal-body"></div>
+        </div>
+      </div>
+
     </section>
 
     <!-- Focus -->
@@ -7339,6 +8310,55 @@
       </div>
     </section>
 
+    <!-- CRM -->
+    <section class="tab-panel" id="panel-crm">
+      <div class="crm-toolbar">
+        <input type="text" class="crm-search" id="crm-search" placeholder="Search contacts...">
+        <div class="crm-filter-group" id="crm-biz-filter">
+          <button class="crm-filter-btn active" data-biz="all">All</button>
+          <button class="crm-filter-btn" data-biz="OFM">OFM</button>
+          <button class="crm-filter-btn" data-biz="Lagoon">Lagoon</button>
+          <button class="crm-filter-btn" data-biz="Build">Build</button>
+        </div>
+        <div class="crm-view-toggle" id="crm-view-toggle">
+          <button class="crm-view-btn active" data-view="contacts">Contacts</button>
+          <button class="crm-view-btn" data-view="relationships">Relationships</button>
+          <button class="crm-view-btn" data-view="pipeline">Pipeline</button>
+        </div>
+      </div>
+
+      <!-- Contacts Table View -->
+      <div id="crm-contacts-view">
+        <div class="crm-table-wrap">
+          <table class="crm-table" id="crm-table">
+            <thead>
+              <tr>
+                <th data-sort="name">Name <span class="sort-arrow">&#9650;</span></th>
+                <th data-sort="type">Type <span class="sort-arrow">&#9650;</span></th>
+                <th data-sort="business">Business <span class="sort-arrow">&#9650;</span></th>
+                <th data-sort="email">Email <span class="sort-arrow">&#9650;</span></th>
+                <th data-sort="lastContact">Last Contact <span class="sort-arrow">&#9650;</span></th>
+                <th data-sort="status">Status <span class="sort-arrow">&#9650;</span></th>
+                <th data-sort="nextAction">Next Action <span class="sort-arrow">&#9650;</span></th>
+                <th>Tags</th>
+              </tr>
+            </thead>
+            <tbody id="crm-table-body"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Relationships View -->
+      <div id="crm-relationships-view" style="display:none">
+        <div class="crm-relationships" id="crm-rel-container"></div>
+      </div>
+
+      <!-- Pipeline Kanban View -->
+      <div id="crm-pipeline-view" style="display:none">
+        <div class="crm-pipeline" id="crm-pipeline-board"></div>
+      </div>
+    </section>
+
   </main>
 
   <!-- Global Search Modal -->
@@ -7382,6 +8402,38 @@
         updateThemeIcon();
         var btn = document.getElementById('theme-toggle');
         if (btn) btn.addEventListener('click', toggleTheme);
+      });
+    })();
+
+    /* ---- Pixel Art Mode ---- */
+    (function() {
+      var savedPixel = localStorage.getItem('mc-pixel-art');
+      if (savedPixel === 'true') {
+        document.body.classList.add('pixel-art-mode');
+      }
+      function updatePixelLabel() {
+        var label = document.getElementById('pixel-art-label');
+        if (label) {
+          label.textContent = document.body.classList.contains('pixel-art-mode')
+            ? 'Pixel Art: On' : 'Pixel Art: Off';
+        }
+        var settingsBtn = document.getElementById('settings-pixel-btn');
+        if (settingsBtn) {
+          settingsBtn.textContent = document.body.classList.contains('pixel-art-mode')
+            ? 'On' : 'Off';
+        }
+      }
+      function togglePixelArt() {
+        document.body.classList.toggle('pixel-art-mode');
+        var isOn = document.body.classList.contains('pixel-art-mode');
+        localStorage.setItem('mc-pixel-art', isOn ? 'true' : 'false');
+        updatePixelLabel();
+      }
+      window.togglePixelArt = togglePixelArt;
+      document.addEventListener('DOMContentLoaded', function() {
+        updatePixelLabel();
+        var btn = document.getElementById('pixel-art-toggle');
+        if (btn) btn.addEventListener('click', togglePixelArt);
       });
     })();
 
@@ -10384,6 +11436,281 @@
       calRender();
     })();
 
+    /* ---- Automation Rhythm (Cron Grid) ---- */
+    var cronRhythmData = [
+      {
+        id: 'dream-cycle', name: 'Dream Cycle', schedule: '0 6 * * *',
+        description: 'Overnight memory consolidation and daily note generation',
+        agent: 'Piia', enabled: true,
+        lastStatus: 'ok', consecutiveErrors: 0,
+        nextRun: '2026-03-18T06:00:00',
+        runs: [
+          { ts: '2026-03-17T06:00:00', status: 'ok', duration: 14200 },
+          { ts: '2026-03-16T06:00:00', status: 'ok', duration: 13800 },
+          { ts: '2026-03-15T06:00:00', status: 'ok', duration: 15100 },
+          { ts: '2026-03-14T06:00:00', status: 'ok', duration: 12900 },
+          { ts: '2026-03-13T06:00:00', status: 'ok', duration: 14500 }
+        ]
+      },
+      {
+        id: 'sync-mc-data', name: 'Sync MC Data', schedule: '0 */6 * * *',
+        description: 'Sync tasks.json, lagoon.json, and goals from Aitable API',
+        agent: 'Zara', enabled: true,
+        lastStatus: 'ok', consecutiveErrors: 0,
+        nextRun: '2026-03-18T00:00:00',
+        runs: [
+          { ts: '2026-03-17T18:00:00', status: 'ok', duration: 1200 },
+          { ts: '2026-03-17T12:00:00', status: 'ok', duration: 1100 },
+          { ts: '2026-03-17T06:00:00', status: 'ok', duration: 980 },
+          { ts: '2026-03-16T18:00:00', status: 'ok', duration: 1350 },
+          { ts: '2026-03-16T12:00:00', status: 'ok', duration: 1050 }
+        ]
+      },
+      {
+        id: 'usage-sync', name: 'Usage Data Sync', schedule: '3 */6 * * *',
+        description: 'Pull Anthropic and Kimi usage stats, update usage.json',
+        agent: 'Zara', enabled: true,
+        lastStatus: 'error', consecutiveErrors: 2,
+        nextRun: '2026-03-18T00:03:00',
+        runs: [
+          { ts: '2026-03-17T18:03:00', status: 'error', duration: 30200 },
+          { ts: '2026-03-17T12:03:00', status: 'error', duration: 30100 },
+          { ts: '2026-03-17T06:03:00', status: 'ok', duration: 2400 },
+          { ts: '2026-03-16T18:03:00', status: 'ok', duration: 2200 },
+          { ts: '2026-03-16T12:03:00', status: 'ok', duration: 2350 }
+        ]
+      },
+      {
+        id: 'context-rescue', name: 'Context Rescue', schedule: '*/30 * * * *',
+        description: 'Save session checkpoint to daily note before context compression',
+        agent: 'Piia', enabled: true,
+        lastStatus: 'ok', consecutiveErrors: 0,
+        nextRun: '2026-03-17T23:30:00',
+        runs: [
+          { ts: '2026-03-17T23:00:00', status: 'ok', duration: 450 },
+          { ts: '2026-03-17T22:30:00', status: 'ok', duration: 420 },
+          { ts: '2026-03-17T22:00:00', status: 'ok', duration: 480 },
+          { ts: '2026-03-17T21:30:00', status: 'ok', duration: 430 },
+          { ts: '2026-03-17T21:00:00', status: 'ok', duration: 460 }
+        ]
+      },
+      {
+        id: 'morning-brief', name: 'Morning Brief', schedule: '30 9 * * *',
+        description: 'Compile daily summary and send to Beno via Telegram',
+        agent: 'Piia', enabled: true,
+        lastStatus: 'ok', consecutiveErrors: 0,
+        nextRun: '2026-03-18T09:30:00',
+        runs: [
+          { ts: '2026-03-17T09:30:00', status: 'ok', duration: 8200 },
+          { ts: '2026-03-16T09:30:00', status: 'ok', duration: 7900 },
+          { ts: '2026-03-15T09:30:00', status: 'ok', duration: 8500 },
+          { ts: '2026-03-14T09:30:00', status: 'ok', duration: 7600 },
+          { ts: '2026-03-13T09:30:00', status: 'ok', duration: 8100 }
+        ]
+      },
+      {
+        id: 'skill-scout', name: 'Skill Scout', schedule: '0 3 * * 1',
+        description: 'Weekly scan of ClawHub for new/updated skills and capabilities',
+        agent: 'Nile', enabled: true,
+        lastStatus: 'ok', consecutiveErrors: 0,
+        nextRun: '2026-03-23T03:00:00',
+        runs: [
+          { ts: '2026-03-17T03:00:00', status: 'ok', duration: 45200 },
+          { ts: '2026-03-10T03:00:00', status: 'ok', duration: 42800 },
+          { ts: '2026-03-03T03:00:00', status: 'ok', duration: 48100 },
+          { ts: '2026-02-24T03:00:00', status: 'ok', duration: 44600 },
+          { ts: '2026-02-17T03:00:00', status: 'ok', duration: 46300 }
+        ]
+      },
+      {
+        id: 'nightly-execution', name: 'Nightly Execution', schedule: '50 23 * * *',
+        description: 'Run autonomous task execution queue overnight',
+        agent: 'Rex', enabled: true,
+        lastStatus: 'ok', consecutiveErrors: 0,
+        nextRun: '2026-03-17T23:50:00',
+        runs: [
+          { ts: '2026-03-16T23:50:00', status: 'ok', duration: 182000 },
+          { ts: '2026-03-15T23:50:00', status: 'ok', duration: 195000 },
+          { ts: '2026-03-14T23:50:00', status: 'ok', duration: 178000 },
+          { ts: '2026-03-13T23:50:00', status: 'ok', duration: 201000 },
+          { ts: '2026-03-12T23:50:00', status: 'ok', duration: 167000 }
+        ]
+      },
+      {
+        id: 'daily-huddle', name: 'Daily Huddle', schedule: '0 10 * * *',
+        description: 'Multi-agent standup: gather status from all agents, post summary',
+        agent: 'Piia', enabled: false,
+        disabledSince: '2026-03-01T00:00:00',
+        lastStatus: 'ok', consecutiveErrors: 0,
+        nextRun: null,
+        runs: [
+          { ts: '2026-02-28T10:00:00', status: 'ok', duration: 11200 },
+          { ts: '2026-02-27T10:00:00', status: 'ok', duration: 10800 },
+          { ts: '2026-02-26T10:00:00', status: 'ok', duration: 12100 },
+          { ts: '2026-02-25T10:00:00', status: 'ok', duration: 10500 },
+          { ts: '2026-02-24T10:00:00', status: 'ok', duration: 11700 }
+        ]
+      },
+      {
+        id: 'charfen-sync', name: 'CharFen Goals Sync', schedule: '4 */6 * * *',
+        description: 'Sync CharFen goals data to mission control',
+        agent: 'Zara', enabled: true,
+        lastStatus: 'ok', consecutiveErrors: 0,
+        nextRun: '2026-03-18T00:04:00',
+        runs: [
+          { ts: '2026-03-17T18:04:00', status: 'ok', duration: 1800 },
+          { ts: '2026-03-17T12:04:00', status: 'ok', duration: 1650 },
+          { ts: '2026-03-17T06:04:00', status: 'ok', duration: 1720 },
+          { ts: '2026-03-16T18:04:00', status: 'ok', duration: 1900 },
+          { ts: '2026-03-16T12:04:00', status: 'ok', duration: 1580 }
+        ]
+      }
+    ];
+
+    function cronRelativeTime(isoStr) {
+      if (!isoStr) return 'disabled';
+      var now = new Date();
+      var target = new Date(isoStr);
+      var diffMs = target - now;
+      if (diffMs < 0) return 'overdue';
+      var diffMin = Math.floor(diffMs / 60000);
+      if (diffMin < 60) return 'in ' + diffMin + 'm';
+      var diffH = Math.floor(diffMin / 60);
+      var remMin = diffMin % 60;
+      if (diffH < 24) return 'in ' + diffH + 'h ' + remMin + 'm';
+      var tomorrow = new Date(now);
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      if (target.toDateString() === tomorrow.toDateString()) {
+        return 'tomorrow ' + target.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
+      }
+      var days = Math.floor(diffH / 24);
+      return 'in ' + days + 'd ' + (diffH % 24) + 'h';
+    }
+
+    function cronStatusDot(cron) {
+      if (!cron.enabled) {
+        var disabledMs = cron.disabledSince ? (Date.now() - new Date(cron.disabledSince).getTime()) : 0;
+        return disabledMs > 7 * 86400000 ? 'gray' : 'red';
+      }
+      if (cron.lastStatus === 'error') return 'orange';
+      return 'green';
+    }
+
+    function cronFormatDuration(ms) {
+      if (ms < 1000) return ms + 'ms';
+      var s = Math.round(ms / 1000);
+      if (s < 60) return s + 's';
+      var m = Math.floor(s / 60);
+      var rs = s % 60;
+      if (m < 60) return m + 'm ' + rs + 's';
+      return Math.floor(m / 60) + 'h ' + (m % 60) + 'm';
+    }
+
+    function renderCronRhythm() {
+      var grid = document.getElementById('cron-rhythm-grid');
+      if (!grid) return;
+      grid.innerHTML = cronRhythmData.map(function(c, i) {
+        var dot = cronStatusDot(c);
+        var next = cronRelativeTime(c.nextRun);
+        return '<div class="cron-rhythm-card reveal" style="transition-delay:' + (i * 60) + 'ms" data-cron-id="' + c.id + '">' +
+          '<div class="cron-rhythm-top">' +
+            '<span class="cron-rhythm-name">' + escapeHtml(c.name) + '</span>' +
+            '<span class="cron-rhythm-dot ' + dot + '"></span>' +
+          '</div>' +
+          '<div class="cron-rhythm-schedule">' + escapeHtml(c.schedule) + '</div>' +
+          '<div class="cron-rhythm-next">' + escapeHtml(next) + '</div>' +
+        '</div>';
+      }).join('');
+
+      grid.querySelectorAll('.cron-rhythm-card').forEach(function(card) {
+        card.addEventListener('click', function() {
+          var cronId = card.dataset.cronId;
+          var cron = cronRhythmData.filter(function(c) { return c.id === cronId; })[0];
+          if (cron) openCronModal(cron);
+        });
+      });
+
+      /* trigger reveal animations */
+      requestAnimationFrame(function() {
+        grid.querySelectorAll('.reveal').forEach(function(el) {
+          el.classList.add('visible');
+        });
+      });
+    }
+
+    function openCronModal(cron) {
+      var dot = cronStatusDot(cron);
+      var dotColors = { green: '#5CB85C', orange: '#F5A623', red: '#D9534F', gray: '#555' };
+      document.getElementById('cron-modal-icon').innerHTML = '<span style="font-size:20px">' + (cron.enabled ? '&#x23F0;' : '&#x23F8;') + '</span>';
+      document.getElementById('cron-modal-icon').style.background = (dotColors[dot] || '#555') + '22';
+      document.getElementById('cron-modal-name').textContent = cron.name;
+      document.getElementById('cron-modal-schedule').textContent = cron.schedule;
+
+      var body = document.getElementById('cron-modal-body');
+      var html = '';
+
+      /* Config section */
+      html += '<div class="cron-modal-section">' +
+        '<div class="cron-modal-section-title">Configuration</div>' +
+        '<div class="cron-modal-config-row"><span class="cron-modal-config-key">Description</span><span class="cron-modal-config-val">' + escapeHtml(cron.description) + '</span></div>' +
+        '<div class="cron-modal-config-row"><span class="cron-modal-config-key">Agent</span><span class="cron-modal-config-val">' + escapeHtml(cron.agent) + '</span></div>' +
+        '<div class="cron-modal-config-row"><span class="cron-modal-config-key">Enabled</span><span class="cron-modal-config-val">' + (cron.enabled ? 'Yes' : 'No') + '</span></div>' +
+        '<div class="cron-modal-config-row"><span class="cron-modal-config-key">Next Run</span><span class="cron-modal-config-val">' + (cron.nextRun ? cronRelativeTime(cron.nextRun) : 'N/A') + '</span></div>' +
+      '</div>';
+
+      /* Consecutive errors */
+      html += '<div class="cron-modal-section">' +
+        '<div class="cron-modal-section-title">Health</div>' +
+        '<span class="cron-modal-error-counter ' + (cron.consecutiveErrors === 0 ? 'zero' : '') + '">' +
+          (cron.consecutiveErrors === 0 ? '0 consecutive errors' : cron.consecutiveErrors + ' consecutive error' + (cron.consecutiveErrors > 1 ? 's' : '')) +
+        '</span>' +
+      '</div>';
+
+      /* Last 5 runs */
+      html += '<div class="cron-modal-section">' +
+        '<div class="cron-modal-section-title">Last 5 Runs</div>';
+      if (cron.runs && cron.runs.length) {
+        cron.runs.forEach(function(r) {
+          var dt = new Date(r.ts);
+          var timeStr = dt.toLocaleDateString([], { month: 'short', day: 'numeric' }) + ' ' + dt.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
+          html += '<div class="cron-modal-run-row">' +
+            '<span class="cron-modal-run-dot ' + r.status + '"></span>' +
+            '<span class="cron-modal-run-time">' + timeStr + '</span>' +
+            '<span class="cron-modal-run-dur">' + cronFormatDuration(r.duration) + '</span>' +
+          '</div>';
+        });
+      } else {
+        html += '<div style="font-size:13px;color:var(--text-3);font-style:italic">No run history</div>';
+      }
+      html += '</div>';
+
+      body.innerHTML = html;
+
+      document.getElementById('cron-modal-backdrop').classList.add('visible');
+      document.getElementById('cron-modal').classList.add('visible');
+    }
+
+    function closeCronModal() {
+      document.getElementById('cron-modal-backdrop').classList.remove('visible');
+      document.getElementById('cron-modal').classList.remove('visible');
+    }
+
+    document.getElementById('cron-modal-close').addEventListener('click', closeCronModal);
+    document.getElementById('cron-modal-backdrop').addEventListener('click', function(e) {
+      if (e.target === this) closeCronModal();
+    });
+
+    document.getElementById('cron-rhythm-refresh').addEventListener('click', function() {
+      var btn = this;
+      btn.classList.add('spinning');
+      setTimeout(function() {
+        renderCronRhythm();
+        btn.classList.remove('spinning');
+      }, 600);
+    });
+
+    renderCronRhythm();
+
     /* ---- Focus: Project Deep-Work View ---- */
     var focusProjects = {
       ofm: {
@@ -12841,6 +14168,10 @@
       <button id="settings-theme-btn" style="padding:6px 14px;border-radius:999px;border:1px solid var(--border);background:transparent;color:var(--text-2);font-size:12px;font-family:inherit;cursor:pointer;transition:all 0.2s;" onclick="toggleTheme()">Light</button>
     </div>
     <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-top:1px solid var(--border);">
+      <span style="font-size:13px;color:var(--text-2);">Pixel Art</span>
+      <button id="settings-pixel-btn" style="padding:6px 14px;border-radius:999px;border:1px solid var(--border);background:transparent;color:var(--text-2);font-size:12px;font-family:inherit;cursor:pointer;transition:all 0.2s;" onclick="togglePixelArt()">Off</button>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-top:1px solid var(--border);">
       <span style="font-size:13px;color:var(--text-2);">Sidebar</span>
       <button style="padding:6px 14px;border-radius:999px;border:1px solid var(--border);background:transparent;color:var(--text-2);font-size:12px;font-family:inherit;cursor:pointer;transition:all 0.2s;" onclick="toggleSidebar();document.getElementById('settings-backdrop').style.display='none';document.getElementById('settings-panel').style.display='none';">Toggle</button>
     </div>
@@ -12927,5 +14258,464 @@
       <button class="act-clear-btn" id="act-clear-all">Clear All</button>
     </div>
   </div>
+  <!-- Agent Modal -->
+  <div class="agent-modal-backdrop" id="agent-modal-backdrop"></div>
+  <div class="agent-modal" id="agent-modal">
+    <div class="agent-modal-header">
+      <div class="agent-modal-avatar" id="agent-modal-avatar"></div>
+      <div class="agent-modal-meta">
+        <div class="agent-modal-name" id="agent-modal-name"></div>
+        <div class="agent-modal-role" id="agent-modal-role"></div>
+      </div>
+      <button class="agent-modal-close" id="agent-modal-close">&times;</button>
+    </div>
+    <div class="agent-modal-body" id="agent-modal-body"></div>
+  </div>
+
+  <script>
+  (function() {
+    var fourRData = null;
+    var modal = document.getElementById('agent-modal');
+    var backdrop = document.getElementById('agent-modal-backdrop');
+
+    fetch('data/agent-4r-docs.json')
+      .then(function(r) { return r.json(); })
+      .then(function(d) { fourRData = d; })
+      .catch(function() { fourRData = {}; });
+
+    function openAgentModal(name) {
+      if (!fourRData) return;
+      var agent = fourRData[name];
+      if (!agent) return;
+
+      document.getElementById('agent-modal-avatar').textContent = agent.avatar;
+      document.getElementById('agent-modal-avatar').style.background = agent.color;
+      document.getElementById('agent-modal-name').textContent = name;
+      document.getElementById('agent-modal-role').textContent = agent.role;
+
+      var body = document.getElementById('agent-modal-body');
+      var html = '';
+      var sections = ['Role', 'Responsibilities', 'Results', 'Requirements'];
+      for (var i = 0; i < sections.length; i++) {
+        var key = sections[i];
+        var val = agent.fourR[key];
+        html += '<div class="agent-modal-section">';
+        html += '<div class="agent-modal-section-title">' + key + '</div>';
+        if (typeof val === 'string') {
+          html += '<div class="agent-modal-section-text">' + val + '</div>';
+        } else {
+          html += '<ul>';
+          for (var j = 0; j < val.length; j++) {
+            html += '<li>' + val[j] + '</li>';
+          }
+          html += '</ul>';
+        }
+        html += '</div>';
+      }
+
+      html += '<div class="agent-modal-tasks">';
+      html += '<div class="agent-modal-tasks-title">Recent Tasks</div>';
+      html += '<div class="agent-modal-tasks-empty">No recent tasks to display</div>';
+      html += '</div>';
+      html += '<button class="agent-modal-send-btn">Send Task</button>';
+
+      body.innerHTML = html;
+      modal.classList.add('visible');
+      backdrop.classList.add('visible');
+    }
+
+    function closeAgentModal() {
+      modal.classList.remove('visible');
+      backdrop.classList.remove('visible');
+    }
+
+    document.getElementById('agent-modal-close').addEventListener('click', closeAgentModal);
+    backdrop.addEventListener('click', closeAgentModal);
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && modal.classList.contains('visible')) closeAgentModal();
+    });
+
+    function getAgentName(card) {
+      var el = card.querySelector('.agent-name') || card.querySelector('.team-card-name');
+      return el ? el.textContent.trim() : null;
+    }
+
+    document.addEventListener('click', function(e) {
+      var ws = e.target.closest('.workstation');
+      if (ws) { var n = getAgentName(ws); if (n) { e.stopPropagation(); openAgentModal(n); return; } }
+      var tc = e.target.closest('.team-card');
+      if (tc) { var n = getAgentName(tc); if (n) { e.stopPropagation(); openAgentModal(n); return; } }
+    });
+  })();
+  </script>
+
+  <script>
+  /* Overnight Activity refresh button */
+  (function() {
+    var btn = document.getElementById('overnight-refresh-btn');
+    if (!btn) return;
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      btn.classList.add('spinning');
+      setTimeout(function() { btn.classList.remove('spinning'); }, 600);
+    });
+  })();
+  </script>
+
+  <script>
+  /* ========================================
+     CRM TAB
+     ======================================== */
+  (function() {
+    var CRM_BIZ_COLORS = { OFM: '#3b82f6', Lagoon: '#10b981', Build: '#f97316', Other: '#888888' };
+    var CRM_PIPELINE_COLS = ['new', 'engaged', 'inprogress', 'won', 'lost'];
+    var CRM_PIPELINE_LABELS = { new: 'New', engaged: 'Engaged', inprogress: 'In Progress', won: 'Won', lost: 'Lost' };
+    var CRM_PIPELINE_COLORS = { new: '#6b7280', engaged: '#3b82f6', inprogress: '#f59e0b', won: '#10b981', lost: '#ef4444' };
+
+    var crmContacts = [
+      // OFM
+      { id: 'crm-1', name: 'Andrea Perez', type: 'Creator', business: 'OFM', email: 'andrea@ofmagency.com', phone: '+52 984 111 2233', lastContact: '2026-03-15', status: 'Active', notes: 'Top performer. Consistent content quality. Exploring AI avatar option.', nextAction: 'Review new content batch', tags: ['followup'], pipeline: 'inprogress' },
+      { id: 'crm-2', name: 'Sofia Martinez', type: 'Creator', business: 'OFM', email: 'sofia.m@gmail.com', phone: '+52 984 222 3344', lastContact: '2026-03-10', status: 'Active', notes: 'New model onboarding. Strong IG following (45k). Needs coaching on engagement.', nextAction: 'Schedule onboarding call', tags: ['urgent'], pipeline: 'engaged' },
+      { id: 'crm-3', name: 'Daniel Chen', type: 'Partner', business: 'OFM', email: 'daniel@brandsynergy.io', phone: '+1 415 555 6677', lastContact: '2026-03-12', status: 'Active', notes: 'Brand collaboration partner. Running cross-promo campaign for Q2.', nextAction: 'Finalize collab terms', tags: ['followup'], pipeline: 'inprogress' },
+      { id: 'crm-4', name: 'Kevin Rosales', type: 'Partner', business: 'OFM', email: 'kevin.r@proton.me', phone: '+52 984 333 4455', lastContact: '2026-03-08', status: 'Active', notes: 'Scout partner. 30% of agency 70% on his scouted models. 3 models onboarded so far.', nextAction: 'Check new scout leads', tags: ['followup'], pipeline: 'inprogress' },
+      { id: 'crm-5', name: 'Bianca Torres', type: 'Partner', business: 'OFM', email: 'bianca@ofmagency.com', phone: '+52 984 444 5566', lastContact: '2026-03-16', status: 'Active', notes: 'Co-runs OFM. Handles day-to-day chatter management and model relations.', nextAction: 'Sync on weekly metrics', tags: [], pipeline: 'won' },
+      { id: 'crm-6', name: 'Maria Vasquez', type: 'Creator', business: 'OFM', email: 'maria.v@fanvue.com', phone: '+52 984 555 6677', lastContact: '2026-03-06', status: 'On Hold', notes: 'Paused content creation. Personal reasons. Check back end of March.', nextAction: 'Follow up on return date', tags: ['waiting'], pipeline: 'engaged' },
+
+      // Lagoon
+      { id: 'crm-7', name: 'Carlos Gutierrez', type: 'Customer', business: 'Lagoon', email: 'carlos.g@hotmail.com', phone: '+52 984 666 7788', lastContact: '2026-03-14', status: 'Active', notes: 'Repeat customer. X3 rental bookings this month. Interested in yacht tour package.', nextAction: 'Send yacht tour pricing', tags: ['urgent'], pipeline: 'inprogress' },
+      { id: 'crm-8', name: 'Maria Lopez', type: 'Supplier', business: 'Lagoon', email: 'mlopez@combustibles.mx', phone: '+52 984 777 8899', lastContact: '2026-03-11', status: 'Active', notes: 'Primary fuel supplier for ATV/UTV fleet. Weekly delivery schedule. Good rates.', nextAction: 'Confirm next delivery', tags: ['followup'], pipeline: 'won' },
+      { id: 'crm-9', name: 'Jorge Ramirez', type: 'Contractor', business: 'Lagoon', email: 'jorge.ram@gmail.com', phone: '+52 984 888 9900', lastContact: '2026-03-05', status: 'On Hold', notes: 'ATV maintenance contractor. Paused due to pricing dispute. Good quality work.', nextAction: 'Renegotiate rates', tags: ['blocked'], pipeline: 'engaged' },
+      { id: 'crm-10', name: 'Linea Palethorpe', type: 'Partner', business: 'Lagoon', email: 'linea@lagoonco.mx', phone: '+52 984 999 0011', lastContact: '2026-03-16', status: 'Active', notes: 'Co-owner (Dubi\'s wife). Manages day-to-day operations and bookings.', nextAction: 'Review March revenue', tags: [], pipeline: 'won' },
+      { id: 'crm-11', name: 'Pedro Sanchez', type: 'Customer', business: 'Lagoon', email: 'pedro.s@outlook.com', phone: '+52 984 100 2233', lastContact: '2026-03-09', status: 'Active', notes: 'Corporate group booking inquiry. 12 ATVs for team building event.', nextAction: 'Send group quote', tags: ['urgent', 'followup'], pipeline: 'new' },
+
+      // Build
+      { id: 'crm-12', name: 'Michael Palethorpe', type: 'Architect', business: 'Build', email: 'michael.p@sirewall.com', phone: '+1 250 555 1234', lastContact: '2026-03-13', status: 'Active', notes: 'Sirewall rammed earth expert. Key advisor on CRETE project. Father.', nextAction: 'CRETE debrief call', tags: ['followup'], pipeline: 'inprogress' },
+      { id: 'crm-13', name: 'Roberto Silva', type: 'Supplier', business: 'Build', email: 'roberto@materiales.mx', phone: '+52 954 111 2233', lastContact: '2026-03-10', status: 'Active', notes: 'Building materials supplier in Puerto Escondido. Concrete, rebar, wood. Reliable.', nextAction: 'Get quote for Phase 2', tags: ['followup'], pipeline: 'engaged' },
+      { id: 'crm-14', name: 'City of Puerto Escondido', type: 'City Official', business: 'Build', email: 'permisos@puertoescondido.gob.mx', phone: '+52 954 222 3344', lastContact: '2026-03-12', status: 'Active', notes: 'Municipal permits office. Construction and land use permits pending.', nextAction: 'Check permit status', tags: ['waiting'], pipeline: 'inprogress' },
+      { id: 'crm-15', name: 'Enrique Mendez', type: 'Contractor', business: 'Build', email: 'enrique.m@construye.mx', phone: '+52 954 333 4455', lastContact: '2026-03-07', status: 'Active', notes: 'General contractor. Overseeing foundation work. Crew of 8.', nextAction: 'Review foundation progress', tags: ['followup'], pipeline: 'inprogress' }
+    ];
+
+    var crmSortKey = 'name';
+    var crmSortAsc = true;
+    var crmFilterBiz = 'all';
+    var crmSearchQuery = '';
+    var crmActiveView = 'contacts';
+    var crmDraggedId = null;
+
+    function crmBizColor(biz) { return CRM_BIZ_COLORS[biz] || CRM_BIZ_COLORS.Other; }
+
+    function crmStatusPill(status) {
+      var map = { 'Active': 'crm-pill-active', 'On Hold': 'crm-pill-onhold', 'Stale': 'crm-pill-stale', 'Done': 'crm-pill-done' };
+      return '<span class="crm-pill ' + (map[status] || 'crm-pill-active') + '">' + status + '</span>';
+    }
+
+    function crmFormatDate(d) {
+      if (!d) return '';
+      var dt = new Date(d + 'T12:00:00');
+      var mn = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+      return mn[dt.getMonth()] + ' ' + dt.getDate();
+    }
+
+    function crmFilteredContacts() {
+      return crmContacts.filter(function(c) {
+        if (crmFilterBiz !== 'all' && c.business !== crmFilterBiz) return false;
+        if (crmSearchQuery) {
+          var q = crmSearchQuery.toLowerCase();
+          return c.name.toLowerCase().indexOf(q) !== -1
+            || c.type.toLowerCase().indexOf(q) !== -1
+            || c.business.toLowerCase().indexOf(q) !== -1
+            || (c.email && c.email.toLowerCase().indexOf(q) !== -1)
+            || (c.nextAction && c.nextAction.toLowerCase().indexOf(q) !== -1);
+        }
+        return true;
+      }).sort(function(a, b) {
+        var va = a[crmSortKey] || '', vb = b[crmSortKey] || '';
+        if (typeof va === 'string') va = va.toLowerCase();
+        if (typeof vb === 'string') vb = vb.toLowerCase();
+        if (va < vb) return crmSortAsc ? -1 : 1;
+        if (va > vb) return crmSortAsc ? 1 : -1;
+        return 0;
+      });
+    }
+
+    /* ---- Contacts Table ---- */
+    function renderCrmTable() {
+      var tbody = document.getElementById('crm-table-body');
+      if (!tbody) return;
+      var contacts = crmFilteredContacts();
+      if (!contacts.length) {
+        tbody.innerHTML = '<tr><td colspan="8" style="text-align:center;color:var(--text-3);padding:40px 0">No contacts found.</td></tr>';
+        return;
+      }
+      var html = '';
+      contacts.forEach(function(c) {
+        var bizColor = crmBizColor(c.business);
+        var tagsHtml = (c.tags || []).map(function(t) { return '<span class="crm-tag">' + t + '</span>'; }).join('');
+        html += '<tr data-crm-id="' + c.id + '">'
+          + '<td class="crm-name">' + escapeHtml(c.name) + '</td>'
+          + '<td>' + escapeHtml(c.type) + '</td>'
+          + '<td><span class="crm-biz-dot" style="background:' + bizColor + '"></span>' + escapeHtml(c.business) + '</td>'
+          + '<td>' + escapeHtml(c.email || '') + '</td>'
+          + '<td>' + crmFormatDate(c.lastContact) + '</td>'
+          + '<td>' + crmStatusPill(c.status) + '</td>'
+          + '<td>' + escapeHtml(c.nextAction || '') + '</td>'
+          + '<td>' + tagsHtml + '</td>'
+          + '</tr>';
+      });
+      tbody.innerHTML = html;
+      tbody.querySelectorAll('tr').forEach(function(row) {
+        row.addEventListener('click', function() { openCrmModal(row.dataset.crmId); });
+      });
+    }
+
+    /* ---- Relationships View ---- */
+    function renderCrmRelationships() {
+      var container = document.getElementById('crm-rel-container');
+      if (!container) return;
+      var contacts = crmFilteredContacts();
+      var groups = {};
+      contacts.forEach(function(c) {
+        if (!groups[c.type]) groups[c.type] = [];
+        groups[c.type].push(c);
+      });
+      var html = '';
+      var types = Object.keys(groups).sort();
+      types.forEach(function(type) {
+        var members = groups[type];
+        html += '<div class="crm-rel-group">';
+        html += '<div class="crm-rel-group-header">' + escapeHtml(type) + '<span class="crm-rel-group-count">' + members.length + '</span></div>';
+        members.forEach(function(c) {
+          var bizColor = crmBizColor(c.business);
+          html += '<div class="crm-rel-row" data-crm-id="' + c.id + '">'
+            + '<span class="crm-biz-dot" style="background:' + bizColor + '"></span>'
+            + '<span class="crm-rel-name">' + escapeHtml(c.name) + '</span>'
+            + '<span class="crm-rel-status">' + crmStatusPill(c.status) + '</span>'
+            + '<span class="crm-rel-date">' + crmFormatDate(c.lastContact) + '</span>'
+            + '<span class="crm-rel-action">' + escapeHtml(c.nextAction || '') + '</span>'
+            + '</div>';
+        });
+        html += '</div>';
+      });
+      if (!html) html = '<div style="padding:40px;text-align:center;color:var(--text-3)">No contacts found.</div>';
+      container.innerHTML = html;
+      container.querySelectorAll('.crm-rel-row').forEach(function(row) {
+        row.addEventListener('click', function() { openCrmModal(row.dataset.crmId); });
+      });
+    }
+
+    /* ---- Pipeline Kanban ---- */
+    function renderCrmPipeline() {
+      var board = document.getElementById('crm-pipeline-board');
+      if (!board) return;
+      var contacts = crmFilteredContacts();
+      var html = '';
+      CRM_PIPELINE_COLS.forEach(function(colKey) {
+        var colContacts = contacts.filter(function(c) { return c.pipeline === colKey; });
+        var dotColor = CRM_PIPELINE_COLORS[colKey] || '#6b7280';
+        html += '<div class="crm-pipe-col" data-pipeline="' + colKey + '">';
+        html += '<div class="crm-pipe-header">';
+        html += '<span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:' + dotColor + ';flex-shrink:0;margin-right:6px"></span>';
+        html += '<span class="crm-pipe-title" style="color:' + dotColor + '">' + CRM_PIPELINE_LABELS[colKey] + '</span>';
+        html += '<span class="crm-pipe-count">' + colContacts.length + '</span>';
+        html += '</div>';
+        html += '<div class="crm-pipe-list" data-pipeline="' + colKey + '">';
+        if (!colContacts.length) {
+          html += '<div class="crm-pipe-empty">No contacts</div>';
+        }
+        colContacts.forEach(function(c) {
+          var bizColor = crmBizColor(c.business);
+          html += '<div class="crm-pipe-card" draggable="true" data-crm-id="' + c.id + '" style="border-left:4px solid ' + bizColor + ';border-top-left-radius:0;border-bottom-left-radius:0">'
+            + '<div class="crm-pipe-card-name">' + escapeHtml(c.name) + '</div>'
+            + '<div class="crm-pipe-card-meta">'
+            + '<span class="crm-pipe-card-type">' + escapeHtml(c.type) + '</span>'
+            + '<span class="crm-biz-dot" style="background:' + bizColor + '"></span>'
+            + '<span>' + escapeHtml(c.business) + '</span>'
+            + '<span style="margin-left:auto">' + crmFormatDate(c.lastContact) + '</span>'
+            + '</div></div>';
+        });
+        html += '</div></div>';
+      });
+      board.innerHTML = html;
+      attachCrmDragHandlers();
+      board.querySelectorAll('.crm-pipe-card').forEach(function(card) {
+        card.addEventListener('click', function(e) {
+          if (card.classList.contains('dragging')) return;
+          openCrmModal(card.dataset.crmId);
+        });
+      });
+    }
+
+    /* ---- Drag & Drop ---- */
+    function attachCrmDragHandlers() {
+      var board = document.getElementById('crm-pipeline-board');
+      if (!board) return;
+      board.querySelectorAll('.crm-pipe-card').forEach(function(card) {
+        card.addEventListener('dragstart', function(e) {
+          crmDraggedId = card.dataset.crmId;
+          card.classList.add('dragging');
+          e.dataTransfer.effectAllowed = 'move';
+          e.dataTransfer.setData('text/plain', card.dataset.crmId);
+        });
+        card.addEventListener('dragend', function() {
+          card.classList.remove('dragging');
+          crmDraggedId = null;
+          board.querySelectorAll('.crm-pipe-list.drag-over').forEach(function(z) { z.classList.remove('drag-over'); });
+        });
+      });
+      board.querySelectorAll('.crm-pipe-list').forEach(function(zone) {
+        zone.addEventListener('dragover', function(e) {
+          e.preventDefault();
+          e.dataTransfer.dropEffect = 'move';
+          zone.classList.add('drag-over');
+        });
+        zone.addEventListener('dragleave', function(e) {
+          if (!zone.contains(e.relatedTarget)) zone.classList.remove('drag-over');
+        });
+        zone.addEventListener('drop', function(e) {
+          e.preventDefault();
+          zone.classList.remove('drag-over');
+          var crmId = e.dataTransfer.getData('text/plain');
+          var targetCol = zone.dataset.pipeline;
+          if (!crmId || !targetCol) return;
+          for (var i = 0; i < crmContacts.length; i++) {
+            if (crmContacts[i].id === crmId && crmContacts[i].pipeline !== targetCol) {
+              crmContacts[i].pipeline = targetCol;
+              break;
+            }
+          }
+          renderCrmPipeline();
+          var dropped = board.querySelector('.crm-pipe-card[data-crm-id="' + crmId + '"]');
+          if (dropped) {
+            dropped.classList.add('just-dropped');
+            setTimeout(function() { dropped.classList.remove('just-dropped'); }, 250);
+          }
+        });
+      });
+    }
+
+    /* ---- Detail Modal ---- */
+    function openCrmModal(crmId) {
+      var contact = null;
+      for (var i = 0; i < crmContacts.length; i++) { if (crmContacts[i].id === crmId) { contact = crmContacts[i]; break; } }
+      if (!contact) return;
+      var bizColor = crmBizColor(contact.business);
+      var tagsHtml = (contact.tags || []).map(function(t) { return '<span class="crm-tag" style="font-size:12px;padding:3px 10px">' + t + '</span>'; }).join('');
+      var html = '<div class="task-modal-backdrop" id="crm-modal-backdrop">'
+        + '<div class="task-modal" id="crm-modal" role="dialog" aria-modal="true">'
+        + '<div class="task-modal-header">'
+        + '<div class="task-modal-status-bar" style="background:' + bizColor + '"></div>'
+        + '<div class="task-modal-title">' + escapeHtml(contact.name) + '</div>'
+        + '<button class="task-modal-close" id="crm-modal-close" aria-label="Close">&times;</button>'
+        + '</div>'
+        + '<div class="crm-modal-meta-grid">'
+        + '<div class="crm-modal-field"><span class="crm-modal-field-label">Type</span><span class="crm-modal-field-value">' + escapeHtml(contact.type) + '</span></div>'
+        + '<div class="crm-modal-field"><span class="crm-modal-field-label">Business</span><span class="crm-modal-field-value" style="color:' + bizColor + '">' + escapeHtml(contact.business) + '</span></div>'
+        + '<div class="crm-modal-field"><span class="crm-modal-field-label">Email</span><span class="crm-modal-field-value">' + escapeHtml(contact.email || '—') + '</span></div>'
+        + '<div class="crm-modal-field"><span class="crm-modal-field-label">Phone</span><span class="crm-modal-field-value">' + escapeHtml(contact.phone || '—') + '</span></div>'
+        + '<div class="crm-modal-field"><span class="crm-modal-field-label">Last Contact</span><span class="crm-modal-field-value">' + crmFormatDate(contact.lastContact) + '</span></div>'
+        + '<div class="crm-modal-field"><span class="crm-modal-field-label">Status</span><span class="crm-modal-field-value">' + crmStatusPill(contact.status) + '</span></div>'
+        + '</div>'
+        + (tagsHtml ? '<div class="crm-modal-tags">' + tagsHtml + '</div>' : '')
+        + '<div class="task-modal-body">'
+        + '<div class="task-modal-desc-label">Next Action</div>'
+        + '<div class="task-modal-desc" style="margin-bottom:16px">' + escapeHtml(contact.nextAction || 'None') + '</div>'
+        + '<div class="task-modal-desc-label">Notes</div>'
+        + '<div class="task-modal-desc">' + escapeHtml(contact.notes || 'No notes.') + '</div>'
+        + '</div>'
+        + '</div></div>';
+      document.body.insertAdjacentHTML('beforeend', html);
+      var backdrop = document.getElementById('crm-modal-backdrop');
+      document.getElementById('crm-modal-close').addEventListener('click', closeCrmModal);
+      backdrop.addEventListener('click', function(e) { if (e.target === backdrop) closeCrmModal(); });
+      function escClose(e) { if (e.key === 'Escape') { closeCrmModal(); document.removeEventListener('keydown', escClose); } }
+      document.addEventListener('keydown', escClose);
+    }
+    function closeCrmModal() {
+      var el = document.getElementById('crm-modal-backdrop');
+      if (el) el.remove();
+    }
+
+    /* ---- View Switching ---- */
+    function renderCrmActiveView() {
+      var cv = document.getElementById('crm-contacts-view');
+      var rv = document.getElementById('crm-relationships-view');
+      var pv = document.getElementById('crm-pipeline-view');
+      if (cv) cv.style.display = crmActiveView === 'contacts' ? '' : 'none';
+      if (rv) rv.style.display = crmActiveView === 'relationships' ? '' : 'none';
+      if (pv) pv.style.display = crmActiveView === 'pipeline' ? '' : 'none';
+      if (crmActiveView === 'contacts') renderCrmTable();
+      else if (crmActiveView === 'relationships') renderCrmRelationships();
+      else if (crmActiveView === 'pipeline') renderCrmPipeline();
+    }
+
+    /* ---- Event Bindings ---- */
+    // View toggle
+    document.querySelectorAll('#crm-view-toggle .crm-view-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('#crm-view-toggle .crm-view-btn').forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        crmActiveView = btn.dataset.view;
+        try { localStorage.setItem('mc-crm-view', crmActiveView); } catch(e) {}
+        renderCrmActiveView();
+      });
+    });
+
+    // Business filter
+    document.querySelectorAll('#crm-biz-filter .crm-filter-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('#crm-biz-filter .crm-filter-btn').forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        crmFilterBiz = btn.dataset.biz;
+        renderCrmActiveView();
+      });
+    });
+
+    // Search
+    var crmSearchEl = document.getElementById('crm-search');
+    if (crmSearchEl) {
+      crmSearchEl.addEventListener('input', function() {
+        crmSearchQuery = crmSearchEl.value.trim();
+        renderCrmActiveView();
+      });
+    }
+
+    // Table sort
+    document.querySelectorAll('#crm-table th[data-sort]').forEach(function(th) {
+      th.addEventListener('click', function() {
+        var key = th.dataset.sort;
+        if (crmSortKey === key) { crmSortAsc = !crmSortAsc; }
+        else { crmSortKey = key; crmSortAsc = true; }
+        document.querySelectorAll('#crm-table th').forEach(function(h) { h.classList.remove('sorted'); });
+        th.classList.add('sorted');
+        th.querySelector('.sort-arrow').innerHTML = crmSortAsc ? '&#9650;' : '&#9660;';
+        renderCrmTable();
+      });
+    });
+
+    // Restore saved view
+    try {
+      var saved = localStorage.getItem('mc-crm-view');
+      if (saved && (saved === 'contacts' || saved === 'relationships' || saved === 'pipeline')) {
+        crmActiveView = saved;
+        document.querySelectorAll('#crm-view-toggle .crm-view-btn').forEach(function(b) { b.classList.toggle('active', b.dataset.view === saved); });
+      }
+    } catch(e) {}
+
+    // Render on tab switch
+    document.querySelector('.sidebar-nav-item[data-tab="crm"]').addEventListener('click', function() {
+      renderCrmActiveView();
+    });
+
+    // escapeHtml reuse (already global)
+    if (typeof escapeHtml === 'undefined') {
+      window.escapeHtml = function(str) {
+        var div = document.createElement('div');
+        div.appendChild(document.createTextNode(str));
+        return div.innerHTML;
+      };
+    }
+  })();
+  </script>
+
 </body>
 </html>
