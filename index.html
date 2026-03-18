@@ -12904,6 +12904,9 @@
       var picker = document.getElementById('radar-date-picker');
       var todayBtn = document.getElementById('radar-date-today');
       if (!picker) return;
+      // Set today's date as default
+      var now = new Date();
+      picker.value = now.getFullYear() + '-' + String(now.getMonth()+1).padStart(2,'0') + '-' + String(now.getDate()).padStart(2,'0');
 
       function loadRadarForDate(dateStr) {
         var url = dateStr ? ('data/radar-archive/' + dateStr + '.json?t=' + Date.now()) : ('data/radar.json?t=' + Date.now());
