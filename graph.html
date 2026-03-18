@@ -301,7 +301,7 @@ canvas:active { cursor: grabbing; }
   .sidebar.open { transform: translateX(0); }
   .graph-container { left: 0; }
   .toggle-sidebar { left: 12px; z-index: 201; display: flex; }
-  .sidebar.open ~ .toggle-sidebar { left: calc(var(--sidebar-width) + 8px); }
+  .sidebar.open ~ .toggle-sidebar { display: none; }
   .node-detail { left: 0; max-height: 45vh; padding: 16px 20px; }
   .node-detail-title { font-size: 15px; }
   /* Backdrop overlay when sidebar is open */
