@@ -8647,6 +8647,19 @@
       });
     });
 
+    /* ---- Ensure lazy-loaded tab data fires on restore ---- */
+    function ensureTabData(tabId) {
+      switch(tabId) {
+        case 'radar':    if (!radarData) loadRadarData(); break;
+        case 'system':   loadSystemData(); break;
+        case 'approvals': loadApprovals(); break;
+        case 'content':  loadContent(); break;
+        case 'documents': if (!docsData || !docsData.length) loadDocuments(); break;
+        case 'crm':      /* loaded on click via its own handler */ break;
+        case 'graph':    /* graph init handled separately */ break;
+      }
+    }
+
     /* ---- Restore last active tab from localStorage ---- */
     (function() {
       try {
@@ -8668,6 +8681,8 @@
             tabHistory = [saved];
             tabHistoryIdx = 0;
             updateNavButtons();
+            // Fire lazy data load for restored tab
+            ensureTabData(saved);
           }
         }
       } catch(e) {}
