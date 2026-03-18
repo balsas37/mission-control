@@ -8622,6 +8622,8 @@
         setTimeout(function() {
           currentPanel.classList.remove('active', 'tab-exit');
           newPanel.classList.add('active', 'tab-enter');
+          // Ensure lazy-loaded data fires for new tab
+          ensureTabData(tabId);
           // Re-observe reveal elements in new panel
           if (revealObserver) {
             newPanel.querySelectorAll('.reveal:not(.revealed)').forEach(function(el) {
@@ -8688,6 +8690,7 @@
     /* ---- Ensure lazy-loaded tab data fires on restore ---- */
     function ensureTabData(tabId) {
       switch(tabId) {
+        case 'actions':  if (!kanbanTasksLoaded) { loadTasksFromJSON().then(function() { loadKanbanState(); renderKanbanBoard(); }); } else { renderKanbanBoard(); } break;
         case 'radar':    if (!radarData) loadRadarData(); break;
         case 'system':   loadSystemData(); break;
         case 'approvals': loadApprovals(); break;
@@ -9172,9 +9175,18 @@
     function renderKanbanBoard() {
       var board = document.getElementById('kb-board');
       if (!board) return;
+      // Safety: if no tasks loaded yet, show loading state
+      if (!kanbanTasksLoaded) {
+        board.innerHTML = '<div style="padding:40px;color:var(--text-3);font-size:14px;text-align:center;width:100%">Loading tasks...</div>';
+        return;
+      }
+      if (!kanbanTasks.length) {
+        board.innerHTML = '<div style="padding:40px;color:var(--text-3);font-size:14px;text-align:center;width:100%">No tasks found. Check data/tasks.json</div>';
+        return;
+      }
       var filter = 'all';
       try {
-        var activeFilterEl = document.querySelector('.inbox-filter.active');
+        var activeFilterEl = document.querySelector('#kb-filters .inbox-filter.active');
         if (activeFilterEl) filter = activeFilterEl.dataset.filter;
       } catch(e) {}
       var html = '';
