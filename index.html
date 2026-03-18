@@ -4293,6 +4293,10 @@
        ======================================== */
     .docs-wrap {
       max-width: 960px;
+      overflow: hidden;
+    }
+    .docs-grid {
+      max-width: 100%;
     }
 
     .docs-search-wrap {
@@ -4346,6 +4350,9 @@
       flex-direction: column;
       gap: 10px;
       transition: border-color 0.2s ease, transform 0.2s ease;
+      min-width: 0;
+      overflow-wrap: break-word;
+      word-break: break-word;
     }
     .doc-card:hover {
       border-color: var(--border-hover);
