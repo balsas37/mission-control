@@ -5650,6 +5650,15 @@
       min-width: 0;
       line-height: 1.4;
     }
+    @media (max-width: 768px) {
+      .target-text {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        font-size: 13px;
+      }
+    }
 
     .target-meta-right {
       display: flex;
@@ -6811,9 +6820,7 @@
       <button class="sidebar-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle light/dark mode">
         <span id="theme-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></span>
       </button>
-      <button class="sidebar-toggle" id="pixel-art-toggle" aria-label="Toggle pixel art mode" title="Toggle pixel art mode">
-        <span id="pixel-art-label" style="font-size:10px;white-space:nowrap;">Pixel Art: Off</span>
-      </button>
+      <!-- Pixel art toggle removed - future: office tab only -->
       <!-- Three-dot menu -->
       <div class="topbar-menu-wrap" id="topbar-menu-wrap">
         <button class="topbar-dots-btn" id="topbar-dots-btn" aria-label="More options" title="More options">
@@ -8429,10 +8436,9 @@
 
     /* ---- Pixel Art Mode ---- */
     (function() {
-      var savedPixel = localStorage.getItem('mc-pixel-art');
-      if (savedPixel === 'true') {
-        document.body.classList.add('pixel-art-mode');
-      }
+      /* Pixel art disabled globally - future: office tab only */
+      localStorage.removeItem('mc-pixel-art');
+      document.body.classList.remove('pixel-art-mode');
       function updatePixelLabel() {
         var label = document.getElementById('pixel-art-label');
         if (label) {
@@ -14210,10 +14216,7 @@
       <span style="font-size:13px;color:var(--text-2);">Theme</span>
       <button id="settings-theme-btn" style="padding:6px 14px;border-radius:999px;border:1px solid var(--border);background:transparent;color:var(--text-2);font-size:12px;font-family:inherit;cursor:pointer;transition:all 0.2s;" onclick="toggleTheme()">Light</button>
     </div>
-    <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-top:1px solid var(--border);">
-      <span style="font-size:13px;color:var(--text-2);">Pixel Art</span>
-      <button id="settings-pixel-btn" style="padding:6px 14px;border-radius:999px;border:1px solid var(--border);background:transparent;color:var(--text-2);font-size:12px;font-family:inherit;cursor:pointer;transition:all 0.2s;" onclick="togglePixelArt()">Off</button>
-    </div>
+    <!-- Pixel art setting removed - future: office tab only -->
     <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-top:1px solid var(--border);">
       <span style="font-size:13px;color:var(--text-2);">Sidebar</span>
       <button style="padding:6px 14px;border-radius:999px;border:1px solid var(--border);background:transparent;color:var(--text-2);font-size:12px;font-family:inherit;cursor:pointer;transition:all 0.2s;" onclick="toggleSidebar();document.getElementById('settings-backdrop').style.display='none';document.getElementById('settings-panel').style.display='none';">Toggle</button>
