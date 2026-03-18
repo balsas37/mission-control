@@ -1585,6 +1585,15 @@
       color: var(--text-2);
       line-height: 1.6;
     }
+    @media (max-width: 768px) {
+      .project-desc {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        font-size: 13px;
+      }
+    }
 
     .project-agents {
       display: flex;
