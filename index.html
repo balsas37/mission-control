@@ -4279,7 +4279,16 @@
     @media (max-width: 768px) {
       .docs-wrap {
         max-width: 100%;
-        padding: 0 8px;
+        padding: 0;
+        overflow-x: hidden;
+      }
+      #panel-documents {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+        overflow-x: hidden;
+      }
+      .doc-card {
+        padding: 14px;
       }
     }
     .docs-search-wrap {
@@ -10389,7 +10398,9 @@
         html += '<span class="doc-cat-pill ' + docCatClass(d.category) + '">' + escapeHtml(d.category) + '</span>';
         html += '<span class="doc-card-title" title="' + escapeHtml(d.title) + '">' + escapeHtml(d.title) + '</span>';
         html += '</div>';
-        html += '<div class="doc-card-snippet">' + escapeHtml(d.snippet) + '</div>';
+        html += '<div class="doc-card-snippet doc-card-snippet-clamped" data-full="' + escapeHtml(d.snippet) + '">' + escapeHtml(d.snippet) + '</div>';
+        if (d.snippet.length > 120) html += '<span class="doc-card-toggle" style="font-size:11px;color:var(--accent-muted,#6BA8DA);cursor:pointer;display:inline-block;margin-bottom:6px">Show more</span>';
+        if (d.path) html += '<div style="font-size:11px;color:var(--text-3);font-family:monospace;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">' + escapeHtml(d.path) + '</div>';
         html += '<div class="doc-card-date">Created ' + formatDate(d.created) + '</div>';
         html += '</div>';
       });
@@ -10422,6 +10433,25 @@
     if (docsSearchInput) {
       docsSearchInput.addEventListener('input', renderDocuments);
     }
+
+    // Doc card show more/less toggle
+    document.getElementById('docs-grid').addEventListener('click', function(e) {
+      var toggle = e.target.closest('.doc-card-toggle');
+      if (!toggle) return;
+      var card = toggle.closest('.doc-card');
+      var snippet = card.querySelector('.doc-card-snippet');
+      if (snippet.classList.contains('doc-card-snippet-clamped')) {
+        snippet.classList.remove('doc-card-snippet-clamped');
+        snippet.style.webkitLineClamp = 'unset';
+        snippet.style.maxHeight = 'none';
+        toggle.textContent = 'Show less';
+      } else {
+        snippet.classList.add('doc-card-snippet-clamped');
+        snippet.style.webkitLineClamp = '3';
+        snippet.style.maxHeight = '';
+        toggle.textContent = 'Show more';
+      }
+    });
 
     /* ---- Global Search ---- */
     var gsearchOpen = false;
