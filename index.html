@@ -8504,6 +8504,7 @@
           kanbanTasks = tasks.map(function(t) {
             t.createdAt = t.createdAt || Date.now();
             t.movedAt = t.movedAt || Date.now();
+            if (t.status === 'done') t.status = 'completed';
             return t;
           });
           kanbanNextId = kanbanTasks.length + 200;
