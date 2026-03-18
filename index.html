@@ -2286,13 +2286,9 @@
     .data-td:first-child { font-weight: 500; }
     .data-row:last-child .data-td { border-bottom: none; }
     @media (max-width: 768px) {
-      .data-td:last-child {
-        display: -webkit-box;
-        -webkit-line-clamp: 4;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        font-size: 12px;
-        max-width: 180px;
+      .data-td:last-child,
+      .data-th:last-child {
+        display: none;
       }
     }
 
