@@ -8571,6 +8571,19 @@
             t.createdAt = t.createdAt || Date.now();
             t.movedAt = t.movedAt || Date.now();
             if (t.status === 'done') t.status = 'completed';
+            // Normalize agent: resolve record IDs to names, handle arrays
+            if (Array.isArray(t.agent)) t.agent = t.agent[0] || '';
+            if (typeof t.agent === 'string' && t.agent.startsWith('rec')) {
+              // Map known Aitable record IDs to agent names
+              var agentMap = {
+                'rec7UjlTlYp2P': 'Piia', 'reccSi1K1AJLA': 'Kat', 'rec6oaDBNFqoT': 'Vex',
+                'rec6swN17awjF': 'Rex', 'recVnnrNXlvwt': 'Zara', 'recrc35rVUWmh': 'Mara',
+                'rec4JAnTW6gJV': 'Cleo', 'recaFvdOsFpsG': 'Nile'
+              };
+              t.agent = agentMap[t.agent] || t.agent;
+            }
+            // Empty agent = Beno's task
+            if (!t.agent) t.agent = 'Beno';
             return t;
           });
           kanbanNextId = kanbanTasks.length + 200;
@@ -9175,15 +9188,6 @@
     function renderKanbanBoard() {
       var board = document.getElementById('kb-board');
       if (!board) return;
-      // Safety: if no tasks loaded yet, show loading state
-      if (!kanbanTasksLoaded) {
-        board.innerHTML = '<div style="padding:40px;color:var(--text-3);font-size:14px;text-align:center;width:100%">Loading tasks...</div>';
-        return;
-      }
-      if (!kanbanTasks.length) {
-        board.innerHTML = '<div style="padding:40px;color:var(--text-3);font-size:14px;text-align:center;width:100%">No tasks found. Check data/tasks.json</div>';
-        return;
-      }
       var filter = 'all';
       try {
         var activeFilterEl = document.querySelector('#kb-filters .inbox-filter.active');
@@ -9435,6 +9439,8 @@
     })();
 
     /* ---- Kanban: Init - load from Aitable JSON, then render ---- */
+    // Reset to safe defaults on page load (prevents stale filter states)
+    try { localStorage.removeItem('mc-inbox-filter'); } catch(e) {}
     loadTasksFromJSON().then(function() {
       loadKanbanState();
       renderKanbanBoard();
