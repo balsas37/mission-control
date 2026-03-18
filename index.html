@@ -4121,9 +4121,9 @@
     }
     .act-filter-dropdown {
       display: none;
-      position: absolute;
-      top: calc(100% + 6px);
-      left: 0;
+      position: fixed;
+      top: 100px;
+      left: 16px;
       z-index: 901;
       width: 260px;
       max-height: 320px;
@@ -13045,7 +13045,7 @@
     var approvalsData = [];
     var approvalsFilter = 'all';
     function loadApprovals() {
-      fetch('data/approvals.json?t=' + Date.now())
+      return fetch('data/approvals.json?t=' + Date.now())
         .then(function(r) { return r.json(); })
         .then(function(data) {
           approvalsData = data.approvals || [];
@@ -13217,12 +13217,27 @@
       }
       backdrop.style.display = 'block';
       modal.style.display = 'block';
+      if (a.id) history.replaceState(null, '', '#approval-' + a.id);
     }
     function closeApprovalModal() {
       var modal = document.getElementById('approval-modal');
       var backdrop = document.getElementById('approval-modal-backdrop');
       if (modal) modal.style.display = 'none';
       if (backdrop) backdrop.style.display = 'none';
+      history.replaceState(null, '', location.pathname);
+    }
+    // Deep link: auto-open approval from URL hash
+    function checkApprovalDeepLink() {
+      var hash = location.hash;
+      if (!hash.startsWith('#approval-')) return;
+      var targetId = hash.replace('#approval-', '');
+      for (var i = 0; i < approvalsData.length; i++) {
+        if (approvalsData[i].id === targetId) {
+          switchTab('approvals');
+          openApprovalModal(i);
+          return;
+        }
+      }
     }
     function updateApprovalsBadge() {
       var badge = document.getElementById('approvals-badge');
@@ -13249,7 +13264,7 @@
       loadApprovals();
     });
     // Auto-load approvals on page load
-    loadApprovals();
+    loadApprovals().then(function() { checkApprovalDeepLink(); }).catch(function(){});
 
     /* ---- Content Tab ---- */
     var contentData = [];
