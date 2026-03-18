@@ -749,9 +749,11 @@
     @media (max-width: 768px) {
       .graph-open-full-btn {
         bottom: auto;
-        top: calc(100vh - 180px);
+        top: auto;
+        bottom: 80px;
         right: 16px;
         position: fixed;
+        z-index: 50;
       }
       .sidebar {
         width: var(--sidebar-collapsed);
