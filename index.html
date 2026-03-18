@@ -11635,12 +11635,16 @@
         });
     }
 
-    function cronRelativeTime(isoStr) {
+    function cronRelativeTime(isoStr, lastStatus) {
       if (!isoStr) return 'disabled';
       var now = new Date();
       var target = new Date(isoStr);
       var diffMs = target - now;
-      if (diffMs < 0) return 'overdue';
+      if (diffMs < 0) {
+        // If status is ok, it ran fine -- just means data hasn't refreshed yet
+        if (lastStatus === 'ok') return 'running';
+        return 'overdue';
+      }
       var diffMin = Math.floor(diffMs / 60000);
       if (diffMin < 60) return 'in ' + diffMin + 'm';
       var diffH = Math.floor(diffMin / 60);
@@ -11679,7 +11683,7 @@
       if (!grid) return;
       grid.innerHTML = cronRhythmData.map(function(c, i) {
         var dot = cronStatusDot(c);
-        var next = cronRelativeTime(c.nextRun);
+        var next = cronRelativeTime(c.nextRun, c.lastStatus);
         return '<div class="cron-rhythm-card reveal" style="transition-delay:' + (i * 60) + 'ms" data-cron-id="' + c.id + '">' +
           '<div class="cron-rhythm-top">' +
             '<span class="cron-rhythm-name">' + escapeHtml(c.name) + '</span>' +

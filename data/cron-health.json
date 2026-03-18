@@ -50,16 +50,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-18T15:01:07.233000+00:00",
-      "nextRun": "2026-03-18T16:01:07.213000+00:00",
-      "lastDuration": 6271,
+      "lastRun": "2026-03-18T16:01:07.239000+00:00",
+      "nextRun": "2026-03-18T17:01:07.213000+00:00",
+      "lastDuration": 9478,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-18T15:01:07.233000+00:00",
+          "ts": "2026-03-18T16:01:07.239000+00:00",
           "status": "ok",
-          "duration": 6271
+          "duration": 9478
         }
       ]
     },
@@ -71,16 +71,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-18T13:30:00.048000+00:00",
-      "nextRun": "2026-03-18T15:30:00+00:00",
-      "lastDuration": 12407,
+      "lastRun": "2026-03-18T15:30:00.022000+00:00",
+      "nextRun": "2026-03-18T17:30:00+00:00",
+      "lastDuration": 11587,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-18T13:30:00.048000+00:00",
+          "ts": "2026-03-18T15:30:00.022000+00:00",
           "status": "ok",
-          "duration": 12407
+          "duration": 11587
         }
       ]
     },
