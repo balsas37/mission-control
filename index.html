@@ -1229,8 +1229,24 @@
       }
       .office-grid::-webkit-scrollbar { display: none; }
       .office-grid .workstation {
-        flex: 0 0 85vw;
+        flex: 0 0 80vw;
         scroll-snap-align: start;
+        max-width: calc(100vw - 80px);
+        overflow: hidden;
+      }
+      #panel-office .stat-chip,
+      #panel-projects .stat-chip {
+        flex: 0 0 64px;
+        width: 64px;
+        padding: 10px 8px;
+      }
+      #panel-office .stat-chip .stat-value,
+      #panel-projects .stat-chip .stat-value {
+        font-size: 18px;
+      }
+      #panel-office .stat-chip .stat-label,
+      #panel-projects .stat-chip .stat-label {
+        font-size: 9px;
       }
     }
 
