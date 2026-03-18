@@ -1218,7 +1218,20 @@
     }
 
     @media (max-width: 600px) {
-      .office-grid { grid-template-columns: 1fr; }
+      .office-grid {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 12px;
+        padding-bottom: 8px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+      .office-grid::-webkit-scrollbar { display: none; }
+      .office-grid .workstation {
+        flex: 0 0 85vw;
+        scroll-snap-align: start;
+      }
     }
 
     /* Workstation Card */
