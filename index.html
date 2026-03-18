@@ -8192,6 +8192,28 @@
     <section class="tab-panel" id="panel-system">
       <div class="system-wrap">
         <div class="system-section reveal">
+          <div class="system-section-header" data-collapse="system-model">
+            <svg class="analytics-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4,6 8,10 12,6"/></svg>
+            <span class="system-section-title">Model Usage</span>
+          </div>
+          <div id="system-model">
+            <div class="mu-timeout-bars" id="system-mu-timeout-bars"></div>
+            <div class="analytics-table-wrap">
+              <table class="analytics-table">
+                <thead>
+                  <tr>
+                    <th class="analytics-th">Metric</th>
+                    <th class="analytics-th">Current</th>
+                    <th class="analytics-th">Change</th>
+                    <th class="analytics-th">Status</th>
+                  </tr>
+                </thead>
+                <tbody id="system-model-tbody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="system-section reveal">
           <div class="system-section-header" data-collapse="system-cron">
             <svg class="analytics-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4,6 8,10 12,6"/></svg>
             <span class="system-section-title">Cron Health</span>
@@ -8212,28 +8234,6 @@
                     <td class="system-td" colspan="4" style="text-align:center;color:var(--text-3)">Loading cron data...</td>
                   </tr>
                 </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-        <div class="system-section reveal">
-          <div class="system-section-header" data-collapse="system-model">
-            <svg class="analytics-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4,6 8,10 12,6"/></svg>
-            <span class="system-section-title">Model Usage</span>
-          </div>
-          <div id="system-model">
-            <div class="mu-timeout-bars" id="system-mu-timeout-bars"></div>
-            <div class="analytics-table-wrap">
-              <table class="analytics-table">
-                <thead>
-                  <tr>
-                    <th class="analytics-th">Metric</th>
-                    <th class="analytics-th">Current</th>
-                    <th class="analytics-th">Change</th>
-                    <th class="analytics-th">Status</th>
-                  </tr>
-                </thead>
-                <tbody id="system-model-tbody"></tbody>
               </table>
             </div>
           </div>
