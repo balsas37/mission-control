@@ -1,40 +1,604 @@
 {
   "crons": [
     {
-      "name": "sync-tasks",
-      "lastRun": "2026-03-15T00:00:00Z",
-      "status": "ok",
-      "duration": 1200
+      "id": "56071dde-0b91-42e4-abde-45cb895777b9",
+      "name": "bianca-evening-routine",
+      "schedule": "0 21 * * *",
+      "description": "",
+      "agent": "main",
+      "enabled": true,
+      "lastStatus": "error",
+      "lastRun": "2026-03-18T02:00:00.019000+00:00",
+      "nextRun": "2026-03-19T02:00:00+00:00",
+      "lastDuration": 103530,
+      "consecutiveErrors": 1,
+      "lastError": "\u26a0\ufe0f \u2709\ufe0f Message failed: Call to 'sendMessage' failed! (403: Forbidden: bot can't initiate conversation with a user)",
+      "runs": [
+        {
+          "ts": "2026-03-18T02:00:00.019000+00:00",
+          "status": "error",
+          "duration": 103530
+        }
+      ]
     },
     {
-      "name": "sync-lagoon",
-      "lastRun": "2026-03-15T00:00:00Z",
-      "status": "ok",
-      "duration": 800
+      "id": "4cb7a5ca-4d3f-46e7-8f91-a7be7e43b946",
+      "name": "bianca-morning-routine",
+      "schedule": "0 8 * * *",
+      "description": "",
+      "agent": "main",
+      "enabled": true,
+      "lastStatus": "ok",
+      "lastRun": "2026-03-18T13:00:00.016000+00:00",
+      "nextRun": "2026-03-19T13:00:00+00:00",
+      "lastDuration": 51303,
+      "consecutiveErrors": 0,
+      "lastError": "",
+      "runs": [
+        {
+          "ts": "2026-03-18T13:00:00.016000+00:00",
+          "status": "ok",
+          "duration": 51303
+        }
+      ]
     },
     {
-      "name": "sync-activity",
-      "lastRun": "2026-03-15T00:00:00Z",
-      "status": "ok",
-      "duration": 450
+      "id": "bdf8e402-1a9b-424e-93ca-ddc83229a120",
+      "name": "charfen-auto-complete",
+      "schedule": "0 * * * *",
+      "description": "",
+      "agent": "main",
+      "enabled": true,
+      "lastStatus": "ok",
+      "lastRun": "2026-03-18T15:01:07.233000+00:00",
+      "nextRun": "2026-03-18T16:01:07.213000+00:00",
+      "lastDuration": 6271,
+      "consecutiveErrors": 0,
+      "lastError": "",
+      "runs": [
+        {
+          "ts": "2026-03-18T15:01:07.233000+00:00",
+          "status": "ok",
+          "duration": 6271
+        }
+      ]
     },
     {
-      "name": "sync-radar",
-      "lastRun": "2026-03-14T23:00:00Z",
-      "status": "ok",
-      "duration": 3200
+      "id": "6b618616-b9e2-4e7a-94b0-39d395611431",
+      "name": "context-rescue",
+      "schedule": "30 8,10,12,14,16,18,20,22 * * *",
+      "description": "",
+      "agent": "main",
+      "enabled": true,
+      "lastStatus": "ok",
+      "lastRun": "2026-03-18T13:30:00.048000+00:00",
+      "nextRun": "2026-03-18T15:30:00+00:00",
+      "lastDuration": 12407,
+      "consecutiveErrors": 0,
+      "lastError": "",
+      "runs": [
+        {
+          "ts": "2026-03-18T13:30:00.048000+00:00",
+          "status": "ok",
+          "duration": 12407
+        }
+      ]
     },
     {
-      "name": "daily-digest",
-      "lastRun": "2026-03-15T06:00:00Z",
-      "status": "ok",
-      "duration": 600
+      "id": "1ebe13f2-e1b0-46a9-a5ef-28ad185cfe7a",
+      "name": "couples-monthly-financial",
+      "schedule": "0 19 1 * *",
+      "description": "",
+      "agent": "main",
+      "enabled": true,
+      "lastStatus": "unknown",
+      "lastRun": null,
+      "nextRun": "2026-04-02T00:00:00+00:00",
+      "lastDuration": 0,
+      "consecutiveErrors": 0,
+      "lastError": "",
+      "runs": []
+    },
+    {
+      "id": "55dfbcf7-7064-4323-850a-5549a0a8d017",
+      "name": "couples-weekly-alignment",
+      "schedule": "0 20 * * 0",
+      "description": "",
+      "agent": "main",
+      "enabled": true,
+      "lastStatus": "ok",
+      "lastRun": "2026-03-16T02:33:46.856000+00:00",
+      "nextRun": "2026-03-23T01:00:00+00:00",
+      "lastDuration": 4898,
+      "consecutiveErrors": 0,
+      "lastError": "",
+      "runs": [
+        {
+          "ts": "2026-03-16T02:33:46.856000+00:00",
+          "status": "ok",
+          "duration": 4898
+        }
+      ]
+    },
+    {
+      "id": "2092a82a-f871-498f-b042-40c33567ef60",
+      "name": "daily-huddle",
+      "schedule": "50 6 * * *",
+      "description": "",
+      "agent": "main",
+      "enabled": true,
+      "lastStatus": "ok",
+      "lastRun": "2026-03-18T11:50:00.015000+00:00",
+      "nextRun": "2026-03-19T11:50:00+00:00",
+      "lastDuration": 68405,
+      "consecutiveErrors": 0,
+      "lastError": "",
+      "runs": [
+        {
+          "ts": "2026-03-18T11:50:00.015000+00:00",
+          "status": "ok",
+          "duration": 68405
+        }
+      ]
+    },
+    {
+      "id": "cbc460d6-6fff-4200-9c7c-f180db46f54f",
+      "name": "dream-cycle",
+      "schedule": "0 1 * * *",
+      "description": "",
+      "agent": "main",
+      "enabled": true,
+      "lastStatus": "ok",
+      "lastRun": "2026-03-18T06:00:00.043000+00:00",
+      "nextRun": "2026-03-19T06:00:00+00:00",
+      "lastDuration": 54322,
+      "consecutiveErrors": 0,
+      "lastError": "",
+      "runs": [
+        {
+          "ts": "2026-03-18T06:00:00.043000+00:00",
+          "status": "ok",
+          "duration": 54322
+        }
+      ]
+    },
+    {
+      "id": "596dc4fb-d946-4001-9634-2c2ae4e40a56",
+      "name": "evening-routine",
+      "schedule": "30 21 * * *",
+      "description": "",
+      "agent": "main",
+      "enabled": true,
+      "lastStatus": "ok",
+      "lastRun": "2026-03-18T02:30:00.009000+00:00",
+      "nextRun": "2026-03-19T02:30:00+00:00",
+      "lastDuration": 105942,
+      "consecutiveErrors": 0,
+      "lastError": "",
+      "runs": [
+        {
+          "ts": "2026-03-18T02:30:00.009000+00:00",
+          "status": "ok",
+          "duration": 105942
+        }
+      ]
+    },
+    {
+      "id": "dba1a320-ee2d-4df4-bf47-3742676fb6c6",
+      "name": "mc-data-sync",
+      "schedule": "0 6 * * *",
+      "description": "",
+      "agent": "main",
+      "enabled": true,
+      "lastStatus": "ok",
+      "lastRun": "2026-03-18T11:00:00.023000+00:00",
+      "nextRun": "2026-03-19T11:00:00+00:00",
+      "lastDuration": 15355,
+      "consecutiveErrors": 0,
+      "lastError": "",
+      "runs": [
+        {
+          "ts": "2026-03-18T11:00:00.023000+00:00",
+          "status": "ok",
+          "duration": 15355
+        }
+      ]
+    },
+    {
+      "id": "92916b4b-e7c3-4539-a4c6-fcb8c9150a4d",
+      "name": "missed-commitments-brief",
+      "schedule": "0 7 * * 1",
+      "description": "",
+      "agent": "main",
+      "enabled": true,
+      "lastStatus": "ok",
+      "lastRun": "2026-03-16T12:00:00.022000+00:00",
+      "nextRun": "2026-03-23T12:00:00+00:00",
+      "lastDuration": 80394,
+      "consecutiveErrors": 0,
+      "lastError": "",
+      "runs": [
+        {
+          "ts": "2026-03-16T12:00:00.022000+00:00",
+          "status": "ok",
+          "duration": 80394
+        }
+      ]
+    },
+    {
+      "id": "266e1be5-a9bd-4e07-a450-21fa0ece8dec",
+      "name": "monthly-ti",
+      "schedule": "0 8 1 * *",
+      "description": "",
+      "agent": "main",
+      "enabled": true,
+      "lastStatus": "unknown",
+      "lastRun": null,
+      "nextRun": "2026-04-01T13:00:00+00:00",
+      "lastDuration": 0,
+      "consecutiveErrors": 0,
+      "lastError": "",
+      "runs": []
+    },
+    {
+      "id": "ffa60c62-5a0b-49ee-8181-61f4c9d384f3",
+      "name": "monthly-ti-reminder",
+      "schedule": "0 20 28-31 * *",
+      "description": "",
+      "agent": "main",
+      "enabled": true,
+      "lastStatus": "unknown",
+      "lastRun": null,
+      "nextRun": "2026-03-29T01:00:00+00:00",
+      "lastDuration": 0,
+      "consecutiveErrors": 0,
+      "lastError": "",
+      "runs": []
+    },
+    {
+      "id": "2915adc5-f4d4-4048-971d-c692abd5f9d0",
+      "name": "morning-routine",
+      "schedule": "45 6 * * *",
+      "description": "",
+      "agent": "main",
+      "enabled": true,
+      "lastStatus": "ok",
+      "lastRun": "2026-03-18T11:45:00.025000+00:00",
+      "nextRun": "2026-03-19T11:45:00+00:00",
+      "lastDuration": 86080,
+      "consecutiveErrors": 0,
+      "lastError": "",
+      "runs": [
+        {
+          "ts": "2026-03-18T11:45:00.025000+00:00",
+          "status": "ok",
+          "duration": 86080
+        }
+      ]
+    },
+    {
+      "id": "a2fe33e4-661b-4791-986d-31a8ef21e264",
+      "name": "nightly-execution",
+      "schedule": "0 23 * * *",
+      "description": "",
+      "agent": "main",
+      "enabled": true,
+      "lastStatus": "ok",
+      "lastRun": "2026-03-18T04:01:27.482000+00:00",
+      "nextRun": "2026-03-19T04:00:00+00:00",
+      "lastDuration": 429563,
+      "consecutiveErrors": 0,
+      "lastError": "",
+      "runs": [
+        {
+          "ts": "2026-03-18T04:01:27.482000+00:00",
+          "status": "ok",
+          "duration": 429563
+        }
+      ]
+    },
+    {
+      "id": "3c671c3a-d635-4e02-9d1a-4edc7ca51279",
+      "name": "quarterly-ti",
+      "schedule": "0 8 1 1,4,7,10 *",
+      "description": "",
+      "agent": "main",
+      "enabled": true,
+      "lastStatus": "unknown",
+      "lastRun": null,
+      "nextRun": "2026-04-01T13:00:00+00:00",
+      "lastDuration": 0,
+      "consecutiveErrors": 0,
+      "lastError": "",
+      "runs": []
+    },
+    {
+      "id": "e44099db-4e19-46ab-9a35-f74385fff454",
+      "name": "research-radar",
+      "schedule": "0 12 * * *",
+      "description": "",
+      "agent": "main",
+      "enabled": true,
+      "lastStatus": "ok",
+      "lastRun": "2026-03-17T17:01:01.006000+00:00",
+      "nextRun": "2026-03-18T17:00:00+00:00",
+      "lastDuration": 168681,
+      "consecutiveErrors": 0,
+      "lastError": "",
+      "runs": [
+        {
+          "ts": "2026-03-17T17:01:01.006000+00:00",
+          "status": "ok",
+          "duration": 168681
+        }
+      ]
+    },
+    {
+      "id": "97fdd6bf-9f3f-45e8-8a9e-c75c5ee4ad38",
+      "name": "reverse-prompt-weekly",
+      "schedule": "0 8 * * 0",
+      "description": "",
+      "agent": "main",
+      "enabled": true,
+      "lastStatus": "ok",
+      "lastRun": "2026-03-16T02:32:49.606000+00:00",
+      "nextRun": "2026-03-22T13:00:00+00:00",
+      "lastDuration": 57250,
+      "consecutiveErrors": 0,
+      "lastError": "",
+      "runs": [
+        {
+          "ts": "2026-03-16T02:32:49.606000+00:00",
+          "status": "ok",
+          "duration": 57250
+        }
+      ]
+    },
+    {
+      "id": "c15a5080-200d-49d7-97b6-92106afd294c",
+      "name": "session-recap",
+      "schedule": "0 23 * * *",
+      "description": "",
+      "agent": "main",
+      "enabled": true,
+      "lastStatus": "ok",
+      "lastRun": "2026-03-18T04:00:00.025000+00:00",
+      "nextRun": "2026-03-19T04:00:00+00:00",
+      "lastDuration": 87457,
+      "consecutiveErrors": 0,
+      "lastError": "",
+      "runs": [
+        {
+          "ts": "2026-03-18T04:00:00.025000+00:00",
+          "status": "ok",
+          "duration": 87457
+        }
+      ]
+    },
+    {
+      "id": "0311bb01-fd84-440d-8be3-e4ba09006441",
+      "name": "shiloh-call-reminder",
+      "schedule": "0 18 * * *",
+      "description": "",
+      "agent": "main",
+      "enabled": true,
+      "lastStatus": "ok",
+      "lastRun": "2026-03-17T23:00:30.064000+00:00",
+      "nextRun": "2026-03-18T23:00:00+00:00",
+      "lastDuration": 37223,
+      "consecutiveErrors": 0,
+      "lastError": "",
+      "runs": [
+        {
+          "ts": "2026-03-17T23:00:30.064000+00:00",
+          "status": "ok",
+          "duration": 37223
+        }
+      ]
+    },
+    {
+      "id": "7454d018-48c6-4d95-b32c-13ef4f219786",
+      "name": "skill-scout",
+      "schedule": "0 2 * * *",
+      "description": "",
+      "agent": "main",
+      "enabled": true,
+      "lastStatus": "ok",
+      "lastRun": "2026-03-18T07:00:00.031000+00:00",
+      "nextRun": "2026-03-19T07:00:00+00:00",
+      "lastDuration": 55193,
+      "consecutiveErrors": 0,
+      "lastError": "",
+      "runs": [
+        {
+          "ts": "2026-03-18T07:00:00.031000+00:00",
+          "status": "ok",
+          "duration": 55193
+        }
+      ]
+    },
+    {
+      "id": "a656ffe7-bd1d-4940-91c5-5c09272f59b8",
+      "name": "sync-charfen-goals",
+      "schedule": "0 0,6,12,18 * * *",
+      "description": "",
+      "agent": "main",
+      "enabled": true,
+      "lastStatus": "ok",
+      "lastRun": "2026-03-18T11:00:37.011000+00:00",
+      "nextRun": "2026-03-18T17:00:00+00:00",
+      "lastDuration": 15209,
+      "consecutiveErrors": 0,
+      "lastError": "",
+      "runs": [
+        {
+          "ts": "2026-03-18T11:00:37.011000+00:00",
+          "status": "ok",
+          "duration": 15209
+        }
+      ]
+    },
+    {
+      "id": "30bdb67d-f369-4100-b56b-904e3f67945d",
+      "name": "sync-mc-tasks",
+      "schedule": "0 0,6,12,18 * * *",
+      "description": "",
+      "agent": "main",
+      "enabled": true,
+      "lastStatus": "ok",
+      "lastRun": "2026-03-18T11:00:15.378000+00:00",
+      "nextRun": "2026-03-18T17:00:00+00:00",
+      "lastDuration": 21633,
+      "consecutiveErrors": 0,
+      "lastError": "",
+      "runs": [
+        {
+          "ts": "2026-03-18T11:00:15.378000+00:00",
+          "status": "ok",
+          "duration": 21633
+        }
+      ]
+    },
+    {
+      "id": "08b2cff9-9147-41a3-bb26-0aebdda07b74",
+      "name": "usage-data-sync",
+      "schedule": "0 0,6,12,18 * * *",
+      "description": "",
+      "agent": "main",
+      "enabled": true,
+      "lastStatus": "ok",
+      "lastRun": "2026-03-18T11:03:52.747000+00:00",
+      "nextRun": "2026-03-18T17:03:52.724000+00:00",
+      "lastDuration": 8843,
+      "consecutiveErrors": 0,
+      "lastError": "",
+      "runs": [
+        {
+          "ts": "2026-03-18T11:03:52.747000+00:00",
+          "status": "ok",
+          "duration": 8843
+        }
+      ]
+    },
+    {
+      "id": "fc07c57b-1972-4d3f-a24e-65c2758827dc",
+      "name": "vault-reweave",
+      "schedule": "30 2 * * *",
+      "description": "",
+      "agent": "main",
+      "enabled": true,
+      "lastStatus": "ok",
+      "lastRun": "2026-03-18T07:30:00.022000+00:00",
+      "nextRun": "2026-03-19T07:30:00+00:00",
+      "lastDuration": 122934,
+      "consecutiveErrors": 0,
+      "lastError": "",
+      "runs": [
+        {
+          "ts": "2026-03-18T07:30:00.022000+00:00",
+          "status": "ok",
+          "duration": 122934
+        }
+      ]
+    },
+    {
+      "id": "959e79ca-406a-4a84-8508-b16771a4a0d0",
+      "name": "vault-verify",
+      "schedule": "0 3 * * 0",
+      "description": "",
+      "agent": "main",
+      "enabled": true,
+      "lastStatus": "unknown",
+      "lastRun": null,
+      "nextRun": "2026-03-22T08:00:00+00:00",
+      "lastDuration": 0,
+      "consecutiveErrors": 0,
+      "lastError": "",
+      "runs": []
+    },
+    {
+      "id": "b6e223e1-2a1a-4d95-b0a0-e757846bd8de",
+      "name": "weekly-backup",
+      "schedule": "0 3 * * 0",
+      "description": "",
+      "agent": "main",
+      "enabled": true,
+      "lastStatus": "unknown",
+      "lastRun": null,
+      "nextRun": "2026-03-22T08:00:00+00:00",
+      "lastDuration": 0,
+      "consecutiveErrors": 0,
+      "lastError": "",
+      "runs": []
+    },
+    {
+      "id": "b7eb1783-3d01-4a27-b3ad-168de250b920",
+      "name": "weekly-score",
+      "schedule": "0 20 * * 5",
+      "description": "",
+      "agent": "main",
+      "enabled": true,
+      "lastStatus": "unknown",
+      "lastRun": null,
+      "nextRun": "2026-03-21T01:00:00+00:00",
+      "lastDuration": 0,
+      "consecutiveErrors": 0,
+      "lastError": "",
+      "runs": []
+    },
+    {
+      "id": "2af4eeb4-7b54-4463-bce9-c05672eab293",
+      "name": "weekly-ti",
+      "schedule": "0 8 * * 1",
+      "description": "",
+      "agent": "main",
+      "enabled": true,
+      "lastStatus": "error",
+      "lastRun": "2026-03-16T13:00:49.665000+00:00",
+      "nextRun": "2026-03-23T13:00:00+00:00",
+      "lastDuration": 223290,
+      "consecutiveErrors": 1,
+      "lastError": "\u26a0\ufe0f \u2709\ufe0f Message failed: Action send requires a target.",
+      "runs": [
+        {
+          "ts": "2026-03-16T13:00:49.665000+00:00",
+          "status": "error",
+          "duration": 223290
+        }
+      ]
+    },
+    {
+      "id": "bf2fdf02-8af5-4385-9653-244860e0a3fa",
+      "name": "weekly-ti-reminder",
+      "schedule": "0 21 * * 0",
+      "description": "",
+      "agent": "main",
+      "enabled": true,
+      "lastStatus": "ok",
+      "lastRun": "2026-03-16T02:33:51.754000+00:00",
+      "nextRun": "2026-03-23T02:00:00+00:00",
+      "lastDuration": 3770,
+      "consecutiveErrors": 0,
+      "lastError": "",
+      "runs": [
+        {
+          "ts": "2026-03-16T02:33:51.754000+00:00",
+          "status": "ok",
+          "duration": 3770
+        }
+      ]
     }
   ],
   "errors": [
     {
-      "timestamp": "2026-03-14T18:30:00Z",
-      "message": "Failed to sync targets: Aitable timeout"
+      "job": "bianca-evening-routine",
+      "error": "\u26a0\ufe0f \u2709\ufe0f Message failed: Call to 'sendMessage' failed! (403: Forbidden: bot can't initiate conversation with a user)",
+      "count": 1
+    },
+    {
+      "job": "weekly-ti",
+      "error": "\u26a0\ufe0f \u2709\ufe0f Message failed: Action send requires a target.",
+      "count": 1
     }
   ]
 }

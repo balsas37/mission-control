@@ -11516,135 +11516,31 @@
     })();
 
     /* ---- Automation Rhythm (Cron Grid) ---- */
-    var cronRhythmData = [
-      {
-        id: 'dream-cycle', name: 'Dream Cycle', schedule: '0 6 * * *',
-        description: 'Overnight memory consolidation and daily note generation',
-        agent: 'Piia', enabled: true,
-        lastStatus: 'ok', consecutiveErrors: 0,
-        nextRun: '2026-03-18T06:00:00',
-        runs: [
-          { ts: '2026-03-17T06:00:00', status: 'ok', duration: 14200 },
-          { ts: '2026-03-16T06:00:00', status: 'ok', duration: 13800 },
-          { ts: '2026-03-15T06:00:00', status: 'ok', duration: 15100 },
-          { ts: '2026-03-14T06:00:00', status: 'ok', duration: 12900 },
-          { ts: '2026-03-13T06:00:00', status: 'ok', duration: 14500 }
-        ]
-      },
-      {
-        id: 'sync-mc-data', name: 'Sync MC Data', schedule: '0 */6 * * *',
-        description: 'Sync tasks.json, lagoon.json, and goals from Aitable API',
-        agent: 'Zara', enabled: true,
-        lastStatus: 'ok', consecutiveErrors: 0,
-        nextRun: '2026-03-18T00:00:00',
-        runs: [
-          { ts: '2026-03-17T18:00:00', status: 'ok', duration: 1200 },
-          { ts: '2026-03-17T12:00:00', status: 'ok', duration: 1100 },
-          { ts: '2026-03-17T06:00:00', status: 'ok', duration: 980 },
-          { ts: '2026-03-16T18:00:00', status: 'ok', duration: 1350 },
-          { ts: '2026-03-16T12:00:00', status: 'ok', duration: 1050 }
-        ]
-      },
-      {
-        id: 'usage-sync', name: 'Usage Data Sync', schedule: '3 */6 * * *',
-        description: 'Pull Anthropic and Kimi usage stats, update usage.json',
-        agent: 'Zara', enabled: true,
-        lastStatus: 'error', consecutiveErrors: 2,
-        nextRun: '2026-03-18T00:03:00',
-        runs: [
-          { ts: '2026-03-17T18:03:00', status: 'error', duration: 30200 },
-          { ts: '2026-03-17T12:03:00', status: 'error', duration: 30100 },
-          { ts: '2026-03-17T06:03:00', status: 'ok', duration: 2400 },
-          { ts: '2026-03-16T18:03:00', status: 'ok', duration: 2200 },
-          { ts: '2026-03-16T12:03:00', status: 'ok', duration: 2350 }
-        ]
-      },
-      {
-        id: 'context-rescue', name: 'Context Rescue', schedule: '*/30 * * * *',
-        description: 'Save session checkpoint to daily note before context compression',
-        agent: 'Piia', enabled: true,
-        lastStatus: 'ok', consecutiveErrors: 0,
-        nextRun: '2026-03-17T23:30:00',
-        runs: [
-          { ts: '2026-03-17T23:00:00', status: 'ok', duration: 450 },
-          { ts: '2026-03-17T22:30:00', status: 'ok', duration: 420 },
-          { ts: '2026-03-17T22:00:00', status: 'ok', duration: 480 },
-          { ts: '2026-03-17T21:30:00', status: 'ok', duration: 430 },
-          { ts: '2026-03-17T21:00:00', status: 'ok', duration: 460 }
-        ]
-      },
-      {
-        id: 'morning-brief', name: 'Morning Brief', schedule: '30 9 * * *',
-        description: 'Compile daily summary and send to Beno via Telegram',
-        agent: 'Piia', enabled: true,
-        lastStatus: 'ok', consecutiveErrors: 0,
-        nextRun: '2026-03-18T09:30:00',
-        runs: [
-          { ts: '2026-03-17T09:30:00', status: 'ok', duration: 8200 },
-          { ts: '2026-03-16T09:30:00', status: 'ok', duration: 7900 },
-          { ts: '2026-03-15T09:30:00', status: 'ok', duration: 8500 },
-          { ts: '2026-03-14T09:30:00', status: 'ok', duration: 7600 },
-          { ts: '2026-03-13T09:30:00', status: 'ok', duration: 8100 }
-        ]
-      },
-      {
-        id: 'skill-scout', name: 'Skill Scout', schedule: '0 3 * * 1',
-        description: 'Weekly scan of ClawHub for new/updated skills and capabilities',
-        agent: 'Nile', enabled: true,
-        lastStatus: 'ok', consecutiveErrors: 0,
-        nextRun: '2026-03-23T03:00:00',
-        runs: [
-          { ts: '2026-03-17T03:00:00', status: 'ok', duration: 45200 },
-          { ts: '2026-03-10T03:00:00', status: 'ok', duration: 42800 },
-          { ts: '2026-03-03T03:00:00', status: 'ok', duration: 48100 },
-          { ts: '2026-02-24T03:00:00', status: 'ok', duration: 44600 },
-          { ts: '2026-02-17T03:00:00', status: 'ok', duration: 46300 }
-        ]
-      },
-      {
-        id: 'nightly-execution', name: 'Nightly Execution', schedule: '50 23 * * *',
-        description: 'Run autonomous task execution queue overnight',
-        agent: 'Rex', enabled: true,
-        lastStatus: 'ok', consecutiveErrors: 0,
-        nextRun: '2026-03-17T23:50:00',
-        runs: [
-          { ts: '2026-03-16T23:50:00', status: 'ok', duration: 182000 },
-          { ts: '2026-03-15T23:50:00', status: 'ok', duration: 195000 },
-          { ts: '2026-03-14T23:50:00', status: 'ok', duration: 178000 },
-          { ts: '2026-03-13T23:50:00', status: 'ok', duration: 201000 },
-          { ts: '2026-03-12T23:50:00', status: 'ok', duration: 167000 }
-        ]
-      },
-      {
-        id: 'daily-huddle', name: 'Daily Huddle', schedule: '0 10 * * *',
-        description: 'Multi-agent standup: gather status from all agents, post summary',
-        agent: 'Piia', enabled: false,
-        disabledSince: '2026-03-01T00:00:00',
-        lastStatus: 'ok', consecutiveErrors: 0,
-        nextRun: null,
-        runs: [
-          { ts: '2026-02-28T10:00:00', status: 'ok', duration: 11200 },
-          { ts: '2026-02-27T10:00:00', status: 'ok', duration: 10800 },
-          { ts: '2026-02-26T10:00:00', status: 'ok', duration: 12100 },
-          { ts: '2026-02-25T10:00:00', status: 'ok', duration: 10500 },
-          { ts: '2026-02-24T10:00:00', status: 'ok', duration: 11700 }
-        ]
-      },
-      {
-        id: 'charfen-sync', name: 'CharFen Goals Sync', schedule: '4 */6 * * *',
-        description: 'Sync CharFen goals data to mission control',
-        agent: 'Zara', enabled: true,
-        lastStatus: 'ok', consecutiveErrors: 0,
-        nextRun: '2026-03-18T00:04:00',
-        runs: [
-          { ts: '2026-03-17T18:04:00', status: 'ok', duration: 1800 },
-          { ts: '2026-03-17T12:04:00', status: 'ok', duration: 1650 },
-          { ts: '2026-03-17T06:04:00', status: 'ok', duration: 1720 },
-          { ts: '2026-03-16T18:04:00', status: 'ok', duration: 1900 },
-          { ts: '2026-03-16T12:04:00', status: 'ok', duration: 1580 }
-        ]
-      }
-    ];
+    var cronRhythmData = [];
+    function loadCronRhythm() {
+      return fetch('data/cron-health.json?t=' + Date.now())
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+          cronRhythmData = (data.crons || []).map(function(c) {
+            return {
+              id: c.id || c.name,
+              name: c.name,
+              schedule: c.schedule || '',
+              description: c.description || '',
+              agent: c.agent || 'Piia',
+              enabled: c.enabled !== false,
+              lastStatus: c.lastStatus || 'unknown',
+              consecutiveErrors: c.consecutiveErrors || 0,
+              nextRun: c.nextRun || null,
+              runs: c.runs || []
+            };
+          });
+          renderCronRhythm();
+        })
+        .catch(function(err) {
+          console.warn('[MC] Failed to load cron-health.json:', err);
+        });
+    }
 
     function cronRelativeTime(isoStr) {
       if (!isoStr) return 'disabled';
@@ -11782,13 +11678,12 @@
     document.getElementById('cron-rhythm-refresh').addEventListener('click', function() {
       var btn = this;
       btn.classList.add('spinning');
-      setTimeout(function() {
-        renderCronRhythm();
+      loadCronRhythm().then(function() {
         btn.classList.remove('spinning');
-      }, 600);
+      }).catch(function() { btn.classList.remove('spinning'); });
     });
 
-    renderCronRhythm();
+    loadCronRhythm();
 
     /* ---- Focus: Project Deep-Work View ---- */
     var focusProjects = {
