@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Verboten Industries</title>
+  <title>Verboten HQ</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
@@ -4089,37 +4089,24 @@
     }
     .act-filter-backdrop {
       display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 900;
-      background: rgba(0,0,0,0.5);
-      backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
-    }
-    .act-filter-backdrop.open {
-      display: block;
     }
     .act-filter-dropdown {
       display: none;
-      position: fixed;
-      bottom: 0;
+      position: absolute;
+      top: calc(100% + 6px);
       left: 0;
-      right: 0;
       z-index: 901;
-      width: 100%;
-      max-height: 70vh;
+      width: 260px;
+      max-height: 320px;
       overflow-y: auto;
-      background: #232323;
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 16px 16px 0 0;
-      box-shadow: 0 -8px 32px rgba(0,0,0,0.5);
-      padding: 20px 20px 28px;
-      transform: translateY(100%);
-      transition: transform 0.25s ease;
+      background: var(--bg-card);
+      border: 1px solid var(--border-hover);
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+      padding: 14px;
     }
     .act-filter-dropdown.open {
       display: block;
-      transform: translateY(0);
     }
     .act-filter-section {
       margin-bottom: 12px;
@@ -5601,10 +5588,27 @@
 
     .target-card {
       background: var(--bg-raised);
-      border-radius: 14px;
+      border-radius: 0;
       border: 1px solid var(--border);
+      border-bottom: none;
       overflow: hidden;
       transition: border-color 0.2s ease;
+    }
+
+    .targets-group .target-card:last-child {
+      border-bottom: 1px solid var(--border);
+      border-bottom-left-radius: 14px;
+      border-bottom-right-radius: 14px;
+    }
+
+    .targets-group .target-card:nth-child(2) {
+      border-top-left-radius: 14px;
+      border-top-right-radius: 14px;
+    }
+
+    .targets-group .target-card:nth-child(2):last-child {
+      border-radius: 14px;
+      border-bottom: 1px solid var(--border);
     }
 
     .target-card:hover {
@@ -6694,7 +6698,7 @@
       <div class="sidebar-logo-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4 L12 20 L20 4"/><line x1="8" y1="12" x2="16" y2="12" stroke-opacity="0.4"/></svg>
       </div>
-      <span class="sidebar-logo-text">Verboten Industries</span>
+      <span class="sidebar-logo-text">Verboten HQ</span>
     </div>
     <nav class="sidebar-nav">
       <button class="sidebar-nav-item active" data-tab="office">
@@ -7644,7 +7648,7 @@
             <div class="kb-metric-label">Done</div>
           </div>
         </div>
-        <div class="inbox-filters" id="kb-filters" style="display:none">
+        <div class="inbox-filters" id="kb-filters">
           <button class="inbox-filter active" data-filter="all">All</button>
           <button class="inbox-filter" data-filter="active">Active</button>
           <button class="inbox-filter" data-filter="mine">Mine</button>
@@ -9226,16 +9230,6 @@
       } catch(e) {}
       applyListFilter(filter);
 
-      // Re-attach filter buttons
-      document.querySelectorAll('.inbox-filter').forEach(function(btn) {
-        btn.addEventListener('click', function() {
-          document.querySelectorAll('.inbox-filter').forEach(function(b) { b.classList.remove('active'); });
-          btn.classList.add('active');
-          try { localStorage.setItem('mc-inbox-filter', btn.dataset.filter); } catch(e) {}
-          applyListFilter(btn.dataset.filter);
-          if (kanbanViewMode === 'kanban') renderKanbanBoard();
-        });
-      });
     }
 
     function applyListFilter(filter) {
@@ -9292,45 +9286,47 @@
         });
       } catch(e) {}
     }
-    /* ---- Kanban: Init - load from Aitable JSON, then render ---- */
-    loadTasksFromJSON().then(function() {
-      loadKanbanState();
-      renderKanbanBoard();
-    // Show filters on kanban (default view) + attach handlers globally
+    /* ---- Kanban: Filter delegation (outside promise for reliability) ---- */
     (function() {
       var filtersEl = document.getElementById('kb-filters');
-      if (filtersEl) filtersEl.style.display = '';
-      // Attach filter click handlers at init (not only inside renderListView)
-      document.querySelectorAll('.inbox-filter').forEach(function(btn) {
-        btn.addEventListener('click', function() {
-          document.querySelectorAll('.inbox-filter').forEach(function(b) { b.classList.remove('active'); });
-          btn.classList.add('active');
-          try { localStorage.setItem('mc-inbox-filter', btn.dataset.filter); } catch(e) {}
-          applyListFilter(btn.dataset.filter);
-          if (kanbanViewMode === 'kanban') renderKanbanBoard();
-        });
+      if (!filtersEl) return;
+      filtersEl.style.display = '';
+      filtersEl.addEventListener('click', function(e) {
+        var btn = e.target.closest('.inbox-filter');
+        if (!btn) return;
+        filtersEl.querySelectorAll('.inbox-filter').forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        try { localStorage.setItem('mc-inbox-filter', btn.dataset.filter); } catch(e2) {}
+        if (kanbanViewMode === 'kanban') renderKanbanBoard();
+        if (kanbanViewMode === 'list') renderListView();
+        applyListFilter(btn.dataset.filter);
       });
       // Restore saved filter
       try {
         var savedFilter = localStorage.getItem('mc-inbox-filter');
         if (savedFilter) {
-          var btn = document.querySelector('.inbox-filter[data-filter="' + savedFilter + '"]');
-          if (btn) { document.querySelectorAll('.inbox-filter').forEach(function(b) { b.classList.remove('active'); }); btn.classList.add('active'); renderKanbanBoard(); }
+          var btn = filtersEl.querySelector('.inbox-filter[data-filter="' + savedFilter + '"]');
+          if (btn) {
+            filtersEl.querySelectorAll('.inbox-filter').forEach(function(b) { b.classList.remove('active'); });
+            btn.classList.add('active');
+          }
         }
       } catch(e) {}
-    })();
-    // Restore inbox view mode
-    (function() {
+      // Restore inbox view mode
       try {
         var savedInboxView = localStorage.getItem('mc-actions-view');
         if (savedInboxView) {
           var targetBtn = document.querySelector('[data-view="' + savedInboxView + '"]');
-          if (targetBtn && targetBtn.closest('#panel-inbox')) { targetBtn.click(); }
+          if (targetBtn && targetBtn.closest('#panel-actions')) { targetBtn.click(); }
         }
       } catch(e) {}
     })();
 
-        }); // end loadTasksFromJSON().then()
+    /* ---- Kanban: Init - load from Aitable JSON, then render ---- */
+    loadTasksFromJSON().then(function() {
+      loadKanbanState();
+      renderKanbanBoard();
+    }); // end loadTasksFromJSON().then()
 
     /* ---- Analytics: Date Range Toggle ---- */
     document.querySelectorAll('.analytics-filter').forEach(function(btn) {
@@ -9745,11 +9741,11 @@
         targetsData.forEach(function(t) { if (t.business) bizSet[t.business] = true; });
         var bizList = Object.keys(bizSet).sort();
         var chipHtml = '<span style="font-size:12px;color:var(--text-3);text-transform:uppercase;letter-spacing:.06em">Filter:</span>';
-        chipHtml += '<button class="targets-filter-chip' + (_targetsFilterBiz === 'all' ? ' active' : '') + '" data-biz="all" style="font-size:12px;padding:4px 12px;border-radius:999px;border:1px solid var(--border);background:' + (_targetsFilterBiz === 'all' ? 'var(--accent)' : 'var(--surface-2)') + ';color:' + (_targetsFilterBiz === 'all' ? '#fff' : 'var(--text-1)') + ';cursor:pointer;transition:all .15s">All</button>';
+        chipHtml += '<button class="targets-filter-chip' + (_targetsFilterBiz === 'all' ? ' active' : '') + '" data-biz="all" style="font-size:12px;padding:4px 12px;border-radius:999px;border:1px solid var(--border);background:' + (_targetsFilterBiz === 'all' ? 'var(--accent)' : 'var(--surface-2)') + ';color:' + (_targetsFilterBiz === 'all' ? 'var(--bg)' : 'var(--text-1)') + ';cursor:pointer;transition:all .15s">All</button>';
         bizList.forEach(function(biz) {
           var c = getBizColor(biz);
           var isActive = _targetsFilterBiz === biz;
-          chipHtml += '<button class="targets-filter-chip' + (isActive ? ' active' : '') + '" data-biz="' + escapeHtml(biz) + '" style="font-size:12px;padding:4px 12px;border-radius:999px;border:1px solid ' + (isActive ? c : 'var(--border)') + ';background:' + (isActive ? c : 'var(--surface-2)') + ';color:' + (isActive ? '#fff' : 'var(--text-1)') + ';cursor:pointer;transition:all .15s">' + escapeHtml(biz) + '</button>';
+          chipHtml += '<button class="targets-filter-chip' + (isActive ? ' active' : '') + '" data-biz="' + escapeHtml(biz) + '" style="font-size:12px;padding:4px 12px;border-radius:999px;border:1px solid ' + (isActive ? c : 'var(--border)') + ';background:' + (isActive ? c : 'var(--surface-2)') + ';color:' + (isActive ? 'var(--bg)' : 'var(--text-1)') + ';cursor:pointer;transition:all .15s">' + escapeHtml(biz) + '</button>';
         });
         filterBar.innerHTML = chipHtml;
         // Bind filter click handlers
