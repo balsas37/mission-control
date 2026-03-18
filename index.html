@@ -8044,7 +8044,6 @@
       <!-- Edge context tooltip -->
       <div class="graph-tooltip" id="graph-tooltip"></div>
       <!-- Open full graph - pinned to bottom center -->
-      <a href="graph.html" target="_blank" class="graph-open-full-btn"><span>open graph</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
     </section>
 
     <!-- Memory -->
@@ -8664,6 +8663,9 @@
           newPanel.classList.add('active', 'tab-enter');
           // Ensure lazy-loaded data fires for new tab
           ensureTabData(tabId);
+          // Show/hide graph button
+          var gBtn = document.getElementById('graph-open-full-btn');
+          if (gBtn) gBtn.style.display = (tabId === 'graph') ? '' : 'none';
           // Re-observe reveal elements in new panel
           if (revealObserver) {
             newPanel.querySelectorAll('.reveal:not(.revealed)').forEach(function(el) {
@@ -8738,6 +8740,7 @@
         case 'documents': if (!docsData || !docsData.length) loadDocuments(); break;
         case 'crm':      /* loaded on click via its own handler */ break;
         case 'graph':    /* graph init handled separately */ break;
+        default: break;
       }
     }
 
@@ -8764,6 +8767,8 @@
             updateNavButtons();
             // Fire lazy data load for restored tab
             ensureTabData(saved);
+            var gBtn = document.getElementById('graph-open-full-btn');
+            if (gBtn) gBtn.style.display = (saved === 'graph') ? '' : 'none';
           }
         }
       } catch(e) {}
@@ -14510,6 +14515,9 @@
     });
   })();
   </script>
+
+  <!-- Open Graph button (body root so position:fixed works on mobile) -->
+  <a href="graph.html" target="_blank" id="graph-open-full-btn" class="graph-open-full-btn" style="display:none"><span>open graph</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
 
   <!-- Activity Filter Modal (at body root for proper z-index) -->
   <div class="act-filter-backdrop" id="act-filter-backdrop"></div>
