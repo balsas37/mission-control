@@ -6,10 +6,10 @@
     "description": "Done. Kevin scouts and manages his own models only. Model: 30% gross. Agency: 70% gross. Kevin takes 30% of the agency 70% - his scouted models only. Beno/Bianca keep full 70% on all other models.",
     "project": "OFM Agency",
     "priority": "Low",
-    "agent": "Beno",
+    "agent": "",
     "status": "completed",
     "createdAt": 1772664609000,
-    "movedAt": 1772664609000
+    "movedAt": 1773794143000
   },
   {
     "id": "kb-101",
@@ -18,12 +18,10 @@
     "description": "Set up the AI model account on Fanvue - full creation and setup flow.",
     "project": "OFM Agency",
     "priority": "Urgent",
-    "agent": "Beno",
+    "agent": "",
     "status": "todo",
     "createdAt": 1772664609000,
-    "movedAt": 1772869745000,
-    "dueDate": 1772168400000,
-    "startDate": 1771909200000
+    "movedAt": 1773794143000
   },
   {
     "id": "kb-102",
@@ -32,12 +30,12 @@
     "description": "Beno reviewed the course. Piia to extract key chatter workflows, AI model creation systems, and ops frameworks.",
     "project": "OFM Agency",
     "priority": "High",
-    "agent": "Piia",
+    "agent": [
+      "rec7UjlTlYp2P"
+    ],
     "status": "todo",
     "createdAt": 1772664609000,
-    "movedAt": 1772869745000,
-    "dueDate": 1772514000000,
-    "startDate": 1772082000000
+    "movedAt": 1773794143000
   },
   {
     "id": "kb-103",
@@ -46,12 +44,10 @@
     "description": "Installed and running on vast.ai. Base model + NSFW generation workflows in progress.",
     "project": "OFM Agency",
     "priority": "High",
-    "agent": "Beno",
+    "agent": "",
     "status": "done",
     "createdAt": 1772664609000,
-    "movedAt": 1772869745000,
-    "dueDate": 1771736400000,
-    "startDate": 1771650000000
+    "movedAt": 1773794143000
   },
   {
     "id": "kb-104",
@@ -60,12 +56,10 @@
     "description": "Ad is live. Need to locate FB account login to monitor performance.",
     "project": "Lagoon Company",
     "priority": "Medium",
-    "agent": "Beno",
+    "agent": "",
     "status": "inprogress",
     "createdAt": 1772664609000,
-    "movedAt": 1772869745000,
-    "dueDate": 1771995600000,
-    "startDate": 1771822800000
+    "movedAt": 1773794143000
   },
   {
     "id": "kb-105",
@@ -74,10 +68,10 @@
     "description": "Called contact - recommendation: target La Punta (affluent tourist zone). Premium vehicles well-suited.",
     "project": "Lagoon Company",
     "priority": "Medium",
-    "agent": "Beno",
+    "agent": "",
     "status": "completed",
     "createdAt": 1772664609000,
-    "movedAt": 1772664609000
+    "movedAt": 1773794143000
   },
   {
     "id": "kb-106",
@@ -86,12 +80,10 @@
     "description": "Log into discord.com/developers/applications. Create app named Piia, generate bot token, enable Message Content Intent.",
     "project": "OpenClaw",
     "priority": "Medium",
-    "agent": "Beno",
+    "agent": "",
     "status": "todo",
     "createdAt": 1772664609000,
-    "movedAt": 1772869745000,
-    "dueDate": 1773118800000,
-    "startDate": 1772859600000
+    "movedAt": 1773794143000
   },
   {
     "id": "kb-107",
@@ -100,12 +92,10 @@
     "description": "Bridge live at port 3000. LaunchAgent auto-restarts on boot. Auth saved.",
     "project": "OpenClaw",
     "priority": "High",
-    "agent": "Beno",
+    "agent": "",
     "status": "done",
     "createdAt": 1772664609000,
-    "movedAt": 1772869745000,
-    "dueDate": 1771995600000,
-    "startDate": 1771736400000
+    "movedAt": 1773794143000
   },
   {
     "id": "kb-108",
@@ -114,12 +104,10 @@
     "description": "Letter drafted and ready. Two penalty charges disputed. Key argument: no formal written warning before either fine.",
     "project": "OpenClaw",
     "priority": "High",
-    "agent": "Beno",
+    "agent": "",
     "status": "review",
     "createdAt": 1772664609000,
-    "movedAt": 1772869745000,
-    "dueDate": 1771909200000,
-    "startDate": 1771736400000
+    "movedAt": 1773794143000
   },
   {
     "id": "kb-109",
@@ -128,10 +116,12 @@
     "description": "14+ custom skills built and live.",
     "project": "OpenClaw",
     "priority": "Medium",
-    "agent": "Piia",
+    "agent": [
+      "rec7UjlTlYp2P"
+    ],
     "status": "done",
     "createdAt": 1772664609000,
-    "movedAt": 1772664609000
+    "movedAt": 1773794143000
   },
   {
     "id": "kb-110",
@@ -140,10 +130,12 @@
     "description": "Root cause found and fixed - both crons now have correct Telegram channel + chat ID.",
     "project": "OpenClaw",
     "priority": "High",
-    "agent": "Piia",
+    "agent": [
+      "rec7UjlTlYp2P"
+    ],
     "status": "completed",
     "createdAt": 1772664610000,
-    "movedAt": 1772664610000
+    "movedAt": 1773794143000
   },
   {
     "id": "kb-111",
@@ -152,10 +144,12 @@
     "description": "Repo: github.com/balsas37/mission-control. Live at balsas37.github.io/mission-control.",
     "project": "OpenClaw",
     "priority": "High",
-    "agent": "Piia",
+    "agent": [
+      "rec7UjlTlYp2P"
+    ],
     "status": "completed",
     "createdAt": 1772664610000,
-    "movedAt": 1772664610000
+    "movedAt": 1773794143000
   },
   {
     "id": "kb-112",
@@ -164,12 +158,12 @@
     "description": "Send a Telegram voice note - Piia transcribes and structures it into a journal entry.",
     "project": "OpenClaw",
     "priority": "Medium",
-    "agent": "Zara",
+    "agent": [
+      "recVnnrNXlvwt"
+    ],
     "status": "todo",
     "createdAt": 1772664610000,
-    "movedAt": 1772869745000,
-    "dueDate": 1773982800000,
-    "startDate": 1773378000000
+    "movedAt": 1773794143000
   },
   {
     "id": "kb-113",
@@ -178,10 +172,10 @@
     "description": "Full product stack built: 24 worksheets, 5,832 lines. Sales page written.",
     "project": "Digital Products",
     "priority": "Urgent",
-    "agent": "Nova",
+    "agent": "",
     "status": "completed",
     "createdAt": 1772664610000,
-    "movedAt": 1772664610000
+    "movedAt": 1773794143000
   },
   {
     "id": "kb-114",
@@ -190,12 +184,10 @@
     "description": "Decided: Systeme.io.",
     "project": "Digital Products",
     "priority": "High",
-    "agent": "Beno",
+    "agent": "",
     "status": "completed",
     "createdAt": 1772664610000,
-    "movedAt": 1772869745000,
-    "dueDate": 1771822800000,
-    "startDate": 1771736400000
+    "movedAt": 1773794143000
   },
   {
     "id": "kb-115",
@@ -204,12 +196,10 @@
     "description": "6 pillars, 24 worksheets, 5 reference tables, 6 Quick Win cards, Battery Mastery Guide, Equipment Shopping List, Emergency Protocols, DFY intake form.",
     "project": "Digital Products",
     "priority": "High",
-    "agent": "Nova",
+    "agent": "",
     "status": "done",
     "createdAt": 1772664610000,
-    "movedAt": 1772869745000,
-    "dueDate": 1772341200000,
-    "startDate": 1771736400000
+    "movedAt": 1773794143000
   },
   {
     "id": "kb-116",
@@ -218,12 +208,12 @@
     "description": "Sales page and 4 funnel pages written. FB ad campaign blocked until Stripe is connected.",
     "project": "Digital Products",
     "priority": "High",
-    "agent": "Rex",
+    "agent": [
+      "rec6swN17awjF"
+    ],
     "status": "inprogress",
     "createdAt": 1772664610000,
-    "movedAt": 1772869745000,
-    "dueDate": 1773118800000,
-    "startDate": 1772514000000
+    "movedAt": 1773794143000
   },
   {
     "id": "kb-117",
@@ -232,10 +222,10 @@
     "description": "Course login saved. Phonics/reading methods for kids. Queue after off-grid product is live.",
     "project": "Digital Products",
     "priority": "Low",
-    "agent": "Nova",
+    "agent": "",
     "status": "backlog",
     "createdAt": 1772664610000,
-    "movedAt": 1772664610000
+    "movedAt": 1773794143000
   },
   {
     "id": "kb-118",
@@ -244,10 +234,10 @@
     "description": "Course login saved. 3 courses. Queue after product 1 is live.",
     "project": "Digital Products",
     "priority": "Low",
-    "agent": "Nova",
+    "agent": "",
     "status": "backlog",
     "createdAt": 1772664610000,
-    "movedAt": 1772664610000
+    "movedAt": 1773794143000
   },
   {
     "id": "kb-119",
@@ -256,12 +246,10 @@
     "description": "Account created, verified. Connect Stripe next.",
     "project": "Digital Products",
     "priority": "Urgent",
-    "agent": "Beno",
+    "agent": "",
     "status": "completed",
     "createdAt": 1772664610000,
-    "movedAt": 1772869745000,
-    "dueDate": 1771822800000,
-    "startDate": 1771736400000
+    "movedAt": 1773794143000
   },
   {
     "id": "kb-120",
@@ -270,12 +258,10 @@
     "description": "Map and build checkout page, OTOs, membership upsell, thank you page, email sequence.",
     "project": "Digital Products",
     "priority": "Urgent",
-    "agent": "Nova",
+    "agent": "",
     "status": "todo",
     "createdAt": 1772664611000,
-    "movedAt": 1772869745000,
-    "dueDate": 1772859600000,
-    "startDate": 1772254800000
+    "movedAt": 1773794143000
   },
   {
     "id": "kb-121",
@@ -284,12 +270,12 @@
     "description": "Workflow built. 72hr SLA, Google Form intake, PDF delivery.",
     "project": "Digital Products",
     "priority": "High",
-    "agent": "Zara",
+    "agent": [
+      "recVnnrNXlvwt"
+    ],
     "status": "done",
     "createdAt": 1772664611000,
-    "movedAt": 1772869745000,
-    "dueDate": 1773291600000,
-    "startDate": 1772859600000
+    "movedAt": 1773794143000
   },
   {
     "id": "kb-122",
@@ -298,10 +284,12 @@
     "description": "Once Beno shares course, run refinement pass on sales copy.",
     "project": "Digital Products",
     "priority": "Medium",
-    "agent": "Mara",
+    "agent": [
+      "recrc35rVUWmh"
+    ],
     "status": "backlog",
     "createdAt": 1772664611000,
-    "movedAt": 1772664611000
+    "movedAt": 1773794143000
   },
   {
     "id": "kb-123",
@@ -310,10 +298,12 @@
     "description": "Aitable Earnings Report syncs to MC Analytics tab. Daily cron 6 AM.",
     "project": "OpenClaw",
     "priority": "Low",
-    "agent": "Zara",
+    "agent": [
+      "recVnnrNXlvwt"
+    ],
     "status": "done",
     "createdAt": 1772664611000,
-    "movedAt": 1772664611000
+    "movedAt": 1773794143000
   },
   {
     "id": "kb-124",
@@ -322,12 +312,10 @@
     "description": "Bridge live, QR scanned, auth saved. LaunchAgent auto-restarts.",
     "project": "Lagoon Company",
     "priority": "High",
-    "agent": "Beno",
+    "agent": "",
     "status": "done",
     "createdAt": 1772664611000,
-    "movedAt": 1772869745000,
-    "dueDate": 1772168400000,
-    "startDate": 1771995600000
+    "movedAt": 1773794143000
   },
   {
     "id": "kb-125",
@@ -336,12 +324,10 @@
     "description": "API token in config/aitable.env. Earnings Report synced.",
     "project": "Lagoon Company",
     "priority": "High",
-    "agent": "Beno",
+    "agent": "",
     "status": "done",
     "createdAt": 1772664611000,
-    "movedAt": 1772869745000,
-    "dueDate": 1771909200000,
-    "startDate": 1771822800000
+    "movedAt": 1773794143000
   },
   {
     "id": "kb-126",
@@ -350,12 +336,12 @@
     "description": "Live data fetch from Aitable. Analytics tab shows real monthly revenue, bookings, top vehicle.",
     "project": "Lagoon Company",
     "priority": "High",
-    "agent": "Piia",
+    "agent": [
+      "rec7UjlTlYp2P"
+    ],
     "status": "done",
     "createdAt": 1772664611000,
-    "movedAt": 1772869745000,
-    "dueDate": 1773550800000,
-    "startDate": 1772946000000
+    "movedAt": 1773794143000
   },
   {
     "id": "kb-127",
@@ -364,12 +350,10 @@
     "description": "Eco-yacht ad is live but account login needs to be found.",
     "project": "Lagoon Company",
     "priority": "Medium",
-    "agent": "Beno",
+    "agent": "",
     "status": "todo",
     "createdAt": 1772664611000,
-    "movedAt": 1772869745000,
-    "dueDate": 1771995600000,
-    "startDate": 1771909200000
+    "movedAt": 1773794143000
   },
   {
     "id": "kb-128",
@@ -378,12 +362,10 @@
     "description": "Systeme.io > Settings > Payment > Connect Stripe. Unblocks entire Digital Products funnel.",
     "project": "Digital Products",
     "priority": "Urgent",
-    "agent": "Beno",
+    "agent": "",
     "status": "todo",
     "createdAt": 1772664611000,
-    "movedAt": 1772869745000,
-    "dueDate": 1772341200000,
-    "startDate": 1772254800000
+    "movedAt": 1773794143000
   },
   {
     "id": "kb-129",
@@ -392,12 +374,10 @@
     "description": "Working through 8-9 ComfyUI workflow tutorials on vast.ai.",
     "project": "OFM Agency",
     "priority": "High",
-    "agent": "Beno",
+    "agent": "",
     "status": "inprogress",
     "createdAt": 1772664611000,
-    "movedAt": 1772869745000,
-    "dueDate": 1772859600000,
-    "startDate": 1772168400000
+    "movedAt": 1773794143000
   },
   {
     "id": "kb-130",
@@ -406,10 +386,10 @@
     "description": "Two reports ready. Text drafted, needs gh auth or manual post.",
     "project": "OpenClaw",
     "priority": "Low",
-    "agent": "Beno",
+    "agent": "",
     "status": "todo",
     "createdAt": 1772664611000,
-    "movedAt": 1772664611000
+    "movedAt": 1773794143000
   },
   {
     "id": "kb-131",
@@ -418,12 +398,10 @@
     "description": "Build automation for booking inquiries, auto-reply, confirmation, reminders.",
     "project": "Lagoon Company",
     "priority": "Medium",
-    "agent": "Nova",
+    "agent": "",
     "status": "todo",
     "createdAt": 1772664611000,
-    "movedAt": 1772869745000,
-    "dueDate": 1773464400000,
-    "startDate": 1772859600000
+    "movedAt": 1773794143000
   },
   {
     "id": "kb-132",
@@ -432,10 +410,12 @@
     "description": "Wraps OpenClaw native voice-call plugin. Supports notify and conversation mode.",
     "project": "OpenClaw",
     "priority": "Medium",
-    "agent": "Piia",
+    "agent": [
+      "rec7UjlTlYp2P"
+    ],
     "status": "done",
     "createdAt": 1772664611000,
-    "movedAt": 1772664611000
+    "movedAt": 1773794143000
   },
   {
     "id": "kb-133",
@@ -444,10 +424,12 @@
     "description": "/usage command shows Anthropic + Kimi token usage. Syncs to MC analytics 4x daily.",
     "project": "OpenClaw",
     "priority": "Medium",
-    "agent": "Piia",
+    "agent": [
+      "rec7UjlTlYp2P"
+    ],
     "status": "done",
     "createdAt": 1772664611000,
-    "movedAt": 1772664611000
+    "movedAt": 1773794143000
   },
   {
     "id": "kb-134",
@@ -456,9 +438,11 @@
     "description": "Queries GA4 Data API via service account. Reports: overview, top pages, traffic sources, realtime.",
     "project": "OpenClaw",
     "priority": "Low",
-    "agent": "Piia",
+    "agent": [
+      "rec7UjlTlYp2P"
+    ],
     "status": "done",
     "createdAt": 1772664611000,
-    "movedAt": 1772664611000
+    "movedAt": 1773794143000
   }
 ]
