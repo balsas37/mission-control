@@ -2613,7 +2613,7 @@
     .cal-week-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; }
     .cal-week-col {
       border: 1px solid var(--border); border-radius: 12px; padding: 10px;
-      display: flex; flex-direction: column; gap: 6px; min-height: 200px;
+      display: flex; flex-direction: column; gap: 6px; min-height: 320px;
       cursor: pointer; transition: border-color 0.2s, background 0.2s;
     }
     .cal-week-col:hover { border-color: var(--border-hover); background: var(--bg-hover); }
@@ -7869,6 +7869,24 @@
 
     </section>
 
+    <!-- Approval Detail Modal -->
+    <div class="approval-modal-backdrop" id="approval-modal-backdrop" onclick="closeApprovalModal()" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.6);z-index:1000;"></div>
+    <div class="approval-modal" id="approval-modal" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:24px;max-width:520px;width:90%;max-height:80vh;overflow-y:auto;z-index:1001;box-shadow:0 20px 60px rgba(0,0,0,0.5);">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+        <span id="apv-modal-type" style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--accent);"></span>
+        <span id="apv-modal-status"></span>
+        <button onclick="closeApprovalModal()" style="margin-left:auto;background:none;border:none;color:var(--text-3);font-size:20px;cursor:pointer;">&times;</button>
+      </div>
+      <div id="apv-modal-title" style="font-size:18px;font-weight:500;margin-bottom:12px;"></div>
+      <div id="apv-modal-content" style="font-size:14px;color:var(--text-2);line-height:1.6;margin-bottom:16px;"></div>
+      <div style="font-size:12px;color:var(--text-3);margin-bottom:16px;display:flex;gap:16px;">
+        <span>By: <span id="apv-modal-agent"></span></span>
+        <span id="apv-modal-time"></span>
+      </div>
+      <div id="apv-modal-actions" style="display:flex;gap:8px;padding-top:16px;border-top:1px solid var(--border);"></div>
+      <div id="apv-modal-id" style="font-size:10px;color:var(--text-3);margin-top:12px;opacity:0.5;"></div>
+    </div>
+
     <!-- Focus -->
     <section class="tab-panel" id="panel-focus">
       <div class="focus-wrap">
@@ -11629,7 +11647,7 @@
       /* trigger reveal animations */
       requestAnimationFrame(function() {
         grid.querySelectorAll('.reveal').forEach(function(el) {
-          el.classList.add('visible');
+          el.classList.add('revealed');
         });
       });
     }
@@ -13021,7 +13039,7 @@
           contentToggleHtml = '<span class="approval-card-content-toggle" onclick="toggleApprovalContent(this, ' + idx + ')">Show more</span>';
         }
 
-        return '<div class="approval-card" data-approval-idx="' + idx + '">' +
+        return '<div class="approval-card" data-approval-idx="' + idx + '" onclick="openApprovalModal(' + idx + ')">' +
           '<div class="approval-card-header">' +
             '<div class="approval-card-title">' +
               '<span class="approval-card-type ' + typeClass + '">' + escapeHtml(a.type || 'other') + '</span>' +
@@ -13112,6 +13130,34 @@
         contentEl.classList.add('approval-card-content-truncated');
         el.textContent = 'Show more';
       }
+    }
+    function openApprovalModal(idx) {
+      var a = approvalsData[idx];
+      if (!a) return;
+      var modal = document.getElementById('approval-modal');
+      var backdrop = document.getElementById('approval-modal-backdrop');
+      if (!modal || !backdrop) return;
+      document.getElementById('apv-modal-type').textContent = (a.type || 'other').toUpperCase();
+      document.getElementById('apv-modal-title').textContent = a.summary || '';
+      document.getElementById('apv-modal-status').innerHTML = (a.status === 'pending' ? '<span class="pill pill-waiting">Pending</span>' : a.status === 'approved' ? '<span class="pill pill-done">Approved</span>' : a.status === 'rejected' ? '<span class="pill pill-urgent">Rejected</span>' : '<span class="pill pill-waiting">Revision</span>');
+      document.getElementById('apv-modal-content').textContent = a.content || '';
+      document.getElementById('apv-modal-agent').textContent = a.agent || '';
+      document.getElementById('apv-modal-time').textContent = a.timestamp ? new Date(a.timestamp).toLocaleString() : '';
+      document.getElementById('apv-modal-id').textContent = a.id || '';
+      var actions = document.getElementById('apv-modal-actions');
+      if (a.status === 'pending') {
+        actions.innerHTML = '<button class="approval-btn approval-btn-approve" onclick="handleApprovalAction(\'' + a.id + '\', \'approve\')">✅ Approve</button><button class="approval-btn approval-btn-reject" onclick="handleApprovalAction(\'' + a.id + '\', \'reject\')">❌ Reject</button><button class="approval-btn approval-btn-revise" onclick="handleApprovalAction(\'' + a.id + '\', \'revise\')">✏️ Revise</button>';
+      } else {
+        actions.innerHTML = '<span style="color:var(--text-3)">Resolved: ' + (a.resolved_at ? new Date(a.resolved_at).toLocaleString() : 'N/A') + '</span>';
+      }
+      backdrop.style.display = 'block';
+      modal.style.display = 'block';
+    }
+    function closeApprovalModal() {
+      var modal = document.getElementById('approval-modal');
+      var backdrop = document.getElementById('approval-modal-backdrop');
+      if (modal) modal.style.display = 'none';
+      if (backdrop) backdrop.style.display = 'none';
     }
     function updateApprovalsBadge() {
       var badge = document.getElementById('approvals-badge');
