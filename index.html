@@ -8186,19 +8186,6 @@
       </div>
     </section>
 
-    <!-- Document Detail Modal -->
-    <div id="doc-detail-backdrop" onclick="closeDocModal()" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.6);z-index:1000;"></div>
-    <div id="doc-detail-modal" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:24px;max-width:560px;width:92%;max-height:80vh;overflow-y:auto;z-index:1001;box-shadow:0 20px 60px rgba(0,0,0,0.5);">
-      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
-        <span id="doc-modal-cat" class="doc-cat-pill"></span>
-        <button onclick="closeDocModal()" style="margin-left:auto;background:none;border:none;color:var(--text-3);font-size:20px;cursor:pointer;">&times;</button>
-      </div>
-      <div id="doc-modal-title" style="font-size:18px;font-weight:500;margin-bottom:12px;color:var(--text-1);"></div>
-      <div id="doc-modal-snippet" style="font-size:14px;color:var(--text-2);line-height:1.6;margin-bottom:16px;"></div>
-      <div id="doc-modal-path" style="font-size:12px;color:var(--text-3);background:rgba(255,255,255,0.04);padding:8px 12px;border-radius:8px;font-family:monospace;word-break:break-all;margin-bottom:8px;"></div>
-      <div id="doc-modal-date" style="font-size:12px;color:var(--text-3);"></div>
-    </div>
-
     <!-- Radar -->
     <section class="tab-panel" id="panel-radar">
       <div class="radar-wrap">
@@ -10323,7 +10310,7 @@
       }
       var html = '';
       filtered.forEach(function(d, i) {
-        html += '<div class="doc-card reveal' + (query ? ' doc-card-dim' : '') + '" style="transition-delay:' + (i % 10 * 40) + 'ms;cursor:pointer" data-doc-idx="' + docsData.indexOf(d) + '">';
+        html += '<div class="doc-card reveal' + (query ? ' doc-card-dim' : '') + '" style="transition-delay:' + (i % 10 * 40) + 'ms">';
         html += '<div class="doc-card-header">';
         html += '<span class="doc-cat-pill ' + docCatClass(d.category) + '">' + escapeHtml(d.category) + '</span>';
         html += '<span class="doc-card-title" title="' + escapeHtml(d.title) + '">' + escapeHtml(d.title) + '</span>';
@@ -10360,30 +10347,6 @@
     var docsSearchInput = document.getElementById('docs-search-input');
     if (docsSearchInput) {
       docsSearchInput.addEventListener('input', renderDocuments);
-    }
-
-    // Document card click handler
-    document.getElementById('docs-grid').addEventListener('click', function(e) {
-      var card = e.target.closest('.doc-card');
-      if (!card) return;
-      var idx = parseInt(card.dataset.docIdx);
-      var d = docsData[idx];
-      if (!d) return;
-      var modal = document.getElementById('doc-detail-modal');
-      var backdrop = document.getElementById('doc-detail-backdrop');
-      document.getElementById('doc-modal-title').textContent = d.title;
-      document.getElementById('doc-modal-cat').textContent = d.category;
-      document.getElementById('doc-modal-cat').className = 'doc-cat-pill ' + docCatClass(d.category);
-      document.getElementById('doc-modal-date').textContent = 'Created ' + formatDate(d.created);
-      document.getElementById('doc-modal-snippet').textContent = d.snippet;
-      document.getElementById('doc-modal-path').textContent = d.path || '';
-      document.getElementById('doc-modal-path').style.display = d.path ? 'block' : 'none';
-      backdrop.style.display = 'block';
-      modal.style.display = 'block';
-    });
-    function closeDocModal() {
-      document.getElementById('doc-detail-modal').style.display = 'none';
-      document.getElementById('doc-detail-backdrop').style.display = 'none';
     }
 
     /* ---- Global Search ---- */
