@@ -748,8 +748,10 @@
 
     @media (max-width: 768px) {
       .graph-open-full-btn {
-        bottom: 260px;
+        bottom: auto;
+        top: calc(100vh - 180px);
         right: 16px;
+        position: fixed;
       }
       .sidebar {
         width: var(--sidebar-collapsed);
@@ -4110,6 +4112,12 @@
     }
     .act-filter-backdrop {
       display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: 900;
+    }
+    .act-filter-backdrop.open {
+      display: block;
     }
     .act-filter-dropdown {
       display: none;
@@ -10124,6 +10132,11 @@
         function openFilter() {
           activityDropdownOpen = true;
           if (backdrop) backdrop.classList.add('open');
+          // Position dropdown near button
+          var rect = btn.getBoundingClientRect();
+          dropdown.style.position = 'fixed';
+          dropdown.style.top = (rect.bottom + 6) + 'px';
+          dropdown.style.left = Math.max(8, Math.min(rect.left, window.innerWidth - 270)) + 'px';
           dropdown.classList.add('open');
         }
         function closeFilter() {
@@ -13064,7 +13077,8 @@
         rejected: '<span class="pill pill-urgent">Rejected</span>',
         revision_requested: '<span class="pill pill-waiting">Revision</span>'
       };
-      grid.innerHTML = filtered.map(function(a, idx) {
+      grid.innerHTML = filtered.map(function(a, filtIdx) {
+        var idx = approvalsData.indexOf(a);
         var content = a.content || '';
         var isLongContent = content.length > 200;
         var displayContent = isLongContent ? content.substring(0, 200) + '...' : content;
@@ -14448,6 +14462,21 @@
       e.stopPropagation();
       btn.classList.add('spinning');
       setTimeout(function() { btn.classList.remove('spinning'); }, 600);
+    });
+
+    // Overnight activity "view" links - navigate to relevant tab
+    document.addEventListener('click', function(e) {
+      var link = e.target.closest('.overnight-view');
+      if (!link) return;
+      e.preventDefault();
+      var loc = link.parentElement.querySelector('.overnight-loc');
+      if (!loc) return;
+      var path = loc.textContent.trim();
+      if (path.includes('radar')) switchTab('radar');
+      else if (path.includes('memory')) switchTab('memory');
+      else if (path.includes('charfen') || path.includes('goals')) switchTab('projects');
+      else if (path.includes('data/')) switchTab('system');
+      else switchTab('documents');
     });
   })();
   </script>
