@@ -12134,7 +12134,7 @@
     function getAgentByName(name) {
       if (!aitableTeam) return null;
       return aitableTeam.find(function(r) {
-        return (r.fields['标题'] || '').toLowerCase() === name.toLowerCase();
+        return (r.fields['Agent'] || r.fields['标题'] || '').toLowerCase() === name.toLowerCase();
       }) || null;
     }
 
@@ -12162,7 +12162,7 @@
     function countTargets(agentRecordId) {
       if (!aitableTargets) return 0;
       return aitableTargets.filter(function(r) {
-        var ts = r.fields['Team Structure'] || [];
+        var ts = r.fields['Agent'] || r.fields['Team Structure'] || [];
         return ts.indexOf(agentRecordId) !== -1;
       }).length;
     }
@@ -12455,7 +12455,7 @@
       var agentTargets = [];
       if (aitableTargets) {
         agentTargets = aitableTargets.filter(function(r) {
-          return (r.fields['Team Structure'] || []).indexOf(rec.recordId) !== -1;
+          return (r.fields['Agent'] || r.fields['Team Structure'] || []).indexOf(rec.recordId) !== -1;
         });
       }
 
@@ -12549,7 +12549,7 @@
       var t = 0, g = 0;
       if (aitableTargets) {
         aitableTargets.forEach(function(r) {
-          if ((r.fields['Team Structure'] || []).indexOf(agentRecordId) !== -1 &&
+          if ((r.fields['Agent'] || r.fields['Team Structure'] || []).indexOf(agentRecordId) !== -1 &&
               r.fields['Business'] === business) t++;
         });
       }
@@ -12558,8 +12558,7 @@
           var bizField = r.fields['Business'] || r.fields['Businesses'] || '';
           var bizArr = Array.isArray(bizField) ? bizField : [bizField];
           if (bizArr.indexOf(business) !== -1) {
-            // check agent link
-            var ts = r.fields['Team Structure'] || [];
+            var ts = r.fields['Agent'] || r.fields['Team Structure'] || [];
             if (ts.indexOf(agentRecordId) !== -1) g++;
           }
         });
@@ -12650,7 +12649,7 @@
       var agentTargets = [];
       if (aitableTargets && rec) {
         agentTargets = aitableTargets.filter(function(r) {
-          return (r.fields['Team Structure'] || []).indexOf(rec.recordId) !== -1 &&
+          return (r.fields['Agent'] || r.fields['Team Structure'] || []).indexOf(rec.recordId) !== -1 &&
                  r.fields['Business'] === business;
         });
       }
