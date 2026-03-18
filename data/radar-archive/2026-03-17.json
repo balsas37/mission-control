@@ -1,0 +1,121 @@
+{
+  "updatedAt": "2026-03-17T12:00:00Z",
+  "ofm": [
+    {
+      "title": "OnlyFans tightening AI rules in 2026",
+      "source": "list25.com",
+      "url": "https://list25.com/onlyfans-ai-crackdown-new-2026-rules-creator-revenue/",
+      "summary": "Platform implementing stringent new policies on AI-generated content verification and management. Creators using AI will face new compliance requirements."
+    },
+    {
+      "title": "Hybrid AI chatbot model is the winning playbook",
+      "source": "substy.ai",
+      "url": "https://substy.ai/blog/how-to-use-an-onlyfans-chatbot-to-grow-your-revenue-in-2026-the-complete-automation-guide",
+      "summary": "Substy.ai reports AI handles greetings, small talk, reactivation (saving 70% of team time) while humans handle PPV negotiations and loyal fan relationships. This combo maximizes both speed and emotional impact."
+    },
+    {
+      "title": "Higgsfield launching AI influencer monetization",
+      "source": "higgsfield.ai",
+      "url": "https://higgsfield.ai/earn",
+      "summary": "New \"Earn Creator Program\" pays AI influencers via unique referral codes. Platform actively recruiting AI persona creators for monetization."
+    },
+    {
+      "title": "AI influencer system doing $4K/month documented",
+      "source": "medium.com",
+      "url": "https://medium.com/write-a-catalyst/the-ai-influencer-system-that-makes-me-4-000-month-3e99fc0a82fb",
+      "summary": "Medium writeup details the \"architect\" model\u2014instead of being the creator, build the AI persona that gains followers and earns affiliate revenue while you sleep. 150K followers achieved in months."
+    },
+    {
+      "title": "Fanvue allows AI models with TOS compliance",
+      "source": "substy.ai",
+      "url": "https://substy.ai/blog/can-you-use-ai-models-on-fanvue-whats-legal-whats-not-and-how-to-stay-safe-2026-guide",
+      "summary": "Platform permits AI-generated content but creators must stay clear on terms. Agencies combining human creators with AI-assisted models for volume management."
+    }
+  ],
+  "tools": [
+    {
+      "title": "Claude Code now runs autonomously with Scheduled Tasks",
+      "source": "juliangoldie.com",
+      "url": "https://juliangoldie.com/claude-code-scheduled-tasks/",
+      "summary": "Anthropic released scheduled task automation\u2014Claude Code can run tasks on a schedule in the background without manual prompting. This is a major shift from reactive to proactive AI agents."
+    },
+    {
+      "title": "OpenClaw 2.26 secrets management overhaul",
+      "source": "ucstrategies.com",
+      "url": "https://ucstrategies.com/news/openclaw-2-26-update-major-stability-security-and-automation-fixes-explained/",
+      "summary": "New external secrets workflow eliminates API keys in plain text configs\u2014major security upgrade for self-hosted deployments."
+    },
+    {
+      "title": "OpenClaw 2026.3.13 adds browser integration + mobile redesign",
+      "source": "nerdschalk.com",
+      "url": "https://nerdschalk.com/new-openclaw-capabilities-let-ai-move-your-mouse-and-run-apps-with-chatgpt-4-5/",
+      "summary": "New browser control features, redesigned mobile interfaces, and gateway environment improvements for AI agents."
+    },
+    {
+      "title": "Claude Code 2 adds /loop command",
+      "source": "www.geeky-gadgets.com",
+      "url": "https://www.geeky-gadgets.com/claude-code-automation-workflows/",
+      "summary": "Automate repetitive tasks within active sessions\u2014process data or check file updates at set intervals (e.g., every 30 minutes)."
+    },
+    {
+      "title": "Moonshot AI open-sourced Kimi K2.5",
+      "source": "blog.bytebytego.com",
+      "url": "https://blog.bytebytego.com/p/whats-next-in-ai-five-trends-to-watch",
+      "summary": "Trillion-parameter model built specifically for multimodal agent workflows\u2014January 2026 release signals the shift toward agent-native model architectures."
+    }
+  ],
+  "market": [
+    {
+      "title": "Puerto Escondido air connectivity expanding fast",
+      "source": "aviationweek.com",
+      "url": "https://aviationweek.com/air-transport/airports-networks/volaris-boosts-puerto-escondido-connectivity",
+      "summary": "Volaris launching Tijuana-Puerto Escondido route June 2, 2026. Additional Canadian and US connections planned for 2026, extending the addressable buyer/visitor market significantly."
+    },
+    {
+      "title": "Puerto Escondido rental market: wellness + nomads driving premium",
+      "source": "realestate.puerto-escondido.mx",
+      "url": "https://realestate.puerto-escondido.mx/puerto-escondido-rental-market-analysis-2026-occupancy-trends-investment-outlook",
+      "summary": "Properties with private pools and multi-bedroom layouts capturing high-value group bookings. Digital nomad infrastructure (coworking, internet) deepening long-stay demand\u2014most valuable occupancy stabilizer."
+    },
+    {
+      "title": "Casa Wabi completed OMA domed pavilion March 4, 2026",
+      "source": "www.designboom.com",
+      "url": "https://www.designboom.com/architecture/oma-domed-pavilion-artists-mushroom-casa-wabi-bosco-sodi-mexico/",
+      "summary": "Major architectural completion in Beno's neighborhood (Palmarito area) reinforces the region's cultural cachet and draws continued high-end tourism/attention."
+    },
+    {
+      "title": "Rammed earth construction trending in contemporary Mexican architecture",
+      "source": "www.archdaily.com",
+      "url": "https://www.archdaily.com/1039425/building-with-earth-traditional-knowledge-in-contemporary-architecture",
+      "summary": "ArchDaily reports renewed attention on earthen materials (adobe, rammed earth, compressed earth blocks) by contemporary architects\u2014validates Beno's Sirewall training direction."
+    },
+    {
+      "title": "Tulum ATV tours at $250/person for premium packages",
+      "source": "happytovisit.com",
+      "url": "https://happytovisit.com/private-tulum-ruins-tour-and-atv-adventure-from-riviera-maya/",
+      "summary": "Market sustaining high per-person pricing for bundled experiences (ruins + ATV + cenote). Quality personalized service commands premium."
+    }
+  ],
+  "actions": [
+    {
+      "text": "Test Claude Code Scheduled Tasks: for OFM automation workflows (daily content scheduling, creator performance checks)",
+      "done": false
+    },
+    {
+      "text": "Review OnlyFans AI policy changes: audit any AI-assisted content/comms in the agency for compliance with new 2026 rules",
+      "done": false
+    },
+    {
+      "text": "Evaluate Higgsfield Earn program: potential new platform for AI influencer revenue streams",
+      "done": false
+    },
+    {
+      "text": "Monitor Puerto Escondido flight announcements: additional US/Canada routes will shift tourism demographics; adjust Lagoon Company marketing timing",
+      "done": false
+    },
+    {
+      "text": "Update OpenClaw to 2.26+: to leverage secrets management and browser control features for agent workflows",
+      "done": false
+    }
+  ]
+}

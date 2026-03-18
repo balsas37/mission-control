@@ -8249,6 +8249,11 @@
     <!-- Radar -->
     <section class="tab-panel" id="panel-radar">
       <div class="radar-wrap">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;flex-wrap:wrap">
+          <span style="font-size:12px;color:var(--text-3);text-transform:uppercase;letter-spacing:.06em">Date:</span>
+          <input type="date" id="radar-date-picker" style="background:var(--bg-card);border:1px solid var(--border);color:var(--text-1);border-radius:8px;padding:6px 10px;font-size:13px;font-family:inherit">
+          <button id="radar-date-today" style="font-size:11px;padding:4px 12px;border-radius:999px;border:1px solid var(--border);background:transparent;color:var(--text-2);cursor:pointer">Today</button>
+        </div>
         <div class="radar-section reveal">
           <div class="radar-section-header" data-collapse="radar-ofm">
             <svg class="analytics-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4,6 8,10 12,6"/></svg>
@@ -12871,6 +12876,38 @@
     document.querySelector('.sidebar-nav-item[data-tab="radar"]').addEventListener('click', function() {
       if (!radarData) loadRadarData();
     });
+
+    // Radar date picker
+    (function() {
+      var picker = document.getElementById('radar-date-picker');
+      var todayBtn = document.getElementById('radar-date-today');
+      if (!picker) return;
+
+      function loadRadarForDate(dateStr) {
+        var url = dateStr ? ('data/radar-archive/' + dateStr + '.json?t=' + Date.now()) : ('data/radar.json?t=' + Date.now());
+        fetch(url)
+          .then(function(r) { if (!r.ok) throw new Error('Not found'); return r.json(); })
+          .then(function(data) {
+            radarData = data;
+            renderRadar();
+          })
+          .catch(function() {
+            radarData = { ofm: [], tools: [], market: [], actions: [] };
+            renderRadar();
+            var ts = document.getElementById('radar-timestamp');
+            if (ts) ts.textContent = 'No radar data for ' + (dateStr || 'today');
+          });
+      }
+
+      picker.addEventListener('change', function() {
+        loadRadarForDate(picker.value);
+      });
+      todayBtn.addEventListener('click', function() {
+        picker.value = '';
+        radarData = null;
+        loadRadarData();
+      });
+    })();
 
     /* ---- System Tab ---- */
     var cronHealthData = null;
