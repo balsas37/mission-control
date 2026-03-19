@@ -8,16 +8,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "error",
-      "lastRun": "2026-03-18T02:00:00.019000+00:00",
-      "nextRun": "2026-03-19T02:00:00+00:00",
-      "lastDuration": 103530,
-      "consecutiveErrors": 1,
-      "lastError": "\u26a0\ufe0f \u2709\ufe0f Message failed: Call to 'sendMessage' failed! (403: Forbidden: bot can't initiate conversation with a user)",
+      "lastRun": "2026-03-19T02:00:00.020000+00:00",
+      "nextRun": "2026-03-20T02:00:00+00:00",
+      "lastDuration": 120022,
+      "consecutiveErrors": 2,
+      "lastError": "cron: job execution timed out",
       "runs": [
         {
-          "ts": "2026-03-18T02:00:00.019000+00:00",
+          "ts": "2026-03-19T02:00:00.020000+00:00",
           "status": "error",
-          "duration": 103530
+          "duration": 120022
         }
       ]
     },
@@ -50,16 +50,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-18T16:01:07.239000+00:00",
-      "nextRun": "2026-03-18T17:01:07.213000+00:00",
-      "lastDuration": 9478,
+      "lastRun": "2026-03-19T10:01:07.240000+00:00",
+      "nextRun": "2026-03-19T11:01:07.213000+00:00",
+      "lastDuration": 9053,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-18T16:01:07.239000+00:00",
+          "ts": "2026-03-19T10:01:07.240000+00:00",
           "status": "ok",
-          "duration": 9478
+          "duration": 9053
         }
       ]
     },
@@ -71,16 +71,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-18T15:30:00.022000+00:00",
-      "nextRun": "2026-03-18T17:30:00+00:00",
-      "lastDuration": 11587,
+      "lastRun": "2026-03-19T03:30:00.029000+00:00",
+      "nextRun": "2026-03-19T13:30:00+00:00",
+      "lastDuration": 9751,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-18T15:30:00.022000+00:00",
+          "ts": "2026-03-19T03:30:00.029000+00:00",
           "status": "ok",
-          "duration": 11587
+          "duration": 9751
         }
       ]
     },
@@ -149,16 +149,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-18T06:00:00.043000+00:00",
-      "nextRun": "2026-03-19T06:00:00+00:00",
-      "lastDuration": 54322,
+      "lastRun": "2026-03-19T06:00:00.026000+00:00",
+      "nextRun": "2026-03-20T06:00:00+00:00",
+      "lastDuration": 80855,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-18T06:00:00.043000+00:00",
+          "ts": "2026-03-19T06:00:00.026000+00:00",
           "status": "ok",
-          "duration": 54322
+          "duration": 80855
         }
       ]
     },
@@ -170,16 +170,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-18T02:30:00.009000+00:00",
-      "nextRun": "2026-03-19T02:30:00+00:00",
-      "lastDuration": 105942,
+      "lastRun": "2026-03-19T02:30:00.025000+00:00",
+      "nextRun": "2026-03-20T02:30:00+00:00",
+      "lastDuration": 87177,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-18T02:30:00.009000+00:00",
+          "ts": "2026-03-19T02:30:00.025000+00:00",
           "status": "ok",
-          "duration": 105942
+          "duration": 87177
         }
       ]
     },
@@ -283,17 +283,17 @@
       "description": "",
       "agent": "main",
       "enabled": true,
-      "lastStatus": "ok",
-      "lastRun": "2026-03-18T04:01:27.482000+00:00",
-      "nextRun": "2026-03-19T04:00:00+00:00",
-      "lastDuration": 429563,
-      "consecutiveErrors": 0,
-      "lastError": "",
+      "lastStatus": "error",
+      "lastRun": "2026-03-19T04:01:08.981000+00:00",
+      "nextRun": "2026-03-20T04:00:00+00:00",
+      "lastDuration": 382290,
+      "consecutiveErrors": 1,
+      "lastError": "\u26a0\ufe0f \u270d\ufe0f Write failed: Missing required parameter: path (path or file_path). Supply correct parameters before retrying.",
       "runs": [
         {
-          "ts": "2026-03-18T04:01:27.482000+00:00",
-          "status": "ok",
-          "duration": 429563
+          "ts": "2026-03-19T04:01:08.981000+00:00",
+          "status": "error",
+          "duration": 382290
         }
       ]
     },
@@ -320,16 +320,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-17T17:01:01.006000+00:00",
-      "nextRun": "2026-03-18T17:00:00+00:00",
-      "lastDuration": 168681,
+      "lastRun": "2026-03-18T17:00:30.935000+00:00",
+      "nextRun": "2026-03-19T17:00:00+00:00",
+      "lastDuration": 151342,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-17T17:01:01.006000+00:00",
+          "ts": "2026-03-18T17:00:30.935000+00:00",
           "status": "ok",
-          "duration": 168681
+          "duration": 151342
         }
       ]
     },
@@ -362,16 +362,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-18T04:00:00.025000+00:00",
-      "nextRun": "2026-03-19T04:00:00+00:00",
-      "lastDuration": 87457,
+      "lastRun": "2026-03-19T04:00:00.024000+00:00",
+      "nextRun": "2026-03-20T04:00:00+00:00",
+      "lastDuration": 68957,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-18T04:00:00.025000+00:00",
+          "ts": "2026-03-19T04:00:00.024000+00:00",
           "status": "ok",
-          "duration": 87457
+          "duration": 68957
         }
       ]
     },
@@ -383,16 +383,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-17T23:00:30.064000+00:00",
-      "nextRun": "2026-03-18T23:00:00+00:00",
-      "lastDuration": 37223,
+      "lastRun": "2026-03-18T23:00:22.859000+00:00",
+      "nextRun": "2026-03-19T23:00:00+00:00",
+      "lastDuration": 4489,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-17T23:00:30.064000+00:00",
+          "ts": "2026-03-18T23:00:22.859000+00:00",
           "status": "ok",
-          "duration": 37223
+          "duration": 4489
         }
       ]
     },
@@ -404,16 +404,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-18T07:00:00.031000+00:00",
-      "nextRun": "2026-03-19T07:00:00+00:00",
-      "lastDuration": 55193,
+      "lastRun": "2026-03-19T07:00:00.028000+00:00",
+      "nextRun": "2026-03-20T07:00:00+00:00",
+      "lastDuration": 148545,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-18T07:00:00.031000+00:00",
+          "ts": "2026-03-19T07:00:00.028000+00:00",
           "status": "ok",
-          "duration": 55193
+          "duration": 148545
         }
       ]
     },
@@ -425,16 +425,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-18T11:00:37.011000+00:00",
-      "nextRun": "2026-03-18T17:00:00+00:00",
-      "lastDuration": 15209,
+      "lastRun": "2026-03-19T05:00:08.860000+00:00",
+      "nextRun": "2026-03-19T11:00:00+00:00",
+      "lastDuration": 15750,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-18T11:00:37.011000+00:00",
+          "ts": "2026-03-19T05:00:08.860000+00:00",
           "status": "ok",
-          "duration": 15209
+          "duration": 15750
         }
       ]
     },
@@ -446,16 +446,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-18T11:00:15.378000+00:00",
-      "nextRun": "2026-03-18T17:00:00+00:00",
-      "lastDuration": 21633,
+      "lastRun": "2026-03-19T05:00:00.024000+00:00",
+      "nextRun": "2026-03-19T11:00:00+00:00",
+      "lastDuration": 8836,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-18T11:00:15.378000+00:00",
+          "ts": "2026-03-19T05:00:00.024000+00:00",
           "status": "ok",
-          "duration": 21633
+          "duration": 8836
         }
       ]
     },
@@ -467,16 +467,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-18T11:03:52.747000+00:00",
-      "nextRun": "2026-03-18T17:03:52.724000+00:00",
-      "lastDuration": 8843,
+      "lastRun": "2026-03-19T05:03:52.745000+00:00",
+      "nextRun": "2026-03-19T11:03:52.724000+00:00",
+      "lastDuration": 7295,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-18T11:03:52.747000+00:00",
+          "ts": "2026-03-19T05:03:52.745000+00:00",
           "status": "ok",
-          "duration": 8843
+          "duration": 7295
         }
       ]
     },
@@ -487,17 +487,17 @@
       "description": "",
       "agent": "main",
       "enabled": true,
-      "lastStatus": "ok",
-      "lastRun": "2026-03-18T07:30:00.022000+00:00",
-      "nextRun": "2026-03-19T07:30:00+00:00",
-      "lastDuration": 122934,
-      "consecutiveErrors": 0,
-      "lastError": "",
+      "lastStatus": "error",
+      "lastRun": "2026-03-19T07:30:00.026000+00:00",
+      "nextRun": "2026-03-20T07:30:00+00:00",
+      "lastDuration": 236958,
+      "consecutiveErrors": 1,
+      "lastError": "\u26a0\ufe0f \ud83d\udcdd Edit: `in memory/05_resources/fanvue-agency-setup-guide.md (393 chars)` failed: Could not find the exact text in memory/05_resources/fanvue-agency-setup-guide.md. The old text must match exactly including all whitespace and newlines.",
       "runs": [
         {
-          "ts": "2026-03-18T07:30:00.022000+00:00",
-          "status": "ok",
-          "duration": 122934
+          "ts": "2026-03-19T07:30:00.026000+00:00",
+          "status": "error",
+          "duration": 236958
         }
       ]
     },
@@ -592,7 +592,17 @@
   "errors": [
     {
       "job": "bianca-evening-routine",
-      "error": "\u26a0\ufe0f \u2709\ufe0f Message failed: Call to 'sendMessage' failed! (403: Forbidden: bot can't initiate conversation with a user)",
+      "error": "cron: job execution timed out",
+      "count": 2
+    },
+    {
+      "job": "nightly-execution",
+      "error": "\u26a0\ufe0f \u270d\ufe0f Write failed: Missing required parameter: path (path or file_path). Supply correct parameters before retrying.",
+      "count": 1
+    },
+    {
+      "job": "vault-reweave",
+      "error": "\u26a0\ufe0f \ud83d\udcdd Edit: `in memory/05_resources/fanvue-agency-setup-guide.md (393 chars)` failed: Could not find the exact text in memory/05_resources/fanvue-agency-setup-guide.md. The old text must match exactly including all whitespace and newlines.",
       "count": 1
     },
     {
