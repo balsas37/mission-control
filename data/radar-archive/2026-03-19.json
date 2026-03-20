@@ -1,0 +1,94 @@
+{
+  "updatedAt": "2026-03-19T12:00:00Z",
+  "ofm": [
+    {
+      "title": "OnlyMonster dominates OFM AI tools",
+      "source": "",
+      "url": "",
+      "summary": "\u2014 Rapidly became the go-to management system with integrated AI assistance. Built-in desktop browser + AI chat capabilities for agencies. [onlymonster.ai](https://onlymonster.ai/)"
+    },
+    {
+      "title": "AI can now fully operate OnlyFans accounts",
+      "source": "",
+      "url": "",
+      "summary": "\u2014 Supercreator and other platforms enable AI to handle chatting, CRM, and sales. Agencies implementing correctly with transparency are seeing major gains. [sozee.ai](https://sozee.ai/resources/ai-powered-onlyfans-agency-software/)"
+    },
+    {
+      "title": "OnlyFans revenue projected $3B+ for 2026-2027",
+      "source": "",
+      "url": "",
+      "summary": "\u2014 Growth concentrated among top-tier creators treating it as professional business, not side hustle. AI operations are the differentiator. [sirency.com](https://www.sirency.com/blog/onlyfans-future-trends-2026-predictions)"
+    },
+    {
+      "title": "Fanvue positioning as \"the only AI subscription platform\"",
+      "source": "",
+      "url": "",
+      "summary": "\u2014 Combines AI messaging, voice notes, and analytics to increase earnings 24/7. Some AI models making $100k+/month. [fanvue.com](https://www.fanvue.com/pages/fanvue-ai)"
+    },
+    {
+      "title": "AI influencer market now $6-8B",
+      "source": "",
+      "url": "",
+      "summary": "\u2014 Forecasted to increase through 2026. Higgsfield and other tools enabling $100k/month AI influencer businesses. [imagine.art](https://www.imagine.art/blogs/how-ai-influencers-make-money)"
+    }
+  ],
+  "tools": [
+    {
+      "title": "OpenClaw v2026.3.7-beta.1 released",
+      "source": "",
+      "url": "",
+      "summary": "\u2014 New ContextEngine Plugin Interface, 200+ bug fixes. Major milestone for extensibility. [github.com/openclaw](https://github.com/openclaw/openclaw/releases)"
+    },
+    {
+      "title": "NVIDIA NemoClaw stack announced (March 16)",
+      "source": "",
+      "url": "",
+      "summary": "\u2014 Single-command install of Nemotron models + OpenShell runtime. GTC 2026 announcement signals serious enterprise adoption. [nvidianews.nvidia.com](https://nvidianews.nvidia.com/news/nvidia-announces-nemoclaw)"
+    },
+    {
+      "title": "Claude Code CLAUDE.md pattern",
+      "source": "",
+      "url": "",
+      "summary": "\u2014 Teams using shared \"thoughts\" directories and root-level CLAUDE.md files for context persistence across repos. Enables better AI collaboration at scale. [henriquesd.medium.com](https://henriquesd.medium.com/claude-code-a-practical-guide-to-automating-your-development-workflow-675714db08ed)"
+    },
+    {
+      "title": "OpenClaw 2026.2.26 reduced real-world friction",
+      "source": "",
+      "url": "",
+      "summary": "\u2014 Better secrets management, browser control, multi-DM support, Android improvements. Beno's setup already benefiting. [reddit.com](https://www.reddit.com/r/aicuriosity/comments/1r6536z/openclaw_2026215_update_major_features_and/)"
+    }
+  ],
+  "market": [
+    {
+      "title": "Tulum ATV competition pricing $55-85/day",
+      "source": "",
+      "url": "",
+      "summary": "\u2014 TulumAreaExperiences at $85/24hr, Tulum-Tours at $55. Lagoon Company's positioning (premium fleet, yacht bundles) remains differentiated. [tulumareaexperiences.com](https://www.tulumareaexperiences.com/service-page/atv-multi-day-rental-self-guided-tour)"
+    },
+    {
+      "title": "Puerto Escondido airport driving major growth",
+      "source": "",
+      "url": "",
+      "summary": "\u2014 United Airlines direct to Houston launched, more US/Canada routes planned for 2026. Property values surging near airport corridor. [realestate.puerto-escondido.mx](https://realestate.puerto-escondido.mx/transportation-infrastructure-how-puerto-escondidos-airport-transformation-is-reshaping-property-values/)"
+    },
+    {
+      "title": "La Punta boutique development accelerating",
+      "source": "",
+      "url": "",
+      "summary": "\u2014 Contemporary architecture, infinity pools, ocean views attracting international buyers. Hilltop Villa timing is excellent. [realestate.puerto-escondido.mx](https://realestate.puerto-escondido.mx/puerto-escondido-real-estate-market-trends-2026-investment-opportunities-on-oaxacas-pacific-coast/)"
+    },
+    {
+      "title": "Rammed earth tech advancing",
+      "source": "",
+      "url": "",
+      "summary": "\u2014 Earth USA 2026 conference (Sept 18-20 Santa Fe), robotic ramming emerging as viable method. Casa Ballena (Los Cabos) using prefab rammed earth blocks for quality control. [earthusa.org](https://www.earthusa.org) / [archello.com](https://archello.com/news/detail-rammed-earth-walls-of-casa-ballena-los-cabos)"
+    },
+    {
+      "title": "Oaxaca infrastructure investments 2025-2026",
+      "source": "",
+      "url": "",
+      "summary": "\u2014 Santa Mar\u00eda Colotepec announcing water system upgrades, road paving, drainage improvements in Brisas de Zicatela neighborhoods. [realestate.puerto-escondido.mx](https://realestate.puerto-escondido.mx/los-tamarindos-puerto-escondido-up-and-coming-neighborhood-guide/)"
+    }
+  ],
+  "actions": []
+}
