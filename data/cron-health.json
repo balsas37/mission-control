@@ -7,17 +7,17 @@
       "description": "",
       "agent": "main",
       "enabled": true,
-      "lastStatus": "error",
-      "lastRun": "2026-03-19T02:00:00.020000+00:00",
-      "nextRun": "2026-03-20T02:00:00+00:00",
-      "lastDuration": 120022,
-      "consecutiveErrors": 2,
-      "lastError": "cron: job execution timed out",
+      "lastStatus": "ok",
+      "lastRun": "2026-03-20T02:00:00.023000+00:00",
+      "nextRun": "2026-03-21T02:00:00+00:00",
+      "lastDuration": 108047,
+      "consecutiveErrors": 0,
+      "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-19T02:00:00.020000+00:00",
-          "status": "error",
-          "duration": 120022
+          "ts": "2026-03-20T02:00:00.023000+00:00",
+          "status": "ok",
+          "duration": 108047
         }
       ]
     },
@@ -29,16 +29,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-18T13:00:00.016000+00:00",
-      "nextRun": "2026-03-19T13:00:00+00:00",
-      "lastDuration": 51303,
+      "lastRun": "2026-03-19T13:00:00.027000+00:00",
+      "nextRun": "2026-03-20T13:00:00+00:00",
+      "lastDuration": 68302,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-18T13:00:00.016000+00:00",
+          "ts": "2026-03-19T13:00:00.027000+00:00",
           "status": "ok",
-          "duration": 51303
+          "duration": 68302
         }
       ]
     },
@@ -50,16 +50,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-19T10:01:07.240000+00:00",
-      "nextRun": "2026-03-19T11:01:07.213000+00:00",
-      "lastDuration": 9053,
+      "lastRun": "2026-03-20T10:01:07.242000+00:00",
+      "nextRun": "2026-03-20T11:01:07.213000+00:00",
+      "lastDuration": 29719,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-19T10:01:07.240000+00:00",
+          "ts": "2026-03-20T10:01:07.242000+00:00",
           "status": "ok",
-          "duration": 9053
+          "duration": 29719
         }
       ]
     },
@@ -71,16 +71,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-19T03:30:00.029000+00:00",
-      "nextRun": "2026-03-19T13:30:00+00:00",
-      "lastDuration": 9751,
+      "lastRun": "2026-03-20T03:30:00.027000+00:00",
+      "nextRun": "2026-03-20T13:30:00+00:00",
+      "lastDuration": 21248,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-19T03:30:00.029000+00:00",
+          "ts": "2026-03-20T03:30:00.027000+00:00",
           "status": "ok",
-          "duration": 9751
+          "duration": 21248
         }
       ]
     },
@@ -128,16 +128,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-18T11:50:00.015000+00:00",
-      "nextRun": "2026-03-19T11:50:00+00:00",
-      "lastDuration": 68405,
+      "lastRun": "2026-03-19T11:50:00.021000+00:00",
+      "nextRun": "2026-03-20T11:50:00+00:00",
+      "lastDuration": 63364,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-18T11:50:00.015000+00:00",
+          "ts": "2026-03-19T11:50:00.021000+00:00",
           "status": "ok",
-          "duration": 68405
+          "duration": 63364
         }
       ]
     },
@@ -149,16 +149,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-19T06:00:00.026000+00:00",
-      "nextRun": "2026-03-20T06:00:00+00:00",
-      "lastDuration": 80855,
+      "lastRun": "2026-03-20T06:00:00.020000+00:00",
+      "nextRun": "2026-03-21T06:00:00+00:00",
+      "lastDuration": 271085,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-19T06:00:00.026000+00:00",
+          "ts": "2026-03-20T06:00:00.020000+00:00",
           "status": "ok",
-          "duration": 80855
+          "duration": 271085
         }
       ]
     },
@@ -170,16 +170,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-19T02:30:00.025000+00:00",
-      "nextRun": "2026-03-20T02:30:00+00:00",
-      "lastDuration": 87177,
+      "lastRun": "2026-03-20T02:30:00.025000+00:00",
+      "nextRun": "2026-03-21T02:30:00+00:00",
+      "lastDuration": 41670,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-19T02:30:00.025000+00:00",
+          "ts": "2026-03-20T02:30:00.025000+00:00",
           "status": "ok",
-          "duration": 87177
+          "duration": 41670
         }
       ]
     },
@@ -191,16 +191,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-18T11:00:00.023000+00:00",
-      "nextRun": "2026-03-19T11:00:00+00:00",
-      "lastDuration": 15355,
+      "lastRun": "2026-03-19T11:00:00.022000+00:00",
+      "nextRun": "2026-03-20T11:00:00+00:00",
+      "lastDuration": 21845,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-18T11:00:00.023000+00:00",
+          "ts": "2026-03-19T11:00:00.022000+00:00",
           "status": "ok",
-          "duration": 15355
+          "duration": 21845
         }
       ]
     },
@@ -263,16 +263,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-18T11:45:00.025000+00:00",
-      "nextRun": "2026-03-19T11:45:00+00:00",
-      "lastDuration": 86080,
+      "lastRun": "2026-03-19T11:45:00.026000+00:00",
+      "nextRun": "2026-03-20T11:45:00+00:00",
+      "lastDuration": 91432,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-18T11:45:00.025000+00:00",
+          "ts": "2026-03-19T11:45:00.026000+00:00",
           "status": "ok",
-          "duration": 86080
+          "duration": 91432
         }
       ]
     },
@@ -284,16 +284,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "error",
-      "lastRun": "2026-03-19T04:01:08.981000+00:00",
-      "nextRun": "2026-03-20T04:00:00+00:00",
-      "lastDuration": 382290,
-      "consecutiveErrors": 1,
-      "lastError": "\u26a0\ufe0f \u270d\ufe0f Write failed: Missing required parameter: path (path or file_path). Supply correct parameters before retrying.",
+      "lastRun": "2026-03-20T04:01:06.466000+00:00",
+      "nextRun": "2026-03-21T04:00:00+00:00",
+      "lastDuration": 529161,
+      "consecutiveErrors": 2,
+      "lastError": "\u26a0\ufe0f \u270d\ufe0f Write failed: Validation failed for tool \"write\":",
       "runs": [
         {
-          "ts": "2026-03-19T04:01:08.981000+00:00",
+          "ts": "2026-03-20T04:01:06.466000+00:00",
           "status": "error",
-          "duration": 382290
+          "duration": 529161
         }
       ]
     },
@@ -320,16 +320,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-18T17:00:30.935000+00:00",
-      "nextRun": "2026-03-19T17:00:00+00:00",
-      "lastDuration": 151342,
+      "lastRun": "2026-03-19T17:00:29.053000+00:00",
+      "nextRun": "2026-03-20T17:00:00+00:00",
+      "lastDuration": 133361,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-18T17:00:30.935000+00:00",
+          "ts": "2026-03-19T17:00:29.053000+00:00",
           "status": "ok",
-          "duration": 151342
+          "duration": 133361
         }
       ]
     },
@@ -362,16 +362,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-19T04:00:00.024000+00:00",
-      "nextRun": "2026-03-20T04:00:00+00:00",
-      "lastDuration": 68957,
+      "lastRun": "2026-03-20T04:00:00.027000+00:00",
+      "nextRun": "2026-03-21T04:00:00+00:00",
+      "lastDuration": 66439,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-19T04:00:00.024000+00:00",
+          "ts": "2026-03-20T04:00:00.027000+00:00",
           "status": "ok",
-          "duration": 68957
+          "duration": 66439
         }
       ]
     },
@@ -383,16 +383,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-18T23:00:22.859000+00:00",
-      "nextRun": "2026-03-19T23:00:00+00:00",
-      "lastDuration": 4489,
+      "lastRun": "2026-03-20T00:39:34.314000+00:00",
+      "nextRun": "2026-03-20T23:00:00+00:00",
+      "lastDuration": 90620,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-18T23:00:22.859000+00:00",
+          "ts": "2026-03-20T00:39:34.314000+00:00",
           "status": "ok",
-          "duration": 4489
+          "duration": 90620
         }
       ]
     },
@@ -404,16 +404,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-19T07:00:00.028000+00:00",
-      "nextRun": "2026-03-20T07:00:00+00:00",
-      "lastDuration": 148545,
+      "lastRun": "2026-03-20T07:00:00.024000+00:00",
+      "nextRun": "2026-03-21T07:00:00+00:00",
+      "lastDuration": 171626,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-19T07:00:00.028000+00:00",
+          "ts": "2026-03-20T07:00:00.024000+00:00",
           "status": "ok",
-          "duration": 148545
+          "duration": 171626
         }
       ]
     },
@@ -425,16 +425,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-19T05:00:08.860000+00:00",
-      "nextRun": "2026-03-19T11:00:00+00:00",
-      "lastDuration": 15750,
+      "lastRun": "2026-03-20T05:00:09.012000+00:00",
+      "nextRun": "2026-03-20T11:00:00+00:00",
+      "lastDuration": 15527,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-19T05:00:08.860000+00:00",
+          "ts": "2026-03-20T05:00:09.012000+00:00",
           "status": "ok",
-          "duration": 15750
+          "duration": 15527
         }
       ]
     },
@@ -446,16 +446,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-19T05:00:00.024000+00:00",
-      "nextRun": "2026-03-19T11:00:00+00:00",
-      "lastDuration": 8836,
+      "lastRun": "2026-03-20T05:00:00.065000+00:00",
+      "nextRun": "2026-03-20T11:00:00+00:00",
+      "lastDuration": 8947,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-19T05:00:00.024000+00:00",
+          "ts": "2026-03-20T05:00:00.065000+00:00",
           "status": "ok",
-          "duration": 8836
+          "duration": 8947
         }
       ]
     },
@@ -467,16 +467,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-19T05:03:52.745000+00:00",
-      "nextRun": "2026-03-19T11:03:52.724000+00:00",
-      "lastDuration": 7295,
+      "lastRun": "2026-03-20T05:03:52.746000+00:00",
+      "nextRun": "2026-03-20T11:03:52.724000+00:00",
+      "lastDuration": 8338,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-19T05:03:52.745000+00:00",
+          "ts": "2026-03-20T05:03:52.746000+00:00",
           "status": "ok",
-          "duration": 7295
+          "duration": 8338
         }
       ]
     },
@@ -487,17 +487,17 @@
       "description": "",
       "agent": "main",
       "enabled": true,
-      "lastStatus": "error",
-      "lastRun": "2026-03-19T07:30:00.026000+00:00",
-      "nextRun": "2026-03-20T07:30:00+00:00",
-      "lastDuration": 236958,
-      "consecutiveErrors": 1,
-      "lastError": "\u26a0\ufe0f \ud83d\udcdd Edit: `in memory/05_resources/fanvue-agency-setup-guide.md (393 chars)` failed: Could not find the exact text in memory/05_resources/fanvue-agency-setup-guide.md. The old text must match exactly including all whitespace and newlines.",
+      "lastStatus": "ok",
+      "lastRun": "2026-03-20T07:30:00.021000+00:00",
+      "nextRun": "2026-03-21T07:30:00+00:00",
+      "lastDuration": 146731,
+      "consecutiveErrors": 0,
+      "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-19T07:30:00.026000+00:00",
-          "status": "error",
-          "duration": 236958
+          "ts": "2026-03-20T07:30:00.021000+00:00",
+          "status": "ok",
+          "duration": 146731
         }
       ]
     },
@@ -591,19 +591,9 @@
   ],
   "errors": [
     {
-      "job": "bianca-evening-routine",
-      "error": "cron: job execution timed out",
-      "count": 2
-    },
-    {
       "job": "nightly-execution",
-      "error": "\u26a0\ufe0f \u270d\ufe0f Write failed: Missing required parameter: path (path or file_path). Supply correct parameters before retrying.",
-      "count": 1
-    },
-    {
-      "job": "vault-reweave",
-      "error": "\u26a0\ufe0f \ud83d\udcdd Edit: `in memory/05_resources/fanvue-agency-setup-guide.md (393 chars)` failed: Could not find the exact text in memory/05_resources/fanvue-agency-setup-guide.md. The old text must match exactly including all whitespace and newlines.",
-      "count": 1
+      "error": "\u26a0\ufe0f \u270d\ufe0f Write failed: Validation failed for tool \"write\":",
+      "count": 2
     },
     {
       "job": "weekly-ti",
