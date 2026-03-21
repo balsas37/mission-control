@@ -2,11 +2,11 @@
   "meta": {
     "layers": {
       "context": 72,
-      "domain": 111,
+      "domain": 112,
       "entity": 4,
-      "skill": 13
+      "skill": 14
     },
-    "generated": "2026-03-20T06:00:10.463587"
+    "generated": "2026-03-21T06:00:11.402934"
   },
   "nodes": [
     {
@@ -347,18 +347,6 @@
     },
     {
       "id": 28,
-      "title": "2026 03 06",
-      "layer": "context",
-      "tags": [
-        "daily"
-      ],
-      "summary": "3 skills built (ofm-metrics, rental-ops, failover-watch) + MC relay wired + Charfen system received + prayers finalized + Cloudflare deployed",
-      "connections": 0,
-      "cluster": "daily",
-      "color": "#888888"
-    },
-    {
-      "id": 29,
       "title": "2026 03 07",
       "layer": "context",
       "tags": [
@@ -370,7 +358,7 @@
       "color": "#888888"
     },
     {
-      "id": 30,
+      "id": 29,
       "title": "2026 03 08",
       "layer": "context",
       "tags": [
@@ -382,7 +370,7 @@
       "color": "#888888"
     },
     {
-      "id": 31,
+      "id": 30,
       "title": "2026 03 09",
       "layer": "context",
       "tags": [
@@ -394,7 +382,7 @@
       "color": "#888888"
     },
     {
-      "id": 32,
+      "id": 31,
       "title": "2026 03 10",
       "layer": "context",
       "tags": [
@@ -406,7 +394,7 @@
       "color": "#888888"
     },
     {
-      "id": 33,
+      "id": 32,
       "title": "2026 03 11",
       "layer": "context",
       "tags": [
@@ -418,7 +406,7 @@
       "color": "#888888"
     },
     {
-      "id": 34,
+      "id": 33,
       "title": "2026 03 12",
       "layer": "context",
       "tags": [
@@ -430,7 +418,7 @@
       "color": "#888888"
     },
     {
-      "id": 35,
+      "id": 34,
       "title": "2026 03 13",
       "layer": "context",
       "tags": [
@@ -442,7 +430,7 @@
       "color": "#888888"
     },
     {
-      "id": 36,
+      "id": 35,
       "title": "2026 03 14 Ti Report",
       "layer": "context",
       "tags": [
@@ -457,7 +445,7 @@
       "color": "#888888"
     },
     {
-      "id": 37,
+      "id": 36,
       "title": "2026 03 14",
       "layer": "context",
       "tags": [
@@ -469,7 +457,7 @@
       "color": "#888888"
     },
     {
-      "id": 38,
+      "id": 37,
       "title": "2026 03 16",
       "layer": "context",
       "tags": [],
@@ -479,7 +467,7 @@
       "color": "#888888"
     },
     {
-      "id": 39,
+      "id": 38,
       "title": "2026 03 17",
       "layer": "context",
       "tags": [
@@ -491,7 +479,7 @@
       "color": "#888888"
     },
     {
-      "id": 40,
+      "id": 39,
       "title": "2026 03 18",
       "layer": "context",
       "tags": [
@@ -503,7 +491,7 @@
       "color": "#888888"
     },
     {
-      "id": 41,
+      "id": 40,
       "title": "2026 03 19",
       "layer": "context",
       "tags": [
@@ -515,7 +503,7 @@
       "color": "#888888"
     },
     {
-      "id": 42,
+      "id": 41,
       "title": "2026 03 20",
       "layer": "context",
       "tags": [
@@ -523,6 +511,18 @@
       ],
       "summary": "Daily activity log \u2014 March 20, 2026",
       "connections": 1,
+      "cluster": "daily",
+      "color": "#888888"
+    },
+    {
+      "id": 42,
+      "title": "2026 03 21",
+      "layer": "context",
+      "tags": [
+        "daily"
+      ],
+      "summary": "Daily activity log \u2014 March 21, 2026",
+      "connections": 0,
       "cluster": "daily",
       "color": "#888888"
     },
@@ -558,7 +558,7 @@
         "project"
       ],
       "summary": "MOC: OFM Agency",
-      "connections": 12,
+      "connections": 14,
       "cluster": "ofm",
       "color": "#DAB255"
     },
@@ -1479,10 +1479,11 @@
       "title": "Seo Content Midjourney",
       "layer": "domain",
       "tags": [
-        "project"
+        "project",
+        " archived"
       ],
-      "summary": "SEO content writer + MidJourney",
-      "connections": 0,
+      "summary": "SEO content writer + MidJourney - ARCHIVED",
+      "connections": 1,
       "cluster": "business",
       "color": "#A86DBF"
     },
@@ -2046,6 +2047,21 @@
     },
     {
       "id": 169,
+      "title": "Lora Training Prep Sop",
+      "layer": "skill",
+      "tags": [
+        "resource",
+        " ofm",
+        " ai",
+        " sop"
+      ],
+      "summary": "LoRA training dataset preparation SOP",
+      "connections": 1,
+      "cluster": "skills",
+      "color": "#5BC0DE"
+    },
+    {
+      "id": 170,
       "title": "Midjourney Copy Style Fathers Day",
       "layer": "skill",
       "tags": [
@@ -2057,7 +2073,7 @@
       "color": "#5BC0DE"
     },
     {
-      "id": 170,
+      "id": 171,
       "title": "Offgrid Generator Guide",
       "layer": "domain",
       "tags": [
@@ -2069,7 +2085,21 @@
       "color": "#6BBF6B"
     },
     {
-      "id": 171,
+      "id": 172,
+      "title": "Ofm Chatter Workflow Sop",
+      "layer": "domain",
+      "tags": [
+        "resource",
+        " ofm",
+        " sop"
+      ],
+      "summary": "OFM Agency fan messaging workflow SOP",
+      "connections": 2,
+      "cluster": "ofm",
+      "color": "#DAB255"
+    },
+    {
+      "id": 173,
       "title": "Paid Creators Course",
       "layer": "skill",
       "tags": [
@@ -2081,7 +2111,7 @@
       "color": "#5BC0DE"
     },
     {
-      "id": 172,
+      "id": 174,
       "title": "Pricing Psychology",
       "layer": "skill",
       "tags": [
@@ -2093,7 +2123,7 @@
       "color": "#5BC0DE"
     },
     {
-      "id": 173,
+      "id": 175,
       "title": "Short-Form Video Playbook",
       "layer": "skill",
       "tags": [
@@ -2105,7 +2135,7 @@
       "color": "#5BC0DE"
     },
     {
-      "id": 174,
+      "id": 176,
       "title": "Agent Nova (retired)",
       "layer": "context",
       "tags": [
@@ -2117,7 +2147,7 @@
       "color": "#5AB8B0"
     },
     {
-      "id": 175,
+      "id": 177,
       "title": "Auth & Proxy Setup",
       "layer": "context",
       "tags": [
@@ -2129,7 +2159,7 @@
       "color": "#5AB8B0"
     },
     {
-      "id": 176,
+      "id": 178,
       "title": "Vault Conventions",
       "layer": "context",
       "tags": [
@@ -2141,7 +2171,7 @@
       "color": "#5AB8B0"
     },
     {
-      "id": 177,
+      "id": 179,
       "title": "Design Language",
       "layer": "context",
       "tags": [
@@ -2153,7 +2183,7 @@
       "color": "#5AB8B0"
     },
     {
-      "id": 178,
+      "id": 180,
       "title": "Feature Specs",
       "layer": "context",
       "tags": [
@@ -2165,7 +2195,7 @@
       "color": "#5AB8B0"
     },
     {
-      "id": 179,
+      "id": 181,
       "title": "Integration Hub",
       "layer": "context",
       "tags": [
@@ -2177,7 +2207,7 @@
       "color": "#5AB8B0"
     },
     {
-      "id": 180,
+      "id": 182,
       "title": "Integration Map",
       "layer": "context",
       "tags": [
@@ -2189,7 +2219,7 @@
       "color": "#5AB8B0"
     },
     {
-      "id": 181,
+      "id": 183,
       "title": "System Learnings",
       "layer": "context",
       "tags": [
@@ -2201,7 +2231,7 @@
       "color": "#5AB8B0"
     },
     {
-      "id": 182,
+      "id": 184,
       "title": "Mac Setup & Privacy",
       "layer": "context",
       "tags": [
@@ -2213,7 +2243,7 @@
       "color": "#5AB8B0"
     },
     {
-      "id": 183,
+      "id": 185,
       "title": "Memory System Notes",
       "layer": "context",
       "tags": [
@@ -2225,7 +2255,7 @@
       "color": "#5AB8B0"
     },
     {
-      "id": 184,
+      "id": 186,
       "title": "Mission Control Spec",
       "layer": "context",
       "tags": [
@@ -2237,7 +2267,7 @@
       "color": "#5AB8B0"
     },
     {
-      "id": 185,
+      "id": 187,
       "title": "Radar Daily",
       "layer": "context",
       "tags": [
@@ -2249,7 +2279,7 @@
       "color": "#5AB8B0"
     },
     {
-      "id": 186,
+      "id": 188,
       "title": "Skill Investigation",
       "layer": "context",
       "tags": [
@@ -2261,19 +2291,7 @@
       "color": "#5AB8B0"
     },
     {
-      "id": 187,
-      "title": "2026 03 06",
-      "layer": "context",
-      "tags": [
-        "brief"
-      ],
-      "summary": "Dream Brief \u2014 2026-03-06",
-      "connections": 0,
-      "cluster": "daily",
-      "color": "#888888"
-    },
-    {
-      "id": 188,
+      "id": 189,
       "title": "2026 03 07",
       "layer": "context",
       "tags": [
@@ -2285,7 +2303,7 @@
       "color": "#888888"
     },
     {
-      "id": 189,
+      "id": 190,
       "title": "2026 03 08",
       "layer": "context",
       "tags": [
@@ -2297,7 +2315,7 @@
       "color": "#888888"
     },
     {
-      "id": 190,
+      "id": 191,
       "title": "2026 03 09",
       "layer": "context",
       "tags": [
@@ -2309,7 +2327,7 @@
       "color": "#888888"
     },
     {
-      "id": 191,
+      "id": 192,
       "title": "2026 03 10",
       "layer": "context",
       "tags": [
@@ -2321,7 +2339,7 @@
       "color": "#888888"
     },
     {
-      "id": 192,
+      "id": 193,
       "title": "2026 03 11",
       "layer": "context",
       "tags": [
@@ -2333,7 +2351,7 @@
       "color": "#888888"
     },
     {
-      "id": 193,
+      "id": 194,
       "title": "2026 03 12",
       "layer": "context",
       "tags": [
@@ -2345,7 +2363,7 @@
       "color": "#888888"
     },
     {
-      "id": 194,
+      "id": 195,
       "title": "2026 03 13",
       "layer": "context",
       "tags": [
@@ -2357,7 +2375,7 @@
       "color": "#888888"
     },
     {
-      "id": 195,
+      "id": 196,
       "title": "2026 03 14",
       "layer": "context",
       "tags": [
@@ -2369,7 +2387,7 @@
       "color": "#888888"
     },
     {
-      "id": 196,
+      "id": 197,
       "title": "2026 03 15",
       "layer": "context",
       "tags": [
@@ -2381,7 +2399,7 @@
       "color": "#888888"
     },
     {
-      "id": 197,
+      "id": 198,
       "title": "2026 03 16",
       "layer": "context",
       "tags": [
@@ -2393,7 +2411,7 @@
       "color": "#888888"
     },
     {
-      "id": 198,
+      "id": 199,
       "title": "2026 03 17",
       "layer": "context",
       "tags": [
@@ -2405,7 +2423,7 @@
       "color": "#888888"
     },
     {
-      "id": 199,
+      "id": 200,
       "title": "2026 03 20",
       "layer": "context",
       "tags": [
@@ -2415,15 +2433,31 @@
       "connections": 0,
       "cluster": "daily",
       "color": "#888888"
+    },
+    {
+      "id": 201,
+      "title": "2026 03 21",
+      "layer": "context",
+      "tags": [
+        "brief"
+      ],
+      "summary": "Dream Brief \u2014 March 21, 2026",
+      "connections": 0,
+      "cluster": "daily",
+      "color": "#888888"
     }
   ],
   "edges": [
     {
-      "source": 38,
+      "source": 37,
+      "target": 107
+    },
+    {
+      "source": 37,
       "target": 47
     },
     {
-      "source": 38,
+      "source": 40,
       "target": 107
     },
     {
@@ -2431,8 +2465,8 @@
       "target": 107
     },
     {
-      "source": 42,
-      "target": 107
+      "source": 43,
+      "target": 103
     },
     {
       "source": 43,
@@ -2440,19 +2474,7 @@
     },
     {
       "source": 43,
-      "target": 72
-    },
-    {
-      "source": 43,
-      "target": 101
-    },
-    {
-      "source": 43,
-      "target": 58
-    },
-    {
-      "source": 43,
-      "target": 61
+      "target": 81
     },
     {
       "source": 43,
@@ -2464,15 +2486,15 @@
     },
     {
       "source": 43,
-      "target": 138
-    },
-    {
-      "source": 43,
       "target": 140
     },
     {
       "source": 43,
-      "target": 65
+      "target": 171
+    },
+    {
+      "source": 43,
+      "target": 101
     },
     {
       "source": 43,
@@ -2480,31 +2502,15 @@
     },
     {
       "source": 43,
-      "target": 60
-    },
-    {
-      "source": 43,
-      "target": 70
-    },
-    {
-      "source": 43,
-      "target": 81
-    },
-    {
-      "source": 43,
       "target": 105
     },
     {
       "source": 43,
-      "target": 68
-    },
-    {
-      "source": 43,
-      "target": 67
-    },
-    {
-      "source": 43,
       "target": 100
+    },
+    {
+      "source": 43,
+      "target": 72
     },
     {
       "source": 43,
@@ -2516,7 +2522,7 @@
     },
     {
       "source": 43,
-      "target": 170
+      "target": 61
     },
     {
       "source": 43,
@@ -2524,15 +2530,31 @@
     },
     {
       "source": 43,
-      "target": 103
+      "target": 138
     },
     {
-      "source": 44,
-      "target": 59
+      "source": 43,
+      "target": 70
     },
     {
-      "source": 44,
-      "target": 149
+      "source": 43,
+      "target": 60
+    },
+    {
+      "source": 43,
+      "target": 67
+    },
+    {
+      "source": 43,
+      "target": 68
+    },
+    {
+      "source": 43,
+      "target": 65
+    },
+    {
+      "source": 43,
+      "target": 58
     },
     {
       "source": 44,
@@ -2540,63 +2562,7 @@
     },
     {
       "source": 44,
-      "target": 115
-    },
-    {
-      "source": 44,
-      "target": 133
-    },
-    {
-      "source": 44,
-      "target": 97
-    },
-    {
-      "source": 44,
-      "target": 132
-    },
-    {
-      "source": 44,
-      "target": 92
-    },
-    {
-      "source": 44,
-      "target": 93
-    },
-    {
-      "source": 44,
-      "target": 98
-    },
-    {
-      "source": 44,
-      "target": 85
-    },
-    {
-      "source": 44,
-      "target": 89
-    },
-    {
-      "source": 44,
-      "target": 99
-    },
-    {
-      "source": 44,
-      "target": 54
-    },
-    {
-      "source": 44,
-      "target": 86
-    },
-    {
-      "source": 44,
-      "target": 51
-    },
-    {
-      "source": 44,
-      "target": 53
-    },
-    {
-      "source": 44,
-      "target": 88
+      "target": 82
     },
     {
       "source": 44,
@@ -2608,11 +2574,55 @@
     },
     {
       "source": 44,
+      "target": 59
+    },
+    {
+      "source": 44,
+      "target": 51
+    },
+    {
+      "source": 44,
+      "target": 98
+    },
+    {
+      "source": 44,
+      "target": 97
+    },
+    {
+      "source": 44,
+      "target": 85
+    },
+    {
+      "source": 44,
+      "target": 92
+    },
+    {
+      "source": 44,
+      "target": 93
+    },
+    {
+      "source": 44,
+      "target": 99
+    },
+    {
+      "source": 44,
       "target": 87
     },
     {
       "source": 44,
-      "target": 82
+      "target": 54
+    },
+    {
+      "source": 44,
+      "target": 149
+    },
+    {
+      "source": 44,
+      "target": 63
+    },
+    {
+      "source": 44,
+      "target": 89
     },
     {
       "source": 44,
@@ -2620,47 +2630,27 @@
     },
     {
       "source": 44,
-      "target": 63
+      "target": 115
     },
     {
-      "source": 45,
-      "target": 110
+      "source": 44,
+      "target": 53
     },
     {
-      "source": 45,
-      "target": 47
+      "source": 44,
+      "target": 88
     },
     {
-      "source": 45,
-      "target": 83
+      "source": 44,
+      "target": 86
     },
     {
-      "source": 45,
-      "target": 165
+      "source": 44,
+      "target": 133
     },
     {
-      "source": 45,
-      "target": 120
-    },
-    {
-      "source": 45,
-      "target": 113
-    },
-    {
-      "source": 45,
-      "target": 117
-    },
-    {
-      "source": 45,
-      "target": 167
-    },
-    {
-      "source": 45,
-      "target": 168
-    },
-    {
-      "source": 45,
-      "target": 171
+      "source": 44,
+      "target": 132
     },
     {
       "source": 45,
@@ -2668,15 +2658,59 @@
     },
     {
       "source": 45,
+      "target": 117
+    },
+    {
+      "source": 45,
+      "target": 168
+    },
+    {
+      "source": 45,
+      "target": 113
+    },
+    {
+      "source": 45,
       "target": 107
     },
     {
-      "source": 46,
-      "target": 75
+      "source": 45,
+      "target": 165
+    },
+    {
+      "source": 45,
+      "target": 47
+    },
+    {
+      "source": 45,
+      "target": 110
+    },
+    {
+      "source": 45,
+      "target": 167
+    },
+    {
+      "source": 45,
+      "target": 120
+    },
+    {
+      "source": 45,
+      "target": 173
+    },
+    {
+      "source": 45,
+      "target": 169
+    },
+    {
+      "source": 45,
+      "target": 83
+    },
+    {
+      "source": 45,
+      "target": 172
     },
     {
       "source": 46,
-      "target": 74
+      "target": 48
     },
     {
       "source": 46,
@@ -2684,23 +2718,31 @@
     },
     {
       "source": 46,
-      "target": 50
-    },
-    {
-      "source": 46,
       "target": 49
     },
     {
       "source": 46,
-      "target": 48
+      "target": 74
+    },
+    {
+      "source": 46,
+      "target": 50
+    },
+    {
+      "source": 46,
+      "target": 75
+    },
+    {
+      "source": 64,
+      "target": 107
     },
     {
       "source": 64,
       "target": 166
     },
     {
-      "source": 64,
-      "target": 107
+      "source": 122,
+      "target": 172
     },
     {
       "source": 165,
@@ -2711,15 +2753,15 @@
       "target": 47
     },
     {
-      "source": 196,
-      "target": 109
-    },
-    {
-      "source": 196,
+      "source": 197,
       "target": 60
     },
     {
       "source": 197,
+      "target": 109
+    },
+    {
+      "source": 198,
       "target": 129
     }
   ]
