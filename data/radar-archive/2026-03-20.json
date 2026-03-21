@@ -1,0 +1,88 @@
+{
+  "updatedAt": "2026-03-20T12:00:00Z",
+  "ofm": [
+    {
+      "title": "Fanvue raised $22M Series A",
+      "source": "www.businesswire.com",
+      "url": "https://www.businesswire.com/news/home/20260112458975/en/AI-Powered-Creator-Monetisation-Platform-Fanvue-Hits-$100m-Run-Rate-and-Raises-$22m-Series-A-Investment---as-Leading-Global-Creators-Rush-to-Join-the-Platform",
+      "summary": "and hit a $100M run rate. Platform now supports AI creators with subscriptions, PPV content, tips, and custom requests. 20,000 new creators joined last month."
+    },
+    {
+      "title": "OnlyMonster is dominating",
+      "source": "onlymonster.ai",
+      "url": "https://onlymonster.ai/",
+      "summary": "the OFM management space with advanced AI assistance integrated into workflows \u2014 outpacing competitors during beta without even running promos."
+    },
+    {
+      "title": "AI girlfriend market exploding",
+      "source": "www.snsinsider.com",
+      "url": "https://www.snsinsider.com/reports/ai-girlfriend-app-market-7232",
+      "summary": "USD $1.5B revenue in 2026, projected 17% CAGR. Top platforms see $120 ARPU with 93% monthly retention."
+    },
+    {
+      "title": "OnlyFans AI detection tightening",
+      "source": "www.sirency.com",
+      "url": "https://www.sirency.com/blog/onlyfans-policy-updates-2026-ai-deepfakes-and-rules",
+      "summary": "New 2026 policies on AI/deepfake detection using Hive's tools. Agencies need transparency and proper disclosure when using AI."
+    },
+    {
+      "title": "Successful Fanvue AI creators",
+      "source": "www.apatero.com",
+      "url": "https://www.apatero.com/blog/fanvue-complete-guide-ai-creators-monetization-2026",
+      "summary": "earning $500-5,000/month after 3-6 months of consistent posting. Social media funnel (IG/TikTok/X/Reddit) is required before monetization works."
+    }
+  ],
+  "tools": [
+    {
+      "title": "OpenClaw went viral",
+      "source": "www.kdnuggets.com",
+      "url": "https://www.kdnuggets.com/openclaw-explained-the-free-ai-agent-tool-going-viral-already-in-2026",
+      "summary": "in Jan 2026 \u2014 now 100+ built-in AgentSkills, model-agnostic, privacy-focused. NYT covered China's government wariness about it."
+    },
+    {
+      "title": "NVIDIA NemoClaw released",
+      "source": "nvidianews.nvidia.com",
+      "url": "https://nvidianews.nvidia.com/news/nvidia-announces-nemoclaw",
+      "summary": "(March 16) \u2014 adds security/privacy for always-on AI assistants. Runs on RTX PCs, DGX Station, cloud and on-prem."
+    },
+    {
+      "title": "Claude Code Hooks",
+      "source": "dev.to",
+      "url": "https://dev.to/serenitiesai/claude-code-hooks-guide-2026-automate-your-ai-coding-workflow-dde",
+      "summary": "now available for workflow automation \u2014 can block/allow tool use programmatically. Exit codes: 0=allow, 2=block (PreToolUse)."
+    },
+    {
+      "title": "Claude Code workflows",
+      "source": "github.com",
+      "url": "https://github.com/shinpr/claude-code-workflows",
+      "summary": "repo available with end-to-end AI-assisted development plugins via `/plugin marketplace add`."
+    }
+  ],
+  "market": [
+    {
+      "title": "Puerto Escondido rental market strong",
+      "source": "realestate.puerto-escondido.mx",
+      "url": "https://realestate.puerto-escondido.mx/puerto-escondido-rental-market-analysis-2026-occupancy-trends-investment-outlook",
+      "summary": "\u2014 growing international/domestic demand, improved infrastructure, year-round occupancy diversifying. Houston direct flight (2025) already driving buyer interest."
+    },
+    {
+      "title": "Additional flight routes coming 2026",
+      "source": "realestate.puerto-escondido.mx",
+      "url": "https://realestate.puerto-escondido.mx/puerto-escondido-airport-how-proximity-is-reshaping-the-local-real-estate-market",
+      "summary": "\u2014 Canadian and more U.S. connections planned for Puerto Escondido airport. Precedent: Cabo/Puerto Vallarta saw dramatic property value surges after direct international routes established."
+    },
+    {
+      "title": "Earth USA 2026 conference",
+      "source": "www.earthusa.org",
+      "url": "https://www.earthusa.org",
+      "summary": "\u2014 September 18-20 in Santa Fe, NM. Rammed earth, adobe, compressed earth block focus. Beno's Sirewall training connects here."
+    },
+    {
+      "title": "Robotic ramming emerging",
+      "source": "eartharchitecture.org",
+      "url": "https://eartharchitecture.org/?m=202603",
+      "summary": "as scalable method \u2014 digitally controlled compaction, Rhino/Grasshopper workflow for toolpaths. Prefab rammed earth blocks gaining traction for quality control and speed."
+    }
+  ],
+  "actions": []
+}
