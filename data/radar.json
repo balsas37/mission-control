@@ -1,87 +1,93 @@
 {
-  "updatedAt": "2026-03-20T12:00:00Z",
+  "updatedAt": "2026-03-21T12:00:00Z",
   "ofm": [
     {
-      "title": "Fanvue raised $22M Series A",
-      "source": "www.businesswire.com",
-      "url": "https://www.businesswire.com/news/home/20260112458975/en/AI-Powered-Creator-Monetisation-Platform-Fanvue-Hits-$100m-Run-Rate-and-Raises-$22m-Series-A-Investment---as-Leading-Global-Creators-Rush-to-Join-the-Platform",
-      "summary": "and hit a $100M run rate. Platform now supports AI creators with subscriptions, PPV content, tips, and custom requests. 20,000 new creators joined last month."
+      "title": "OnlyMonster dominating OFM AI tools",
+      "source": "",
+      "url": "",
+      "summary": "\u2014 Became the go-to management system with advanced AI assistance for chatting, fan management, and agency operations. Pure word-of-mouth growth during Beta. [onlymonster.ai](https://onlymonster.ai/)"
     },
     {
-      "title": "OnlyMonster is dominating",
-      "source": "onlymonster.ai",
-      "url": "https://onlymonster.ai/",
-      "summary": "the OFM management space with advanced AI assistance integrated into workflows \u2014 outpacing competitors during beta without even running promos."
+      "title": "Fanvue AI models hitting $38K/month",
+      "source": "",
+      "url": "",
+      "summary": "\u2014 One creator reported an AI model generating $38,328.60 in 30 days. Platform has built-in AI messaging, voice notes, and analytics. 20% commission, $5-9.99 sweet spot pricing. [fanvue.com](https://www.fanvue.com/pages/fanvue-ai)"
     },
     {
-      "title": "AI girlfriend market exploding",
-      "source": "www.snsinsider.com",
-      "url": "https://www.snsinsider.com/reports/ai-girlfriend-app-market-7232",
-      "summary": "USD $1.5B revenue in 2026, projected 17% CAGR. Top platforms see $120 ARPU with 93% monthly retention."
+      "title": "AI girlfriend market now $2.91B",
+      "source": "",
+      "url": "",
+      "summary": "\u2014 Growing 25.2% CAGR, 50M+ active users globally. $120 ARPU annually, 93% retention (7% monthly churn). [jenova.ai](https://www.jenova.ai/en/resources/ai-roleplay-girlfriend)"
     },
     {
-      "title": "OnlyFans AI detection tightening",
-      "source": "www.sirency.com",
-      "url": "https://www.sirency.com/blog/onlyfans-policy-updates-2026-ai-deepfakes-and-rules",
-      "summary": "New 2026 policies on AI/deepfake detection using Hive's tools. Agencies need transparency and proper disclosure when using AI."
+      "title": "OnlyFans AI policy tightened",
+      "source": "",
+      "url": "",
+      "summary": "\u2014 New 2026 detection tools for AI-generated content and deepfakes. Agencies need transparency protocols now. [sirency.com](https://www.sirency.com/blog/onlyfans-policy-updates-2026-ai-deepfakes-and-rules)"
     },
     {
-      "title": "Successful Fanvue AI creators",
-      "source": "www.apatero.com",
-      "url": "https://www.apatero.com/blog/fanvue-complete-guide-ai-creators-monetization-2026",
-      "summary": "earning $500-5,000/month after 3-6 months of consistent posting. Social media funnel (IG/TikTok/X/Reddit) is required before monetization works."
+      "title": "Supercreator major competitor",
+      "source": "",
+      "url": "",
+      "summary": "\u2014 Full AI-powered CRM for OFM agencies with chatting automation and team management. [supercreator.app](https://www.supercreator.app/)"
     }
   ],
   "tools": [
     {
-      "title": "OpenClaw went viral",
-      "source": "www.kdnuggets.com",
-      "url": "https://www.kdnuggets.com/openclaw-explained-the-free-ai-agent-tool-going-viral-already-in-2026",
-      "summary": "in Jan 2026 \u2014 now 100+ built-in AgentSkills, model-agnostic, privacy-focused. NYT covered China's government wariness about it."
+      "title": "OpenClaw v2026.3.7-beta.1 released",
+      "source": "",
+      "url": "",
+      "summary": "\u2014 Major ContextEngine plugin interface added, 200+ bugs fixed. Memory can now be freely plugged/unplugged. [36kr.com](https://eu.36kr.com/en/p/3715160552878469)"
     },
     {
-      "title": "NVIDIA NemoClaw released",
-      "source": "nvidianews.nvidia.com",
-      "url": "https://nvidianews.nvidia.com/news/nvidia-announces-nemoclaw",
-      "summary": "(March 16) \u2014 adds security/privacy for always-on AI assistants. Runs on RTX PCs, DGX Station, cloud and on-prem."
+      "title": "OpenClaw 2026.2.26: production-ready",
+      "source": "",
+      "url": "",
+      "summary": "\u2014 Added secrets system, safer defaults, browser control, multi-DM, and Android support. Moving from \"demo\" to daily ops tool. [reddit.com](https://www.reddit.com/r/LocalLLM/comments/1rimve1/new_openclaw_release_version_2026226_way_less/)"
     },
     {
-      "title": "Claude Code Hooks",
-      "source": "dev.to",
-      "url": "https://dev.to/serenitiesai/claude-code-hooks-guide-2026-automate-your-ai-coding-workflow-dde",
-      "summary": "now available for workflow automation \u2014 can block/allow tool use programmatically. Exit codes: 0=allow, 2=block (PreToolUse)."
+      "title": "CrewAI leading multi-agent platform",
+      "source": "",
+      "url": "",
+      "summary": "\u2014 Open-source orchestration framework with high-level abstractions for complex agent workflows. [crewai.com](https://crewai.com/)"
     },
     {
-      "title": "Claude Code workflows",
-      "source": "github.com",
-      "url": "https://github.com/shinpr/claude-code-workflows",
-      "summary": "repo available with end-to-end AI-assisted development plugins via `/plugin marketplace add`."
+      "title": "n8n.io for AI workflow automation",
+      "source": "",
+      "url": "",
+      "summary": "\u2014 Visual builder with MCP support, on-prem deployment, human-in-the-loop approvals. Strong for legacy system integration. [n8n.io](https://n8n.io/)"
+    },
+    {
+      "title": "CLAUDE.md pattern emerging",
+      "source": "",
+      "url": "",
+      "summary": "\u2014 Standard practice: root-level file providing context, constraints, architecture guidance for AI coding sessions. [medium.com](https://henriquesd.medium.com/claude-code-a-practical-guide-to-automating-your-development-workflow-675714db08ed)"
     }
   ],
   "market": [
     {
       "title": "Puerto Escondido rental market strong",
-      "source": "realestate.puerto-escondido.mx",
-      "url": "https://realestate.puerto-escondido.mx/puerto-escondido-rental-market-analysis-2026-occupancy-trends-investment-outlook",
-      "summary": "\u2014 growing international/domestic demand, improved infrastructure, year-round occupancy diversifying. Houston direct flight (2025) already driving buyer interest."
+      "source": "",
+      "url": "",
+      "summary": "\u2014 2026 showing growing international demand, improved infrastructure, year-round occupancy. Airport expanding with additional US/Canada routes planned. [realestate.puerto-escondido.mx](https://realestate.puerto-escondido.mx/puerto-escondido-rental-market-analysis-2026-occupancy-trends-investment-outlook)"
     },
     {
-      "title": "Additional flight routes coming 2026",
-      "source": "realestate.puerto-escondido.mx",
-      "url": "https://realestate.puerto-escondido.mx/puerto-escondido-airport-how-proximity-is-reshaping-the-local-real-estate-market",
-      "summary": "\u2014 Canadian and more U.S. connections planned for Puerto Escondido airport. Precedent: Cabo/Puerto Vallarta saw dramatic property value surges after direct international routes established."
+      "title": "Tulum ATV rental competition",
+      "source": "",
+      "url": "",
+      "summary": "\u2014 Competitors at $55-85/day (TulumTours.com, TulumAreaExperiences). Lagoon Company positioned well with yacht bundling. Differentiation critical."
     },
     {
-      "title": "Earth USA 2026 conference",
-      "source": "www.earthusa.org",
-      "url": "https://www.earthusa.org",
-      "summary": "\u2014 September 18-20 in Santa Fe, NM. Rammed earth, adobe, compressed earth block focus. Beno's Sirewall training connects here."
+      "title": "Rammed earth advancing fast",
+      "source": "",
+      "url": "",
+      "summary": "\u2014 Earth USA 2026 conference Sept 18-20 Santa Fe. Robotic ramming + digitally controlled compaction now viable. Prefab block approach reduces cost/time. [earthusa.org](https://www.earthusa.org) [eartharchitecture.org](https://eartharchitecture.org/)"
     },
     {
-      "title": "Robotic ramming emerging",
-      "source": "eartharchitecture.org",
-      "url": "https://eartharchitecture.org/?m=202603",
-      "summary": "as scalable method \u2014 digitally controlled compaction, Rhino/Grasshopper workflow for toolpaths. Prefab rammed earth blocks gaining traction for quality control and speed."
+      "title": "Fixer-uppers hot in Puerto Escondido",
+      "source": "",
+      "url": "",
+      "summary": "\u2014 Informed investors targeting renovation projects. Hidden gem opportunities before full development wave hits. [realestate.puerto-escondido.mx](https://realestate.puerto-escondido.mx/fixer-upper-properties-in-puerto-escondido-investment-opportunities-on-oaxacas-pacific-coast)"
     }
   ],
   "actions": []
