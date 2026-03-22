@@ -1,8 +1,25 @@
 {
   "statement": "Build multiple income streams that run without me, so I can raise my family with total freedom and zero dependence on anyone else's system.",
   "goals": [
-    {"id":"g1","text":"Get OFM Agency to $10k/mo revenue with 5+ active creators","active":true},
-    {"id":"g2","text":"Launch Power Independence Academy and hit first sale by Mar 15","active":true},
-    {"id":"g3","text":"Complete Oaxaca move by May 2026 — house, farm, family settled","active":true}
+    {
+      "id": "g1",
+      "text": "Get OFM Agency to $10k/mo revenue with 5+ active creators",
+      "active": true
+    },
+    {
+      "id": "g2",
+      "text": "Land 3 Kairos AI clients and generate $50K+ in setup revenue",
+      "active": true
+    },
+    {
+      "id": "g3",
+      "text": "Complete Oaxaca move by May 2026 \u2014 house, farm, family settled",
+      "active": true
+    },
+    {
+      "id": "g4",
+      "text": "Launch Power Independence Academy and hit first sale",
+      "active": true
+    }
   ]
 }

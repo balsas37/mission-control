@@ -1,16 +1,234 @@
 [
-  {"id":"doc-1","title":"Power Independence Academy — Full Brief","category":"Plans","created":"2026-02-28","snippet":"6-Pillar System for Off-Grid Energy Freedom. 2,482 lines covering solar sizing, battery banks, generator backup, wiring diagrams, and cost breakdowns.","path":"memory/digital-products-brief.md"},
-  {"id":"doc-2","title":"PIA Product Stack — 24 Worksheets","category":"Scripts","created":"2026-03-01","snippet":"Complete worksheet collection: Solar Calculator, Battery Sizing Guide, Load Audit Template, Generator Selection Matrix, and 20 more. 311 KB total.","path":"products/pia/worksheets/"},
-  {"id":"doc-3","title":"PIA Bonus Stack — Emergency Protocols","category":"Guides","created":"2026-03-02","snippet":"Emergency power protocols, battery maintenance guide, and equipment calculator. Designed as upsell bonuses for the $47 tier.","path":"products/pia/bonuses/"},
-  {"id":"doc-4","title":"OFM Creator Onboarding Flow","category":"Contracts","created":"2026-02-25","snippet":"Step-by-step onboarding checklist for new OFM creators. Covers Fanvue account setup, content requirements, revenue splits, and messaging SOP.","path":"memory/ofm-onboarding.md"},
-  {"id":"doc-5","title":"Kevin Scout Agreement","category":"Contracts","created":"2026-02-20","snippet":"Deal terms: model gets 30% gross, agency gets 70% gross. Kevin takes 30% of agency's 70% on his scouted models only. All other models: agency keeps full cut.","path":"memory/ofm-kevin-deal.md"},
-  {"id":"doc-6","title":"Lagoon Company Rental Agreement Template","category":"Contracts","created":"2026-01-15","snippet":"Standard rental agreement for ATV/UTV rentals. Covers liability waiver, deposit terms, damage policy, and emergency contacts.","path":"lagoon/rental-agreement.md"},
-  {"id":"doc-7","title":"Oaxaca Permit Research","category":"Research","created":"2026-03-05","snippet":"Construction permit requirements for Oaxaca coast. Municipal vs state permits, environmental impact assessment requirements, timeline estimates.","path":"memory/oaxaca-permits.md"},
-  {"id":"doc-8","title":"Sirewall Cost Analysis","category":"Research","created":"2026-02-18","snippet":"Rammed-earth construction cost comparison. Sirewall vs traditional concrete vs adobe. Material costs, labor rates, and timeline for Oaxaca region.","path":"memory/sirewall-costs.md"},
-  {"id":"doc-9","title":"Off-Grid Solar System Design Guide","category":"Guides","created":"2026-03-03","snippet":"Complete solar + LiFePO4 battery system design for Oaxaca farm. Daily load calculations, panel sizing, inverter selection, and wiring diagrams.","path":"memory/farm-solar-design.md"},
-  {"id":"doc-10","title":"OFM Fan Messaging SOP","category":"Scripts","created":"2026-02-22","snippet":"Standard operating procedures for fan messaging on Fanvue. Response templates, upsell triggers, PPV pricing strategy, and chatter training guide.","path":"memory/ofm-messaging-sop.md"},
-  {"id":"doc-11","title":"Cornish Cross Poultry Setup Plan","category":"Plans","created":"2026-02-15","snippet":"Housing layout, feed requirements, growth schedule, and processing timeline for Cornish Cross broiler operation. Batch sizes and cost projections.","path":"memory/farm-poultry-plan.md"},
-  {"id":"doc-12","title":"Digital Products Funnel Architecture","category":"Plans","created":"2026-03-01","snippet":"Systeme.io funnel structure: $27 core → $47 calculator bundle → $97 DFY design → $17/mo membership. Email sequences, ad targeting, and conversion goals.","path":"memory/digital-products-funnel.md"},
-  {"id":"doc-13","title":"Lagoon Fleet Maintenance Schedule","category":"Guides","created":"2026-01-20","snippet":"Maintenance calendar for Can-Am Maverick X3 fleet, scooters, and eco-yacht. Oil changes, tire checks, engine inspections, and seasonal prep.","path":"lagoon/fleet-maintenance.md"},
-  {"id":"doc-14","title":"Puerto Escondido Farmers App — Market Brief","category":"Research","created":"2026-02-10","snippet":"Early-stage market analysis for direct-to-customer farmers app. Target demographics, competitor landscape, and interview questionnaire draft.","path":"memory/app-market-brief.md"}
+  {
+    "id": "doc-1",
+    "title": "Power Independence Academy \u2014 Full Brief",
+    "category": "Plans",
+    "created": "2026-02-28",
+    "snippet": "6-Pillar System for Off-Grid Energy Freedom. 2,482 lines covering solar sizing, battery banks, generator backup, wiring diagrams, and cost breakdowns.",
+    "path": "memory/digital-products-brief.md"
+  },
+  {
+    "id": "doc-2",
+    "title": "PIA Product Stack \u2014 24 Worksheets",
+    "category": "Scripts",
+    "created": "2026-03-01",
+    "snippet": "Complete worksheet collection: Solar Calculator, Battery Sizing Guide, Load Audit Template, Generator Selection Matrix, and 20 more. 311 KB total.",
+    "path": "products/pia/worksheets/"
+  },
+  {
+    "id": "doc-3",
+    "title": "PIA Bonus Stack \u2014 Emergency Protocols",
+    "category": "Guides",
+    "created": "2026-03-02",
+    "snippet": "Emergency power protocols, battery maintenance guide, and equipment calculator. Designed as upsell bonuses for the $47 tier.",
+    "path": "products/pia/bonuses/"
+  },
+  {
+    "id": "doc-4",
+    "title": "OFM Creator Onboarding Flow",
+    "category": "Contracts",
+    "created": "2026-02-25",
+    "snippet": "Step-by-step onboarding checklist for new OFM creators. Covers Fanvue account setup, content requirements, revenue splits, and messaging SOP.",
+    "path": "memory/ofm-onboarding.md"
+  },
+  {
+    "id": "doc-5",
+    "title": "Kevin Scout Agreement",
+    "category": "Contracts",
+    "created": "2026-02-20",
+    "snippet": "Deal terms: model gets 30% gross, agency gets 70% gross. Kevin takes 30% of agency's 70% on his scouted models only. All other models: agency keeps full cut.",
+    "path": "memory/ofm-kevin-deal.md"
+  },
+  {
+    "id": "doc-6",
+    "title": "Lagoon Company Rental Agreement Template",
+    "category": "Contracts",
+    "created": "2026-01-15",
+    "snippet": "Standard rental agreement for ATV/UTV rentals. Covers liability waiver, deposit terms, damage policy, and emergency contacts.",
+    "path": "lagoon/rental-agreement.md"
+  },
+  {
+    "id": "doc-7",
+    "title": "Oaxaca Permit Research",
+    "category": "Research",
+    "created": "2026-03-05",
+    "snippet": "Construction permit requirements for Oaxaca coast. Municipal vs state permits, environmental impact assessment requirements, timeline estimates.",
+    "path": "memory/oaxaca-permits.md"
+  },
+  {
+    "id": "doc-8",
+    "title": "Sirewall Cost Analysis",
+    "category": "Research",
+    "created": "2026-02-18",
+    "snippet": "Rammed-earth construction cost comparison. Sirewall vs traditional concrete vs adobe. Material costs, labor rates, and timeline for Oaxaca region.",
+    "path": "memory/sirewall-costs.md"
+  },
+  {
+    "id": "doc-9",
+    "title": "Off-Grid Solar System Design Guide",
+    "category": "Guides",
+    "created": "2026-03-03",
+    "snippet": "Complete solar + LiFePO4 battery system design for Oaxaca farm. Daily load calculations, panel sizing, inverter selection, and wiring diagrams.",
+    "path": "memory/farm-solar-design.md"
+  },
+  {
+    "id": "doc-10",
+    "title": "OFM Fan Messaging SOP",
+    "category": "Scripts",
+    "created": "2026-02-22",
+    "snippet": "Standard operating procedures for fan messaging on Fanvue. Response templates, upsell triggers, PPV pricing strategy, and chatter training guide.",
+    "path": "memory/ofm-messaging-sop.md"
+  },
+  {
+    "id": "doc-11",
+    "title": "Cornish Cross Poultry Setup Plan",
+    "category": "Plans",
+    "created": "2026-02-15",
+    "snippet": "Housing layout, feed requirements, growth schedule, and processing timeline for Cornish Cross broiler operation. Batch sizes and cost projections.",
+    "path": "memory/farm-poultry-plan.md"
+  },
+  {
+    "id": "doc-12",
+    "title": "Digital Products Funnel Architecture",
+    "category": "Plans",
+    "created": "2026-03-01",
+    "snippet": "Systeme.io funnel structure: $27 core \u2192 $47 calculator bundle \u2192 $97 DFY design \u2192 $17/mo membership. Email sequences, ad targeting, and conversion goals.",
+    "path": "memory/digital-products-funnel.md"
+  },
+  {
+    "id": "doc-13",
+    "title": "Lagoon Fleet Maintenance Schedule",
+    "category": "Guides",
+    "created": "2026-01-20",
+    "snippet": "Maintenance calendar for Can-Am Maverick X3 fleet, scooters, and eco-yacht. Oil changes, tire checks, engine inspections, and seasonal prep.",
+    "path": "lagoon/fleet-maintenance.md"
+  },
+  {
+    "id": "doc-14",
+    "title": "Puerto Escondido Farmers App \u2014 Market Brief",
+    "category": "Research",
+    "created": "2026-02-10",
+    "snippet": "Early-stage market analysis for direct-to-customer farmers app. Target demographics, competitor landscape, and interview questionnaire draft.",
+    "path": "memory/app-market-brief.md"
+  },
+  {
+    "id": "doc-15",
+    "title": "Copy Cure 2023 -- Course Synthesis",
+    "category": "Knowledge Base",
+    "created": "2026-03-20",
+    "snippet": "Marie Forleo Copy Cure full course synthesis. VOC data mining, copy diseases and fixes, GUSTA sales page method, headline formulas, CTA templates, about page framework, email templates. The copywriting bible.",
+    "path": "knowledge/copy-cure-2023/COURSE-SYNTHESIS.md"
+  },
+  {
+    "id": "doc-16",
+    "title": "Copy Cure 2023 -- Quick Reference",
+    "category": "Knowledge Base",
+    "created": "2026-03-20",
+    "snippet": "Copy Cure cheat sheet: 20 headline formulas, CTA templates, copy disease symptoms and fixes, about page framework, GUSTA sales page structure, email/social/ad templates, before-you-publish checklist.",
+    "path": "knowledge/copy-cure-2023/QUICK-REFERENCE.md"
+  },
+  {
+    "id": "doc-17",
+    "title": "Hack Your Agency Supercourse",
+    "category": "Knowledge Base",
+    "created": "2026-03-19",
+    "snippet": "Jared Codling growth hacking framework. Conversion mastery, funnel architecture, marketing strategy, agency scaling playbook. The brain for all marketing and growth operations.",
+    "path": "memory/05_resources/hack-your-agency-supercourse.md"
+  },
+  {
+    "id": "doc-18",
+    "title": "Kairos AI -- One-Pager Pitch",
+    "category": "Kairos AI",
+    "created": "2026-03-22",
+    "snippet": "Sales one-pager for Kairos AI. AI-powered business operating system. Three service tiers (K-K+ setup). Written using Copy Cure GUSTA method.",
+    "path": "kairos/one-pager.md"
+  },
+  {
+    "id": "doc-19",
+    "title": "Kairos AI -- Business Assessments",
+    "category": "Kairos AI",
+    "created": "2026-03-21",
+    "snippet": "Full Pulse Framework assessments: Client-Centric Mission (4 questions), 5 Pillars (8/25), Critical Number (Setup Revenue Closed), Business Assessment (current state). Foundation for the waterfall.",
+    "path": "memory/02_projects/kairos-assessments.md"
+  },
+  {
+    "id": "doc-20",
+    "title": "Kairos AI -- Priority Cascade (Waterfall)",
+    "category": "Kairos AI",
+    "created": "2026-03-21",
+    "snippet": "Full waterfall with OTAs at every level. Mission > 3 North Stars > Sprint 1 (5 targets) > Apr/May/Jun monthly missions > Weekly Ops template. Priority-ranked.",
+    "path": "memory/02_projects/kairos-waterfall.md"
+  },
+  {
+    "id": "doc-21",
+    "title": "Kairos AI -- Rebrand Map",
+    "category": "Kairos AI",
+    "created": "2026-03-21",
+    "snippet": "CharFen to Pulse Framework terminology mapping. Product names, planning hierarchy, meetings, metrics. Revenue strategy (3 service tiers). APPROVED.",
+    "path": "memory/02_projects/ai-bos-rebrand.md"
+  },
+  {
+    "id": "doc-22",
+    "title": "Copywriting Frameworks",
+    "category": "Knowledge Base",
+    "created": "2026-03-14",
+    "snippet": "6 core frameworks (PAS, AIDA, FAB, BAB, 4Ps, Star-Story-Solution), landing page structure, copy rules, CTA writing guide.",
+    "path": "memory/05_resources/copywriting-frameworks.md"
+  },
+  {
+    "id": "doc-23",
+    "title": "Simple Operations Business Framework",
+    "category": "Knowledge Base",
+    "created": "2026-03-14",
+    "snippet": "Beno business operating system adapted from Charfen. Waterfall, CCM, OTA framework, 5 Core Functions, Critical Numbers, annual calendar, TI cadence. The Pulse Framework source document.",
+    "path": "memory/simple-operations-business-framework.md"
+  },
+  {
+    "id": "doc-24",
+    "title": "Copy Cure 2023 \u2014 Course Synthesis",
+    "category": "Knowledge Base",
+    "created": "2026-03-20",
+    "snippet": "Marie Forleo's Copy Cure: GUSTA sales page method, PAS/AIDA/BAB frameworks, Copy Disease fixes, headline formulas, CTA templates, about page framework, email templates. 10 masterclass syntheses from Joanna Wiebe, Sally Hogshead, John Saunders, and more.",
+    "path": "knowledge/copy-cure-2023/COURSE-SYNTHESIS.md"
+  },
+  {
+    "id": "doc-25",
+    "title": "Copy Cure 2023 \u2014 Quick Reference",
+    "category": "Knowledge Base",
+    "created": "2026-03-20",
+    "snippet": "Cheat sheet: Top 20 headline formulas, CTA templates, Copy Disease symptoms + fixes, About Page framework, GUSTA sales page structure, email/social/ad templates, Before You Hit Publish checklist.",
+    "path": "knowledge/copy-cure-2023/QUICK-REFERENCE.md"
+  },
+  {
+    "id": "doc-27",
+    "title": "Kairos AI \u2014 One-Pager Pitch",
+    "category": "Plans",
+    "created": "2026-03-22",
+    "snippet": "Sales one-pager for Kairos AI: problem statement, 5 system components (Mission Control, AI Workforce, Pulse Framework, Automated Rhythm, Persistent Memory), 3 service tiers ($10K-$25K+), discovery session CTA.",
+    "path": "kairos/one-pager.md"
+  },
+  {
+    "id": "doc-28",
+    "title": "Kairos AI \u2014 Business Assessments",
+    "category": "Plans",
+    "created": "2026-03-21",
+    "snippet": "Full Pulse Framework assessments: Client-Centric Mission (4 questions), 5 Pillars Assessment (8/25), Critical Number (Setup Revenue Closed), Business Assessment (current state vs target). Priority #2 business.",
+    "path": "memory/02_projects/kairos-assessments.md"
+  },
+  {
+    "id": "doc-29",
+    "title": "Kairos AI \u2014 Priority Cascade (Waterfall)",
+    "category": "Plans",
+    "created": "2026-03-21",
+    "snippet": "Full waterfall with OTAs: Mission, 3 North Stars, Sprint 1 (Q2) with 5 targets, April/May/June monthly missions with priority-ranked goals. Every level has Ops Brief (Outcome, Transparency, Accountability).",
+    "path": "memory/02_projects/kairos-waterfall.md"
+  },
+  {
+    "id": "doc-30",
+    "title": "Kairos AI \u2014 Rebrand Map",
+    "category": "Plans",
+    "created": "2026-03-21",
+    "snippet": "Full terminology mapping: CharFen to Pulse Framework. Product names (Kairos AI, Mission Control, Kairos Agents, Pulse Framework, Kairos Hub). Revenue strategy: 3 service tiers approved.",
+    "path": "memory/02_projects/ai-bos-rebrand.md"
+  }
 ]

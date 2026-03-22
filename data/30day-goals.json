@@ -1,9 +1,9 @@
 {
-  "generated": "2026-03-22T05:00:19.378391+00:00",
+  "generated": "2026-03-22T05:54:36.112220+00:00",
   "records": [
     {
       "id": "recfVanIIuxVH",
-      "goal": "[P1] One-pager pitch document",
+      "goal": "One-pager pitch document",
       "status": "Not Started",
       "month": "2026-04",
       "dueDate": "2025-04-08",
@@ -15,7 +15,7 @@
     },
     {
       "id": "recQVZIE4zBAm",
-      "goal": "[P2] Proposal template",
+      "goal": "Proposal template",
       "status": "Not Started",
       "month": "2026-04",
       "dueDate": "2025-04-11",
@@ -27,7 +27,7 @@
     },
     {
       "id": "recb9NTSvlOXr",
-      "goal": "[P3] Pricing sheet (3 service tiers)",
+      "goal": "Pricing sheet (3 service tiers)",
       "status": "Not Started",
       "month": "2026-04",
       "dueDate": "2025-04-11",
@@ -39,7 +39,7 @@
     },
     {
       "id": "recalNi5wXvyE",
-      "goal": "[P4] Scope of work template",
+      "goal": "Scope of work template",
       "status": "Not Started",
       "month": "2026-04",
       "dueDate": "2025-04-18",
@@ -51,7 +51,7 @@
     },
     {
       "id": "recx5YsN0Jgs1",
-      "goal": "[P5] Service agreement / contract template",
+      "goal": "Service agreement / contract template",
       "status": "Not Started",
       "month": "2026-04",
       "dueDate": "2025-04-18",
@@ -63,7 +63,7 @@
     },
     {
       "id": "rec4vdFrCtE6e",
-      "goal": "[P6] AI-powered discovery questionnaire",
+      "goal": "AI-powered discovery questionnaire",
       "status": "Not Started",
       "month": "2026-04",
       "dueDate": "2025-04-18",
@@ -75,7 +75,7 @@
     },
     {
       "id": "rec7GKFjw6qfa",
-      "goal": "[P7] OpenClaw config template for clients",
+      "goal": "OpenClaw config template for clients",
       "status": "Not Started",
       "month": "2026-04",
       "dueDate": "2025-04-25",
@@ -87,7 +87,7 @@
     },
     {
       "id": "recd78DuyDnbE",
-      "goal": "[P8] Standard skill package (service businesses)",
+      "goal": "Standard skill package (service businesses)",
       "status": "Not Started",
       "month": "2026-04",
       "dueDate": "2025-04-28",
@@ -99,7 +99,7 @@
     },
     {
       "id": "receH3X2YLoyi",
-      "goal": "[P9] Pulse cadence cron configs",
+      "goal": "Pulse cadence cron configs",
       "status": "Not Started",
       "month": "2026-04",
       "dueDate": "2025-04-28",
@@ -111,7 +111,7 @@
     },
     {
       "id": "recXxaUyJkwT1",
-      "goal": "[P10] MC clone template",
+      "goal": "MC clone template",
       "status": "Not Started",
       "month": "2026-04",
       "dueDate": "2025-05-02",
@@ -123,7 +123,7 @@
     },
     {
       "id": "rec6y2haEMiIL",
-      "goal": "[P1] Schedule + run discovery session with David",
+      "goal": "Schedule + run discovery session with David",
       "status": "Not Started",
       "month": "2026-05",
       "dueDate": "2025-05-08",
@@ -135,7 +135,7 @@
     },
     {
       "id": "recTrC29FWNzO",
-      "goal": "[P2] Map SEVA: 5 Pillars, Critical Number, CCM",
+      "goal": "Map SEVA: 5 Pillars, Critical Number, CCM",
       "status": "Not Started",
       "month": "2026-05",
       "dueDate": "2025-05-11",
@@ -147,7 +147,7 @@
     },
     {
       "id": "rec6zL2YdJElE",
-      "goal": "[P3] Send proposal + negotiate pricing",
+      "goal": "Send proposal + negotiate pricing",
       "status": "Not Started",
       "month": "2026-05",
       "dueDate": "2025-05-15",
@@ -159,7 +159,7 @@
     },
     {
       "id": "recAmBMWBHJuO",
-      "goal": "[P4] Spin up SEVA OpenClaw instance (VPS)",
+      "goal": "Spin up SEVA OpenClaw instance (VPS)",
       "status": "Not Started",
       "month": "2026-05",
       "dueDate": "2025-05-18",
@@ -171,7 +171,7 @@
     },
     {
       "id": "recPq48Qg4RQu",
-      "goal": "[P5] Configure SEVA agents (property mgmt skills)",
+      "goal": "Configure SEVA agents (property mgmt skills)",
       "status": "Not Started",
       "month": "2026-05",
       "dueDate": "2025-05-25",
@@ -183,7 +183,7 @@
     },
     {
       "id": "rec82eoDhNQyI",
-      "goal": "[P6] Build SEVA Mission Control dashboard",
+      "goal": "Build SEVA Mission Control dashboard",
       "status": "Not Started",
       "month": "2026-05",
       "dueDate": "2025-05-29",
@@ -195,7 +195,7 @@
     },
     {
       "id": "rechpowoOeShK",
-      "goal": "[P7] Set up SEVA Pulse cadence (crons)",
+      "goal": "Set up SEVA Pulse cadence (crons)",
       "status": "Not Started",
       "month": "2026-05",
       "dueDate": "2025-06-01",
@@ -207,7 +207,7 @@
     },
     {
       "id": "rectKWF1SdM16",
-      "goal": "[P8] Seed SEVA memory with business context",
+      "goal": "Seed SEVA memory with business context",
       "status": "Not Started",
       "month": "2026-05",
       "dueDate": "2025-06-01",
@@ -219,7 +219,7 @@
     },
     {
       "id": "reczG6YtCISk9",
-      "goal": "[P9] Client handoff + training session",
+      "goal": "Client handoff + training session",
       "status": "Not Started",
       "month": "2026-05",
       "dueDate": "2025-06-04",
@@ -231,7 +231,7 @@
     },
     {
       "id": "rec2AkqyvTuMW",
-      "goal": "[P1] Iterate David system based on feedback",
+      "goal": "Iterate David system based on feedback",
       "status": "Not Started",
       "month": "2026-06",
       "dueDate": "2025-06-18",
@@ -243,7 +243,7 @@
     },
     {
       "id": "recLwQ3AKprPl",
-      "goal": "[P2] Outreach to Michael Palethorpe or 2 network contacts",
+      "goal": "Outreach to Michael Palethorpe or 2 network contacts",
       "status": "Not Started",
       "month": "2026-06",
       "dueDate": "2025-06-18",
@@ -255,7 +255,7 @@
     },
     {
       "id": "recqQiOsen1OS",
-      "goal": "[P3] Begin SEVA case study (before/after + quotes)",
+      "goal": "Begin SEVA case study (before/after + quotes)",
       "status": "Not Started",
       "month": "2026-06",
       "dueDate": "2025-06-25",
@@ -267,7 +267,7 @@
     },
     {
       "id": "recEUAJ41gik9",
-      "goal": "[P4] Refine deployment process from David experience",
+      "goal": "Refine deployment process from David experience",
       "status": "Not Started",
       "month": "2026-06",
       "dueDate": "2025-06-25",
@@ -279,7 +279,7 @@
     },
     {
       "id": "recL9yv5UhBMB",
-      "goal": "[P5] Schedule discovery with client #2 (if warm)",
+      "goal": "Schedule discovery with client #2 (if warm)",
       "status": "Not Started",
       "month": "2026-06",
       "dueDate": "2025-07-02",
@@ -291,7 +291,7 @@
     },
     {
       "id": "recB8fruuB8JZ",
-      "goal": "[P6] Document deployment learnings",
+      "goal": "Document deployment learnings",
       "status": "Not Started",
       "month": "2026-06",
       "dueDate": "2025-07-02",
@@ -303,7 +303,7 @@
     },
     {
       "id": "recnCNQlPQIXs",
-      "goal": "[P7] Begin MC redesign (if frontend skills ready)",
+      "goal": "Begin MC redesign (if frontend skills ready)",
       "status": "Not Started",
       "month": "2026-06",
       "dueDate": "2025-07-04",
@@ -315,7 +315,7 @@
     },
     {
       "id": "recSOhBlDnjh1",
-      "goal": "[P8] Landing page copy draft",
+      "goal": "Landing page copy draft",
       "status": "Not Started",
       "month": "2026-06",
       "dueDate": "2025-07-04",
