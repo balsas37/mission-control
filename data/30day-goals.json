@@ -1,6 +1,330 @@
 {
-  "generated": "2026-03-21T23:00:16.796448+00:00",
+  "generated": "2026-03-22T05:00:19.378391+00:00",
   "records": [
+    {
+      "id": "recfVanIIuxVH",
+      "goal": "[P1] One-pager pitch document",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": "2025-04-08",
+      "business": "Kairos AI",
+      "notes": "Must-have. Without this, no pitch to David or anyone.",
+      "relatedTargetIds": [
+        "recM13Gy0SEpX"
+      ]
+    },
+    {
+      "id": "recQVZIE4zBAm",
+      "goal": "[P2] Proposal template",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": "2025-04-11",
+      "business": "Kairos AI",
+      "notes": "Must-have. Standard proposal that can be customized per client.",
+      "relatedTargetIds": [
+        "recM13Gy0SEpX"
+      ]
+    },
+    {
+      "id": "recb9NTSvlOXr",
+      "goal": "[P3] Pricing sheet (3 service tiers)",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": "2025-04-11",
+      "business": "Kairos AI",
+      "notes": "Must-have. Setup Only / Setup+Management / Setup+Management+Strategy. Needs Beno input on exact numbers.",
+      "relatedTargetIds": [
+        "recM13Gy0SEpX"
+      ]
+    },
+    {
+      "id": "recalNi5wXvyE",
+      "goal": "[P4] Scope of work template",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": "2025-04-18",
+      "business": "Kairos AI",
+      "notes": "Must-have. Defines exactly what client gets, timeline, deliverables.",
+      "relatedTargetIds": [
+        "recM13Gy0SEpX"
+      ]
+    },
+    {
+      "id": "recx5YsN0Jgs1",
+      "goal": "[P5] Service agreement / contract template",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": "2025-04-18",
+      "business": "Kairos AI",
+      "notes": "Must-have. Legal protection for both sides. Payment terms, IP ownership, termination.",
+      "relatedTargetIds": [
+        "recM13Gy0SEpX"
+      ]
+    },
+    {
+      "id": "rec4vdFrCtE6e",
+      "goal": "[P6] AI-powered discovery questionnaire",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": "2025-04-18",
+      "business": "Kairos AI",
+      "notes": "Must-have. Replaces static checklist. Interactive AI interview to map client business.",
+      "relatedTargetIds": [
+        "recM13Gy0SEpX"
+      ]
+    },
+    {
+      "id": "rec7GKFjw6qfa",
+      "goal": "[P7] OpenClaw config template for clients",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": "2025-04-25",
+      "business": "Kairos AI",
+      "notes": "Should-have. Standard config that can be cloned and customized per client.",
+      "relatedTargetIds": [
+        "recpR43Ypq9XU"
+      ]
+    },
+    {
+      "id": "recd78DuyDnbE",
+      "goal": "[P8] Standard skill package (service businesses)",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": "2025-04-28",
+      "business": "Kairos AI",
+      "notes": "Should-have. Curated set of skills relevant to service business clients.",
+      "relatedTargetIds": [
+        "recpR43Ypq9XU"
+      ]
+    },
+    {
+      "id": "receH3X2YLoyi",
+      "goal": "[P9] Pulse cadence cron configs",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": "2025-04-28",
+      "business": "Kairos AI",
+      "notes": "Should-have. Daily Pulse, Weekly Ops Review, Monthly Ops Review cron templates.",
+      "relatedTargetIds": [
+        "recpR43Ypq9XU"
+      ]
+    },
+    {
+      "id": "recXxaUyJkwT1",
+      "goal": "[P10] MC clone template",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": "2025-05-02",
+      "business": "Kairos AI",
+      "notes": "Should-have. Mission Control dashboard template ready to clone for new clients.",
+      "relatedTargetIds": [
+        "recpR43Ypq9XU"
+      ]
+    },
+    {
+      "id": "rec6y2haEMiIL",
+      "goal": "[P1] Schedule + run discovery session with David",
+      "status": "Not Started",
+      "month": "2026-05",
+      "dueDate": "2025-05-08",
+      "business": "Kairos AI",
+      "notes": "Must-have. The gate to everything else in May.",
+      "relatedTargetIds": [
+        "reccUpVkwQYpX"
+      ]
+    },
+    {
+      "id": "recTrC29FWNzO",
+      "goal": "[P2] Map SEVA: 5 Pillars, Critical Number, CCM",
+      "status": "Not Started",
+      "month": "2026-05",
+      "dueDate": "2025-05-11",
+      "business": "Kairos AI",
+      "notes": "Must-have. Full business mapping from discovery session output.",
+      "relatedTargetIds": [
+        "reccUpVkwQYpX"
+      ]
+    },
+    {
+      "id": "rec6zL2YdJElE",
+      "goal": "[P3] Send proposal + negotiate pricing",
+      "status": "Not Started",
+      "month": "2026-05",
+      "dueDate": "2025-05-15",
+      "business": "Kairos AI",
+      "notes": "Must-have. Use proposal template from April. Negotiate and close.",
+      "relatedTargetIds": [
+        "reccUpVkwQYpX"
+      ]
+    },
+    {
+      "id": "recAmBMWBHJuO",
+      "goal": "[P4] Spin up SEVA OpenClaw instance (VPS)",
+      "status": "Not Started",
+      "month": "2026-05",
+      "dueDate": "2025-05-18",
+      "business": "Kairos AI",
+      "notes": "Must-have. Server provisioned and base OpenClaw installed.",
+      "relatedTargetIds": [
+        "recLjvhFXcHPF"
+      ]
+    },
+    {
+      "id": "recPq48Qg4RQu",
+      "goal": "[P5] Configure SEVA agents (property mgmt skills)",
+      "status": "Not Started",
+      "month": "2026-05",
+      "dueDate": "2025-05-25",
+      "business": "Kairos AI",
+      "notes": "Should-have. Agent skills tailored to property management.",
+      "relatedTargetIds": [
+        "recLjvhFXcHPF"
+      ]
+    },
+    {
+      "id": "rec82eoDhNQyI",
+      "goal": "[P6] Build SEVA Mission Control dashboard",
+      "status": "Not Started",
+      "month": "2026-05",
+      "dueDate": "2025-05-29",
+      "business": "Kairos AI",
+      "notes": "Should-have. Customized MC from template.",
+      "relatedTargetIds": [
+        "recLjvhFXcHPF"
+      ]
+    },
+    {
+      "id": "rechpowoOeShK",
+      "goal": "[P7] Set up SEVA Pulse cadence (crons)",
+      "status": "Not Started",
+      "month": "2026-05",
+      "dueDate": "2025-06-01",
+      "business": "Kairos AI",
+      "notes": "Should-have. Daily Pulse, Weekly/Monthly Ops Reviews.",
+      "relatedTargetIds": [
+        "recLjvhFXcHPF"
+      ]
+    },
+    {
+      "id": "rectKWF1SdM16",
+      "goal": "[P8] Seed SEVA memory with business context",
+      "status": "Not Started",
+      "month": "2026-05",
+      "dueDate": "2025-06-01",
+      "business": "Kairos AI",
+      "notes": "Should-have. SOUL.md, USER.md, MEMORY.md seeded from discovery.",
+      "relatedTargetIds": [
+        "recLjvhFXcHPF"
+      ]
+    },
+    {
+      "id": "reczG6YtCISk9",
+      "goal": "[P9] Client handoff + training session",
+      "status": "Not Started",
+      "month": "2026-05",
+      "dueDate": "2025-06-04",
+      "business": "Kairos AI",
+      "notes": "Should-have. Walk David through his system. Record for future onboarding.",
+      "relatedTargetIds": [
+        "recLjvhFXcHPF"
+      ]
+    },
+    {
+      "id": "rec2AkqyvTuMW",
+      "goal": "[P1] Iterate David system based on feedback",
+      "status": "Not Started",
+      "month": "2026-06",
+      "dueDate": "2025-06-18",
+      "business": "Kairos AI",
+      "notes": "Must-have. Refine based on first 2 weeks of David using the system.",
+      "relatedTargetIds": [
+        "recLjvhFXcHPF"
+      ]
+    },
+    {
+      "id": "recLwQ3AKprPl",
+      "goal": "[P2] Outreach to Michael Palethorpe or 2 network contacts",
+      "status": "Not Started",
+      "month": "2026-06",
+      "dueDate": "2025-06-18",
+      "business": "Kairos AI",
+      "notes": "Must-have. Start pipeline for client #2.",
+      "relatedTargetIds": [
+        "rec01bW0D0r37"
+      ]
+    },
+    {
+      "id": "recqQiOsen1OS",
+      "goal": "[P3] Begin SEVA case study (before/after + quotes)",
+      "status": "Not Started",
+      "month": "2026-06",
+      "dueDate": "2025-06-25",
+      "business": "Kairos AI",
+      "notes": "Must-have. David confirmed happy to be case study.",
+      "relatedTargetIds": [
+        "rec01bW0D0r37"
+      ]
+    },
+    {
+      "id": "recEUAJ41gik9",
+      "goal": "[P4] Refine deployment process from David experience",
+      "status": "Not Started",
+      "month": "2026-06",
+      "dueDate": "2025-06-25",
+      "business": "Kairos AI",
+      "notes": "Must-have. Document what took longer than expected.",
+      "relatedTargetIds": [
+        "recpR43Ypq9XU"
+      ]
+    },
+    {
+      "id": "recL9yv5UhBMB",
+      "goal": "[P5] Schedule discovery with client #2 (if warm)",
+      "status": "Not Started",
+      "month": "2026-06",
+      "dueDate": "2025-07-02",
+      "business": "Kairos AI",
+      "notes": "Should-have. Depends on outreach response.",
+      "relatedTargetIds": [
+        "rec01bW0D0r37"
+      ]
+    },
+    {
+      "id": "recB8fruuB8JZ",
+      "goal": "[P6] Document deployment learnings",
+      "status": "Not Started",
+      "month": "2026-06",
+      "dueDate": "2025-07-02",
+      "business": "Kairos AI",
+      "notes": "Should-have. What worked, what did not, time per step.",
+      "relatedTargetIds": [
+        "recpR43Ypq9XU"
+      ]
+    },
+    {
+      "id": "recnCNQlPQIXs",
+      "goal": "[P7] Begin MC redesign (if frontend skills ready)",
+      "status": "Not Started",
+      "month": "2026-06",
+      "dueDate": "2025-07-04",
+      "business": "Kairos AI",
+      "notes": "Should-have. Blocked on 21st.dev API key + Framer Motion setup.",
+      "relatedTargetIds": [
+        "recpR43Ypq9XU"
+      ]
+    },
+    {
+      "id": "recSOhBlDnjh1",
+      "goal": "[P8] Landing page copy draft",
+      "status": "Not Started",
+      "month": "2026-06",
+      "dueDate": "2025-07-04",
+      "business": "Kairos AI",
+      "notes": "Should-have. Moved from April. Write once we have case study material.",
+      "relatedTargetIds": [
+        "rec01bW0D0r37"
+      ]
+    },
     {
       "id": "recsYoj519zs3",
       "goal": "Complete Sirewall mix design trip March 8-13 and document all outputs",

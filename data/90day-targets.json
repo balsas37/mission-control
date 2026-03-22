@@ -1,6 +1,28 @@
 {
-  "generated": "2026-03-21T23:00:16.117267+00:00",
+  "generated": "2026-03-22T05:00:16.825112+00:00",
   "records": [
+    {
+      "id": "recM13Gy0SEpX",
+      "target": "Build conversion materials (sales kit)",
+      "status": "Not Started",
+      "quarter": "2026-Q2",
+      "dueDate": "2025-04-15",
+      "business": "Kairos AI",
+      "category": "Project",
+      "priority": 1,
+      "completion": 0,
+      "goalCount": 6,
+      "relatedGoalIds": [
+        "recfVanIIuxVH",
+        "recQVZIE4zBAm",
+        "recb9NTSvlOXr",
+        "recalNi5wXvyE",
+        "recx5YsN0Jgs1",
+        "rec4vdFrCtE6e"
+      ],
+      "notes": "One-pager pitch, proposal template, pricing sheet (3 tiers), scope of work, service agreement. Must complete before closing David.",
+      "otaLink": null
+    },
     {
       "id": "rece0f4J4MlnA",
       "target": "Launch first AI model on Fanvue and generate first OFM revenue",
@@ -156,6 +178,29 @@
       "otaLink": "https://aitable.ai/workbench/dstrQFxozJm7crqQ1Z/viwwCBCqlAKkm/rec1rifG7e3ub"
     },
     {
+      "id": "recpR43Ypq9XU",
+      "target": "Complete delivery package (deployment templates)",
+      "status": "Not Started",
+      "quarter": "2026-Q2",
+      "dueDate": "2025-05-01",
+      "business": "Kairos AI",
+      "category": "Project",
+      "priority": 2,
+      "completion": 0,
+      "goalCount": 7,
+      "relatedGoalIds": [
+        "rec7GKFjw6qfa",
+        "recd78DuyDnbE",
+        "receH3X2YLoyi",
+        "recXxaUyJkwT1",
+        "recEUAJ41gik9",
+        "recB8fruuB8JZ",
+        "recnCNQlPQIXs"
+      ],
+      "notes": "OpenClaw config template, skill packages, MC clone template, onboarding questionnaire, Pulse cadence cron configs.",
+      "otaLink": null
+    },
+    {
       "id": "reczbf37TIhbM",
       "target": "Build AI model content pipeline: LoRA character trained, ComfyUI deployed, first Fanvue content live",
       "status": "In Progress",
@@ -260,6 +305,25 @@
       "otaLink": "https://aitable.ai/workbench/dstrQFxozJm7crqQ1Z/viwwCBCqlAKkm/recnbqloB7fI6"
     },
     {
+      "id": "reccUpVkwQYpX",
+      "target": "Discovery + close David (SEVA)",
+      "status": "Not Started",
+      "quarter": "2026-Q2",
+      "dueDate": "2025-05-16",
+      "business": "Kairos AI",
+      "category": "Project",
+      "priority": 3,
+      "completion": 0,
+      "goalCount": 3,
+      "relatedGoalIds": [
+        "rec6y2haEMiIL",
+        "recTrC29FWNzO",
+        "rec6zL2YdJElE"
+      ],
+      "notes": "Run discovery session. Map SEVA business (5 Pillars, CCM, Critical Number). Send proposal. Close deal. Collect payment.",
+      "otaLink": null
+    },
+    {
       "id": "rec0IXhUyJgSo",
       "target": "Launch AI model social growth engine: 2 IG + 2 TikTok accounts warmed and posting, first 500 followers",
       "status": "Not Started",
@@ -310,6 +374,29 @@
       ],
       "notes": "Google Ads running but no formal conversion tracking. Install GA4 + conversion tracking. Split test: current ads vs new creatives. Target: 30% more bookings from same ad spend. Rex (Marketing & Growth agent) to own this. Also: find FB Ads login (eco-yacht ad currently running unmonitored).",
       "otaLink": "https://aitable.ai/workbench/dstrQFxozJm7crqQ1Z/viwwCBCqlAKkm/recMVHUIShkIj"
+    },
+    {
+      "id": "recLjvhFXcHPF",
+      "target": "Deploy David/SEVA system",
+      "status": "Not Started",
+      "quarter": "2026-Q2",
+      "dueDate": "2025-06-16",
+      "business": "Kairos AI",
+      "category": "Project",
+      "priority": 4,
+      "completion": 0,
+      "goalCount": 7,
+      "relatedGoalIds": [
+        "recAmBMWBHJuO",
+        "recPq48Qg4RQu",
+        "rec82eoDhNQyI",
+        "rechpowoOeShK",
+        "rectKWF1SdM16",
+        "reczG6YtCISk9",
+        "rec2AkqyvTuMW"
+      ],
+      "notes": "Full build: OpenClaw instance, MC dashboard, configured agents, Pulse cadence, memory seeded with SEVA context.",
+      "otaLink": null
     },
     {
       "id": "rectDSP307Ej1",
@@ -364,6 +451,26 @@
       ],
       "notes": "AI-only models 2 and 3 using the proven template from model 1. Once first AI model hits 100K MXN/month, replicate: same LoRA pipeline, new character, new IG/TikTok accounts. Target: 3 models x 167K MXN/month avg = 500K/month combined. Use phone farm (AliRemote.com) for scale. Copy winning content formula.",
       "otaLink": "https://aitable.ai/workbench/dstrQFxozJm7crqQ1Z/viwwCBCqlAKkm/rec7lwJDUYz5X"
+    },
+    {
+      "id": "rec01bW0D0r37",
+      "target": "Approach client #2",
+      "status": "Not Started",
+      "quarter": "2026-Q2",
+      "dueDate": "2025-07-01",
+      "business": "Kairos AI",
+      "category": "People",
+      "priority": 5,
+      "completion": 0,
+      "goalCount": 4,
+      "relatedGoalIds": [
+        "recLwQ3AKprPl",
+        "recqQiOsen1OS",
+        "recL9yv5UhBMB",
+        "recSOhBlDnjh1"
+      ],
+      "notes": "Michael Palethorpe or network referral. Start warm conversation, schedule discovery if possible.",
+      "otaLink": null
     },
     {
       "id": "recRIoqRRY4ND",
