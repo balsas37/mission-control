@@ -1,0 +1,100 @@
+{
+  "updatedAt": "2026-03-22T12:00:00Z",
+  "ofm": [
+    {
+      "title": "OnlyMonster has become the dominant OFM platform",
+      "source": "",
+      "url": "",
+      "summary": "\u2014 pioneers in AI-assisted OFM workflow, achieved massive growth purely through product without marketing. OnlyMonster.ai"
+    },
+    {
+      "title": "Fanvue hit $100M run rate",
+      "source": "",
+      "url": "",
+      "summary": "and raised $22M Series A (Jan 2026). 20,000 new creators joined last month. Platform takes 20% fee on $12.50 average subscription. https://www.businesswire.com/news/home/20260112458975/en/"
+    },
+    {
+      "title": "AI influencers are pulling $10K-50K/month",
+      "source": "",
+      "url": "",
+      "summary": "with virtual personas. AI-tagged OFM/Fansly accounts with 1,000+ subscribers generate $10-20/month per user at scale. https://kgabeci.medium.com/the-ai-influencer-business-model-e2bfa08c5895"
+    },
+    {
+      "title": "AI can now fully operate OFM accounts",
+      "source": "",
+      "url": "",
+      "summary": "in 2026 when agencies implement correctly and stay transparent \u2014 Supercreator and others delivering end-to-end AI chat/CRM. https://sozee.ai/resources/ai-powered-onlyfans-agency-software/"
+    },
+    {
+      "title": "OnlyFans is cracking down on AI/deepfakes",
+      "source": "",
+      "url": "",
+      "summary": "\u2014 detection tools active, policy enforcement ramping. Opportunity for compliant AI-assisted (not AI-replacement) workflows. https://www.sirency.com/blog/onlyfans-policy-updates-2026-ai-deepfakes-and-rules"
+    }
+  ],
+  "tools": [
+    {
+      "title": "OpenClaw v2026.3.7-beta.1",
+      "source": "",
+      "url": "",
+      "summary": "adds ContextEngine Plugin Interface + 200+ bug fixes. Major push toward \"trustworthy enough for real workflows.\" https://eu.36kr.com/en/p/3715160552878469"
+    },
+    {
+      "title": "OpenClaw 2026.2.26",
+      "source": "",
+      "url": "",
+      "summary": "delivered secrets system, browser control, multi-DM, Android support, PDF tool. Moving from \"cool demo\" to daily ops infrastructure. https://www.reddit.com/r/OpenClawUseCases/comments/1rjhlac/"
+    },
+    {
+      "title": "Claude Code enterprise workflows",
+      "source": "",
+      "url": "",
+      "summary": "now standard: natural language \u2192 decomposed tasks \u2192 automated implementation. Can navigate large codebases, fix issues, automate repetitive dev work. https://henriquesd.medium.com/claude-code-a-practical-guide-to-automating-your-development-workflow-675714db08ed"
+    },
+    {
+      "title": "Awesome Claude Code repo",
+      "source": "",
+      "url": "",
+      "summary": "curates skills, hooks, slash-commands, agent orchestrators. Growing ecosystem for reusable agent capabilities. https://github.com/hesreallyhim/awesome-claude-code"
+    },
+    {
+      "title": "Claude Cowork / agent frameworks",
+      "source": "",
+      "url": "",
+      "summary": "emerging for end-to-end delegation \u2014 JSON-driven multi-agent cadence teams with CLI orchestration. https://github.com/catlog22/Claude-Code-Workflow"
+    }
+  ],
+  "market": [
+    {
+      "title": "Puerto Escondido rental market",
+      "source": "",
+      "url": "",
+      "summary": "enters 2026 with strong fundamentals: growing international/domestic demand, improved infrastructure, diversifying guest base supporting year-round occupancy. https://realestate.puerto-escondido.mx/puerto-escondido-rental-market-analysis-2026-occupancy-trends-investment-outlook"
+    },
+    {
+      "title": "Puerto Escondido Airport expansion",
+      "source": "",
+      "url": "",
+      "summary": "\u2014 additional Canadian and US connections in planning for 2026. Direct flight access historically drives dramatic property value surges (Cabo/Puerto Vallarta pattern). https://realestate.puerto-escondido.mx/puerto-escondido-airport-how-proximity-is-reshaping-the-local-real-estate-market"
+    },
+    {
+      "title": "Rammed earth construction advancing",
+      "source": "",
+      "url": "",
+      "summary": "\u2014 robotic ramming with digitally controlled compaction now viable. Design-to-fabrication workflow via Rhino/Grasshopper. Earth USA 2026 conference Sept 18-20 Santa Fe. https://eartharchitecture.org/?m=202603"
+    },
+    {
+      "title": "Tulum ATV rental market saturated",
+      "source": "",
+      "url": "",
+      "summary": "\u2014 multiple competitors (Tulum ATV Rental, Rentals La Veleta, others) competing on price. The Lagoon Company positioned well but differentiation critical. https://www.tulumatvrental.com/"
+    },
+    {
+      "title": "Prefabricated rammed earth blocks",
+      "source": "",
+      "url": "",
+      "summary": "emerging \u2014 factory-cast blocks reduce construction time/cost while maintaining quality. Relevant for CRETE project scalability. https://archello.com/news/detail-rammed-earth-walls-of-casa-ballena-los-cabos"
+    }
+  ],
+  "actions": []
+}
