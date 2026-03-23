@@ -1,93 +1,99 @@
 {
-  "updatedAt": "2026-03-21T12:00:00Z",
+  "updatedAt": "2026-03-22T12:00:00Z",
   "ofm": [
     {
-      "title": "OnlyMonster dominating OFM AI tools",
+      "title": "OnlyMonster has become the dominant OFM platform",
       "source": "",
       "url": "",
-      "summary": "\u2014 Became the go-to management system with advanced AI assistance for chatting, fan management, and agency operations. Pure word-of-mouth growth during Beta. [onlymonster.ai](https://onlymonster.ai/)"
+      "summary": "\u2014 pioneers in AI-assisted OFM workflow, achieved massive growth purely through product without marketing. OnlyMonster.ai"
     },
     {
-      "title": "Fanvue AI models hitting $38K/month",
+      "title": "Fanvue hit $100M run rate",
       "source": "",
       "url": "",
-      "summary": "\u2014 One creator reported an AI model generating $38,328.60 in 30 days. Platform has built-in AI messaging, voice notes, and analytics. 20% commission, $5-9.99 sweet spot pricing. [fanvue.com](https://www.fanvue.com/pages/fanvue-ai)"
+      "summary": "and raised $22M Series A (Jan 2026). 20,000 new creators joined last month. Platform takes 20% fee on $12.50 average subscription. https://www.businesswire.com/news/home/20260112458975/en/"
     },
     {
-      "title": "AI girlfriend market now $2.91B",
+      "title": "AI influencers are pulling $10K-50K/month",
       "source": "",
       "url": "",
-      "summary": "\u2014 Growing 25.2% CAGR, 50M+ active users globally. $120 ARPU annually, 93% retention (7% monthly churn). [jenova.ai](https://www.jenova.ai/en/resources/ai-roleplay-girlfriend)"
+      "summary": "with virtual personas. AI-tagged OFM/Fansly accounts with 1,000+ subscribers generate $10-20/month per user at scale. https://kgabeci.medium.com/the-ai-influencer-business-model-e2bfa08c5895"
     },
     {
-      "title": "OnlyFans AI policy tightened",
+      "title": "AI can now fully operate OFM accounts",
       "source": "",
       "url": "",
-      "summary": "\u2014 New 2026 detection tools for AI-generated content and deepfakes. Agencies need transparency protocols now. [sirency.com](https://www.sirency.com/blog/onlyfans-policy-updates-2026-ai-deepfakes-and-rules)"
+      "summary": "in 2026 when agencies implement correctly and stay transparent \u2014 Supercreator and others delivering end-to-end AI chat/CRM. https://sozee.ai/resources/ai-powered-onlyfans-agency-software/"
     },
     {
-      "title": "Supercreator major competitor",
+      "title": "OnlyFans is cracking down on AI/deepfakes",
       "source": "",
       "url": "",
-      "summary": "\u2014 Full AI-powered CRM for OFM agencies with chatting automation and team management. [supercreator.app](https://www.supercreator.app/)"
+      "summary": "\u2014 detection tools active, policy enforcement ramping. Opportunity for compliant AI-assisted (not AI-replacement) workflows. https://www.sirency.com/blog/onlyfans-policy-updates-2026-ai-deepfakes-and-rules"
     }
   ],
   "tools": [
     {
-      "title": "OpenClaw v2026.3.7-beta.1 released",
+      "title": "OpenClaw v2026.3.7-beta.1",
       "source": "",
       "url": "",
-      "summary": "\u2014 Major ContextEngine plugin interface added, 200+ bugs fixed. Memory can now be freely plugged/unplugged. [36kr.com](https://eu.36kr.com/en/p/3715160552878469)"
+      "summary": "adds ContextEngine Plugin Interface + 200+ bug fixes. Major push toward \"trustworthy enough for real workflows.\" https://eu.36kr.com/en/p/3715160552878469"
     },
     {
-      "title": "OpenClaw 2026.2.26: production-ready",
+      "title": "OpenClaw 2026.2.26",
       "source": "",
       "url": "",
-      "summary": "\u2014 Added secrets system, safer defaults, browser control, multi-DM, and Android support. Moving from \"demo\" to daily ops tool. [reddit.com](https://www.reddit.com/r/LocalLLM/comments/1rimve1/new_openclaw_release_version_2026226_way_less/)"
+      "summary": "delivered secrets system, browser control, multi-DM, Android support, PDF tool. Moving from \"cool demo\" to daily ops infrastructure. https://www.reddit.com/r/OpenClawUseCases/comments/1rjhlac/"
     },
     {
-      "title": "CrewAI leading multi-agent platform",
+      "title": "Claude Code enterprise workflows",
       "source": "",
       "url": "",
-      "summary": "\u2014 Open-source orchestration framework with high-level abstractions for complex agent workflows. [crewai.com](https://crewai.com/)"
+      "summary": "now standard: natural language \u2192 decomposed tasks \u2192 automated implementation. Can navigate large codebases, fix issues, automate repetitive dev work. https://henriquesd.medium.com/claude-code-a-practical-guide-to-automating-your-development-workflow-675714db08ed"
     },
     {
-      "title": "n8n.io for AI workflow automation",
+      "title": "Awesome Claude Code repo",
       "source": "",
       "url": "",
-      "summary": "\u2014 Visual builder with MCP support, on-prem deployment, human-in-the-loop approvals. Strong for legacy system integration. [n8n.io](https://n8n.io/)"
+      "summary": "curates skills, hooks, slash-commands, agent orchestrators. Growing ecosystem for reusable agent capabilities. https://github.com/hesreallyhim/awesome-claude-code"
     },
     {
-      "title": "CLAUDE.md pattern emerging",
+      "title": "Claude Cowork / agent frameworks",
       "source": "",
       "url": "",
-      "summary": "\u2014 Standard practice: root-level file providing context, constraints, architecture guidance for AI coding sessions. [medium.com](https://henriquesd.medium.com/claude-code-a-practical-guide-to-automating-your-development-workflow-675714db08ed)"
+      "summary": "emerging for end-to-end delegation \u2014 JSON-driven multi-agent cadence teams with CLI orchestration. https://github.com/catlog22/Claude-Code-Workflow"
     }
   ],
   "market": [
     {
-      "title": "Puerto Escondido rental market strong",
+      "title": "Puerto Escondido rental market",
       "source": "",
       "url": "",
-      "summary": "\u2014 2026 showing growing international demand, improved infrastructure, year-round occupancy. Airport expanding with additional US/Canada routes planned. [realestate.puerto-escondido.mx](https://realestate.puerto-escondido.mx/puerto-escondido-rental-market-analysis-2026-occupancy-trends-investment-outlook)"
+      "summary": "enters 2026 with strong fundamentals: growing international/domestic demand, improved infrastructure, diversifying guest base supporting year-round occupancy. https://realestate.puerto-escondido.mx/puerto-escondido-rental-market-analysis-2026-occupancy-trends-investment-outlook"
     },
     {
-      "title": "Tulum ATV rental competition",
+      "title": "Puerto Escondido Airport expansion",
       "source": "",
       "url": "",
-      "summary": "\u2014 Competitors at $55-85/day (TulumTours.com, TulumAreaExperiences). Lagoon Company positioned well with yacht bundling. Differentiation critical."
+      "summary": "\u2014 additional Canadian and US connections in planning for 2026. Direct flight access historically drives dramatic property value surges (Cabo/Puerto Vallarta pattern). https://realestate.puerto-escondido.mx/puerto-escondido-airport-how-proximity-is-reshaping-the-local-real-estate-market"
     },
     {
-      "title": "Rammed earth advancing fast",
+      "title": "Rammed earth construction advancing",
       "source": "",
       "url": "",
-      "summary": "\u2014 Earth USA 2026 conference Sept 18-20 Santa Fe. Robotic ramming + digitally controlled compaction now viable. Prefab block approach reduces cost/time. [earthusa.org](https://www.earthusa.org) [eartharchitecture.org](https://eartharchitecture.org/)"
+      "summary": "\u2014 robotic ramming with digitally controlled compaction now viable. Design-to-fabrication workflow via Rhino/Grasshopper. Earth USA 2026 conference Sept 18-20 Santa Fe. https://eartharchitecture.org/?m=202603"
     },
     {
-      "title": "Fixer-uppers hot in Puerto Escondido",
+      "title": "Tulum ATV rental market saturated",
       "source": "",
       "url": "",
-      "summary": "\u2014 Informed investors targeting renovation projects. Hidden gem opportunities before full development wave hits. [realestate.puerto-escondido.mx](https://realestate.puerto-escondido.mx/fixer-upper-properties-in-puerto-escondido-investment-opportunities-on-oaxacas-pacific-coast)"
+      "summary": "\u2014 multiple competitors (Tulum ATV Rental, Rentals La Veleta, others) competing on price. The Lagoon Company positioned well but differentiation critical. https://www.tulumatvrental.com/"
+    },
+    {
+      "title": "Prefabricated rammed earth blocks",
+      "source": "",
+      "url": "",
+      "summary": "emerging \u2014 factory-cast blocks reduce construction time/cost while maintaining quality. Relevant for CRETE project scalability. https://archello.com/news/detail-rammed-earth-walls-of-casa-ballena-los-cabos"
     }
   ],
   "actions": []
