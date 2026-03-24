@@ -444,5 +444,29 @@
     "status": "done",
     "createdAt": 1772664611000,
     "movedAt": 1773794143000
+  },
+  {
+    "id": "kb-135",
+    "recordId": "rec44eNhv7NSf",
+    "title": "Skill Evolution Loop",
+    "description": "Usage tracking + nightly review + auto-improvement for skills. After every skill run: log execution, rate result. Nightly: scan logs for patterns, generate improvement suggestions, apply obvious fixes, draft SKILL.md improvements for approval. Each skill gets a FEEDBACK.md with last 10 runs, success/fail ratio, common failures, improvement history. Wire into dream cycle.",
+    "project": "OpenClaw",
+    "priority": "High",
+    "agent": "",
+    "status": "todo",
+    "createdAt": 1774372433000,
+    "movedAt": 1774372433000
+  },
+  {
+    "id": "kb-136",
+    "recordId": "recHgWvoLzuhM",
+    "title": "Dev Workflow System - Testing & Validation",
+    "description": "PRD Clarity, Impl Orchestrator, and Red Team skills are built (skills/prd-clarity, skills/impl-orchestrator, skills/red-team). Need to run a real end-to-end test: PRD interview \u2192 spec generation \u2192 impl pipeline \u2192 QA loop \u2192 merge. Validate the full chain works before relying on it.",
+    "project": "OpenClaw",
+    "priority": "High",
+    "agent": "",
+    "status": "todo",
+    "createdAt": 1774372433000,
+    "movedAt": 1774372433000
   }
 ]
