@@ -4513,6 +4513,43 @@
     .radar-placeholder-text {
       font-size: 14px; color: var(--text-2);
     }
+    /* Macro radar indicators */
+    .macro-risk-banner {
+      display: flex; align-items: center; gap: 12px;
+      padding: 14px 18px; border-radius: 14px; margin-bottom: 16px;
+      border: 1px solid var(--border);
+    }
+    .macro-risk-banner.green { background: rgba(52,199,89,0.08); border-color: rgba(52,199,89,0.3); }
+    .macro-risk-banner.yellow { background: rgba(255,204,0,0.08); border-color: rgba(255,204,0,0.3); }
+    .macro-risk-banner.red { background: rgba(255,69,58,0.08); border-color: rgba(255,69,58,0.3); }
+    .macro-risk-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+    .macro-risk-banner.green .macro-risk-dot { background: #34c759; }
+    .macro-risk-banner.yellow .macro-risk-dot { background: #fc0; }
+    .macro-risk-banner.red .macro-risk-dot { background: #ff453a; }
+    .macro-risk-label { font-size: 13px; font-weight: 500; color: var(--text-1); }
+    .macro-risk-summary { font-size: 12px; color: var(--text-2); margin-left: auto; }
+    .macro-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+    }
+    @media (max-width: 768px) { .macro-grid { grid-template-columns: 1fr; } }
+    .macro-metric {
+      background: var(--bg-raised); border: 1px solid var(--border);
+      border-radius: 14px; padding: 16px;
+    }
+    .macro-metric-label { font-size: 11px; color: var(--text-3); text-transform: uppercase; letter-spacing: .04em; margin-bottom: 6px; }
+    .macro-metric-value { font-size: 22px; font-weight: 600; color: var(--text-1); }
+    .macro-metric-delta { font-size: 12px; margin-left: 6px; }
+    .macro-metric-delta.up { color: #ff453a; }
+    .macro-metric-delta.down { color: #34c759; }
+    .macro-metric-delta.flat { color: var(--text-3); }
+    .macro-metric-delta.good-up { color: #34c759; }
+    .macro-metric-note { font-size: 12px; color: var(--text-2); margin-top: 6px; line-height: 1.4; }
+    .macro-bottom-line {
+      background: var(--bg-raised); border: 1px solid var(--border);
+      border-radius: 14px; padding: 16px; margin-top: 16px;
+    }
+    .macro-bottom-line-title { font-size: 12px; color: var(--text-3); text-transform: uppercase; letter-spacing: .04em; margin-bottom: 8px; }
+    .macro-bottom-line-text { font-size: 14px; color: var(--text-1); line-height: 1.5; }
 
     /* ========================================
        SYSTEM TAB
@@ -8296,6 +8333,13 @@
             <span class="radar-section-title">Market Pulse</span>
           </div>
           <div id="radar-market" class="radar-grid"></div>
+        </div>
+        <div class="radar-section reveal">
+          <div class="radar-section-header" data-collapse="radar-macro">
+            <svg class="analytics-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4,6 8,10 12,6"/></svg>
+            <span class="radar-section-title">Macro & Geopolitical</span>
+          </div>
+          <div id="radar-macro"></div>
         </div>
         <div class="radar-actions reveal" id="radar-actions-section" style="display:none">
           <div class="radar-actions-title">Action Items</div>
@@ -12885,14 +12929,78 @@
         ts.textContent = 'Last updated: ' + new Date(radarData.updatedAt).toLocaleString();
       }
 
+      // Macro section
+      var macroContainer = document.getElementById('radar-macro');
+      if (macroContainer && radarData.macro) {
+        hasData = true;
+        renderMacroRadar(macroContainer, radarData.macro);
+      }
+
       // Show/hide placeholder
       document.getElementById('radar-placeholder').style.display = hasData ? 'none' : 'flex';
       if (hasData) {
-        ['radar-ofm', 'radar-tools', 'radar-market'].forEach(function(id) {
-          document.getElementById(id).style.display = 'grid';
+        ['radar-ofm', 'radar-tools', 'radar-market', 'radar-macro'].forEach(function(id) {
+          var el = document.getElementById(id);
+          if (el && el.innerHTML.trim()) el.style.display = id === 'radar-macro' ? 'block' : 'grid';
         });
         document.getElementById('radar-timestamp').style.display = 'block';
       }
+    }
+
+    function renderMacroRadar(container, macro) {
+      var riskColors = { green: 'green', yellow: 'yellow', red: 'red' };
+      var riskLabels = { green: '🟢 LOW RISK', yellow: '🟡 ELEVATED', red: '🔴 HIGH RISK' };
+      var risk = macro.risk_level || 'yellow';
+      var html = '';
+
+      // Risk banner
+      html += '<div class="macro-risk-banner ' + (riskColors[risk] || 'yellow') + '">' +
+        '<div class="macro-risk-dot"></div>' +
+        '<div class="macro-risk-label">' + (riskLabels[risk] || 'UNKNOWN') + '</div>' +
+        '<div class="macro-risk-summary">' + escapeHtml(macro.risk_summary || '') + '</div>' +
+      '</div>';
+
+      // Metrics grid
+      var metrics = macro.metrics || [];
+      if (metrics.length) {
+        html += '<div class="macro-grid">';
+        metrics.forEach(function(m) {
+          var deltaClass = m.delta_direction || 'flat';
+          var arrow = { up: '↑', down: '↓', flat: '→' }[deltaClass] || '';
+          html += '<div class="macro-metric">' +
+            '<div class="macro-metric-label">' + escapeHtml(m.label || '') + '</div>' +
+            '<div class="macro-metric-value">' + escapeHtml(m.value || '') +
+              '<span class="macro-metric-delta ' + deltaClass + '">' + arrow + ' ' + escapeHtml(m.delta || '') + '</span>' +
+            '</div>' +
+            (m.note ? '<div class="macro-metric-note">' + escapeHtml(m.note) + '</div>' : '') +
+          '</div>';
+        });
+        html += '</div>';
+      }
+
+      // Geopolitical cards
+      var geo = macro.geopolitical || [];
+      if (geo.length) {
+        html += '<div class="radar-grid" style="margin-top:16px">';
+        geo.forEach(function(item) {
+          html += '<div class="radar-card">' +
+            '<div class="radar-card-title">' + escapeHtml(item.title || '') + '</div>' +
+            (item.source ? '<div class="radar-card-source"><a href="' + escapeHtml(item.url || '#') + '" target="_blank">' + escapeHtml(item.source) + '</a></div>' : '') +
+            '<div class="radar-card-summary">' + escapeHtml(item.summary || '') + '</div>' +
+          '</div>';
+        });
+        html += '</div>';
+      }
+
+      // Bottom line
+      if (macro.bottom_line) {
+        html += '<div class="macro-bottom-line">' +
+          '<div class="macro-bottom-line-title">Bottom Line</div>' +
+          '<div class="macro-bottom-line-text">' + escapeHtml(macro.bottom_line) + '</div>' +
+        '</div>';
+      }
+
+      container.innerHTML = html;
     }
 
     // Collapse handlers for radar sections
