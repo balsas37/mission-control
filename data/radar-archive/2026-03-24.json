@@ -1,0 +1,94 @@
+{
+  "updatedAt": "2026-03-24T12:00:00Z",
+  "ofm": [
+    {
+      "title": "OnlyMonster and Supercreator are the dominant AI OFM management tools in 2026.",
+      "source": "onlymonster.ai",
+      "url": "https://onlymonster.ai/",
+      "summary": "OnlyMonster claims to have outpaced all competitors during Beta; Supercreator offers full AI account operation when implemented correctly. |"
+    },
+    {
+      "title": "Fanvue has doubled down on AI with a dedicated platform.",
+      "source": "www.fanvue.com",
+      "url": "https://www.fanvue.com/pages/fanvue-ai",
+      "summary": "Features include Voice AI for automated fan replies and Analytics AI for account optimization."
+    },
+    {
+      "title": "AI influencer market is now worth $6-8 billion",
+      "source": "www.imagine.art",
+      "url": "https://www.imagine.art/blogs/how-ai-influencers-make-money",
+      "summary": "and forecasted to grow through 2026. Multiple guides published in early 2026 confirming the business model is maturing."
+    },
+    {
+      "title": "OnlyFans tightened AI/deepfake detection in 2026.",
+      "source": "www.sirency.com",
+      "url": "https://www.sirency.com/blog/onlyfans-policy-updates-2026-ai-deepfakes-and-rules",
+      "summary": "Platform now has explicit policies and detection tools for AI-generated content \u2014 transparency with fans is critical."
+    },
+    {
+      "title": "AI agencies are moving to portfolio models",
+      "source": "buttlercamlord.com",
+      "url": "https://buttlercamlord.com/create-fanvue-ai-model-business/3017",
+      "summary": "\u2014 building multiple AI models under one digital talent agency rather than single-character plays."
+    }
+  ],
+  "tools": [
+    {
+      "title": "OpenClaw v2026.3.22-beta.1 just shipped",
+      "source": "releasebot.io",
+      "url": "https://releasebot.io/updates/openclaw",
+      "summary": "with new plugin SDK, ClawHub-first installs, Matrix support, and stronger security hardening. Major shift toward production-ready reliability."
+    },
+    {
+      "title": "Claude Code released hooks system",
+      "source": "code.claude.com",
+      "url": "https://code.claude.com/docs/en/hooks-guide",
+      "summary": "for deterministic workflow automation \u2014 enforce project rules, automate repetitive tasks, integrate with existing tools. This is the path to reliable agent workflows."
+    },
+    {
+      "title": "ContextEngine plugin interface added",
+      "source": "eu.36kr.com",
+      "url": "https://eu.36kr.com/en/p/3715160552878469",
+      "summary": "\u2014 AI memory can now be freely plugged and unplugged, allowing custom context management. 200+ bugs fixed in this release."
+    },
+    {
+      "title": "ClawHub skill system is live",
+      "source": "github.com",
+      "url": "https://github.com/openclaw/openclaw/releases",
+      "summary": "\u2014 native `openclaw skills search|install|update` flows with tracked update metadata. Skills now first-class citizens."
+    }
+  ],
+  "market": [
+    {
+      "title": "Puerto Escondido real estate accelerating hard.",
+      "source": "realestate.puerto-escondido.mx",
+      "url": "https://realestate.puerto-escondido.mx/puerto-escondido-real-estate-market-trends-2026-investment-opportunities-on-oaxacas-pacific-coast/",
+      "summary": "La Punta transforming with boutique developments; United Airlines added Houston route April 2025; more US/Canada routes planned for 2026."
+    },
+    {
+      "title": "Digital nomad infrastructure deepening in PE.",
+      "source": "realestate.puerto-escondido.mx",
+      "url": "https://realestate.puerto-escondido.mx/puerto-escondido-rental-market-analysis-2026-occupancy-trends-investment-outlook",
+      "summary": "Coworking expansion, improved internet, long-stay demand becoming \"most valuable occupancy stabilizer\" for rentals."
+    },
+    {
+      "title": "Tulum ATV competition still fragmented.",
+      "source": "www.tulumatvrental.com",
+      "url": "https://www.tulumatvrental.com/",
+      "summary": "tulumatvrental.com claims \"no competitors\" (aggressive positioning); tulum-tours.com offering $55 USD rentals. Lagoon Company's SEO holding strong. |"
+    },
+    {
+      "title": "Earth USA 2026 conference",
+      "source": "www.earthusa.org",
+      "url": "https://www.earthusa.org",
+      "summary": "\u2014 September 18-20 in Santa Fe, NM. Adobe, rammed earth, compressed earth block focus. Good signal for Beno's construction timing."
+    },
+    {
+      "title": "Los Tamarindos (PE area) infrastructure upgrades announced",
+      "source": "realestate.puerto-escondido.mx",
+      "url": "https://realestate.puerto-escondido.mx/los-tamarindos-puerto-escondido-up-and-coming-neighborhood-guide/",
+      "summary": "\u2014 water system, road paving, drainage improvements for 2025-2026. Municipality investing in growth zones."
+    }
+  ],
+  "actions": []
+}
