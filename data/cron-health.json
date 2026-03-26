@@ -7,17 +7,17 @@
       "description": "",
       "agent": "main",
       "enabled": true,
-      "lastStatus": "error",
-      "lastRun": "2026-03-25T02:00:00.013000+00:00",
-      "nextRun": "2026-03-26T02:00:00+00:00",
-      "lastDuration": 32627,
-      "consecutiveErrors": 3,
-      "lastError": "\u26a0\ufe0f \u2709\ufe0f Message: `260` failed: Call to 'sendMessage' failed! (403: Forbidden: bot can't initiate conversation with a user)",
+      "lastStatus": "ok",
+      "lastRun": "2026-03-26T02:36:30.404000+00:00",
+      "nextRun": "2026-03-27T02:00:00+00:00",
+      "lastDuration": 50788,
+      "consecutiveErrors": 0,
+      "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-25T02:00:00.013000+00:00",
-          "status": "error",
-          "duration": 32627
+          "ts": "2026-03-26T02:36:30.404000+00:00",
+          "status": "ok",
+          "duration": 50788
         }
       ]
     },
@@ -29,16 +29,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-24T13:00:00.025000+00:00",
-      "nextRun": "2026-03-25T13:00:00+00:00",
-      "lastDuration": 68817,
+      "lastRun": "2026-03-25T13:00:00.014000+00:00",
+      "nextRun": "2026-03-26T13:00:00+00:00",
+      "lastDuration": 61358,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-24T13:00:00.025000+00:00",
+          "ts": "2026-03-25T13:00:00.014000+00:00",
           "status": "ok",
-          "duration": 68817
+          "duration": 61358
         }
       ]
     },
@@ -50,16 +50,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-25T10:01:07.227000+00:00",
-      "nextRun": "2026-03-25T11:01:07.213000+00:00",
-      "lastDuration": 30237,
+      "lastRun": "2026-03-26T10:01:07.243000+00:00",
+      "nextRun": "2026-03-26T11:01:07.213000+00:00",
+      "lastDuration": 33883,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-25T10:01:07.227000+00:00",
+          "ts": "2026-03-26T10:01:07.243000+00:00",
           "status": "ok",
-          "duration": 30237
+          "duration": 33883
         }
       ]
     },
@@ -71,16 +71,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-25T03:30:00.022000+00:00",
-      "nextRun": "2026-03-25T13:30:00+00:00",
-      "lastDuration": 23706,
+      "lastRun": "2026-03-26T03:30:00.026000+00:00",
+      "nextRun": "2026-03-26T13:30:00+00:00",
+      "lastDuration": 11337,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-25T03:30:00.022000+00:00",
+          "ts": "2026-03-26T03:30:00.026000+00:00",
           "status": "ok",
-          "duration": 23706
+          "duration": 11337
         }
       ]
     },
@@ -128,16 +128,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-24T11:50:00.017000+00:00",
-      "nextRun": "2026-03-25T11:50:00+00:00",
-      "lastDuration": 64872,
+      "lastRun": "2026-03-25T11:50:00.009000+00:00",
+      "nextRun": "2026-03-26T11:50:00+00:00",
+      "lastDuration": 64545,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-24T11:50:00.017000+00:00",
+          "ts": "2026-03-25T11:50:00.009000+00:00",
           "status": "ok",
-          "duration": 64872
+          "duration": 64545
         }
       ]
     },
@@ -149,16 +149,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-25T06:00:00.019000+00:00",
-      "nextRun": "2026-03-26T06:00:00+00:00",
-      "lastDuration": 353940,
+      "lastRun": "2026-03-26T06:00:00.044000+00:00",
+      "nextRun": "2026-03-27T06:00:00+00:00",
+      "lastDuration": 269005,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-25T06:00:00.019000+00:00",
+          "ts": "2026-03-26T06:00:00.044000+00:00",
           "status": "ok",
-          "duration": 353940
+          "duration": 269005
         }
       ]
     },
@@ -170,18 +170,33 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-25T02:30:00.013000+00:00",
-      "nextRun": "2026-03-26T02:30:00+00:00",
-      "lastDuration": 5702,
+      "lastRun": "2026-03-26T02:35:37.907000+00:00",
+      "nextRun": "2026-03-27T02:30:00+00:00",
+      "lastDuration": 52497,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-25T02:30:00.013000+00:00",
+          "ts": "2026-03-26T02:35:37.907000+00:00",
           "status": "ok",
-          "duration": 5702
+          "duration": 52497
         }
       ]
+    },
+    {
+      "id": "f7d28733-9ef9-45fd-81d0-d2bcbbcde899",
+      "name": "market-radar-macro",
+      "schedule": "0 7 * * 1",
+      "description": "",
+      "agent": "main",
+      "enabled": true,
+      "lastStatus": "unknown",
+      "lastRun": null,
+      "nextRun": "2026-03-30T12:00:00+00:00",
+      "lastDuration": 0,
+      "consecutiveErrors": 0,
+      "lastError": "",
+      "runs": []
     },
     {
       "id": "dba1a320-ee2d-4df4-bf47-3742676fb6c6",
@@ -191,16 +206,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-24T11:00:00.032000+00:00",
-      "nextRun": "2026-03-25T11:00:00+00:00",
-      "lastDuration": 24343,
+      "lastRun": "2026-03-25T11:00:00.014000+00:00",
+      "nextRun": "2026-03-26T11:00:00+00:00",
+      "lastDuration": 18112,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-24T11:00:00.032000+00:00",
+          "ts": "2026-03-25T11:00:00.014000+00:00",
           "status": "ok",
-          "duration": 24343
+          "duration": 18112
         }
       ]
     },
@@ -263,16 +278,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-24T11:45:00.025000+00:00",
-      "nextRun": "2026-03-25T11:45:00+00:00",
-      "lastDuration": 84142,
+      "lastRun": "2026-03-25T11:45:00.008000+00:00",
+      "nextRun": "2026-03-26T11:45:00+00:00",
+      "lastDuration": 37761,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-24T11:45:00.025000+00:00",
+          "ts": "2026-03-25T11:45:00.008000+00:00",
           "status": "ok",
-          "duration": 84142
+          "duration": 37761
         }
       ]
     },
@@ -284,16 +299,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-25T04:30:00.016000+00:00",
-      "nextRun": "2026-03-26T04:30:00+00:00",
-      "lastDuration": 146536,
+      "lastRun": "2026-03-26T04:30:00.028000+00:00",
+      "nextRun": "2026-03-27T04:30:00+00:00",
+      "lastDuration": 289755,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-25T04:30:00.016000+00:00",
+          "ts": "2026-03-26T04:30:00.028000+00:00",
           "status": "ok",
-          "duration": 146536
+          "duration": 289755
         }
       ]
     },
@@ -320,16 +335,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-24T17:00:33.582000+00:00",
-      "nextRun": "2026-03-25T17:00:00+00:00",
-      "lastDuration": 84225,
+      "lastRun": "2026-03-25T17:01:18.664000+00:00",
+      "nextRun": "2026-03-26T17:00:00+00:00",
+      "lastDuration": 78902,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-24T17:00:33.582000+00:00",
+          "ts": "2026-03-25T17:01:18.664000+00:00",
           "status": "ok",
-          "duration": 84225
+          "duration": 78902
         }
       ]
     },
@@ -362,16 +377,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-25T04:00:00.015000+00:00",
-      "nextRun": "2026-03-26T04:00:00+00:00",
-      "lastDuration": 100832,
+      "lastRun": "2026-03-26T04:00:00.025000+00:00",
+      "nextRun": "2026-03-27T04:00:00+00:00",
+      "lastDuration": 144584,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-25T04:00:00.015000+00:00",
+          "ts": "2026-03-26T04:00:00.025000+00:00",
           "status": "ok",
-          "duration": 100832
+          "duration": 144584
         }
       ]
     },
@@ -383,16 +398,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-24T23:00:35.628000+00:00",
-      "nextRun": "2026-03-25T23:00:00+00:00",
-      "lastDuration": 6494,
+      "lastRun": "2026-03-26T02:32:54.313000+00:00",
+      "nextRun": "2026-03-26T23:00:00+00:00",
+      "lastDuration": 120202,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-24T23:00:35.628000+00:00",
+          "ts": "2026-03-26T02:32:54.313000+00:00",
           "status": "ok",
-          "duration": 6494
+          "duration": 120202
         }
       ]
     },
@@ -404,16 +419,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-25T07:00:00.021000+00:00",
-      "nextRun": "2026-03-26T07:00:00+00:00",
-      "lastDuration": 182764,
+      "lastRun": "2026-03-26T07:00:00.021000+00:00",
+      "nextRun": "2026-03-27T07:00:00+00:00",
+      "lastDuration": 180732,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-25T07:00:00.021000+00:00",
+          "ts": "2026-03-26T07:00:00.021000+00:00",
           "status": "ok",
-          "duration": 182764
+          "duration": 180732
         }
       ]
     },
@@ -425,16 +440,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-25T05:00:11.150000+00:00",
-      "nextRun": "2026-03-25T11:00:00+00:00",
-      "lastDuration": 28683,
+      "lastRun": "2026-03-26T05:00:12.790000+00:00",
+      "nextRun": "2026-03-26T11:00:00+00:00",
+      "lastDuration": 15578,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-25T05:00:11.150000+00:00",
+          "ts": "2026-03-26T05:00:12.790000+00:00",
           "status": "ok",
-          "duration": 28683
+          "duration": 15578
         }
       ]
     },
@@ -446,16 +461,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-25T05:00:00.026000+00:00",
-      "nextRun": "2026-03-25T11:00:00+00:00",
-      "lastDuration": 11124,
+      "lastRun": "2026-03-26T05:00:00.029000+00:00",
+      "nextRun": "2026-03-26T11:00:00+00:00",
+      "lastDuration": 12761,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-25T05:00:00.026000+00:00",
+          "ts": "2026-03-26T05:00:00.029000+00:00",
           "status": "ok",
-          "duration": 11124
+          "duration": 12761
         }
       ]
     },
@@ -467,16 +482,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-25T05:03:52.770000+00:00",
-      "nextRun": "2026-03-25T11:03:52.724000+00:00",
-      "lastDuration": 17100,
+      "lastRun": "2026-03-26T05:03:52.744000+00:00",
+      "nextRun": "2026-03-26T11:03:52.724000+00:00",
+      "lastDuration": 11054,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-25T05:03:52.770000+00:00",
+          "ts": "2026-03-26T05:03:52.744000+00:00",
           "status": "ok",
-          "duration": 17100
+          "duration": 11054
         }
       ]
     },
@@ -487,17 +502,17 @@
       "description": "",
       "agent": "main",
       "enabled": true,
-      "lastStatus": "error",
-      "lastRun": "2026-03-25T07:30:00.030000+00:00",
-      "nextRun": "2026-03-26T07:30:00+00:00",
-      "lastDuration": 177796,
-      "consecutiveErrors": 1,
-      "lastError": "\u26a0\ufe0f \ud83d\udcdd Edit: `in ~/.openclaw/workspace/memory/04_decisions/tax-exemption-verification.md` failed: Missing required parameter: newText (newText or new_string). Supply correct parameters before retrying.",
+      "lastStatus": "ok",
+      "lastRun": "2026-03-26T07:30:00.029000+00:00",
+      "nextRun": "2026-03-27T07:30:00+00:00",
+      "lastDuration": 147424,
+      "consecutiveErrors": 0,
+      "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-25T07:30:00.030000+00:00",
-          "status": "error",
-          "duration": 177796
+          "ts": "2026-03-26T07:30:00.029000+00:00",
+          "status": "ok",
+          "duration": 147424
         }
       ]
     },
@@ -609,18 +624,8 @@
   ],
   "errors": [
     {
-      "job": "bianca-evening-routine",
-      "error": "\u26a0\ufe0f \u2709\ufe0f Message: `260` failed: Call to 'sendMessage' failed! (403: Forbidden: bot can't initiate conversation with a user)",
-      "count": 3
-    },
-    {
       "job": "missed-commitments-brief",
       "error": "\u26a0\ufe0f \u2709\ufe0f Message: `33` failed: Action send requires a target.",
-      "count": 1
-    },
-    {
-      "job": "vault-reweave",
-      "error": "\u26a0\ufe0f \ud83d\udcdd Edit: `in ~/.openclaw/workspace/memory/04_decisions/tax-exemption-verification.md` failed: Missing required parameter: newText (newText or new_string). Supply correct parameters before retrying.",
       "count": 1
     },
     {
