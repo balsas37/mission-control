@@ -1,6 +1,54 @@
 {
-  "generated": "2026-03-26T11:00:32.584168+00:00",
+  "generated": "2026-03-26T16:42:40.910789+00:00",
   "records": [
+    {
+      "id": "recnhLqflqapJ",
+      "goal": "Train LoRA v1 and v2 for Astrid",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": "2025-04-05",
+      "business": "OFM Agency",
+      "notes": "P1 Non-Negotiable. v1 from 293 reviewed images. v2: generate 20 with v1 \u2192 face swap \u2192 train. DRI: Beno.",
+      "relatedTargetIds": [
+        "rec9hp0Sq9BOz"
+      ]
+    },
+    {
+      "id": "recIFO2qGyZAv",
+      "goal": "Instagram account created and in warmup",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": "2025-04-05",
+      "business": "OFM Agency",
+      "notes": "P1 Non-Negotiable. New phone + SIM, 48hr silence, then gradual warmup. DRI: Beno.",
+      "relatedTargetIds": [
+        "rec9hp0Sq9BOz"
+      ]
+    },
+    {
+      "id": "recQt9OvFwIuy",
+      "goal": "GeeLark 5 cloud phones provisioned + proxied",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": "2025-04-05",
+      "business": "OFM Agency",
+      "notes": "P1 Non-Negotiable. $0.38/day each = $57/month. PacketStream residential proxies configured. DRI: Beno + Fangs.",
+      "relatedTargetIds": [
+        "recRIoqRRY4ND"
+      ]
+    },
+    {
+      "id": "recrbiXHUObqB",
+      "goal": "Threads + Snapchat live and posting",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": "2025-04-05",
+      "business": "OFM Agency",
+      "notes": "P2 High Value. Threads via IG login. Snapchat flirty profile. DRI: Lux.",
+      "relatedTargetIds": [
+        "rec9hp0Sq9BOz"
+      ]
+    },
     {
       "id": "recfVanIIuxVH",
       "goal": "One-pager pitch document",
@@ -11,6 +59,54 @@
       "notes": "Must-have. Without this, no pitch to David or anyone.",
       "relatedTargetIds": [
         "recM13Gy0SEpX"
+      ]
+    },
+    {
+      "id": "recgTAkoyM7Bx",
+      "goal": "Fanvue live with 20+ posts + welcome sequence",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": "2025-04-08",
+      "business": "OFM Agency",
+      "notes": "P1 Non-Negotiable. Free + VIP pages. 20+ feed posts, welcome drip (3-7 day automated), auto-PPV ready. DRI: Beno + Kat.",
+      "relatedTargetIds": [
+        "recCVUDNb78cE"
+      ]
+    },
+    {
+      "id": "recnc1tDjYaJv",
+      "goal": "Reddit aged account acquired + warmup started",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": "2025-04-08",
+      "business": "OFM Agency",
+      "notes": "P2 High Value. Aged account 2-3K karma, Dolphin anti-detect. DRI: Beno.",
+      "relatedTargetIds": [
+        "rec9hp0Sq9BOz"
+      ]
+    },
+    {
+      "id": "recuXclznbPGD",
+      "goal": "5 TikTok accounts created on GeeLark",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": "2025-04-08",
+      "business": "OFM Agency",
+      "notes": "P2 High Value. On cloud phones, warmup bot deployed (github.com/l-portet/tiktok-warmup-bot). DRI: Fangs.",
+      "relatedTargetIds": [
+        "receIoeN50XM4"
+      ]
+    },
+    {
+      "id": "recz5FGWHE86E",
+      "goal": "astridlindqvist.com domain registered + redirect",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": "2025-04-08",
+      "business": "OFM Agency",
+      "notes": "P3 Nice to Have. Redirect to Fanvue page. $10/year. DRI: Kat.",
+      "relatedTargetIds": [
+        "recCVUDNb78cE"
       ]
     },
     {
@@ -35,6 +131,66 @@
       "notes": "Must-have. Setup Only / Setup+Management / Setup+Management+Strategy. Needs Beno input on exact numbers.",
       "relatedTargetIds": [
         "recM13Gy0SEpX"
+      ]
+    },
+    {
+      "id": "recN5saoaRMV7",
+      "goal": "Generate content library (100+ images, 10+ videos)",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": "2025-04-12",
+      "business": "OFM Agency",
+      "notes": "P1 Non-Negotiable. Across categories: lifestyle, bikini, lingerie, casual, selfie. Videos via Seedance + Kling + Wan 2.1. DRI: Beno + Lux.",
+      "relatedTargetIds": [
+        "rec9hp0Sq9BOz"
+      ]
+    },
+    {
+      "id": "rec2qrDOm13Xi",
+      "goal": "OBS \u2192 RTSP \u2192 phone camera spoof tested",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": "2025-04-12",
+      "business": "OFM Agency",
+      "notes": "P2 High Value. OBS+Aitum Vertical, MediaMTX RTSP server, Larix Broadcaster receiving feed. DRI: Beno.",
+      "relatedTargetIds": [
+        "receIoeN50XM4"
+      ]
+    },
+    {
+      "id": "recFW3hImWrJS",
+      "goal": "Aitable OFM Operations database configured",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": "2025-04-12",
+      "business": "OFM Agency",
+      "notes": "P2 High Value. Fan segmentation, revenue tracking, account status. DRI: Kat.",
+      "relatedTargetIds": [
+        "rec9hp0Sq9BOz"
+      ]
+    },
+    {
+      "id": "rec3Kk82bSffu",
+      "goal": "AI chatter infrastructure built and trained",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": "2025-04-15",
+      "business": "OFM Agency",
+      "notes": "P1 Non-Negotiable. LLM API + conversation management + Fanvue integration. Diamond Standard 12-step + Jaka enhanced scripts. PPV pricing ladder in decision tree. DRI: Beno + Siren.",
+      "relatedTargetIds": [
+        "reciTVUjfvrsP"
+      ]
+    },
+    {
+      "id": "reccvzAX67vPM",
+      "goal": "3 pre-recorded livestream videos generated",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": "2025-04-15",
+      "business": "OFM Agency",
+      "notes": "P2 High Value. 30-45 min each ignore style. AI-generated Astrid from LoRA + i2v pipeline. DRI: Beno + Lux.",
+      "relatedTargetIds": [
+        "receIoeN50XM4"
       ]
     },
     {
@@ -74,6 +230,18 @@
       ]
     },
     {
+      "id": "recjLn5kXt11H",
+      "goal": "Instagram boosting started ($11-15/day)",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": "2025-04-22",
+      "business": "OFM Agency",
+      "notes": "P3 Nice to Have. Paid promotion to accelerate follower growth. DRI: Vex.",
+      "relatedTargetIds": [
+        "rec9hp0Sq9BOz"
+      ]
+    },
+    {
       "id": "rec7GKFjw6qfa",
       "goal": "OpenClaw config template for clients",
       "status": "Not Started",
@@ -107,6 +275,18 @@
       "notes": "Should-have. Daily Pulse, Weekly Ops Review, Monthly Ops Review cron templates.",
       "relatedTargetIds": [
         "recpR43Ypq9XU"
+      ]
+    },
+    {
+      "id": "recCNealfWDNk",
+      "goal": "First ActivePieces automation (content scheduler)",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": "2025-04-29",
+      "business": "OFM Agency",
+      "notes": "P3 Nice to Have. Self-hosted, free. Automate content posting pipeline. DRI: Beno.",
+      "relatedTargetIds": [
+        "rec9hp0Sq9BOz"
       ]
     },
     {
@@ -1382,126 +1562,6 @@
       ]
     },
     {
-      "id": "recaId9vY57Ui",
-      "goal": "Research AliRemote.com phone farm setup \u2014 confirm compatible phone models, Android versions, and account management workflow",
-      "status": "Not Started",
-      "month": "2026-04",
-      "dueDate": null,
-      "business": "OFM Agency",
-      "notes": "",
-      "relatedTargetIds": [
-        "recRIoqRRY4ND"
-      ]
-    },
-    {
-      "id": "rec37DmoUTXkq",
-      "goal": "Determine optimal phone model and Android version for AliRemote \u2014 identify best-value bulk purchase source",
-      "status": "Not Started",
-      "month": "2026-04",
-      "dueDate": null,
-      "business": "OFM Agency",
-      "notes": "",
-      "relatedTargetIds": [
-        "recRIoqRRY4ND"
-      ]
-    },
-    {
-      "id": "recZHoWwf6EUN",
-      "goal": "Purchase first 5 phones and complete AliRemote test setup \u2014 validate account creation workflow before bulk purchase",
-      "status": "Not Started",
-      "month": "2026-04",
-      "dueDate": null,
-      "business": "OFM Agency",
-      "notes": "",
-      "relatedTargetIds": [
-        "recRIoqRRY4ND"
-      ]
-    },
-    {
-      "id": "recz0f0Cpkgma",
-      "goal": "Write step-by-step internal guide for phone farm setup: AliRemote configuration, proxy assignment, and account warmup protocol",
-      "status": "Not Started",
-      "month": "2026-04",
-      "dueDate": null,
-      "business": "OFM Agency",
-      "notes": "",
-      "relatedTargetIds": [
-        "recRIoqRRY4ND"
-      ]
-    },
-    {
-      "id": "recdioXGcsb7q",
-      "goal": "Set up SIM/proxy rotation system to ensure unique residential IP per account \u2014 verify no IP overlap across accounts",
-      "status": "Not Started",
-      "month": "2026-04",
-      "dueDate": null,
-      "business": "OFM Agency",
-      "notes": "",
-      "relatedTargetIds": [
-        "recRIoqRRY4ND"
-      ]
-    },
-    {
-      "id": "rec8OyEjQ9FXT",
-      "goal": "Create 3 Instagram accounts per model on first 5 phones following Jacob 12-step warmup \u2014 confirm zero shadowbans",
-      "status": "Not Started",
-      "month": "2026-04",
-      "dueDate": null,
-      "business": "OFM Agency",
-      "notes": "",
-      "relatedTargetIds": [
-        "recRIoqRRY4ND"
-      ]
-    },
-    {
-      "id": "recp66FnDSWsi",
-      "goal": "Create 3 TikTok accounts per model on first 5 phones with proper warmup \u2014 confirm content posting works without restrictions",
-      "status": "Not Started",
-      "month": "2026-04",
-      "dueDate": null,
-      "business": "OFM Agency",
-      "notes": "",
-      "relatedTargetIds": [
-        "recRIoqRRY4ND"
-      ]
-    },
-    {
-      "id": "recCfKtUj4vh6",
-      "goal": "Purchase remaining 15 phones after successful 5-phone pilot \u2014 verify bulk delivery and setup at scale",
-      "status": "Not Started",
-      "month": "2026-04",
-      "dueDate": null,
-      "business": "OFM Agency",
-      "notes": "",
-      "relatedTargetIds": [
-        "recRIoqRRY4ND"
-      ]
-    },
-    {
-      "id": "recdfcosSlCsk",
-      "goal": "Build full account creation assembly line: create 3 accounts per model across all 20 phones (60 total accounts)",
-      "status": "Not Started",
-      "month": "2026-04",
-      "dueDate": null,
-      "business": "OFM Agency",
-      "notes": "",
-      "relatedTargetIds": [
-        "recRIoqRRY4ND"
-      ]
-    },
-    {
-      "id": "recgAjCDhAoLz",
-      "goal": "Verify all 60 accounts active, warmed, and operational \u2014 confirm 20 phones online with AliRemote and accounts passing platform checks",
-      "status": "Not Started",
-      "month": "2026-04",
-      "dueDate": null,
-      "business": "OFM Agency",
-      "notes": "",
-      "relatedTargetIds": [
-        "recRIoqRRY4ND"
-      ]
-    },
-    {
       "id": "recjo8iLn6f3i",
       "goal": "Audit current Lagoon Google Ads account \u2014 document all active campaigns, ad groups, and identify which lack conversion data",
       "status": "Not Started",
@@ -1620,6 +1680,136 @@
       "relatedTargetIds": [
         "recXThPr3Z8io"
       ]
+    },
+    {
+      "id": "rec7S9iwffN8l",
+      "goal": "Train Astrid LoRA v1 \u2192 v2 production model",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": null,
+      "business": "OFM Agency",
+      "notes": "P1. Use 293 curated images. V2 = production quality.",
+      "relatedTargetIds": []
+    },
+    {
+      "id": "recGIN0noQaQa",
+      "goal": "Generate 100+ images + 10+ videos for content library",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": null,
+      "business": "OFM Agency",
+      "notes": "P1. Lifestyle, bikini, lingerie, casual, selfie.",
+      "relatedTargetIds": []
+    },
+    {
+      "id": "recuMSII4YHu9",
+      "goal": "Create all platform accounts",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": null,
+      "business": "OFM Agency",
+      "notes": "P1. Fanvue, IG, TikTok, Reddit, Threads, Snap. IG on mobile data.",
+      "relatedTargetIds": []
+    },
+    {
+      "id": "rec71Vsrf9QVR",
+      "goal": "Upload 20+ posts to Fanvue + welcome sequence",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": null,
+      "business": "OFM Agency",
+      "notes": "P1. Free + VIP pages. $5 entry.",
+      "relatedTargetIds": []
+    },
+    {
+      "id": "recgdNrOzReZd",
+      "goal": "Set up Aitable OFM Operations database",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": null,
+      "business": "OFM Agency",
+      "notes": "P1. Models, Content Pipeline, Fans, TikTok Accounts, Subreddits.",
+      "relatedTargetIds": []
+    },
+    {
+      "id": "rec7hxPORCOGF",
+      "goal": "Compile AI chatter training doc",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": null,
+      "business": "OFM Agency",
+      "notes": "P1. Diamond Standard 12-step + enhanced scripts + PPV ladder.",
+      "relatedTargetIds": []
+    },
+    {
+      "id": "reck4CRwXyw2Q",
+      "goal": "Register astridlindqvist.com + Linkme",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": null,
+      "business": "OFM Agency",
+      "notes": "P2. Domain redirect to Fanvue.",
+      "relatedTargetIds": []
+    },
+    {
+      "id": "rec4Az1YpfsG5",
+      "goal": "Provision 5 GeeLark phones + proxies",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": null,
+      "business": "OFM Agency",
+      "notes": "P2. $0.38/day. PacketStream.",
+      "relatedTargetIds": []
+    },
+    {
+      "id": "recpfsNPRm2ZJ",
+      "goal": "Set up Dolphin browser for Reddit",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": null,
+      "business": "OFM Agency",
+      "notes": "P2. Free tier. Multi-account.",
+      "relatedTargetIds": []
+    },
+    {
+      "id": "recNZZ2xzf9tR",
+      "goal": "Plan 2-week content calendar",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": null,
+      "business": "OFM Agency",
+      "notes": "P2. Batch generate. Organize in Aitable.",
+      "relatedTargetIds": []
+    },
+    {
+      "id": "recQ5tfRJEBHU",
+      "goal": "Start Instagram warmup activities",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": null,
+      "business": "OFM Agency",
+      "notes": "P2. Light engagement only. No posting.",
+      "relatedTargetIds": []
+    },
+    {
+      "id": "recSanNV07CxT",
+      "goal": "Begin livestream testing (OBS\u2192RTSP\u2192phone)",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": null,
+      "business": "OFM Agency",
+      "notes": "P3. Test 1 device. Pre-recorded Astrid loops.",
+      "relatedTargetIds": []
+    },
+    {
+      "id": "rec5ro4DJxj1N",
+      "goal": "Research Bumble video selfie bypass",
+      "status": "Not Started",
+      "month": "2026-04",
+      "dueDate": null,
+      "business": "OFM Agency",
+      "notes": "P3. OBS/deepfake workarounds.",
+      "relatedTargetIds": []
     },
     {
       "id": "recEEkeCftz1x",

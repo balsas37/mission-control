@@ -1,6 +1,55 @@
 {
-  "generated": "2026-03-26T11:00:31.928672+00:00",
+  "generated": "2026-03-26T16:42:39.565191+00:00",
   "records": [
+    {
+      "id": "recziG0wYqnIB",
+      "target": "Launch Astrid Lindqvist \u2014 Full Platform Presence",
+      "status": "Not Started",
+      "quarter": "Q2 2026",
+      "dueDate": "2024-06-30",
+      "business": "OFM Agency",
+      "category": "",
+      "priority": 1,
+      "completion": 0,
+      "goalCount": 0,
+      "relatedGoalIds": [],
+      "notes": "LoRA v2 trained, 100+ images, Fanvue live, IG/TikTok/Reddit/Threads/Snap all active. Owner: Kat + Lux",
+      "otaLink": null
+    },
+    {
+      "id": "rec9hp0Sq9BOz",
+      "target": "Launch Astrid Lindqvist \u2014 Full Platform Presence",
+      "status": "Not Started",
+      "quarter": "2026-Q2",
+      "dueDate": "2025-06-30",
+      "business": "OFM Agency",
+      "category": "Launch",
+      "priority": 1,
+      "completion": 0,
+      "goalCount": 18,
+      "relatedGoalIds": [
+        "recEEkeCftz1x",
+        "reclkz7Jz8Teo",
+        "recEyKkcHO8At",
+        "receKCWSpB1HA",
+        "recAbMPQqDWKk",
+        "rec848KRRvHm6",
+        "recGpQ7UB5TyU",
+        "recv7r3Y8WSwa",
+        "rechNmE7wA6C6",
+        "recRgENLSJcde",
+        "recnhLqflqapJ",
+        "recN5saoaRMV7",
+        "recIFO2qGyZAv",
+        "recnc1tDjYaJv",
+        "recrbiXHUObqB",
+        "recFW3hImWrJS",
+        "recjLn5kXt11H",
+        "recCNealfWDNk"
+      ],
+      "notes": "Astrid live on Fanvue, Instagram, Reddit, Threads, Snapchat, TikTok with consistent daily content pipeline. LoRA v1 by Apr 3, v2 by Apr 5. Content library 100+ images by Apr 10, 10+ videos by Apr 12. All platforms posting daily by Apr 15. DRI: Beno (strategic), Lux (content), Kat (ops/compliance).",
+      "otaLink": "https://aitable.ai/workbench/dstrQFxozJm7crqQ1Z/viwwCBCqlAKkm/rec7lwJDUYz5X"
+    },
     {
       "id": "recM13Gy0SEpX",
       "target": "Build conversion materials (sales kit)",
@@ -22,6 +71,41 @@
       ],
       "notes": "One-pager pitch, proposal template, pricing sheet (3 tiers), scope of work, service agreement. Must complete before closing David.",
       "otaLink": "https://aitable.ai/workbench/dstrQFxozJm7crqQ1Z/viwwCBCqlAKkm/recyzIPbkzagZ"
+    },
+    {
+      "id": "recCVUDNb78cE",
+      "target": "First Revenue from Fanvue",
+      "status": "Not Started",
+      "quarter": "2026-Q2",
+      "dueDate": "2025-06-30",
+      "business": "OFM Agency",
+      "category": "Revenue",
+      "priority": 1,
+      "completion": 0,
+      "goalCount": 2,
+      "relatedGoalIds": [
+        "recgTAkoyM7Bx",
+        "recz5FGWHE86E"
+      ],
+      "notes": "First paying subscriber + first PPV sale. Welcome funnel converts followers. Min $500 in Q2. Welcome sequence Apr 7, first PPV Apr 10, first sub Apr 30, first PPV sale May 7, $500 cumulative Jun 30. DRI: Beno, Siren, Vex.",
+      "otaLink": null
+    },
+    {
+      "id": "reciTVUjfvrsP",
+      "target": "AI Chatter System Deployed on Diamond Standard",
+      "status": "Not Started",
+      "quarter": "2026-Q2",
+      "dueDate": "2025-06-30",
+      "business": "OFM Agency",
+      "category": "Product",
+      "priority": 1,
+      "completion": 0,
+      "goalCount": 1,
+      "relatedGoalIds": [
+        "rec3Kk82bSffu"
+      ],
+      "notes": "AI chatter on Diamond Standard 12-step SOP + Jaka scripts. 90%+ autonomous by Jun 15. PPV ladder: $10\u2192$15\u2192$19\u2192$19\u2192$54\u2192$90. Segmentation: Daddy/Name/Sissy/Virgin/Regular. Infra Apr 12, trained Apr 15, tested Apr 20, live Apr 25. DRI: Beno, Siren, Kat.",
+      "otaLink": null
     },
     {
       "id": "rece0f4J4MlnA",
@@ -125,6 +209,38 @@
       "otaLink": "https://aitable.ai/workbench/dstrQFxozJm7crqQ1Z/viwwCBCqlAKkm/recmxjOLI52K8"
     },
     {
+      "id": "recpIHr1Qjgaf",
+      "target": "First Revenue from Fanvue",
+      "status": "Not Started",
+      "quarter": "Q2 2026",
+      "dueDate": "2024-06-30",
+      "business": "OFM Agency",
+      "category": "",
+      "priority": 2,
+      "completion": 0,
+      "goalCount": 0,
+      "relatedGoalIds": [],
+      "notes": "First paying subscriber, first PPV sale, first tip. Target: $500-1500 by end of Q2. Owner: Siren",
+      "otaLink": null
+    },
+    {
+      "id": "recRIoqRRY4ND",
+      "target": "Phone Farm Deployed (GeeLark)",
+      "status": "Not Started",
+      "quarter": "2026-Q2",
+      "dueDate": "2025-06-30",
+      "business": "OFM Agency",
+      "category": "Infrastructure",
+      "priority": 2,
+      "completion": 0,
+      "goalCount": 1,
+      "relatedGoalIds": [
+        "recQt9OvFwIuy"
+      ],
+      "notes": "10+ GeeLark cloud phones ($0.38/day) with unique fingerprints, PacketStream proxies. Running IG slave + TikTok warmup accounts. NOT AliRemote. Scale: 5 by Apr 5, 10 by May 1, 15-20 by Jun 15. DRI: Beno (setup), Fangs (management), Kat (tracking).",
+      "otaLink": "https://aitable.ai/workbench/dstrQFxozJm7crqQ1Z/viwwCBCqlAKkm/recGOOUEdXG8p"
+    },
+    {
       "id": "recCkz7cDdlUM",
       "target": "File all CRETE Phase 1 construction permits and select contractor by May 2026",
       "status": "Not Started",
@@ -201,6 +317,25 @@
       "otaLink": "https://aitable.ai/workbench/dstrQFxozJm7crqQ1Z/viwwCBCqlAKkm/recsXBmIl1FJh"
     },
     {
+      "id": "receIoeN50XM4",
+      "target": "TikTok Livestream System Operational",
+      "status": "Not Started",
+      "quarter": "2026-Q2",
+      "dueDate": "2025-06-30",
+      "business": "OFM Agency",
+      "category": "Growth",
+      "priority": 2,
+      "completion": 0,
+      "goalCount": 3,
+      "relatedGoalIds": [
+        "recuXclznbPGD",
+        "rec2qrDOm13Xi",
+        "reccvzAX67vPM"
+      ],
+      "notes": "Pre-recorded Astrid videos as live on TikTok via OBS\u2192RTSP\u2192phone spoof. 3+ accounts at 1K+ followers. Nath: $3.5K/day in 33 days. OBS+Aitum Apr 7, 3 videos Apr 15, test live Apr 20, 3 accounts 1K+ May 15, regular schedule May 30. DRI: Beno, Fangs, Vex.",
+      "otaLink": null
+    },
+    {
       "id": "reczbf37TIhbM",
       "target": "Build AI model content pipeline: LoRA character trained, ComfyUI deployed, first Fanvue content live",
       "status": "In Progress",
@@ -249,6 +384,21 @@
       ],
       "notes": "WA bridge is live. Goal: zero revenue drop during Beno travel (Mar 8-13 Sirewall trip). Test: can Lagoon handle a full week without Beno? Measure: inquiries responded to, bookings confirmed, any incidents handled. This is a dry run for the May move to Puerto Escondido.",
       "otaLink": "https://aitable.ai/workbench/dstrQFxozJm7crqQ1Z/viwwCBCqlAKkm/recSoicaLJdlt"
+    },
+    {
+      "id": "recELWkBsa8F0",
+      "target": "TikTok Livestream System Operational",
+      "status": "Not Started",
+      "quarter": "Q2 2026",
+      "dueDate": "2024-06-30",
+      "business": "OFM Agency",
+      "category": "",
+      "priority": 3,
+      "completion": 0,
+      "goalCount": 0,
+      "relatedGoalIds": [],
+      "notes": "OBS\u2192RTSP\u2192iPhone camera spoof. Pre-recorded Astrid videos. 5+ accounts running lives. #1 growth channel. Owner: Vex + Fangs",
+      "otaLink": null
     },
     {
       "id": "recudENY2l3yl",
@@ -350,6 +500,21 @@
       "otaLink": "https://aitable.ai/workbench/dstrQFxozJm7crqQ1Z/viwwCBCqlAKkm/recUyDu3Uq82t"
     },
     {
+      "id": "recN2Q2FdIQ98",
+      "target": "AI Chatter System on Diamond Standard",
+      "status": "Not Started",
+      "quarter": "Q2 2026",
+      "dueDate": "2024-06-30",
+      "business": "OFM Agency",
+      "category": "",
+      "priority": 4,
+      "completion": 0,
+      "goalCount": 0,
+      "relatedGoalIds": [],
+      "notes": "AI chatters trained on Diamond Standard 12-step + Jaka enhanced scripts. 15%+ conversion rate. Filipino team as backup. Owner: Siren",
+      "otaLink": null
+    },
+    {
       "id": "recXThPr3Z8io",
       "target": "Implement Lagoon Google Ads conversion tracking and optimize for 30% more bookings",
       "status": "Not Started",
@@ -427,30 +592,19 @@
       "otaLink": "https://aitable.ai/workbench/dstrQFxozJm7crqQ1Z/viwwCBCqlAKkm/recGsOKVPnEgX"
     },
     {
-      "id": "rec9hp0Sq9BOz",
-      "target": "Scale to 3 AI models on Fanvue generating combined 500,000+ MXN/month MRR",
+      "id": "reczXjkaGtEGK",
+      "target": "Phone Farm Deployed (GeeLark)",
       "status": "Not Started",
-      "quarter": "2026-Q2",
-      "dueDate": "2026-07-01",
+      "quarter": "Q2 2026",
+      "dueDate": "2024-06-30",
       "business": "OFM Agency",
-      "category": "Project",
+      "category": "",
       "priority": 5,
       "completion": 0,
-      "goalCount": 10,
-      "relatedGoalIds": [
-        "recEEkeCftz1x",
-        "reclkz7Jz8Teo",
-        "recEyKkcHO8At",
-        "receKCWSpB1HA",
-        "recAbMPQqDWKk",
-        "rec848KRRvHm6",
-        "recGpQ7UB5TyU",
-        "recv7r3Y8WSwa",
-        "rechNmE7wA6C6",
-        "recRgENLSJcde"
-      ],
-      "notes": "AI-only models 2 and 3 using the proven template from model 1. Once first AI model hits 100K MXN/month, replicate: same LoRA pipeline, new character, new IG/TikTok accounts. Target: 3 models x 167K MXN/month avg = 500K/month combined. Use phone farm (AliRemote.com) for scale. Copy winning content formula.",
-      "otaLink": "https://aitable.ai/workbench/dstrQFxozJm7crqQ1Z/viwwCBCqlAKkm/rec7lwJDUYz5X"
+      "goalCount": 0,
+      "relatedGoalIds": [],
+      "notes": "GeeLark cloud phones. Start 5 devices, scale to 20+. TikTok warmup bot. PacketStream proxies. CRITICAL infrastructure. Owner: Fangs",
+      "otaLink": null
     },
     {
       "id": "rec01bW0D0r37",
@@ -471,32 +625,6 @@
       ],
       "notes": "Michael Palethorpe or network referral. Start warm conversation, schedule discovery if possible.",
       "otaLink": "https://aitable.ai/workbench/dstrQFxozJm7crqQ1Z/viwwCBCqlAKkm/recyTX126Rrrk"
-    },
-    {
-      "id": "recRIoqRRY4ND",
-      "target": "Build phone farm: 20 phones on AliRemote.com, 3 accounts per model",
-      "status": "Not Started",
-      "quarter": "2026-Q2",
-      "dueDate": "2026-07-01",
-      "business": "OFM Agency",
-      "category": "Process",
-      "priority": 6,
-      "completion": 0,
-      "goalCount": 10,
-      "relatedGoalIds": [
-        "recaId9vY57Ui",
-        "rec37DmoUTXkq",
-        "recZHoWwf6EUN",
-        "recz0f0Cpkgma",
-        "recdioXGcsb7q",
-        "rec8OyEjQ9FXT",
-        "recp66FnDSWsi",
-        "recCfKtUj4vh6",
-        "recdfcosSlCsk",
-        "recgAjCDhAoLz"
-      ],
-      "notes": "AliRemote.com: $50/phone remote real iPhone access. 20 phones. 3 IG + 3 TikTok accounts per model = 6 accounts/model. Phone farm enables scheduled posting at scale. TaskMagic/ActivePieces for automation. Start after first AI model proves profitable.",
-      "otaLink": "https://aitable.ai/workbench/dstrQFxozJm7crqQ1Z/viwwCBCqlAKkm/recGOOUEdXG8p"
     }
   ]
 }
