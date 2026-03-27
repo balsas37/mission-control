@@ -1,5 +1,5 @@
 {
-  "generated": "2026-03-27T21:52:14.342699+00:00",
+  "generated": "2026-03-27T21:56:04.867917+00:00",
   "records": [
     {
       "id": "rec9hp0Sq9BOz",
@@ -56,31 +56,6 @@
       ],
       "notes": "One-pager pitch, proposal template, pricing sheet (3 tiers), scope of work, service agreement. Must complete before closing David.",
       "otaLink": "https://aitable.ai/workbench/dstrQFxozJm7crqQ1Z/viwwCBCqlAKkm/recyzIPbkzagZ"
-    },
-    {
-      "id": "rece0f4J4MlnA",
-      "target": "Launch first AI model on Fanvue and generate first OFM revenue",
-      "status": "In Progress",
-      "quarter": "2026-Q1",
-      "dueDate": "2026-03-31",
-      "business": "OFM Agency",
-      "category": "Project",
-      "priority": 1,
-      "completion": 0,
-      "goalCount": 9,
-      "relatedGoalIds": [
-        "recTnUV79E1fC",
-        "rec7PjfBo6rKI",
-        "recf50CLLXPiV",
-        "recD2B17ZAKqi",
-        "recfWLekiBIRm",
-        "rectSULMDaGPT",
-        "reclnwqdyux3U",
-        "reccYjI8wbCps",
-        "recTQbZBz2WP4"
-      ],
-      "notes": "AI-FIRST: Primary focus is launching a LoRA-trained AI character on Fanvue, not a real creator. Real creators (Kevin) are secondary. Steps: design AI character \u2192 train LoRA \u2192 Fanvue account live \u2192 post first content \u2192 activate chatters \u2192 first paying subscriber. Target: first $1 revenue by March 21. Chatters monetize via PPV + tips. AI model = 100% agency revenue, no creator split.",
-      "otaLink": "https://aitable.ai/workbench/dstrQFxozJm7crqQ1Z/viwwCBCqlAKkm/recqnuFcBMsI8"
     },
     {
       "id": "recoY9hEmiVYo",
@@ -253,33 +228,6 @@
       "otaLink": "https://aitable.ai/workbench/dstrQFxozJm7crqQ1Z/viwwCBCqlAKkm/recN8vy6p0vql"
     },
     {
-      "id": "reczbf37TIhbM",
-      "target": "Build AI model content pipeline: LoRA character trained, ComfyUI deployed, first Fanvue content live",
-      "status": "In Progress",
-      "quarter": "2026-Q1",
-      "dueDate": "2026-03-31",
-      "business": "OFM Agency",
-      "category": "Process",
-      "priority": 2,
-      "completion": 0,
-      "goalCount": 11,
-      "relatedGoalIds": [
-        "recKCzMIFngwi",
-        "recoVdwK7x14o",
-        "reco6wYgNZ6Ao",
-        "recrPh7Xue49z",
-        "recBzKDwxqZ6A",
-        "rech8Pbj83nXd",
-        "recfbna73XVc7",
-        "recXgZCWREKcO",
-        "recG5dz5TgEPr",
-        "recyndy9XROsm",
-        "recPq3NkguCPw"
-      ],
-      "notes": "THE technical foundation. AI character pipeline: collect 20-30 reference images \u2192 caption with JoyCaption \u2192 train WAN 2.1 LoRA (2000-3000 steps, rank 32-64, sigmoid timesteps) \u2192 deploy to ComfyUI \u2192 image-to-video for reels. Target: first AI character generating daily content by end of March. Must have: consistent character across ALL posts (LoRA trigger word), SFW content for IG/TikTok, NSFW for Fanvue. Character concept: viral balance of beauty + oddness (Aitana Lopez model).",
-      "otaLink": "https://aitable.ai/workbench/dstrQFxozJm7crqQ1Z/viwwCBCqlAKkm/recQmeXVInLrf"
-    },
-    {
       "id": "rec3JpHolExEf",
       "target": "Maintain Lagoon booking pipeline and revenue during Puerto Escondido transition",
       "status": "In Progress",
@@ -395,32 +343,6 @@
       "otaLink": "https://aitable.ai/workbench/dstrQFxozJm7crqQ1Z/viwwCBCqlAKkm/recPNArcnheyS"
     },
     {
-      "id": "rec0IXhUyJgSo",
-      "target": "Launch AI model social growth engine: 2 IG + 2 TikTok accounts warmed and posting, first 500 followers",
-      "status": "Not Started",
-      "quarter": "2026-Q1",
-      "dueDate": "2026-03-31",
-      "business": "OFM Agency",
-      "category": "Process",
-      "priority": 3,
-      "completion": 0,
-      "goalCount": 10,
-      "relatedGoalIds": [
-        "recquCXtz6qk7",
-        "rec5Q39iSOKNI",
-        "recIUj3wu0yTT",
-        "recRQSDPcfcda",
-        "recFqI6WH50Fb",
-        "recq9aE8MMNTr",
-        "recrRcFR45vAb",
-        "recZZo7HELNbG",
-        "recxq2kdafcuZ",
-        "recu8skDM4NXy"
-      ],
-      "notes": "AI model accounts, not real person. Per IG AI Influencer Guide: new phone + prepaid SIM (NOT WiFi). Jacob 12-step warmup. No bio link for 4-5 weeks. Post SFW AI-generated content only on IG/TikTok. Platform funnel: TikTok/Threads \u2192 Instagram \u2192 Fanvue. TikTok: post slideshows ONLY (AI video = instant shadowban). IG: boost $11-15/day (More Profile Views objective, USA+UK+Canada). Goal: 500+ followers before adding Fanvue link.",
-      "otaLink": "https://aitable.ai/workbench/dstrQFxozJm7crqQ1Z/viwwCBCqlAKkm/recUyDu3Uq82t"
-    },
-    {
       "id": "recXThPr3Z8io",
       "target": "Implement Lagoon Google Ads conversion tracking and optimize for 30% more bookings",
       "status": "Not Started",
@@ -485,34 +407,6 @@
       ],
       "notes": "AI chatter on Diamond Standard 12-step SOP + Jaka scripts. 90%+ autonomous by Jun 15. PPV ladder: $10\u2192$15\u2192$19\u2192$19\u2192$54\u2192$90. Segmentation: Daddy/Name/Sissy/Virgin/Regular. Infra Apr 12, trained Apr 15, tested Apr 20, live Apr 25. DRI: Beno, Siren, Kat.",
       "otaLink": "https://aitable.ai/workbench/dstrQFxozJm7crqQ1Z/viwwCBCqlAKkm/reczYsCBSGtnH"
-    },
-    {
-      "id": "rectDSP307Ej1",
-      "target": "Extract Nate Aston chatter workflow and build full chatter SOP in Aitable",
-      "status": "Not Started",
-      "quarter": "2026-Q1",
-      "dueDate": "2026-03-31",
-      "business": "OFM Agency",
-      "category": "Process",
-      "priority": 4,
-      "completion": 0,
-      "goalCount": 12,
-      "relatedGoalIds": [
-        "rec54PblTuNT7",
-        "recZf0bfqQFZA",
-        "recOihhrDAMN6",
-        "recgSFSNIaQWh",
-        "rece7kW6WPYmQ",
-        "recXenyhRNkqj",
-        "recbOF8Qt6ZL0",
-        "reczfmSdbWkrJ",
-        "recGMcokhkujh",
-        "rec4gZMZBMOfu",
-        "rec0T4vQt7w25",
-        "recezbCJlRf2C"
-      ],
-      "notes": "Extract from Nate Aston OFM course: pricing psychology script, PPV tease-then-price sequence, fan type detection, DM tone guide, upsell ladder, shift schedule, QC by chatter manager. Build into dm-copilot skill. Result: any new chatter can be onboarded in <1 hour using the SOP.",
-      "otaLink": "https://aitable.ai/workbench/dstrQFxozJm7crqQ1Z/viwwCBCqlAKkm/recGsOKVPnEgX"
     },
     {
       "id": "recRIoqRRY4ND",
