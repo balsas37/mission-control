@@ -1,7 +1,95 @@
 {
-  "updatedAt": "2026-03-25T12:00:00Z",
-  "ofm": [],
-  "tools": [],
-  "market": [],
-  "actions": []
+  "updatedAt": "2026-03-27T12:00:00Z",
+  "ofm": [
+    {
+      "title": "OnlyMonster",
+      "source": "",
+      "url": "",
+      "summary": "has become the dominant AI-integrated OnlyFans management platform, outpacing competitors purely through product without marketing \u2014 agencies using AI to fully operate accounts is now mainstream ([onlymonster.ai](https://onlymonster.ai/))"
+    },
+    {
+      "title": "Fanvue raised $22M Series A",
+      "source": "",
+      "url": "",
+      "summary": "in Jan 2026 (Inner Circle investors behind Revolut/Anthropic) \u2014 AI model platform is getting serious backing and legitimacy ([slobodskyi.com](https://slobodskyi.com/monetize/memberships/fanvue))"
+    },
+    {
+      "title": "AI influencer market hit $6-7B in 2026",
+      "source": "",
+      "url": "",
+      "summary": ", growing 26%+ annually \u2014 brands allocating 30% of marketing budgets to AI influencers by 2026 ([imagine.art](https://www.imagine.art/blogs/how-ai-influencers-make-money), [success.com](https://www.success.com/how-ai-influencers-generate-millions-per-year))"
+    }
+  ],
+  "tools": [
+    {
+      "title": "OpenClaw 2026.3.2",
+      "source": "",
+      "url": "",
+      "summary": "focused on trust/reliability for production workflows \u2014 new secrets system, safer defaults, PDF tool, and plugin API compatibility fixes ([github.com/openclaw/releases](https://github.com/openclaw/openclaw/releases))"
+    },
+    {
+      "title": "Claude Code hooks",
+      "source": "",
+      "url": "",
+      "summary": "now support PreToolUse automation (exit code 2 = block) \u2014 can build guardrails that auto-approve safe operations and escalate risky ones ([dev.to](https://dev.to/serenitiesai/claude-code-hooks-guide-2026-automate-your-ai-coding-workflow-dde))"
+    },
+    {
+      "title": "CrewAI + n8n + Make",
+      "source": "",
+      "url": "",
+      "summary": "are the leading multi-agent/workflow platforms \u2014 n8n added MCP support for local LLMs, Make pushes visual agent building ([crewai.com](https://crewai.com/), [n8n.io](https://n8n.io/))"
+    },
+    {
+      "title": "Latenode MCP",
+      "source": "",
+      "url": "",
+      "summary": "enables Claude to trigger real business actions across apps \u2014 moving beyond planning to actual execution without manual wiring ([reddit.com/r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/comments/1rkkozb/anyone_else_using_claude_to_build_automation/))"
+    }
+  ],
+  "market": [
+    {
+      "title": "Tulum ATV rental competition",
+      "source": "",
+      "url": "",
+      "summary": "TripAdvisor now dominates search results \u2014 Lagoon Company appears but competing with aggressive SEO from \"Tulum ATV Rental\" and others offering free tequila bottles with rentals ([tripadvisor.com](https://www.tripadvisor.com/AttractionProductReview-g150813-d23783534-Tulum_Area_Experiences_ATV_Daily_Rental-Tulum_Yucatan_Peninsula.html))"
+    },
+    {
+      "title": "Puerto Escondido real estate",
+      "source": "",
+      "url": "",
+      "summary": "Entry window still open in 2026 but closing \u2014 infrastructure-driven appreciation coming; oceanfront lots (1,000-3,000 sqm) significantly undervalued vs Tulum/Playa; rental market showing strong year-round occupancy fundamentals ([realestate.puerto-escondido.mx](https://realestate.puerto-escondido.mx/puerto-escondido-real-estate-forecast-next-5-years))"
+    },
+    {
+      "title": "Rammed earth construction",
+      "source": "",
+      "url": "",
+      "summary": "Earth USA 2026 conference Sept 18-20 in Santa Fe \u2014 prefabricated rammed earth blocks gaining traction for quality control and speed; digitally-controlled compaction with Rhino/Grasshopper workflows now available ([earthusa.org](https://www.earthusa.org), [eartharchitecture.org](https://eartharchitecture.org/?m=202603))"
+    }
+  ],
+  "actions": [
+    {
+      "text": "OFM: Test OnlyMonster's free tier to benchmark their AI chat capabilities against current Lagoon workflow \u2014 if superior, consider switching or adopting their patterns",
+      "done": false
+    },
+    {
+      "text": "AI Models: Apply for Fanvue AI Personality Awards (if running AI creators) \u2014 free exposure + signals legitimacy to investors/talent",
+      "done": false
+    },
+    {
+      "text": "Automation: Implement Claude Code hooks with PreToolUse guardrails for the OFM content pipeline \u2014 auto-approve safe operations, block risky ones without human review",
+      "done": false
+    },
+    {
+      "text": "Lagoon SEO: TripAdvisor dominance is a threat \u2014 need to audit why Lagoon ranks below competitors and consider paid TripAdvisor campaigns or review generation strategy",
+      "done": false
+    },
+    {
+      "text": "Oaxaca Land: Puerto Escondido window is closing \u2014 finalize Hilltop Villa permits and consider acquiring adjacent lots before infrastructure announcements drive prices up",
+      "done": false
+    },
+    {
+      "text": "Rammed Earth: Register for Earth USA 2026 conference (Sept 18-20, Santa Fe) \u2014 network with Sirewall contractors and see prefab block systems in person before finalizing CRETE construction method",
+      "done": false
+    }
+  ]
 }

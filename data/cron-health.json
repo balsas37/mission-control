@@ -8,16 +8,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-26T02:36:30.404000+00:00",
-      "nextRun": "2026-03-27T02:00:00+00:00",
-      "lastDuration": 50788,
+      "lastRun": "2026-03-28T02:00:00.015000+00:00",
+      "nextRun": "2026-03-29T02:00:00+00:00",
+      "lastDuration": 68384,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-26T02:36:30.404000+00:00",
+          "ts": "2026-03-28T02:00:00.015000+00:00",
           "status": "ok",
-          "duration": 50788
+          "duration": 68384
         }
       ]
     },
@@ -28,17 +28,17 @@
       "description": "",
       "agent": "main",
       "enabled": true,
-      "lastStatus": "ok",
-      "lastRun": "2026-03-25T13:00:00.014000+00:00",
-      "nextRun": "2026-03-26T13:00:00+00:00",
-      "lastDuration": 61358,
-      "consecutiveErrors": 0,
-      "lastError": "",
+      "lastStatus": "error",
+      "lastRun": "2026-03-27T13:00:00.026000+00:00",
+      "nextRun": "2026-03-28T13:00:00+00:00",
+      "lastDuration": 70060,
+      "consecutiveErrors": 2,
+      "lastError": "Error: All models failed (3): anthropic/claude-sonnet-4-6: \u26a0\ufe0f API rate limit reached. Please try again later. (rate_limit) | moonshot/kimi-k2.5: \u26a0\ufe0f API rate limit reached. Please try again later. (rate_limit) | anthropic/claude-opus-4-6: The AI service is temporarily overloaded. Please try again in a moment. (overloaded)",
       "runs": [
         {
-          "ts": "2026-03-25T13:00:00.014000+00:00",
-          "status": "ok",
-          "duration": 61358
+          "ts": "2026-03-27T13:00:00.026000+00:00",
+          "status": "error",
+          "duration": 70060
         }
       ]
     },
@@ -50,16 +50,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-26T10:01:07.243000+00:00",
-      "nextRun": "2026-03-26T11:01:07.213000+00:00",
-      "lastDuration": 33883,
+      "lastRun": "2026-03-28T10:01:07.225000+00:00",
+      "nextRun": "2026-03-28T11:01:07.213000+00:00",
+      "lastDuration": 32948,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-26T10:01:07.243000+00:00",
+          "ts": "2026-03-28T10:01:07.225000+00:00",
           "status": "ok",
-          "duration": 33883
+          "duration": 32948
         }
       ]
     },
@@ -71,16 +71,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-26T03:30:00.026000+00:00",
-      "nextRun": "2026-03-26T13:30:00+00:00",
-      "lastDuration": 11337,
+      "lastRun": "2026-03-28T03:30:00.027000+00:00",
+      "nextRun": "2026-03-28T13:30:00+00:00",
+      "lastDuration": 10038,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-26T03:30:00.026000+00:00",
+          "ts": "2026-03-28T03:30:00.027000+00:00",
           "status": "ok",
-          "duration": 11337
+          "duration": 10038
         }
       ]
     },
@@ -127,17 +127,17 @@
       "description": "",
       "agent": "main",
       "enabled": true,
-      "lastStatus": "ok",
-      "lastRun": "2026-03-25T11:50:00.009000+00:00",
-      "nextRun": "2026-03-26T11:50:00+00:00",
-      "lastDuration": 64545,
-      "consecutiveErrors": 0,
-      "lastError": "",
+      "lastStatus": "error",
+      "lastRun": "2026-03-27T11:50:00.031000+00:00",
+      "nextRun": "2026-03-28T11:50:00+00:00",
+      "lastDuration": 69182,
+      "consecutiveErrors": 1,
+      "lastError": "Error: All models failed (3): anthropic/claude-sonnet-4-6: \u26a0\ufe0f API rate limit reached. Please try again later. (rate_limit) | moonshot/kimi-k2.5: \u26a0\ufe0f API rate limit reached. Please try again later. (rate_limit) | anthropic/claude-opus-4-6: The AI service is temporarily overloaded. Please try again in a moment. (overloaded)",
       "runs": [
         {
-          "ts": "2026-03-25T11:50:00.009000+00:00",
-          "status": "ok",
-          "duration": 64545
+          "ts": "2026-03-27T11:50:00.031000+00:00",
+          "status": "error",
+          "duration": 69182
         }
       ]
     },
@@ -149,16 +149,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-26T06:00:00.044000+00:00",
-      "nextRun": "2026-03-27T06:00:00+00:00",
-      "lastDuration": 269005,
+      "lastRun": "2026-03-28T06:00:00.061000+00:00",
+      "nextRun": "2026-03-29T06:00:00+00:00",
+      "lastDuration": 234106,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-26T06:00:00.044000+00:00",
+          "ts": "2026-03-28T06:00:00.061000+00:00",
           "status": "ok",
-          "duration": 269005
+          "duration": 234106
         }
       ]
     },
@@ -170,16 +170,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-26T02:35:37.907000+00:00",
-      "nextRun": "2026-03-27T02:30:00+00:00",
-      "lastDuration": 52497,
+      "lastRun": "2026-03-28T02:30:00.025000+00:00",
+      "nextRun": "2026-03-29T02:30:00+00:00",
+      "lastDuration": 33170,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-26T02:35:37.907000+00:00",
+          "ts": "2026-03-28T02:30:00.025000+00:00",
           "status": "ok",
-          "duration": 52497
+          "duration": 33170
         }
       ]
     },
@@ -205,17 +205,17 @@
       "description": "",
       "agent": "main",
       "enabled": true,
-      "lastStatus": "ok",
-      "lastRun": "2026-03-25T11:00:00.014000+00:00",
-      "nextRun": "2026-03-26T11:00:00+00:00",
-      "lastDuration": 18112,
-      "consecutiveErrors": 0,
+      "lastStatus": "error",
+      "lastRun": "2026-03-27T11:00:00.027000+00:00",
+      "nextRun": "2026-03-28T11:00:00+00:00",
+      "lastDuration": 49090,
+      "consecutiveErrors": 1,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-25T11:00:00.014000+00:00",
-          "status": "ok",
-          "duration": 18112
+          "ts": "2026-03-27T11:00:00.027000+00:00",
+          "status": "error",
+          "duration": 49090
         }
       ]
     },
@@ -277,17 +277,17 @@
       "description": "",
       "agent": "main",
       "enabled": true,
-      "lastStatus": "ok",
-      "lastRun": "2026-03-25T11:45:00.008000+00:00",
-      "nextRun": "2026-03-26T11:45:00+00:00",
-      "lastDuration": 37761,
-      "consecutiveErrors": 0,
-      "lastError": "",
+      "lastStatus": "error",
+      "lastRun": "2026-03-27T11:45:00.026000+00:00",
+      "nextRun": "2026-03-28T11:45:00+00:00",
+      "lastDuration": 69631,
+      "consecutiveErrors": 1,
+      "lastError": "Error: All models failed (3): anthropic/claude-sonnet-4-6: \u26a0\ufe0f API rate limit reached. Please try again later. (rate_limit) | moonshot/kimi-k2.5: \u26a0\ufe0f API rate limit reached. Please try again later. (rate_limit) | anthropic/claude-opus-4-6: The AI service is temporarily overloaded. Please try again in a moment. (overloaded)",
       "runs": [
         {
-          "ts": "2026-03-25T11:45:00.008000+00:00",
-          "status": "ok",
-          "duration": 37761
+          "ts": "2026-03-27T11:45:00.026000+00:00",
+          "status": "error",
+          "duration": 69631
         }
       ]
     },
@@ -299,16 +299,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-26T04:30:00.028000+00:00",
-      "nextRun": "2026-03-27T04:30:00+00:00",
-      "lastDuration": 289755,
+      "lastRun": "2026-03-28T04:30:00.021000+00:00",
+      "nextRun": "2026-03-29T04:30:00+00:00",
+      "lastDuration": 280154,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-26T04:30:00.028000+00:00",
+          "ts": "2026-03-28T04:30:00.021000+00:00",
           "status": "ok",
-          "duration": 289755
+          "duration": 280154
         }
       ]
     },
@@ -335,16 +335,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-25T17:01:18.664000+00:00",
-      "nextRun": "2026-03-26T17:00:00+00:00",
-      "lastDuration": 78902,
+      "lastRun": "2026-03-27T17:02:14.890000+00:00",
+      "nextRun": "2026-03-28T17:00:00+00:00",
+      "lastDuration": 62337,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-25T17:01:18.664000+00:00",
+          "ts": "2026-03-27T17:02:14.890000+00:00",
           "status": "ok",
-          "duration": 78902
+          "duration": 62337
         }
       ]
     },
@@ -377,16 +377,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-26T04:00:00.025000+00:00",
-      "nextRun": "2026-03-27T04:00:00+00:00",
-      "lastDuration": 144584,
+      "lastRun": "2026-03-28T04:00:00.023000+00:00",
+      "nextRun": "2026-03-29T04:00:00+00:00",
+      "lastDuration": 103218,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-26T04:00:00.025000+00:00",
+          "ts": "2026-03-28T04:00:00.023000+00:00",
           "status": "ok",
-          "duration": 144584
+          "duration": 103218
         }
       ]
     },
@@ -398,16 +398,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-26T02:32:54.313000+00:00",
-      "nextRun": "2026-03-26T23:00:00+00:00",
-      "lastDuration": 120202,
+      "lastRun": "2026-03-27T23:00:22.812000+00:00",
+      "nextRun": "2026-03-28T23:00:00+00:00",
+      "lastDuration": 8092,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-26T02:32:54.313000+00:00",
+          "ts": "2026-03-27T23:00:22.812000+00:00",
           "status": "ok",
-          "duration": 120202
+          "duration": 8092
         }
       ]
     },
@@ -419,16 +419,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-26T07:00:00.021000+00:00",
-      "nextRun": "2026-03-27T07:00:00+00:00",
-      "lastDuration": 180732,
+      "lastRun": "2026-03-28T07:00:00.019000+00:00",
+      "nextRun": "2026-03-29T07:00:00+00:00",
+      "lastDuration": 199016,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-26T07:00:00.021000+00:00",
+          "ts": "2026-03-28T07:00:00.019000+00:00",
           "status": "ok",
-          "duration": 180732
+          "duration": 199016
         }
       ]
     },
@@ -440,16 +440,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-26T05:00:12.790000+00:00",
-      "nextRun": "2026-03-26T11:00:00+00:00",
-      "lastDuration": 15578,
+      "lastRun": "2026-03-28T05:00:07.794000+00:00",
+      "nextRun": "2026-03-28T11:00:00+00:00",
+      "lastDuration": 16202,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-26T05:00:12.790000+00:00",
+          "ts": "2026-03-28T05:00:07.794000+00:00",
           "status": "ok",
-          "duration": 15578
+          "duration": 16202
         }
       ]
     },
@@ -461,16 +461,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-26T05:00:00.029000+00:00",
-      "nextRun": "2026-03-26T11:00:00+00:00",
-      "lastDuration": 12761,
+      "lastRun": "2026-03-28T05:00:00.051000+00:00",
+      "nextRun": "2026-03-28T11:00:00+00:00",
+      "lastDuration": 7743,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-26T05:00:00.029000+00:00",
+          "ts": "2026-03-28T05:00:00.051000+00:00",
           "status": "ok",
-          "duration": 12761
+          "duration": 7743
         }
       ]
     },
@@ -482,16 +482,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-26T05:03:52.744000+00:00",
-      "nextRun": "2026-03-26T11:03:52.724000+00:00",
-      "lastDuration": 11054,
+      "lastRun": "2026-03-28T05:03:52.747000+00:00",
+      "nextRun": "2026-03-28T11:03:52.724000+00:00",
+      "lastDuration": 8973,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-26T05:03:52.744000+00:00",
+          "ts": "2026-03-28T05:03:52.747000+00:00",
           "status": "ok",
-          "duration": 11054
+          "duration": 8973
         }
       ]
     },
@@ -503,16 +503,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-26T07:30:00.029000+00:00",
-      "nextRun": "2026-03-27T07:30:00+00:00",
-      "lastDuration": 147424,
+      "lastRun": "2026-03-28T07:35:05.852000+00:00",
+      "nextRun": "2026-03-29T07:30:00+00:00",
+      "lastDuration": 120494,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-26T07:30:00.029000+00:00",
+          "ts": "2026-03-28T07:35:05.852000+00:00",
           "status": "ok",
-          "duration": 147424
+          "duration": 120494
         }
       ]
     },
@@ -566,16 +566,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-21T01:54:32.790000+00:00",
-      "nextRun": "2026-03-28T01:00:00+00:00",
-      "lastDuration": 158745,
+      "lastRun": "2026-03-28T01:00:00.028000+00:00",
+      "nextRun": "2026-04-04T01:00:00+00:00",
+      "lastDuration": 94535,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-21T01:54:32.790000+00:00",
+          "ts": "2026-03-28T01:00:00.028000+00:00",
           "status": "ok",
-          "duration": 158745
+          "duration": 94535
         }
       ]
     },
@@ -624,8 +624,23 @@
   ],
   "errors": [
     {
+      "job": "bianca-morning-routine",
+      "error": "Error: All models failed (3): anthropic/claude-sonnet-4-6: \u26a0\ufe0f API rate limit reached. Please try again later. (rate_limit) | moonshot/kimi-k2.5: \u26a0\ufe0f API rate limit reached. Please try again later. (rate_limit) | anthropic/claude-opus-4-6: The AI service is temporarily overloaded. Please try again in a moment. (overloaded)",
+      "count": 2
+    },
+    {
+      "job": "daily-huddle",
+      "error": "Error: All models failed (3): anthropic/claude-sonnet-4-6: \u26a0\ufe0f API rate limit reached. Please try again later. (rate_limit) | moonshot/kimi-k2.5: \u26a0\ufe0f API rate limit reached. Please try again later. (rate_limit) | anthropic/claude-opus-4-6: The AI service is temporarily overloaded. Please try again in a moment. (overloaded)",
+      "count": 1
+    },
+    {
       "job": "missed-commitments-brief",
       "error": "\u26a0\ufe0f \u2709\ufe0f Message: `33` failed: Action send requires a target.",
+      "count": 1
+    },
+    {
+      "job": "morning-routine",
+      "error": "Error: All models failed (3): anthropic/claude-sonnet-4-6: \u26a0\ufe0f API rate limit reached. Please try again later. (rate_limit) | moonshot/kimi-k2.5: \u26a0\ufe0f API rate limit reached. Please try again later. (rate_limit) | anthropic/claude-opus-4-6: The AI service is temporarily overloaded. Please try again in a moment. (overloaded)",
       "count": 1
     },
     {
