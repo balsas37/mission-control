@@ -1,0 +1,100 @@
+{
+  "updatedAt": "2026-03-28T12:00:00Z",
+  "ofm": [
+    {
+      "title": "OnlyFans is cracking down hard",
+      "source": "",
+      "url": "",
+      "summary": "2026 biometric verification, AI detection tools, and 30-40% revenue penalties for violators. The platforms are fighting back against AI-only models. [b9-agency.com](https://b9-agency.com/blog/how-to-create-ai-onlyfans-model-2026)"
+    },
+    {
+      "title": "DMs are still king",
+      "source": "",
+      "url": "",
+      "summary": "60-70% of OF income comes from DMs \u2014 and current AI chatbots can't match human emotional connection. Human-in-the-loop remains the winning model. [b9-agency.com](https://b9-agency.com/blog/how-to-create-ai-onlyfans-model-2026)"
+    },
+    {
+      "title": "Fanvue is the AI-creator platform to watch",
+      "source": "",
+      "url": "",
+      "summary": "Just raised $22M Series A, hit $100M run rate, and adding AI agents for fan interactions. 20% platform fee on $12.50 average subscription. Major mainstream creators expected Q1 2026. [businesswire.com](https://www.businesswire.com/news/home/20260112458975/en/AI-Powered-Creator-Monetisation-Platform-Fanvue-Hits-%24100m-Run-Rate-and-Raises-%2422m-Series-A-Investment)"
+    },
+    {
+      "title": "AI influencer economics are real",
+      "source": "",
+      "url": "",
+      "summary": "Aitana Lopez (250k followers) earns $1,000+ per post. Top AI influencers reportedly earning $2M/year. [success.com](https://www.success.com/how-ai-influencers-generate-millions-per-year)"
+    },
+    {
+      "title": "OnlyMonster & Supercreator dominate OF management",
+      "source": "",
+      "url": "",
+      "summary": "OnlyMonster grew to market leader in one year through beta tools alone. AI chat assistance is the differentiator. [onlymonster.ai](https://onlymonster.ai/)"
+    }
+  ],
+  "tools": [
+    {
+      "title": "OpenClaw v2026.3.22 just dropped (March 23)",
+      "source": "",
+      "url": "",
+      "summary": "45+ new features, secrets system, browser control, PDF tools, 13 breaking changes. This moves it from \"demo setup\" to production-ready for real workflows. [bibigpt.co](https://bibigpt.co/en/blog/posts/openclaw-v2026322-release-update-breaking-changes-guide-2026-en)"
+    },
+    {
+      "title": "Claude Code Hooks system",
+      "source": "",
+      "url": "",
+      "summary": "Now supports workflow automation hooks (PreToolUse, etc) with exit code controls (0=allow, 2=block). Can automate git worktrees, approval flows, and multi-step dev pipelines. [dev.to](https://dev.to/serenitiesai/claude-code-hooks-guide-2026-automate-your-ai-coding-workflow-dde)"
+    },
+    {
+      "title": "CrewAI Studio",
+      "source": "",
+      "url": "",
+      "summary": "Multi-agent platform now lets non-devs build agent crews with Gmail, Teams, Notion, HubSpot, Salesforce, Slack integrations. Visual builder for business workflows. [crewai.com](https://crewai.com/)"
+    },
+    {
+      "title": "Latenode MCP for cross-system agents",
+      "source": "",
+      "url": "",
+      "summary": "Connects Claude to real business apps as callable tools. Agents can trigger actions across systems, update records, send messages, move data \u2014 without manual wiring. [reddit.com](https://www.reddit.com/r/ClaudeAI/comments/1rkkozb/anyone_else_using_claude_to_build_automation/)"
+    },
+    {
+      "title": "AI agent automation tiers",
+      "source": "",
+      "url": "",
+      "summary": "2026 winners are Workbeaver and Manus/Genspark for true time-saving automation. Meeting assistants (Fathom) + automation agents are the productivity stack. [reddit.com](https://www.reddit.com/r/automation/comments/1qj355h/best-ai_tools_and_automation_agents_in_2026_that/)"
+    }
+  ],
+  "market": [
+    {
+      "title": "Puerto Escondido real estate heating up",
+      "source": "",
+      "url": "",
+      "summary": "Strong fundamentals entering 2026 \u2014 growing international/domestic demand, improved infrastructure, diversifying guest base supporting year-round occupancy. Entry window still open but closing as infrastructure drives appreciation. [realestate.puerto-escondido.mx](https://realestate.puerto-escondido.mx/puerto-escondido-real-estate-forecast-next-5-years)"
+    },
+    {
+      "title": "Puerto Escondido airport expanding",
+      "source": "",
+      "url": "",
+      "summary": "Additional Canadian and US flight connections planned for 2026. Cabo/Puerto Vallarta saw dramatic property value surges after direct international routes \u2014 same pattern expected here. [realestate.puerto-escondido.mx](https://realestate.puerto-escondido.mx/puerto-escondido-airport-how-proximity-is-reshaping-the-local-real-estate-market)"
+    },
+    {
+      "title": "Rammed earth construction advancing",
+      "source": "",
+      "url": "",
+      "summary": "Earth USA 2026 conference (Sept 18-20, Santa Fe). Prefabricated rammed earth blocks gaining traction for quality control and reduced construction time. Digital compaction workflows now exist (Rhino/Grasshopper toolpaths). [earthusa.org](https://www.earthusa.org)"
+    },
+    {
+      "title": "Tulum ATV rental competition",
+      "source": "",
+      "url": "",
+      "summary": "Multiple players in market including tulumatvrental.com claiming \"no competitors\" (bold). Lagoon Company needs to monitor TripAdvisor rankings and Google Ads competition. [tulumatvrental.com](https://www.tulumatvrental.com/)"
+    },
+    {
+      "title": "Puerto Escondido rental market maturing",
+      "source": "",
+      "url": "",
+      "summary": "Diversifying beyond surf tourists to digital nomads, families, and international buyers. Year-round occupancy more robust than prior years. Opportunity for boutique hospitality plays. [realestate.puerto-escondido.mx](https://realestate.puerto-escondido.mx/puerto-escondido-rental-market-analysis-2026-occupancy-trends-investment-outlook)"
+    }
+  ],
+  "actions": []
+}
