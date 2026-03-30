@@ -1,17 +1,92 @@
 {
-  "updatedAt": "2026-03-29T12:00:00Z",
+  "updatedAt": "2026-03-30T12:01:00Z",
+  "macro": {
+    "risk_level": "red",
+    "risk_summary": "Hormuz crisis spiking oil to $112+/bbl, peso weakening past 18, HIGH geopolitical risk for Lagoon operations",
+    "metrics": [
+      {
+        "label": "Brent Crude",
+        "value": "$112.57/bbl",
+        "delta": "+4.22% (24h)",
+        "delta_direction": "up",
+        "note": "Iran war + Hormuz disruptions. WTI at $99.64 (+5.46%). Prices up ~50% YTD."
+      },
+      {
+        "label": "USD/MXN",
+        "value": "18.12",
+        "delta": "+2.2% (30d)",
+        "delta_direction": "up",
+        "note": "Peso weakening after Banxico cut rates to 6.75% despite inflation spike. Range 17.72-18.12."
+      },
+      {
+        "label": "Mexico Inflation",
+        "value": "4.02%",
+        "delta": "+0.23% (Feb)",
+        "delta_direction": "up",
+        "note": "Core at 4.50%. Agricultural inflation spiking at 9.69% (food pressure)."
+      },
+      {
+        "label": "Gasoline (MX)",
+        "value": "$27.36/L",
+        "delta": "up",
+        "delta_direction": "up",
+        "note": "Tracking global oil surge. Diesel ~$21-26/L. Fuel costs rising for Lagoon fleet."
+      },
+      {
+        "label": "Tourism Demand",
+        "value": "Strong",
+        "delta": "17 new flights added 2026",
+        "delta_direction": "good-up",
+        "note": "Cancun occupancy 61-65%, airport expanding for World Cup. Demand intact despite headwinds."
+      },
+      {
+        "label": "Geopolitical Risk",
+        "value": "HIGH",
+        "delta": "Hormuz crisis escalating",
+        "delta_direction": "up",
+        "note": "Active Iran war, oil cliff predicted mid-April. Yemen Houthis involved. Strait disruptions ongoing."
+      }
+    ],
+    "geopolitical": [
+      {
+        "title": "Iran War: Hormuz Strait Crisis",
+        "source": "CNBC / Columbia CGEP",
+        "url": "https://www.cnbc.com/2026/03/28/oil-gas-prices-iran-war-hormuz.html",
+        "summary": "Oil prices hit $112+ as Iran war disrupts Hormuz shipments. Analysts predict 'oil cliff' mid-April when reserves and sanctioned Russian/Iranian oil run out. Yemen Houthis now involved attacking shipping."
+      },
+      {
+        "title": "Banxico Rate Cut Despite Inflation",
+        "source": "Trading Economics",
+        "url": "https://tradingeconomics.com/mexico/currency",
+        "summary": "Bank of Mexico unexpectedly cut rates 25bps to 6.75% even as headline inflation hit 4.63% in mid-March. Peso weakened past 17.9, now trading ~18.12 per USD."
+      },
+      {
+        "title": "Cancun Airport Expansion 2026",
+        "source": "Travel and Tour World",
+        "url": "https://www.travelandtourworld.com/news/article/cancun-international-airport-expansion-2026/",
+        "summary": "New terminal and faster processing ahead of World Cup. 17 new flight routes added from US/Canada/Ireland including Oklahoma City, Charleston, Las Vegas, Toronto."
+      },
+      {
+        "title": "Mexico Construction Input Inflation",
+        "source": "Mexico Business News / BBVA",
+        "url": "https://mexicobusiness.news/infrastructure/news/mexicos-construction-sector-recover-2026-bbva",
+        "summary": "Construction input inflation exceeded 4%, driven by cement and concrete. Ready-mix concrete up 8.6% YoY. Employment in sector declined from 4.8M to 4.6M workers."
+      }
+    ],
+    "bottom_line": "RED ALERT: Fuel your Lagoon fleet NOW before mid-April oil cliff hits. Lock in diesel/gasoline contracts if possible. Tourism demand stays strong with 17 new flights—maintain premium pricing on ATVs. For Oaxaca build: cement costs rising 8%+; order materials before further spikes. Peso weakening helps USD revenue but hurts local purchasing power."
+  },
   "ofm": [
     {
       "title": "OnlyFans 2026 crackdown is live",
       "source": "b9-agency.com",
       "url": "https://b9-agency.com/blog/how-to-create-ai-onlyfans-model-2026",
-      "summary": "Biometric verification, AI detection tools, and 30-40% revenue drops for violators. DMs still drive 60-70% of income \u2014 AI chatbots can't match human emotional connection yet. Most \"AI OnlyFans gurus\" are selling courses, not running models."
+      "summary": "Biometric verification, AI detection tools, and 30-40% revenue drops for violators. DMs still drive 60-70% of income — AI chatbots can't match human emotional connection yet. Most \"AI OnlyFans gurus\" are selling courses, not running models."
     },
     {
       "title": "OnlyMonster dominating OFM tech",
       "source": "onlymonster.ai",
       "url": "https://onlymonster.ai/",
-      "summary": "Rapidly becoming the go-to management system with advanced AI assistance integrated into OnlyFans workflows \u2014 outpaced competitors in Beta without any marketing."
+      "summary": "Rapidly becoming the go-to management system with advanced AI assistance integrated into OnlyFans workflows — outpaced competitors in Beta without any marketing."
     },
     {
       "title": "Fanvue raised $22M for AI influencers",
@@ -37,13 +112,13 @@
       "title": "Claude Code worktrees for parallel agents",
       "source": "code.claude.com",
       "url": "https://code.claude.com/docs/en/common-workflows",
-      "summary": "Now supports worktree isolation \u2014 subagents can work in parallel without conflicts. Configure with `isolation: worktree` in agent frontmatter."
+      "summary": "Now supports worktree isolation — subagents can work in parallel without conflicts. Configure with `isolation: worktree` in agent frontmatter."
     },
     {
       "title": "Latenode MCP integration emerging",
       "source": "www.reddit.com",
       "url": "https://www.reddit.com/r/ClaudeAI/comments/1rkkozb/anyone_else_using_claude_to_build_automation/",
-      "summary": "Claude can now connect to external business apps via MCP \u2014 trigger real actions (update records, send messages, move data) instead of just planning. Visual low-code platforms building around this."
+      "summary": "Claude can now connect to external business apps via MCP — trigger real actions (update records, send messages, move data) instead of just planning. Visual low-code platforms building around this."
     }
   ],
   "market": [
@@ -63,7 +138,7 @@
       "title": "Tulum ATV rental competition heating up",
       "source": "www.tulumatvrental.com",
       "url": "https://www.tulumatvrental.com/",
-      "summary": "Multiple competitors active on TripAdvisor. \"Tulum ATV Rental\" operator claims \"no competitors\" \u2014 likely positioning play. Lagoon Company needs differentiation beyond just vehicles."
+      "summary": "Multiple competitors active on TripAdvisor. \"Tulum ATV Rental\" operator claims \"no competitors\" — likely positioning play. Lagoon Company needs differentiation beyond just vehicles."
     }
   ],
   "actions": []
