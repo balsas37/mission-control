@@ -1,0 +1,70 @@
+{
+  "updatedAt": "2026-03-29T12:00:00Z",
+  "ofm": [
+    {
+      "title": "OnlyFans 2026 crackdown is live",
+      "source": "b9-agency.com",
+      "url": "https://b9-agency.com/blog/how-to-create-ai-onlyfans-model-2026",
+      "summary": "Biometric verification, AI detection tools, and 30-40% revenue drops for violators. DMs still drive 60-70% of income \u2014 AI chatbots can't match human emotional connection yet. Most \"AI OnlyFans gurus\" are selling courses, not running models."
+    },
+    {
+      "title": "OnlyMonster dominating OFM tech",
+      "source": "onlymonster.ai",
+      "url": "https://onlymonster.ai/",
+      "summary": "Rapidly becoming the go-to management system with advanced AI assistance integrated into OnlyFans workflows \u2014 outpaced competitors in Beta without any marketing."
+    },
+    {
+      "title": "Fanvue raised $22M for AI influencers",
+      "source": "www.forbes.com",
+      "url": "https://www.forbes.com/sites/alexyork/2026/01/16/creator-startup-fanvue-raised-22-million-to-fuel-the-future-of-ai-influencers/",
+      "summary": "Now doing $100M+ annualized revenue with 17M monthly active users. Platform takes 20% cut. Top AI creators pulling $50K-$100K+/month."
+    },
+    {
+      "title": "AI girlfriend market exploding",
+      "source": "finance.yahoo.com",
+      "url": "https://finance.yahoo.com/news/ai-girlfriend-app-market-reach-090200323.html",
+      "summary": "Projected to hit $11.06B by 2032. Mental health support segment leads at 41% revenue share. Average $120 ARPU annually with 93% monthly retention."
+    }
+  ],
+  "tools": [
+    {
+      "title": "OpenClaw 2026.3.x major release",
+      "source": "github.com",
+      "url": "https://github.com/openclaw/openclaw/releases",
+      "summary": "45 new features, 13 breaking changes, 82 bug fixes. Key additions: secrets system, PDF analysis tool, browser control improvements, safer defaults. Moving from \"demo setup\" to production-ready."
+    },
+    {
+      "title": "Claude Code worktrees for parallel agents",
+      "source": "code.claude.com",
+      "url": "https://code.claude.com/docs/en/common-workflows",
+      "summary": "Now supports worktree isolation \u2014 subagents can work in parallel without conflicts. Configure with `isolation: worktree` in agent frontmatter."
+    },
+    {
+      "title": "Latenode MCP integration emerging",
+      "source": "www.reddit.com",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1rkkozb/anyone_else_using_claude_to_build_automation/",
+      "summary": "Claude can now connect to external business apps via MCP \u2014 trigger real actions (update records, send messages, move data) instead of just planning. Visual low-code platforms building around this."
+    }
+  ],
+  "market": [
+    {
+      "title": "Puerto Escondido entry window still open",
+      "source": "realestate.puerto-escondido.mx",
+      "url": "https://realestate.puerto-escondido.mx/puerto-escondido-real-estate-forecast-next-5-years",
+      "summary": "2026 is the last call before infrastructure-driven appreciation closes it. New North American/Canadian flight routes anticipated for 2026. Rental market showing strong fundamentals with year-round occupancy improving."
+    },
+    {
+      "title": "Rammed earth construction advancing",
+      "source": "www.earthusa.org",
+      "url": "https://www.earthusa.org",
+      "summary": "Earth USA 2026 conference Sept 18-20 in Santa Fe. New prefabricated block methods reduce construction time and cost while maintaining quality. Digital fabrication workflows (Rhino/Grasshopper) now enabling complex geometries."
+    },
+    {
+      "title": "Tulum ATV rental competition heating up",
+      "source": "www.tulumatvrental.com",
+      "url": "https://www.tulumatvrental.com/",
+      "summary": "Multiple competitors active on TripAdvisor. \"Tulum ATV Rental\" operator claims \"no competitors\" \u2014 likely positioning play. Lagoon Company needs differentiation beyond just vehicles."
+    }
+  ],
+  "actions": []
+}
