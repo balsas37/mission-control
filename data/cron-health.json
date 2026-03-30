@@ -7,17 +7,17 @@
       "description": "",
       "agent": "main",
       "enabled": true,
-      "lastStatus": "ok",
-      "lastRun": "2026-03-29T02:00:00.032000+00:00",
-      "nextRun": "2026-03-30T02:00:00+00:00",
-      "lastDuration": 61879,
-      "consecutiveErrors": 0,
-      "lastError": "",
+      "lastStatus": "error",
+      "lastRun": "2026-03-30T02:00:00.009000+00:00",
+      "nextRun": "2026-03-31T02:00:00+00:00",
+      "lastDuration": 110404,
+      "consecutiveErrors": 1,
+      "lastError": "Error: Outbound not configured for channel: telegram",
       "runs": [
         {
-          "ts": "2026-03-29T02:00:00.032000+00:00",
-          "status": "ok",
-          "duration": 61879
+          "ts": "2026-03-30T02:00:00.009000+00:00",
+          "status": "error",
+          "duration": 110404
         }
       ]
     },
@@ -28,17 +28,17 @@
       "description": "",
       "agent": "main",
       "enabled": true,
-      "lastStatus": "error",
-      "lastRun": "2026-03-28T13:00:00.024000+00:00",
-      "nextRun": "2026-03-29T13:00:00+00:00",
-      "lastDuration": 58836,
-      "consecutiveErrors": 3,
-      "lastError": "Error: Outbound not configured for channel: telegram",
+      "lastStatus": "ok",
+      "lastRun": "2026-03-29T22:01:36.747000+00:00",
+      "nextRun": "2026-03-30T13:00:00+00:00",
+      "lastDuration": 80736,
+      "consecutiveErrors": 0,
+      "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-28T13:00:00.024000+00:00",
-          "status": "error",
-          "duration": 58836
+          "ts": "2026-03-29T22:01:36.747000+00:00",
+          "status": "ok",
+          "duration": 80736
         }
       ]
     },
@@ -50,16 +50,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "error",
-      "lastRun": "2026-03-29T10:31:12.212000+00:00",
-      "nextRun": "2026-03-29T11:01:07.213000+00:00",
-      "lastDuration": 8862,
+      "lastRun": "2026-03-30T10:01:07.225000+00:00",
+      "nextRun": "2026-03-30T11:01:07.213000+00:00",
+      "lastDuration": 60036,
       "consecutiveErrors": 1,
-      "lastError": "",
+      "lastError": "cron: job execution timed out",
       "runs": [
         {
-          "ts": "2026-03-29T10:31:12.212000+00:00",
+          "ts": "2026-03-30T10:01:07.225000+00:00",
           "status": "error",
-          "duration": 8862
+          "duration": 60036
         }
       ]
     },
@@ -71,16 +71,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-29T03:30:00.017000+00:00",
-      "nextRun": "2026-03-29T13:30:00+00:00",
-      "lastDuration": 10633,
+      "lastRun": "2026-03-30T03:30:00.014000+00:00",
+      "nextRun": "2026-03-30T13:30:00+00:00",
+      "lastDuration": 10174,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-29T03:30:00.017000+00:00",
+          "ts": "2026-03-30T03:30:00.014000+00:00",
           "status": "ok",
-          "duration": 10633
+          "duration": 10174
         }
       ]
     },
@@ -107,16 +107,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-23T01:00:00.041000+00:00",
-      "nextRun": "2026-03-30T01:00:00+00:00",
-      "lastDuration": 6260,
+      "lastRun": "2026-03-30T01:00:00.020000+00:00",
+      "nextRun": "2026-04-06T01:00:00+00:00",
+      "lastDuration": 49321,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-23T01:00:00.041000+00:00",
+          "ts": "2026-03-30T01:00:00.020000+00:00",
           "status": "ok",
-          "duration": 6260
+          "duration": 49321
         }
       ]
     },
@@ -127,17 +127,17 @@
       "description": "",
       "agent": "main",
       "enabled": true,
-      "lastStatus": "error",
-      "lastRun": "2026-03-28T11:50:00.011000+00:00",
-      "nextRun": "2026-03-29T11:50:00+00:00",
-      "lastDuration": 54039,
-      "consecutiveErrors": 2,
-      "lastError": "Error: Outbound not configured for channel: telegram",
+      "lastStatus": "ok",
+      "lastRun": "2026-03-29T11:50:00.819000+00:00",
+      "nextRun": "2026-03-30T11:50:00+00:00",
+      "lastDuration": 56850,
+      "consecutiveErrors": 0,
+      "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-28T11:50:00.011000+00:00",
-          "status": "error",
-          "duration": 54039
+          "ts": "2026-03-29T11:50:00.819000+00:00",
+          "status": "ok",
+          "duration": 56850
         }
       ]
     },
@@ -149,16 +149,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-29T06:00:00.022000+00:00",
-      "nextRun": "2026-03-30T06:00:00+00:00",
-      "lastDuration": 176026,
+      "lastRun": "2026-03-30T06:00:00.009000+00:00",
+      "nextRun": "2026-03-31T06:00:00+00:00",
+      "lastDuration": 393835,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-29T06:00:00.022000+00:00",
+          "ts": "2026-03-30T06:00:00.009000+00:00",
           "status": "ok",
-          "duration": 176026
+          "duration": 393835
         }
       ]
     },
@@ -169,17 +169,38 @@
       "description": "",
       "agent": "main",
       "enabled": true,
+      "lastStatus": "error",
+      "lastRun": "2026-03-30T02:30:00.008000+00:00",
+      "nextRun": "2026-03-31T02:30:00+00:00",
+      "lastDuration": 43833,
+      "consecutiveErrors": 1,
+      "lastError": "Error: Outbound not configured for channel: telegram",
+      "runs": [
+        {
+          "ts": "2026-03-30T02:30:00.008000+00:00",
+          "status": "error",
+          "duration": 43833
+        }
+      ]
+    },
+    {
+      "id": "89488dee-eb1e-4b8a-8de3-54b7b915b03a",
+      "name": "instinct-extraction",
+      "schedule": "30 1 * * *",
+      "description": "",
+      "agent": "main",
+      "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-29T02:30:00.020000+00:00",
-      "nextRun": "2026-03-30T02:30:00+00:00",
-      "lastDuration": 78893,
+      "lastRun": "2026-03-30T06:30:00.013000+00:00",
+      "nextRun": "2026-03-31T06:30:00+00:00",
+      "lastDuration": 80581,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-29T02:30:00.020000+00:00",
+          "ts": "2026-03-30T06:30:00.013000+00:00",
           "status": "ok",
-          "duration": 78893
+          "duration": 80581
         }
       ]
     },
@@ -206,16 +227,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-28T11:00:00.015000+00:00",
-      "nextRun": "2026-03-29T11:00:00+00:00",
-      "lastDuration": 17960,
+      "lastRun": "2026-03-29T11:35:07.575000+00:00",
+      "nextRun": "2026-03-30T11:00:00+00:00",
+      "lastDuration": 16757,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-28T11:00:00.015000+00:00",
+          "ts": "2026-03-29T11:35:07.575000+00:00",
           "status": "ok",
-          "duration": 17960
+          "duration": 16757
         }
       ]
     },
@@ -263,16 +284,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-29T01:00:00.018000+00:00",
-      "nextRun": "2026-03-30T01:00:00+00:00",
-      "lastDuration": 5717,
+      "lastRun": "2026-03-30T01:00:49.341000+00:00",
+      "nextRun": "2026-03-31T01:00:00+00:00",
+      "lastDuration": 5335,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-29T01:00:00.018000+00:00",
+          "ts": "2026-03-30T01:00:49.341000+00:00",
           "status": "ok",
-          "duration": 5717
+          "duration": 5335
         }
       ]
     },
@@ -284,16 +305,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-29T00:31:58.383000+00:00",
-      "nextRun": "2026-03-29T11:45:00+00:00",
-      "lastDuration": 39154,
+      "lastRun": "2026-03-29T11:45:00.818000+00:00",
+      "nextRun": "2026-03-30T11:45:00+00:00",
+      "lastDuration": 36730,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-29T00:31:58.383000+00:00",
+          "ts": "2026-03-29T11:45:00.818000+00:00",
           "status": "ok",
-          "duration": 39154
+          "duration": 36730
         }
       ]
     },
@@ -304,17 +325,17 @@
       "description": "",
       "agent": "main",
       "enabled": true,
-      "lastStatus": "error",
-      "lastRun": "2026-03-29T04:30:00.040000+00:00",
-      "nextRun": "2026-03-30T04:30:00+00:00",
-      "lastDuration": 600041,
-      "consecutiveErrors": 1,
-      "lastError": "cron: job execution timed out",
+      "lastStatus": "ok",
+      "lastRun": "2026-03-30T04:30:00.010000+00:00",
+      "nextRun": "2026-03-31T04:30:00+00:00",
+      "lastDuration": 458456,
+      "consecutiveErrors": 0,
+      "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-29T04:30:00.040000+00:00",
-          "status": "error",
-          "duration": 600041
+          "ts": "2026-03-30T04:30:00.010000+00:00",
+          "status": "ok",
+          "duration": 458456
         }
       ]
     },
@@ -340,17 +361,17 @@
       "description": "",
       "agent": "main",
       "enabled": true,
-      "lastStatus": "ok",
-      "lastRun": "2026-03-28T17:00:19.346000+00:00",
-      "nextRun": "2026-03-29T17:00:00+00:00",
-      "lastDuration": 97617,
-      "consecutiveErrors": 0,
-      "lastError": "",
+      "lastStatus": "error",
+      "lastRun": "2026-03-29T17:05:18.119000+00:00",
+      "nextRun": "2026-03-30T17:00:00+00:00",
+      "lastDuration": 65238,
+      "consecutiveErrors": 1,
+      "lastError": "Error: ENOSPC: no space left on device, write",
       "runs": [
         {
-          "ts": "2026-03-28T17:00:19.346000+00:00",
-          "status": "ok",
-          "duration": 97617
+          "ts": "2026-03-29T17:05:18.119000+00:00",
+          "status": "error",
+          "duration": 65238
         }
       ]
     },
@@ -362,16 +383,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-22T13:01:07.779000+00:00",
-      "nextRun": "2026-03-29T13:00:00+00:00",
-      "lastDuration": 97308,
+      "lastRun": "2026-03-29T22:18:59.672000+00:00",
+      "nextRun": "2026-04-05T13:00:00+00:00",
+      "lastDuration": 96496,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-22T13:01:07.779000+00:00",
+          "ts": "2026-03-29T22:18:59.672000+00:00",
           "status": "ok",
-          "duration": 97308
+          "duration": 96496
         }
       ]
     },
@@ -383,16 +404,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-29T04:00:00.023000+00:00",
-      "nextRun": "2026-03-30T04:00:00+00:00",
-      "lastDuration": 233790,
+      "lastRun": "2026-03-30T04:00:00.014000+00:00",
+      "nextRun": "2026-03-31T04:00:00+00:00",
+      "lastDuration": 98865,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-29T04:00:00.023000+00:00",
+          "ts": "2026-03-30T04:00:00.014000+00:00",
           "status": "ok",
-          "duration": 233790
+          "duration": 98865
         }
       ]
     },
@@ -404,16 +425,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-28T23:00:21.084000+00:00",
-      "nextRun": "2026-03-29T23:00:00+00:00",
-      "lastDuration": 7228,
+      "lastRun": "2026-03-29T23:00:19.783000+00:00",
+      "nextRun": "2026-03-30T23:00:00+00:00",
+      "lastDuration": 7172,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-28T23:00:21.084000+00:00",
+          "ts": "2026-03-29T23:00:19.783000+00:00",
           "status": "ok",
-          "duration": 7228
+          "duration": 7172
         }
       ]
     },
@@ -425,16 +446,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-29T07:00:00.017000+00:00",
-      "nextRun": "2026-03-30T07:00:00+00:00",
-      "lastDuration": 191414,
+      "lastRun": "2026-03-30T07:00:00.008000+00:00",
+      "nextRun": "2026-03-31T07:00:00+00:00",
+      "lastDuration": 193531,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-29T07:00:00.017000+00:00",
+          "ts": "2026-03-30T07:00:00.008000+00:00",
           "status": "ok",
-          "duration": 191414
+          "duration": 193531
         }
       ]
     },
@@ -446,16 +467,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-29T05:00:09.393000+00:00",
-      "nextRun": "2026-03-29T11:00:00+00:00",
-      "lastDuration": 19665,
+      "lastRun": "2026-03-30T05:00:09.612000+00:00",
+      "nextRun": "2026-03-30T11:00:00+00:00",
+      "lastDuration": 16075,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-29T05:00:09.393000+00:00",
+          "ts": "2026-03-30T05:00:09.612000+00:00",
           "status": "ok",
-          "duration": 19665
+          "duration": 16075
         }
       ]
     },
@@ -467,16 +488,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-29T05:00:00.011000+00:00",
-      "nextRun": "2026-03-29T11:00:00+00:00",
-      "lastDuration": 9382,
+      "lastRun": "2026-03-30T05:00:00.032000+00:00",
+      "nextRun": "2026-03-30T11:00:00+00:00",
+      "lastDuration": 9580,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-29T05:00:00.011000+00:00",
+          "ts": "2026-03-30T05:00:00.032000+00:00",
           "status": "ok",
-          "duration": 9382
+          "duration": 9580
         }
       ]
     },
@@ -488,16 +509,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-29T05:03:52.740000+00:00",
-      "nextRun": "2026-03-29T11:03:52.724000+00:00",
-      "lastDuration": 9613,
+      "lastRun": "2026-03-30T05:03:52.731000+00:00",
+      "nextRun": "2026-03-30T11:03:52.724000+00:00",
+      "lastDuration": 8974,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-29T05:03:52.740000+00:00",
+          "ts": "2026-03-30T05:03:52.731000+00:00",
           "status": "ok",
-          "duration": 9613
+          "duration": 8974
         }
       ]
     },
@@ -509,16 +530,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-29T07:30:00.017000+00:00",
-      "nextRun": "2026-03-30T07:30:00+00:00",
-      "lastDuration": 103708,
+      "lastRun": "2026-03-30T07:30:00.014000+00:00",
+      "nextRun": "2026-03-31T07:30:00+00:00",
+      "lastDuration": 214048,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-29T07:30:00.017000+00:00",
+          "ts": "2026-03-30T07:30:00.014000+00:00",
           "status": "ok",
-          "duration": 103708
+          "duration": 214048
         }
       ]
     },
@@ -530,16 +551,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-22T08:00:00.050000+00:00",
-      "nextRun": "2026-03-29T08:00:00+00:00",
-      "lastDuration": 149266,
+      "lastRun": "2026-03-29T22:02:57.483000+00:00",
+      "nextRun": "2026-04-05T08:00:00+00:00",
+      "lastDuration": 362155,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-22T08:00:00.050000+00:00",
+          "ts": "2026-03-29T22:02:57.483000+00:00",
           "status": "ok",
-          "duration": 149266
+          "duration": 362155
         }
       ]
     },
@@ -551,18 +572,33 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "error",
-      "lastRun": "2026-03-22T08:02:29.316000+00:00",
-      "nextRun": "2026-03-29T08:00:00+00:00",
-      "lastDuration": 300029,
-      "consecutiveErrors": 1,
-      "lastError": "",
+      "lastRun": "2026-03-29T22:08:59.638000+00:00",
+      "nextRun": "2026-04-05T08:00:00+00:00",
+      "lastDuration": 600034,
+      "consecutiveErrors": 2,
+      "lastError": "Error: cron: job execution timed out",
       "runs": [
         {
-          "ts": "2026-03-22T08:02:29.316000+00:00",
+          "ts": "2026-03-29T22:08:59.638000+00:00",
           "status": "error",
-          "duration": 300029
+          "duration": 600034
         }
       ]
+    },
+    {
+      "id": "66dcc86d-1f7e-430c-a25f-04b80abfbeb7",
+      "name": "weekly-cost-report",
+      "schedule": "0 22 * * 0",
+      "description": "",
+      "agent": "main",
+      "enabled": true,
+      "lastStatus": "unknown",
+      "lastRun": null,
+      "nextRun": "2026-04-06T03:00:00+00:00",
+      "lastDuration": 0,
+      "consecutiveErrors": 0,
+      "lastError": "",
+      "runs": []
     },
     {
       "id": "b7eb1783-3d01-4a27-b3ad-168de250b920",
@@ -613,31 +649,36 @@
       "description": "",
       "agent": "main",
       "enabled": true,
-      "lastStatus": "ok",
-      "lastRun": "2026-03-23T02:02:00.068000+00:00",
-      "nextRun": "2026-03-30T02:00:00+00:00",
-      "lastDuration": 7785,
-      "consecutiveErrors": 0,
-      "lastError": "",
+      "lastStatus": "error",
+      "lastRun": "2026-03-30T02:01:50.413000+00:00",
+      "nextRun": "2026-04-06T02:00:00+00:00",
+      "lastDuration": 30021,
+      "consecutiveErrors": 1,
+      "lastError": "cron: job execution timed out",
       "runs": [
         {
-          "ts": "2026-03-23T02:02:00.068000+00:00",
-          "status": "ok",
-          "duration": 7785
+          "ts": "2026-03-30T02:01:50.413000+00:00",
+          "status": "error",
+          "duration": 30021
         }
       ]
     }
   ],
   "errors": [
     {
-      "job": "bianca-morning-routine",
+      "job": "bianca-evening-routine",
       "error": "Error: Outbound not configured for channel: telegram",
-      "count": 3
+      "count": 1
     },
     {
-      "job": "daily-huddle",
+      "job": "charfen-auto-complete",
+      "error": "cron: job execution timed out",
+      "count": 1
+    },
+    {
+      "job": "evening-routine",
       "error": "Error: Outbound not configured for channel: telegram",
-      "count": 2
+      "count": 1
     },
     {
       "job": "missed-commitments-brief",
@@ -645,14 +686,24 @@
       "count": 1
     },
     {
-      "job": "nightly-execution",
-      "error": "cron: job execution timed out",
+      "job": "research-radar",
+      "error": "Error: ENOSPC: no space left on device, write",
       "count": 1
+    },
+    {
+      "job": "weekly-backup",
+      "error": "Error: cron: job execution timed out",
+      "count": 2
     },
     {
       "job": "weekly-ti",
       "error": "\u26a0\ufe0f \u2709\ufe0f Message failed: Unknown target \"#Cadence\" for Telegram. Hint: <chatId>",
       "count": 2
+    },
+    {
+      "job": "weekly-ti-reminder",
+      "error": "cron: job execution timed out",
+      "count": 1
     }
   ]
 }
