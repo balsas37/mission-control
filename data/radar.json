@@ -1,144 +1,87 @@
 {
-  "updatedAt": "2026-03-30T12:01:00Z",
-  "macro": {
-    "risk_level": "red",
-    "risk_summary": "Hormuz crisis spiking oil to $112+/bbl, peso weakening past 18, HIGH geopolitical risk for Lagoon operations",
-    "metrics": [
-      {
-        "label": "Brent Crude",
-        "value": "$112.57/bbl",
-        "delta": "+4.22% (24h)",
-        "delta_direction": "up",
-        "note": "Iran war + Hormuz disruptions. WTI at $99.64 (+5.46%). Prices up ~50% YTD."
-      },
-      {
-        "label": "USD/MXN",
-        "value": "18.12",
-        "delta": "+2.2% (30d)",
-        "delta_direction": "up",
-        "note": "Peso weakening after Banxico cut rates to 6.75% despite inflation spike. Range 17.72-18.12."
-      },
-      {
-        "label": "Mexico Inflation",
-        "value": "4.02%",
-        "delta": "+0.23% (Feb)",
-        "delta_direction": "up",
-        "note": "Core at 4.50%. Agricultural inflation spiking at 9.69% (food pressure)."
-      },
-      {
-        "label": "Gasoline (MX)",
-        "value": "$27.36/L",
-        "delta": "up",
-        "delta_direction": "up",
-        "note": "Tracking global oil surge. Diesel ~$21-26/L. Fuel costs rising for Lagoon fleet."
-      },
-      {
-        "label": "Tourism Demand",
-        "value": "Strong",
-        "delta": "17 new flights added 2026",
-        "delta_direction": "good-up",
-        "note": "Cancun occupancy 61-65%, airport expanding for World Cup. Demand intact despite headwinds."
-      },
-      {
-        "label": "Geopolitical Risk",
-        "value": "HIGH",
-        "delta": "Hormuz crisis escalating",
-        "delta_direction": "up",
-        "note": "Active Iran war, oil cliff predicted mid-April. Yemen Houthis involved. Strait disruptions ongoing."
-      }
-    ],
-    "geopolitical": [
-      {
-        "title": "Iran War: Hormuz Strait Crisis",
-        "source": "CNBC / Columbia CGEP",
-        "url": "https://www.cnbc.com/2026/03/28/oil-gas-prices-iran-war-hormuz.html",
-        "summary": "Oil prices hit $112+ as Iran war disrupts Hormuz shipments. Analysts predict 'oil cliff' mid-April when reserves and sanctioned Russian/Iranian oil run out. Yemen Houthis now involved attacking shipping."
-      },
-      {
-        "title": "Banxico Rate Cut Despite Inflation",
-        "source": "Trading Economics",
-        "url": "https://tradingeconomics.com/mexico/currency",
-        "summary": "Bank of Mexico unexpectedly cut rates 25bps to 6.75% even as headline inflation hit 4.63% in mid-March. Peso weakened past 17.9, now trading ~18.12 per USD."
-      },
-      {
-        "title": "Cancun Airport Expansion 2026",
-        "source": "Travel and Tour World",
-        "url": "https://www.travelandtourworld.com/news/article/cancun-international-airport-expansion-2026/",
-        "summary": "New terminal and faster processing ahead of World Cup. 17 new flight routes added from US/Canada/Ireland including Oklahoma City, Charleston, Las Vegas, Toronto."
-      },
-      {
-        "title": "Mexico Construction Input Inflation",
-        "source": "Mexico Business News / BBVA",
-        "url": "https://mexicobusiness.news/infrastructure/news/mexicos-construction-sector-recover-2026-bbva",
-        "summary": "Construction input inflation exceeded 4%, driven by cement and concrete. Ready-mix concrete up 8.6% YoY. Employment in sector declined from 4.8M to 4.6M workers."
-      }
-    ],
-    "bottom_line": "RED ALERT: Fuel your Lagoon fleet NOW before mid-April oil cliff hits. Lock in diesel/gasoline contracts if possible. Tourism demand stays strong with 17 new flights—maintain premium pricing on ATVs. For Oaxaca build: cement costs rising 8%+; order materials before further spikes. Peso weakening helps USD revenue but hurts local purchasing power."
-  },
+  "updatedAt": "2026-03-30T12:00:00Z",
   "ofm": [
     {
-      "title": "OnlyFans 2026 crackdown is live",
+      "title": "2026 platform crackdown is live",
       "source": "b9-agency.com",
       "url": "https://b9-agency.com/blog/how-to-create-ai-onlyfans-model-2026",
-      "summary": "Biometric verification, AI detection tools, and 30-40% revenue drops for violators. DMs still drive 60-70% of income — AI chatbots can't match human emotional connection yet. Most \"AI OnlyFans gurus\" are selling courses, not running models."
+      "summary": "Biometric verification, AI detection tools, and 30-40% revenue drops for violators. DMs still drive 60-70% of income \u2014 AI chatbots can't match human emotional connection yet."
     },
     {
-      "title": "OnlyMonster dominating OFM tech",
+      "title": "OnlyMonster",
       "source": "onlymonster.ai",
       "url": "https://onlymonster.ai/",
-      "summary": "Rapidly becoming the go-to management system with advanced AI assistance integrated into OnlyFans workflows — outpaced competitors in Beta without any marketing."
+      "summary": "has emerged as the dominant OFM platform \u2014 Beta growth purely through product, no marketing. Heavy AI integration for agency workflows."
     },
     {
-      "title": "Fanvue raised $22M for AI influencers",
-      "source": "www.forbes.com",
-      "url": "https://www.forbes.com/sites/alexyork/2026/01/16/creator-startup-fanvue-raised-22-million-to-fuel-the-future-of-ai-influencers/",
-      "summary": "Now doing $100M+ annualized revenue with 17M monthly active users. Platform takes 20% cut. Top AI creators pulling $50K-$100K+/month."
+      "title": "Fanvue raised $22M Series A",
+      "source": "slobodskyi.com",
+      "url": "https://slobodskyi.com/monetize/memberships/fanvue",
+      "summary": "(Jan 2026) from Inner Circle (same investors as Revolut/Anthropic). Now the clear leader for AI model direct monetization."
     },
     {
-      "title": "AI girlfriend market exploding",
-      "source": "finance.yahoo.com",
-      "url": "https://finance.yahoo.com/news/ai-girlfriend-app-market-reach-090200323.html",
-      "summary": "Projected to hit $11.06B by 2032. Mental health support segment leads at 41% revenue share. Average $120 ARPU annually with 93% monthly retention."
+      "title": "AI influencer market worth $6-8B",
+      "source": "youmind.com",
+      "url": "https://youmind.com/blog/ai-virtual-influencer-trends-2026",
+      "summary": ", forecasted to grow through 2026. Predicted to capture 30% of influencer marketing budgets. Top earners: Lil Miquela ($2M/yr), Aitana L\u00f3pez (\u20ac10k/mo)."
+    },
+    {
+      "title": "Supercreator",
+      "source": "sozee.ai",
+      "url": "https://sozee.ai/resources/ai-powered-onlyfans-agency-software/",
+      "summary": "now offers full AI account operation for agencies when implemented correctly with transparency."
     }
   ],
   "tools": [
     {
-      "title": "OpenClaw 2026.3.x major release",
+      "title": "Claude Code Auto Mode shipped March 24, 2026",
+      "source": "www.buildfastwithai.com",
+      "url": "https://www.buildfastwithai.com/blogs/claude-code-auto-mode-2026",
+      "summary": "\u2014 zero-approval automated development with AI safety classifier watching every tool call. Real game-changer for workflow automation."
+    },
+    {
+      "title": "OpenClaw 2026.3.22",
       "source": "github.com",
       "url": "https://github.com/openclaw/openclaw/releases",
-      "summary": "45 new features, 13 breaking changes, 82 bug fixes. Key additions: secrets system, PDF analysis tool, browser control improvements, safer defaults. Moving from \"demo setup\" to production-ready."
+      "summary": "released with 45 new features, secrets system, safer defaults, PDF tool, plugin API compatibility fixes. Moves it from \"demo setup\" to daily ops ready."
     },
     {
-      "title": "Claude Code worktrees for parallel agents",
-      "source": "code.claude.com",
-      "url": "https://code.claude.com/docs/en/common-workflows",
-      "summary": "Now supports worktree isolation — subagents can work in parallel without conflicts. Configure with `isolation: worktree` in agent frontmatter."
+      "title": "Agentic AI shift accelerating",
+      "source": "logicballs.com",
+      "url": "https://logicballs.com/news/autonomous-agentic-ai-enterprise-workflow-trends-2026",
+      "summary": "By 2026, ~40% of business workflows won't be managed by humans clicking buttons \u2014 agents will plan, execute, and course-correct in real-time."
     },
     {
-      "title": "Latenode MCP integration emerging",
-      "source": "www.reddit.com",
-      "url": "https://www.reddit.com/r/ClaudeAI/comments/1rkkozb/anyone_else_using_claude_to_build_automation/",
-      "summary": "Claude can now connect to external business apps via MCP — trigger real actions (update records, send messages, move data) instead of just planning. Visual low-code platforms building around this."
+      "title": "Standardized tool connectivity",
+      "source": "www.stackai.com",
+      "url": "https://www.stackai.com/blog/the-2026-guide-to-agentic-workflow-architectures",
+      "summary": "is becoming the core shift in agent architectures \u2014 less custom glue code, more composable agents following Unix philosophy."
     }
   ],
   "market": [
     {
-      "title": "Puerto Escondido entry window still open",
-      "source": "realestate.puerto-escondido.mx",
-      "url": "https://realestate.puerto-escondido.mx/puerto-escondido-real-estate-forecast-next-5-years",
-      "summary": "2026 is the last call before infrastructure-driven appreciation closes it. New North American/Canadian flight routes anticipated for 2026. Rental market showing strong fundamentals with year-round occupancy improving."
-    },
-    {
-      "title": "Rammed earth construction advancing",
-      "source": "www.earthusa.org",
-      "url": "https://www.earthusa.org",
-      "summary": "Earth USA 2026 conference Sept 18-20 in Santa Fe. New prefabricated block methods reduce construction time and cost while maintaining quality. Digital fabrication workflows (Rhino/Grasshopper) now enabling complex geometries."
-    },
-    {
-      "title": "Tulum ATV rental competition heating up",
+      "title": "Tulum ATV competition",
       "source": "www.tulumatvrental.com",
       "url": "https://www.tulumatvrental.com/",
-      "summary": "Multiple competitors active on TripAdvisor. \"Tulum ATV Rental\" operator claims \"no competitors\" — likely positioning play. Lagoon Company needs differentiation beyond just vehicles."
+      "summary": "TulumATVRental.com running aggressive positioning (\"no competitors\"), weekly rentals at $300. Multi-day self-guided tour packages becoming standard."
+    },
+    {
+      "title": "Puerto Escondido development accelerating",
+      "source": "realestate.puerto-escondido.mx",
+      "url": "https://realestate.puerto-escondido.mx/los-tamarindos-puerto-escondido-up-and-coming-neighborhood-guide/",
+      "summary": "La Punta boutique developments with infinity pools/ocean views attracting international buyers. Infrastructure upgrades (water, roads, drainage) planned for Brisas de Zicatela 2025-2026."
+    },
+    {
+      "title": "New air routes planned for 2026",
+      "source": "realestate.puerto-escondido.mx",
+      "url": "https://realestate.puerto-escondido.mx/puerto-escondido-rental-market-analysis-2026-occupancy-trends-investment-outlook",
+      "summary": "Canadian and additional US connections being planned for Puerto Escondido airport \u2014 will extend booking horizon for North American travelers. United already added Houston route April 2025."
+    },
+    {
+      "title": "Rammed earth construction",
+      "source": "www.earthusa.org",
+      "url": "https://www.earthusa.org",
+      "summary": "Earth USA 2026 conference Sept 18-20 in Santa Fe. Baja Blox doing compressed earth blocks in Baja California \u2014 prefab block approach reduces construction time/costs."
     }
   ],
   "actions": []
