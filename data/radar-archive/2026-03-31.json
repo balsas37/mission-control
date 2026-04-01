@@ -1,0 +1,117 @@
+{
+  "updatedAt": "2026-03-31T12:00:00Z",
+  "ofm": [
+    {
+      "title": "OnlyFans 2026 crackdown is live",
+      "source": "",
+      "url": "",
+      "summary": "biometric verification, AI detection tools, 30-40% revenue drops for violators. DMs still drive 60-70% of income \u2014 AI chatbots can't match human emotional connection. Source: https://b9-agency.com/blog/how-to-create-ai-onlyfans-model-2026"
+    },
+    {
+      "title": "OnlyMonster is winning",
+      "source": "",
+      "url": "",
+      "summary": "Became the go-to OFM management system with integrated AI assistance, outpacing competitors purely through product during Beta with no marketing. Source: https://onlymonster.ai/"
+    },
+    {
+      "title": "Fanvue is the AI-friendly platform",
+      "source": "",
+      "url": "",
+      "summary": "Explicitly welcoming AI-generated models with Voice AI replies, AI Analytics, and dedicated AI Creator resources. Market positioning as the leader for virtual models. Source: https://www.fanvue.com/pages/fanvue-ai"
+    },
+    {
+      "title": "AI influencer market at $6-8B",
+      "source": "",
+      "url": "",
+      "summary": "Forecasted to grow through 2026. Reddit reports show early creators making $300+ in first month with consistency. Source: https://www.imagine.art/blogs/how-ai-influencers-make-money"
+    },
+    {
+      "title": "New compliance tool Sozee",
+      "source": "",
+      "url": "",
+      "summary": "Offers private AI models built specifically for adult workflows with OnlyFans 7-rule compliance built in. Source: https://sozee.ai/resources/onlyfans-ai-rules-2026/"
+    }
+  ],
+  "tools": [
+    {
+      "title": "Claude Code Auto Mode released (March 27)",
+      "source": "",
+      "url": "",
+      "summary": "Intelligent classifier-based action approval for truly zero-friction automation. First-party \"secure automation without friction\" workflow. Source: https://claudelab.net/en/articles/claude-code/claude-code-auto-mode-guide"
+    },
+    {
+      "title": "OpenClaw 2026.3.22 major drop",
+      "source": "",
+      "url": "",
+      "summary": "45 new features, ContextEngine plugin interface, 200+ bug fixes, ClawHub API compatibility checks. Moving from \"cool demo\" to production-ready. Source: https://github.com/openclaw/openclaw/releases"
+    },
+    {
+      "title": "40% of workflows agentic by 2026",
+      "source": "",
+      "url": "",
+      "summary": "Enterprise projection that ~40% of business workflows will be managed by agentic AI (plan, execute, course-correct) not humans clicking buttons. Source: https://logicballs.com/news/autonomous-agentic-ai-enterprise-workflow-trends-2026"
+    },
+    {
+      "title": "\"Vibe coding\" goes mainstream",
+      "source": "",
+      "url": "",
+      "summary": "~40% of enterprise software expected to be built using natural-language-driven prompts guiding AI to generate working logic. Source: https://www.salesmate.io/blog/future-of-ai-agents/"
+    },
+    {
+      "title": "Standardized tool connectivity is the shift",
+      "source": "",
+      "url": "",
+      "summary": "The biggest change in agentic workflows \u2014 less custom glue code, more standardized connectors. Safety and governance become core system features. Source: https://www.stackai.com/blog/the-2026-guide-to-agentic-workflow-architectures"
+    }
+  ],
+  "market": [
+    {
+      "title": "Puerto Escondido accelerating",
+      "source": "",
+      "url": "",
+      "summary": "La Punta transforming with new boutique developments, infinity pools, ocean views attracting international turnkey buyers. Market structurally more resilient than 5 years ago. Source: https://realestate.puerto-escondido.mx/puerto-escondido-real-estate-market-trends-2026-investment-opportunities-on-oaxacas-pacific-coast/"
+    },
+    {
+      "title": "Airport driving property values",
+      "source": "",
+      "url": "",
+      "summary": "United Airlines launched direct Houston route April 2025; additional Canadian and US gateway routes planned for 2026. Infrastructure development reshaping entire market. Source: https://realestate.puerto-escondido.mx/transportation-infrastructure-how-puerto-escondidos-airport-transformation-is-reshaping-property-values/"
+    },
+    {
+      "title": "Los Tamarindos infrastructure upgrades",
+      "source": "",
+      "url": "",
+      "summary": "Santa Mar\u00eda Colotepec municipality announced 2025-2026 water system upgrades, road paving, enhanced drainage in Brisas de Zicatela neighborhoods. Source: https://realestate.puerto-escondido.mx/los-tamarindos-puerto-escondido-up-and-coming-neighborhood-guide/"
+    },
+    {
+      "title": "Rammed earth evolving",
+      "source": "",
+      "url": "",
+      "summary": "Baja Blox offering prefab earth blocks in Baja; digital fabrication workflows (Rhino/Grasshopper \u2192 CNC ramming) emerging. Earth USA conference Sept 18-20 2026 in Santa Fe. Source: https://bajablox.com/ + https://www.earthusa.org"
+    },
+    {
+      "title": "Tulum ATV rental competition",
+      "source": "",
+      "url": "",
+      "summary": "Competitor (tulumatvrental.com) claims \"no real competition\" \u2014 pricing at $85/day (24hr), $300/week, $600/month. Self-guided tour operators entering market. Lagoon Company positioning still dominant but watch pricing pressure."
+    }
+  ],
+  "actions": [
+    {
+      "text": "OFM: Consider Fanvue as primary AI model platform (more permissive than OF). Test OnlyMonster for existing human creator management. Do NOT rely on AI chatbots for DMs \u2014 human emotional connection is still the revenue driver.",
+      "done": false
+    },
+    {
+      "text": "AI/Automation: Enable Claude Code Auto Mode for faster dev workflows. Review OpenClaw's new ContextEngine plugins \u2014 may replace custom glue code. The 40% agentic shift means Beno's early investment in agent workflows is directionally correct.",
+      "done": false
+    },
+    {
+      "text": "Oaxaca: Los Tamarindos infrastructure timing (2025-2026) aligns with Hilltop Villa build schedule \u2014 good for access roads/utilities. Monitor new flight routes for tourism rental potential. Consider Baja Blox connection for rammed earth block supply chain.",
+      "done": false
+    },
+    {
+      "text": "Lagoon: Competitor pricing ($85/day) is benchmark \u2014 ensure Lagoon rates maintain premium positioning. Tulum market getting more crowded; double down on experience differentiation (yacht/UTV combos, Lagoon's local knowledge advantage).",
+      "done": false
+    }
+  ]
+}
