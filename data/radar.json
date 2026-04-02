@@ -1,117 +1,94 @@
 {
-  "updatedAt": "2026-03-31T12:00:00Z",
+  "updatedAt": "2026-04-01T12:00:00Z",
   "ofm": [
     {
-      "title": "OnlyFans 2026 crackdown is live",
+      "title": "OnlyFans 2026 crackdown intensifying",
       "source": "",
       "url": "",
-      "summary": "biometric verification, AI detection tools, 30-40% revenue drops for violators. DMs still drive 60-70% of income \u2014 AI chatbots can't match human emotional connection. Source: https://b9-agency.com/blog/how-to-create-ai-onlyfans-model-2026"
+      "summary": "Biometric verification, AI detection tools, and 30-40% revenue drops for violators now standard. DMs still drive 60-70% of income \u2014 and AI chatbots can't match human emotional connection. The real money? Selling courses about AI models, not running them. [b9-agency.com](https://b9-agency.com/blog/how-to-create-ai-onlyfans-model-2026)"
     },
     {
-      "title": "OnlyMonster is winning",
+      "title": "OnlyMonster dominates OFM tooling",
       "source": "",
       "url": "",
-      "summary": "Became the go-to OFM management system with integrated AI assistance, outpacing competitors purely through product during Beta with no marketing. Source: https://onlymonster.ai/"
+      "summary": "Rapidly becoming the go-to management system and desktop browser for agencies. AI assistance integrated into workflow. Outpaced competitors during Beta without even a website or promos. [onlymonster.ai](https://onlymonster.ai/)"
     },
     {
-      "title": "Fanvue is the AI-friendly platform",
+      "title": "Supercreator is the AI hub for creators",
       "source": "",
       "url": "",
-      "summary": "Explicitly welcoming AI-generated models with Voice AI replies, AI Analytics, and dedicated AI Creator resources. Market positioning as the leader for virtual models. Source: https://www.fanvue.com/pages/fanvue-ai"
+      "summary": "One dashboard for chats, fans, sales, and team management. Consider testing against your current stack. [supercreator.app](https://www.supercreator.app/)"
     },
     {
-      "title": "AI influencer market at $6-8B",
+      "title": "Fanvue raised $22M Series A",
       "source": "",
       "url": "",
-      "summary": "Forecasted to grow through 2026. Reddit reports show early creators making $300+ in first month with consistency. Source: https://www.imagine.art/blogs/how-ai-influencers-make-money"
+      "summary": "(Feb 2026): Expanding AI agents for fan interactions + ethical safeguards (Hive deepfake detection). Direct-to-fan subscriptions at 20% platform fee, $12.50 average subscription. This is your AI model platform if you're testing that lane. [bizjournals.com](https://www.bizjournals.com/bizjournals/news/2026/02/25/fanvue-seriesa-ai-expansion-creator-monetization.html)"
     },
     {
-      "title": "New compliance tool Sozee",
+      "title": "Fanvue AI creator earnings benchmark",
       "source": "",
       "url": "",
-      "summary": "Offers private AI models built specifically for adult workflows with OnlyFans 7-rule compliance built in. Source: https://sozee.ai/resources/onlyfans-ai-rules-2026/"
+      "summary": "Successful creators typically earn $500-5,000/month after 3-6 months consistent posting. Need followers BEFORE monetization \u2014 IG/TikTok/X/Reddit drive traffic to Fanvue. [apatero.com](https://www.apatero.com/blog/fanvue-complete-guide-ai-creators-monetization-2026)"
     }
   ],
   "tools": [
     {
-      "title": "Claude Code Auto Mode released (March 27)",
+      "title": "OpenClaw 2026.3.22 just dropped",
       "source": "",
       "url": "",
-      "summary": "Intelligent classifier-based action approval for truly zero-friction automation. First-party \"secure automation without friction\" workflow. Source: https://claudelab.net/en/articles/claude-code/claude-code-auto-mode-guide"
+      "summary": "45 new features, 13 breaking changes, 82 bug fixes. Plugin API compatibility checks now work properly. Worth reviewing the changelog for tools you use. [GitHub Releases](https://github.com/openclaw/openclaw/releases)"
     },
     {
-      "title": "OpenClaw 2026.3.22 major drop",
+      "title": "Claude Code worktree isolation",
       "source": "",
       "url": "",
-      "summary": "45 new features, ContextEngine plugin interface, 200+ bug fixes, ClawHub API compatibility checks. Moving from \"cool demo\" to production-ready. Source: https://github.com/openclaw/openclaw/releases"
+      "summary": "Subagents can now use worktree isolation to work in parallel without conflicts. Add `isolation: worktree` to agent frontmatter or ask Claude to \"use worktrees for your agents\". [code.claude.com](https://code.claude.com/docs/en/common-workflows)"
     },
     {
-      "title": "40% of workflows agentic by 2026",
+      "title": "Claude Code scheduled tasks",
       "source": "",
       "url": "",
-      "summary": "Enterprise projection that ~40% of business workflows will be managed by agentic AI (plan, execute, course-correct) not humans clicking buttons. Source: https://logicballs.com/news/autonomous-agentic-ai-enterprise-workflow-trends-2026"
+      "summary": "`/loop` command now runs nightly deployments, daily tests, weekly security audits. Build complex automation systems by combining skills, subagents, and external integrations coordinated by orchestrator agent. [popularaitools.ai](https://popularaitools.ai/blog/claude-code-scheduled-tasks-autonomous-agents-2026)"
     },
     {
-      "title": "\"Vibe coding\" goes mainstream",
+      "title": "Multi-agent orchestration frameworks emerging",
       "source": "",
       "url": "",
-      "summary": "~40% of enterprise software expected to be built using natural-language-driven prompts guiding AI to generate working logic. Source: https://www.salesmate.io/blog/future-of-ai-agents/"
-    },
-    {
-      "title": "Standardized tool connectivity is the shift",
-      "source": "",
-      "url": "",
-      "summary": "The biggest change in agentic workflows \u2014 less custom glue code, more standardized connectors. Safety and governance become core system features. Source: https://www.stackai.com/blog/the-2026-guide-to-agentic-workflow-architectures"
+      "summary": "GitHub repos like `Claude-Code-Workflow` (JSON-driven) and `awesome-claude-code` (curated skills list) show the ecosystem maturing. Worth scanning for OFM automation patterns. [github.com/hesreallyhim/awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code)"
     }
   ],
   "market": [
     {
-      "title": "Puerto Escondido accelerating",
+      "title": "Puerto Escondido entering investment phase",
       "source": "",
       "url": "",
-      "summary": "La Punta transforming with new boutique developments, infinity pools, ocean views attracting international turnkey buyers. Market structurally more resilient than 5 years ago. Source: https://realestate.puerto-escondido.mx/puerto-escondido-real-estate-market-trends-2026-investment-opportunities-on-oaxacas-pacific-coast/"
+      "summary": "\"El destino est\u00e1 entrando en una etapa donde el inter\u00e9s ya no se explica solo por estilo de vida o turismo, sino por una mezcla m\u00e1s concreta de conectividad, demanda y expectativa de crecimiento ordenado.\" Early mover window is closing. [elheraldodesaltillo.mx](https://elheraldodesaltillo.mx/2026/03/06/puerto-escondido-se-recalienta-por-que-crece-el-apetito-de-inversion-en-la-costa-de-oaxaca-en-2026/)"
     },
     {
-      "title": "Airport driving property values",
+      "title": "Airport expansion accelerating",
       "source": "",
       "url": "",
-      "summary": "United Airlines launched direct Houston route April 2025; additional Canadian and US gateway routes planned for 2026. Infrastructure development reshaping entire market. Source: https://realestate.puerto-escondido.mx/transportation-infrastructure-how-puerto-escondidos-airport-transformation-is-reshaping-property-values/"
+      "summary": "International routes from Houston already operational (spring 2025), additional Canadian and US connections planned for 2026. Airport designed by Alberto Kalach. Your move timing (May 2026) aligns with this inflection. [realestate.puerto-escondido.mx](https://realestate.puerto-escondido.mx/puerto-escondido-real-estate-market-trends-2026-investment-opportunities-on-oaxacas-pacific-coast/)"
     },
     {
-      "title": "Los Tamarindos infrastructure upgrades",
+      "title": "Puerto Escondido construction costs",
       "source": "",
       "url": "",
-      "summary": "Santa Mar\u00eda Colotepec municipality announced 2025-2026 water system upgrades, road paving, enhanced drainage in Brisas de Zicatela neighborhoods. Source: https://realestate.puerto-escondido.mx/los-tamarindos-puerto-escondido-up-and-coming-neighborhood-guide/"
+      "summary": "Currently $12,000-18,000 MXN per m\u00b2 ($700-1,050 USD/m\u00b2) for quality builds. Still significantly below comparable coastal markets. Factor this into your Hilltop Villa budget. [realestate.puerto-escondido.mx](https://realestate.puerto-escondido.mx/los-tamarindos-puerto-escondido-up-and-coming-neighborhood-guide/)"
     },
     {
-      "title": "Rammed earth evolving",
+      "title": "Earth USA 2026 conference",
       "source": "",
       "url": "",
-      "summary": "Baja Blox offering prefab earth blocks in Baja; digital fabrication workflows (Rhino/Grasshopper \u2192 CNC ramming) emerging. Earth USA conference Sept 18-20 2026 in Santa Fe. Source: https://bajablox.com/ + https://www.earthusa.org"
+      "summary": "Rammed earth/adobe event Sept 18-20 in Santa Fe, New Mexico. Network with Sirewall-adjacent builders and material suppliers. Could connect you to Mexico-region expertise. [earthusa.org](https://www.earthusa.org)"
     },
     {
       "title": "Tulum ATV rental competition",
       "source": "",
       "url": "",
-      "summary": "Competitor (tulumatvrental.com) claims \"no real competition\" \u2014 pricing at $85/day (24hr), $300/week, $600/month. Self-guided tour operators entering market. Lagoon Company positioning still dominant but watch pricing pressure."
+      "summary": "Viator, TripAdvisor, and \"Tulum ATV Rental\" (tulumatvrental.com) all active. Lagoon Company still ranks well in search. No major new entrants detected, but monitor pricing."
     }
   ],
-  "actions": [
-    {
-      "text": "OFM: Consider Fanvue as primary AI model platform (more permissive than OF). Test OnlyMonster for existing human creator management. Do NOT rely on AI chatbots for DMs \u2014 human emotional connection is still the revenue driver.",
-      "done": false
-    },
-    {
-      "text": "AI/Automation: Enable Claude Code Auto Mode for faster dev workflows. Review OpenClaw's new ContextEngine plugins \u2014 may replace custom glue code. The 40% agentic shift means Beno's early investment in agent workflows is directionally correct.",
-      "done": false
-    },
-    {
-      "text": "Oaxaca: Los Tamarindos infrastructure timing (2025-2026) aligns with Hilltop Villa build schedule \u2014 good for access roads/utilities. Monitor new flight routes for tourism rental potential. Consider Baja Blox connection for rammed earth block supply chain.",
-      "done": false
-    },
-    {
-      "text": "Lagoon: Competitor pricing ($85/day) is benchmark \u2014 ensure Lagoon rates maintain premium positioning. Tulum market getting more crowded; double down on experience differentiation (yacht/UTV combos, Lagoon's local knowledge advantage).",
-      "done": false
-    }
-  ]
+  "actions": []
 }
