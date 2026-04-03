@@ -1,0 +1,94 @@
+{
+  "updatedAt": "2026-04-02T12:00:00Z",
+  "ofm": [
+    {
+      "title": "OnlyFans 2026 crackdown is live",
+      "source": "b9-agency.com",
+      "url": "https://b9-agency.com/blog/how-to-create-ai-onlyfans-model-2026",
+      "summary": "Biometric verification, AI detection tools, and 30-40% revenue penalties for violators. DMs still drive 60-70% of revenue\u2014but AI chatbots can't match human emotional connection. The people making the most money are selling courses, not running AI models."
+    },
+    {
+      "title": "OnlyMonster dominates OFM tech",
+      "source": "onlymonster.ai",
+      "url": "https://onlymonster.ai/",
+      "summary": "Rapidly becoming the go-to management system and desktop browser for agencies\u2014outpaced all competitors in Beta without even a website. Heavy AI integration into OF workflow."
+    },
+    {
+      "title": "Fanvue raised $22M Series A",
+      "source": "slobodskyi.com",
+      "url": "https://slobodskyi.com/monetize/memberships/fanvue",
+      "summary": "(Jan 2026) from Inner Circle\u2014same investors behind Revolut and Anthropic. Positioned as the AI-friendly creator platform with explicit AI-generated model policies."
+    },
+    {
+      "title": "AI influencer market hit $6.06-6.95B in 2026",
+      "source": "www.imagine.art",
+      "url": "https://www.imagine.art/blogs/how-ai-influencers-make-money",
+      "summary": ", growing 26% annually. Fanvue is the leader for direct AI model monetization; TikTok/IG Reels still king for viral growth."
+    },
+    {
+      "title": "Platform-specific insight",
+      "source": "",
+      "url": "",
+      "summary": "OnlyFans is tightening enforcement while Fanvue is embracing AI models with clear disclosure requirements. Strategic implication\u2014diversify platform presence now."
+    }
+  ],
+  "tools": [
+    {
+      "title": "OpenClaw 2026.4.1 just dropped",
+      "source": "github.com",
+      "url": "https://github.com/openclaw/openclaw/releases",
+      "summary": "(42 min ago on npm): 45 new features, 13 breaking changes, 82 bug fixes. Plugin API compatibility improvements and safer defaults."
+    },
+    {
+      "title": "Claude Code worktree isolation",
+      "source": "code.claude.com",
+      "url": "https://code.claude.com/docs/en/common-workflows",
+      "summary": "Subagents can now use worktree isolation (`isolation: worktree` in frontmatter) to work in parallel without conflicts. Critical for multi-agent OFM workflows."
+    },
+    {
+      "title": "Awesome Claude Code repo",
+      "source": "github.com",
+      "url": "https://github.com/hesreallyhim/awesome-claude-code",
+      "summary": "Curated list of skills, hooks, slash-commands, and agent orchestrators. AgentSys workflow automation system available."
+    },
+    {
+      "title": "Claude Code Workflow framework",
+      "source": "github.com",
+      "url": "https://github.com/catlog22/Claude-Code-Workflow",
+      "summary": "JSON-driven multi-agent cadence with intelligent CLI orchestration (Gemini/Qwen/Codex), context-first architecture."
+    },
+    {
+      "title": "Claude Code /loop command",
+      "source": "popularaitools.ai",
+      "url": "https://popularaitools.ai/blog/claude-code-scheduled-tasks-autonomous-agents-2026",
+      "summary": "Build complex automation systems combining skills, subagents, and external integrations. Run nightly deployments, daily tests, weekly security audits."
+    }
+  ],
+  "market": [
+    {
+      "title": "Tulum ATV rental market",
+      "source": "",
+      "url": "",
+      "summary": "Fragmented competition. The Lagoon Company ranks well but \"Tulum ATV Rental\" claims \"no competitors\"\u2014aggressive positioning. New entrant \"La Veleta\" getting TripAdvisor traction. Market ripe for consolidation play."
+    },
+    {
+      "title": "Rammed earth construction",
+      "source": "www.earthusa.org",
+      "url": "https://www.earthusa.org",
+      "summary": "Earth USA 2026 conference (Sept 18-20, Santa Fe) expanding scope to include adobe, rammed earth, compressed earth blocks. Baja Blox manufacturing CEBs in Baja California Norte\u2014potential supplier connection for Oaxaca build."
+    },
+    {
+      "title": "Puerto Escondido real estate window closing",
+      "source": "realestate.puerto-escondido.mx",
+      "url": "https://realestate.puerto-escondido.mx/puerto-escondido-real-estate-forecast-next-5-years",
+      "summary": "Strong fundamentals with international demand, improved infrastructure, year-round occupancy. Large beachfront lots (1,000-3,000 sqm) still significant value vs Tulum/Playa\u2014but infrastructure-driven appreciation is narrowing entry window."
+    },
+    {
+      "title": "Santerra House precedent",
+      "source": "newatlas.com",
+      "url": "https://newatlas.com/architecture/santerra-house-parma-arquitectura/",
+      "summary": "Parma Arquitectura built rammed earth/burnt timber weekend home in Valle de Guadalupe wine region for under $80K\u2014proof of concept for low-cost earth construction in Mexico."
+    }
+  ],
+  "actions": []
+}
