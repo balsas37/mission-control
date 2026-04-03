@@ -8,16 +8,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-02T02:00:00.009000+00:00",
-      "nextRun": "2026-04-03T02:00:00+00:00",
-      "lastDuration": 113623,
+      "lastRun": "2026-04-03T02:00:00.013000+00:00",
+      "nextRun": "2026-04-04T02:00:00+00:00",
+      "lastDuration": 83784,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-02T02:00:00.009000+00:00",
+          "ts": "2026-04-03T02:00:00.013000+00:00",
           "status": "ok",
-          "duration": 113623
+          "duration": 83784
         }
       ]
     },
@@ -29,16 +29,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-01T13:00:00.009000+00:00",
-      "nextRun": "2026-04-02T18:27:50.985000+00:00",
-      "lastDuration": 52528,
+      "lastRun": "2026-04-02T18:38:30.013000+00:00",
+      "nextRun": "2026-04-03T13:00:00+00:00",
+      "lastDuration": 42367,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-01T13:00:00.009000+00:00",
+          "ts": "2026-04-02T18:38:30.013000+00:00",
           "status": "ok",
-          "duration": 52528
+          "duration": 42367
         }
       ]
     },
@@ -50,16 +50,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-02T18:19:45.611000+00:00",
-      "nextRun": "2026-04-02T19:01:07.213000+00:00",
-      "lastDuration": 11941,
+      "lastRun": "2026-04-03T10:01:07.272000+00:00",
+      "nextRun": "2026-04-03T11:01:07.213000+00:00",
+      "lastDuration": 17557,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-02T18:19:45.611000+00:00",
+          "ts": "2026-04-03T10:01:07.272000+00:00",
           "status": "ok",
-          "duration": 11941
+          "duration": 17557
         }
       ]
     },
@@ -71,16 +71,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-02T18:19:57.552000+00:00",
-      "nextRun": "2026-04-02T19:30:00+00:00",
-      "lastDuration": 9406,
+      "lastRun": "2026-04-03T03:30:00.009000+00:00",
+      "nextRun": "2026-04-03T13:30:00+00:00",
+      "lastDuration": 106462,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-02T18:19:57.552000+00:00",
+          "ts": "2026-04-03T03:30:00.009000+00:00",
           "status": "ok",
-          "duration": 9406
+          "duration": 106462
         }
       ]
     },
@@ -134,16 +134,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-01T11:50:00.007000+00:00",
-      "nextRun": "2026-04-02T18:27:45.985000+00:00",
-      "lastDuration": 58573,
+      "lastRun": "2026-04-02T18:40:28.784000+00:00",
+      "nextRun": "2026-04-03T11:50:00+00:00",
+      "lastDuration": 60164,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-01T11:50:00.007000+00:00",
+          "ts": "2026-04-02T18:40:28.784000+00:00",
           "status": "ok",
-          "duration": 58573
+          "duration": 60164
         }
       ]
     },
@@ -154,17 +154,17 @@
       "description": "",
       "agent": "main",
       "enabled": true,
-      "lastStatus": "ok",
-      "lastRun": "2026-04-02T18:27:21.228000+00:00",
-      "nextRun": "2026-04-03T06:00:00+00:00",
-      "lastDuration": 139420,
-      "consecutiveErrors": 0,
-      "lastError": "",
+      "lastStatus": "error",
+      "lastRun": "2026-04-03T06:00:00.009000+00:00",
+      "nextRun": "2026-04-04T06:00:00+00:00",
+      "lastDuration": 289487,
+      "consecutiveErrors": 1,
+      "lastError": "\u26a0\ufe0f \ud83d\udee0\ufe0f Exec: run python3 bin/vault-scan.sh -> run wc (in ~/.openclaw/workspace), `python3 bin/vault-scan.sh '' '' 2>/dev/null | wc -l` failed: exec denied: host=gateway security=deny",
       "runs": [
         {
-          "ts": "2026-04-02T18:27:21.228000+00:00",
-          "status": "ok",
-          "duration": 139420
+          "ts": "2026-04-03T06:00:00.009000+00:00",
+          "status": "error",
+          "duration": 289487
         }
       ]
     },
@@ -175,17 +175,17 @@
       "description": "",
       "agent": "main",
       "enabled": true,
-      "lastStatus": "ok",
-      "lastRun": "2026-04-02T02:30:00.006000+00:00",
-      "nextRun": "2026-04-03T02:30:00+00:00",
-      "lastDuration": 56883,
-      "consecutiveErrors": 0,
-      "lastError": "",
+      "lastStatus": "error",
+      "lastRun": "2026-04-03T02:30:00.011000+00:00",
+      "nextRun": "2026-04-04T02:30:00+00:00",
+      "lastDuration": 301,
+      "consecutiveErrors": 1,
+      "lastError": "GatewayDrainingError: Gateway is draining for restart; new tasks are not accepted",
       "runs": [
         {
-          "ts": "2026-04-02T02:30:00.006000+00:00",
-          "status": "ok",
-          "duration": 56883
+          "ts": "2026-04-03T02:30:00.011000+00:00",
+          "status": "error",
+          "duration": 301
         }
       ]
     },
@@ -196,17 +196,17 @@
       "description": "",
       "agent": "main",
       "enabled": true,
-      "lastStatus": "ok",
-      "lastRun": "2026-04-02T18:31:40.711000+00:00",
-      "nextRun": "2026-04-03T06:30:00+00:00",
-      "lastDuration": 22160,
-      "consecutiveErrors": 0,
-      "lastError": "",
+      "lastStatus": "error",
+      "lastRun": "2026-04-03T06:30:00.051000+00:00",
+      "nextRun": "2026-04-04T06:30:00+00:00",
+      "lastDuration": 180173,
+      "consecutiveErrors": 1,
+      "lastError": "cron: job execution timed out",
       "runs": [
         {
-          "ts": "2026-04-02T18:31:40.711000+00:00",
-          "status": "ok",
-          "duration": 22160
+          "ts": "2026-04-03T06:30:00.051000+00:00",
+          "status": "error",
+          "duration": 180173
         }
       ]
     },
@@ -239,16 +239,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-01T11:00:00.010000+00:00",
-      "nextRun": "2026-04-02T18:27:35.985000+00:00",
-      "lastDuration": 77419,
+      "lastRun": "2026-04-02T18:35:20.093000+00:00",
+      "nextRun": "2026-04-03T11:00:00+00:00",
+      "lastDuration": 14566,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-01T11:00:00.010000+00:00",
+          "ts": "2026-04-02T18:35:20.093000+00:00",
           "status": "ok",
-          "duration": 77419
+          "duration": 14566
         }
       ]
     },
@@ -323,16 +323,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-01T11:45:00.018000+00:00",
-      "nextRun": "2026-04-02T18:27:40.985000+00:00",
-      "lastDuration": 39595,
+      "lastRun": "2026-04-02T18:35:34.659000+00:00",
+      "nextRun": "2026-04-03T11:45:00+00:00",
+      "lastDuration": 37146,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-01T11:45:00.018000+00:00",
+          "ts": "2026-04-02T18:35:34.659000+00:00",
           "status": "ok",
-          "duration": 39595
+          "duration": 37146
         }
       ]
     },
@@ -343,17 +343,17 @@
       "description": "",
       "agent": "main",
       "enabled": true,
-      "lastStatus": "ok",
-      "lastRun": "2026-04-02T18:21:11.911000+00:00",
-      "nextRun": "2026-04-03T04:30:00+00:00",
-      "lastDuration": 338447,
-      "consecutiveErrors": 0,
-      "lastError": "",
+      "lastStatus": "error",
+      "lastRun": "2026-04-03T04:30:00.008000+00:00",
+      "nextRun": "2026-04-04T04:30:00+00:00",
+      "lastDuration": 329908,
+      "consecutiveErrors": 1,
+      "lastError": "\u26a0\ufe0f \ud83d\udee0\ufe0f Exec: list files in workspace/mission-control/ -> show first 30 lines, `ls -la workspace/mission-control/ 2>/dev/null | head -30` failed: exec denied: host=gateway security=deny",
       "runs": [
         {
-          "ts": "2026-04-02T18:21:11.911000+00:00",
-          "status": "ok",
-          "duration": 338447
+          "ts": "2026-04-03T04:30:00.008000+00:00",
+          "status": "error",
+          "duration": 329908
         }
       ]
     },
@@ -386,16 +386,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-01T17:01:25.520000+00:00",
-      "nextRun": "2026-04-02T18:27:55.985000+00:00",
-      "lastDuration": 92874,
+      "lastRun": "2026-04-02T18:39:12.380000+00:00",
+      "nextRun": "2026-04-03T17:00:00+00:00",
+      "lastDuration": 76404,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-01T17:01:25.520000+00:00",
+          "ts": "2026-04-02T18:39:12.380000+00:00",
           "status": "ok",
-          "duration": 92874
+          "duration": 76404
         }
       ]
     },
@@ -428,16 +428,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-02T18:20:06.958000+00:00",
-      "nextRun": "2026-04-03T04:00:00+00:00",
-      "lastDuration": 64953,
+      "lastRun": "2026-04-03T04:00:00.035000+00:00",
+      "nextRun": "2026-04-04T04:00:00+00:00",
+      "lastDuration": 69828,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-02T18:20:06.958000+00:00",
+          "ts": "2026-04-03T04:00:00.035000+00:00",
           "status": "ok",
-          "duration": 64953
+          "duration": 69828
         }
       ]
     },
@@ -448,17 +448,17 @@
       "description": "",
       "agent": "main",
       "enabled": true,
-      "lastStatus": "ok",
-      "lastRun": "2026-04-01T23:02:28.190000+00:00",
-      "nextRun": "2026-04-02T23:00:00+00:00",
-      "lastDuration": 4708,
-      "consecutiveErrors": 0,
-      "lastError": "",
+      "lastStatus": "error",
+      "lastRun": "2026-04-02T23:04:00.174000+00:00",
+      "nextRun": "2026-04-03T23:00:00+00:00",
+      "lastDuration": 30058,
+      "consecutiveErrors": 1,
+      "lastError": "cron: job execution timed out",
       "runs": [
         {
-          "ts": "2026-04-01T23:02:28.190000+00:00",
-          "status": "ok",
-          "duration": 4708
+          "ts": "2026-04-02T23:04:00.174000+00:00",
+          "status": "error",
+          "duration": 30058
         }
       ]
     },
@@ -470,16 +470,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-01T07:00:00.010000+00:00",
-      "nextRun": "2026-04-02T18:27:25.985000+00:00",
-      "lastDuration": 218200,
+      "lastRun": "2026-04-03T07:00:00.008000+00:00",
+      "nextRun": "2026-04-04T07:00:00+00:00",
+      "lastDuration": 193545,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-01T07:00:00.010000+00:00",
+          "ts": "2026-04-03T07:00:00.008000+00:00",
           "status": "ok",
-          "duration": 218200
+          "duration": 193545
         }
       ]
     },
@@ -490,17 +490,17 @@
       "description": "",
       "agent": "main",
       "enabled": true,
-      "lastStatus": "ok",
-      "lastRun": "2026-04-02T18:27:05.996000+00:00",
-      "nextRun": "2026-04-02T23:00:00+00:00",
-      "lastDuration": 13047,
-      "consecutiveErrors": 0,
+      "lastStatus": "error",
+      "lastRun": "2026-04-03T05:01:48.187000+00:00",
+      "nextRun": "2026-04-03T11:00:00+00:00",
+      "lastDuration": 12174,
+      "consecutiveErrors": 2,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-02T18:27:05.996000+00:00",
-          "status": "ok",
-          "duration": 13047
+          "ts": "2026-04-03T05:01:48.187000+00:00",
+          "status": "error",
+          "duration": 12174
         }
       ]
     },
@@ -511,17 +511,17 @@
       "description": "",
       "agent": "main",
       "enabled": true,
-      "lastStatus": "ok",
-      "lastRun": "2026-04-02T18:26:50.358000+00:00",
-      "nextRun": "2026-04-02T23:00:00+00:00",
-      "lastDuration": 10626,
-      "consecutiveErrors": 0,
+      "lastStatus": "error",
+      "lastRun": "2026-04-03T05:00:00.030000+00:00",
+      "nextRun": "2026-04-03T11:00:00+00:00",
+      "lastDuration": 108157,
+      "consecutiveErrors": 2,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-02T18:26:50.358000+00:00",
-          "status": "ok",
-          "duration": 10626
+          "ts": "2026-04-03T05:00:00.030000+00:00",
+          "status": "error",
+          "duration": 108157
         }
       ]
     },
@@ -533,16 +533,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "error",
-      "lastRun": "2026-04-02T18:29:40.648000+00:00",
-      "nextRun": "2026-04-02T23:03:52.724000+00:00",
-      "lastDuration": 120063,
-      "consecutiveErrors": 1,
-      "lastError": "cron: job execution timed out",
+      "lastRun": "2026-04-03T05:03:52.732000+00:00",
+      "nextRun": "2026-04-03T11:03:52.724000+00:00",
+      "lastDuration": 11289,
+      "consecutiveErrors": 3,
+      "lastError": "\u26a0\ufe0f \ud83d\udee0\ufe0f Exec: `bash ~/.openclaw/workspace/bin/sync-usage-data.sh` failed: exec denied: host=gateway security=deny",
       "runs": [
         {
-          "ts": "2026-04-02T18:29:40.648000+00:00",
+          "ts": "2026-04-03T05:03:52.732000+00:00",
           "status": "error",
-          "duration": 120063
+          "duration": 11289
         }
       ]
     },
@@ -554,16 +554,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-01T07:30:00.008000+00:00",
-      "nextRun": "2026-04-02T18:27:30.985000+00:00",
-      "lastDuration": 270784,
+      "lastRun": "2026-04-03T07:30:00.028000+00:00",
+      "nextRun": "2026-04-04T07:30:00+00:00",
+      "lastDuration": 258811,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-01T07:30:00.008000+00:00",
+          "ts": "2026-04-03T07:30:00.028000+00:00",
           "status": "ok",
-          "duration": 270784
+          "duration": 258811
         }
       ]
     },
@@ -695,9 +695,34 @@
       "count": 1
     },
     {
-      "job": "usage-data-sync",
+      "job": "dream-cycle",
+      "error": "\u26a0\ufe0f \ud83d\udee0\ufe0f Exec: run python3 bin/vault-scan.sh -> run wc (in ~/.openclaw/workspace), `python3 bin/vault-scan.sh '' '' 2>/dev/null | wc -l` failed: exec denied: host=gateway security=deny",
+      "count": 1
+    },
+    {
+      "job": "evening-routine",
+      "error": "GatewayDrainingError: Gateway is draining for restart; new tasks are not accepted",
+      "count": 1
+    },
+    {
+      "job": "instinct-extraction",
       "error": "cron: job execution timed out",
       "count": 1
+    },
+    {
+      "job": "nightly-execution",
+      "error": "\u26a0\ufe0f \ud83d\udee0\ufe0f Exec: list files in workspace/mission-control/ -> show first 30 lines, `ls -la workspace/mission-control/ 2>/dev/null | head -30` failed: exec denied: host=gateway security=deny",
+      "count": 1
+    },
+    {
+      "job": "shiloh-call-reminder",
+      "error": "cron: job execution timed out",
+      "count": 1
+    },
+    {
+      "job": "usage-data-sync",
+      "error": "\u26a0\ufe0f \ud83d\udee0\ufe0f Exec: `bash ~/.openclaw/workspace/bin/sync-usage-data.sh` failed: exec denied: host=gateway security=deny",
+      "count": 3
     },
     {
       "job": "weekly-backup",
