@@ -30,12 +30,10 @@
     "description": "Beno reviewed the course. Piia to extract key chatter workflows, AI model creation systems, and ops frameworks.",
     "project": "OFM Agency",
     "priority": "High",
-    "agent": [
-      "rec7UjlTlYp2P"
-    ],
+    "agent": "Piia",
     "status": "todo",
     "createdAt": 1772664609000,
-    "movedAt": 1773794143000
+    "movedAt": 1775266677000
   },
   {
     "id": "kb-103",
@@ -116,12 +114,10 @@
     "description": "14+ custom skills built and live.",
     "project": "OpenClaw",
     "priority": "Medium",
-    "agent": [
-      "rec7UjlTlYp2P"
-    ],
+    "agent": "Piia",
     "status": "done",
     "createdAt": 1772664609000,
-    "movedAt": 1773794143000
+    "movedAt": 1775266677000
   },
   {
     "id": "kb-110",
@@ -130,12 +126,10 @@
     "description": "Root cause found and fixed - both crons now have correct Telegram channel + chat ID.",
     "project": "OpenClaw",
     "priority": "High",
-    "agent": [
-      "rec7UjlTlYp2P"
-    ],
+    "agent": "Piia",
     "status": "completed",
     "createdAt": 1772664610000,
-    "movedAt": 1773794143000
+    "movedAt": 1775266677000
   },
   {
     "id": "kb-111",
@@ -144,12 +138,10 @@
     "description": "Repo: github.com/balsas37/mission-control. Live at balsas37.github.io/mission-control.",
     "project": "OpenClaw",
     "priority": "High",
-    "agent": [
-      "rec7UjlTlYp2P"
-    ],
+    "agent": "Piia",
     "status": "completed",
     "createdAt": 1772664610000,
-    "movedAt": 1773794143000
+    "movedAt": 1775266677000
   },
   {
     "id": "kb-112",
@@ -158,12 +150,10 @@
     "description": "Send a Telegram voice note - Piia transcribes and structures it into a journal entry.",
     "project": "OpenClaw",
     "priority": "Medium",
-    "agent": [
-      "recVnnrNXlvwt"
-    ],
+    "agent": "Zara",
     "status": "todo",
     "createdAt": 1772664610000,
-    "movedAt": 1773794143000
+    "movedAt": 1775266677000
   },
   {
     "id": "kb-113",
@@ -208,12 +198,10 @@
     "description": "Sales page and 4 funnel pages written. FB ad campaign blocked until Stripe is connected.",
     "project": "Digital Products",
     "priority": "High",
-    "agent": [
-      "rec6swN17awjF"
-    ],
+    "agent": "Rex",
     "status": "inprogress",
     "createdAt": 1772664610000,
-    "movedAt": 1773794143000
+    "movedAt": 1775266677000
   },
   {
     "id": "kb-117",
@@ -270,12 +258,10 @@
     "description": "Workflow built. 72hr SLA, Google Form intake, PDF delivery.",
     "project": "Digital Products",
     "priority": "High",
-    "agent": [
-      "recVnnrNXlvwt"
-    ],
+    "agent": "Zara",
     "status": "done",
     "createdAt": 1772664611000,
-    "movedAt": 1773794143000
+    "movedAt": 1775266677000
   },
   {
     "id": "kb-122",
@@ -284,12 +270,10 @@
     "description": "Once Beno shares course, run refinement pass on sales copy.",
     "project": "Digital Products",
     "priority": "Medium",
-    "agent": [
-      "recrc35rVUWmh"
-    ],
+    "agent": "Mara",
     "status": "backlog",
     "createdAt": 1772664611000,
-    "movedAt": 1773794143000
+    "movedAt": 1775266677000
   },
   {
     "id": "kb-123",
@@ -298,12 +282,10 @@
     "description": "Aitable Earnings Report syncs to MC Analytics tab. Daily cron 6 AM.",
     "project": "OpenClaw",
     "priority": "Low",
-    "agent": [
-      "recVnnrNXlvwt"
-    ],
+    "agent": "Zara",
     "status": "done",
     "createdAt": 1772664611000,
-    "movedAt": 1773794143000
+    "movedAt": 1775266677000
   },
   {
     "id": "kb-124",
@@ -336,12 +318,10 @@
     "description": "Live data fetch from Aitable. Analytics tab shows real monthly revenue, bookings, top vehicle.",
     "project": "Lagoon Company",
     "priority": "High",
-    "agent": [
-      "rec7UjlTlYp2P"
-    ],
+    "agent": "Piia",
     "status": "done",
     "createdAt": 1772664611000,
-    "movedAt": 1773794143000
+    "movedAt": 1775266677000
   },
   {
     "id": "kb-127",
@@ -410,12 +390,10 @@
     "description": "Wraps OpenClaw native voice-call plugin. Supports notify and conversation mode.",
     "project": "OpenClaw",
     "priority": "Medium",
-    "agent": [
-      "rec7UjlTlYp2P"
-    ],
+    "agent": "Piia",
     "status": "done",
     "createdAt": 1772664611000,
-    "movedAt": 1773794143000
+    "movedAt": 1775266677000
   },
   {
     "id": "kb-133",
@@ -424,12 +402,10 @@
     "description": "/usage command shows Anthropic + Kimi token usage. Syncs to MC analytics 4x daily.",
     "project": "OpenClaw",
     "priority": "Medium",
-    "agent": [
-      "rec7UjlTlYp2P"
-    ],
+    "agent": "Piia",
     "status": "done",
     "createdAt": 1772664611000,
-    "movedAt": 1773794143000
+    "movedAt": 1775266677000
   },
   {
     "id": "kb-134",
@@ -438,12 +414,10 @@
     "description": "Queries GA4 Data API via service account. Reports: overview, top pages, traffic sources, realtime.",
     "project": "OpenClaw",
     "priority": "Low",
-    "agent": [
-      "rec7UjlTlYp2P"
-    ],
+    "agent": "Piia",
     "status": "done",
     "createdAt": 1772664611000,
-    "movedAt": 1773794143000
+    "movedAt": 1775266677000
   },
   {
     "id": "kb-135",
