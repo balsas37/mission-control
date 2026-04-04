@@ -1,93 +1,99 @@
 {
-  "updatedAt": "2026-04-02T12:00:00Z",
+  "updatedAt": "2026-04-03T12:00:00Z",
   "ofm": [
     {
       "title": "OnlyFans 2026 crackdown is live",
       "source": "b9-agency.com",
       "url": "https://b9-agency.com/blog/how-to-create-ai-onlyfans-model-2026",
-      "summary": "Biometric verification, AI detection tools, and 30-40% revenue penalties for violators. DMs still drive 60-70% of revenue\u2014but AI chatbots can't match human emotional connection. The people making the most money are selling courses, not running AI models."
+      "summary": "Biometric verification, AI detection tools, and 30-40% revenue drops for violators. DMs still drive 60-70% of income \u2014 AI chatbots can't match human emotional connection yet."
     },
     {
-      "title": "OnlyMonster dominates OFM tech",
-      "source": "onlymonster.ai",
-      "url": "https://onlymonster.ai/",
-      "summary": "Rapidly becoming the go-to management system and desktop browser for agencies\u2014outpaced all competitors in Beta without even a website. Heavy AI integration into OF workflow."
+      "title": "Top agencies running 3-layer stack",
+      "source": "sozee.ai",
+      "url": "https://sozee.ai/resources/ai-tools-onlyfans-agencies-2026/",
+      "summary": "Sozee.ai (infinite content gen) + Inr\u014d/Supercreator (fan acquisition & chat) + Zapier/Gumloop (workflows) = 50%+ revenue growth."
     },
     {
-      "title": "Fanvue raised $22M Series A",
-      "source": "slobodskyi.com",
-      "url": "https://slobodskyi.com/monetize/memberships/fanvue",
-      "summary": "(Jan 2026) from Inner Circle\u2014same investors behind Revolut and Anthropic. Positioned as the AI-friendly creator platform with explicit AI-generated model policies."
+      "title": "Fanvue Rewards launched",
+      "source": "blog.fanvue.com",
+      "url": "https://blog.fanvue.com/introducing-fanvue-rewards-earn-more-for-doing-what-you-love/",
+      "summary": "New feature rewarding creators for engagement on top of usual income. Platform evolving into multi-vertical (fitness, educators, entertainers) with AI integration."
     },
     {
-      "title": "AI influencer market hit $6.06-6.95B in 2026",
-      "source": "www.imagine.art",
-      "url": "https://www.imagine.art/blogs/how-ai-influencers-make-money",
-      "summary": ", growing 26% annually. Fanvue is the leader for direct AI model monetization; TikTok/IG Reels still king for viral growth."
+      "title": "AI influencers on Fanvue working",
+      "source": "www.reddit.com",
+      "url": "https://www.reddit.com/r/passive_income/comments/1s67dpf/nobody-is-talking-about-ai-influencers-on-fanvue/",
+      "summary": "Reddit reports fictional AI characters with consistent look/personality trained on models, building social followings, monetizing via subscriptions. Lower competition than OF."
     },
     {
-      "title": "Platform-specific insight",
-      "source": "",
-      "url": "",
-      "summary": "OnlyFans is tightening enforcement while Fanvue is embracing AI models with clear disclosure requirements. Strategic implication\u2014diversify platform presence now."
+      "title": "AI companion market at $120M+",
+      "source": "devtechnosys.com",
+      "url": "https://devtechnosys.com/insights/best-ai-girlfriend-apps/",
+      "summary": "Expected revenue by end of 2025, with RomanticAI, OurDream AI, KupidAI leading. Natural language + emotional intelligence + visual customization are the differentiators."
     }
   ],
   "tools": [
     {
-      "title": "OpenClaw 2026.4.1 just dropped",
-      "source": "github.com",
-      "url": "https://github.com/openclaw/openclaw/releases",
-      "summary": "(42 min ago on npm): 45 new features, 13 breaking changes, 82 bug fixes. Plugin API compatibility improvements and safer defaults."
+      "title": "OpenClaw March 2026 major release",
+      "source": "skywork.ai",
+      "url": "https://skywork.ai/skypage/en/openclaw-latest-updates-2026/2037437426655117312",
+      "summary": "45 new features, 13 breaking changes, 82 bug fixes. New task board, richer agent defaults, expanded channel/plugin support, ContextEngine plugin interface."
     },
     {
-      "title": "Claude Code worktree isolation",
+      "title": "Claude Code hooks system",
       "source": "code.claude.com",
-      "url": "https://code.claude.com/docs/en/common-workflows",
-      "summary": "Subagents can now use worktree isolation (`isolation: worktree` in frontmatter) to work in parallel without conflicts. Critical for multi-agent OFM workflows."
+      "url": "https://code.claude.com/docs/en/hooks-guide",
+      "summary": "Now supports automating workflows \u2014 run shell commands when files are edited, tasks complete, or input needed. Format code, send notifications, validate commands."
     },
     {
-      "title": "Awesome Claude Code repo",
+      "title": "Claude Code workflow frameworks emerging",
       "source": "github.com",
-      "url": "https://github.com/hesreallyhim/awesome-claude-code",
-      "summary": "Curated list of skills, hooks, slash-commands, and agent orchestrators. AgentSys workflow automation system available."
+      "url": "https://github.com/shinpr/claude-code-workflows",
+      "summary": "GitHub repos like `shinpr/claude-code-workflows` and `catlog22/Claude-Code-Workflow` offer production-ready agent cadences, governance, and session management."
     },
     {
-      "title": "Claude Code Workflow framework",
-      "source": "github.com",
-      "url": "https://github.com/catlog22/Claude-Code-Workflow",
-      "summary": "JSON-driven multi-agent cadence with intelligent CLI orchestration (Gemini/Qwen/Codex), context-first architecture."
+      "title": "Agentic AI hitting mainstream",
+      "source": "www.cflowapps.com",
+      "url": "https://www.cflowapps.com/ai-workflow-automation-trends/",
+      "summary": "2026 seeing broader adoption in customer service routing, internal ops, procurement, project management. Workflows shifting from linear to dynamic, context-aware systems."
     },
     {
-      "title": "Claude Code /loop command",
-      "source": "popularaitools.ai",
-      "url": "https://popularaitools.ai/blog/claude-code-scheduled-tasks-autonomous-agents-2026",
-      "summary": "Build complex automation systems combining skills, subagents, and external integrations. Run nightly deployments, daily tests, weekly security audits."
+      "title": "Relay.app and Gumloop leading",
+      "source": "www.gumloop.com",
+      "url": "https://www.gumloop.com/blog/best-ai-workflow-automation-tools",
+      "summary": "Simple AI agent builders for automated workflows. n8n still relevant. Companies commissioning full-scale AI agents for industry-specific automation."
     }
   ],
   "market": [
     {
-      "title": "Tulum ATV rental market",
-      "source": "",
-      "url": "",
-      "summary": "Fragmented competition. The Lagoon Company ranks well but \"Tulum ATV Rental\" claims \"no competitors\"\u2014aggressive positioning. New entrant \"La Veleta\" getting TripAdvisor traction. Market ripe for consolidation play."
+      "title": "Puerto Escondido top 6 Mexico investment destination 2026",
+      "source": "oaxaca.quadratin.com.mx",
+      "url": "https://oaxaca.quadratin.com.mx/puerto-escondido-en-el-top-2026-6-destinos-en-mexico-para-invertir/",
+      "summary": "Airport expansion/modernization underway with completion horizon end of 2026. Digital nomad infrastructure growing in La Punta and Zicatela."
     },
     {
-      "title": "Rammed earth construction",
-      "source": "www.earthusa.org",
-      "url": "https://www.earthusa.org",
-      "summary": "Earth USA 2026 conference (Sept 18-20, Santa Fe) expanding scope to include adobe, rammed earth, compressed earth blocks. Baja Blox manufacturing CEBs in Baja California Norte\u2014potential supplier connection for Oaxaca build."
+      "title": "Tulum Air Show 2026 announced",
+      "source": "tulumtimes.com",
+      "url": "https://tulumtimes.com/mexico-plans-international-showcase-through-tulum-air-show-2026",
+      "summary": "Major international aviation showcase planned, positioning Tulum for global event programming. Tourism boost incoming."
     },
     {
-      "title": "Puerto Escondido real estate window closing",
-      "source": "realestate.puerto-escondido.mx",
-      "url": "https://realestate.puerto-escondido.mx/puerto-escondido-real-estate-forecast-next-5-years",
-      "summary": "Strong fundamentals with international demand, improved infrastructure, year-round occupancy. Large beachfront lots (1,000-3,000 sqm) still significant value vs Tulum/Playa\u2014but infrastructure-driven appreciation is narrowing entry window."
+      "title": "Tulum rental market heating up",
+      "source": "www.speedyscootertulum.com",
+      "url": "https://www.speedyscootertulum.com/",
+      "summary": "Competitors offering free delivery, WhatsApp booking, up to 60% discounts. SpeedyScooterTulum and TulumRentalCo pushing aggressive pricing."
     },
     {
-      "title": "Santerra House precedent",
-      "source": "newatlas.com",
-      "url": "https://newatlas.com/architecture/santerra-house-parma-arquitectura/",
-      "summary": "Parma Arquitectura built rammed earth/burnt timber weekend home in Valle de Guadalupe wine region for under $80K\u2014proof of concept for low-cost earth construction in Mexico."
+      "title": "Rammed earth construction accelerating",
+      "source": "www.yankodesign.com",
+      "url": "https://www.yankodesign.com/2026/03/21/5-rammed-earth-homes-in-2026-that-make-concrete-walls-look-outdated/",
+      "summary": "Cuts typical construction emissions by 50%+. 2026-2035 shift toward standardized prefabricated formwork systems for speed and cost predictability."
+    },
+    {
+      "title": "Puerto Escondido investment thesis shifting",
+      "source": "elheraldodesaltillo.mx",
+      "url": "https://elheraldodesaltillo.mx/2026/03/06/puerto-escondido-se-recalienta-por-que-crece-el-apetito-de-inversion-en-la-costa-de-oaxaca-en-2026/",
+      "summary": "No longer just lifestyle/tourism \u2014 now driven by connectivity (superhighway to Oaxaca City), sustained demand, and expectation of ordered growth."
     }
   ],
   "actions": []
