@@ -8,16 +8,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-04T02:00:00.007000+00:00",
-      "nextRun": "2026-04-05T02:00:00+00:00",
-      "lastDuration": 70550,
+      "lastRun": "2026-04-05T02:00:00.011000+00:00",
+      "nextRun": "2026-04-06T02:00:00+00:00",
+      "lastDuration": 69959,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-04T02:00:00.007000+00:00",
+          "ts": "2026-04-05T02:00:00.011000+00:00",
           "status": "ok",
-          "duration": 70550
+          "duration": 69959
         }
       ]
     },
@@ -28,17 +28,17 @@
       "description": "",
       "agent": "main",
       "enabled": true,
-      "lastStatus": "error",
-      "lastRun": "2026-04-03T13:00:00.029000+00:00",
-      "nextRun": "2026-04-04T13:00:00+00:00",
-      "lastDuration": 70661,
-      "consecutiveErrors": 1,
-      "lastError": "HttpError: Network request for 'sendMessage' failed!",
+      "lastStatus": "ok",
+      "lastRun": "2026-04-04T13:00:00.029000+00:00",
+      "nextRun": "2026-04-05T13:00:00+00:00",
+      "lastDuration": 82120,
+      "consecutiveErrors": 0,
+      "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-03T13:00:00.029000+00:00",
-          "status": "error",
-          "duration": 70661
+          "ts": "2026-04-04T13:00:00.029000+00:00",
+          "status": "ok",
+          "duration": 82120
         }
       ]
     },
@@ -50,16 +50,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-04T10:01:07.226000+00:00",
-      "nextRun": "2026-04-04T11:01:07.213000+00:00",
-      "lastDuration": 10573,
+      "lastRun": "2026-04-05T10:01:07.228000+00:00",
+      "nextRun": "2026-04-05T11:01:07.213000+00:00",
+      "lastDuration": 30842,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-04T10:01:07.226000+00:00",
+          "ts": "2026-04-05T10:01:07.228000+00:00",
           "status": "ok",
-          "duration": 10573
+          "duration": 30842
         }
       ]
     },
@@ -71,16 +71,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-04T03:30:00.014000+00:00",
-      "nextRun": "2026-04-04T13:30:00+00:00",
-      "lastDuration": 99041,
+      "lastRun": "2026-04-05T03:30:00.013000+00:00",
+      "nextRun": "2026-04-05T13:30:00+00:00",
+      "lastDuration": 28048,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-04T03:30:00.014000+00:00",
+          "ts": "2026-04-05T03:30:00.013000+00:00",
           "status": "ok",
-          "duration": 99041
+          "duration": 28048
         }
       ]
     },
@@ -134,16 +134,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-03T11:50:00.075000+00:00",
-      "nextRun": "2026-04-04T11:50:00+00:00",
-      "lastDuration": 80477,
+      "lastRun": "2026-04-04T11:50:00.011000+00:00",
+      "nextRun": "2026-04-05T11:50:00+00:00",
+      "lastDuration": 75536,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-03T11:50:00.075000+00:00",
+          "ts": "2026-04-04T11:50:00.011000+00:00",
           "status": "ok",
-          "duration": 80477
+          "duration": 75536
         }
       ]
     },
@@ -155,16 +155,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-04T06:00:00.014000+00:00",
-      "nextRun": "2026-04-05T06:00:00+00:00",
-      "lastDuration": 258628,
+      "lastRun": "2026-04-05T06:00:00.014000+00:00",
+      "nextRun": "2026-04-06T06:00:00+00:00",
+      "lastDuration": 176734,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-04T06:00:00.014000+00:00",
+          "ts": "2026-04-05T06:00:00.014000+00:00",
           "status": "ok",
-          "duration": 258628
+          "duration": 176734
         }
       ]
     },
@@ -176,16 +176,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-04T02:30:00.011000+00:00",
-      "nextRun": "2026-04-05T02:30:00+00:00",
-      "lastDuration": 44353,
+      "lastRun": "2026-04-05T02:30:00.012000+00:00",
+      "nextRun": "2026-04-06T02:30:00+00:00",
+      "lastDuration": 58844,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-04T02:30:00.011000+00:00",
+          "ts": "2026-04-05T02:30:00.012000+00:00",
           "status": "ok",
-          "duration": 44353
+          "duration": 58844
         }
       ]
     },
@@ -196,17 +196,17 @@
       "description": "",
       "agent": "main",
       "enabled": true,
-      "lastStatus": "error",
-      "lastRun": "2026-04-04T06:30:00.012000+00:00",
-      "nextRun": "2026-04-05T06:30:00+00:00",
-      "lastDuration": 157577,
-      "consecutiveErrors": 2,
-      "lastError": "\u26a0\ufe0f \ud83d\udcdd Edit failed: Missing required parameter: path alias (received: edits=<array>). Supply correct parameters before retrying.",
+      "lastStatus": "ok",
+      "lastRun": "2026-04-05T06:30:00.009000+00:00",
+      "nextRun": "2026-04-06T06:30:00+00:00",
+      "lastDuration": 87794,
+      "consecutiveErrors": 0,
+      "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-04T06:30:00.012000+00:00",
-          "status": "error",
-          "duration": 157577
+          "ts": "2026-04-05T06:30:00.009000+00:00",
+          "status": "ok",
+          "duration": 87794
         }
       ]
     },
@@ -238,17 +238,17 @@
       "description": "",
       "agent": "main",
       "enabled": true,
-      "lastStatus": "error",
-      "lastRun": "2026-04-03T11:00:00.056000+00:00",
-      "nextRun": "2026-04-04T11:00:00+00:00",
-      "lastDuration": 120298,
-      "consecutiveErrors": 1,
+      "lastStatus": "ok",
+      "lastRun": "2026-04-04T11:00:00.014000+00:00",
+      "nextRun": "2026-04-05T11:00:00+00:00",
+      "lastDuration": 114697,
+      "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-03T11:00:00.056000+00:00",
-          "status": "error",
-          "duration": 120298
+          "ts": "2026-04-04T11:00:00.014000+00:00",
+          "status": "ok",
+          "duration": 114697
         }
       ]
     },
@@ -323,16 +323,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-03T11:45:00.023000+00:00",
-      "nextRun": "2026-04-04T11:45:00+00:00",
-      "lastDuration": 78585,
+      "lastRun": "2026-04-04T11:45:00.016000+00:00",
+      "nextRun": "2026-04-05T11:45:00+00:00",
+      "lastDuration": 43015,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-03T11:45:00.023000+00:00",
+          "ts": "2026-04-04T11:45:00.016000+00:00",
           "status": "ok",
-          "duration": 78585
+          "duration": 43015
         }
       ]
     },
@@ -344,16 +344,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-04T04:30:00.011000+00:00",
-      "nextRun": "2026-04-05T04:30:00+00:00",
-      "lastDuration": 324925,
+      "lastRun": "2026-04-05T04:30:00.012000+00:00",
+      "nextRun": "2026-04-06T04:30:00+00:00",
+      "lastDuration": 387220,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-04T04:30:00.011000+00:00",
+          "ts": "2026-04-05T04:30:00.012000+00:00",
           "status": "ok",
-          "duration": 324925
+          "duration": 387220
         }
       ]
     },
@@ -386,16 +386,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-03T17:51:24.359000+00:00",
-      "nextRun": "2026-04-04T17:00:00+00:00",
-      "lastDuration": 103755,
+      "lastRun": "2026-04-04T17:01:52.229000+00:00",
+      "nextRun": "2026-04-05T17:00:00+00:00",
+      "lastDuration": 119361,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-03T17:51:24.359000+00:00",
+          "ts": "2026-04-04T17:01:52.229000+00:00",
           "status": "ok",
-          "duration": 103755
+          "duration": 119361
         }
       ]
     },
@@ -427,17 +427,17 @@
       "description": "",
       "agent": "main",
       "enabled": true,
-      "lastStatus": "ok",
-      "lastRun": "2026-04-04T04:00:00.010000+00:00",
-      "nextRun": "2026-04-05T04:00:00+00:00",
-      "lastDuration": 69648,
-      "consecutiveErrors": 0,
-      "lastError": "",
+      "lastStatus": "error",
+      "lastRun": "2026-04-05T04:00:00.012000+00:00",
+      "nextRun": "2026-04-06T04:00:00+00:00",
+      "lastDuration": 113525,
+      "consecutiveErrors": 1,
+      "lastError": "\u26a0\ufe0f \ud83d\udcdd Edit failed: Missing required parameter: path alias (received: edits=<array>). Supply correct parameters before retrying.",
       "runs": [
         {
-          "ts": "2026-04-04T04:00:00.010000+00:00",
-          "status": "ok",
-          "duration": 69648
+          "ts": "2026-04-05T04:00:00.012000+00:00",
+          "status": "error",
+          "duration": 113525
         }
       ]
     },
@@ -449,16 +449,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-03T23:41:13.157000+00:00",
-      "nextRun": "2026-04-04T23:00:00+00:00",
-      "lastDuration": 9353,
+      "lastRun": "2026-04-04T23:00:50.623000+00:00",
+      "nextRun": "2026-04-05T23:00:00+00:00",
+      "lastDuration": 11452,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-03T23:41:13.157000+00:00",
+          "ts": "2026-04-04T23:00:50.623000+00:00",
           "status": "ok",
-          "duration": 9353
+          "duration": 11452
         }
       ]
     },
@@ -470,16 +470,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-04T07:00:00.011000+00:00",
-      "nextRun": "2026-04-05T07:00:00+00:00",
-      "lastDuration": 177090,
+      "lastRun": "2026-04-05T07:00:00.009000+00:00",
+      "nextRun": "2026-04-06T07:00:00+00:00",
+      "lastDuration": 132865,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-04T07:00:00.011000+00:00",
+          "ts": "2026-04-05T07:00:00.009000+00:00",
           "status": "ok",
-          "duration": 177090
+          "duration": 132865
         }
       ]
     },
@@ -491,16 +491,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-04T05:01:35.039000+00:00",
-      "nextRun": "2026-04-04T11:00:00+00:00",
-      "lastDuration": 47140,
+      "lastRun": "2026-04-05T05:00:21.395000+00:00",
+      "nextRun": "2026-04-05T11:00:00+00:00",
+      "lastDuration": 26592,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-04T05:01:35.039000+00:00",
+          "ts": "2026-04-05T05:00:21.395000+00:00",
           "status": "ok",
-          "duration": 47140
+          "duration": 26592
         }
       ]
     },
@@ -512,16 +512,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-04T05:00:00.015000+00:00",
-      "nextRun": "2026-04-04T11:00:00+00:00",
-      "lastDuration": 95024,
+      "lastRun": "2026-04-05T05:00:00.019000+00:00",
+      "nextRun": "2026-04-05T11:00:00+00:00",
+      "lastDuration": 21376,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-04T05:00:00.015000+00:00",
+          "ts": "2026-04-05T05:00:00.019000+00:00",
           "status": "ok",
-          "duration": 95024
+          "duration": 21376
         }
       ]
     },
@@ -533,16 +533,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-04T05:03:52.731000+00:00",
-      "nextRun": "2026-04-04T11:03:52.724000+00:00",
-      "lastDuration": 11722,
+      "lastRun": "2026-04-05T05:03:52.734000+00:00",
+      "nextRun": "2026-04-05T11:03:52.724000+00:00",
+      "lastDuration": 11506,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-04T05:03:52.731000+00:00",
+          "ts": "2026-04-05T05:03:52.734000+00:00",
           "status": "ok",
-          "duration": 11722
+          "duration": 11506
         }
       ]
     },
@@ -554,16 +554,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "error",
-      "lastRun": "2026-04-04T07:30:00.015000+00:00",
-      "nextRun": "2026-04-05T07:30:00+00:00",
-      "lastDuration": 226981,
-      "consecutiveErrors": 1,
+      "lastRun": "2026-04-05T07:30:00.011000+00:00",
+      "nextRun": "2026-04-06T07:30:00+00:00",
+      "lastDuration": 202784,
+      "consecutiveErrors": 2,
       "lastError": "\u26a0\ufe0f \ud83d\udcdd Edit failed: Missing required parameter: path alias (received: edits=<array>). Supply correct parameters before retrying.",
       "runs": [
         {
-          "ts": "2026-04-04T07:30:00.015000+00:00",
+          "ts": "2026-04-05T07:30:00.011000+00:00",
           "status": "error",
-          "duration": 226981
+          "duration": 202784
         }
       ]
     },
@@ -575,16 +575,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-29T22:02:57.483000+00:00",
-      "nextRun": "2026-04-05T08:00:00+00:00",
-      "lastDuration": 362155,
+      "lastRun": "2026-04-05T08:00:00.011000+00:00",
+      "nextRun": "2026-04-12T08:00:00+00:00",
+      "lastDuration": 319868,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-29T22:02:57.483000+00:00",
+          "ts": "2026-04-05T08:00:00.011000+00:00",
           "status": "ok",
-          "duration": 362155
+          "duration": 319868
         }
       ]
     },
@@ -596,16 +596,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "error",
-      "lastRun": "2026-03-29T22:08:59.638000+00:00",
-      "nextRun": "2026-04-05T08:00:00+00:00",
-      "lastDuration": 600034,
-      "consecutiveErrors": 2,
-      "lastError": "Error: cron: job execution timed out",
+      "lastRun": "2026-04-05T08:05:19.879000+00:00",
+      "nextRun": "2026-04-12T08:00:00+00:00",
+      "lastDuration": 600078,
+      "consecutiveErrors": 3,
+      "lastError": "cron: job execution timed out",
       "runs": [
         {
-          "ts": "2026-03-29T22:08:59.638000+00:00",
+          "ts": "2026-04-05T08:05:19.879000+00:00",
           "status": "error",
-          "duration": 600034
+          "duration": 600078
         }
       ]
     },
@@ -690,29 +690,24 @@
   ],
   "errors": [
     {
-      "job": "bianca-morning-routine",
-      "error": "HttpError: Network request for 'sendMessage' failed!",
-      "count": 1
-    },
-    {
       "job": "couples-monthly-financial",
       "error": "cron: job execution timed out",
       "count": 1
     },
     {
-      "job": "instinct-extraction",
-      "error": "\u26a0\ufe0f \ud83d\udcdd Edit failed: Missing required parameter: path alias (received: edits=<array>). Supply correct parameters before retrying.",
-      "count": 2
-    },
-    {
-      "job": "vault-reweave",
+      "job": "session-recap",
       "error": "\u26a0\ufe0f \ud83d\udcdd Edit failed: Missing required parameter: path alias (received: edits=<array>). Supply correct parameters before retrying.",
       "count": 1
     },
     {
-      "job": "weekly-backup",
-      "error": "Error: cron: job execution timed out",
+      "job": "vault-reweave",
+      "error": "\u26a0\ufe0f \ud83d\udcdd Edit failed: Missing required parameter: path alias (received: edits=<array>). Supply correct parameters before retrying.",
       "count": 2
+    },
+    {
+      "job": "weekly-backup",
+      "error": "cron: job execution timed out",
+      "count": 3
     },
     {
       "job": "weekly-score",
