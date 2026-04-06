@@ -1,0 +1,100 @@
+{
+  "updatedAt": "2026-04-05T12:00:00Z",
+  "ofm": [
+    {
+      "title": "2026 platform crackdown is real",
+      "source": "",
+      "url": "",
+      "summary": "Biometric verification + AI detection tools now active; violators seeing 30-40% revenue drops. DMs still drive 60-70% of income and AI chatbots can't match human emotional connection. [b9-agency.com](https://b9-agency.com/blog/how-to-create-ai-onlyfans-model-2026)"
+    },
+    {
+      "title": "OnlyMonster emerges as category leader",
+      "source": "",
+      "url": "",
+      "summary": "Rapidly become the go-to management system/desktop browser for OF agencies, outpacing competitors through Beta with AI assistance integration. [onlymonster.ai](https://onlymonster.ai/)"
+    },
+    {
+      "title": "Fanvue hits $100M run rate",
+      "source": "",
+      "url": "",
+      "summary": "Raised $22M Series A (Feb 2026), 20,000 new creators joined last month. Platform fee is 20% on $12.50 average subscription. Enhanced AI agents for fan interactions coming. [businesswire.com](https://www.businesswire.com/news/home/20260112458975/en/)"
+    },
+    {
+      "title": "AI influencer revenue benchmarks",
+      "source": "",
+      "url": "",
+      "summary": "Top virtual influencers (Lil Miquela, Aitana Lopez) earning $1K-$2M per post/year. Successful Fanvue AI creators typically hit $500-5,000/month after 3-6 months consistent posting. [success.com](https://www.success.com/how-ai-influencers-generate-millions-per-year)"
+    },
+    {
+      "title": "Sozee + Supercreator combo",
+      "source": "",
+      "url": "",
+      "summary": "Agencies pairing Sozee (content generation) with Supercreator (chat/management) + Zapier/Gumloop hitting 50%+ revenue growth through full-funnel automation. [sozee.ai](https://sozee.ai/resources/ai-tools-onlyfans-agencies-2026/)"
+    }
+  ],
+  "tools": [
+    {
+      "title": "OpenClaw 2026.3.2 released",
+      "source": "",
+      "url": "",
+      "summary": "Major themes = \"trustworthy enough for real workflows.\" New secrets system, safer defaults, PDF tool, task board/status handling. 45 new features, 13 breaking changes, 82 bug fixes in March release. [github.com/openclaw](https://github.com/openclaw/openclaw/releases)"
+    },
+    {
+      "title": "Claude Code worktree isolation",
+      "source": "",
+      "url": "",
+      "summary": "Subagents can now use worktree isolation to work in parallel without conflicts. Add `isolation: worktree` to agent frontmatter or ask Claude to \"work in a worktree.\" [code.claude.com/docs](https://code.claude.com/docs/en/common-workflows)"
+    },
+    {
+      "title": "Awesome Claude Code repo",
+      "source": "",
+      "url": "",
+      "summary": "Curated list of skills, hooks, slash-commands, agent orchestrators now maintained at `hesreallyhim/awesome-claude-code`. Includes AgentSys workflow automation. [github.com](https://github.com/hesreallyhim/awesome-claude-code)"
+    },
+    {
+      "title": "Claude Code adaptive learning",
+      "source": "",
+      "url": "",
+      "summary": "Now automatically learns your coding style, project structure, and preferences over time. Scheduled tasks and autonomous agent capabilities expanded. [popularaitools.ai](https://popularaitools.ai/blog/claude-code-scheduled-tasks-autonomous-agents-2026)"
+    },
+    {
+      "title": "Multi-agent coordination v4",
+      "source": "",
+      "url": "",
+      "summary": "New features include `fork_context`, `task_name`, `send_message`, `assign_task`, `list_agents` + `spawn_agents_on_csv` for parallel wave execution. [Claude-Code-Workflow repo](https://github.com/catlog22/Claude-Code-Workflow)"
+    }
+  ],
+  "market": [
+    {
+      "title": "Tulum ATV rental market",
+      "source": "",
+      "url": "",
+      "summary": "Lagoon Company still dominant in search results. Competitors now offering incentives like \"free tequila bottle with rental\" to differentiate. Fat-tire ATVs with 200km+ range becoming standard pitch. [tulumatvrental.com](https://www.tulumatvrental.com/)"
+    },
+    {
+      "title": "Puerto Escondido real estate window",
+      "source": "",
+      "url": "",
+      "summary": "Market entering 2026 with strong fundamentals \u2014 growing international/domestic demand, improved infrastructure. Large beachfront lots (1,000-3,000 sqm) are significant value plays vs saturated Tulum/Playa markets. [realestate.puerto-escondido.mx](https://realestate.puerto-escondido.mx/puerto-escondido-real-estate-forecast-next-5-years)"
+    },
+    {
+      "title": "Rammed earth construction trend",
+      "source": "",
+      "url": "",
+      "summary": "Prefabricated rammed earth blocks gaining traction \u2014 allows factory casting, quality control, reduced construction time/cost. Baja Blox operating in Baja California Norte. [archello.com](https://archello.com/news/detail-rammed-earth-walls-of-casa-ballena-los-cabos)"
+    },
+    {
+      "title": "Earth USA 2026 conference",
+      "source": "",
+      "url": "",
+      "summary": "Sept 18-20 at Scottish Rite Center, Santa Fe. Covers adobe, rammed earth, compressed earth block. Wider field of interest than previous years. [earthusa.org](https://www.earthusa.org)"
+    },
+    {
+      "title": "Santerra House precedent",
+      "source": "",
+      "url": "",
+      "summary": "Mexican studio Parma Arquitectura built rammed earth weekend home in Valle de Guadalupe for under $80K. Burnt timber + rammed earth combo in wine region shows market acceptance. [newatlas.com](https://newatlas.com/architecture/santerra-house-parma-arquitectura/)"
+    }
+  ],
+  "actions": []
+}
