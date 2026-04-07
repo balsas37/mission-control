@@ -8,16 +8,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-06T02:00:00.005000+00:00",
-      "nextRun": "2026-04-07T02:00:00+00:00",
-      "lastDuration": 23352,
+      "lastRun": "2026-04-07T02:00:00.007000+00:00",
+      "nextRun": "2026-04-08T02:00:00+00:00",
+      "lastDuration": 29257,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-06T02:00:00.005000+00:00",
+          "ts": "2026-04-07T02:00:00.007000+00:00",
           "status": "ok",
-          "duration": 23352
+          "duration": 29257
         }
       ]
     },
@@ -29,16 +29,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-05T13:00:00.014000+00:00",
-      "nextRun": "2026-04-06T13:00:00+00:00",
-      "lastDuration": 69158,
+      "lastRun": "2026-04-06T13:00:00.008000+00:00",
+      "nextRun": "2026-04-07T13:00:00+00:00",
+      "lastDuration": 36217,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-05T13:00:00.014000+00:00",
+          "ts": "2026-04-06T13:00:00.008000+00:00",
           "status": "ok",
-          "duration": 69158
+          "duration": 36217
         }
       ]
     },
@@ -50,16 +50,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-06T10:01:07.216000+00:00",
-      "nextRun": "2026-04-06T11:01:07.213000+00:00",
-      "lastDuration": 32068,
+      "lastRun": "2026-04-07T10:01:07.220000+00:00",
+      "nextRun": "2026-04-07T11:01:07.213000+00:00",
+      "lastDuration": 18542,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-06T10:01:07.216000+00:00",
+          "ts": "2026-04-07T10:01:07.220000+00:00",
           "status": "ok",
-          "duration": 32068
+          "duration": 18542
         }
       ]
     },
@@ -71,16 +71,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-06T03:30:00.011000+00:00",
-      "nextRun": "2026-04-06T13:30:00+00:00",
-      "lastDuration": 36492,
+      "lastRun": "2026-04-07T03:30:00.006000+00:00",
+      "nextRun": "2026-04-07T13:30:00+00:00",
+      "lastDuration": 61849,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-06T03:30:00.011000+00:00",
+          "ts": "2026-04-07T03:30:00.006000+00:00",
           "status": "ok",
-          "duration": 36492
+          "duration": 61849
         }
       ]
     },
@@ -134,16 +134,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-05T11:50:00.008000+00:00",
-      "nextRun": "2026-04-06T11:50:00+00:00",
-      "lastDuration": 71017,
+      "lastRun": "2026-04-06T11:50:00.006000+00:00",
+      "nextRun": "2026-04-07T11:50:00+00:00",
+      "lastDuration": 51165,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-05T11:50:00.008000+00:00",
+          "ts": "2026-04-06T11:50:00.006000+00:00",
           "status": "ok",
-          "duration": 71017
+          "duration": 51165
         }
       ]
     },
@@ -155,16 +155,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-06T06:00:00.032000+00:00",
-      "nextRun": "2026-04-07T06:00:00+00:00",
-      "lastDuration": 352969,
+      "lastRun": "2026-04-07T06:00:00.009000+00:00",
+      "nextRun": "2026-04-08T06:00:00+00:00",
+      "lastDuration": 303038,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-06T06:00:00.032000+00:00",
+          "ts": "2026-04-07T06:00:00.009000+00:00",
           "status": "ok",
-          "duration": 352969
+          "duration": 303038
         }
       ]
     },
@@ -176,16 +176,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-06T02:30:00.007000+00:00",
-      "nextRun": "2026-04-07T02:30:00+00:00",
-      "lastDuration": 13595,
+      "lastRun": "2026-04-07T02:30:00.005000+00:00",
+      "nextRun": "2026-04-08T02:30:00+00:00",
+      "lastDuration": 14871,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-06T02:30:00.007000+00:00",
+          "ts": "2026-04-07T02:30:00.005000+00:00",
           "status": "ok",
-          "duration": 13595
+          "duration": 14871
         }
       ]
     },
@@ -197,16 +197,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-06T06:30:00.013000+00:00",
-      "nextRun": "2026-04-07T06:30:00+00:00",
-      "lastDuration": 77700,
+      "lastRun": "2026-04-07T06:30:00.007000+00:00",
+      "nextRun": "2026-04-08T06:30:00+00:00",
+      "lastDuration": 101259,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-06T06:30:00.013000+00:00",
+          "ts": "2026-04-07T06:30:00.007000+00:00",
           "status": "ok",
-          "duration": 77700
+          "duration": 101259
         }
       ]
     },
@@ -218,16 +218,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-30T12:01:16.987000+00:00",
-      "nextRun": "2026-04-06T12:00:00+00:00",
-      "lastDuration": 155086,
+      "lastRun": "2026-04-06T12:01:14.379000+00:00",
+      "nextRun": "2026-04-13T12:00:00+00:00",
+      "lastDuration": 145559,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-30T12:01:16.987000+00:00",
+          "ts": "2026-04-06T12:01:14.379000+00:00",
           "status": "ok",
-          "duration": 155086
+          "duration": 145559
         }
       ]
     },
@@ -239,16 +239,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-05T11:00:00.015000+00:00",
-      "nextRun": "2026-04-06T11:00:00+00:00",
-      "lastDuration": 33378,
+      "lastRun": "2026-04-06T11:00:00.007000+00:00",
+      "nextRun": "2026-04-07T11:00:00+00:00",
+      "lastDuration": 16956,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-05T11:00:00.015000+00:00",
+          "ts": "2026-04-06T11:00:00.007000+00:00",
           "status": "ok",
-          "duration": 33378
+          "duration": 16956
         }
       ]
     },
@@ -260,16 +260,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-30T12:00:00.010000+00:00",
-      "nextRun": "2026-04-06T12:00:00+00:00",
-      "lastDuration": 76977,
+      "lastRun": "2026-04-06T12:00:00.006000+00:00",
+      "nextRun": "2026-04-13T12:00:00+00:00",
+      "lastDuration": 74373,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-30T12:00:00.010000+00:00",
+          "ts": "2026-04-06T12:00:00.006000+00:00",
           "status": "ok",
-          "duration": 76977
+          "duration": 74373
         }
       ]
     },
@@ -323,16 +323,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-05T11:45:00.012000+00:00",
-      "nextRun": "2026-04-06T11:45:00+00:00",
-      "lastDuration": 42741,
+      "lastRun": "2026-04-06T11:45:00.007000+00:00",
+      "nextRun": "2026-04-07T11:45:00+00:00",
+      "lastDuration": 16501,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-05T11:45:00.012000+00:00",
+          "ts": "2026-04-06T11:45:00.007000+00:00",
           "status": "ok",
-          "duration": 42741
+          "duration": 16501
         }
       ]
     },
@@ -343,17 +343,17 @@
       "description": "",
       "agent": "main",
       "enabled": true,
-      "lastStatus": "ok",
-      "lastRun": "2026-04-06T04:30:00.004000+00:00",
-      "nextRun": "2026-04-07T04:30:00+00:00",
-      "lastDuration": 227615,
-      "consecutiveErrors": 0,
-      "lastError": "",
+      "lastStatus": "error",
+      "lastRun": "2026-04-07T04:30:00.007000+00:00",
+      "nextRun": "2026-04-08T04:30:00+00:00",
+      "lastDuration": 205501,
+      "consecutiveErrors": 1,
+      "lastError": "FallbackSummaryError: All models failed (2): openai-codex/gpt-5.4: LLM request timed out. (unknown) | openai-codex/gpt-5.3-codex: LLM request timed out. (unknown)",
       "runs": [
         {
-          "ts": "2026-04-06T04:30:00.004000+00:00",
-          "status": "ok",
-          "duration": 227615
+          "ts": "2026-04-07T04:30:00.007000+00:00",
+          "status": "error",
+          "duration": 205501
         }
       ]
     },
@@ -386,16 +386,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-05T17:01:01.171000+00:00",
-      "nextRun": "2026-04-06T17:00:00+00:00",
-      "lastDuration": 81557,
+      "lastRun": "2026-04-06T17:00:43.739000+00:00",
+      "nextRun": "2026-04-07T17:00:00+00:00",
+      "lastDuration": 63274,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-05T17:01:01.171000+00:00",
+          "ts": "2026-04-06T17:00:43.739000+00:00",
           "status": "ok",
-          "duration": 81557
+          "duration": 63274
         }
       ]
     },
@@ -428,16 +428,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-06T04:00:00.006000+00:00",
-      "nextRun": "2026-04-07T04:00:00+00:00",
-      "lastDuration": 46393,
+      "lastRun": "2026-04-07T04:00:00.006000+00:00",
+      "nextRun": "2026-04-08T04:00:00+00:00",
+      "lastDuration": 63144,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-06T04:00:00.006000+00:00",
+          "ts": "2026-04-07T04:00:00.006000+00:00",
           "status": "ok",
-          "duration": 46393
+          "duration": 63144
         }
       ]
     },
@@ -449,16 +449,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-05T23:00:59.067000+00:00",
-      "nextRun": "2026-04-06T23:00:00+00:00",
-      "lastDuration": 14629,
+      "lastRun": "2026-04-06T23:00:50.542000+00:00",
+      "nextRun": "2026-04-07T23:00:00+00:00",
+      "lastDuration": 7852,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-05T23:00:59.067000+00:00",
+          "ts": "2026-04-06T23:00:50.542000+00:00",
           "status": "ok",
-          "duration": 14629
+          "duration": 7852
         }
       ]
     },
@@ -470,16 +470,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-06T07:00:00.007000+00:00",
-      "nextRun": "2026-04-07T07:00:00+00:00",
-      "lastDuration": 115654,
+      "lastRun": "2026-04-07T07:00:00.007000+00:00",
+      "nextRun": "2026-04-08T07:00:00+00:00",
+      "lastDuration": 248600,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-06T07:00:00.007000+00:00",
+          "ts": "2026-04-07T07:00:00.007000+00:00",
           "status": "ok",
-          "duration": 115654
+          "duration": 248600
         }
       ]
     },
@@ -490,17 +490,17 @@
       "description": "",
       "agent": "main",
       "enabled": true,
-      "lastStatus": "error",
-      "lastRun": "2026-04-06T05:00:18.949000+00:00",
-      "nextRun": "2026-04-06T11:00:00+00:00",
-      "lastDuration": 86639,
-      "consecutiveErrors": 1,
+      "lastStatus": "ok",
+      "lastRun": "2026-04-07T05:00:10.968000+00:00",
+      "nextRun": "2026-04-07T11:00:00+00:00",
+      "lastDuration": 27932,
+      "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-06T05:00:18.949000+00:00",
-          "status": "error",
-          "duration": 86639
+          "ts": "2026-04-07T05:00:10.968000+00:00",
+          "status": "ok",
+          "duration": 27932
         }
       ]
     },
@@ -512,16 +512,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-06T05:00:00.006000+00:00",
-      "nextRun": "2026-04-06T11:00:00+00:00",
-      "lastDuration": 18943,
+      "lastRun": "2026-04-07T05:00:00.015000+00:00",
+      "nextRun": "2026-04-07T11:00:00+00:00",
+      "lastDuration": 10953,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-06T05:00:00.006000+00:00",
+          "ts": "2026-04-07T05:00:00.015000+00:00",
           "status": "ok",
-          "duration": 18943
+          "duration": 10953
         }
       ]
     },
@@ -533,16 +533,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-06T05:03:52.748000+00:00",
-      "nextRun": "2026-04-06T11:03:52.724000+00:00",
-      "lastDuration": 19967,
+      "lastRun": "2026-04-07T05:03:52.729000+00:00",
+      "nextRun": "2026-04-07T11:03:52.724000+00:00",
+      "lastDuration": 20008,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-06T05:03:52.748000+00:00",
+          "ts": "2026-04-07T05:03:52.729000+00:00",
           "status": "ok",
-          "duration": 19967
+          "duration": 20008
         }
       ]
     },
@@ -554,16 +554,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-06T07:30:00.006000+00:00",
-      "nextRun": "2026-04-07T07:30:00+00:00",
-      "lastDuration": 129229,
+      "lastRun": "2026-04-07T07:30:00.006000+00:00",
+      "nextRun": "2026-04-08T07:30:00+00:00",
+      "lastDuration": 147476,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-06T07:30:00.006000+00:00",
+          "ts": "2026-04-07T07:30:00.006000+00:00",
           "status": "ok",
-          "duration": 129229
+          "duration": 147476
         }
       ]
     },
@@ -659,16 +659,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-03-30T13:01:37.746000+00:00",
-      "nextRun": "2026-04-06T13:00:00+00:00",
-      "lastDuration": 419219,
+      "lastRun": "2026-04-06T13:00:36.225000+00:00",
+      "nextRun": "2026-04-13T13:00:00+00:00",
+      "lastDuration": 214952,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-03-30T13:01:37.746000+00:00",
+          "ts": "2026-04-06T13:00:36.225000+00:00",
           "status": "ok",
-          "duration": 419219
+          "duration": 214952
         }
       ]
     },
@@ -703,6 +703,11 @@
     {
       "job": "couples-weekly-alignment",
       "error": "cron: job execution timed out",
+      "count": 1
+    },
+    {
+      "job": "nightly-execution",
+      "error": "FallbackSummaryError: All models failed (2): openai-codex/gpt-5.4: LLM request timed out. (unknown) | openai-codex/gpt-5.3-codex: LLM request timed out. (unknown)",
       "count": 1
     },
     {
