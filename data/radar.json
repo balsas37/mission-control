@@ -1,7 +1,76 @@
 {
-  "updatedAt": "2026-04-12T12:00:00Z",
+  "updatedAt": "2026-04-13T12:01:00Z",
   "ofm": [],
   "tools": [],
   "market": [],
-  "actions": []
+  "actions": [],
+  "macro": {
+    "risk_level": "yellow",
+    "risk_summary": "Tourism is holding up, but oil/fuel just jumped hard and Hormuz risk is still live.",
+    "metrics": [
+      {
+        "label": "Brent Crude",
+        "value": "$102.25/bbl",
+        "delta": "+2.0% (1m)",
+        "delta_direction": "up",
+        "note": "WTI is at $104.23/bbl and up +11.5% in a month as Hormuz disruption reprices supply risk."
+      },
+      {
+        "label": "USD/MXN",
+        "value": "17.40",
+        "delta": "-2.1% (7d)",
+        "delta_direction": "down",
+        "note": "Peso strengthened this week; 30-day direction is still lower for USD/MXN, which helps imported costs."
+      },
+      {
+        "label": "Mexico Inflation",
+        "value": "4.59%",
+        "delta": "+0.57 pts (Mar)",
+        "delta_direction": "up",
+        "note": "Latest INEGI-linked reading accelerated from 4.02% in February; restaurants/lodging and food are still hot."
+      },
+      {
+        "label": "Gasoline (MX)",
+        "value": "$28.01/L",
+        "delta": "+9.2% (1m)",
+        "delta_direction": "up",
+        "note": "Diesel is $28.54/L, up +4.6% in a month. Fuel is now a real margin risk for rentals, hauling, and site logistics."
+      },
+      {
+        "label": "Tourism Demand",
+        "value": "Strong",
+        "delta": "Semana Santa pacing above last year",
+        "delta_direction": "good-up",
+        "note": "Quintana Roo is running ~80.7% occupancy with >1.2M visitors projected and ~623 daily flights, though Cancun airport March domestic traffic fell 5.9% YoY."
+      },
+      {
+        "label": "Geopolitical Risk",
+        "value": "HIGH",
+        "delta": "Hormuz disruption still active",
+        "delta_direction": "up",
+        "note": "Iran/Hormuz shipping risk, sanctions exposure, and emergency stock releases are keeping oil and freight markets jumpy."
+      }
+    ],
+    "geopolitical": [
+      {
+        "title": "Hormuz disruption is lifting oil and shipping risk",
+        "source": "Reuters",
+        "url": "https://www.reuters.com/business/energy/oil-whiplash-iran-war-shock-flip-market-deficit-2026-analysts-say-2026-04-10/",
+        "summary": "Analysts now see the Iran war shock flipping the oil market into deficit in 2026, with insurance, sanctions, and tanker access risks still distorting flows."
+      },
+      {
+        "title": "Iran leverage over Hormuz remains a live pricing threat",
+        "source": "Reuters",
+        "url": "https://www.reuters.com/markets/commodities/irans-hormuz-toll-booth-set-hardwire-higher-energy-prices-2026-04-09/",
+        "summary": "Even without a full closure, any toll/permission regime around Hormuz effectively hardwires higher crude, freight, and inflation risk."
+      },
+      {
+        "title": "Quintana Roo Semana Santa demand is running above last year",
+        "source": "Gobierno de Quintana Roo",
+        "url": "https://cgc.qroo.gob.mx/quintana-roo-fortalece-su-actividad-turistica-al-superar-cifras-del-ano-previo-en-semana-santa-2026/",
+        "summary": "State data shows 80.7% hotel occupancy and more than 1.2 million visitors projected for Semana Santa, with tourism demand still solid despite cost pressure."
+      }
+    ],
+    "bottom_line": "Don’t get cute with fuel this week. Tighten Lagoon pricing, watch longer rentals and delivery routes, and build in a fuel buffer on every vehicle move. For Oaxaca, assume transport and imported material costs stay jumpy for now—lock quotes fast, prioritize locally sourced inputs where possible, and avoid drifting bids."
+  }
 }
