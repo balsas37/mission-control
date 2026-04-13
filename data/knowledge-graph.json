@@ -1,21 +1,21 @@
 {
-  "generated": "2026-04-12T06:00:18.214154",
+  "generated": "2026-04-13T06:00:11.696915",
   "stats": {
-    "nodes": 283,
-    "edges": 190,
+    "nodes": 286,
+    "edges": 220,
     "clusters": 8
   },
   "clusters": [
     {
       "id": "ofm",
       "label": "OFM Agency",
-      "count": 12,
+      "count": 13,
       "color": "#DAB255"
     },
     {
       "id": "lagoon",
       "label": "Lagoon Company",
-      "count": 25,
+      "count": 26,
       "color": "#6BA8DA"
     },
     {
@@ -27,7 +27,7 @@
     {
       "id": "business",
       "label": "Business",
-      "count": 86,
+      "count": 87,
       "color": "#A86DBF"
     },
     {
@@ -892,21 +892,6 @@
     },
     {
       "id": 57,
-      "label": "2026 03 29",
-      "path": "01_daily/2026-03-29.md",
-      "description": "Daily activity log \u2014 March 29, 2026",
-      "tags": [
-        "daily"
-      ],
-      "cluster": "daily",
-      "layer": "context",
-      "color": "#888888",
-      "size": 5.49,
-      "lastReweave": "never",
-      "created": ""
-    },
-    {
-      "id": 58,
       "label": "2026 03 30",
       "path": "01_daily/2026-03-30.md",
       "description": "Daily activity log \u2014 March 30, 2026",
@@ -921,7 +906,7 @@
       "created": ""
     },
     {
-      "id": 59,
+      "id": 58,
       "label": "2026 03 31",
       "path": "01_daily/2026-03-31.md",
       "description": "Daily log for 2026-03-31",
@@ -936,7 +921,7 @@
       "created": ""
     },
     {
-      "id": 60,
+      "id": 59,
       "label": "2026 04 01",
       "path": "01_daily/2026-04-01.md",
       "description": "Daily activity log \u2014 April 1, 2026 (Q2 start, no user sessions)",
@@ -951,7 +936,7 @@
       "created": ""
     },
     {
-      "id": 61,
+      "id": 60,
       "label": "2026 04 02",
       "path": "01_daily/2026-04-02.md",
       "description": "Daily activity log \u2014 April 2, 2026",
@@ -966,7 +951,7 @@
       "created": ""
     },
     {
-      "id": 62,
+      "id": 61,
       "label": "2026 04 03",
       "path": "01_daily/2026-04-03.md",
       "description": "Daily activity log \u2014 April 3, 2026",
@@ -981,7 +966,7 @@
       "created": ""
     },
     {
-      "id": 63,
+      "id": 62,
       "label": "2026 04 04",
       "path": "01_daily/2026-04-04.md",
       "description": "Daily activity log \u2014 April 4, 2026",
@@ -996,7 +981,7 @@
       "created": ""
     },
     {
-      "id": 64,
+      "id": 63,
       "label": "2026 04 05",
       "path": "01_daily/2026-04-05.md",
       "description": "Daily activity log \u2014 April 5, 2026",
@@ -1011,7 +996,7 @@
       "created": ""
     },
     {
-      "id": 65,
+      "id": 64,
       "label": "2026 04 06",
       "path": "01_daily/2026-04-06.md",
       "description": "Daily activity log \u2014 April 6, 2026",
@@ -1026,7 +1011,7 @@
       "created": ""
     },
     {
-      "id": 66,
+      "id": 65,
       "label": "2026 04 07",
       "path": "01_daily/2026-04-07.md",
       "description": "Daily activity log \u2014 April 7, 2026",
@@ -1041,7 +1026,7 @@
       "created": ""
     },
     {
-      "id": 67,
+      "id": 66,
       "label": "2026 04 08",
       "path": "01_daily/2026-04-08.md",
       "description": "Daily activity log \u2014 April 8, 2026",
@@ -1056,7 +1041,7 @@
       "created": ""
     },
     {
-      "id": 68,
+      "id": 67,
       "label": "2026 04 09",
       "path": "01_daily/2026-04-09.md",
       "description": "Daily activity log \u2014 April 9, 2026",
@@ -1071,7 +1056,7 @@
       "created": ""
     },
     {
-      "id": 69,
+      "id": 68,
       "label": "2026 04 10",
       "path": "01_daily/2026-04-10.md",
       "description": "Daily activity log \u2014 April 10, 2026",
@@ -1086,7 +1071,7 @@
       "created": ""
     },
     {
-      "id": 70,
+      "id": 69,
       "label": "2026 04 11",
       "path": "01_daily/2026-04-11.md",
       "description": "Daily activity log \u2014 April 11, 2026",
@@ -1101,7 +1086,7 @@
       "created": ""
     },
     {
-      "id": 71,
+      "id": 70,
       "label": "2026 04 12",
       "path": "01_daily/2026-04-12.md",
       "description": "Daily activity log \u2014 April 12, 2026",
@@ -1112,6 +1097,21 @@
       "layer": "context",
       "color": "#888888",
       "size": 5.89,
+      "lastReweave": "never",
+      "created": ""
+    },
+    {
+      "id": 71,
+      "label": "2026 04 13",
+      "path": "01_daily/2026-04-13.md",
+      "description": "Daily activity log \u2014 April 13, 2026",
+      "tags": [
+        "daily"
+      ],
+      "cluster": "daily",
+      "layer": "context",
+      "color": "#888888",
+      "size": 7.5825,
       "lastReweave": "never",
       "created": ""
     },
@@ -1143,7 +1143,7 @@
       "layer": "domain",
       "color": "#A86DBF",
       "size": 20,
-      "lastReweave": "2026-04-03",
+      "lastReweave": "2026-04-13",
       "created": "2026-03-25"
     },
     {
@@ -1157,8 +1157,8 @@
       "cluster": "lagoon",
       "layer": "domain",
       "color": "#6BA8DA",
-      "size": 9.255,
-      "lastReweave": "null",
+      "size": 9.975,
+      "lastReweave": "2026-04-13",
       "created": "2026-03-14"
     },
     {
@@ -1172,8 +1172,8 @@
       "cluster": "ofm",
       "layer": "domain",
       "color": "#DAB255",
-      "size": 11.1975,
-      "lastReweave": "2026-04-04",
+      "size": 12.2025,
+      "lastReweave": "2026-04-13",
       "created": "2026-03-14"
     },
     {
@@ -2227,6 +2227,25 @@
     },
     {
       "id": 142,
+      "label": "Lagoon Pricing Page Publish Pack V2",
+      "path": "02_projects/lagoon-pricing-page-publish-pack-v2.md",
+      "description": "Merged Lagoon pricing + deposit/refund publish pack for a cleaner premium-booking page rollout",
+      "tags": [
+        "project",
+        " lagoon",
+        " pricing",
+        " conversion",
+        " marketing"
+      ],
+      "cluster": "lagoon",
+      "layer": "domain",
+      "color": "#6BA8DA",
+      "size": 4,
+      "lastReweave": "null",
+      "created": "2026-04-13"
+    },
+    {
+      "id": 143,
       "label": "Lagoon Privacy Policy Tulum",
       "path": "02_projects/lagoon-privacy-policy-tulum.md",
       "description": "Privacy policy for Tulum operations",
@@ -2241,7 +2260,7 @@
       "created": "2024-12-05"
     },
     {
-      "id": 143,
+      "id": 144,
       "label": "Lagoon Privacy Policy",
       "path": "02_projects/lagoon-privacy-policy.md",
       "description": "Historical draft request for Lagoon privacy-policy copy",
@@ -2259,7 +2278,7 @@
       "created": "2024-10-08"
     },
     {
-      "id": 144,
+      "id": 145,
       "label": "Lagoon Profile Tulum Property",
       "path": "02_projects/lagoon-profile-tulum-property.md",
       "description": "Lagoon Company entrepreneurial profile + Tulum property negotiation history",
@@ -2275,7 +2294,7 @@
       "created": "2024-06-07"
     },
     {
-      "id": 145,
+      "id": 146,
       "label": "Lagoon Sops Draft",
       "path": "02_projects/lagoon-sops-draft.md",
       "description": "Lagoon Company SOPs \u2014 vehicle checkout, inspection, return, damage reporting, WhatsApp workflows",
@@ -2290,7 +2309,7 @@
       "created": "2026-03-08"
     },
     {
-      "id": 146,
+      "id": 147,
       "label": "Lagoon Warranty Claim",
       "path": "02_projects/lagoon-warranty-claim.md",
       "description": "Warranty claim response template",
@@ -2305,7 +2324,7 @@
       "created": "2025-12-12"
     },
     {
-      "id": 147,
+      "id": 148,
       "label": "Lagoon Web Copy",
       "path": "02_projects/lagoon-web-copy.md",
       "description": "Lagoon website copy",
@@ -2320,7 +2339,7 @@
       "created": "2023-04-11"
     },
     {
-      "id": 148,
+      "id": 149,
       "label": "Lagoon Zapier Overview",
       "path": "02_projects/lagoon-zapier-overview.md",
       "description": "ARCHIVED: Early automation research - TaskMagic era",
@@ -2337,7 +2356,7 @@
       "created": "2024-06-20"
     },
     {
-      "id": 149,
+      "id": 150,
       "label": "Landing Page Renta Vehiculo",
       "path": "02_projects/landing-page-renta-vehiculo.md",
       "description": "Landing page layout for vehicle rental",
@@ -2352,7 +2371,7 @@
       "created": "2025-05-26"
     },
     {
-      "id": 150,
+      "id": 151,
       "label": "Lifepo4 Battery Marina",
       "path": "02_projects/lifepo4-battery-marina.md",
       "description": "LiFePO4 battery options for marina",
@@ -2367,7 +2386,7 @@
       "created": "2025-07-04"
     },
     {
-      "id": 151,
+      "id": 152,
       "label": "Ltopia Villa Marketing",
       "path": "02_projects/ltopia-villa-marketing.md",
       "description": "Villa marketing project",
@@ -2382,7 +2401,7 @@
       "created": "2025-06-18"
     },
     {
-      "id": 152,
+      "id": 153,
       "label": "Market Research Ecommerce",
       "path": "02_projects/market-research-ecommerce.md",
       "description": "Market research specialist ecommerce",
@@ -2397,7 +2416,7 @@
       "created": "2023-08-07"
     },
     {
-      "id": 153,
+      "id": 154,
       "label": "Michael Codex Reauth Recovery Checklist",
       "path": "02_projects/michael-codex-reauth-recovery-checklist.md",
       "description": "Recovery checklist to restore Michael Palethorpe's Codex auth after runtime cleanup",
@@ -2415,7 +2434,7 @@
       "created": "2026-04-11"
     },
     {
-      "id": 154,
+      "id": 155,
       "label": "Michael Mission Control Q2 Starter Dataset",
       "path": "02_projects/michael-mission-control-q2-starter-dataset.md",
       "description": "Starter dataset pack to populate Michael Palethorpe's Mission Control with real Q2 client truth",
@@ -2433,7 +2452,26 @@
       "created": "2026-04-10"
     },
     {
-      "id": 155,
+      "id": 156,
+      "label": "Michael Weekly Commitment Status Closeout Protocol",
+      "path": "02_projects/michael-weekly-commitment-status-closeout-protocol.md",
+      "description": "Single-ledger status closeout protocol for Michael's weekly commitments so Kairos cadence has real completion truth",
+      "tags": [
+        "project",
+        " kairos",
+        " sirewall",
+        " cadence",
+        " mission-control"
+      ],
+      "cluster": "business",
+      "layer": "domain",
+      "color": "#A86DBF",
+      "size": 4,
+      "lastReweave": "null",
+      "created": "2026-04-13"
+    },
+    {
+      "id": 157,
       "label": "Micro Resort Crowdfunding",
       "path": "02_projects/micro-resort-crowdfunding.md",
       "description": "Micro resort crowdfunding strategy",
@@ -2448,7 +2486,7 @@
       "created": "2025-05-04"
     },
     {
-      "id": 156,
+      "id": 158,
       "label": "Midjourney Real Estate Renders",
       "path": "02_projects/midjourney-real-estate-renders.md",
       "description": "MidJourney real estate renders (ARCHIVED)",
@@ -2464,7 +2502,7 @@
       "created": "2024-03-19"
     },
     {
-      "id": 157,
+      "id": 159,
       "label": "Oaxaca Farm Climate",
       "path": "02_projects/oaxaca-farm-climate.md",
       "description": "Oaxaca farm climate advice",
@@ -2479,7 +2517,7 @@
       "created": "2025-12-28"
     },
     {
-      "id": 158,
+      "id": 160,
       "label": "Ocean Freight Quote",
       "path": "02_projects/ocean-freight-quote.md",
       "description": "Ocean freight quote summary",
@@ -2494,7 +2532,7 @@
       "created": "2025-05-27"
     },
     {
-      "id": 159,
+      "id": 161,
       "label": "OFM Agency",
       "path": "02_projects/ofm-agency.md",
       "description": "OFM agency operational overview, co-founders, creator workflows",
@@ -2509,7 +2547,26 @@
       "created": "2026-02-27"
     },
     {
-      "id": 160,
+      "id": 162,
+      "label": "Ofm Ai Compliance Preflight Checklist",
+      "path": "02_projects/ofm-ai-compliance-preflight-checklist.md",
+      "description": "Fanvue-first compliance gate for Astrid launch covering provenance, policy fit, QA, and incident response",
+      "tags": [
+        "project",
+        " ofm",
+        " compliance",
+        " fanvue",
+        " astrid"
+      ],
+      "cluster": "ofm",
+      "layer": "domain",
+      "color": "#DAB255",
+      "size": 4,
+      "lastReweave": "null",
+      "created": "2026-04-13"
+    },
+    {
+      "id": 163,
       "label": "OFM AI Models",
       "path": "02_projects/ofm-ai-model-concepts.md",
       "description": "OFM AI Model Concepts \u2014 Character proposals: Valentina Cruz (Latina fitness), Aiko Yume (Asian elegance), Noa Blaze (Nordic alt)",
@@ -2524,7 +2581,7 @@
       "created": "2026-03-08"
     },
     {
-      "id": 161,
+      "id": 164,
       "label": "OFM Chatter Hiring",
       "path": "02_projects/ofm-chatter-hiring-post.md",
       "description": "OFM Chatter Hiring Post \u2014 r/OnlyFansChatter",
@@ -2539,7 +2596,7 @@
       "created": "2026-03-08"
     },
     {
-      "id": 162,
+      "id": 165,
       "label": "Ofm Knowledge Base Status",
       "path": "02_projects/ofm-knowledge-base-status.md",
       "description": "OFM Knowledge Base - Complete Status Tracker (compaction-proof)",
@@ -2557,7 +2614,7 @@
       "created": "2026-03-24"
     },
     {
-      "id": 163,
+      "id": 166,
       "label": "OFM Operations 2026",
       "path": "02_projects/ofm-operational-overview-2026.md",
       "description": "OFM operational overview 2026 + OpenClaw setup",
@@ -2572,7 +2629,7 @@
       "created": "2026-02-16"
     },
     {
-      "id": 164,
+      "id": 167,
       "label": "Onlyfans Link Instagram",
       "path": "02_projects/onlyfans-link-instagram.md",
       "description": "OnlyFans link on Instagram strategy",
@@ -2587,7 +2644,7 @@
       "created": "2026-02-06"
     },
     {
-      "id": 165,
+      "id": 168,
       "label": "Outline Creation Process",
       "path": "02_projects/outline-creation-process.md",
       "description": "Outline creation process for dev tools",
@@ -2602,7 +2659,7 @@
       "created": "2024-12-13"
     },
     {
-      "id": 166,
+      "id": 169,
       "label": "Paid Creators 250 Niches",
       "path": "02_projects/paid-creators-250-niches.md",
       "description": "250 niche ideas + 8-step AI prompt (Travis Stephenson)",
@@ -2617,7 +2674,7 @@
       "created": "2026-02-22"
     },
     {
-      "id": 167,
+      "id": 170,
       "label": "Parked Domains Google Ads Consent",
       "path": "02_projects/parked-domains-google-ads-consent.md",
       "description": "Parked domains in Google Ads",
@@ -2632,7 +2689,7 @@
       "created": "2025-03-12"
     },
     {
-      "id": 168,
+      "id": 171,
       "label": "Parts Pricing Guide",
       "path": "02_projects/parts-pricing-guide.md",
       "description": "Parts pricing guide (ARCHIVED - VRBTN discontinued project)",
@@ -2649,7 +2706,7 @@
       "created": "2024-05-06"
     },
     {
-      "id": 169,
+      "id": 172,
       "label": "Pinseeker Partnership",
       "path": "02_projects/pinseeker-partnership.md",
       "description": "Pinseeker partnership inquiry",
@@ -2665,7 +2722,7 @@
       "created": "2023-12-13"
     },
     {
-      "id": 170,
+      "id": 173,
       "label": "Posting Frequency Strategy",
       "path": "02_projects/posting-frequency-strategy.md",
       "description": "Posting frequency strategy for social",
@@ -2680,7 +2737,7 @@
       "created": "2025-03-14"
     },
     {
-      "id": 171,
+      "id": 174,
       "label": "Power Independence Academy",
       "path": "02_projects/power-independence-academy.md",
       "description": "PIA digital product course ($27 offer)",
@@ -2695,7 +2752,7 @@
       "created": "2026-03-14"
     },
     {
-      "id": 172,
+      "id": 175,
       "label": "Product Idea Generation",
       "path": "02_projects/product-idea-generation.md",
       "description": "Product idea generation session",
@@ -2710,7 +2767,7 @@
       "created": "2025-08-09"
     },
     {
-      "id": 173,
+      "id": 176,
       "label": "Profile Setup Review",
       "path": "02_projects/profile-setup-review.md",
       "description": "Profile setup review",
@@ -2725,7 +2782,7 @@
       "created": "2025-10-27"
     },
     {
-      "id": 174,
+      "id": 177,
       "label": "Puerto Escondido Housing",
       "path": "02_projects/puerto-escondido-housing.md",
       "description": "Puerto Escondido housing options research",
@@ -2740,7 +2797,7 @@
       "created": "2025-02-06"
     },
     {
-      "id": 175,
+      "id": 178,
       "label": "Seo Content Midjourney",
       "path": "02_projects/seo-content-midjourney.md",
       "description": "SEO content writer + MidJourney - ARCHIVED",
@@ -2756,7 +2813,7 @@
       "created": "2023-08-11"
     },
     {
-      "id": 176,
+      "id": 179,
       "label": "Seo Google Ads 2023",
       "path": "02_projects/seo-google-ads-2023.md",
       "description": "SEO & Google Ads strategy 2023",
@@ -2771,7 +2828,7 @@
       "created": "2023-05-05"
     },
     {
-      "id": 177,
+      "id": 180,
       "label": "Shopify Airtable Sleep Forest",
       "path": "02_projects/shopify-airtable-sleep-forest.md",
       "description": "ARCHIVED: Bloomingflora era - Shopify automation (discontinued)",
@@ -2788,7 +2845,7 @@
       "created": "2024-07-28"
     },
     {
-      "id": 178,
+      "id": 181,
       "label": "Shopify Cli Debug Midjourney",
       "path": "02_projects/shopify-cli-debug-midjourney.md",
       "description": "Shopify CLI debug + MidJourney (archived ecommerce work)",
@@ -2806,7 +2863,7 @@
       "created": "2024-07-07"
     },
     {
-      "id": 179,
+      "id": 182,
       "label": "Shopify Liquid Coding 2024",
       "path": "02_projects/shopify-liquid-coding-2024.md",
       "description": "Shopify Liquid coding 2024 - ARCHIVED",
@@ -2822,7 +2879,7 @@
       "created": "2024-07-01"
     },
     {
-      "id": 180,
+      "id": 183,
       "label": "Shopify Liquid Coding",
       "path": "02_projects/shopify-liquid-coding.md",
       "description": "Shopify Liquid coding help (ARCHIVED)",
@@ -2838,7 +2895,7 @@
       "created": "2024-05-20"
     },
     {
-      "id": 181,
+      "id": 184,
       "label": "Shopify Sections Support",
       "path": "02_projects/shopify-sections-support.md",
       "description": "Shopify sections support - Early Lagoon work",
@@ -2855,7 +2912,7 @@
       "created": "2024-05-23"
     },
     {
-      "id": 182,
+      "id": 185,
       "label": "Sirewall Mix Design Log",
       "path": "02_projects/sirewall-mix-design-log.md",
       "description": "Sirewall Mix Design Log - Oaxaca",
@@ -2870,7 +2927,7 @@
       "created": "2026-03-14"
     },
     {
-      "id": 183,
+      "id": 186,
       "label": "Strategy For Thriving",
       "path": "02_projects/strategy-for-thriving.md",
       "description": "Strategy for thriving now",
@@ -2885,7 +2942,7 @@
       "created": "2025-07-24"
     },
     {
-      "id": 184,
+      "id": 187,
       "label": "Trading Agent",
       "path": "02_projects/trading-agent.md",
       "description": "AI trading agent research thread for gold futures and Brent crude",
@@ -2903,7 +2960,7 @@
       "created": "2026-04-06"
     },
     {
-      "id": 185,
+      "id": 188,
       "label": "Truthful Brand Voice Font",
       "path": "02_projects/truthful-brand-voice-font.md",
       "description": "Truthful brand voice guidelines + fonts",
@@ -2918,7 +2975,7 @@
       "created": "2025-05-09"
     },
     {
-      "id": 186,
+      "id": 189,
       "label": "Tulum Atv Logo Concept",
       "path": "02_projects/tulum-atv-logo-concept.md",
       "description": "Tulum ATV logo concept design for Lagoon Company",
@@ -2935,7 +2992,7 @@
       "created": "2024-05-10"
     },
     {
-      "id": 187,
+      "id": 190,
       "label": "Tulum Atv Safety Tips",
       "path": "02_projects/tulum-atv-safety-tips.md",
       "description": "Tulum ATV safety tips content",
@@ -2950,7 +3007,7 @@
       "created": "2025-04-16"
     },
     {
-      "id": 188,
+      "id": 191,
       "label": "Upholstery Cleaning Pricing",
       "path": "02_projects/upholstery-cleaning-pricing.md",
       "description": "Upholstery cleaning price list - ARCHIVED",
@@ -2966,7 +3023,7 @@
       "created": "2024-04-29"
     },
     {
-      "id": 189,
+      "id": 192,
       "label": "Upholstery Cleaning System",
       "path": "02_projects/upholstery-cleaning-system.md",
       "description": "Improved upholstery cleaning system (ARCHIVED - discontinued project)",
@@ -2983,7 +3040,7 @@
       "created": "2024-05-13"
     },
     {
-      "id": 190,
+      "id": 193,
       "label": "Upholstery Cleaning Tone",
       "path": "02_projects/upholstery-cleaning-tone.md",
       "description": "Sustainable upholstery cleaning brand tone (ARCHIVED - discontinued project)",
@@ -3000,7 +3057,7 @@
       "created": "2024-05-08"
     },
     {
-      "id": 191,
+      "id": 194,
       "label": "Utv Pricing Luxury Resort",
       "path": "02_projects/utv-pricing-luxury-resort.md",
       "description": "UTV rental pricing justification",
@@ -3015,7 +3072,7 @@
       "created": "2025-04-19"
     },
     {
-      "id": 192,
+      "id": 195,
       "label": "Visual Prompt Resort Visualization",
       "path": "02_projects/visual-prompt-resort-visualization.md",
       "description": "Visual prompt blueprint for resort visualization",
@@ -3030,7 +3087,7 @@
       "created": "2025-05-21"
     },
     {
-      "id": 193,
+      "id": 196,
       "label": "Website Copywriter",
       "path": "02_projects/website-copywriter.md",
       "description": "Website copywriter general - ARCHIVED",
@@ -3046,7 +3103,7 @@
       "created": "2023-09-12"
     },
     {
-      "id": 194,
+      "id": 197,
       "label": "X Residence Floorplan",
       "path": "02_projects/x-residence-floorplan.md",
       "description": "X Residence floorplan request",
@@ -3061,7 +3118,7 @@
       "created": "2025-06-27"
     },
     {
-      "id": 195,
+      "id": 198,
       "label": "Yacht Reservation Form",
       "path": "02_projects/yacht-reservation-form.md",
       "description": "Yacht reservation form guide - ARCHIVED",
@@ -3077,7 +3134,7 @@
       "created": "2023-09-08"
     },
     {
-      "id": 196,
+      "id": 199,
       "label": "Family Birthdays",
       "path": "03_people/birthdays.md",
       "description": "Birthdays for family and key people",
@@ -3092,7 +3149,7 @@
       "created": "2026-03-14"
     },
     {
-      "id": 197,
+      "id": 200,
       "label": "DISC Profile",
       "path": "03_people/disc-personality-analysis.md",
       "description": "DISC personality analysis",
@@ -3107,7 +3164,7 @@
       "created": "2026-02-07"
     },
     {
-      "id": 198,
+      "id": 201,
       "label": "Bergstrom Name Research",
       "path": "03_people/european-lastname-bergstrom.md",
       "description": "European last name Bergstr\u00f6m discussion (archived naming exercise)",
@@ -3124,7 +3181,7 @@
       "created": "2024-06-02"
     },
     {
-      "id": 199,
+      "id": 202,
       "label": "Triad Meetings",
       "path": "03_people/triad-meeting-scheduling.md",
       "description": "Archived email-draft reference for Ezinwa Ogbechie induction triad meeting",
@@ -3139,7 +3196,7 @@
       "created": "2024-09-06"
     },
     {
-      "id": 200,
+      "id": 203,
       "label": "Agreement Review Feedback",
       "path": "04_decisions/agreement-review-feedback.md",
       "description": "Agreement review and feedback",
@@ -3154,7 +3211,7 @@
       "created": "2025-09-10"
     },
     {
-      "id": 201,
+      "id": 204,
       "label": "Finance History",
       "path": "04_decisions/chatgpt-finance.md",
       "description": "ChatGPT history: Finance/Tax (6 convos) \u2014 ARCHIVED",
@@ -3171,7 +3228,7 @@
       "created": "2023-09-07"
     },
     {
-      "id": 202,
+      "id": 205,
       "label": "Legal History",
       "path": "04_decisions/chatgpt-legal.md",
       "description": "ChatGPT history: Legal/Immigration/Contracts (ARCHIVED)",
@@ -3187,7 +3244,7 @@
       "created": "2024-05-29"
     },
     {
-      "id": 203,
+      "id": 206,
       "label": "Contrato Alquiler Subarriendo",
       "path": "04_decisions/contrato-alquiler-subarriendo.md",
       "description": "Contrato alquiler y subarriendo (rental)",
@@ -3202,7 +3259,7 @@
       "created": "2025-01-17"
     },
     {
-      "id": 204,
+      "id": 207,
       "label": "Devolver Cascos Consecuencias",
       "path": "04_decisions/devolver-cascos-consecuencias.md",
       "description": "Devolver cascos o consecuencias (helmet return)",
@@ -3217,7 +3274,7 @@
       "created": "2024-11-17"
     },
     {
-      "id": 205,
+      "id": 208,
       "label": "Incorporating Usa Company",
       "path": "04_decisions/incorporating-usa-company.md",
       "description": "Incorporating USA company plan",
@@ -3232,7 +3289,7 @@
       "created": "2025-08-12"
     },
     {
-      "id": 206,
+      "id": 209,
       "label": "Legalidad Arrendamiento Mexico",
       "path": "04_decisions/legalidad-arrendamiento-mexico.md",
       "description": "Legalidad arrendamiento M\u00e9xico",
@@ -3247,7 +3304,7 @@
       "created": "2025-12-07"
     },
     {
-      "id": 207,
+      "id": 210,
       "label": "Migracion Office Hours",
       "path": "04_decisions/migracion-office-hours.md",
       "description": "Migraci\u00f3n office hours",
@@ -3262,7 +3319,7 @@
       "created": "2025-10-03"
     },
     {
-      "id": 208,
+      "id": 211,
       "label": "Paramar Condo Dispute",
       "path": "04_decisions/paramar-condo-dispute.md",
       "description": "Paramar Viva Condo Dispute",
@@ -3277,7 +3334,7 @@
       "created": "2026-03-04"
     },
     {
-      "id": 209,
+      "id": 212,
       "label": "Profit First Method",
       "path": "04_decisions/profit-first-bookkeeping.md",
       "description": "Profit First bookkeeping approach - ARCHIVED",
@@ -3293,7 +3350,7 @@
       "created": "2023-09-07"
     },
     {
-      "id": 210,
+      "id": 213,
       "label": "Tax Exemption Correction",
       "path": "04_decisions/tax-exemption-correction.md",
       "description": "Tax exemption correction (ARCHIVED - discontinued business)",
@@ -3309,7 +3366,7 @@
       "created": "2023-12-26"
     },
     {
-      "id": 211,
+      "id": 214,
       "label": "Tax Exemption Verification",
       "path": "04_decisions/tax-exemption-verification.md",
       "description": "Tax exemption verification request (ARCHIVED - discontinued business)",
@@ -3325,7 +3382,7 @@
       "created": "2023-10-24"
     },
     {
-      "id": 212,
+      "id": 215,
       "label": "Visa Requirements Nigerians",
       "path": "04_decisions/visa-requirements-nigerians.md",
       "description": "Historical 2024 travel-visa reference for Nigerian passport + US green card questions",
@@ -3340,10 +3397,10 @@
       "created": "2024-08-29"
     },
     {
-      "id": 213,
+      "id": 216,
       "label": "Zero Tax Jurisdictions Banking",
       "path": "04_decisions/zero-tax-jurisdictions-banking.md",
-      "description": "Zero tax jurisdictions + banking options",
+      "description": "Exploratory 2024 note on zero/low-tax incorporation + banking for a fashion brand",
       "tags": [
         "decision"
       ],
@@ -3351,11 +3408,11 @@
       "layer": "domain",
       "color": "#A86DBF",
       "size": 4,
-      "lastReweave": "null",
+      "lastReweave": "2026-04-13",
       "created": "2024-10-16"
     },
     {
-      "id": 214,
+      "id": 217,
       "label": "Agent Skills Audit 2026 04 08",
       "path": "05_resources/agent-skills-audit-2026-04-08.md",
       "description": "Gap audit of workspace skills versus the addyosmani agent-skills repo",
@@ -3373,7 +3430,7 @@
       "created": "2026-04-08"
     },
     {
-      "id": 215,
+      "id": 218,
       "label": "Agent Skills Final Cleanup Normalization 2026 04 08",
       "path": "05_resources/agent-skills-final-cleanup-normalization-2026-04-08.md",
       "description": "Final April 8 cleanup pass that normalized older skill files and improved discoverability without renaming core entrypoints.",
@@ -3386,7 +3443,7 @@
       "created": ""
     },
     {
-      "id": 216,
+      "id": 219,
       "label": "Agent Skills Final Cleanup Ui 2026 04 08",
       "path": "05_resources/agent-skills-final-cleanup-ui-2026-04-08.md",
       "description": "Final April 8 cleanup pass clarifying UI skill roles as primary, polish, reference, and archive without deleting any of them.",
@@ -3399,7 +3456,7 @@
       "created": ""
     },
     {
-      "id": 217,
+      "id": 220,
       "label": "Agent Skills Merge Summary 2026 04 08",
       "path": "05_resources/agent-skills-merge-summary-2026-04-08.md",
       "description": "Phase 3 summary of the April 8 agent-skills merge and routing cleanup",
@@ -3417,7 +3474,7 @@
       "created": "2026-04-08"
     },
     {
-      "id": 218,
+      "id": 221,
       "label": "Agent Skills Phase 1 Implementation 2026 04 08",
       "path": "05_resources/agent-skills-phase-1-implementation-2026-04-08.md",
       "description": "Phase 1 implementation record for the April 8 agent-skills merge",
@@ -3435,7 +3492,7 @@
       "created": "2026-04-08"
     },
     {
-      "id": 219,
+      "id": 222,
       "label": "Agent Skills Phase 2 Implementation 2026 04 08",
       "path": "05_resources/agent-skills-phase-2-implementation-2026-04-08.md",
       "description": "Agent skills phase 2 implementation summary and decisions",
@@ -3451,7 +3508,7 @@
       "created": "2026-04-08"
     },
     {
-      "id": 220,
+      "id": 223,
       "label": "Aitable Data Rules",
       "path": "05_resources/aitable-data-rules.md",
       "description": "Data entry rules for Aitable Pulse Framework datasheets \u2014 agents MUST follow",
@@ -3469,7 +3526,7 @@
       "created": "2026-03-27"
     },
     {
-      "id": 221,
+      "id": 224,
       "label": "Aitable Schema Reference",
       "path": "05_resources/aitable-schema-reference.md",
       "description": "Complete Pulse Framework Aitable schema reference -- field names, IDs, types, options",
@@ -3487,7 +3544,7 @@
       "created": "2026-03-27"
     },
     {
-      "id": 222,
+      "id": 225,
       "label": "Alpha Prompting Outfit Reference",
       "path": "05_resources/alpha-prompting-outfit-reference.md",
       "description": "Alpha Prompting System for AI image gen",
@@ -3502,7 +3559,7 @@
       "created": "2025-06-25"
     },
     {
-      "id": 223,
+      "id": 226,
       "label": "Claude Code Deep Analysis",
       "path": "05_resources/claude-code-deep-analysis.md",
       "description": "Deep architecture analysis of Claude Code (Anthropic's AI coding agent) from full source code review. 1,884 TypeScript files, 512K lines. Maps every pattern to OpenClaw and Kairos AI improvements.",
@@ -3522,7 +3579,7 @@
       "created": "2026-04-02"
     },
     {
-      "id": 224,
+      "id": 227,
       "label": "Claude Code Improvements Index",
       "path": "05_resources/claude-code-improvements-index.md",
       "description": "Master index of all Claude Code leak-inspired improvements implemented in OpenClaw",
@@ -3540,7 +3597,7 @@
       "created": "2026-04-02"
     },
     {
-      "id": 225,
+      "id": 228,
       "label": "Cold Outreach Frameworks",
       "path": "05_resources/cold-outreach-frameworks.md",
       "description": "Hormozi 4-step outreach system, ICP template, sequence blueprint, benchmarks",
@@ -3555,7 +3612,7 @@
       "created": "2026-03-14"
     },
     {
-      "id": 226,
+      "id": 229,
       "label": "Copywriting Frameworks",
       "path": "05_resources/copywriting-frameworks.md",
       "description": "6 core frameworks (PAS, AIDA, FAB, BAB, 4Ps, Star-Story-Solution), landing page structure, copy rules",
@@ -3570,7 +3627,7 @@
       "created": "2026-03-14"
     },
     {
-      "id": 227,
+      "id": 230,
       "label": "Creating Images Diffusion",
       "path": "05_resources/creating-images-diffusion.md",
       "description": "Creating images with diffusion models - ARCHIVED",
@@ -3586,7 +3643,7 @@
       "created": "2024-07-20"
     },
     {
-      "id": 228,
+      "id": 231,
       "label": "Discord Bot Setup Guide",
       "path": "05_resources/discord-bot-setup-guide.md",
       "description": "Step-by-step Discord bot setup for Kairos AI client onboarding",
@@ -3604,7 +3661,7 @@
       "created": "2026-03-29"
     },
     {
-      "id": 229,
+      "id": 232,
       "label": "Ecc Audit",
       "path": "05_resources/ecc-audit.md",
       "description": "Audit of everything-claude-code vs our current setup",
@@ -3621,7 +3678,7 @@
       "created": "2026-03-28"
     },
     {
-      "id": 230,
+      "id": 233,
       "label": "Emotional Architecture Prompt",
       "path": "05_resources/emotional-architecture-prompt.md",
       "description": "Emotional Architecture Prompt Guide",
@@ -3636,7 +3693,7 @@
       "created": "2025-05-01"
     },
     {
-      "id": 231,
+      "id": 234,
       "label": "Fanvue Agency Setup Guide",
       "path": "05_resources/fanvue-agency-setup-guide.md",
       "description": "Complete walkthrough for setting up an AI-model agency on Fanvue",
@@ -3654,7 +3711,7 @@
       "created": "2026-03-19"
     },
     {
-      "id": 232,
+      "id": 235,
       "label": "Fanvue Ai Model Strategy Brief",
       "path": "05_resources/fanvue-ai-model-strategy-brief.md",
       "description": "Fanvue AI model strategy brief \u2014 best practices for OFM AI models",
@@ -3672,7 +3729,7 @@
       "created": "2026-03-22"
     },
     {
-      "id": 233,
+      "id": 236,
       "label": "Graph Overlay Prototype 2026 04 09",
       "path": "05_resources/graph-overlay-prototype-2026-04-09.md",
       "description": "Prototype overlay build combining Mission Control's document graph with Graphify's code graph into a provenance-aware sidecar JSON, not a production merge.",
@@ -3685,7 +3742,7 @@
       "created": ""
     },
     {
-      "id": 234,
+      "id": 237,
       "label": "Graph Overlay Spec 2026 04 09",
       "path": "05_resources/graph-overlay-spec-2026-04-09.md",
       "description": "Draft spec for a Mission Control + Graphify overlay graph",
@@ -3703,7 +3760,7 @@
       "created": "2026-04-09"
     },
     {
-      "id": 235,
+      "id": 238,
       "label": "Graphify Runtime Graph Build 2026 04 09",
       "path": "05_resources/graphify-runtime-graph-build-2026-04-09.md",
       "description": "First canonical Graphify sidecar build for the curated corpus under memory-graph/raw; useful for code tracing, not a full semantic graph of the vault.",
@@ -3716,7 +3773,7 @@
       "created": ""
     },
     {
-      "id": 236,
+      "id": 239,
       "label": "Hack Your Agency Synthesis",
       "path": "05_resources/hack-your-agency-SYNTHESIS.md",
       "description": "Complete, actionable synthesis of Jared Codling's \"Hack Your Agency\" Supercourse. Every framework, tactic, and concept organized into a usable playbook for conversion mastery, funnel architecture, growth hacking, and agency operations.",
@@ -3729,7 +3786,7 @@
       "created": ""
     },
     {
-      "id": 237,
+      "id": 240,
       "label": "Agency Supercourse",
       "path": "05_resources/hack-your-agency-supercourse.md",
       "description": "Raw course dump for Jared Codling's Hack Your Agency Supercourse -- detailed reference backing the synthesis and current marketing experimentation work",
@@ -3745,7 +3802,7 @@
       "created": "2026-02-27"
     },
     {
-      "id": 238,
+      "id": 241,
       "label": "AI Influencer Guide",
       "path": "05_resources/instagram-ai-influencer-guide.md",
       "description": "Instagram AI influencer guide (PDF extract)",
@@ -3760,7 +3817,7 @@
       "created": "2026-02-27"
     },
     {
-      "id": 239,
+      "id": 242,
       "label": "Kairos One Pager Seva",
       "path": "05_resources/kairos-one-pager-seva.md",
       "description": "Kairos AI one-page sales pitch for SEVA / David Lockhart-Lie",
@@ -3777,7 +3834,7 @@
       "created": "2026-03-22"
     },
     {
-      "id": 240,
+      "id": 243,
       "label": "Lagoon Wp Access",
       "path": "05_resources/lagoon-wp-access.md",
       "description": "Lagoon Company WordPress site access and configuration",
@@ -3793,7 +3850,7 @@
       "created": "2024-01-15"
     },
     {
-      "id": 241,
+      "id": 244,
       "label": "Landing Page Playbook",
       "path": "05_resources/landing-page-playbook.md",
       "description": "Landing page build playbook - strategies and tool stack for all businesses",
@@ -3809,7 +3866,7 @@
       "created": "2024-01-15"
     },
     {
-      "id": 242,
+      "id": 245,
       "label": "LoRA Training Guide",
       "path": "05_resources/lora-training-comprehensive.md",
       "description": "Pulse Operating Rules \u2014 terminology, Priority Cascade flow, Ops Brief structure, naming consistency",
@@ -3824,7 +3881,7 @@
       "created": "2026-03-07"
     },
     {
-      "id": 243,
+      "id": 246,
       "label": "Lora Training Prep Sop",
       "path": "05_resources/lora-training-prep-sop.md",
       "description": "LoRA training dataset preparation SOP",
@@ -3842,7 +3899,7 @@
       "created": "2026-03-21"
     },
     {
-      "id": 244,
+      "id": 247,
       "label": "Midjourney Copy Style Fathers Day",
       "path": "05_resources/midjourney-copy-style-fathers-day.md",
       "description": "Copy image style MidJourney + Father's Day",
@@ -3858,7 +3915,7 @@
       "created": "2024-06-16"
     },
     {
-      "id": 245,
+      "id": 248,
       "label": "Mission Control Vs Graphify Audit 2026 04 09",
       "path": "05_resources/mission-control-vs-graphify-audit-2026-04-09.md",
       "description": "Audit comparing Mission Control's live document graph with Graphify's code graph",
@@ -3877,7 +3934,7 @@
       "created": "2026-04-09"
     },
     {
-      "id": 246,
+      "id": 249,
       "label": "Naval Ravikant Almanack",
       "path": "05_resources/naval-ravikant-almanack.md",
       "description": "Comprehensive framework extraction from The Almanack of Naval Ravikant \u2014 wealth creation, decision-making, happiness, and life design principles. Actionable reference for a multi-business builder seeking independence and freedom.",
@@ -3900,7 +3957,7 @@
       "created": "2026-03-24"
     },
     {
-      "id": 247,
+      "id": 250,
       "label": "Offgrid Generator Guide",
       "path": "05_resources/offgrid-generator-guide.md",
       "description": "Off-grid generator guide for Oaxaca farm power system",
@@ -3918,7 +3975,7 @@
       "created": "2024-06-04"
     },
     {
-      "id": 248,
+      "id": 251,
       "label": "Ofm Ai Tools Comparison",
       "path": "05_resources/ofm-ai-tools-comparison.md",
       "description": "OFM AI tools comparison: OnlyMonster vs Supercreator vs Current Workflow",
@@ -3936,7 +3993,7 @@
       "created": "2026-03-22"
     },
     {
-      "id": 249,
+      "id": 252,
       "label": "Ofm Chatter Workflow Sop",
       "path": "05_resources/ofm-chatter-workflow-sop.md",
       "description": "OFM Agency fan messaging workflow SOP",
@@ -3953,7 +4010,7 @@
       "created": "2026-03-21"
     },
     {
-      "id": 250,
+      "id": 253,
       "label": "Openclaw Improvement Plan",
       "path": "05_resources/openclaw-improvement-plan.md",
       "description": "Comprehensive OpenClaw improvement plan based on Claude Code architecture patterns. Every pattern analyzed, mapped to OpenClaw, with concrete implementation steps.",
@@ -3971,7 +4028,7 @@
       "created": "2026-04-02"
     },
     {
-      "id": 251,
+      "id": 254,
       "label": "Paid Creators Course",
       "path": "05_resources/paid-creators-course.md",
       "description": "Paid Creators course notes (Travis Stephenson)",
@@ -3986,7 +4043,7 @@
       "created": "2026-02-22"
     },
     {
-      "id": 252,
+      "id": 255,
       "label": "Pricing Psychology",
       "path": "05_resources/pricing-psychology.md",
       "description": "9 core pricing principles (charm, anchoring, decoy, bundling, scarcity, framing, social proof, tiers)",
@@ -4001,7 +4058,7 @@
       "created": "2026-03-14"
     },
     {
-      "id": 253,
+      "id": 256,
       "label": "Short-Form Video Playbook",
       "path": "05_resources/short-form-video-playbook.md",
       "description": "6-phase organic growth system (500M+ views), hook formulas, CTA strategy, scaling rules",
@@ -4016,7 +4073,7 @@
       "created": "2026-03-14"
     },
     {
-      "id": 254,
+      "id": 257,
       "label": "Ui Skill Routing Consolidation 2026 04 08",
       "path": "05_resources/ui-skill-routing-consolidation-2026-04-08.md",
       "description": "Routing decision for the UI skill cluster: frontend-designer as default build entrypoint, with clear polish, reference, and archive companions.",
@@ -4029,7 +4086,7 @@
       "created": ""
     },
     {
-      "id": 255,
+      "id": 258,
       "label": "Agent Nova (retired)",
       "path": "06_system/agent-nova.md",
       "description": "Nova product development agent definition",
@@ -4044,7 +4101,7 @@
       "created": "2026-03-14"
     },
     {
-      "id": 256,
+      "id": 259,
       "label": "Auth & Proxy Setup",
       "path": "06_system/auth-proxy-setup.md",
       "description": "Auth & proxy setup stack",
@@ -4059,7 +4116,7 @@
       "created": "2026-03-14"
     },
     {
-      "id": 257,
+      "id": 260,
       "label": "Vault Conventions",
       "path": "06_system/conventions.md",
       "description": "Workspace conventions + three-tier memory system",
@@ -4074,7 +4131,7 @@
       "created": "2026-02-17"
     },
     {
-      "id": 258,
+      "id": 261,
       "label": "Cron Routing Rules",
       "path": "06_system/cron-routing-rules.md",
       "description": "Cron job routing rules -- which topic/channel each job type must target",
@@ -4091,7 +4148,7 @@
       "created": "2026-03-24"
     },
     {
-      "id": 259,
+      "id": 262,
       "label": "Design Language",
       "path": "06_system/design-language.md",
       "description": "Mission Control - Design Language",
@@ -4106,7 +4163,7 @@
       "created": "2026-03-05"
     },
     {
-      "id": 260,
+      "id": 263,
       "label": "Feature Specs",
       "path": "06_system/feature-specs.md",
       "description": "Feature Specs",
@@ -4121,7 +4178,7 @@
       "created": "2026-03-07"
     },
     {
-      "id": 261,
+      "id": 264,
       "label": "Integration Hub",
       "path": "06_system/integration-hub.md",
       "description": "Integration hub setup",
@@ -4136,7 +4193,7 @@
       "created": "2025-08-31"
     },
     {
-      "id": 262,
+      "id": 265,
       "label": "Integration Map",
       "path": "06_system/integration-map.md",
       "description": "Integration map \u2014 Aitable, GitHub, WhatsApp Bridge, Cloudflare, Telegram, Systeme.io connections",
@@ -4151,7 +4208,7 @@
       "created": "2026-03-05"
     },
     {
-      "id": 263,
+      "id": 266,
       "label": "System Learnings",
       "path": "06_system/learnings.md",
       "description": "Learnings & Failure Tracking",
@@ -4166,7 +4223,7 @@
       "created": "2026-03-14"
     },
     {
-      "id": 264,
+      "id": 267,
       "label": "Mac Setup & Privacy",
       "path": "06_system/mac-setup-openclaw-privacy.md",
       "description": "Mac setup + OpenClaw privacy config",
@@ -4181,7 +4238,7 @@
       "created": "2026-02-10"
     },
     {
-      "id": 265,
+      "id": 268,
       "label": "Memory System Notes",
       "path": "06_system/memory-improvement-notes.md",
       "description": "Ideas from agent-memory-ultimate, failure-memory, close-loop skills (decay, R/C/D tracking, cache eviction)",
@@ -4196,7 +4253,7 @@
       "created": "2026-03-14"
     },
     {
-      "id": 266,
+      "id": 269,
       "label": "Mission Control Spec",
       "path": "06_system/mission-control-spec.md",
       "description": "Mission Control specification \u2014 architecture, tabs, data flow, sync scripts, color system",
@@ -4211,7 +4268,7 @@
       "created": "2026-03-05"
     },
     {
-      "id": 267,
+      "id": 270,
       "label": "Radar Daily",
       "path": "06_system/radar-daily.md",
       "description": "Daily research radar",
@@ -4221,12 +4278,12 @@
       "cluster": "system",
       "layer": "context",
       "color": "#5AB8B0",
-      "size": 14.1425,
+      "size": 12.8025,
       "lastReweave": "null",
-      "created": "2026-04-11"
+      "created": "2026-04-12"
     },
     {
-      "id": 268,
+      "id": 271,
       "label": "Skill Investigation",
       "path": "06_system/skill-investigation-notes.md",
       "description": "AdaptlyPost, EachLabs, fal.ai pricing/viability investigation (2026-03-04)",
@@ -4241,22 +4298,7 @@
       "created": "2026-03-04"
     },
     {
-      "id": 269,
-      "label": "2026 03 29",
-      "path": "briefs/2026-03-29.md",
-      "description": "Dream cycle brief \u2014 March 29, 2026 \u2014 REDUCE + REFLECT phases",
-      "tags": [
-        "brief"
-      ],
-      "cluster": "daily",
-      "layer": "context",
-      "color": "#888888",
-      "size": 8.3825,
-      "lastReweave": "never",
-      "created": ""
-    },
-    {
-      "id": 270,
+      "id": 272,
       "label": "2026 03 30",
       "path": "briefs/2026-03-30.md",
       "description": "Dream Brief \u2014 March 30, 2026 (REDUCE + REFLECT phases)",
@@ -4271,7 +4313,7 @@
       "created": "2026-03-30"
     },
     {
-      "id": 271,
+      "id": 273,
       "label": "2026 03 31",
       "path": "briefs/2026-03-31.md",
       "description": "Dream cycle brief \u2014 March 31, 2026",
@@ -4287,7 +4329,7 @@
       "created": ""
     },
     {
-      "id": 272,
+      "id": 274,
       "label": "2026 04 01",
       "path": "briefs/2026-04-01.md",
       "description": "Dream cycle brief \u2014 April 1, 2026 (Q2 start, quiet day)",
@@ -4303,7 +4345,7 @@
       "created": ""
     },
     {
-      "id": 273,
+      "id": 275,
       "label": "2026 04 02",
       "path": "briefs/2026-04-02.md",
       "description": "Dream cycle brief \u2014 April 2, 2026 (quiet day, overnight SOPs created)",
@@ -4319,7 +4361,7 @@
       "created": ""
     },
     {
-      "id": 274,
+      "id": 276,
       "label": "2026 04 03",
       "path": "briefs/2026-04-03.md",
       "description": "Dream cycle brief \u2014 April 3, 2026 (quiet day, major overnight Kairos deliverables)",
@@ -4335,7 +4377,7 @@
       "created": ""
     },
     {
-      "id": 275,
+      "id": 277,
       "label": "2026 04 04",
       "path": "briefs/2026-04-04.md",
       "description": "Dream cycle brief \u2014 April 4, 2026 (5th consecutive quiet day, major overnight OFM/Kairos deliverables)",
@@ -4351,7 +4393,7 @@
       "created": ""
     },
     {
-      "id": 276,
+      "id": 278,
       "label": "2026 04 05",
       "path": "briefs/2026-04-05.md",
       "description": "Dream cycle brief \u2014 April 5, 2026. 12 Primitives analysis, Kairos prospect engagement, agent architecture updates.",
@@ -4367,7 +4409,7 @@
       "created": ""
     },
     {
-      "id": 277,
+      "id": 279,
       "label": "2026 04 06",
       "path": "briefs/2026-04-06.md",
       "description": "Dream cycle brief \u2014 April 6, 2026. Trading agent thread opened, Kairos delivery stance tightened, memory trimmed.",
@@ -4383,7 +4425,7 @@
       "created": ""
     },
     {
-      "id": 278,
+      "id": 280,
       "label": "2026 04 07",
       "path": "briefs/2026-04-07.md",
       "description": "Dream cycle brief \u2014 April 7, 2026. Trading-course ingestion stabilized, Michael deployment package ready, Codex stack now the live Kairos default.",
@@ -4399,7 +4441,7 @@
       "created": ""
     },
     {
-      "id": 279,
+      "id": 281,
       "label": "2026 04 08",
       "path": "briefs/2026-04-08.md",
       "description": "Dream cycle brief \u2014 April 8, 2026. Michael's workspace now has the first live Kairos Client OS install, release-notes became a formal layer, and voice-note handling got quieter by design.",
@@ -4415,7 +4457,7 @@
       "created": ""
     },
     {
-      "id": 280,
+      "id": 282,
       "label": "2026 04 10",
       "path": "briefs/2026-04-10.md",
       "description": "Dream cycle brief \u2014 April 10, 2026",
@@ -4431,7 +4473,7 @@
       "created": ""
     },
     {
-      "id": 281,
+      "id": 283,
       "label": "2026 04 11",
       "path": "briefs/2026-04-11.md",
       "description": "Dream cycle brief \u2014 April 11, 2026",
@@ -4447,7 +4489,7 @@
       "created": ""
     },
     {
-      "id": 282,
+      "id": 284,
       "label": "2026 04 12",
       "path": "briefs/2026-04-12.md",
       "description": "Dream cycle brief \u2014 April 12, 2026. Kairos setup moved from hardware-waiting to SSH-proof waiting, Bianca's wedding shoe direction got clearer, and the local proxy/disks are still a mess.",
@@ -4459,6 +4501,22 @@
       "layer": "context",
       "color": "#888888",
       "size": 7.645,
+      "lastReweave": "never",
+      "created": ""
+    },
+    {
+      "id": 285,
+      "label": "2026 04 13",
+      "path": "briefs/2026-04-13.md",
+      "description": "Dream cycle brief \u2014 April 13, 2026. Apr 12 was mostly automation, but OFM gained a compliance gate, Kairos gained a weekly truth ledger, and Lagoon's pricing funnel got merged into one ship-ready page asset.",
+      "tags": [
+        "brief",
+        " dream-cycle"
+      ],
+      "cluster": "daily",
+      "layer": "context",
+      "color": "#888888",
+      "size": 9.4925,
       "lastReweave": "never",
       "created": ""
     }
@@ -4484,578 +4542,578 @@
     },
     {
       "id": 3,
-      "source": 62,
-      "target": 157,
+      "source": 61,
+      "target": 159,
       "type": "wikilink"
     },
     {
       "id": 4,
-      "source": 62,
+      "source": 61,
       "target": 55,
       "type": "wikilink"
     },
     {
       "id": 5,
-      "source": 63,
+      "source": 62,
       "target": 117,
       "type": "wikilink"
     },
     {
       "id": 6,
-      "source": 64,
+      "source": 63,
       "target": 117,
       "type": "wikilink"
     },
     {
       "id": 7,
-      "source": 64,
-      "target": 43,
+      "source": 63,
+      "target": 161,
       "type": "wikilink"
     },
     {
       "id": 8,
-      "source": 64,
-      "target": 159,
-      "type": "wikilink"
-    },
-    {
-      "id": 9,
-      "source": 64,
+      "source": 63,
       "target": 74,
       "type": "wikilink"
     },
     {
+      "id": 9,
+      "source": 63,
+      "target": 43,
+      "type": "wikilink"
+    },
+    {
       "id": 10,
-      "source": 65,
+      "source": 64,
       "target": 74,
       "type": "wikilink"
     },
     {
       "id": 11,
-      "source": 65,
+      "source": 64,
       "target": 98,
       "type": "wikilink"
     },
     {
       "id": 12,
-      "source": 66,
-      "target": 202,
-      "type": "wikilink"
-    },
-    {
-      "id": 13,
-      "source": 66,
+      "source": 65,
       "target": 116,
       "type": "wikilink"
     },
     {
+      "id": 13,
+      "source": 65,
+      "target": 205,
+      "type": "wikilink"
+    },
+    {
       "id": 14,
-      "source": 67,
-      "target": 236,
+      "source": 66,
+      "target": 229,
       "type": "wikilink"
     },
     {
       "id": 15,
-      "source": 67,
-      "target": 226,
+      "source": 66,
+      "target": 77,
       "type": "wikilink"
     },
     {
       "id": 16,
-      "source": 67,
+      "source": 66,
       "target": 98,
       "type": "wikilink"
     },
     {
       "id": 17,
-      "source": 67,
-      "target": 240,
+      "source": 66,
+      "target": 239,
       "type": "wikilink"
     },
     {
       "id": 18,
-      "source": 67,
-      "target": 77,
+      "source": 66,
+      "target": 243,
       "type": "wikilink"
     },
     {
       "id": 19,
-      "source": 68,
-      "target": 218,
+      "source": 67,
+      "target": 220,
       "type": "wikilink"
     },
     {
       "id": 20,
-      "source": 68,
-      "target": 217,
+      "source": 67,
+      "target": 221,
       "type": "wikilink"
     },
     {
       "id": 21,
-      "source": 69,
-      "target": 245,
+      "source": 68,
+      "target": 237,
       "type": "wikilink"
     },
     {
       "id": 22,
-      "source": 69,
-      "target": 219,
+      "source": 68,
+      "target": 248,
       "type": "wikilink"
     },
     {
       "id": 23,
-      "source": 69,
-      "target": 234,
+      "source": 68,
+      "target": 222,
       "type": "wikilink"
     },
     {
       "id": 24,
-      "source": 70,
-      "target": 234,
+      "source": 69,
+      "target": 237,
       "type": "wikilink"
     },
     {
       "id": 25,
-      "source": 72,
+      "source": 71,
       "target": 156,
       "type": "wikilink"
     },
     {
       "id": 26,
-      "source": 72,
-      "target": 192,
+      "source": 71,
+      "target": 77,
       "type": "wikilink"
     },
     {
       "id": 27,
-      "source": 72,
-      "target": 93,
+      "source": 71,
+      "target": 142,
       "type": "wikilink"
     },
     {
       "id": 28,
-      "source": 72,
-      "target": 194,
+      "source": 71,
+      "target": 74,
       "type": "wikilink"
     },
     {
       "id": 29,
-      "source": 72,
-      "target": 103,
+      "source": 71,
+      "target": 73,
       "type": "wikilink"
     },
     {
       "id": 30,
-      "source": 72,
-      "target": 151,
+      "source": 71,
+      "target": 75,
       "type": "wikilink"
     },
     {
       "id": 31,
-      "source": 72,
-      "target": 92,
+      "source": 71,
+      "target": 162,
       "type": "wikilink"
     },
     {
       "id": 32,
       "source": 72,
-      "target": 95,
+      "target": 100,
       "type": "wikilink"
     },
     {
       "id": 33,
       "source": 72,
-      "target": 104,
+      "target": 177,
       "type": "wikilink"
     },
     {
       "id": 34,
       "source": 72,
-      "target": 117,
+      "target": 250,
       "type": "wikilink"
     },
     {
       "id": 35,
       "source": 72,
-      "target": 97,
+      "target": 104,
       "type": "wikilink"
     },
     {
       "id": 36,
       "source": 72,
-      "target": 100,
+      "target": 152,
       "type": "wikilink"
     },
     {
       "id": 37,
       "source": 72,
-      "target": 114,
+      "target": 195,
       "type": "wikilink"
     },
     {
       "id": 38,
       "source": 72,
-      "target": 102,
+      "target": 103,
       "type": "wikilink"
     },
     {
       "id": 39,
       "source": 72,
-      "target": 174,
+      "target": 108,
       "type": "wikilink"
     },
     {
       "id": 40,
       "source": 72,
-      "target": 247,
+      "target": 97,
       "type": "wikilink"
     },
     {
       "id": 41,
       "source": 72,
-      "target": 105,
+      "target": 151,
       "type": "wikilink"
     },
     {
       "id": 42,
       "source": 72,
-      "target": 112,
+      "target": 95,
       "type": "wikilink"
     },
     {
       "id": 43,
       "source": 72,
-      "target": 96,
+      "target": 105,
       "type": "wikilink"
     },
     {
       "id": 44,
       "source": 72,
-      "target": 155,
+      "target": 114,
       "type": "wikilink"
     },
     {
       "id": 45,
       "source": 72,
-      "target": 150,
+      "target": 92,
       "type": "wikilink"
     },
     {
       "id": 46,
       "source": 72,
-      "target": 157,
+      "target": 117,
       "type": "wikilink"
     },
     {
       "id": 47,
       "source": 72,
-      "target": 108,
+      "target": 158,
       "type": "wikilink"
     },
     {
       "id": 48,
-      "source": 73,
-      "target": 53,
+      "source": 72,
+      "target": 96,
       "type": "wikilink"
     },
     {
       "id": 49,
-      "source": 73,
-      "target": 233,
+      "source": 72,
+      "target": 112,
       "type": "wikilink"
     },
     {
       "id": 50,
-      "source": 73,
-      "target": 124,
+      "source": 72,
+      "target": 157,
       "type": "wikilink"
     },
     {
       "id": 51,
-      "source": 73,
-      "target": 122,
+      "source": 72,
+      "target": 93,
       "type": "wikilink"
     },
     {
       "id": 52,
-      "source": 73,
-      "target": 153,
+      "source": 72,
+      "target": 102,
       "type": "wikilink"
     },
     {
       "id": 53,
-      "source": 73,
-      "target": 184,
+      "source": 72,
+      "target": 197,
       "type": "wikilink"
     },
     {
       "id": 54,
-      "source": 73,
-      "target": 130,
+      "source": 72,
+      "target": 159,
       "type": "wikilink"
     },
     {
       "id": 55,
       "source": 73,
-      "target": 228,
+      "target": 236,
       "type": "wikilink"
     },
     {
       "id": 56,
       "source": 73,
-      "target": 245,
+      "target": 78,
       "type": "wikilink"
     },
     {
       "id": 57,
       "source": 73,
-      "target": 234,
+      "target": 156,
       "type": "wikilink"
     },
     {
       "id": 58,
       "source": 73,
-      "target": 154,
+      "target": 124,
       "type": "wikilink"
     },
     {
       "id": 59,
       "source": 73,
-      "target": 78,
+      "target": 130,
       "type": "wikilink"
     },
     {
       "id": 60,
-      "source": 74,
-      "target": 139,
+      "source": 73,
+      "target": 154,
       "type": "wikilink"
     },
     {
       "id": 61,
-      "source": 74,
-      "target": 135,
+      "source": 73,
+      "target": 187,
       "type": "wikilink"
     },
     {
       "id": 62,
-      "source": 74,
-      "target": 186,
+      "source": 73,
+      "target": 231,
       "type": "wikilink"
     },
     {
       "id": 63,
-      "source": 74,
-      "target": 94,
+      "source": 73,
+      "target": 53,
       "type": "wikilink"
     },
     {
       "id": 64,
-      "source": 74,
-      "target": 118,
+      "source": 73,
+      "target": 155,
       "type": "wikilink"
     },
     {
       "id": 65,
-      "source": 74,
-      "target": 142,
+      "source": 73,
+      "target": 248,
       "type": "wikilink"
     },
     {
       "id": 66,
-      "source": 74,
-      "target": 141,
+      "source": 73,
+      "target": 122,
       "type": "wikilink"
     },
     {
       "id": 67,
-      "source": 74,
-      "target": 147,
+      "source": 73,
+      "target": 237,
       "type": "wikilink"
     },
     {
       "id": 68,
       "source": 74,
-      "target": 136,
+      "target": 198,
       "type": "wikilink"
     },
     {
       "id": 69,
       "source": 74,
-      "target": 191,
+      "target": 133,
       "type": "wikilink"
     },
     {
       "id": 70,
       "source": 74,
-      "target": 148,
+      "target": 189,
       "type": "wikilink"
     },
     {
       "id": 71,
       "source": 74,
-      "target": 187,
+      "target": 88,
       "type": "wikilink"
     },
     {
       "id": 72,
       "source": 74,
-      "target": 89,
+      "target": 206,
       "type": "wikilink"
     },
     {
       "id": 73,
       "source": 74,
-      "target": 149,
+      "target": 116,
       "type": "wikilink"
     },
     {
       "id": 74,
       "source": 74,
-      "target": 146,
+      "target": 118,
       "type": "wikilink"
     },
     {
       "id": 75,
       "source": 74,
-      "target": 88,
+      "target": 144,
       "type": "wikilink"
     },
     {
       "id": 76,
       "source": 74,
-      "target": 138,
+      "target": 98,
       "type": "wikilink"
     },
     {
       "id": 77,
       "source": 74,
-      "target": 116,
+      "target": 135,
       "type": "wikilink"
     },
     {
       "id": 78,
       "source": 74,
-      "target": 168,
+      "target": 132,
       "type": "wikilink"
     },
     {
       "id": 79,
       "source": 74,
-      "target": 98,
+      "target": 142,
       "type": "wikilink"
     },
     {
       "id": 80,
       "source": 74,
-      "target": 86,
+      "target": 134,
       "type": "wikilink"
     },
     {
       "id": 81,
       "source": 74,
-      "target": 143,
+      "target": 94,
       "type": "wikilink"
     },
     {
       "id": 82,
       "source": 74,
-      "target": 134,
+      "target": 190,
       "type": "wikilink"
     },
     {
       "id": 83,
       "source": 74,
-      "target": 195,
+      "target": 136,
       "type": "wikilink"
     },
     {
       "id": 84,
       "source": 74,
-      "target": 132,
+      "target": 149,
       "type": "wikilink"
     },
     {
       "id": 85,
       "source": 74,
-      "target": 133,
+      "target": 141,
       "type": "wikilink"
     },
     {
       "id": 86,
       "source": 74,
-      "target": 203,
+      "target": 143,
       "type": "wikilink"
     },
     {
       "id": 87,
-      "source": 75,
-      "target": 163,
+      "source": 74,
+      "target": 194,
       "type": "wikilink"
     },
     {
       "id": 88,
-      "source": 75,
-      "target": 170,
+      "source": 74,
+      "target": 171,
       "type": "wikilink"
     },
     {
       "id": 89,
-      "source": 75,
-      "target": 119,
+      "source": 74,
+      "target": 148,
       "type": "wikilink"
     },
     {
       "id": 90,
-      "source": 75,
-      "target": 249,
+      "source": 74,
+      "target": 89,
       "type": "wikilink"
     },
     {
       "id": 91,
-      "source": 75,
-      "target": 159,
+      "source": 74,
+      "target": 150,
       "type": "wikilink"
     },
     {
       "id": 92,
-      "source": 75,
-      "target": 164,
+      "source": 74,
+      "target": 139,
       "type": "wikilink"
     },
     {
       "id": 93,
-      "source": 75,
-      "target": 251,
+      "source": 74,
+      "target": 147,
       "type": "wikilink"
     },
     {
       "id": 94,
-      "source": 75,
-      "target": 243,
+      "source": 74,
+      "target": 138,
       "type": "wikilink"
     },
     {
       "id": 95,
-      "source": 75,
-      "target": 84,
+      "source": 74,
+      "target": 86,
       "type": "wikilink"
     },
     {
       "id": 96,
       "source": 75,
-      "target": 166,
+      "target": 252,
       "type": "wikilink"
     },
     {
       "id": 97,
       "source": 75,
-      "target": 231,
+      "target": 83,
       "type": "wikilink"
     },
     {
       "id": 98,
       "source": 75,
-      "target": 238,
+      "target": 85,
       "type": "wikilink"
     },
     {
@@ -5067,127 +5125,127 @@
     {
       "id": 100,
       "source": 75,
-      "target": 242,
+      "target": 119,
       "type": "wikilink"
     },
     {
       "id": 101,
       "source": 75,
-      "target": 83,
+      "target": 234,
       "type": "wikilink"
     },
     {
       "id": 102,
       "source": 75,
-      "target": 77,
+      "target": 176,
       "type": "wikilink"
     },
     {
       "id": 103,
       "source": 75,
-      "target": 85,
+      "target": 77,
       "type": "wikilink"
     },
     {
       "id": 104,
-      "source": 76,
-      "target": 82,
+      "source": 75,
+      "target": 84,
       "type": "wikilink"
     },
     {
       "id": 105,
-      "source": 76,
-      "target": 81,
+      "source": 75,
+      "target": 167,
       "type": "wikilink"
     },
     {
       "id": 106,
-      "source": 76,
-      "target": 110,
+      "source": 75,
+      "target": 254,
       "type": "wikilink"
     },
     {
       "id": 107,
-      "source": 76,
-      "target": 80,
+      "source": 75,
+      "target": 166,
       "type": "wikilink"
     },
     {
       "id": 108,
-      "source": 76,
-      "target": 171,
+      "source": 75,
+      "target": 241,
       "type": "wikilink"
     },
     {
       "id": 109,
+      "source": 75,
+      "target": 245,
+      "type": "wikilink"
+    },
+    {
+      "id": 110,
+      "source": 75,
+      "target": 169,
+      "type": "wikilink"
+    },
+    {
+      "id": 111,
+      "source": 75,
+      "target": 246,
+      "type": "wikilink"
+    },
+    {
+      "id": 112,
+      "source": 75,
+      "target": 161,
+      "type": "wikilink"
+    },
+    {
+      "id": 113,
+      "source": 75,
+      "target": 162,
+      "type": "wikilink"
+    },
+    {
+      "id": 114,
       "source": 76,
       "target": 111,
       "type": "wikilink"
     },
     {
-      "id": 110,
-      "source": 77,
-      "target": 139,
-      "type": "wikilink"
-    },
-    {
-      "id": 111,
-      "source": 77,
-      "target": 233,
-      "type": "wikilink"
-    },
-    {
-      "id": 112,
-      "source": 77,
-      "target": 122,
-      "type": "wikilink"
-    },
-    {
-      "id": 113,
-      "source": 77,
-      "target": 153,
-      "type": "wikilink"
-    },
-    {
-      "id": 114,
-      "source": 77,
-      "target": 138,
-      "type": "wikilink"
-    },
-    {
       "id": 115,
-      "source": 77,
-      "target": 184,
+      "source": 76,
+      "target": 110,
       "type": "wikilink"
     },
     {
       "id": 116,
-      "source": 77,
-      "target": 84,
+      "source": 76,
+      "target": 80,
       "type": "wikilink"
     },
     {
       "id": 117,
-      "source": 77,
-      "target": 141,
+      "source": 76,
+      "target": 81,
       "type": "wikilink"
     },
     {
       "id": 118,
-      "source": 77,
-      "target": 245,
+      "source": 76,
+      "target": 174,
       "type": "wikilink"
     },
     {
       "id": 119,
-      "source": 77,
-      "target": 234,
+      "source": 76,
+      "target": 82,
       "type": "wikilink"
     },
     {
       "id": 120,
       "source": 77,
-      "target": 154,
+      "target": 236,
       "type": "wikilink"
     },
     {
@@ -5199,409 +5257,589 @@
     {
       "id": 122,
       "source": 77,
-      "target": 85,
+      "target": 139,
       "type": "wikilink"
     },
     {
       "id": 123,
-      "source": 83,
-      "target": 84,
+      "source": 77,
+      "target": 156,
       "type": "wikilink"
     },
     {
       "id": 124,
+      "source": 77,
+      "target": 154,
+      "type": "wikilink"
+    },
+    {
+      "id": 125,
+      "source": 77,
+      "target": 142,
+      "type": "wikilink"
+    },
+    {
+      "id": 126,
+      "source": 77,
+      "target": 141,
+      "type": "wikilink"
+    },
+    {
+      "id": 127,
+      "source": 77,
+      "target": 187,
+      "type": "wikilink"
+    },
+    {
+      "id": 128,
+      "source": 77,
+      "target": 138,
+      "type": "wikilink"
+    },
+    {
+      "id": 129,
+      "source": 77,
+      "target": 248,
+      "type": "wikilink"
+    },
+    {
+      "id": 130,
+      "source": 77,
+      "target": 84,
+      "type": "wikilink"
+    },
+    {
+      "id": 131,
+      "source": 77,
+      "target": 85,
+      "type": "wikilink"
+    },
+    {
+      "id": 132,
+      "source": 77,
+      "target": 122,
+      "type": "wikilink"
+    },
+    {
+      "id": 133,
+      "source": 77,
+      "target": 237,
+      "type": "wikilink"
+    },
+    {
+      "id": 134,
+      "source": 77,
+      "target": 155,
+      "type": "wikilink"
+    },
+    {
+      "id": 135,
+      "source": 77,
+      "target": 162,
+      "type": "wikilink"
+    },
+    {
+      "id": 136,
       "source": 83,
       "target": 85,
       "type": "wikilink"
     },
     {
-      "id": 125,
-      "source": 84,
-      "target": 159,
+      "id": 137,
+      "source": 83,
+      "target": 84,
       "type": "wikilink"
     },
     {
-      "id": 126,
+      "id": 138,
+      "source": 84,
+      "target": 161,
+      "type": "wikilink"
+    },
+    {
+      "id": 139,
+      "source": 85,
+      "target": 161,
+      "type": "wikilink"
+    },
+    {
+      "id": 140,
       "source": 85,
       "target": 84,
       "type": "wikilink"
     },
     {
-      "id": 127,
-      "source": 85,
-      "target": 159,
-      "type": "wikilink"
-    },
-    {
-      "id": 128,
+      "id": 141,
       "source": 96,
       "target": 88,
       "type": "wikilink"
     },
     {
-      "id": 129,
-      "source": 99,
-      "target": 159,
-      "type": "wikilink"
-    },
-    {
-      "id": 130,
-      "source": 99,
-      "target": 237,
-      "type": "wikilink"
-    },
-    {
-      "id": 131,
-      "source": 122,
-      "target": 154,
-      "type": "wikilink"
-    },
-    {
-      "id": 132,
-      "source": 138,
-      "target": 139,
-      "type": "wikilink"
-    },
-    {
-      "id": 133,
-      "source": 138,
-      "target": 141,
-      "type": "wikilink"
-    },
-    {
-      "id": 134,
-      "source": 143,
-      "target": 240,
-      "type": "wikilink"
-    },
-    {
-      "id": 135,
-      "source": 143,
-      "target": 98,
-      "type": "wikilink"
-    },
-    {
-      "id": 136,
-      "source": 148,
-      "target": 52,
-      "type": "wikilink"
-    },
-    {
-      "id": 137,
-      "source": 153,
-      "target": 154,
-      "type": "wikilink"
-    },
-    {
-      "id": 138,
-      "source": 175,
-      "target": 249,
-      "type": "wikilink"
-    },
-    {
-      "id": 139,
-      "source": 179,
-      "target": 159,
-      "type": "wikilink"
-    },
-    {
-      "id": 140,
-      "source": 212,
-      "target": 202,
-      "type": "wikilink"
-    },
-    {
-      "id": 141,
-      "source": 214,
-      "target": 219,
-      "type": "wikilink"
-    },
-    {
       "id": 142,
-      "source": 214,
-      "target": 218,
+      "source": 99,
+      "target": 161,
       "type": "wikilink"
     },
     {
       "id": 143,
-      "source": 214,
-      "target": 217,
+      "source": 99,
+      "target": 240,
       "type": "wikilink"
     },
     {
       "id": 144,
-      "source": 214,
-      "target": 216,
+      "source": 122,
+      "target": 155,
       "type": "wikilink"
     },
     {
       "id": 145,
-      "source": 214,
-      "target": 215,
+      "source": 138,
+      "target": 139,
       "type": "wikilink"
     },
     {
       "id": 146,
-      "source": 215,
-      "target": 216,
+      "source": 138,
+      "target": 141,
       "type": "wikilink"
     },
     {
       "id": 147,
-      "source": 215,
-      "target": 218,
+      "source": 142,
+      "target": 139,
       "type": "wikilink"
     },
     {
       "id": 148,
-      "source": 215,
-      "target": 219,
+      "source": 142,
+      "target": 141,
       "type": "wikilink"
     },
     {
       "id": 149,
-      "source": 216,
-      "target": 217,
+      "source": 142,
+      "target": 138,
       "type": "wikilink"
     },
     {
       "id": 150,
-      "source": 216,
-      "target": 254,
+      "source": 144,
+      "target": 243,
       "type": "wikilink"
     },
     {
       "id": 151,
+      "source": 144,
+      "target": 98,
+      "type": "wikilink"
+    },
+    {
+      "id": 152,
+      "source": 149,
+      "target": 52,
+      "type": "wikilink"
+    },
+    {
+      "id": 153,
+      "source": 154,
+      "target": 155,
+      "type": "wikilink"
+    },
+    {
+      "id": 154,
+      "source": 155,
+      "target": 156,
+      "type": "wikilink"
+    },
+    {
+      "id": 155,
+      "source": 156,
+      "target": 154,
+      "type": "wikilink"
+    },
+    {
+      "id": 156,
+      "source": 162,
+      "target": 85,
+      "type": "wikilink"
+    },
+    {
+      "id": 157,
+      "source": 162,
+      "target": 161,
+      "type": "wikilink"
+    },
+    {
+      "id": 158,
+      "source": 162,
+      "target": 83,
+      "type": "wikilink"
+    },
+    {
+      "id": 159,
+      "source": 162,
+      "target": 84,
+      "type": "wikilink"
+    },
+    {
+      "id": 160,
+      "source": 178,
+      "target": 252,
+      "type": "wikilink"
+    },
+    {
+      "id": 161,
+      "source": 182,
+      "target": 161,
+      "type": "wikilink"
+    },
+    {
+      "id": 162,
+      "source": 215,
+      "target": 205,
+      "type": "wikilink"
+    },
+    {
+      "id": 163,
       "source": 217,
       "target": 218,
       "type": "wikilink"
     },
     {
-      "id": 152,
-      "source": 217,
-      "target": 219,
-      "type": "wikilink"
-    },
-    {
-      "id": 153,
-      "source": 217,
-      "target": 215,
-      "type": "wikilink"
-    },
-    {
-      "id": 154,
-      "source": 218,
-      "target": 219,
-      "type": "wikilink"
-    },
-    {
-      "id": 155,
-      "source": 218,
-      "target": 254,
-      "type": "wikilink"
-    },
-    {
-      "id": 156,
-      "source": 218,
-      "target": 216,
-      "type": "wikilink"
-    },
-    {
-      "id": 157,
-      "source": 227,
-      "target": 230,
-      "type": "wikilink"
-    },
-    {
-      "id": 158,
-      "source": 231,
-      "target": 159,
-      "type": "wikilink"
-    },
-    {
-      "id": 159,
-      "source": 233,
-      "target": 235,
-      "type": "wikilink"
-    },
-    {
-      "id": 160,
-      "source": 233,
-      "target": 245,
-      "type": "wikilink"
-    },
-    {
-      "id": 161,
-      "source": 233,
-      "target": 234,
-      "type": "wikilink"
-    },
-    {
-      "id": 162,
-      "source": 234,
-      "target": 245,
-      "type": "wikilink"
-    },
-    {
-      "id": 163,
-      "source": 235,
-      "target": 245,
-      "type": "wikilink"
-    },
-    {
       "id": 164,
-      "source": 236,
-      "target": 226,
+      "source": 217,
+      "target": 222,
       "type": "wikilink"
     },
     {
       "id": 165,
+      "source": 217,
+      "target": 220,
+      "type": "wikilink"
+    },
+    {
+      "id": 166,
+      "source": 217,
+      "target": 219,
+      "type": "wikilink"
+    },
+    {
+      "id": 167,
+      "source": 217,
+      "target": 221,
+      "type": "wikilink"
+    },
+    {
+      "id": 168,
+      "source": 218,
+      "target": 222,
+      "type": "wikilink"
+    },
+    {
+      "id": 169,
+      "source": 218,
+      "target": 219,
+      "type": "wikilink"
+    },
+    {
+      "id": 170,
+      "source": 218,
+      "target": 221,
+      "type": "wikilink"
+    },
+    {
+      "id": 171,
+      "source": 219,
+      "target": 257,
+      "type": "wikilink"
+    },
+    {
+      "id": 172,
+      "source": 219,
+      "target": 220,
+      "type": "wikilink"
+    },
+    {
+      "id": 173,
+      "source": 220,
+      "target": 218,
+      "type": "wikilink"
+    },
+    {
+      "id": 174,
+      "source": 220,
+      "target": 222,
+      "type": "wikilink"
+    },
+    {
+      "id": 175,
+      "source": 220,
+      "target": 221,
+      "type": "wikilink"
+    },
+    {
+      "id": 176,
+      "source": 221,
+      "target": 257,
+      "type": "wikilink"
+    },
+    {
+      "id": 177,
+      "source": 221,
+      "target": 222,
+      "type": "wikilink"
+    },
+    {
+      "id": 178,
+      "source": 221,
+      "target": 219,
+      "type": "wikilink"
+    },
+    {
+      "id": 179,
+      "source": 230,
+      "target": 233,
+      "type": "wikilink"
+    },
+    {
+      "id": 180,
+      "source": 234,
+      "target": 161,
+      "type": "wikilink"
+    },
+    {
+      "id": 181,
+      "source": 236,
+      "target": 238,
+      "type": "wikilink"
+    },
+    {
+      "id": 182,
       "source": 236,
       "target": 237,
       "type": "wikilink"
     },
     {
-      "id": 166,
-      "source": 237,
-      "target": 226,
-      "type": "wikilink"
-    },
-    {
-      "id": 167,
-      "source": 237,
-      "target": 77,
-      "type": "wikilink"
-    },
-    {
-      "id": 168,
-      "source": 244,
-      "target": 230,
-      "type": "wikilink"
-    },
-    {
-      "id": 169,
-      "source": 245,
-      "target": 130,
-      "type": "wikilink"
-    },
-    {
-      "id": 170,
-      "source": 247,
-      "target": 157,
-      "type": "wikilink"
-    },
-    {
-      "id": 171,
-      "source": 247,
-      "target": 55,
-      "type": "wikilink"
-    },
-    {
-      "id": 172,
-      "source": 254,
-      "target": 214,
-      "type": "wikilink"
-    },
-    {
-      "id": 173,
-      "source": 277,
-      "target": 184,
-      "type": "wikilink"
-    },
-    {
-      "id": 174,
-      "source": 280,
-      "target": 84,
-      "type": "wikilink"
-    },
-    {
-      "id": 175,
-      "source": 280,
-      "target": 141,
-      "type": "wikilink"
-    },
-    {
-      "id": 176,
-      "source": 280,
-      "target": 139,
-      "type": "wikilink"
-    },
-    {
-      "id": 177,
-      "source": 280,
-      "target": 154,
-      "type": "wikilink"
-    },
-    {
-      "id": 178,
-      "source": 281,
-      "target": 139,
-      "type": "wikilink"
-    },
-    {
-      "id": 179,
-      "source": 281,
-      "target": 153,
-      "type": "wikilink"
-    },
-    {
-      "id": 180,
-      "source": 281,
-      "target": 138,
-      "type": "wikilink"
-    },
-    {
-      "id": 181,
-      "source": 281,
-      "target": 84,
-      "type": "wikilink"
-    },
-    {
-      "id": 182,
-      "source": 281,
-      "target": 141,
-      "type": "wikilink"
-    },
-    {
       "id": 183,
-      "source": 281,
-      "target": 154,
+      "source": 236,
+      "target": 248,
       "type": "wikilink"
     },
     {
       "id": 184,
-      "source": 281,
-      "target": 83,
+      "source": 237,
+      "target": 248,
       "type": "wikilink"
     },
     {
       "id": 185,
-      "source": 281,
-      "target": 85,
+      "source": 238,
+      "target": 248,
       "type": "wikilink"
     },
     {
       "id": 186,
-      "source": 282,
-      "target": 122,
+      "source": 239,
+      "target": 229,
       "type": "wikilink"
     },
     {
       "id": 187,
-      "source": 282,
-      "target": 44,
+      "source": 239,
+      "target": 240,
       "type": "wikilink"
     },
     {
       "id": 188,
-      "source": 282,
-      "target": 77,
+      "source": 240,
+      "target": 229,
       "type": "wikilink"
     },
     {
       "id": 189,
+      "source": 240,
+      "target": 77,
+      "type": "wikilink"
+    },
+    {
+      "id": 190,
+      "source": 247,
+      "target": 233,
+      "type": "wikilink"
+    },
+    {
+      "id": 191,
+      "source": 248,
+      "target": 130,
+      "type": "wikilink"
+    },
+    {
+      "id": 192,
+      "source": 250,
+      "target": 159,
+      "type": "wikilink"
+    },
+    {
+      "id": 193,
+      "source": 250,
+      "target": 55,
+      "type": "wikilink"
+    },
+    {
+      "id": 194,
+      "source": 257,
+      "target": 217,
+      "type": "wikilink"
+    },
+    {
+      "id": 195,
+      "source": 279,
+      "target": 187,
+      "type": "wikilink"
+    },
+    {
+      "id": 196,
       "source": 282,
+      "target": 139,
+      "type": "wikilink"
+    },
+    {
+      "id": 197,
+      "source": 282,
+      "target": 141,
+      "type": "wikilink"
+    },
+    {
+      "id": 198,
+      "source": 282,
+      "target": 84,
+      "type": "wikilink"
+    },
+    {
+      "id": 199,
+      "source": 282,
+      "target": 155,
+      "type": "wikilink"
+    },
+    {
+      "id": 200,
+      "source": 283,
+      "target": 83,
+      "type": "wikilink"
+    },
+    {
+      "id": 201,
+      "source": 283,
+      "target": 139,
+      "type": "wikilink"
+    },
+    {
+      "id": 202,
+      "source": 283,
+      "target": 84,
+      "type": "wikilink"
+    },
+    {
+      "id": 203,
+      "source": 283,
+      "target": 154,
+      "type": "wikilink"
+    },
+    {
+      "id": 204,
+      "source": 283,
+      "target": 141,
+      "type": "wikilink"
+    },
+    {
+      "id": 205,
+      "source": 283,
+      "target": 138,
+      "type": "wikilink"
+    },
+    {
+      "id": 206,
+      "source": 283,
+      "target": 155,
+      "type": "wikilink"
+    },
+    {
+      "id": 207,
+      "source": 283,
+      "target": 85,
+      "type": "wikilink"
+    },
+    {
+      "id": 208,
+      "source": 284,
+      "target": 122,
+      "type": "wikilink"
+    },
+    {
+      "id": 209,
+      "source": 284,
       "target": 73,
+      "type": "wikilink"
+    },
+    {
+      "id": 210,
+      "source": 284,
+      "target": 44,
+      "type": "wikilink"
+    },
+    {
+      "id": 211,
+      "source": 284,
+      "target": 77,
+      "type": "wikilink"
+    },
+    {
+      "id": 212,
+      "source": 285,
+      "target": 156,
+      "type": "wikilink"
+    },
+    {
+      "id": 213,
+      "source": 285,
+      "target": 77,
+      "type": "wikilink"
+    },
+    {
+      "id": 214,
+      "source": 285,
+      "target": 142,
+      "type": "wikilink"
+    },
+    {
+      "id": 215,
+      "source": 285,
+      "target": 74,
+      "type": "wikilink"
+    },
+    {
+      "id": 216,
+      "source": 285,
+      "target": 155,
+      "type": "wikilink"
+    },
+    {
+      "id": 217,
+      "source": 285,
+      "target": 73,
+      "type": "wikilink"
+    },
+    {
+      "id": 218,
+      "source": 285,
+      "target": 75,
+      "type": "wikilink"
+    },
+    {
+      "id": 219,
+      "source": 285,
+      "target": 162,
       "type": "wikilink"
     }
   ]

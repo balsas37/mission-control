@@ -8,16 +8,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-12T02:00:00.009000+00:00",
-      "nextRun": "2026-04-13T02:00:00+00:00",
-      "lastDuration": 18175,
+      "lastRun": "2026-04-13T02:00:00.004000+00:00",
+      "nextRun": "2026-04-14T02:00:00+00:00",
+      "lastDuration": 22537,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-12T02:00:00.009000+00:00",
+          "ts": "2026-04-13T02:00:00.004000+00:00",
           "status": "ok",
-          "duration": 18175
+          "duration": 22537
         }
       ]
     },
@@ -29,16 +29,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-11T13:00:00.013000+00:00",
-      "nextRun": "2026-04-12T13:00:00+00:00",
-      "lastDuration": 29272,
+      "lastRun": "2026-04-12T13:00:00.017000+00:00",
+      "nextRun": "2026-04-13T13:00:00+00:00",
+      "lastDuration": 29565,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-11T13:00:00.013000+00:00",
+          "ts": "2026-04-12T13:00:00.017000+00:00",
           "status": "ok",
-          "duration": 29272
+          "duration": 29565
         }
       ]
     },
@@ -50,16 +50,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-12T10:01:07.222000+00:00",
-      "nextRun": "2026-04-12T11:01:07.213000+00:00",
-      "lastDuration": 14766,
+      "lastRun": "2026-04-13T10:01:07.220000+00:00",
+      "nextRun": "2026-04-13T11:01:07.213000+00:00",
+      "lastDuration": 17854,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-12T10:01:07.222000+00:00",
+          "ts": "2026-04-13T10:01:07.220000+00:00",
           "status": "ok",
-          "duration": 14766
+          "duration": 17854
         }
       ]
     },
@@ -71,16 +71,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-12T03:30:00.011000+00:00",
-      "nextRun": "2026-04-12T13:30:00+00:00",
-      "lastDuration": 34994,
+      "lastRun": "2026-04-13T03:30:00.007000+00:00",
+      "nextRun": "2026-04-13T13:30:00+00:00",
+      "lastDuration": 24336,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-12T03:30:00.011000+00:00",
+          "ts": "2026-04-13T03:30:00.007000+00:00",
           "status": "ok",
-          "duration": 34994
+          "duration": 24336
         }
       ]
     },
@@ -112,17 +112,17 @@
       "description": "",
       "agent": "main",
       "enabled": true,
-      "lastStatus": "error",
-      "lastRun": "2026-04-06T01:00:00.012000+00:00",
-      "nextRun": "2026-04-13T01:00:00+00:00",
-      "lastDuration": 30080,
-      "consecutiveErrors": 1,
-      "lastError": "cron: job execution timed out",
+      "lastStatus": "ok",
+      "lastRun": "2026-04-13T01:00:00.007000+00:00",
+      "nextRun": "2026-04-20T01:00:00+00:00",
+      "lastDuration": 8251,
+      "consecutiveErrors": 0,
+      "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-06T01:00:00.012000+00:00",
-          "status": "error",
-          "duration": 30080
+          "ts": "2026-04-13T01:00:00.007000+00:00",
+          "status": "ok",
+          "duration": 8251
         }
       ]
     },
@@ -134,16 +134,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-11T11:50:00.010000+00:00",
-      "nextRun": "2026-04-12T11:50:00+00:00",
-      "lastDuration": 47505,
+      "lastRun": "2026-04-12T11:50:00.009000+00:00",
+      "nextRun": "2026-04-13T11:50:00+00:00",
+      "lastDuration": 47999,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-11T11:50:00.010000+00:00",
+          "ts": "2026-04-12T11:50:00.009000+00:00",
           "status": "ok",
-          "duration": 47505
+          "duration": 47999
         }
       ]
     },
@@ -155,16 +155,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-12T06:00:00.026000+00:00",
-      "nextRun": "2026-04-13T06:00:00+00:00",
-      "lastDuration": 233672,
+      "lastRun": "2026-04-13T06:00:00.015000+00:00",
+      "nextRun": "2026-04-14T06:00:00+00:00",
+      "lastDuration": 395022,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-12T06:00:00.026000+00:00",
+          "ts": "2026-04-13T06:00:00.015000+00:00",
           "status": "ok",
-          "duration": 233672
+          "duration": 395022
         }
       ]
     },
@@ -176,16 +176,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-12T02:30:00.009000+00:00",
-      "nextRun": "2026-04-13T02:30:00+00:00",
-      "lastDuration": 15210,
+      "lastRun": "2026-04-13T02:30:00.004000+00:00",
+      "nextRun": "2026-04-14T02:30:00+00:00",
+      "lastDuration": 14431,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-12T02:30:00.009000+00:00",
+          "ts": "2026-04-13T02:30:00.004000+00:00",
           "status": "ok",
-          "duration": 15210
+          "duration": 14431
         }
       ]
     },
@@ -197,16 +197,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-12T06:30:00.010000+00:00",
-      "nextRun": "2026-04-13T06:30:00+00:00",
-      "lastDuration": 81581,
+      "lastRun": "2026-04-13T06:30:00.009000+00:00",
+      "nextRun": "2026-04-14T06:30:00+00:00",
+      "lastDuration": 137650,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-12T06:30:00.010000+00:00",
+          "ts": "2026-04-13T06:30:00.009000+00:00",
           "status": "ok",
-          "duration": 81581
+          "duration": 137650
         }
       ]
     },
@@ -239,16 +239,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-11T11:00:00.016000+00:00",
-      "nextRun": "2026-04-12T11:00:00+00:00",
-      "lastDuration": 16503,
+      "lastRun": "2026-04-12T11:00:00.010000+00:00",
+      "nextRun": "2026-04-13T11:00:00+00:00",
+      "lastDuration": 31010,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-11T11:00:00.016000+00:00",
+          "ts": "2026-04-12T11:00:00.010000+00:00",
           "status": "ok",
-          "duration": 16503
+          "duration": 31010
         }
       ]
     },
@@ -323,16 +323,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-11T11:45:00.010000+00:00",
-      "nextRun": "2026-04-12T11:45:00+00:00",
-      "lastDuration": 16833,
+      "lastRun": "2026-04-12T11:45:00.008000+00:00",
+      "nextRun": "2026-04-13T11:45:00+00:00",
+      "lastDuration": 17373,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-11T11:45:00.010000+00:00",
+          "ts": "2026-04-12T11:45:00.008000+00:00",
           "status": "ok",
-          "duration": 16833
+          "duration": 17373
         }
       ]
     },
@@ -344,16 +344,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-12T04:30:00.012000+00:00",
-      "nextRun": "2026-04-13T04:30:00+00:00",
-      "lastDuration": 195793,
+      "lastRun": "2026-04-13T04:30:00.008000+00:00",
+      "nextRun": "2026-04-14T04:30:00+00:00",
+      "lastDuration": 203484,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-12T04:30:00.012000+00:00",
+          "ts": "2026-04-13T04:30:00.008000+00:00",
           "status": "ok",
-          "duration": 195793
+          "duration": 203484
         }
       ]
     },
@@ -386,16 +386,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-11T17:01:00.389000+00:00",
-      "nextRun": "2026-04-12T17:00:00+00:00",
-      "lastDuration": 94638,
+      "lastRun": "2026-04-12T17:01:08.754000+00:00",
+      "nextRun": "2026-04-13T17:00:00+00:00",
+      "lastDuration": 63897,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-11T17:01:00.389000+00:00",
+          "ts": "2026-04-12T17:01:08.754000+00:00",
           "status": "ok",
-          "duration": 94638
+          "duration": 63897
         }
       ]
     },
@@ -407,16 +407,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-05T13:01:09.172000+00:00",
-      "nextRun": "2026-04-12T13:00:00+00:00",
-      "lastDuration": 82038,
+      "lastRun": "2026-04-12T13:00:29.582000+00:00",
+      "nextRun": "2026-04-19T13:00:00+00:00",
+      "lastDuration": 51012,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-05T13:01:09.172000+00:00",
+          "ts": "2026-04-12T13:00:29.582000+00:00",
           "status": "ok",
-          "duration": 82038
+          "duration": 51012
         }
       ]
     },
@@ -428,16 +428,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-12T04:00:00.006000+00:00",
-      "nextRun": "2026-04-13T04:00:00+00:00",
-      "lastDuration": 55540,
+      "lastRun": "2026-04-13T04:00:00.009000+00:00",
+      "nextRun": "2026-04-14T04:00:00+00:00",
+      "lastDuration": 34619,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-12T04:00:00.006000+00:00",
+          "ts": "2026-04-13T04:00:00.009000+00:00",
           "status": "ok",
-          "duration": 55540
+          "duration": 34619
         }
       ]
     },
@@ -449,16 +449,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-11T23:00:51.188000+00:00",
-      "nextRun": "2026-04-12T23:00:00+00:00",
-      "lastDuration": 7192,
+      "lastRun": "2026-04-12T23:00:37.802000+00:00",
+      "nextRun": "2026-04-13T23:00:00+00:00",
+      "lastDuration": 5841,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-11T23:00:51.188000+00:00",
+          "ts": "2026-04-12T23:00:37.802000+00:00",
           "status": "ok",
-          "duration": 7192
+          "duration": 5841
         }
       ]
     },
@@ -470,16 +470,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-12T07:00:00.013000+00:00",
-      "nextRun": "2026-04-13T07:00:00+00:00",
-      "lastDuration": 118235,
+      "lastRun": "2026-04-13T07:00:00.008000+00:00",
+      "nextRun": "2026-04-14T07:00:00+00:00",
+      "lastDuration": 111202,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-12T07:00:00.013000+00:00",
+          "ts": "2026-04-13T07:00:00.008000+00:00",
           "status": "ok",
-          "duration": 118235
+          "duration": 111202
         }
       ]
     },
@@ -491,16 +491,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-12T05:00:19.361000+00:00",
-      "nextRun": "2026-04-12T11:00:00+00:00",
-      "lastDuration": 48447,
+      "lastRun": "2026-04-13T05:00:11.980000+00:00",
+      "nextRun": "2026-04-13T11:00:00+00:00",
+      "lastDuration": 22316,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-12T05:00:19.361000+00:00",
+          "ts": "2026-04-13T05:00:11.980000+00:00",
           "status": "ok",
-          "duration": 48447
+          "duration": 22316
         }
       ]
     },
@@ -512,16 +512,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-12T05:00:00.094000+00:00",
-      "nextRun": "2026-04-12T11:00:00+00:00",
-      "lastDuration": 19267,
+      "lastRun": "2026-04-13T05:00:00.010000+00:00",
+      "nextRun": "2026-04-13T11:00:00+00:00",
+      "lastDuration": 11970,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-12T05:00:00.094000+00:00",
+          "ts": "2026-04-13T05:00:00.010000+00:00",
           "status": "ok",
-          "duration": 19267
+          "duration": 11970
         }
       ]
     },
@@ -533,16 +533,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-12T05:03:52.740000+00:00",
-      "nextRun": "2026-04-12T11:03:52.724000+00:00",
-      "lastDuration": 14963,
+      "lastRun": "2026-04-13T05:03:52.729000+00:00",
+      "nextRun": "2026-04-13T11:03:52.724000+00:00",
+      "lastDuration": 21582,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-12T05:03:52.740000+00:00",
+          "ts": "2026-04-13T05:03:52.729000+00:00",
           "status": "ok",
-          "duration": 14963
+          "duration": 21582
         }
       ]
     },
@@ -554,16 +554,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-12T07:30:00.010000+00:00",
-      "nextRun": "2026-04-13T07:30:00+00:00",
-      "lastDuration": 114015,
+      "lastRun": "2026-04-13T07:30:00.017000+00:00",
+      "nextRun": "2026-04-14T07:30:00+00:00",
+      "lastDuration": 174702,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-12T07:30:00.010000+00:00",
+          "ts": "2026-04-13T07:30:00.017000+00:00",
           "status": "ok",
-          "duration": 114015
+          "duration": 174702
         }
       ]
     },
@@ -616,17 +616,17 @@
       "description": "",
       "agent": "main",
       "enabled": true,
-      "lastStatus": "ok",
-      "lastRun": "2026-04-06T03:00:00.010000+00:00",
-      "nextRun": "2026-04-13T03:00:00+00:00",
-      "lastDuration": 64206,
-      "consecutiveErrors": 0,
-      "lastError": "",
+      "lastStatus": "error",
+      "lastRun": "2026-04-13T03:00:00.017000+00:00",
+      "nextRun": "2026-04-20T03:00:00+00:00",
+      "lastDuration": 120134,
+      "consecutiveErrors": 1,
+      "lastError": "cron: job execution timed out",
       "runs": [
         {
-          "ts": "2026-04-06T03:00:00.010000+00:00",
-          "status": "ok",
-          "duration": 64206
+          "ts": "2026-04-13T03:00:00.017000+00:00",
+          "status": "error",
+          "duration": 120134
         }
       ]
     },
@@ -680,16 +680,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-06T02:00:23.357000+00:00",
-      "nextRun": "2026-04-13T02:00:00+00:00",
-      "lastDuration": 7332,
+      "lastRun": "2026-04-13T02:00:22.541000+00:00",
+      "nextRun": "2026-04-20T02:00:00+00:00",
+      "lastDuration": 8106,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-06T02:00:23.357000+00:00",
+          "ts": "2026-04-13T02:00:22.541000+00:00",
           "status": "ok",
-          "duration": 7332
+          "duration": 8106
         }
       ]
     }
@@ -701,7 +701,7 @@
       "count": 1
     },
     {
-      "job": "couples-weekly-alignment",
+      "job": "weekly-cost-report",
       "error": "cron: job execution timed out",
       "count": 1
     },
