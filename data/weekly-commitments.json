@@ -1,195 +1,105 @@
 {
-  "generated": "2026-03-08T19:21:06.194062+00:00",
+  "generated": "2026-04-16T07:00:54.494649+00:00",
   "records": [
     {
-      "id": "recvuOn7ICkkK",
-      "commitment": "Deploy trained LoRA to ComfyUI, run 10 test generations, approve character",
+      "id": "recDxcmV9IPjS",
+      "commitment": "Train LoRA v1 with curated reference images",
       "status": "Not Started",
-      "weekOf": "2026-03-28T00:00:00+00:00",
+      "weekOf": "2025-03-30T00:00:00+00:00",
       "business": "OFM Agency",
       "owner": null,
-      "focus": "Content",
-      "notes": "Install LoRA in ComfyUI models/loras. Run 10 test generations: varied poses, outfits, settings. Evaluate character consistency. If approved: begin daily content production. If not: identify issues and re-train or adjust parameters."
+      "focus": null,
+      "notes": "Mon-Tue. From 293 reviewed images."
     },
     {
-      "id": "recYbge1wYVbl",
-      "commitment": "Build image-to-video workflow in ComfyUI for AI reel production",
+      "id": "recxEV7TT50Gs",
+      "commitment": "Generate 20 images with v1, face swap, train LoRA v2",
       "status": "Not Started",
-      "weekOf": "2026-03-28T00:00:00+00:00",
+      "weekOf": "2025-03-30T00:00:00+00:00",
       "business": "OFM Agency",
       "owner": null,
-      "focus": "Content",
-      "notes": "WAN 2.2 i2v workflow: static image -> animated reel. 3-5 second clips. Edit in CapCut. Target: 3 reels/week production capacity. TikTok: use as slideshow. IG/Fanvue: video. This unlocks the full content pipeline."
+      "focus": null,
+      "notes": "Tue-Wed. V2 = production model."
     },
     {
-      "id": "rechAIP18v0S7",
-      "commitment": "Post first 3 pieces of Fanvue content for AI model",
+      "id": "rec2U40sghplp",
+      "commitment": "Generate 50+ launch images from LoRA v2",
       "status": "Not Started",
-      "weekOf": "2026-03-28T00:00:00+00:00",
+      "weekOf": "2025-03-30T00:00:00+00:00",
       "business": "OFM Agency",
       "owner": null,
-      "focus": "Content",
-      "notes": "First Fanvue posts. Mix: 1 intro post, 1 SFW content, 1 tease/preview. Captions: personality matching character voice. Tag appropriately. Watermark on all. Begin chatter DM responses immediately when subscribers arrive."
+      "focus": null,
+      "notes": "Wed-Thu. Lifestyle, bikini, lingerie, casual, selfie."
     },
     {
-      "id": "recmNqHWMmnOa",
-      "commitment": "Launch first PPV mass DM campaign to all fans (once 20+ subscribers)",
+      "id": "recZuaKkYbpvk",
+      "commitment": "Buy phone + prepaid SIM for Instagram main account",
       "status": "Not Started",
-      "weekOf": "2026-03-28T00:00:00+00:00",
+      "weekOf": "2025-03-30T00:00:00+00:00",
       "business": "OFM Agency",
       "owner": null,
-      "focus": "Product",
-      "notes": "Once 20+ paying subscribers: mass DM with locked PPV. Price: $15-25. Tease in DM copy without showing content. First real revenue test. Track: DM open rate, PPV purchase rate, avg PPV revenue. Report results to Piia."
+      "focus": null,
+      "notes": "Wed. Used iPhone 10+. Create on mobile data."
     },
     {
-      "id": "reclW9WDVSRoB",
-      "commitment": "Add Fanvue link to IG/TikTok accounts (once 500 followers on best account)",
+      "id": "reccaekCba5FM",
+      "commitment": "Create Instagram account (then 48hr silence)",
       "status": "Not Started",
-      "weekOf": "2026-03-28T00:00:00+00:00",
+      "weekOf": "2025-03-30T00:00:00+00:00",
       "business": "OFM Agency",
       "owner": null,
-      "focus": "Content",
-      "notes": "Do NOT add Fanvue link before 500 followers (algorithm penalty). Use Linkme (NOT Linktree \u2014 shadowban risk). Bio text: do NOT say OF/Fanvue. Use: secret page, exclusive content. This opens the revenue funnel from social to Fanvue."
+      "focus": null,
+      "notes": "Wed. Creator account. 18+ content enabled."
     },
     {
-      "id": "reckLkZrzX264",
-      "commitment": "Connect Stripe in Systeme.io \u2014 activate Power Independence Academy funnel",
+      "id": "rec9NCfkJyyBQ",
+      "commitment": "Register astridlindqvist.com domain",
       "status": "Not Started",
-      "weekOf": "2026-03-28T00:00:00+00:00",
-      "business": "Digital Products",
-      "owner": null,
-      "focus": "Product",
-      "notes": "Systeme.io (balsas37@proton.me): Settings > Payment > Connect Stripe. Replace checkout URLs in 4 funnel pages. Test purchase with test card. Go live. 15 minutes. HIGHEST LEVERAGE pending action for 2+ weeks. Do this \u2014 everything else is built."
-    },
-    {
-      "id": "recwn7uGS5PNo",
-      "commitment": "Train LoRA model on GPU \u2014 WAN 2.1, sigmoid timesteps, 2000-3000 steps",
-      "status": "Not Started",
-      "weekOf": "2026-03-21T00:00:00+00:00",
+      "weekOf": "2025-03-30T00:00:00+00:00",
       "business": "OFM Agency",
       "owner": null,
-      "focus": "Content",
-      "notes": "Dataset must be captioned first (Week 2). Vast AI (~$5 compute cost). AI Toolkit: rank 32-64, sigmoid timesteps, LR 0.0001 or Prodigy. Review checkpoints every 250 steps. Stop at best result (2000-2600 steps). Test generations with trigger word."
+      "focus": null,
+      "notes": "Thu. ~$10/year. Redirect to Fanvue."
     },
     {
-      "id": "recGp2ft7ui1d",
-      "commitment": "Post-trip Lagoon debrief: audit gaps, fix SOPs, Dubi sign-off on full SOP library",
+      "id": "recnthsXilsej",
+      "commitment": "Create Fanvue account + upload 20+ posts",
       "status": "Not Started",
-      "weekOf": "2026-03-21T00:00:00+00:00",
-      "business": "Lagoon Company",
-      "owner": null,
-      "focus": "Operations",
-      "notes": "Debrief with Dubi (video call or in person). Review trip metrics. Identify every gap. Fix each SOP. Dubi signs off on complete library. Target: 8+ SOPs total, all with video walkthroughs, Dubi trained and confident."
-    },
-    {
-      "id": "recywgmo5a6tO",
-      "commitment": "Post first TikTok slideshows for AI model (Day 8+ post-engagement phase)",
-      "status": "Not Started",
-      "weekOf": "2026-03-21T00:00:00+00:00",
+      "weekOf": "2025-03-30T00:00:00+00:00",
       "business": "OFM Agency",
       "owner": null,
-      "focus": "Content",
-      "notes": "Day 8+ after engagement phase. Post SLIDESHOWS ONLY (AI video = instant shadowban on TikTok). Use proven hook formats from swipe file. 1 post/day. SFW only. No OF/Fanvue in bio yet. Engage with comments immediately."
+      "focus": null,
+      "notes": "Thu-Fri. Free + VIP pages. Welcome sequence."
     },
     {
-      "id": "recYoK7444zcq",
-      "commitment": "Scale IG posting to 2 reels/day + add carousels with poll stickers",
+      "id": "recbdSkRpWh1M",
+      "commitment": "Create Threads + Snapchat accounts",
       "status": "Not Started",
-      "weekOf": "2026-03-21T00:00:00+00:00",
+      "weekOf": "2025-03-30T00:00:00+00:00",
       "business": "OFM Agency",
       "owner": null,
-      "focus": "Content",
-      "notes": "Week 2 of warmup: scale to 2 reels/day. Add carousels with poll stickers (boosts reach per guide). Begin IG boost ($11-15/day, More Profile Views objective, USA+UK+Canada targeting). Track followers daily. Target: 200 followers by end of Week 3."
+      "focus": null,
+      "notes": "Fri. Threads via IG login. Snap with flirty display name."
     },
     {
-      "id": "recIaW6aLcs2f",
-      "commitment": "Update CRETE tracker, file all trip documents, update Critical Numbers",
+      "id": "recXAoavy3kfm",
+      "commitment": "Set up Aitable OFM Operations base",
       "status": "Not Started",
-      "weekOf": "2026-03-21T00:00:00+00:00",
-      "business": "Crete Villa",
-      "owner": null,
-      "focus": "Operations",
-      "notes": "File all documents from Sirewall trip. Update oaxaca-tracker.md with mix design results and Phase 1 cost estimate. Update Crete Critical Number (Construction Budget) with actual estimate from Michael. Begin permit research for Oaxaca rammed-earth construction."
-    },
-    {
-      "id": "recM79tWX95j3",
-      "commitment": "Follow up Michael Palethorpe in writing for mix design doc + Phase 1 cost estimate",
-      "status": "Not Started",
-      "weekOf": "2026-03-14T00:00:00+00:00",
-      "business": "Crete Villa",
-      "owner": null,
-      "focus": "Operations",
-      "notes": "If not received during trip: email/WhatsApp Michael by Mar 15 requesting written deliverables. File in workspace/crete/. Update oaxaca-tracker.md. Update Aitable Crete Critical Number once estimate received."
-    },
-    {
-      "id": "recyyuQrsI6Tn",
-      "commitment": "Document soil inspection results + all Sirewall trip deliverables in CRETE tracker",
-      "status": "Not Started",
-      "weekOf": "2026-03-14T00:00:00+00:00",
-      "business": "Crete Villa",
-      "owner": null,
-      "focus": "Operations",
-      "notes": "Within 48hrs of returning (by Mar 15). File: mix design PDF, Phase 1 estimate, soil analysis, site photos. Update oaxaca-tracker.md. Share with Piia for Aitable updates."
-    },
-    {
-      "id": "recJyMn8sasCV",
-      "commitment": "Caption LoRA training dataset for AI model (20-30 images, JoyCaption/Gemini)",
-      "status": "Not Started",
-      "weekOf": "2026-03-14T00:00:00+00:00",
+      "weekOf": "2025-03-30T00:00:00+00:00",
       "business": "OFM Agency",
       "owner": null,
-      "focus": "Content",
-      "notes": "Caption each image: describe what you DONT want burned in. Leave consistent features uncaptioned. Create unique trigger word. This unblocks LoRA training. Can do during trip downtime on laptop."
+      "focus": null,
+      "notes": "Fri. Tables + views configured."
     },
     {
-      "id": "reccCReoeXNzR",
-      "commitment": "Create 2 IG accounts on mobile data + 48hr do-nothing period then first reel",
+      "id": "recXXvqivIvyF",
+      "commitment": "Compile AI chatter training document",
       "status": "Not Started",
-      "weekOf": "2026-03-14T00:00:00+00:00",
+      "weekOf": "2025-03-30T00:00:00+00:00",
       "business": "OFM Agency",
       "owner": null,
-      "focus": "Content",
-      "notes": "Create accounts using prepaid SIM (mobile data ONLY). Do nothing for 48hrs. Then Days 2-3: watch US reels. Day 4+: post first reel. No bio link. Warmup is non-negotiable \u2014 skipping = account death."
-    },
-    {
-      "id": "rec5Kwl8EzOMq",
-      "commitment": "Create 2 TikTok accounts + days 1-7 engagement phase (niche scroll, comment, save)",
-      "status": "Not Started",
-      "weekOf": "2026-03-14T00:00:00+00:00",
-      "business": "OFM Agency",
-      "owner": null,
-      "focus": "Content",
-      "notes": "TikTok: no warmup needed, but 7-day engagement phase before posting. Scroll niche content, like, comment, save. Build swipe file of hook formats that get 1000+ views. High-comment = algorithm fuel. First post: Day 8."
-    },
-    {
-      "id": "recmyvRla3Lh9",
-      "commitment": "Brief Filipino chatters on full PPV script, pricing psychology, DM upsell strategy",
-      "status": "Not Started",
-      "weekOf": "2026-03-14T00:00:00+00:00",
-      "business": "OFM Agency",
-      "owner": null,
-      "focus": "Operations",
-      "notes": "Now that Fanvue is live: full chatter briefing. Never give price first. PPV sequence: tease/wait/price. Fan type detection. Tip ladder. $50+ session target. Assign chatter manager. Set shift schedule. Weekly check-ins via WhatsApp."
-    },
-    {
-      "id": "recK4rM6X6O9p",
-      "commitment": "Monitor Lagoon WA bridge performance during Sirewall trip \u2014 log any failures",
-      "status": "Not Started",
-      "weekOf": "2026-03-14T00:00:00+00:00",
-      "business": "Lagoon Company",
-      "owner": null,
-      "focus": "Operations",
-      "notes": "This is the live test. Check WA bridge logs Mon-Fri. Log: inquiries responded (count), bookings confirmed (count), any Beno escalation required. Target: 0 Beno contacts. If bridge goes down: Dubi handles manually. Compile report by Mar 14."
-    },
-    {
-      "id": "recAB7w3CDFKa",
-      "commitment": "Fly to Puerto Escondido March 8 \u2014 complete Sirewall site visit with Michael Palethorpe",
-      "status": "Not Started",
-      "weekOf": "2026-03-07T00:00:00+00:00",
-      "business": "Crete Villa",
-      "owner": null,
-      "focus": "Operations",
-      "notes": "Trip: March 8-13. Must come back with: mix design document + Phase 1 cost estimate. Take photos and video of site. Document soil sample process. Ask Michael specifically: what are the exact materials needed, what is his timeline estimate, what permits are required. Share all documents with Piia within 24 hours of return."
+      "focus": null,
+      "notes": "Sat-Sun. Diamond Standard + enhanced scripts + PPV ladder."
     },
     {
       "id": "recGYPFQ8KbCi",
@@ -200,16 +110,6 @@
       "owner": null,
       "focus": "Operations",
       "notes": "In-person or video call with Dubi before March 8. Walk through: WA bridge responses, vehicle checkout process, emergency protocol. Make sure Dubi knows: who to contact for mechanical issues, what IS and is NOT an escalation to Beno, how to handle damage situations. Test: send Dubi a mock WA inquiry and have him respond \u2014 review the response."
-    },
-    {
-      "id": "recq4hARGAlyF",
-      "commitment": "Confirm Sirewall trip logistics \u2014 flight, accommodation, Michael Palethorpe meeting schedule",
-      "status": "Not Started",
-      "weekOf": "2026-03-07T00:00:00+00:00",
-      "business": "Crete Villa",
-      "owner": null,
-      "focus": "Operations",
-      "notes": "Flight to Puerto Escondido confirmed for March 8. Verify: accommodation booked for Mar 8-13. WhatsApp Michael to confirm meeting time/location on site. Prepare questions for Michael: exact materials list, Phase 1 scope, labor estimate, permit requirements for rammed-earth in Oaxaca, his availability post-trip for follow-up questions."
     },
     {
       "id": "recUvqofBHHA2",
@@ -302,6 +202,26 @@
       "notes": "This is a creative decision, not a technical one. 30 minutes max. Commit to a concept. Viral balance: oddness + beauty. Pick: niche (fitness/lifestyle/cosplay?), distinctive feature (pink hair? unusual eyes?), character name, personality/voice for chatters. Write 1 paragraph character brief."
     },
     {
+      "id": "recAB7w3CDFKa",
+      "commitment": "Fly to Puerto Escondido March 8 \u2014 complete Sirewall site visit with Michael Palethorpe",
+      "status": "Complete",
+      "weekOf": "2026-03-07T00:00:00+00:00",
+      "business": "Crete Villa",
+      "owner": "Langchain B\u0113no",
+      "focus": "Operations",
+      "notes": "Trip: March 8-13. Must come back with: mix design document + Phase 1 cost estimate. Take photos and video of site. Document soil sample process. Ask Michael specifically: what are the exact materials needed, what is his timeline estimate, what permits are required. Share all documents with Piia within 24 hours of return."
+    },
+    {
+      "id": "recq4hARGAlyF",
+      "commitment": "Confirm Sirewall trip logistics \u2014 flight, accommodation, Michael Palethorpe meeting schedule",
+      "status": "Complete",
+      "weekOf": "2026-03-07T00:00:00+00:00",
+      "business": "Crete Villa",
+      "owner": "Langchain B\u0113no",
+      "focus": "Operations",
+      "notes": "Flight to Puerto Escondido confirmed for March 8. Verify: accommodation booked for Mar 8-13. WhatsApp Michael to confirm meeting time/location on site. Prepare questions for Michael: exact materials list, Phase 1 scope, labor estimate, permit requirements for rammed-earth in Oaxaca, his availability post-trip for follow-up questions."
+    },
+    {
       "id": "recjKX8FWs4jY",
       "commitment": "List all Lagoon recurring tasks requiring Beno \u2014 delegation audit doc",
       "status": "Complete",
@@ -310,6 +230,326 @@
       "owner": null,
       "focus": "Operations",
       "notes": "DO THIS TODAY (Mar 7). Write list of every task Beno does for Lagoon. This is the SOP priority list. Quick brain dump \u2014 can refine later. Share with Piia for tracking."
+    },
+    {
+      "id": "recJyMn8sasCV",
+      "commitment": "Caption LoRA training dataset for AI model (20-30 images, JoyCaption/Gemini)",
+      "status": "Not Started",
+      "weekOf": "2026-03-14T00:00:00+00:00",
+      "business": "OFM Agency",
+      "owner": null,
+      "focus": "Content",
+      "notes": "Caption each image: describe what you DONT want burned in. Leave consistent features uncaptioned. Create unique trigger word. This unblocks LoRA training. Can do during trip downtime on laptop."
+    },
+    {
+      "id": "reccCReoeXNzR",
+      "commitment": "Create 2 IG accounts on mobile data + 48hr do-nothing period then first reel",
+      "status": "Not Started",
+      "weekOf": "2026-03-14T00:00:00+00:00",
+      "business": "OFM Agency",
+      "owner": null,
+      "focus": "Content",
+      "notes": "Create accounts using prepaid SIM (mobile data ONLY). Do nothing for 48hrs. Then Days 2-3: watch US reels. Day 4+: post first reel. No bio link. Warmup is non-negotiable \u2014 skipping = account death."
+    },
+    {
+      "id": "rec5Kwl8EzOMq",
+      "commitment": "Create 2 TikTok accounts + days 1-7 engagement phase (niche scroll, comment, save)",
+      "status": "Not Started",
+      "weekOf": "2026-03-14T00:00:00+00:00",
+      "business": "OFM Agency",
+      "owner": null,
+      "focus": "Content",
+      "notes": "TikTok: no warmup needed, but 7-day engagement phase before posting. Scroll niche content, like, comment, save. Build swipe file of hook formats that get 1000+ views. High-comment = algorithm fuel. First post: Day 8."
+    },
+    {
+      "id": "recmyvRla3Lh9",
+      "commitment": "Brief Filipino chatters on full PPV script, pricing psychology, DM upsell strategy",
+      "status": "Not Started",
+      "weekOf": "2026-03-14T00:00:00+00:00",
+      "business": "OFM Agency",
+      "owner": null,
+      "focus": "Operations",
+      "notes": "Now that Fanvue is live: full chatter briefing. Never give price first. PPV sequence: tease/wait/price. Fan type detection. Tip ladder. $50+ session target. Assign chatter manager. Set shift schedule. Weekly check-ins via WhatsApp."
+    },
+    {
+      "id": "recK4rM6X6O9p",
+      "commitment": "Monitor Lagoon WA bridge performance during Sirewall trip \u2014 log any failures",
+      "status": "Not Started",
+      "weekOf": "2026-03-14T00:00:00+00:00",
+      "business": "Lagoon Company",
+      "owner": null,
+      "focus": "Operations",
+      "notes": "This is the live test. Check WA bridge logs Mon-Fri. Log: inquiries responded (count), bookings confirmed (count), any Beno escalation required. Target: 0 Beno contacts. If bridge goes down: Dubi handles manually. Compile report by Mar 14."
+    },
+    {
+      "id": "recyyuQrsI6Tn",
+      "commitment": "Document soil inspection results + all Sirewall trip deliverables in CRETE tracker",
+      "status": "In Progress",
+      "weekOf": "2026-03-14T00:00:00+00:00",
+      "business": "Crete Villa",
+      "owner": "Langchain B\u0113no",
+      "focus": "Operations",
+      "notes": "Within 48hrs of returning (by Mar 15). File: mix design PDF, Phase 1 estimate, soil analysis, site photos. Update oaxaca-tracker.md. Share with Piia for Aitable updates."
+    },
+    {
+      "id": "recM79tWX95j3",
+      "commitment": "Follow up Michael Palethorpe in writing for mix design doc + Phase 1 cost estimate",
+      "status": "Complete",
+      "weekOf": "2026-03-14T00:00:00+00:00",
+      "business": "Crete Villa",
+      "owner": "Langchain B\u0113no",
+      "focus": "Operations",
+      "notes": "If not received during trip: email/WhatsApp Michael by Mar 15 requesting written deliverables. File in workspace/crete/. Update oaxaca-tracker.md. Update Aitable Crete Critical Number once estimate received."
+    },
+    {
+      "id": "recwn7uGS5PNo",
+      "commitment": "Train LoRA model on GPU \u2014 WAN 2.1, sigmoid timesteps, 2000-3000 steps",
+      "status": "Not Started",
+      "weekOf": "2026-03-21T00:00:00+00:00",
+      "business": "OFM Agency",
+      "owner": null,
+      "focus": "Content",
+      "notes": "Dataset must be captioned first (Week 2). Vast AI (~$5 compute cost). AI Toolkit: rank 32-64, sigmoid timesteps, LR 0.0001 or Prodigy. Review checkpoints every 250 steps. Stop at best result (2000-2600 steps). Test generations with trigger word."
+    },
+    {
+      "id": "recGp2ft7ui1d",
+      "commitment": "Post-trip Lagoon debrief: audit gaps, fix SOPs, Dubi sign-off on full SOP library",
+      "status": "Not Started",
+      "weekOf": "2026-03-21T00:00:00+00:00",
+      "business": "Lagoon Company",
+      "owner": null,
+      "focus": "Operations",
+      "notes": "Debrief with Dubi (video call or in person). Review trip metrics. Identify every gap. Fix each SOP. Dubi signs off on complete library. Target: 8+ SOPs total, all with video walkthroughs, Dubi trained and confident."
+    },
+    {
+      "id": "recywgmo5a6tO",
+      "commitment": "Post first TikTok slideshows for AI model (Day 8+ post-engagement phase)",
+      "status": "Not Started",
+      "weekOf": "2026-03-21T00:00:00+00:00",
+      "business": "OFM Agency",
+      "owner": null,
+      "focus": "Content",
+      "notes": "Day 8+ after engagement phase. Post SLIDESHOWS ONLY (AI video = instant shadowban on TikTok). Use proven hook formats from swipe file. 1 post/day. SFW only. No OF/Fanvue in bio yet. Engage with comments immediately."
+    },
+    {
+      "id": "recYoK7444zcq",
+      "commitment": "Scale IG posting to 2 reels/day + add carousels with poll stickers",
+      "status": "Not Started",
+      "weekOf": "2026-03-21T00:00:00+00:00",
+      "business": "OFM Agency",
+      "owner": null,
+      "focus": "Content",
+      "notes": "Week 2 of warmup: scale to 2 reels/day. Add carousels with poll stickers (boosts reach per guide). Begin IG boost ($11-15/day, More Profile Views objective, USA+UK+Canada targeting). Track followers daily. Target: 200 followers by end of Week 3."
+    },
+    {
+      "id": "recIaW6aLcs2f",
+      "commitment": "Update CRETE tracker, file all trip documents, update Critical Numbers",
+      "status": "Not Started",
+      "weekOf": "2026-03-21T00:00:00+00:00",
+      "business": "Crete Villa",
+      "owner": "Langchain B\u0113no",
+      "focus": "Operations",
+      "notes": "File all documents from Sirewall trip. Update oaxaca-tracker.md with mix design results and Phase 1 cost estimate. Update Crete Critical Number (Construction Budget) with actual estimate from Michael. Begin permit research for Oaxaca rammed-earth construction."
+    },
+    {
+      "id": "recGMKUh3iQhm",
+      "commitment": "Post Reddit chatter hiring to r/slavelabour and r/Philippines",
+      "status": "Not Started",
+      "weekOf": "2026-03-27T05:20:00+00:00",
+      "business": "OFM Agency",
+      "owner": null,
+      "focus": "Conversion",
+      "notes": ""
+    },
+    {
+      "id": "recThj3HEcaMy",
+      "commitment": "Create Astrid Lindqvist Instagram account on mobile data",
+      "status": "Not Started",
+      "weekOf": "2026-03-27T05:20:00+00:00",
+      "business": "OFM Agency",
+      "owner": null,
+      "focus": "Lead Generation",
+      "notes": ""
+    },
+    {
+      "id": "recg0800Z4nxQ",
+      "commitment": "Upload Swedish MILF dataset to Vast AI and start LoRA training",
+      "status": "Not Started",
+      "weekOf": "2026-03-27T05:20:00+00:00",
+      "business": "OFM Agency",
+      "owner": null,
+      "focus": "Delivery",
+      "notes": ""
+    },
+    {
+      "id": "recmyEuiFAXUg",
+      "commitment": "Connect Stripe in Systeme.io and test Academy purchase flow",
+      "status": "Not Started",
+      "weekOf": "2026-03-27T05:20:00+00:00",
+      "business": "Digital Products",
+      "owner": null,
+      "focus": "Conversion",
+      "notes": ""
+    },
+    {
+      "id": "recIdkJ5DnmHI",
+      "commitment": "Draft Kairos AI one-pager pitch for David Lockhart-Lie",
+      "status": "Not Started",
+      "weekOf": "2026-03-27T05:20:00+00:00",
+      "business": "Kairos AI",
+      "owner": null,
+      "focus": "Conversion",
+      "notes": ""
+    },
+    {
+      "id": "recf0RcuaAJ8w",
+      "commitment": "Follow up with Michael Palethorpe for Sirewall Phase 1 estimate",
+      "status": "Not Started",
+      "weekOf": "2026-03-27T05:20:00+00:00",
+      "business": "Crete Villa",
+      "owner": null,
+      "focus": "Conversion",
+      "notes": ""
+    },
+    {
+      "id": "recAjbgyNP94h",
+      "commitment": "Schedule and conduct Lagoon post-trip debrief with Dubi",
+      "status": "Not Started",
+      "weekOf": "2026-03-27T05:20:00+00:00",
+      "business": "Lagoon Company",
+      "owner": null,
+      "focus": "Operations",
+      "notes": ""
+    },
+    {
+      "id": "recvuOn7ICkkK",
+      "commitment": "Deploy trained LoRA to ComfyUI, run 10 test generations, approve character",
+      "status": "Not Started",
+      "weekOf": "2026-03-28T00:00:00+00:00",
+      "business": "OFM Agency",
+      "owner": null,
+      "focus": "Content",
+      "notes": "Install LoRA in ComfyUI models/loras. Run 10 test generations: varied poses, outfits, settings. Evaluate character consistency. If approved: begin daily content production. If not: identify issues and re-train or adjust parameters."
+    },
+    {
+      "id": "recYbge1wYVbl",
+      "commitment": "Build image-to-video workflow in ComfyUI for AI reel production",
+      "status": "Not Started",
+      "weekOf": "2026-03-28T00:00:00+00:00",
+      "business": "OFM Agency",
+      "owner": null,
+      "focus": "Content",
+      "notes": "WAN 2.2 i2v workflow: static image -> animated reel. 3-5 second clips. Edit in CapCut. Target: 3 reels/week production capacity. TikTok: use as slideshow. IG/Fanvue: video. This unlocks the full content pipeline."
+    },
+    {
+      "id": "rechAIP18v0S7",
+      "commitment": "Post first 3 pieces of Fanvue content for AI model",
+      "status": "Not Started",
+      "weekOf": "2026-03-28T00:00:00+00:00",
+      "business": "OFM Agency",
+      "owner": null,
+      "focus": "Content",
+      "notes": "First Fanvue posts. Mix: 1 intro post, 1 SFW content, 1 tease/preview. Captions: personality matching character voice. Tag appropriately. Watermark on all. Begin chatter DM responses immediately when subscribers arrive."
+    },
+    {
+      "id": "recmNqHWMmnOa",
+      "commitment": "Launch first PPV mass DM campaign to all fans (once 20+ subscribers)",
+      "status": "Not Started",
+      "weekOf": "2026-03-28T00:00:00+00:00",
+      "business": "OFM Agency",
+      "owner": null,
+      "focus": "Product",
+      "notes": "Once 20+ paying subscribers: mass DM with locked PPV. Price: $15-25. Tease in DM copy without showing content. First real revenue test. Track: DM open rate, PPV purchase rate, avg PPV revenue. Report results to Piia."
+    },
+    {
+      "id": "reclW9WDVSRoB",
+      "commitment": "Add Fanvue link to IG/TikTok accounts (once 500 followers on best account)",
+      "status": "Not Started",
+      "weekOf": "2026-03-28T00:00:00+00:00",
+      "business": "OFM Agency",
+      "owner": null,
+      "focus": "Content",
+      "notes": "Do NOT add Fanvue link before 500 followers (algorithm penalty). Use Linkme (NOT Linktree \u2014 shadowban risk). Bio text: do NOT say OF/Fanvue. Use: secret page, exclusive content. This opens the revenue funnel from social to Fanvue."
+    },
+    {
+      "id": "reckLkZrzX264",
+      "commitment": "Connect Stripe in Systeme.io \u2014 activate Power Independence Academy funnel",
+      "status": "Not Started",
+      "weekOf": "2026-03-28T00:00:00+00:00",
+      "business": "Digital Products",
+      "owner": null,
+      "focus": "Product",
+      "notes": "Systeme.io (balsas37@proton.me): Settings > Payment > Connect Stripe. Replace checkout URLs in 4 funnel pages. Test purchase with test card. Go live. 15 minutes. HIGHEST LEVERAGE pending action for 2+ weeks. Do this \u2014 everything else is built."
+    },
+    {
+      "id": "recBikEFGOarA",
+      "commitment": "Execute Astrid LoRA v1\u2192v2 this week, score outputs against the checklist, and make a hard go/no-go launch decision",
+      "status": "Not Started",
+      "weekOf": "2026-04-13T05:00:00+00:00",
+      "business": "OFM Agency",
+      "owner": null,
+      "focus": "AI Infrastructure",
+      "notes": ""
+    },
+    {
+      "id": "recSputFp8IUZ",
+      "commitment": "Stand up Astrid\u2019s live OFM infrastructure: phone/SIM, GeeLark first 5 cloud phones, proxies, and put the main Instagram account into warmup",
+      "status": "Not Started",
+      "weekOf": "2026-04-13T05:00:00+00:00",
+      "business": "OFM Agency",
+      "owner": null,
+      "focus": "Infrastructure",
+      "notes": ""
+    },
+    {
+      "id": "recFZkP32Y8C4",
+      "commitment": "Publish the Astrid Fanvue stack for real: free + VIP pages live, 20+ posts uploaded, welcome sequence loaded, and Day-5 PPV set to $12",
+      "status": "Not Started",
+      "weekOf": "2026-04-13T05:00:00+00:00",
+      "business": "OFM Agency",
+      "owner": null,
+      "focus": "Revenue Infrastructure",
+      "notes": ""
+    },
+    {
+      "id": "receMFQZrYgWt",
+      "commitment": "Schedule and run the David Lockhart-Lie discovery call using the finished agenda and move it to a concrete proposal next step",
+      "status": "Not Started",
+      "weekOf": "2026-04-13T05:00:00+00:00",
+      "business": "Kairos AI",
+      "owner": null,
+      "focus": "Business Development",
+      "notes": ""
+    },
+    {
+      "id": "recDG46QSDyLg",
+      "commitment": "Restore Michael\u2019s Codex access or lock the exact re-auth session, then validate the live client-os install against real use",
+      "status": "Not Started",
+      "weekOf": "2026-04-13T05:00:00+00:00",
+      "business": "Kairos AI",
+      "owner": null,
+      "focus": "Client Success",
+      "notes": ""
+    },
+    {
+      "id": "recrBWG08awuj",
+      "commitment": "Connect Stripe in Systeme.io and run one full Power Independence Academy checkout test end-to-end",
+      "status": "Not Started",
+      "weekOf": "2026-04-13T05:00:00+00:00",
+      "business": "Digital Products",
+      "owner": null,
+      "focus": "Revenue Unblock",
+      "notes": ""
+    },
+    {
+      "id": "recowTI4F6jdJ",
+      "commitment": "Publish the Lagoon pricing/positioning update with real rates, deposit policy, and the v2 trust copy live on the site",
+      "status": "Not Started",
+      "weekOf": "2026-04-13T05:00:00+00:00",
+      "business": "Lagoon Company",
+      "owner": null,
+      "focus": "Revenue Optimization",
+      "notes": ""
     }
   ]
 }
