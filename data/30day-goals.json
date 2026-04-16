@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-16T05:01:03.387553+00:00",
+  "generated": "2026-04-16T11:01:26.696390+00:00",
   "records": [
     {
       "id": "recnhLqflqapJ",
@@ -1056,6 +1056,106 @@
       "relatedTargetIds": [
         "recuaPxsR4bEV"
       ]
+    },
+    {
+      "id": "rec4oDli5kH2E",
+      "goal": "Launch first AI model on Fanvue with 3+ posts and 1+ paying subscriber",
+      "status": "Active",
+      "month": "April 2026",
+      "dueDate": null,
+      "business": "OFM Agency",
+      "notes": "",
+      "relatedTargetIds": []
+    },
+    {
+      "id": "recfeYFc3Eu6R",
+      "goal": "Create 2 IG accounts + 2 TikTok accounts with 7-day warmup complete",
+      "status": "Active",
+      "month": "April 2026",
+      "dueDate": null,
+      "business": "OFM Agency",
+      "notes": "",
+      "relatedTargetIds": []
+    },
+    {
+      "id": "recx1JhtaD7sn",
+      "goal": "Finalize Swedish MILF model name and begin LoRA training (Vast AI)",
+      "status": "Active",
+      "month": "April 2026",
+      "dueDate": null,
+      "business": "OFM Agency",
+      "notes": "",
+      "relatedTargetIds": []
+    },
+    {
+      "id": "reciN8KBpaS40",
+      "goal": "Hire and onboard chatter manager from Filipino VA pool",
+      "status": "Active",
+      "month": "April 2026",
+      "dueDate": null,
+      "business": "OFM Agency",
+      "notes": "",
+      "relatedTargetIds": []
+    },
+    {
+      "id": "recbE61zdEl6u",
+      "goal": "Connect Stripe in Systeme.io and test Academy purchase flow",
+      "status": "Active",
+      "month": "April 2026",
+      "dueDate": null,
+      "business": "Digital Products",
+      "notes": "",
+      "relatedTargetIds": []
+    },
+    {
+      "id": "rec8UlxvQmKlm",
+      "goal": "Launch first paid Meta traffic to Power Independence Academy",
+      "status": "Active",
+      "month": "April 2026",
+      "dueDate": null,
+      "business": "Digital Products",
+      "notes": "",
+      "relatedTargetIds": []
+    },
+    {
+      "id": "rec5pGpk8QsXK",
+      "goal": "Complete 8 Lagoon SOPs with Dubi sign-off",
+      "status": "Active",
+      "month": "April 2026",
+      "dueDate": null,
+      "business": "Lagoon Company",
+      "notes": "",
+      "relatedTargetIds": []
+    },
+    {
+      "id": "recwJroxMiXKd",
+      "goal": "Receive Phase 1 cost estimate from Michael Palethorpe",
+      "status": "Active",
+      "month": "April 2026",
+      "dueDate": null,
+      "business": "Crete Villa",
+      "notes": "",
+      "relatedTargetIds": []
+    },
+    {
+      "id": "recwpQ4P5vSq5",
+      "goal": "Close first Kairos AI paying client (David Lockhart-Lie or new lead)",
+      "status": "Active",
+      "month": "April 2026",
+      "dueDate": null,
+      "business": "Kairos AI",
+      "notes": "",
+      "relatedTargetIds": []
+    },
+    {
+      "id": "recP44M3ps9rS",
+      "goal": "Complete Michael Palethorpe onboarding (remaining sessions)",
+      "status": "Active",
+      "month": "April 2026",
+      "dueDate": null,
+      "business": "Kairos AI",
+      "notes": "",
+      "relatedTargetIds": []
     },
     {
       "id": "recdlLey8Ys7k",
