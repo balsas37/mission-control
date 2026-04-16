@@ -50,16 +50,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-16T07:01:54.078000+00:00",
-      "nextRun": "2026-04-16T08:01:07.213000+00:00",
-      "lastDuration": 19886,
+      "lastRun": "2026-04-16T10:01:07.227000+00:00",
+      "nextRun": "2026-04-16T11:01:07.213000+00:00",
+      "lastDuration": 21501,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-16T07:01:54.078000+00:00",
+          "ts": "2026-04-16T10:01:07.227000+00:00",
           "status": "ok",
-          "duration": 19886
+          "duration": 21501
         }
       ]
     },
@@ -134,16 +134,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-15T11:50:00.012000+00:00",
+      "lastRun": "2026-04-16T07:17:25.968000+00:00",
       "nextRun": "2026-04-16T11:50:00+00:00",
-      "lastDuration": 87228,
+      "lastDuration": 49276,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-15T11:50:00.012000+00:00",
+          "ts": "2026-04-16T07:17:25.968000+00:00",
           "status": "ok",
-          "duration": 87228
+          "duration": 49276
         }
       ]
     },
@@ -239,16 +239,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-14T11:00:00.015000+00:00",
+      "lastRun": "2026-04-16T07:13:04.185000+00:00",
       "nextRun": "2026-04-16T11:00:00+00:00",
-      "lastDuration": 25887,
+      "lastDuration": 27841,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-14T11:00:00.015000+00:00",
+          "ts": "2026-04-16T07:13:04.185000+00:00",
           "status": "ok",
-          "duration": 25887
+          "duration": 27841
         }
       ]
     },
@@ -343,17 +343,17 @@
       "description": "",
       "agent": "main",
       "enabled": true,
-      "lastStatus": "error",
-      "lastRun": "2026-04-16T06:32:06.319000+00:00",
+      "lastStatus": "ok",
+      "lastRun": "2026-04-16T07:25:14.832000+00:00",
       "nextRun": "2026-04-17T04:30:00+00:00",
-      "lastDuration": 224512,
-      "consecutiveErrors": 1,
-      "lastError": "FallbackSummaryError: All models failed (2): openai-codex/gpt-5.4: LLM request timed out. (unknown) | openai-codex/gpt-5.3-codex: LLM request timed out. (unknown)",
+      "lastDuration": 130829,
+      "consecutiveErrors": 0,
+      "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-16T06:32:06.319000+00:00",
-          "status": "error",
-          "duration": 224512
+          "ts": "2026-04-16T07:25:14.832000+00:00",
+          "status": "ok",
+          "duration": 130829
         }
       ]
     },
@@ -554,16 +554,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-15T07:30:00.034000+00:00",
-      "nextRun": "2026-04-16T07:30:00+00:00",
-      "lastDuration": 194460,
+      "lastRun": "2026-04-16T07:30:00.016000+00:00",
+      "nextRun": "2026-04-17T07:30:00+00:00",
+      "lastDuration": 218480,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-15T07:30:00.034000+00:00",
+          "ts": "2026-04-16T07:30:00.016000+00:00",
           "status": "ok",
-          "duration": 194460
+          "duration": 218480
         }
       ]
     },
@@ -637,17 +637,17 @@
       "description": "",
       "agent": "main",
       "enabled": true,
-      "lastStatus": "error",
-      "lastRun": "2026-04-11T01:00:00.011000+00:00",
+      "lastStatus": "ok",
+      "lastRun": "2026-04-16T07:17:09.016000+00:00",
       "nextRun": "2026-04-18T01:00:00+00:00",
-      "lastDuration": 300134,
-      "consecutiveErrors": 2,
-      "lastError": "cron: job execution timed out",
+      "lastDuration": 16946,
+      "consecutiveErrors": 0,
+      "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-11T01:00:00.011000+00:00",
-          "status": "error",
-          "duration": 300134
+          "ts": "2026-04-16T07:17:09.016000+00:00",
+          "status": "ok",
+          "duration": 16946
         }
       ]
     },
@@ -659,16 +659,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-13T13:01:18.499000+00:00",
+      "lastRun": "2026-04-16T07:18:15.255000+00:00",
       "nextRun": "2026-04-20T13:00:00+00:00",
-      "lastDuration": 166300,
+      "lastDuration": 80241,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-13T13:01:18.499000+00:00",
+          "ts": "2026-04-16T07:18:15.255000+00:00",
           "status": "ok",
-          "duration": 166300
+          "duration": 80241
         }
       ]
     },
@@ -701,19 +701,9 @@
       "count": 1
     },
     {
-      "job": "nightly-execution",
-      "error": "FallbackSummaryError: All models failed (2): openai-codex/gpt-5.4: LLM request timed out. (unknown) | openai-codex/gpt-5.3-codex: LLM request timed out. (unknown)",
-      "count": 1
-    },
-    {
       "job": "weekly-cost-report",
       "error": "cron: job execution timed out",
       "count": 1
-    },
-    {
-      "job": "weekly-score",
-      "error": "cron: job execution timed out",
-      "count": 2
     }
   ]
 }
