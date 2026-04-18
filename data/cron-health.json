@@ -8,16 +8,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-17T02:00:00.016000+00:00",
-      "nextRun": "2026-04-18T02:00:00+00:00",
-      "lastDuration": 18960,
+      "lastRun": "2026-04-18T02:00:00.014000+00:00",
+      "nextRun": "2026-04-19T02:00:00+00:00",
+      "lastDuration": 26818,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-17T02:00:00.016000+00:00",
+          "ts": "2026-04-18T02:00:00.014000+00:00",
           "status": "ok",
-          "duration": 18960
+          "duration": 26818
         }
       ]
     },
@@ -29,16 +29,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-16T13:00:00.020000+00:00",
-      "nextRun": "2026-04-17T13:00:00+00:00",
-      "lastDuration": 27210,
+      "lastRun": "2026-04-17T13:00:00.018000+00:00",
+      "nextRun": "2026-04-18T13:00:00+00:00",
+      "lastDuration": 22170,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-16T13:00:00.020000+00:00",
+          "ts": "2026-04-17T13:00:00.018000+00:00",
           "status": "ok",
-          "duration": 27210
+          "duration": 22170
         }
       ]
     },
@@ -50,16 +50,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-17T11:01:07.220000+00:00",
-      "nextRun": "2026-04-17T12:01:07.213000+00:00",
-      "lastDuration": 20102,
+      "lastRun": "2026-04-18T10:01:07.229000+00:00",
+      "nextRun": "2026-04-18T11:01:07.213000+00:00",
+      "lastDuration": 25212,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-17T11:01:07.220000+00:00",
+          "ts": "2026-04-18T10:01:07.229000+00:00",
           "status": "ok",
-          "duration": 20102
+          "duration": 25212
         }
       ]
     },
@@ -71,16 +71,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-17T03:30:00.018000+00:00",
-      "nextRun": "2026-04-17T13:30:00+00:00",
-      "lastDuration": 24890,
+      "lastRun": "2026-04-18T03:30:00.010000+00:00",
+      "nextRun": "2026-04-18T13:30:00+00:00",
+      "lastDuration": 33963,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-17T03:30:00.018000+00:00",
+          "ts": "2026-04-18T03:30:00.010000+00:00",
           "status": "ok",
-          "duration": 24890
+          "duration": 33963
         }
       ]
     },
@@ -134,16 +134,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-16T11:50:00.019000+00:00",
-      "nextRun": "2026-04-17T11:50:00+00:00",
-      "lastDuration": 54568,
+      "lastRun": "2026-04-17T11:50:00.025000+00:00",
+      "nextRun": "2026-04-18T11:50:00+00:00",
+      "lastDuration": 65807,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-16T11:50:00.019000+00:00",
+          "ts": "2026-04-17T11:50:00.025000+00:00",
           "status": "ok",
-          "duration": 54568
+          "duration": 65807
         }
       ]
     },
@@ -155,16 +155,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "error",
-      "lastRun": "2026-04-17T06:00:00.020000+00:00",
-      "nextRun": "2026-04-18T06:00:00+00:00",
-      "lastDuration": 36478,
-      "consecutiveErrors": 1,
-      "lastError": "\u26a0\ufe0f \ud83d\udee0\ufe0f Exec: list files in ~/.openclaw/agents/main/sessions/*topic*.jsonl -> search \"$(date\" in +%Y-%m-%d) (in ~/.openclaw/workspace), `ls -la ~/.openclaw/agents/main/sessions/*topic*.jsonl ~/.openclaw/agents/main/sessions/*.json\u2026` failed: exec host not allowed (requested sandbox; configure tools.exec.host=sandbox to allow).",
+      "lastRun": "2026-04-18T06:00:00.008000+00:00",
+      "nextRun": "2026-04-19T06:00:00+00:00",
+      "lastDuration": 298457,
+      "consecutiveErrors": 2,
+      "lastError": "\u26a0\ufe0f \ud83d\udcdd Edit: `in ~/.openclaw/workspace/memory/06_system/weekly-commitment-state-audit-2026-04-15.md` failed: Could not find the exact text in /Users/clawsbx/.openclaw/workspace/memory/06_system/weekly-commitment-state-audit-2026-04-15.md. The old text must match exactly including all whitespace and newlines.",
       "runs": [
         {
-          "ts": "2026-04-17T06:00:00.020000+00:00",
+          "ts": "2026-04-18T06:00:00.008000+00:00",
           "status": "error",
-          "duration": 36478
+          "duration": 298457
         }
       ]
     },
@@ -176,16 +176,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-17T02:30:00.023000+00:00",
-      "nextRun": "2026-04-18T02:30:00+00:00",
-      "lastDuration": 24965,
+      "lastRun": "2026-04-18T02:30:00.018000+00:00",
+      "nextRun": "2026-04-19T02:30:00+00:00",
+      "lastDuration": 15629,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-17T02:30:00.023000+00:00",
+          "ts": "2026-04-18T02:30:00.018000+00:00",
           "status": "ok",
-          "duration": 24965
+          "duration": 15629
         }
       ]
     },
@@ -197,16 +197,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-17T06:30:00.021000+00:00",
-      "nextRun": "2026-04-18T06:30:00+00:00",
-      "lastDuration": 20293,
+      "lastRun": "2026-04-18T06:30:00.011000+00:00",
+      "nextRun": "2026-04-19T06:30:00+00:00",
+      "lastDuration": 89258,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-17T06:30:00.021000+00:00",
+          "ts": "2026-04-18T06:30:00.011000+00:00",
           "status": "ok",
-          "duration": 20293
+          "duration": 89258
         }
       ]
     },
@@ -323,16 +323,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-16T11:45:00.013000+00:00",
-      "nextRun": "2026-04-17T11:45:00+00:00",
-      "lastDuration": 19661,
+      "lastRun": "2026-04-17T11:45:00.024000+00:00",
+      "nextRun": "2026-04-18T11:45:00+00:00",
+      "lastDuration": 18991,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-16T11:45:00.013000+00:00",
+          "ts": "2026-04-17T11:45:00.024000+00:00",
           "status": "ok",
-          "duration": 19661
+          "duration": 18991
         }
       ]
     },
@@ -344,16 +344,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-17T04:30:00.023000+00:00",
-      "nextRun": "2026-04-18T04:30:00+00:00",
-      "lastDuration": 150429,
+      "lastRun": "2026-04-18T04:30:00.014000+00:00",
+      "nextRun": "2026-04-19T04:30:00+00:00",
+      "lastDuration": 144058,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-17T04:30:00.023000+00:00",
+          "ts": "2026-04-18T04:30:00.014000+00:00",
           "status": "ok",
-          "duration": 150429
+          "duration": 144058
         }
       ]
     },
@@ -386,16 +386,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-16T17:01:24.530000+00:00",
-      "nextRun": "2026-04-17T17:00:00+00:00",
-      "lastDuration": 89818,
+      "lastRun": "2026-04-17T17:00:27.120000+00:00",
+      "nextRun": "2026-04-18T17:00:00+00:00",
+      "lastDuration": 72203,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-16T17:01:24.530000+00:00",
+          "ts": "2026-04-17T17:00:27.120000+00:00",
           "status": "ok",
-          "duration": 89818
+          "duration": 72203
         }
       ]
     },
@@ -428,16 +428,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-17T04:00:00.024000+00:00",
-      "nextRun": "2026-04-18T04:00:00+00:00",
-      "lastDuration": 49747,
+      "lastRun": "2026-04-18T04:00:00.012000+00:00",
+      "nextRun": "2026-04-19T04:00:00+00:00",
+      "lastDuration": 42751,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-17T04:00:00.024000+00:00",
+          "ts": "2026-04-18T04:00:00.012000+00:00",
           "status": "ok",
-          "duration": 49747
+          "duration": 42751
         }
       ]
     },
@@ -449,16 +449,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-16T23:00:31.574000+00:00",
-      "nextRun": "2026-04-17T23:00:00+00:00",
-      "lastDuration": 5620,
+      "lastRun": "2026-04-17T23:00:45.495000+00:00",
+      "nextRun": "2026-04-18T23:00:00+00:00",
+      "lastDuration": 7366,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-16T23:00:31.574000+00:00",
+          "ts": "2026-04-17T23:00:45.495000+00:00",
           "status": "ok",
-          "duration": 5620
+          "duration": 7366
         }
       ]
     },
@@ -470,16 +470,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-17T07:00:00.012000+00:00",
-      "nextRun": "2026-04-18T07:00:00+00:00",
-      "lastDuration": 148735,
+      "lastRun": "2026-04-18T07:00:00.011000+00:00",
+      "nextRun": "2026-04-19T07:00:00+00:00",
+      "lastDuration": 118706,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-17T07:00:00.012000+00:00",
+          "ts": "2026-04-18T07:00:00.011000+00:00",
           "status": "ok",
-          "duration": 148735
+          "duration": 118706
         }
       ]
     },
@@ -491,16 +491,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-17T11:00:40.881000+00:00",
-      "nextRun": "2026-04-17T17:00:00+00:00",
-      "lastDuration": 13846,
+      "lastRun": "2026-04-18T05:00:21.865000+00:00",
+      "nextRun": "2026-04-18T11:00:00+00:00",
+      "lastDuration": 20021,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-17T11:00:40.881000+00:00",
+          "ts": "2026-04-18T05:00:21.865000+00:00",
           "status": "ok",
-          "duration": 13846
+          "duration": 20021
         }
       ]
     },
@@ -512,16 +512,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-17T11:00:24.005000+00:00",
-      "nextRun": "2026-04-17T17:00:00+00:00",
-      "lastDuration": 16876,
+      "lastRun": "2026-04-18T05:00:00.013000+00:00",
+      "nextRun": "2026-04-18T11:00:00+00:00",
+      "lastDuration": 21852,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-17T11:00:24.005000+00:00",
+          "ts": "2026-04-18T05:00:00.013000+00:00",
           "status": "ok",
-          "duration": 16876
+          "duration": 21852
         }
       ]
     },
@@ -533,16 +533,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-17T11:03:52.741000+00:00",
-      "nextRun": "2026-04-17T17:03:52.724000+00:00",
-      "lastDuration": 21408,
+      "lastRun": "2026-04-18T05:03:52.735000+00:00",
+      "nextRun": "2026-04-18T11:03:52.724000+00:00",
+      "lastDuration": 18227,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-17T11:03:52.741000+00:00",
+          "ts": "2026-04-18T05:03:52.735000+00:00",
           "status": "ok",
-          "duration": 21408
+          "duration": 18227
         }
       ]
     },
@@ -554,16 +554,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-17T07:30:00.012000+00:00",
-      "nextRun": "2026-04-18T07:30:00+00:00",
-      "lastDuration": 17697,
+      "lastRun": "2026-04-18T07:30:00.008000+00:00",
+      "nextRun": "2026-04-19T07:30:00+00:00",
+      "lastDuration": 127180,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-17T07:30:00.012000+00:00",
+          "ts": "2026-04-18T07:30:00.008000+00:00",
           "status": "ok",
-          "duration": 17697
+          "duration": 127180
         }
       ]
     },
@@ -638,16 +638,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-16T07:17:09.016000+00:00",
-      "nextRun": "2026-04-18T01:00:00+00:00",
-      "lastDuration": 16946,
+      "lastRun": "2026-04-18T01:00:00.011000+00:00",
+      "nextRun": "2026-04-25T01:00:00+00:00",
+      "lastDuration": 16658,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-16T07:17:09.016000+00:00",
+          "ts": "2026-04-18T01:00:00.011000+00:00",
           "status": "ok",
-          "duration": 16946
+          "duration": 16658
         }
       ]
     },
@@ -702,8 +702,8 @@
     },
     {
       "job": "dream-cycle",
-      "error": "\u26a0\ufe0f \ud83d\udee0\ufe0f Exec: list files in ~/.openclaw/agents/main/sessions/*topic*.jsonl -> search \"$(date\" in +%Y-%m-%d) (in ~/.openclaw/workspace), `ls -la ~/.openclaw/agents/main/sessions/*topic*.jsonl ~/.openclaw/agents/main/sessions/*.json\u2026` failed: exec host not allowed (requested sandbox; configure tools.exec.host=sandbox to allow).",
-      "count": 1
+      "error": "\u26a0\ufe0f \ud83d\udcdd Edit: `in ~/.openclaw/workspace/memory/06_system/weekly-commitment-state-audit-2026-04-15.md` failed: Could not find the exact text in /Users/clawsbx/.openclaw/workspace/memory/06_system/weekly-commitment-state-audit-2026-04-15.md. The old text must match exactly including all whitespace and newlines.",
+      "count": 2
     },
     {
       "job": "weekly-cost-report",
