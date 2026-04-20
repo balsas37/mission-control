@@ -1,7 +1,76 @@
 {
-  "updatedAt": "2026-04-18T12:00:00Z",
+  "updatedAt": "2026-04-20T20:35:00Z",
   "ofm": [],
   "tools": [],
   "market": [],
-  "actions": []
+  "actions": [],
+  "macro": {
+    "risk_level": "yellow",
+    "risk_summary": "Tourism is still holding up, but oil shock and Iran-related sanctions risk are now the problem.",
+    "metrics": [
+      {
+        "label": "Brent Crude",
+        "value": "$95.42/bbl",
+        "delta": "+5.6% (1d)",
+        "delta_direction": "up",
+        "note": "Brent jumped on April 20 after Middle East escalation, though it is still down 4.5% over the past month."
+      },
+      {
+        "label": "USD/MXN",
+        "value": "17.27",
+        "delta": "-2.5% (30d)",
+        "delta_direction": "down",
+        "note": "Peso strengthened over the past month, which helps imported inputs a bit, but FX is secondary versus fuel risk right now."
+      },
+      {
+        "label": "Mexico Inflation",
+        "value": "4.63%",
+        "delta": "+0.96% pts (YoY)",
+        "delta_direction": "up",
+        "note": "INEGI reported first-half March annual inflation at 4.63%, up from 3.67% a year earlier, with food and energy pressure building again."
+      },
+      {
+        "label": "Gasoline (MX)",
+        "value": "$23.69/L",
+        "delta": "up",
+        "delta_direction": "up",
+        "note": "Profeco national average regular gasoline was MXN 23.69/L and diesel MXN 28.75/L, with the government pushing caps near MXN 24 and MXN 28-28.3 respectively."
+      },
+      {
+        "label": "Tourism Demand",
+        "value": "Strong",
+        "delta": "Semana Santa occupancy beat last year",
+        "delta_direction": "good-up",
+        "note": "Quintana Roo reported about 80.7% hotel occupancy in Semana Santa versus 78.9% last year. Cancun March traffic was softer, but YTD international traffic was still up 0.2% and some demand has shifted toward Tulum."
+      },
+      {
+        "label": "Geopolitical Risk",
+        "value": "HIGH",
+        "delta": "Iran oil sanctions tightened",
+        "delta_direction": "up",
+        "note": "US pressure on Iranian oil buyers and Hormuz disruption risk are the main near-term threats to fuel costs, freight, and traveler sentiment."
+      }
+    ],
+    "geopolitical": [
+      {
+        "title": "US threatens sanctions on buyers of Iranian oil",
+        "source": "Reuters",
+        "url": "https://www.reuters.com/world/americas/us-targets-irans-oil-transportation-infrastructure-with-sanctions-2026-04-15/",
+        "summary": "Washington said buyers of Iranian oil could be sanctioned, raising the odds of tighter global oil supply and more crude volatility."
+      },
+      {
+        "title": "US waiver on Iranian oil reportedly allowed to expire",
+        "source": "Reuters",
+        "url": "https://www.reuters.com/business/energy/us-allow-waiver-iran-oil-expire-administration-sources-say-2026-04-14/",
+        "summary": "The reported expiration of an Iranian oil waiver adds pressure to energy markets and keeps upside risk on diesel and freight costs."
+      },
+      {
+        "title": "Hormuz blockade risk still hanging over trade",
+        "source": "Al Jazeera",
+        "url": "https://www.aljazeera.com/news/2026/4/14/how-much-will-us-hormuz-blockade-hurt-iran-and-does-tehran-have-an-escape",
+        "summary": "Any disruption around Hormuz would hit oil shipping fast, which matters directly for Lagoon fuel costs and Oaxaca build logistics."
+      }
+    ],
+    "bottom_line": "Do not get cute with fuel this week. Keep Lagoon pricing nimble, top up operational fuel only as needed, and watch diesel because that is the fastest route into margin compression. For Oaxaca, assume freight and steel stay jumpy, so lock quotes quickly on any near-term materials and avoid letting contractors price from stale assumptions."
+  }
 }
