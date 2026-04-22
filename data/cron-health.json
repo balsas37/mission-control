@@ -8,16 +8,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-21T02:00:00.019000+00:00",
-      "nextRun": "2026-04-22T02:00:00+00:00",
-      "lastDuration": 23630,
+      "lastRun": "2026-04-22T02:00:00.013000+00:00",
+      "nextRun": "2026-04-23T02:00:00+00:00",
+      "lastDuration": 30591,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-21T02:00:00.019000+00:00",
+          "ts": "2026-04-22T02:00:00.013000+00:00",
           "status": "ok",
-          "duration": 23630
+          "duration": 30591
         }
       ]
     },
@@ -29,16 +29,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-20T20:04:41.700000+00:00",
-      "nextRun": "2026-04-21T13:00:00+00:00",
-      "lastDuration": 36037,
+      "lastRun": "2026-04-21T13:00:00.026000+00:00",
+      "nextRun": "2026-04-22T13:00:00+00:00",
+      "lastDuration": 27152,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-20T20:04:41.700000+00:00",
+          "ts": "2026-04-21T13:00:00.026000+00:00",
           "status": "ok",
-          "duration": 36037
+          "duration": 27152
         }
       ]
     },
@@ -49,17 +49,17 @@
       "description": "",
       "agent": "main",
       "enabled": true,
-      "lastStatus": "ok",
-      "lastRun": "2026-04-21T10:01:07.233000+00:00",
-      "nextRun": "2026-04-21T11:01:07.213000+00:00",
-      "lastDuration": 16009,
-      "consecutiveErrors": 0,
-      "lastError": "",
+      "lastStatus": "error",
+      "lastRun": "2026-04-22T10:01:07.234000+00:00",
+      "nextRun": "2026-04-22T11:01:07.213000+00:00",
+      "lastDuration": 26659,
+      "consecutiveErrors": 1,
+      "lastError": "\u26a0\ufe0f Agent couldn't generate a response. Note: some tool actions may have already been executed \u2014 please verify before retrying.",
       "runs": [
         {
-          "ts": "2026-04-21T10:01:07.233000+00:00",
-          "status": "ok",
-          "duration": 16009
+          "ts": "2026-04-22T10:01:07.234000+00:00",
+          "status": "error",
+          "duration": 26659
         }
       ]
     },
@@ -71,16 +71,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-21T03:30:00.019000+00:00",
-      "nextRun": "2026-04-21T13:30:00+00:00",
-      "lastDuration": 27762,
+      "lastRun": "2026-04-22T03:30:00.016000+00:00",
+      "nextRun": "2026-04-22T13:30:00+00:00",
+      "lastDuration": 29962,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-21T03:30:00.019000+00:00",
+          "ts": "2026-04-22T03:30:00.016000+00:00",
           "status": "ok",
-          "duration": 27762
+          "duration": 29962
         }
       ]
     },
@@ -134,16 +134,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-20T20:08:09.896000+00:00",
-      "nextRun": "2026-04-21T11:50:00+00:00",
-      "lastDuration": 68270,
+      "lastRun": "2026-04-21T11:50:00.022000+00:00",
+      "nextRun": "2026-04-22T11:50:00+00:00",
+      "lastDuration": 97834,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-20T20:08:09.896000+00:00",
+          "ts": "2026-04-21T11:50:00.022000+00:00",
           "status": "ok",
-          "duration": 68270
+          "duration": 97834
         }
       ]
     },
@@ -155,16 +155,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-21T06:00:00.020000+00:00",
-      "nextRun": "2026-04-22T06:00:00+00:00",
-      "lastDuration": 394622,
+      "lastRun": "2026-04-22T06:00:00.023000+00:00",
+      "nextRun": "2026-04-23T06:00:00+00:00",
+      "lastDuration": 353427,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-21T06:00:00.020000+00:00",
+          "ts": "2026-04-22T06:00:00.023000+00:00",
           "status": "ok",
-          "duration": 394622
+          "duration": 353427
         }
       ]
     },
@@ -176,16 +176,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-21T02:30:00.018000+00:00",
-      "nextRun": "2026-04-22T02:30:00+00:00",
-      "lastDuration": 20270,
+      "lastRun": "2026-04-22T02:30:00.022000+00:00",
+      "nextRun": "2026-04-23T02:30:00+00:00",
+      "lastDuration": 18976,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-21T02:30:00.018000+00:00",
+          "ts": "2026-04-22T02:30:00.022000+00:00",
           "status": "ok",
-          "duration": 20270
+          "duration": 18976
         }
       ]
     },
@@ -197,16 +197,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-21T06:30:00.021000+00:00",
-      "nextRun": "2026-04-22T06:30:00+00:00",
-      "lastDuration": 98516,
+      "lastRun": "2026-04-22T06:30:00.020000+00:00",
+      "nextRun": "2026-04-23T06:30:00+00:00",
+      "lastDuration": 118133,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-21T06:30:00.021000+00:00",
+          "ts": "2026-04-22T06:30:00.020000+00:00",
           "status": "ok",
-          "duration": 98516
+          "duration": 118133
         }
       ]
     },
@@ -239,16 +239,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-20T19:59:53.560000+00:00",
-      "nextRun": "2026-04-21T11:00:00+00:00",
-      "lastDuration": 30177,
+      "lastRun": "2026-04-21T11:00:00.019000+00:00",
+      "nextRun": "2026-04-22T11:00:00+00:00",
+      "lastDuration": 32426,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-20T19:59:53.560000+00:00",
+          "ts": "2026-04-21T11:00:00.019000+00:00",
           "status": "ok",
-          "duration": 30177
+          "duration": 32426
         }
       ]
     },
@@ -323,16 +323,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-20T20:03:52.774000+00:00",
-      "nextRun": "2026-04-21T11:45:00+00:00",
-      "lastDuration": 19440,
+      "lastRun": "2026-04-21T11:45:00.023000+00:00",
+      "nextRun": "2026-04-22T11:45:00+00:00",
+      "lastDuration": 20435,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-20T20:03:52.774000+00:00",
+          "ts": "2026-04-21T11:45:00.023000+00:00",
           "status": "ok",
-          "duration": 19440
+          "duration": 20435
         }
       ]
     },
@@ -344,16 +344,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-21T04:30:00.017000+00:00",
-      "nextRun": "2026-04-22T04:30:00+00:00",
-      "lastDuration": 140358,
+      "lastRun": "2026-04-22T04:30:00.020000+00:00",
+      "nextRun": "2026-04-23T04:30:00+00:00",
+      "lastDuration": 104902,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-21T04:30:00.017000+00:00",
+          "ts": "2026-04-22T04:30:00.020000+00:00",
           "status": "ok",
-          "duration": 140358
+          "duration": 104902
         }
       ]
     },
@@ -386,16 +386,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-20T20:05:45.629000+00:00",
-      "nextRun": "2026-04-21T17:00:00+00:00",
-      "lastDuration": 97389,
+      "lastRun": "2026-04-21T17:01:27.185000+00:00",
+      "nextRun": "2026-04-22T17:00:00+00:00",
+      "lastDuration": 81451,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-20T20:05:45.629000+00:00",
+          "ts": "2026-04-21T17:01:27.185000+00:00",
           "status": "ok",
-          "duration": 97389
+          "duration": 81451
         }
       ]
     },
@@ -428,16 +428,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-21T04:00:00.018000+00:00",
-      "nextRun": "2026-04-22T04:00:00+00:00",
-      "lastDuration": 46459,
+      "lastRun": "2026-04-22T04:00:00.016000+00:00",
+      "nextRun": "2026-04-23T04:00:00+00:00",
+      "lastDuration": 44728,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-21T04:00:00.018000+00:00",
+          "ts": "2026-04-22T04:00:00.016000+00:00",
           "status": "ok",
-          "duration": 46459
+          "duration": 44728
         }
       ]
     },
@@ -448,17 +448,17 @@
       "description": "",
       "agent": "main",
       "enabled": true,
-      "lastStatus": "error",
-      "lastRun": "2026-04-20T23:00:28.248000+00:00",
-      "nextRun": "2026-04-21T23:00:00+00:00",
-      "lastDuration": 12272,
-      "consecutiveErrors": 1,
-      "lastError": "The server had an error processing your request. Sorry about that! You can retry your request, or contact us through our help center at help.openai.com if you keep seeing this error. (Please include the request ID 03e8e718-69a7-4f63-9f3c-da63351aeac8 in your email.)",
+      "lastStatus": "ok",
+      "lastRun": "2026-04-21T23:01:24.506000+00:00",
+      "nextRun": "2026-04-22T23:00:00+00:00",
+      "lastDuration": 8557,
+      "consecutiveErrors": 0,
+      "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-20T23:00:28.248000+00:00",
-          "status": "error",
-          "duration": 12272
+          "ts": "2026-04-21T23:01:24.506000+00:00",
+          "status": "ok",
+          "duration": 8557
         }
       ]
     },
@@ -470,16 +470,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-21T07:00:00.019000+00:00",
-      "nextRun": "2026-04-22T07:00:00+00:00",
-      "lastDuration": 228814,
+      "lastRun": "2026-04-22T07:00:00.020000+00:00",
+      "nextRun": "2026-04-23T07:00:00+00:00",
+      "lastDuration": 255901,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-21T07:00:00.019000+00:00",
+          "ts": "2026-04-22T07:00:00.020000+00:00",
           "status": "ok",
-          "duration": 228814
+          "duration": 255901
         }
       ]
     },
@@ -491,16 +491,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-21T05:00:22.323000+00:00",
-      "nextRun": "2026-04-21T11:00:00+00:00",
-      "lastDuration": 58790,
+      "lastRun": "2026-04-22T05:00:20.732000+00:00",
+      "nextRun": "2026-04-22T11:00:00+00:00",
+      "lastDuration": 59004,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-21T05:00:22.323000+00:00",
+          "ts": "2026-04-22T05:00:20.732000+00:00",
           "status": "ok",
-          "duration": 58790
+          "duration": 59004
         }
       ]
     },
@@ -512,16 +512,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-21T05:00:00.018000+00:00",
-      "nextRun": "2026-04-21T11:00:00+00:00",
-      "lastDuration": 22305,
+      "lastRun": "2026-04-22T05:00:00.029000+00:00",
+      "nextRun": "2026-04-22T11:00:00+00:00",
+      "lastDuration": 20703,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-21T05:00:00.018000+00:00",
+          "ts": "2026-04-22T05:00:00.029000+00:00",
           "status": "ok",
-          "duration": 22305
+          "duration": 20703
         }
       ]
     },
@@ -533,16 +533,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-21T05:03:52.742000+00:00",
-      "nextRun": "2026-04-21T11:03:52.724000+00:00",
-      "lastDuration": 28027,
+      "lastRun": "2026-04-22T05:03:52.753000+00:00",
+      "nextRun": "2026-04-22T11:03:52.724000+00:00",
+      "lastDuration": 20807,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-21T05:03:52.742000+00:00",
+          "ts": "2026-04-22T05:03:52.753000+00:00",
           "status": "ok",
-          "duration": 28027
+          "duration": 20807
         }
       ]
     },
@@ -554,16 +554,16 @@
       "agent": "main",
       "enabled": true,
       "lastStatus": "ok",
-      "lastRun": "2026-04-21T07:30:00.016000+00:00",
-      "nextRun": "2026-04-22T07:30:00+00:00",
-      "lastDuration": 138843,
+      "lastRun": "2026-04-22T07:30:00.019000+00:00",
+      "nextRun": "2026-04-23T07:30:00+00:00",
+      "lastDuration": 426492,
       "consecutiveErrors": 0,
       "lastError": "",
       "runs": [
         {
-          "ts": "2026-04-21T07:30:00.016000+00:00",
+          "ts": "2026-04-22T07:30:00.019000+00:00",
           "status": "ok",
-          "duration": 138843
+          "duration": 426492
         }
       ]
     },
@@ -696,8 +696,8 @@
   ],
   "errors": [
     {
-      "job": "shiloh-call-reminder",
-      "error": "The server had an error processing your request. Sorry about that! You can retry your request, or contact us through our help center at help.openai.com if you keep seeing this error. (Please include the request ID 03e8e718-69a7-4f63-9f3c-da63351aeac8 in your email.)",
+      "job": "charfen-auto-complete",
+      "error": "\u26a0\ufe0f Agent couldn't generate a response. Note: some tool actions may have already been executed \u2014 please verify before retrying.",
       "count": 1
     }
   ]
