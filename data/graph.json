@@ -1,12 +1,12 @@
 {
   "meta": {
     "layers": {
-      "context": 115,
+      "context": 116,
       "domain": 151,
       "entity": 4,
       "skill": 34
     },
-    "generated": "2026-04-22T06:00:22.912146"
+    "generated": "2026-04-23T06:00:30.847648"
   },
   "nodes": [
     {
@@ -273,7 +273,7 @@
       "layer": "context",
       "tags": [],
       "summary": "",
-      "connections": 1,
+      "connections": 2,
       "cluster": "system",
       "color": "#5AB8B0"
     },
@@ -529,6 +529,16 @@
     },
     {
       "id": 48,
+      "title": "2026 04 23",
+      "layer": "context",
+      "tags": [],
+      "summary": "",
+      "connections": 0,
+      "cluster": "system",
+      "color": "#5AB8B0"
+    },
+    {
+      "id": 49,
       "title": "AI Executive Team",
       "layer": "context",
       "tags": [
@@ -540,7 +550,7 @@
       "color": "#5AB8B0"
     },
     {
-      "id": 49,
+      "id": 50,
       "title": "Aitable Build Report",
       "layer": "context",
       "tags": [
@@ -552,7 +562,7 @@
       "color": "#5AB8B0"
     },
     {
-      "id": 50,
+      "id": 51,
       "title": "Aitable IDs",
       "layer": "context",
       "tags": [
@@ -564,7 +574,7 @@
       "color": "#5AB8B0"
     },
     {
-      "id": 51,
+      "id": 52,
       "title": "Aitable Map",
       "layer": "context",
       "tags": [
@@ -576,7 +586,7 @@
       "color": "#5AB8B0"
     },
     {
-      "id": 52,
+      "id": 53,
       "title": "Agent Factory Notes",
       "layer": "context",
       "tags": [
@@ -588,7 +598,7 @@
       "color": "#5AB8B0"
     },
     {
-      "id": 53,
+      "id": 54,
       "title": "Bianca Routines",
       "layer": "context",
       "tags": [
@@ -603,7 +613,7 @@
       "color": "#5AB8B0"
     },
     {
-      "id": 54,
+      "id": 55,
       "title": "Bianca Wedding Styling",
       "layer": "context",
       "tags": [
@@ -617,7 +627,7 @@
       "color": "#5AB8B0"
     },
     {
-      "id": 55,
+      "id": 56,
       "title": "CharFen Full Course",
       "layer": "context",
       "tags": [
@@ -629,7 +639,7 @@
       "color": "#5AB8B0"
     },
     {
-      "id": 56,
+      "id": 57,
       "title": "CharFen Momentum System",
       "layer": "context",
       "tags": [
@@ -641,7 +651,7 @@
       "color": "#5AB8B0"
     },
     {
-      "id": 57,
+      "id": 58,
       "title": "CharFen Operating Rules",
       "layer": "context",
       "tags": [
@@ -653,7 +663,7 @@
       "color": "#5AB8B0"
     },
     {
-      "id": 58,
+      "id": 59,
       "title": "Charfen Scale Method Reconstruction",
       "layer": "context",
       "tags": [
@@ -667,7 +677,7 @@
       "color": "#5AB8B0"
     },
     {
-      "id": 59,
+      "id": 60,
       "title": "Claude Code Upgrades Tracker",
       "layer": "context",
       "tags": [
@@ -681,7 +691,7 @@
       "color": "#5AB8B0"
     },
     {
-      "id": 60,
+      "id": 61,
       "title": "Crete Debrief 2026 03 13",
       "layer": "domain",
       "tags": [
@@ -696,7 +706,7 @@
       "color": "#6BBF6B"
     },
     {
-      "id": 61,
+      "id": 62,
       "title": "Infra Bugs",
       "layer": "context",
       "tags": [],
@@ -706,7 +716,7 @@
       "color": "#5AB8B0"
     },
     {
-      "id": 62,
+      "id": 63,
       "title": "Openclaw Upgrades Tracker",
       "layer": "context",
       "tags": [
@@ -719,7 +729,7 @@
       "color": "#5AB8B0"
     },
     {
-      "id": 63,
+      "id": 64,
       "title": "Org Chart",
       "layer": "context",
       "tags": [
@@ -731,7 +741,7 @@
       "color": "#5AB8B0"
     },
     {
-      "id": 64,
+      "id": 65,
       "title": "Simple Operations Framework",
       "layer": "context",
       "tags": [
@@ -743,7 +753,7 @@
       "color": "#5AB8B0"
     },
     {
-      "id": 65,
+      "id": 66,
       "title": "Waste Oil Fuel Research",
       "layer": "context",
       "tags": [
@@ -758,7 +768,7 @@
       "color": "#5AB8B0"
     },
     {
-      "id": 66,
+      "id": 67,
       "title": "2026 03 14 Ti Report",
       "layer": "context",
       "tags": [
@@ -769,18 +779,6 @@
       ],
       "summary": "March 2026 Monthly Planning TI Report",
       "connections": 0,
-      "cluster": "daily",
-      "color": "#888888"
-    },
-    {
-      "id": 67,
-      "title": "2026 04 08",
-      "layer": "context",
-      "tags": [
-        "daily"
-      ],
-      "summary": "Daily activity log \u2014 April 8, 2026",
-      "connections": 5,
       "cluster": "daily",
       "color": "#888888"
     },
@@ -952,6 +950,16 @@
     },
     {
       "id": 82,
+      "title": "2026 04 23",
+      "layer": "context",
+      "tags": [],
+      "summary": "",
+      "connections": 1,
+      "cluster": "daily",
+      "color": "#888888"
+    },
+    {
+      "id": 83,
       "title": "Property & Farm Overview",
       "layer": "domain",
       "tags": [
@@ -963,7 +971,7 @@
       "color": "#6BBF6B"
     },
     {
-      "id": 83,
+      "id": 84,
       "title": "Moc Kairos",
       "layer": "domain",
       "tags": [
@@ -976,7 +984,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 84,
+      "id": 85,
       "title": "Lagoon Overview",
       "layer": "domain",
       "tags": [
@@ -988,7 +996,7 @@
       "color": "#6BA8DA"
     },
     {
-      "id": 85,
+      "id": 86,
       "title": "OFM Overview",
       "layer": "domain",
       "tags": [
@@ -1000,7 +1008,7 @@
       "color": "#DAB255"
     },
     {
-      "id": 86,
+      "id": 87,
       "title": "PIA Overview",
       "layer": "domain",
       "tags": [
@@ -1012,19 +1020,19 @@
       "color": "#A86DBF"
     },
     {
-      "id": 87,
+      "id": 88,
       "title": "Active Projects",
       "layer": "domain",
       "tags": [
         "project"
       ],
       "summary": "Master active projects list \u2014 OFM, Lagoon, Digital Products, Crete, Farm, App Dev, Infrastructure",
-      "connections": 37,
+      "connections": 36,
       "cluster": "business",
       "color": "#A86DBF"
     },
     {
-      "id": 88,
+      "id": 89,
       "title": "Ai Bos Rebrand",
       "layer": "domain",
       "tags": [
@@ -1037,7 +1045,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 89,
+      "id": 90,
       "title": "Ai Business Os",
       "layer": "domain",
       "tags": [
@@ -1051,7 +1059,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 90,
+      "id": 91,
       "title": "Aitable Formulas",
       "layer": "context",
       "tags": [
@@ -1063,7 +1071,7 @@
       "color": "#5AB8B0"
     },
     {
-      "id": 91,
+      "id": 92,
       "title": "Aitable Integration",
       "layer": "context",
       "tags": [
@@ -1075,7 +1083,7 @@
       "color": "#5AB8B0"
     },
     {
-      "id": 92,
+      "id": 93,
       "title": "Aitable Schema",
       "layer": "context",
       "tags": [
@@ -1087,7 +1095,7 @@
       "color": "#5AB8B0"
     },
     {
-      "id": 93,
+      "id": 94,
       "title": "Astrid Fanvue Post Pack V1",
       "layer": "domain",
       "tags": [
@@ -1103,7 +1111,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 94,
+      "id": 95,
       "title": "Astrid Fanvue Upload Ops Sheet",
       "layer": "domain",
       "tags": [
@@ -1119,7 +1127,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 95,
+      "id": 96,
       "title": "Astrid Fanvue Welcome Sequence",
       "layer": "domain",
       "tags": [
@@ -1134,7 +1142,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 96,
+      "id": 97,
       "title": "Astrid Geelark Warmup Runbook",
       "layer": "domain",
       "tags": [
@@ -1150,7 +1158,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 97,
+      "id": 98,
       "title": "Astrid Launch Readiness Scorecard",
       "layer": "domain",
       "tags": [
@@ -1166,7 +1174,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 98,
+      "id": 99,
       "title": "Astrid Lora V1 V2 Execution Checklist",
       "layer": "domain",
       "tags": [
@@ -1181,19 +1189,22 @@
       "color": "#A86DBF"
     },
     {
-      "id": 99,
+      "id": 100,
       "title": "Best Atv Rentals Tulum",
       "layer": "domain",
       "tags": [
-        "project"
+        "project",
+        " lagoon",
+        " seo",
+        " research"
       ],
-      "summary": "Best ATV rentals Tulum SEO/competitive research",
-      "connections": 1,
+      "summary": "Historical 2025 'best ATV rentals Tulum' query (superseded by 2026 competitor audits)",
+      "connections": 2,
       "cluster": "lagoon",
       "color": "#6BA8DA"
     },
     {
-      "id": 100,
+      "id": 101,
       "title": "Blue Deer Review",
       "layer": "domain",
       "tags": [
@@ -1206,7 +1217,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 101,
+      "id": 102,
       "title": "Boat Trip Time Estimate",
       "layer": "domain",
       "tags": [
@@ -1218,7 +1229,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 102,
+      "id": 103,
       "title": "Booking Cancellations Hospitality",
       "layer": "domain",
       "tags": [
@@ -1230,7 +1241,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 103,
+      "id": 104,
       "title": "Bot Crawling Widget Issues",
       "layer": "domain",
       "tags": [
@@ -1242,7 +1253,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 104,
+      "id": 105,
       "title": "Broad Market Research Ecommerce",
       "layer": "domain",
       "tags": [
@@ -1255,7 +1266,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 105,
+      "id": 106,
       "title": "Business Ideas Retreat",
       "layer": "domain",
       "tags": [
@@ -1267,7 +1278,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 106,
+      "id": 107,
       "title": "Cambio Condicion Hijo Real Estate",
       "layer": "domain",
       "tags": [
@@ -1279,7 +1290,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 107,
+      "id": 108,
       "title": "Canam X3 Turbo",
       "layer": "domain",
       "tags": [
@@ -1294,7 +1305,7 @@
       "color": "#6BA8DA"
     },
     {
-      "id": 108,
+      "id": 109,
       "title": "Property History",
       "layer": "domain",
       "tags": [
@@ -1306,7 +1317,7 @@
       "color": "#6BBF6B"
     },
     {
-      "id": 109,
+      "id": 110,
       "title": "Farm & Off-Grid History",
       "layer": "domain",
       "tags": [
@@ -1318,7 +1329,7 @@
       "color": "#6BBF6B"
     },
     {
-      "id": 110,
+      "id": 111,
       "title": "Hospitality History",
       "layer": "domain",
       "tags": [
@@ -1330,19 +1341,19 @@
       "color": "#6BBF6B"
     },
     {
-      "id": 111,
+      "id": 112,
       "title": "Lagoon History",
       "layer": "domain",
       "tags": [
         "project"
       ],
       "summary": "ChatGPT history: Lagoon/ATV-UTV Rentals (49 conversations, 2023-2025)",
-      "connections": 8,
+      "connections": 7,
       "cluster": "lagoon",
       "color": "#6BA8DA"
     },
     {
-      "id": 112,
+      "id": 113,
       "title": "Marketing History",
       "layer": "domain",
       "tags": [
@@ -1354,7 +1365,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 113,
+      "id": 114,
       "title": "Real Estate History",
       "layer": "domain",
       "tags": [
@@ -1367,7 +1378,7 @@
       "color": "#6BBF6B"
     },
     {
-      "id": 114,
+      "id": 115,
       "title": "Compra Grano De Oro",
       "layer": "domain",
       "tags": [
@@ -1379,7 +1390,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 115,
+      "id": 116,
       "title": "Concrete Wall Types",
       "layer": "domain",
       "tags": [
@@ -1391,7 +1402,7 @@
       "color": "#6BBF6B"
     },
     {
-      "id": 116,
+      "id": 117,
       "title": "Cornish Cross Offgrid Farm",
       "layer": "domain",
       "tags": [
@@ -1403,7 +1414,7 @@
       "color": "#6BBF6B"
     },
     {
-      "id": 117,
+      "id": 118,
       "title": "Crete Oaxacai Site Plan",
       "layer": "domain",
       "tags": [
@@ -1415,7 +1426,7 @@
       "color": "#6BBF6B"
     },
     {
-      "id": 118,
+      "id": 119,
       "title": "Crete Property 2",
       "layer": "domain",
       "tags": [
@@ -1427,7 +1438,7 @@
       "color": "#6BBF6B"
     },
     {
-      "id": 119,
+      "id": 120,
       "title": "Customs Agent Comercializadora",
       "layer": "domain",
       "tags": [
@@ -1439,7 +1450,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 120,
+      "id": 121,
       "title": "David Lockhart Lie Research",
       "layer": "domain",
       "tags": [
@@ -1453,7 +1464,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 121,
+      "id": 122,
       "title": "David Post Discovery Proposal Kit",
       "layer": "domain",
       "tags": [
@@ -1467,7 +1478,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 122,
+      "id": 123,
       "title": "Egg Business Viability",
       "layer": "domain",
       "tags": [
@@ -1479,7 +1490,7 @@
       "color": "#6BBF6B"
     },
     {
-      "id": 123,
+      "id": 124,
       "title": "Encuentro Tulum",
       "layer": "domain",
       "tags": [
@@ -1493,7 +1504,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 124,
+      "id": 125,
       "title": "Execution Plan 1",
       "layer": "domain",
       "tags": [
@@ -1505,7 +1516,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 125,
+      "id": 126,
       "title": "Execution Plan 2 Marketing",
       "layer": "domain",
       "tags": [
@@ -1517,7 +1528,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 126,
+      "id": 127,
       "title": "Experiential Hospitality Plan",
       "layer": "domain",
       "tags": [
@@ -1529,7 +1540,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 127,
+      "id": 128,
       "title": "Fedex Shipping Ddp",
       "layer": "domain",
       "tags": [
@@ -1541,7 +1552,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 128,
+      "id": 129,
       "title": "Formwork Brands Explained",
       "layer": "domain",
       "tags": [
@@ -1553,7 +1564,7 @@
       "color": "#6BBF6B"
     },
     {
-      "id": 129,
+      "id": 130,
       "title": "Google Search Testing",
       "layer": "domain",
       "tags": [
@@ -1566,7 +1577,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 130,
+      "id": 131,
       "title": "High Vibe Music Canam Clunking",
       "layer": "domain",
       "tags": [
@@ -1578,7 +1589,7 @@
       "color": "#6BA8DA"
     },
     {
-      "id": 131,
+      "id": 132,
       "title": "Hilltop Beach Villa Crete",
       "layer": "domain",
       "tags": [
@@ -1590,7 +1601,7 @@
       "color": "#6BBF6B"
     },
     {
-      "id": 132,
+      "id": 133,
       "title": "Inflatable Yacht Drone Shot",
       "layer": "domain",
       "tags": [
@@ -1602,7 +1613,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 133,
+      "id": 134,
       "title": "Instagram Marketing Guide",
       "layer": "domain",
       "tags": [
@@ -1614,7 +1625,7 @@
       "color": "#DAB255"
     },
     {
-      "id": 134,
+      "id": 135,
       "title": "Kadankadan Marketing",
       "layer": "domain",
       "tags": [
@@ -1626,7 +1637,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 135,
+      "id": 136,
       "title": "Kairos Assessments",
       "layer": "domain",
       "tags": [
@@ -1641,7 +1652,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 136,
+      "id": 137,
       "title": "Kairos Client Os",
       "layer": "domain",
       "tags": [
@@ -1655,7 +1666,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 137,
+      "id": 138,
       "title": "Kairos Competitive Advantage",
       "layer": "domain",
       "tags": [
@@ -1669,7 +1680,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 138,
+      "id": 139,
       "title": "Kairos Competitive Analysis",
       "layer": "domain",
       "tags": [
@@ -1683,7 +1694,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 139,
+      "id": 140,
       "title": "Kairos Discovery Questionnaire",
       "layer": "domain",
       "tags": [
@@ -1698,7 +1709,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 140,
+      "id": 141,
       "title": "Kairos Landing Design Spec",
       "layer": "domain",
       "tags": [
@@ -1712,7 +1723,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 141,
+      "id": 142,
       "title": "Kairos One Pager",
       "layer": "domain",
       "tags": [
@@ -1726,7 +1737,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 142,
+      "id": 143,
       "title": "Kairos Proposal Seva David",
       "layer": "domain",
       "tags": [
@@ -1742,7 +1753,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 143,
+      "id": 144,
       "title": "Kairos Sales Deck Outline",
       "layer": "domain",
       "tags": [
@@ -1756,7 +1767,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 144,
+      "id": 145,
       "title": "Kairos Strategic Plan",
       "layer": "domain",
       "tags": [
@@ -1771,7 +1782,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 145,
+      "id": 146,
       "title": "Kairos Waterfall",
       "layer": "domain",
       "tags": [
@@ -1786,7 +1797,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 146,
+      "id": 147,
       "title": "Lagoon Ad Headline Ideas",
       "layer": "domain",
       "tags": [
@@ -1798,7 +1809,7 @@
       "color": "#6BA8DA"
     },
     {
-      "id": 147,
+      "id": 148,
       "title": "Lagoon Atv Rental Agreement",
       "layer": "domain",
       "tags": [
@@ -1810,7 +1821,7 @@
       "color": "#6BA8DA"
     },
     {
-      "id": 148,
+      "id": 149,
       "title": "Lagoon Atv Tulum Google",
       "layer": "domain",
       "tags": [
@@ -1822,7 +1833,7 @@
       "color": "#6BA8DA"
     },
     {
-      "id": 149,
+      "id": 150,
       "title": "Lagoon Canam Description Rewrite",
       "layer": "domain",
       "tags": [
@@ -1834,7 +1845,7 @@
       "color": "#6BA8DA"
     },
     {
-      "id": 150,
+      "id": 151,
       "title": "Lagoon Comision Concierges Ip Theft",
       "layer": "domain",
       "tags": [
@@ -1846,7 +1857,7 @@
       "color": "#6BA8DA"
     },
     {
-      "id": 151,
+      "id": 152,
       "title": "Lagoon Delegation Audit",
       "layer": "domain",
       "tags": [
@@ -1858,7 +1869,7 @@
       "color": "#6BA8DA"
     },
     {
-      "id": 152,
+      "id": 153,
       "title": "Lagoon Deposit Refund Trust Policy",
       "layer": "domain",
       "tags": [
@@ -1874,7 +1885,7 @@
       "color": "#6BA8DA"
     },
     {
-      "id": 153,
+      "id": 154,
       "title": "Lagoon Facebook Marketplace Sales Ops",
       "layer": "domain",
       "tags": [
@@ -1889,7 +1900,7 @@
       "color": "#6BA8DA"
     },
     {
-      "id": 154,
+      "id": 155,
       "title": "Lagoon Growth Strategy Motocross",
       "layer": "domain",
       "tags": [
@@ -1901,7 +1912,7 @@
       "color": "#6BA8DA"
     },
     {
-      "id": 155,
+      "id": 156,
       "title": "Lagoon Pricing Page Copy V1",
       "layer": "domain",
       "tags": [
@@ -1916,7 +1927,7 @@
       "color": "#6BA8DA"
     },
     {
-      "id": 156,
+      "id": 157,
       "title": "Lagoon Pricing Page Implementation Pack",
       "layer": "domain",
       "tags": [
@@ -1926,12 +1937,12 @@
         " implementation"
       ],
       "summary": "Developer-ready Lagoon pricing page implementation handoff with metadata, schema, and CTA copy",
-      "connections": 6,
+      "connections": 7,
       "cluster": "lagoon",
       "color": "#6BA8DA"
     },
     {
-      "id": 157,
+      "id": 158,
       "title": "Lagoon Pricing Page Publish Pack V2",
       "layer": "domain",
       "tags": [
@@ -1947,7 +1958,7 @@
       "color": "#6BA8DA"
     },
     {
-      "id": 158,
+      "id": 159,
       "title": "Lagoon Privacy Policy Tulum",
       "layer": "domain",
       "tags": [
@@ -1962,7 +1973,7 @@
       "color": "#6BA8DA"
     },
     {
-      "id": 159,
+      "id": 160,
       "title": "Lagoon Privacy Policy",
       "layer": "domain",
       "tags": [
@@ -1977,7 +1988,7 @@
       "color": "#6BA8DA"
     },
     {
-      "id": 160,
+      "id": 161,
       "title": "Lagoon Profile Tulum Property",
       "layer": "domain",
       "tags": [
@@ -1990,7 +2001,7 @@
       "color": "#6BA8DA"
     },
     {
-      "id": 161,
+      "id": 162,
       "title": "Lagoon Sops Draft",
       "layer": "domain",
       "tags": [
@@ -2002,7 +2013,7 @@
       "color": "#6BA8DA"
     },
     {
-      "id": 162,
+      "id": 163,
       "title": "Lagoon Warranty Claim",
       "layer": "domain",
       "tags": [
@@ -2014,7 +2025,7 @@
       "color": "#6BA8DA"
     },
     {
-      "id": 163,
+      "id": 164,
       "title": "Lagoon Web Copy",
       "layer": "domain",
       "tags": [
@@ -2026,7 +2037,7 @@
       "color": "#6BA8DA"
     },
     {
-      "id": 164,
+      "id": 165,
       "title": "Lagoon Zapier Overview",
       "layer": "domain",
       "tags": [
@@ -2040,19 +2051,21 @@
       "color": "#6BA8DA"
     },
     {
-      "id": 165,
+      "id": 166,
       "title": "Landing Page Renta Vehiculo",
       "layer": "domain",
       "tags": [
-        "project"
+        "project",
+        " lagoon",
+        " marketing"
       ],
-      "summary": "Landing page layout for vehicle rental",
-      "connections": 1,
+      "summary": "Lagoon landing-page layout note + no-show recovery offer draft",
+      "connections": 3,
       "cluster": "business",
       "color": "#A86DBF"
     },
     {
-      "id": 166,
+      "id": 167,
       "title": "Lifepo4 Battery Marina",
       "layer": "domain",
       "tags": [
@@ -2064,7 +2077,7 @@
       "color": "#6BBF6B"
     },
     {
-      "id": 167,
+      "id": 168,
       "title": "Ltopia Villa Marketing",
       "layer": "domain",
       "tags": [
@@ -2076,7 +2089,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 168,
+      "id": 169,
       "title": "Market Research Ecommerce",
       "layer": "domain",
       "tags": [
@@ -2088,7 +2101,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 169,
+      "id": 170,
       "title": "Michael Codex Reauth Recovery Checklist",
       "layer": "domain",
       "tags": [
@@ -2103,7 +2116,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 170,
+      "id": 171,
       "title": "Michael Live Validation Runbook",
       "layer": "domain",
       "tags": [
@@ -2118,7 +2131,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 171,
+      "id": 172,
       "title": "Michael Mission Control Q2 Starter Dataset",
       "layer": "domain",
       "tags": [
@@ -2133,7 +2146,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 172,
+      "id": 173,
       "title": "Michael Weekly Commitment Status Closeout Protocol",
       "layer": "domain",
       "tags": [
@@ -2149,7 +2162,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 173,
+      "id": 174,
       "title": "Micro Resort Crowdfunding",
       "layer": "domain",
       "tags": [
@@ -2161,7 +2174,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 174,
+      "id": 175,
       "title": "Midjourney Real Estate Renders",
       "layer": "domain",
       "tags": [
@@ -2174,7 +2187,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 175,
+      "id": 176,
       "title": "Oaxaca Farm Climate",
       "layer": "domain",
       "tags": [
@@ -2186,7 +2199,7 @@
       "color": "#6BBF6B"
     },
     {
-      "id": 176,
+      "id": 177,
       "title": "Ocean Freight Quote",
       "layer": "domain",
       "tags": [
@@ -2198,7 +2211,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 177,
+      "id": 178,
       "title": "OFM Agency",
       "layer": "domain",
       "tags": [
@@ -2210,7 +2223,7 @@
       "color": "#DAB255"
     },
     {
-      "id": 178,
+      "id": 179,
       "title": "Ofm Ai Compliance Preflight Checklist",
       "layer": "domain",
       "tags": [
@@ -2226,7 +2239,7 @@
       "color": "#DAB255"
     },
     {
-      "id": 179,
+      "id": 180,
       "title": "OFM AI Models",
       "layer": "domain",
       "tags": [
@@ -2238,7 +2251,7 @@
       "color": "#DAB255"
     },
     {
-      "id": 180,
+      "id": 181,
       "title": "OFM Chatter Hiring",
       "layer": "domain",
       "tags": [
@@ -2250,7 +2263,7 @@
       "color": "#DAB255"
     },
     {
-      "id": 181,
+      "id": 182,
       "title": "Ofm Knowledge Base Status",
       "layer": "domain",
       "tags": [
@@ -2265,7 +2278,7 @@
       "color": "#DAB255"
     },
     {
-      "id": 182,
+      "id": 183,
       "title": "OFM Operations 2026",
       "layer": "domain",
       "tags": [
@@ -2277,7 +2290,7 @@
       "color": "#DAB255"
     },
     {
-      "id": 183,
+      "id": 184,
       "title": "Onlyfans Link Instagram",
       "layer": "domain",
       "tags": [
@@ -2289,7 +2302,7 @@
       "color": "#DAB255"
     },
     {
-      "id": 184,
+      "id": 185,
       "title": "Openclaw Hardware Copilot",
       "layer": "domain",
       "tags": [
@@ -2304,7 +2317,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 185,
+      "id": 186,
       "title": "Outline Creation Process",
       "layer": "domain",
       "tags": [
@@ -2318,19 +2331,19 @@
       "color": "#A86DBF"
     },
     {
-      "id": 186,
+      "id": 187,
       "title": "Paid Creators 250 Niches",
       "layer": "domain",
       "tags": [
         "project"
       ],
       "summary": "250 niche ideas + 8-step AI prompt (Travis Stephenson)",
-      "connections": 1,
+      "connections": 3,
       "cluster": "ofm",
       "color": "#DAB255"
     },
     {
-      "id": 187,
+      "id": 188,
       "title": "Parked Domains Google Ads Consent",
       "layer": "domain",
       "tags": [
@@ -2342,7 +2355,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 188,
+      "id": 189,
       "title": "Parts Pricing Guide",
       "layer": "domain",
       "tags": [
@@ -2356,7 +2369,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 189,
+      "id": 190,
       "title": "Pinseeker Partnership",
       "layer": "domain",
       "tags": [
@@ -2369,7 +2382,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 190,
+      "id": 191,
       "title": "Posting Frequency Strategy",
       "layer": "domain",
       "tags": [
@@ -2381,7 +2394,7 @@
       "color": "#DAB255"
     },
     {
-      "id": 191,
+      "id": 192,
       "title": "Power Independence Academy",
       "layer": "domain",
       "tags": [
@@ -2393,7 +2406,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 192,
+      "id": 193,
       "title": "Product Idea Generation",
       "layer": "domain",
       "tags": [
@@ -2405,7 +2418,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 193,
+      "id": 194,
       "title": "Profile Setup Review",
       "layer": "domain",
       "tags": [
@@ -2417,7 +2430,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 194,
+      "id": 195,
       "title": "Puerto Escondido Housing",
       "layer": "domain",
       "tags": [
@@ -2430,7 +2443,7 @@
       "color": "#6BBF6B"
     },
     {
-      "id": 195,
+      "id": 196,
       "title": "Seo Content Midjourney",
       "layer": "domain",
       "tags": [
@@ -2443,7 +2456,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 196,
+      "id": 197,
       "title": "Seo Google Ads 2023",
       "layer": "domain",
       "tags": [
@@ -2455,7 +2468,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 197,
+      "id": 198,
       "title": "Shopify Airtable Sleep Forest",
       "layer": "domain",
       "tags": [
@@ -2469,7 +2482,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 198,
+      "id": 199,
       "title": "Shopify Cli Debug Midjourney",
       "layer": "domain",
       "tags": [
@@ -2484,7 +2497,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 199,
+      "id": 200,
       "title": "Shopify Liquid Coding 2024",
       "layer": "domain",
       "tags": [
@@ -2497,7 +2510,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 200,
+      "id": 201,
       "title": "Shopify Liquid Coding",
       "layer": "domain",
       "tags": [
@@ -2510,7 +2523,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 201,
+      "id": 202,
       "title": "Shopify Sections Support",
       "layer": "domain",
       "tags": [
@@ -2524,7 +2537,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 202,
+      "id": 203,
       "title": "Sirewall Mix Design Log",
       "layer": "domain",
       "tags": [
@@ -2536,7 +2549,7 @@
       "color": "#6BBF6B"
     },
     {
-      "id": 203,
+      "id": 204,
       "title": "Strategy For Thriving",
       "layer": "domain",
       "tags": [
@@ -2548,7 +2561,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 204,
+      "id": 205,
       "title": "Trading Agent",
       "layer": "domain",
       "tags": [
@@ -2563,7 +2576,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 205,
+      "id": 206,
       "title": "Truthful Brand Voice Font",
       "layer": "domain",
       "tags": [
@@ -2575,7 +2588,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 206,
+      "id": 207,
       "title": "Tulum Atv Logo Concept",
       "layer": "domain",
       "tags": [
@@ -2589,7 +2602,7 @@
       "color": "#6BA8DA"
     },
     {
-      "id": 207,
+      "id": 208,
       "title": "Tulum Atv Safety Tips",
       "layer": "domain",
       "tags": [
@@ -2601,7 +2614,7 @@
       "color": "#6BA8DA"
     },
     {
-      "id": 208,
+      "id": 209,
       "title": "Upholstery Cleaning Pricing",
       "layer": "domain",
       "tags": [
@@ -2614,7 +2627,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 209,
+      "id": 210,
       "title": "Upholstery Cleaning System",
       "layer": "domain",
       "tags": [
@@ -2628,7 +2641,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 210,
+      "id": 211,
       "title": "Upholstery Cleaning Tone",
       "layer": "domain",
       "tags": [
@@ -2642,7 +2655,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 211,
+      "id": 212,
       "title": "Utv Pricing Luxury Resort",
       "layer": "domain",
       "tags": [
@@ -2654,7 +2667,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 212,
+      "id": 213,
       "title": "Visual Prompt Resort Visualization",
       "layer": "domain",
       "tags": [
@@ -2666,7 +2679,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 213,
+      "id": 214,
       "title": "Website Copywriter",
       "layer": "domain",
       "tags": [
@@ -2679,7 +2692,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 214,
+      "id": 215,
       "title": "X Residence Floorplan",
       "layer": "domain",
       "tags": [
@@ -2691,7 +2704,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 215,
+      "id": 216,
       "title": "Yacht Reservation Form",
       "layer": "domain",
       "tags": [
@@ -2704,7 +2717,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 216,
+      "id": 217,
       "title": "Family Birthdays",
       "layer": "entity",
       "tags": [
@@ -2716,7 +2729,7 @@
       "color": "#D9534F"
     },
     {
-      "id": 217,
+      "id": 218,
       "title": "DISC Profile",
       "layer": "entity",
       "tags": [
@@ -2728,7 +2741,7 @@
       "color": "#D9534F"
     },
     {
-      "id": 218,
+      "id": 219,
       "title": "Bergstrom Name Research",
       "layer": "entity",
       "tags": [
@@ -2742,7 +2755,7 @@
       "color": "#D9534F"
     },
     {
-      "id": 219,
+      "id": 220,
       "title": "Triad Meetings",
       "layer": "entity",
       "tags": [
@@ -2754,7 +2767,7 @@
       "color": "#D9534F"
     },
     {
-      "id": 220,
+      "id": 221,
       "title": "Agreement Review Feedback",
       "layer": "domain",
       "tags": [
@@ -2766,7 +2779,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 221,
+      "id": 222,
       "title": "Finance History",
       "layer": "domain",
       "tags": [
@@ -2780,7 +2793,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 222,
+      "id": 223,
       "title": "Legal History",
       "layer": "domain",
       "tags": [
@@ -2793,7 +2806,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 223,
+      "id": 224,
       "title": "Contrato Alquiler Subarriendo",
       "layer": "domain",
       "tags": [
@@ -2806,7 +2819,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 224,
+      "id": 225,
       "title": "Devolver Cascos Consecuencias",
       "layer": "domain",
       "tags": [
@@ -2820,7 +2833,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 225,
+      "id": 226,
       "title": "Incorporating Usa Company",
       "layer": "domain",
       "tags": [
@@ -2832,7 +2845,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 226,
+      "id": 227,
       "title": "Legalidad Arrendamiento Mexico",
       "layer": "domain",
       "tags": [
@@ -2844,7 +2857,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 227,
+      "id": 228,
       "title": "Migracion Office Hours",
       "layer": "domain",
       "tags": [
@@ -2856,7 +2869,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 228,
+      "id": 229,
       "title": "Paramar Condo Dispute",
       "layer": "domain",
       "tags": [
@@ -2868,7 +2881,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 229,
+      "id": 230,
       "title": "Profit First Method",
       "layer": "domain",
       "tags": [
@@ -2881,7 +2894,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 230,
+      "id": 231,
       "title": "Tax Exemption Correction",
       "layer": "domain",
       "tags": [
@@ -2894,7 +2907,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 231,
+      "id": 232,
       "title": "Tax Exemption Verification",
       "layer": "domain",
       "tags": [
@@ -2907,7 +2920,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 232,
+      "id": 233,
       "title": "Visa Requirements Nigerians",
       "layer": "domain",
       "tags": [
@@ -2919,7 +2932,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 233,
+      "id": 234,
       "title": "Zero Tax Jurisdictions Banking",
       "layer": "domain",
       "tags": [
@@ -2931,7 +2944,7 @@
       "color": "#A86DBF"
     },
     {
-      "id": 234,
+      "id": 235,
       "title": "Agent Skills Audit 2026 04 08",
       "layer": "skill",
       "tags": [
@@ -2946,7 +2959,7 @@
       "color": "#5BC0DE"
     },
     {
-      "id": 235,
+      "id": 236,
       "title": "Agent Skills Final Cleanup Normalization 2026 04 08",
       "layer": "skill",
       "tags": [],
@@ -2956,7 +2969,7 @@
       "color": "#5BC0DE"
     },
     {
-      "id": 236,
+      "id": 237,
       "title": "Agent Skills Final Cleanup Ui 2026 04 08",
       "layer": "skill",
       "tags": [],
@@ -2966,7 +2979,7 @@
       "color": "#5BC0DE"
     },
     {
-      "id": 237,
+      "id": 238,
       "title": "Agent Skills Merge Summary 2026 04 08",
       "layer": "skill",
       "tags": [
@@ -2981,7 +2994,7 @@
       "color": "#5BC0DE"
     },
     {
-      "id": 238,
+      "id": 239,
       "title": "Agent Skills Phase 1 Implementation 2026 04 08",
       "layer": "skill",
       "tags": [
@@ -2996,7 +3009,7 @@
       "color": "#5BC0DE"
     },
     {
-      "id": 239,
+      "id": 240,
       "title": "Agent Skills Phase 2 Implementation 2026 04 08",
       "layer": "skill",
       "tags": [
@@ -3009,7 +3022,7 @@
       "color": "#5BC0DE"
     },
     {
-      "id": 240,
+      "id": 241,
       "title": "Aitable Data Rules",
       "layer": "context",
       "tags": [
@@ -3024,7 +3037,7 @@
       "color": "#5AB8B0"
     },
     {
-      "id": 241,
+      "id": 242,
       "title": "Aitable Schema Reference",
       "layer": "context",
       "tags": [
@@ -3039,7 +3052,7 @@
       "color": "#5AB8B0"
     },
     {
-      "id": 242,
+      "id": 243,
       "title": "Alpha Prompting Outfit Reference",
       "layer": "skill",
       "tags": [
@@ -3051,7 +3064,7 @@
       "color": "#5BC0DE"
     },
     {
-      "id": 243,
+      "id": 244,
       "title": "Claude Code Deep Analysis",
       "layer": "skill",
       "tags": [
@@ -3068,7 +3081,7 @@
       "color": "#5BC0DE"
     },
     {
-      "id": 244,
+      "id": 245,
       "title": "Claude Code Improvements Index",
       "layer": "skill",
       "tags": [
@@ -3083,7 +3096,7 @@
       "color": "#5BC0DE"
     },
     {
-      "id": 245,
+      "id": 246,
       "title": "Cold Outreach Frameworks",
       "layer": "skill",
       "tags": [
@@ -3095,19 +3108,19 @@
       "color": "#5BC0DE"
     },
     {
-      "id": 246,
+      "id": 247,
       "title": "Copywriting Frameworks",
       "layer": "skill",
       "tags": [
         "resource"
       ],
       "summary": "6 core frameworks (PAS, AIDA, FAB, BAB, 4Ps, Star-Story-Solution), landing page structure, copy rules",
-      "connections": 3,
+      "connections": 2,
       "cluster": "skills",
       "color": "#5BC0DE"
     },
     {
-      "id": 247,
+      "id": 248,
       "title": "Creating Images Diffusion",
       "layer": "skill",
       "tags": [
@@ -3120,7 +3133,7 @@
       "color": "#5BC0DE"
     },
     {
-      "id": 248,
+      "id": 249,
       "title": "Discord Bot Setup Guide",
       "layer": "skill",
       "tags": [
@@ -3135,7 +3148,7 @@
       "color": "#5BC0DE"
     },
     {
-      "id": 249,
+      "id": 250,
       "title": "Ecc Audit",
       "layer": "skill",
       "tags": [
@@ -3149,7 +3162,7 @@
       "color": "#5BC0DE"
     },
     {
-      "id": 250,
+      "id": 251,
       "title": "Emotional Architecture Prompt",
       "layer": "skill",
       "tags": [
@@ -3161,7 +3174,7 @@
       "color": "#5BC0DE"
     },
     {
-      "id": 251,
+      "id": 252,
       "title": "Fanvue Agency Setup Guide",
       "layer": "skill",
       "tags": [
@@ -3176,7 +3189,7 @@
       "color": "#5BC0DE"
     },
     {
-      "id": 252,
+      "id": 253,
       "title": "Fanvue Ai Model Strategy Brief",
       "layer": "skill",
       "tags": [
@@ -3191,7 +3204,7 @@
       "color": "#5BC0DE"
     },
     {
-      "id": 253,
+      "id": 254,
       "title": "Graph Overlay Prototype 2026 04 09",
       "layer": "skill",
       "tags": [],
@@ -3201,7 +3214,7 @@
       "color": "#5BC0DE"
     },
     {
-      "id": 254,
+      "id": 255,
       "title": "Graph Overlay Spec 2026 04 09",
       "layer": "skill",
       "tags": [
@@ -3216,7 +3229,7 @@
       "color": "#5BC0DE"
     },
     {
-      "id": 255,
+      "id": 256,
       "title": "Graphify Runtime Graph Build 2026 04 09",
       "layer": "skill",
       "tags": [],
@@ -3226,17 +3239,17 @@
       "color": "#5BC0DE"
     },
     {
-      "id": 256,
+      "id": 257,
       "title": "Hack Your Agency Synthesis",
       "layer": "skill",
       "tags": [],
       "summary": "Complete, actionable synthesis of Jared Codling's \"Hack Your Agency\" Supercourse. Every framework, tactic, and concept organized into a usable playbook for conversion mastery, funnel architecture, growth hacking, and agency operations.",
-      "connections": 4,
+      "connections": 3,
       "cluster": "skills",
       "color": "#5BC0DE"
     },
     {
-      "id": 257,
+      "id": 258,
       "title": "Agency Supercourse",
       "layer": "skill",
       "tags": [
@@ -3249,7 +3262,7 @@
       "color": "#5BC0DE"
     },
     {
-      "id": 258,
+      "id": 259,
       "title": "AI Influencer Guide",
       "layer": "skill",
       "tags": [
@@ -3261,7 +3274,7 @@
       "color": "#5BC0DE"
     },
     {
-      "id": 259,
+      "id": 260,
       "title": "Kairos One Pager Seva",
       "layer": "skill",
       "tags": [
@@ -3275,7 +3288,7 @@
       "color": "#5BC0DE"
     },
     {
-      "id": 260,
+      "id": 261,
       "title": "Lagoon Wp Access",
       "layer": "domain",
       "tags": [
@@ -3283,12 +3296,12 @@
         " lagoon"
       ],
       "summary": "Lagoon Company WordPress site access and configuration",
-      "connections": 2,
+      "connections": 1,
       "cluster": "lagoon",
       "color": "#6BA8DA"
     },
     {
-      "id": 261,
+      "id": 262,
       "title": "Landing Page Playbook",
       "layer": "domain",
       "tags": [
@@ -3296,12 +3309,12 @@
         " playbook"
       ],
       "summary": "Landing page build playbook - strategies and tool stack for all businesses",
-      "connections": 0,
+      "connections": 1,
       "cluster": "business",
       "color": "#A86DBF"
     },
     {
-      "id": 262,
+      "id": 263,
       "title": "LoRA Training Guide",
       "layer": "skill",
       "tags": [
@@ -3313,7 +3326,7 @@
       "color": "#5BC0DE"
     },
     {
-      "id": 263,
+      "id": 264,
       "title": "Lora Training Prep Sop",
       "layer": "skill",
       "tags": [
@@ -3328,7 +3341,7 @@
       "color": "#5BC0DE"
     },
     {
-      "id": 264,
+      "id": 265,
       "title": "Midjourney Copy Style Fathers Day",
       "layer": "skill",
       "tags": [
@@ -3341,7 +3354,7 @@
       "color": "#5BC0DE"
     },
     {
-      "id": 265,
+      "id": 266,
       "title": "Mission Control Vs Graphify Audit 2026 04 09",
       "layer": "skill",
       "tags": [
@@ -3357,7 +3370,7 @@
       "color": "#5BC0DE"
     },
     {
-      "id": 266,
+      "id": 267,
       "title": "Naval Ravikant Almanack",
       "layer": "skill",
       "tags": [
@@ -3377,7 +3390,7 @@
       "color": "#5BC0DE"
     },
     {
-      "id": 267,
+      "id": 268,
       "title": "Offgrid Generator Guide",
       "layer": "domain",
       "tags": [
@@ -3392,7 +3405,7 @@
       "color": "#6BBF6B"
     },
     {
-      "id": 268,
+      "id": 269,
       "title": "Ofm Ai Tools Comparison",
       "layer": "domain",
       "tags": [
@@ -3407,7 +3420,7 @@
       "color": "#DAB255"
     },
     {
-      "id": 269,
+      "id": 270,
       "title": "Ofm Chatter Workflow Sop",
       "layer": "domain",
       "tags": [
@@ -3421,7 +3434,7 @@
       "color": "#DAB255"
     },
     {
-      "id": 270,
+      "id": 271,
       "title": "Openclaw Improvement Plan",
       "layer": "skill",
       "tags": [
@@ -3436,19 +3449,19 @@
       "color": "#5BC0DE"
     },
     {
-      "id": 271,
+      "id": 272,
       "title": "Paid Creators Course",
       "layer": "skill",
       "tags": [
         "resource"
       ],
       "summary": "Paid Creators course notes (Travis Stephenson)",
-      "connections": 1,
+      "connections": 2,
       "cluster": "skills",
       "color": "#5BC0DE"
     },
     {
-      "id": 272,
+      "id": 273,
       "title": "Pricing Psychology",
       "layer": "skill",
       "tags": [
@@ -3460,7 +3473,7 @@
       "color": "#5BC0DE"
     },
     {
-      "id": 273,
+      "id": 274,
       "title": "Short-Form Video Playbook",
       "layer": "skill",
       "tags": [
@@ -3472,7 +3485,7 @@
       "color": "#5BC0DE"
     },
     {
-      "id": 274,
+      "id": 275,
       "title": "Ui Skill Routing Consolidation 2026 04 08",
       "layer": "skill",
       "tags": [],
@@ -3482,7 +3495,7 @@
       "color": "#5BC0DE"
     },
     {
-      "id": 275,
+      "id": 276,
       "title": "Agent Nova (retired)",
       "layer": "context",
       "tags": [
@@ -3494,7 +3507,7 @@
       "color": "#5AB8B0"
     },
     {
-      "id": 276,
+      "id": 277,
       "title": "Auth & Proxy Setup",
       "layer": "context",
       "tags": [
@@ -3506,7 +3519,7 @@
       "color": "#5AB8B0"
     },
     {
-      "id": 277,
+      "id": 278,
       "title": "Vault Conventions",
       "layer": "context",
       "tags": [
@@ -3518,7 +3531,7 @@
       "color": "#5AB8B0"
     },
     {
-      "id": 278,
+      "id": 279,
       "title": "Cron Routing Rules",
       "layer": "context",
       "tags": [
@@ -3532,7 +3545,7 @@
       "color": "#5AB8B0"
     },
     {
-      "id": 279,
+      "id": 280,
       "title": "Design Language",
       "layer": "context",
       "tags": [
@@ -3544,7 +3557,7 @@
       "color": "#5AB8B0"
     },
     {
-      "id": 280,
+      "id": 281,
       "title": "Feature Specs",
       "layer": "context",
       "tags": [
@@ -3556,7 +3569,7 @@
       "color": "#5AB8B0"
     },
     {
-      "id": 281,
+      "id": 282,
       "title": "Integration Hub",
       "layer": "context",
       "tags": [
@@ -3568,7 +3581,7 @@
       "color": "#5AB8B0"
     },
     {
-      "id": 282,
+      "id": 283,
       "title": "Integration Map",
       "layer": "context",
       "tags": [
@@ -3580,7 +3593,7 @@
       "color": "#5AB8B0"
     },
     {
-      "id": 283,
+      "id": 284,
       "title": "System Learnings",
       "layer": "context",
       "tags": [
@@ -3592,7 +3605,7 @@
       "color": "#5AB8B0"
     },
     {
-      "id": 284,
+      "id": 285,
       "title": "Mac Setup & Privacy",
       "layer": "context",
       "tags": [
@@ -3604,7 +3617,7 @@
       "color": "#5AB8B0"
     },
     {
-      "id": 285,
+      "id": 286,
       "title": "Memory System Notes",
       "layer": "context",
       "tags": [
@@ -3616,7 +3629,7 @@
       "color": "#5AB8B0"
     },
     {
-      "id": 286,
+      "id": 287,
       "title": "Mission Control Spec",
       "layer": "context",
       "tags": [
@@ -3628,7 +3641,7 @@
       "color": "#5AB8B0"
     },
     {
-      "id": 287,
+      "id": 288,
       "title": "Openclaw Session Store Health",
       "layer": "context",
       "tags": [
@@ -3643,7 +3656,7 @@
       "color": "#5AB8B0"
     },
     {
-      "id": 288,
+      "id": 289,
       "title": "Pulse Cadence Reliability Recovery 2026 04",
       "layer": "context",
       "tags": [
@@ -3658,7 +3671,7 @@
       "color": "#5AB8B0"
     },
     {
-      "id": 289,
+      "id": 290,
       "title": "Radar Daily",
       "layer": "context",
       "tags": [
@@ -3670,7 +3683,7 @@
       "color": "#5AB8B0"
     },
     {
-      "id": 290,
+      "id": 291,
       "title": "Skill Investigation",
       "layer": "context",
       "tags": [
@@ -3682,7 +3695,7 @@
       "color": "#5AB8B0"
     },
     {
-      "id": 291,
+      "id": 292,
       "title": "Weekly Commitment State Audit 2026 04 15",
       "layer": "context",
       "tags": [
@@ -3694,19 +3707,6 @@
       "connections": 4,
       "cluster": "system",
       "color": "#5AB8B0"
-    },
-    {
-      "id": 292,
-      "title": "2026 04 08",
-      "layer": "context",
-      "tags": [
-        "brief",
-        " dream-cycle"
-      ],
-      "summary": "Dream cycle brief \u2014 April 8, 2026. Michael's workspace now has the first live Kairos Client OS install, release-notes became a formal layer, and voice-note handling got quieter by design.",
-      "connections": 0,
-      "cluster": "daily",
-      "color": "#888888"
     },
     {
       "id": 293,
@@ -3850,64 +3850,54 @@
       "connections": 2,
       "cluster": "daily",
       "color": "#888888"
+    },
+    {
+      "id": 304,
+      "title": "2026 04 23",
+      "layer": "context",
+      "tags": [],
+      "summary": "",
+      "connections": 0,
+      "cluster": "daily",
+      "color": "#888888"
     }
   ],
   "edges": [
     {
       "source": 44,
-      "target": 177
+      "target": 132
     },
     {
       "source": 44,
-      "target": 131
+      "target": 85
     },
     {
       "source": 44,
-      "target": 84
+      "target": 178
     },
     {
       "source": 44,
-      "target": 62
+      "target": 63
     },
     {
       "source": 45,
-      "target": 184
+      "target": 185
     },
     {
-      "source": 54,
-      "target": 53
+      "source": 55,
+      "target": 54
     },
     {
-      "source": 65,
+      "source": 66,
+      "target": 110
+    },
+    {
+      "source": 66,
       "target": 109
     },
     {
-      "source": 65,
-      "target": 108
-    },
-    {
-      "source": 67,
-      "target": 111
-    },
-    {
-      "source": 67,
-      "target": 246
-    },
-    {
-      "source": 67,
-      "target": 87
-    },
-    {
-      "source": 67,
-      "target": 256
-    },
-    {
-      "source": 67,
-      "target": 260
-    },
-    {
       "source": 68,
-      "target": 237
+      "target": 239
     },
     {
       "source": 68,
@@ -3915,35 +3905,19 @@
     },
     {
       "source": 69,
-      "target": 265
+      "target": 266
     },
     {
       "source": 69,
-      "target": 254
+      "target": 255
     },
     {
       "source": 69,
-      "target": 239
+      "target": 240
     },
     {
       "source": 70,
-      "target": 254
-    },
-    {
-      "source": 72,
-      "target": 84
-    },
-    {
-      "source": 72,
-      "target": 178
-    },
-    {
-      "source": 72,
-      "target": 83
-    },
-    {
-      "source": 72,
-      "target": 87
+      "target": 255
     },
     {
       "source": 72,
@@ -3951,471 +3925,423 @@
     },
     {
       "source": 72,
-      "target": 157
+      "target": 179
     },
     {
       "source": 72,
-      "target": 172
+      "target": 158
+    },
+    {
+      "source": 72,
+      "target": 88
+    },
+    {
+      "source": 72,
+      "target": 86
+    },
+    {
+      "source": 72,
+      "target": 173
+    },
+    {
+      "source": 72,
+      "target": 84
     },
     {
       "source": 74,
-      "target": 256
+      "target": 257
     },
     {
       "source": 75,
-      "target": 84
-    },
-    {
-      "source": 75,
-      "target": 111
-    },
-    {
-      "source": 75,
-      "target": 247
-    },
-    {
-      "source": 77,
-      "target": 82
-    },
-    {
-      "source": 77,
-      "target": 109
-    },
-    {
-      "source": 77,
-      "target": 84
-    },
-    {
-      "source": 77,
-      "target": 223
-    },
-    {
-      "source": 78,
-      "target": 84
-    },
-    {
-      "source": 78,
-      "target": 92
-    },
-    {
-      "source": 79,
-      "target": 117
-    },
-    {
-      "source": 79,
-      "target": 173
-    },
-    {
-      "source": 79,
-      "target": 82
-    },
-    {
-      "source": 79,
-      "target": 118
-    },
-    {
-      "source": 79,
-      "target": 126
-    },
-    {
-      "source": 79,
-      "target": 108
-    },
-    {
-      "source": 80,
-      "target": 84
-    },
-    {
-      "source": 80,
-      "target": 133
-    },
-    {
-      "source": 80,
-      "target": 173
-    },
-    {
-      "source": 80,
-      "target": 110
-    },
-    {
-      "source": 80,
-      "target": 214
-    },
-    {
-      "source": 80,
-      "target": 82
-    },
-    {
-      "source": 80,
-      "target": 111
-    },
-    {
-      "source": 81,
-      "target": 84
-    },
-    {
-      "source": 81,
       "target": 112
     },
     {
-      "source": 81,
+      "source": 75,
+      "target": 85
+    },
+    {
+      "source": 75,
+      "target": 248
+    },
+    {
+      "source": 77,
+      "target": 224
+    },
+    {
+      "source": 77,
+      "target": 85
+    },
+    {
+      "source": 77,
+      "target": 83
+    },
+    {
+      "source": 77,
       "target": 110
     },
     {
-      "source": 81,
-      "target": 247
+      "source": 78,
+      "target": 85
     },
     {
-      "source": 81,
-      "target": 82
+      "source": 78,
+      "target": 93
     },
     {
-      "source": 81,
-      "target": 126
-    },
-    {
-      "source": 82,
-      "target": 194
-    },
-    {
-      "source": 82,
-      "target": 175
-    },
-    {
-      "source": 82,
-      "target": 105
-    },
-    {
-      "source": 82,
-      "target": 109
-    },
-    {
-      "source": 82,
-      "target": 115
-    },
-    {
-      "source": 82,
-      "target": 167
-    },
-    {
-      "source": 82,
-      "target": 122
-    },
-    {
-      "source": 82,
-      "target": 110
-    },
-    {
-      "source": 82,
-      "target": 106
-    },
-    {
-      "source": 82,
-      "target": 174
-    },
-    {
-      "source": 82,
-      "target": 212
-    },
-    {
-      "source": 82,
-      "target": 131
-    },
-    {
-      "source": 82,
+      "source": 79,
       "target": 118
     },
     {
-      "source": 82,
-      "target": 116
+      "source": 79,
+      "target": 83
     },
     {
-      "source": 82,
-      "target": 267
+      "source": 79,
+      "target": 127
     },
     {
-      "source": 82,
-      "target": 117
+      "source": 79,
+      "target": 119
     },
     {
-      "source": 82,
-      "target": 173
+      "source": 79,
+      "target": 174
     },
     {
-      "source": 82,
-      "target": 128
+      "source": 79,
+      "target": 109
     },
     {
-      "source": 82,
-      "target": 214
+      "source": 80,
+      "target": 85
     },
     {
-      "source": 82,
-      "target": 166
+      "source": 80,
+      "target": 215
     },
     {
-      "source": 82,
+      "source": 80,
+      "target": 83
+    },
+    {
+      "source": 80,
+      "target": 112
+    },
+    {
+      "source": 80,
+      "target": 111
+    },
+    {
+      "source": 80,
+      "target": 134
+    },
+    {
+      "source": 80,
+      "target": 174
+    },
+    {
+      "source": 81,
+      "target": 85
+    },
+    {
+      "source": 81,
+      "target": 83
+    },
+    {
+      "source": 81,
+      "target": 127
+    },
+    {
+      "source": 81,
+      "target": 248
+    },
+    {
+      "source": 81,
+      "target": 111
+    },
+    {
+      "source": 81,
       "target": 113
     },
     {
       "source": 82,
-      "target": 126
-    },
-    {
-      "source": 82,
-      "target": 108
+      "target": 187
     },
     {
       "source": 83,
-      "target": 265
+      "target": 132
     },
     {
       "source": 83,
+      "target": 123
+    },
+    {
+      "source": 83,
+      "target": 129
+    },
+    {
+      "source": 83,
+      "target": 114
+    },
+    {
+      "source": 83,
+      "target": 118
+    },
+    {
+      "source": 83,
+      "target": 127
+    },
+    {
+      "source": 83,
+      "target": 268
+    },
+    {
+      "source": 83,
+      "target": 106
+    },
+    {
+      "source": 83,
+      "target": 195
+    },
+    {
+      "source": 83,
+      "target": 107
+    },
+    {
+      "source": 83,
+      "target": 167
+    },
+    {
+      "source": 83,
+      "target": 175
+    },
+    {
+      "source": 83,
+      "target": 111
+    },
+    {
+      "source": 83,
+      "target": 168
+    },
+    {
+      "source": 83,
+      "target": 116
+    },
+    {
+      "source": 83,
+      "target": 176
+    },
+    {
+      "source": 83,
+      "target": 174
+    },
+    {
+      "source": 83,
+      "target": 110
+    },
+    {
+      "source": 83,
+      "target": 215
+    },
+    {
+      "source": 83,
+      "target": 119
+    },
+    {
+      "source": 83,
+      "target": 117
+    },
+    {
+      "source": 83,
+      "target": 213
+    },
+    {
+      "source": 83,
+      "target": 109
+    },
+    {
+      "source": 84,
       "target": 170
     },
     {
-      "source": 83,
+      "source": 84,
+      "target": 255
+    },
+    {
+      "source": 84,
       "target": 171
     },
     {
-      "source": 83,
-      "target": 253
+      "source": 84,
+      "target": 266
     },
     {
-      "source": 83,
-      "target": 169
-    },
-    {
-      "source": 83,
-      "target": 204
-    },
-    {
-      "source": 83,
-      "target": 136
-    },
-    {
-      "source": 83,
-      "target": 172
-    },
-    {
-      "source": 83,
-      "target": 121
-    },
-    {
-      "source": 83,
-      "target": 63
-    },
-    {
-      "source": 83,
-      "target": 287
-    },
-    {
-      "source": 83,
-      "target": 45
-    },
-    {
-      "source": 83,
-      "target": 88
-    },
-    {
-      "source": 83,
-      "target": 184
-    },
-    {
-      "source": 83,
-      "target": 248
-    },
-    {
-      "source": 83,
-      "target": 52
-    },
-    {
-      "source": 83,
-      "target": 138
-    },
-    {
-      "source": 83,
+      "source": 84,
       "target": 254
     },
     {
-      "source": 83,
-      "target": 144
+      "source": 84,
+      "target": 89
     },
     {
-      "source": 83,
+      "source": 84,
+      "target": 172
+    },
+    {
+      "source": 84,
+      "target": 289
+    },
+    {
+      "source": 84,
+      "target": 185
+    },
+    {
+      "source": 84,
+      "target": 139
+    },
+    {
+      "source": 84,
+      "target": 45
+    },
+    {
+      "source": 84,
+      "target": 145
+    },
+    {
+      "source": 84,
+      "target": 53
+    },
+    {
+      "source": 84,
+      "target": 249
+    },
+    {
+      "source": 84,
+      "target": 64
+    },
+    {
+      "source": 84,
+      "target": 205
+    },
+    {
+      "source": 84,
       "target": 288
     },
     {
       "source": 84,
-      "target": 152
+      "target": 137
     },
     {
       "source": 84,
-      "target": 215
+      "target": 173
     },
     {
       "source": 84,
-      "target": 130
+      "target": 122
     },
     {
-      "source": 84,
-      "target": 156
+      "source": 85,
+      "target": 103
     },
     {
-      "source": 84,
+      "source": 85,
+      "target": 151
+    },
+    {
+      "source": 85,
       "target": 159
     },
     {
-      "source": 84,
-      "target": 99
+      "source": 85,
+      "target": 208
     },
     {
-      "source": 84,
-      "target": 153
+      "source": 85,
+      "target": 189
     },
     {
-      "source": 84,
-      "target": 146
-    },
-    {
-      "source": 84,
-      "target": 206
-    },
-    {
-      "source": 84,
-      "target": 150
-    },
-    {
-      "source": 84,
+      "source": 85,
       "target": 147
     },
     {
-      "source": 84,
-      "target": 149
-    },
-    {
-      "source": 84,
-      "target": 102
-    },
-    {
-      "source": 84,
-      "target": 211
-    },
-    {
-      "source": 84,
-      "target": 188
-    },
-    {
-      "source": 84,
-      "target": 132
-    },
-    {
-      "source": 84,
-      "target": 165
-    },
-    {
-      "source": 84,
+      "source": 85,
       "target": 164
     },
     {
-      "source": 84,
+      "source": 85,
       "target": 148
     },
     {
-      "source": 84,
-      "target": 155
+      "source": 85,
+      "target": 131
     },
     {
-      "source": 84,
-      "target": 223
-    },
-    {
-      "source": 84,
-      "target": 111
-    },
-    {
-      "source": 84,
-      "target": 158
-    },
-    {
-      "source": 84,
-      "target": 101
-    },
-    {
-      "source": 84,
-      "target": 107
-    },
-    {
-      "source": 84,
-      "target": 162
-    },
-    {
-      "source": 84,
+      "source": 85,
       "target": 157
     },
     {
-      "source": 84,
-      "target": 163
+      "source": 85,
+      "target": 216
     },
     {
-      "source": 84,
+      "source": 85,
       "target": 207
     },
     {
       "source": 85,
-      "target": 182
+      "target": 160
     },
     {
       "source": 85,
-      "target": 186
+      "target": 149
     },
     {
       "source": 85,
-      "target": 178
+      "target": 165
     },
     {
       "source": 85,
-      "target": 190
+      "target": 163
     },
     {
       "source": 85,
-      "target": 183
+      "target": 158
     },
     {
       "source": 85,
-      "target": 269
+      "target": 112
     },
     {
       "source": 85,
-      "target": 258
+      "target": 212
     },
     {
       "source": 85,
-      "target": 95
+      "target": 153
     },
     {
       "source": 85,
-      "target": 97
+      "target": 154
     },
     {
       "source": 85,
-      "target": 87
+      "target": 108
     },
     {
       "source": 85,
-      "target": 251
+      "target": 100
     },
     {
       "source": 85,
-      "target": 263
+      "target": 224
     },
     {
       "source": 85,
-      "target": 98
+      "target": 156
     },
     {
       "source": 85,
-      "target": 177
+      "target": 102
     },
     {
       "source": 85,
@@ -4423,27 +4349,47 @@
     },
     {
       "source": 85,
+      "target": 166
+    },
+    {
+      "source": 85,
+      "target": 150
+    },
+    {
+      "source": 86,
+      "target": 99
+    },
+    {
+      "source": 86,
+      "target": 97
+    },
+    {
+      "source": 86,
+      "target": 98
+    },
+    {
+      "source": 86,
+      "target": 187
+    },
+    {
+      "source": 86,
+      "target": 252
+    },
+    {
+      "source": 86,
+      "target": 263
+    },
+    {
+      "source": 86,
       "target": 94
     },
     {
-      "source": 85,
-      "target": 262
+      "source": 86,
+      "target": 194
     },
     {
-      "source": 85,
-      "target": 93
-    },
-    {
-      "source": 85,
-      "target": 193
-    },
-    {
-      "source": 85,
-      "target": 96
-    },
-    {
-      "source": 85,
-      "target": 271
+      "source": 86,
+      "target": 178
     },
     {
       "source": 86,
@@ -4451,771 +4397,835 @@
     },
     {
       "source": 86,
-      "target": 91
-    },
-    {
-      "source": 86,
-      "target": 92
-    },
-    {
-      "source": 86,
-      "target": 125
-    },
-    {
-      "source": 86,
-      "target": 90
-    },
-    {
-      "source": 86,
-      "target": 124
-    },
-    {
-      "source": 87,
-      "target": 152
-    },
-    {
-      "source": 87,
-      "target": 178
-    },
-    {
-      "source": 87,
-      "target": 265
-    },
-    {
-      "source": 87,
-      "target": 170
-    },
-    {
-      "source": 87,
-      "target": 171
-    },
-    {
-      "source": 87,
-      "target": 253
-    },
-    {
-      "source": 87,
-      "target": 95
-    },
-    {
-      "source": 87,
-      "target": 156
-    },
-    {
-      "source": 87,
-      "target": 169
-    },
-    {
-      "source": 87,
-      "target": 204
-    },
-    {
-      "source": 87,
-      "target": 136
-    },
-    {
-      "source": 87,
       "target": 96
     },
     {
-      "source": 87,
-      "target": 172
+      "source": 86,
+      "target": 264
     },
     {
-      "source": 87,
-      "target": 153
-    },
-    {
-      "source": 87,
-      "target": 121
-    },
-    {
-      "source": 87,
-      "target": 98
-    },
-    {
-      "source": 87,
-      "target": 94
-    },
-    {
-      "source": 87,
-      "target": 155
-    },
-    {
-      "source": 87,
-      "target": 93
-    },
-    {
-      "source": 87,
-      "target": 157
-    },
-    {
-      "source": 87,
-      "target": 254
-    },
-    {
-      "source": 87,
-      "target": 288
-    },
-    {
-      "source": 87,
-      "target": 97
-    },
-    {
-      "source": 87,
-      "target": 291
-    },
-    {
-      "source": 90,
-      "target": 92
-    },
-    {
-      "source": 93,
+      "source": 86,
       "target": 95
     },
     {
-      "source": 93,
-      "target": 98
+      "source": 86,
+      "target": 88
     },
     {
-      "source": 94,
-      "target": 95
+      "source": 86,
+      "target": 270
     },
     {
-      "source": 94,
-      "target": 93
+      "source": 86,
+      "target": 134
     },
     {
-      "source": 94,
-      "target": 178
+      "source": 86,
+      "target": 179
     },
     {
-      "source": 95,
-      "target": 177
+      "source": 86,
+      "target": 259
     },
     {
-      "source": 96,
-      "target": 98
+      "source": 86,
+      "target": 183
     },
     {
-      "source": 96,
-      "target": 178
+      "source": 86,
+      "target": 272
     },
     {
-      "source": 96,
-      "target": 94
-    },
-    {
-      "source": 97,
-      "target": 95
-    },
-    {
-      "source": 97,
-      "target": 178
-    },
-    {
-      "source": 97,
-      "target": 94
-    },
-    {
-      "source": 97,
-      "target": 98
-    },
-    {
-      "source": 97,
-      "target": 96
-    },
-    {
-      "source": 98,
-      "target": 95
-    },
-    {
-      "source": 98,
-      "target": 177
-    },
-    {
-      "source": 105,
-      "target": 173
-    },
-    {
-      "source": 105,
-      "target": 126
-    },
-    {
-      "source": 108,
-      "target": 109
-    },
-    {
-      "source": 110,
-      "target": 212
-    },
-    {
-      "source": 110,
-      "target": 131
-    },
-    {
-      "source": 110,
-      "target": 84
-    },
-    {
-      "source": 112,
-      "target": 257
-    },
-    {
-      "source": 112,
-      "target": 177
-    },
-    {
-      "source": 121,
-      "target": 139
-    },
-    {
-      "source": 126,
-      "target": 173
-    },
-    {
-      "source": 126,
-      "target": 110
-    },
-    {
-      "source": 130,
-      "target": 111
-    },
-    {
-      "source": 131,
-      "target": 117
-    },
-    {
-      "source": 131,
-      "target": 118
-    },
-    {
-      "source": 131,
-      "target": 108
-    },
-    {
-      "source": 136,
-      "target": 171
-    },
-    {
-      "source": 147,
-      "target": 223
-    },
-    {
-      "source": 152,
-      "target": 153
-    },
-    {
-      "source": 152,
-      "target": 155
-    },
-    {
-      "source": 156,
-      "target": 152
-    },
-    {
-      "source": 156,
-      "target": 155
-    },
-    {
-      "source": 156,
-      "target": 157
-    },
-    {
-      "source": 157,
-      "target": 152
-    },
-    {
-      "source": 157,
-      "target": 155
-    },
-    {
-      "source": 157,
-      "target": 153
-    },
-    {
-      "source": 158,
-      "target": 147
-    },
-    {
-      "source": 158,
-      "target": 152
-    },
-    {
-      "source": 158,
-      "target": 159
-    },
-    {
-      "source": 159,
-      "target": 260
-    },
-    {
-      "source": 159,
-      "target": 111
-    },
-    {
-      "source": 169,
-      "target": 171
-    },
-    {
-      "source": 170,
-      "target": 172
-    },
-    {
-      "source": 170,
-      "target": 136
-    },
-    {
-      "source": 170,
-      "target": 169
-    },
-    {
-      "source": 171,
-      "target": 172
-    },
-    {
-      "source": 172,
-      "target": 169
-    },
-    {
-      "source": 173,
-      "target": 110
-    },
-    {
-      "source": 178,
-      "target": 95
-    },
-    {
-      "source": 178,
-      "target": 98
-    },
-    {
-      "source": 178,
-      "target": 93
-    },
-    {
-      "source": 178,
-      "target": 177
-    },
-    {
-      "source": 184,
-      "target": 33
-    },
-    {
-      "source": 184,
-      "target": 136
-    },
-    {
-      "source": 184,
-      "target": 265
-    },
-    {
-      "source": 184,
-      "target": 254
-    },
-    {
-      "source": 195,
-      "target": 269
-    },
-    {
-      "source": 205,
-      "target": 112
-    },
-    {
-      "source": 207,
-      "target": 111
-    },
-    {
-      "source": 211,
-      "target": 82
-    },
-    {
-      "source": 211,
-      "target": 126
-    },
-    {
-      "source": 211,
-      "target": 22
-    },
-    {
-      "source": 212,
-      "target": 214
-    },
-    {
-      "source": 212,
-      "target": 173
-    },
-    {
-      "source": 223,
-      "target": 111
-    },
-    {
-      "source": 232,
-      "target": 222
-    },
-    {
-      "source": 234,
-      "target": 237
-    },
-    {
-      "source": 234,
-      "target": 236
-    },
-    {
-      "source": 234,
-      "target": 239
-    },
-    {
-      "source": 234,
-      "target": 238
-    },
-    {
-      "source": 234,
-      "target": 235
-    },
-    {
-      "source": 235,
-      "target": 236
-    },
-    {
-      "source": 235,
-      "target": 239
-    },
-    {
-      "source": 235,
-      "target": 238
-    },
-    {
-      "source": 236,
-      "target": 274
-    },
-    {
-      "source": 236,
-      "target": 237
-    },
-    {
-      "source": 237,
-      "target": 239
-    },
-    {
-      "source": 237,
-      "target": 238
-    },
-    {
-      "source": 237,
-      "target": 235
-    },
-    {
-      "source": 238,
-      "target": 236
-    },
-    {
-      "source": 238,
-      "target": 239
-    },
-    {
-      "source": 238,
-      "target": 274
-    },
-    {
-      "source": 250,
-      "target": 247
-    },
-    {
-      "source": 253,
-      "target": 265
-    },
-    {
-      "source": 253,
-      "target": 255
-    },
-    {
-      "source": 253,
-      "target": 254
-    },
-    {
-      "source": 255,
-      "target": 265
-    },
-    {
-      "source": 256,
-      "target": 257
-    },
-    {
-      "source": 256,
-      "target": 246
-    },
-    {
-      "source": 257,
-      "target": 246
-    },
-    {
-      "source": 257,
-      "target": 87
-    },
-    {
-      "source": 265,
-      "target": 144
-    },
-    {
-      "source": 265,
-      "target": 254
-    },
-    {
-      "source": 267,
-      "target": 65
-    },
-    {
-      "source": 267,
-      "target": 175
-    },
-    {
-      "source": 274,
-      "target": 234
-    },
-    {
-      "source": 287,
-      "target": 288
-    },
-    {
-      "source": 288,
-      "target": 136
-    },
-    {
-      "source": 288,
-      "target": 291
-    },
-    {
-      "source": 293,
-      "target": 95
-    },
-    {
-      "source": 293,
-      "target": 171
-    },
-    {
-      "source": 293,
-      "target": 155
-    },
-    {
-      "source": 293,
-      "target": 153
-    },
-    {
-      "source": 294,
-      "target": 95
-    },
-    {
-      "source": 294,
-      "target": 152
-    },
-    {
-      "source": 294,
-      "target": 169
-    },
-    {
-      "source": 294,
-      "target": 155
-    },
-    {
-      "source": 294,
-      "target": 98
-    },
-    {
-      "source": 294,
-      "target": 171
-    },
-    {
-      "source": 294,
-      "target": 93
-    },
-    {
-      "source": 294,
-      "target": 153
-    },
-    {
-      "source": 295,
-      "target": 83
-    },
-    {
-      "source": 295,
-      "target": 87
-    },
-    {
-      "source": 295,
-      "target": 54
-    },
-    {
-      "source": 295,
-      "target": 136
-    },
-    {
-      "source": 296,
-      "target": 84
-    },
-    {
-      "source": 296,
-      "target": 178
-    },
-    {
-      "source": 296,
-      "target": 83
-    },
-    {
-      "source": 296,
-      "target": 87
-    },
-    {
-      "source": 296,
-      "target": 171
-    },
-    {
-      "source": 296,
-      "target": 85
-    },
-    {
-      "source": 296,
-      "target": 157
-    },
-    {
-      "source": 296,
-      "target": 172
-    },
-    {
-      "source": 297,
-      "target": 83
-    },
-    {
-      "source": 297,
-      "target": 87
-    },
-    {
-      "source": 297,
-      "target": 52
-    },
-    {
-      "source": 298,
-      "target": 84
-    },
-    {
-      "source": 298,
-      "target": 156
-    },
-    {
-      "source": 298,
-      "target": 94
-    },
-    {
-      "source": 298,
-      "target": 170
-    },
-    {
-      "source": 298,
-      "target": 83
-    },
-    {
-      "source": 298,
-      "target": 87
-    },
-    {
-      "source": 298,
-      "target": 85
-    },
-    {
-      "source": 298,
-      "target": 121
-    },
-    {
-      "source": 298,
-      "target": 96
-    },
-    {
-      "source": 299,
-      "target": 170
-    },
-    {
-      "source": 299,
-      "target": 83
-    },
-    {
-      "source": 299,
-      "target": 87
-    },
-    {
-      "source": 299,
-      "target": 288
-    },
-    {
-      "source": 299,
-      "target": 291
-    },
-    {
-      "source": 300,
-      "target": 83
-    },
-    {
-      "source": 300,
-      "target": 87
-    },
-    {
-      "source": 300,
-      "target": 85
-    },
-    {
-      "source": 300,
-      "target": 288
-    },
-    {
-      "source": 300,
-      "target": 97
-    },
-    {
-      "source": 300,
-      "target": 291
-    },
-    {
-      "source": 301,
-      "target": 287
-    },
-    {
-      "source": 301,
-      "target": 83
-    },
-    {
-      "source": 301,
-      "target": 87
-    },
-    {
-      "source": 301,
-      "target": 288
-    },
-    {
-      "source": 302,
-      "target": 287
-    },
-    {
-      "source": 302,
-      "target": 83
-    },
-    {
-      "source": 302,
-      "target": 87
-    },
-    {
-      "source": 302,
-      "target": 288
-    },
-    {
-      "source": 302,
+      "source": 86,
       "target": 184
     },
     {
-      "source": 303,
+      "source": 87,
+      "target": 192
+    },
+    {
+      "source": 87,
+      "target": 93
+    },
+    {
+      "source": 87,
+      "target": 126
+    },
+    {
+      "source": 87,
+      "target": 125
+    },
+    {
+      "source": 87,
+      "target": 92
+    },
+    {
+      "source": 87,
+      "target": 91
+    },
+    {
+      "source": 88,
+      "target": 99
+    },
+    {
+      "source": 88,
+      "target": 170
+    },
+    {
+      "source": 88,
+      "target": 97
+    },
+    {
+      "source": 88,
+      "target": 98
+    },
+    {
+      "source": 88,
+      "target": 255
+    },
+    {
+      "source": 88,
+      "target": 171
+    },
+    {
+      "source": 88,
+      "target": 266
+    },
+    {
+      "source": 88,
+      "target": 254
+    },
+    {
+      "source": 88,
+      "target": 94
+    },
+    {
+      "source": 88,
+      "target": 172
+    },
+    {
+      "source": 88,
+      "target": 289
+    },
+    {
+      "source": 88,
+      "target": 96
+    },
+    {
+      "source": 88,
+      "target": 95
+    },
+    {
+      "source": 88,
+      "target": 157
+    },
+    {
+      "source": 88,
+      "target": 158
+    },
+    {
+      "source": 88,
+      "target": 292
+    },
+    {
+      "source": 88,
+      "target": 154
+    },
+    {
+      "source": 88,
+      "target": 156
+    },
+    {
+      "source": 88,
+      "target": 179
+    },
+    {
+      "source": 88,
+      "target": 205
+    },
+    {
+      "source": 88,
+      "target": 137
+    },
+    {
+      "source": 88,
+      "target": 173
+    },
+    {
+      "source": 88,
+      "target": 122
+    },
+    {
+      "source": 88,
+      "target": 153
+    },
+    {
+      "source": 91,
+      "target": 93
+    },
+    {
+      "source": 94,
+      "target": 99
+    },
+    {
+      "source": 94,
+      "target": 96
+    },
+    {
+      "source": 95,
+      "target": 96
+    },
+    {
+      "source": 95,
+      "target": 94
+    },
+    {
+      "source": 95,
+      "target": 179
+    },
+    {
+      "source": 96,
+      "target": 178
+    },
+    {
+      "source": 97,
+      "target": 95
+    },
+    {
+      "source": 97,
+      "target": 99
+    },
+    {
+      "source": 97,
+      "target": 179
+    },
+    {
+      "source": 98,
+      "target": 99
+    },
+    {
+      "source": 98,
+      "target": 179
+    },
+    {
+      "source": 98,
+      "target": 97
+    },
+    {
+      "source": 98,
+      "target": 96
+    },
+    {
+      "source": 98,
+      "target": 95
+    },
+    {
+      "source": 99,
+      "target": 96
+    },
+    {
+      "source": 99,
+      "target": 178
+    },
+    {
+      "source": 100,
+      "target": 22
+    },
+    {
+      "source": 106,
+      "target": 174
+    },
+    {
+      "source": 106,
+      "target": 127
+    },
+    {
+      "source": 109,
+      "target": 110
+    },
+    {
+      "source": 111,
+      "target": 132
+    },
+    {
+      "source": 111,
+      "target": 85
+    },
+    {
+      "source": 111,
+      "target": 213
+    },
+    {
+      "source": 113,
+      "target": 178
+    },
+    {
+      "source": 113,
+      "target": 258
+    },
+    {
+      "source": 122,
+      "target": 140
+    },
+    {
+      "source": 127,
+      "target": 174
+    },
+    {
+      "source": 127,
+      "target": 111
+    },
+    {
+      "source": 131,
+      "target": 112
+    },
+    {
+      "source": 132,
+      "target": 118
+    },
+    {
+      "source": 132,
+      "target": 119
+    },
+    {
+      "source": 132,
+      "target": 109
+    },
+    {
+      "source": 137,
+      "target": 172
+    },
+    {
+      "source": 148,
+      "target": 224
+    },
+    {
+      "source": 153,
+      "target": 156
+    },
+    {
+      "source": 153,
+      "target": 154
+    },
+    {
+      "source": 157,
+      "target": 158
+    },
+    {
+      "source": 157,
+      "target": 156
+    },
+    {
+      "source": 157,
+      "target": 153
+    },
+    {
+      "source": 158,
+      "target": 156
+    },
+    {
+      "source": 158,
+      "target": 154
+    },
+    {
+      "source": 158,
+      "target": 153
+    },
+    {
+      "source": 159,
+      "target": 148
+    },
+    {
+      "source": 159,
+      "target": 153
+    },
+    {
+      "source": 159,
+      "target": 160
+    },
+    {
+      "source": 160,
+      "target": 261
+    },
+    {
+      "source": 160,
+      "target": 112
+    },
+    {
+      "source": 166,
+      "target": 262
+    },
+    {
+      "source": 166,
+      "target": 157
+    },
+    {
+      "source": 170,
+      "target": 172
+    },
+    {
+      "source": 171,
+      "target": 137
+    },
+    {
+      "source": 171,
+      "target": 170
+    },
+    {
+      "source": 171,
+      "target": 173
+    },
+    {
+      "source": 172,
+      "target": 173
+    },
+    {
+      "source": 173,
+      "target": 170
+    },
+    {
+      "source": 174,
+      "target": 111
+    },
+    {
+      "source": 179,
+      "target": 96
+    },
+    {
+      "source": 179,
+      "target": 99
+    },
+    {
+      "source": 179,
+      "target": 94
+    },
+    {
+      "source": 179,
+      "target": 178
+    },
+    {
+      "source": 185,
+      "target": 33
+    },
+    {
+      "source": 185,
+      "target": 137
+    },
+    {
+      "source": 185,
+      "target": 255
+    },
+    {
+      "source": 185,
+      "target": 266
+    },
+    {
+      "source": 196,
+      "target": 270
+    },
+    {
+      "source": 206,
+      "target": 113
+    },
+    {
+      "source": 208,
+      "target": 112
+    },
+    {
+      "source": 212,
       "target": 83
     },
     {
+      "source": 212,
+      "target": 127
+    },
+    {
+      "source": 212,
+      "target": 22
+    },
+    {
+      "source": 213,
+      "target": 215
+    },
+    {
+      "source": 213,
+      "target": 174
+    },
+    {
+      "source": 224,
+      "target": 112
+    },
+    {
+      "source": 233,
+      "target": 223
+    },
+    {
+      "source": 235,
+      "target": 239
+    },
+    {
+      "source": 235,
+      "target": 240
+    },
+    {
+      "source": 235,
+      "target": 238
+    },
+    {
+      "source": 235,
+      "target": 237
+    },
+    {
+      "source": 235,
+      "target": 236
+    },
+    {
+      "source": 236,
+      "target": 240
+    },
+    {
+      "source": 236,
+      "target": 239
+    },
+    {
+      "source": 236,
+      "target": 237
+    },
+    {
+      "source": 237,
+      "target": 275
+    },
+    {
+      "source": 237,
+      "target": 238
+    },
+    {
+      "source": 238,
+      "target": 239
+    },
+    {
+      "source": 238,
+      "target": 240
+    },
+    {
+      "source": 238,
+      "target": 236
+    },
+    {
+      "source": 239,
+      "target": 237
+    },
+    {
+      "source": 239,
+      "target": 275
+    },
+    {
+      "source": 239,
+      "target": 240
+    },
+    {
+      "source": 251,
+      "target": 248
+    },
+    {
+      "source": 254,
+      "target": 266
+    },
+    {
+      "source": 254,
+      "target": 255
+    },
+    {
+      "source": 254,
+      "target": 256
+    },
+    {
+      "source": 256,
+      "target": 266
+    },
+    {
+      "source": 257,
+      "target": 247
+    },
+    {
+      "source": 257,
+      "target": 258
+    },
+    {
+      "source": 258,
+      "target": 247
+    },
+    {
+      "source": 258,
+      "target": 88
+    },
+    {
+      "source": 266,
+      "target": 255
+    },
+    {
+      "source": 266,
+      "target": 145
+    },
+    {
+      "source": 268,
+      "target": 176
+    },
+    {
+      "source": 268,
+      "target": 66
+    },
+    {
+      "source": 272,
+      "target": 187
+    },
+    {
+      "source": 275,
+      "target": 235
+    },
+    {
+      "source": 288,
+      "target": 289
+    },
+    {
+      "source": 289,
+      "target": 137
+    },
+    {
+      "source": 289,
+      "target": 292
+    },
+    {
+      "source": 293,
+      "target": 156
+    },
+    {
+      "source": 293,
+      "target": 96
+    },
+    {
+      "source": 293,
+      "target": 154
+    },
+    {
+      "source": 293,
+      "target": 172
+    },
+    {
+      "source": 294,
+      "target": 156
+    },
+    {
+      "source": 294,
+      "target": 99
+    },
+    {
+      "source": 294,
+      "target": 170
+    },
+    {
+      "source": 294,
+      "target": 96
+    },
+    {
+      "source": 294,
+      "target": 154
+    },
+    {
+      "source": 294,
+      "target": 94
+    },
+    {
+      "source": 294,
+      "target": 172
+    },
+    {
+      "source": 294,
+      "target": 153
+    },
+    {
+      "source": 295,
+      "target": 137
+    },
+    {
+      "source": 295,
+      "target": 55
+    },
+    {
+      "source": 295,
+      "target": 88
+    },
+    {
+      "source": 295,
+      "target": 84
+    },
+    {
+      "source": 296,
+      "target": 85
+    },
+    {
+      "source": 296,
+      "target": 179
+    },
+    {
+      "source": 296,
+      "target": 158
+    },
+    {
+      "source": 296,
+      "target": 88
+    },
+    {
+      "source": 296,
+      "target": 86
+    },
+    {
+      "source": 296,
+      "target": 173
+    },
+    {
+      "source": 296,
+      "target": 172
+    },
+    {
+      "source": 296,
+      "target": 84
+    },
+    {
+      "source": 297,
+      "target": 53
+    },
+    {
+      "source": 297,
+      "target": 88
+    },
+    {
+      "source": 297,
+      "target": 84
+    },
+    {
+      "source": 298,
+      "target": 85
+    },
+    {
+      "source": 298,
+      "target": 97
+    },
+    {
+      "source": 298,
+      "target": 171
+    },
+    {
+      "source": 298,
+      "target": 88
+    },
+    {
+      "source": 298,
+      "target": 95
+    },
+    {
+      "source": 298,
+      "target": 157
+    },
+    {
+      "source": 298,
+      "target": 86
+    },
+    {
+      "source": 298,
+      "target": 122
+    },
+    {
+      "source": 298,
+      "target": 84
+    },
+    {
+      "source": 299,
+      "target": 289
+    },
+    {
+      "source": 299,
+      "target": 88
+    },
+    {
+      "source": 299,
+      "target": 171
+    },
+    {
+      "source": 299,
+      "target": 292
+    },
+    {
+      "source": 299,
+      "target": 84
+    },
+    {
+      "source": 300,
+      "target": 289
+    },
+    {
+      "source": 300,
+      "target": 98
+    },
+    {
+      "source": 300,
+      "target": 88
+    },
+    {
+      "source": 300,
+      "target": 292
+    },
+    {
+      "source": 300,
+      "target": 86
+    },
+    {
+      "source": 300,
+      "target": 84
+    },
+    {
+      "source": 301,
+      "target": 289
+    },
+    {
+      "source": 301,
+      "target": 288
+    },
+    {
+      "source": 301,
+      "target": 88
+    },
+    {
+      "source": 301,
+      "target": 84
+    },
+    {
+      "source": 302,
+      "target": 289
+    },
+    {
+      "source": 302,
+      "target": 288
+    },
+    {
+      "source": 302,
+      "target": 185
+    },
+    {
+      "source": 302,
+      "target": 88
+    },
+    {
+      "source": 302,
+      "target": 84
+    },
+    {
       "source": 303,
-      "target": 87
+      "target": 88
+    },
+    {
+      "source": 303,
+      "target": 84
     }
   ]
 }
